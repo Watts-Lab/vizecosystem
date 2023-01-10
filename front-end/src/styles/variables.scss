@@ -1,0 +1,57 @@
+// colors
+$true-black: #000000;
+$black: #2b2b2b;
+$dark-grey: #3f3f3f;
+$mid-grey: #bebebe;
+$light-grey: #d3d3d3;
+$off-white: #eee;
+$white: #fff;
+$css-lab-dark-blue: #011f5b;
+$css-lab-dark-blue-transparent: rgba(5,40,137,0.8);
+$css-lab-light-blue: #82afd3;
+$css-lab-dark-red: #990000;
+
+// layout
+$column-width: 960px;
+// breakpoints
+$bp-1: 480px;
+$bp-2: 768px;
+$bp-3: 1024px;
+$bp-4: 1200px;
+
+@mixin fs-xxs {
+    font-size: 10px;
+    line-height: 1.35;
+}
+
+@mixin fs-xs {
+    font-size: 11px;
+    line-height: 1.35;
+}
+@mixin fs-sm {
+    font-size: 12px;
+    line-height: 1.45;
+}
+@mixin fs-base {
+    font-size: 14px;
+    line-height: 1.6;
+}
+@mixin fs-root {
+    font-size: 16px;
+    line-height: 1.6;
+}
+@mixin fs-md {
+    font-size: 18px;
+    line-height: 1.6;
+}
+@mixin fs-lg {
+    font-size: 20px;
+}
+
+@mixin fs-xl {
+    font-size: 32px;
+}
+
+@mixin fs-xxl {
+    font-size: 55px;
+}

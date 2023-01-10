@@ -1,0 +1,12 @@
+/node_modules/
+
+front-end/public/build/
+front-end/node_modules/
+
+.DS_Store
+.vscode/
+
+.env
+
+*.svg
+*.ai
