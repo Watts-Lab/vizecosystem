@@ -89,5 +89,45 @@
                 "value": "Consumption share of the six political channel categories. For example, out of the total minutes of content that Americans viewed across the platform in October 2018, 1.76% of those minutes were far-right content. These statistics shed light on the amount of political content being consumed, and not necessarily the communities that consume it."
             }
         ]
+    },
+    "section-three": {
+        "copy": [
+            {
+                "type": "text",
+                "value": "To check for overall trends in political category preferences, we examine changes in the six viewing clusters’ total consumption. Here, we track how many YouTube users fall into each political cluster over time, which tells us whether these communities are growing or shrinking."
+            },
+            {
+                "type": "text",
+                "value": "Selecting “User share” from the dropdown above shows the percentages of the total number of YouTube users who fall into each of our six defined viewing clusters, corresponding to the political content categories."
+            },
+            {
+                "type": "text",
+                "value": "Selecting “Total consumption share” shows the percentages of the total amount (in minutes) of viewed YouTube content which fall into each of the six categories of news content."
+            },
+            {
+                "type": "text",
+                "value": "Our results reveal that news, in general, makes up only a small portion of YouTube consumption. However, even a small percentage of users can mean large absolute numbers at the scale of YouTube. For example, averaged over the 4-year period, 764,405 Americans consumed anti-woke content at least once in a given month, with that number growing steadily over time."
+            }
+        ],
+        "references": [
+            {
+                "type": "text",
+                "value": "Iyengar et al, The origins and consequences of affective polarization in the United States, 2019"
+            },
+            {
+                "type": "text",
+                "value": "Jones, Declining trust in congress: Effects of polarization and consequences for Democracy, 2015"
+            }
+        ],
+        "captions": [
+            {
+                "type": "text",
+                "value": "Percent of YouTube users falling into the six political categories. In other words, out of all American YouTube viewers, 1.3% were in the left cluster in February 2020. This shows how large YouTube’s political communities are relative to the entire platform."
+            },
+            {
+                "type": "text",
+                "value": "Consumption share of the six political channel categories. For example, out of the total minutes of content that Americans viewed across the platform in October 2018, 1.76% of those minutes were far-right content. These statistics shed light on the amount of political content being consumed, and not necessarily the communities that consume it."
+            }
+        ]
     }
 }

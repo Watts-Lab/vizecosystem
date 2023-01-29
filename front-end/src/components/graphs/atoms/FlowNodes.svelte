@@ -10,6 +10,9 @@
 
   const { nodes, links } = $custom;
 
+  // global variables
+  let linksIn = [];
+
   // set dynamic curve size
   const outerRadius : number = $width / 1.75
   // calculate available angle & slice size
@@ -43,7 +46,7 @@
 
   const positionMap : Map<any,any> = new Map(dataIn.map(d => [d.node.toFixed(0), d]))
 
-  const linksFromMap : Map<any,any> =  group(links, (d : any) => d.from)
+  // const linksFromMap : Map<any,any> =  group(links, (d : any) => d.from)
 
   function pathGen(context, pos) {
     context.moveTo(pos.from.x, pos.from.y);
@@ -133,43 +136,64 @@
     }
   }
 
-  onMount(() => render = true);
-  // afterUpdate(() => actionable = true)
+  onMount(() => {
+    linksIn = links.map((link, i) => {
+      const from = positionMap.get(link.from)
+      const to = positionMap.get(link.to)
+      const pathString = pathGen(path(), { from, to, link }).toString()
+      const pathInstance = new SVGPathCommander(pathString)
+      const totalLength = +pathInstance.getTotalLength().toPrecision(2)
+      const start = pathInstance.getPointAtLength(totalLength * 0.48)
+      const midpoint = pathInstance.getPointAtLength(totalLength * 0.5)
+      const end = pathInstance.getPointAtLength(totalLength * 0.52)
+
+      return {
+        ...link,
+        to,
+        from,
+        pathString,
+        pathInstance,
+        totalLength,
+        start,
+        midpoint,
+        end,
+      }
+    })
+
+    render = true
+  });
   
-  $: render = false
-  $: actionable = false
+  $: render = false;
+  $: totalLinks = 0;
+  $: actionable = false;
+
+  $: if (linksIn.length > 0 && linksIn.length === totalLinks) {
+    actionable = true;
+  }
+  
 </script>
 
 
 <!-- LINKS -->
 <!-- transform='translate(0, {3 * $height / 8})' -->
 <g class='link-group' id='link-group'>
-  {#each links as link, i}
-    {@const from = positionMap.get(link.from)}
-    {@const to = positionMap.get(link.to)}
-    {@const pathString = pathGen(path(), { from, to, link }).toString()}
-    {@const totalLength = SVGPathCommander.getTotalLength(pathString)}
-    {@const midpoint = SVGPathCommander.getPointAtLength(pathString, totalLength / 2)}
-    {@const start = SVGPathCommander.getPointAtLength(pathString, totalLength * 0.48)}
-    {@const end = SVGPathCommander.getPointAtLength(pathString, totalLength * 0.52)}
-
-    <!-- svelte-ignore component-name-lowercase -->
-    {#if render}
+  {#if render}
+    {#each linksIn as link, i}
+      <!-- svelte-ignore component-name-lowercase -->
       <path
-        class='link linkTo-{to.node} linkFrom-{from.node}'
+        class='link linkTo-{link.to.node} linkFrom-{link.from.node}'
         stroke-width={link.value}
-        d={pathString}
+        d={link.pathString}
         in:draw="{{ duration: 1000, delay: 200 + (10 * link.value) }}"
-        on:introend="{() => { if (!actionable) actionable = true }}"
+        on:introend={() => totalLinks += 1}  
       ></path>
       <path
-        class='arrow arrowTo-{to.node} arrowFrom-{from.node}'
-        d={lineGen([start, midpoint, end])}
+        class='arrow arrowTo-{link.to.node} arrowFrom-{link.from.node}'
+        d={lineGen([link.start, link.midpoint, link.end])}
         marker-end="url(#triangle)"
       ></path>
-    {/if}
-
-  {/each}
+    {/each}
+  {/if}
 </g>
 
 <!-- NODES -->
@@ -181,7 +205,7 @@
     {#each dataIn.filter(d => d.node < 9) as node, i}
       <g transform='translate({node.x}, {node.y})'>
         <circle
-          class='node'
+          class='node {actionable ? 'active' : ''}'
           r={node.r} 
           in:scale={{ duration: 1000 }} 
           on:mouseenter={(ev) => handleMouseEnter(ev, node)}
@@ -193,7 +217,7 @@
     {#each dataIn.filter(d => d.node === 9) as node, i}
       <g transform='translate({node.x}, {node.y})'>
         <circle
-          class='node'
+          class='node {actionable ? 'active' : ''}'
           r={node.r} 
           in:scale={{ duration: 1000 }} 
           on:mouseenter={(ev) => handleMouseEnter(ev, node)}
@@ -209,6 +233,11 @@
   .node {
     stroke: none;
     fill: $css-lab-dark-red;
+    pointer-events: none;
+  }
+
+  .active {
+    pointer-events: all;
   }
 
   .node-label {

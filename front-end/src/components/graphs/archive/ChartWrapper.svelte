@@ -6,16 +6,16 @@
     import { autoType } from 'd3-dsv'
 
     // components
-    import LineChart from "../graphs/LineChart.svelte";
+    import LineChart from "../LineChart.svelte";
 
     // types
-    import type TimeSeriesRow from '../../types/TimeSeriesRow';
-    import type ChartConfig from '../../types/ChartConfig';
+    import type TimeSeriesRow from '../../../types/TimeSeriesRow';
+    import type ChartConfig from '../../../types/ChartConfig';
 
     // utils
-    import labelMap from '../../utils/labels';
-    import colorMap from '../../utils/colors';
-    import enforceOrder, { prefOrder } from '../../utils/order';
+    import labelMap from '../../../utils/labels';
+    import colorMap from '../../../utils/colors';
+    import enforceOrder, { prefOrder } from '../../../utils/order';
 
     // property declaration
     export let config : ChartConfig[]|ChartConfig;
@@ -54,7 +54,7 @@
 {#if activeChart && activeFig }
     <h3 class="chart-title">{title}
         {#if Array.isArray(config) && config.length >= 2}
-            <select class='dropdown-menu' type="select" bind:value={activeChart}>
+            <select class='dropdown-menu' bind:value={activeChart}>
                 {#each config as file, i}
                     <option value={file.url}>{file.description}</option>
                 {/each}

@@ -115,29 +115,37 @@
 
 <style lang="scss">
   .how-to {
-    grid-row: 1 / span 2;
-    grid-column: 7 / span 4;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 15px;
-
-    .how-to-label {
-      grid-row: 1 / span 1
-    }
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
 
     .how-to-wrapper {
-      grid-row: 2 / span 1;
-
-      // svg {
-      //   // height: 100%;
-      //   // width: 100%;
-      // }
+      flex-grow: 1;
+      flex-shrink: 0;
     }
+    // grid-row: 1 / span 2;
+    // grid-column: 7 / span 4;
+    // display: grid;
+    // grid-template-rows: auto 1fr;
+    // gap: 15px;
+
+    // .how-to-label {
+    //   grid-row: 1 / span 1
+    // }
+
+    // .how-to-wrapper {
+    //   grid-row: 2 / span 1;
+
+    //   svg {
+    //     height: 100%;
+    //     width: 100%;
+    //   }
+    // }
   }
 </style> 
 
 <div class='how-to'>
-  <div class='how-to-label'>How to read this chart</div>
   <div class='how-to-wrapper'>
     {#if w && h}
       <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 308.8 208" width={w} height={h} preserveAspectRatio="xMinYMin meet">

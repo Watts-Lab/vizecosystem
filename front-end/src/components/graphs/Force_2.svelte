@@ -3,9 +3,9 @@
     import { geoAlbersUsa } from 'd3-geo'
     import { forceSimulation, forceCollide, forceManyBody } from 'd3-force';
     import { scaleOrdinal } from 'd3-scale';
-
+    import { path } from 'd3-path'
   
-    const { height, width, rScale, zScale, data, } = getContext('LayerCake');
+    const { height, width, rScale, zScale, data } = getContext('LayerCake');
 
     export let collideStrength = 1;
     export let manyBodyStrength = 1;
@@ -26,7 +26,7 @@
     }
 
     // variable declaration
-    let rRatio = 2;
+    let rRatio = 9.5;
     let simulationStopped = false;
     let nodes = []
     let simulation = forceSimulation()
@@ -34,21 +34,44 @@
       .alphaMin(0.4)
       .force(
         'collide', 
-        forceCollide(d => d.r + rRatio * 5)
+        forceCollide(d => d.r + rRatio)
           .strength(collideStrength)
           .iterations(2)
       )
       .force('charge', forceManyBody().strength(manyBodyStrength));
 
-    $: nodes = $data.map((d, i) => {
-      const [ x, y ] = projection(d.coordinates)
-      return ({ ...d, 
-        FAKE_VALUE: Math.random() * d.population / 1000000,  
-        x, 
-        y,
-        r: $rScale(Math.abs(d.data.value)) 
-      })
-    });
+    function parseNodes(arr) {
+      return arr.map((d, i) => {
+        const [ x, y ] = projection(d.coordinates)
+        const r = $rScale(Math.abs(d.data.value))
+        const r_L = $rScale(Math.abs(d.data.left_pct))
+        const r_R = $rScale(Math.abs(d.data.right_pct))
+
+        const rightPathString = arcGen(path(), { r: r_R, start: -Math.PI/2, end: Math.PI/2 })
+        const fillR = $zScale(d.data.right_pct * 1)
+
+        const leftPathString = arcGen(path(), { r: r_L, start: Math.PI/2, end: -Math.PI/2 })
+        const fillL = $zScale(d.data.left_pct * -1)
+
+        const fullPath = pathGen(path(), { r: r_R }, { r: r_L })
+
+        return ({ ...d, 
+          FAKE_VALUE: Math.random() * d.population / 1000000,  
+          x, 
+          y,
+          r: Math.max(r_L, r_R),
+          r_L,
+          r_R,
+          rightPathString,
+          fillR,
+          leftPathString,
+          fillL,
+          fullPath,
+        })
+      }
+    )}
+
+    $: nodes = parseNodes($data)
     
     $: simulation = simulation
       .nodes(nodes)
@@ -67,23 +90,11 @@
 
     $: {
       projection.translate([ $width / 2, $height / 2 ])
-      nodes = $data.map((d, i) => {
-        const [ x, y ] = projection(d.coordinates)
-        return ({ ...d, 
-          FAKE_VALUE: Math.random() * d.population / 1000000,  
-          x, 
-          y,
-          r: $rScale(Math.abs(d.data.value)) 
-        })
-      });
+      nodes = nodes = parseNodes($data)
       restart()
     }
 
     $: labelActive = false;
-
-    // $: {
-    //   if (simulationStoppedsimulation.alpha())
-    // }
 
     function handleMouseEnter(e, d) {
       dispatch('mouseenter', { target: e.target, node: d })
@@ -101,30 +112,56 @@
       .domain($zScale.range())
       .range(['gainsboro', 'gainsboro', 'black', 'gainsboro', 'gainsboro'])
 
+    function arcGen(context, pos) {
+      context.arc(0, 0, pos.r, pos.start, pos.end)
+      context.closePath()
+      return context;
+    }
+
+    function pathGen(context, pos1, pos2) {
+      context.arc(0, 0, pos1.r, -Math.PI/2, Math.PI/2)
+      context.arc(0, 0, pos2.r, Math.PI/2, -Math.PI/2)
+      context.closePath()
+      return context
+    }
+
 </script>
 
 <g 
   class='bee-group'
 >
   {#each nodes as node}
-    {@const fill = $zScale(
-      (node.FAKE_VALUE) * 
-      (node.data.value > 0 ? 1 : -1)
-    )}
-    <g class='node-group' transform={`translate(${node.x}, ${node.y})`}>
-      <circle
+    <g 
+      class='node-group' 
+      transform={`translate(${node.x}, ${node.y})`}
+      on:click={(e) => handleClick(e, node)}
+    >
+      <!-- svelte-ignore component-name-lowercase -->
+      <path
         class='node'
-        fill={ fill }
-        cx={ 0 }
-        cy={ 0 }
-        r={ node.r }
-        on:click={(e) => handleClick(e, node)}
-      >
-      </circle>
+        fill={ node.fillR }
+        d={ node.rightPathString }
+      ></path>
+      <!-- svelte-ignore component-name-lowercase -->
+      <path
+        class='node'
+        fill={ node.fillL }
+        d={ node.leftPathString }
+      ></path>
+      <!-- svelte-ignore component-name-lowercase -->
+      <path
+        class='node node-stroke'
+        fill={ 'none' }
+        stroke={ 'black' }
+        d={ node.fullPath }
+      ></path>
       <text 
         class={`state-label ${labelActive ? 'active' : ''}`}
-        fill={scaleTypeColor(fill)}
+        fill='black'
+        dx={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
+        dy={ -(node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
       >
+      <!-- fill={scaleTypeColor(fill)} -->
         {node.abbr}
       </text>
     </g>
@@ -135,16 +172,21 @@
   .node {
     stroke: $true-black;
     stroke-width: 0;
-    transition: 0.5s stroke-width;
+    // transition: 0.5s stroke-width;
     cursor: pointer;
   }
 
+  .node-stroke {
+    stroke-width: 0;
+    transition: 0.5s stroke-width;
+  }
+
   .state-label {
-    text-anchor: middle;
-    @include fs-xs;
+    text-anchor: end;
+    @include fs-xxs;
     transform: translate(0, 4px);
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
   }
 
   .state-label.active {
@@ -153,8 +195,8 @@
   }
 
   .node-group:hover {
-    .node {
-      stroke-width: 4px
+    .node-stroke {
+      stroke-width: 1px
     }
 
     .state-label {

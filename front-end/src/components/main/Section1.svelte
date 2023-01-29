@@ -23,15 +23,6 @@
     import statesDict from '../../data/states.json'
     const statesMap = new Map(statesDict.map(d => [d.state, d]))
 
-    // variable declaration
-	const menuInfo : Map<string, string> = new Map([
-        // ['political_lean', 'political_lean'],
-        ['partisanship', 'partisanship'],
-        ['diet', 'diet'],
-        ['tv', 'tv']
-    ]);
-
-    
     // props
     let loaded : boolean = false;
     export let once : boolean;
@@ -40,6 +31,12 @@
     export let captions : any[]
 
     // variable declaration
+    const menuInfo : Map<string, string> = new Map([
+        // ['political_lean', 'political_lean'],
+        ['partisanship', 'partisanship'],
+        ['diet', 'diet'],
+        ['tv', 'tv']
+    ]);
     let url : string = 'assets/data/dupe-data-by-state.csv'
     let data : any[]
     let dataIn : Map<any,any>
@@ -78,13 +75,15 @@
             data, 
             d => d.state, 
             d => d.medium, 
-            d => d.partisanship_scenario
+            d => d.partisanship_scenario,
+            d => d.age_group
         )
     }
 
     $: medium = tvChecked ? 'tv' : 'online'
     $: partisanship_scenario = scenarioChecked ? 'lenient' : 'strict'
     $: state = 'US'
+    $: age_group = 'under 18'
     // $: start = 0;
     // $: end = 1;
     // $: minDate = scaleRange(start)
@@ -130,6 +129,17 @@
             </div>
 
             <div id='location' class='control control-menu'>
+                <div class='control-title'>Age group</div>
+                <select id="age-group" name="age-group" bind:value={age_group}>
+                    <option value='under 18' selected>Under 18</option>
+                    <option value='25-34' selected>25-34</option>
+                    <option value='35-44' selected>35-44</option>
+                    <option value='45-54' selected>45-54</option>
+                    <option value='55+' selected>55+</option>
+                </select>
+            </div>
+
+            <div id='location' class='control control-menu'>
                 <div class='control-title'>Location</div>
                 <select id="location" name="location" bind:value={state}>
                     <option value='US' selected>United States</option>
@@ -138,6 +148,7 @@
                     {/each}
                 </select>
             </div>
+
             {#if loaded && data}
                 <div id='period' class='control control-range'>
                     <div class='control-title'>Period</div>
@@ -157,6 +168,7 @@
                         .get(state)
                         .get(medium)
                         .get(partisanship_scenario)
+                        .get(age_group)
                 }
                 scaleRange={ scaleDate }
                 { start }

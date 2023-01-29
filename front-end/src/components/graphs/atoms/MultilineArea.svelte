@@ -12,7 +12,10 @@
     .y(d => $yGet(d))
     .curve(curveBasis)
 
-  // console.log($zScale.domain(), $zScale.range())
+  $: polygon = area()
+    .x(d => $xGet(d))
+    .y0(d => $yGet(d))
+    .y1(d => $yScale(d.value_2))
 
 </script>
 
@@ -21,40 +24,35 @@
       {@const areaData = group[1][0][1]
         .map((d, i) => ({ ...d, value_2: group[1][1][1][i]['value'] }))
       }
-      <!-- {@const color = $zScale(group[0])} -->
+      {@const color = $zScale(group[0])}
       <g class='threshold-group threshold-group-{group[0]}'>
-        {#each group[1] as d, l}
+        {#each group[1].filter(e => e[0] === 50) as d, l}
           <path
             class={`path-line path-line-${d[0]}`}
             d={ path(d[1]) }
-            
+            stroke={ color }
           ></path>
-          <!-- stroke={ color } -->
+
+          <path
+            class={`path-polygon path-polygon-${d[0]}`}
+            d={ polygon(areaData) }
+            fill={ color }
+          ></path>
         {/each}
     </g>
   {/each}
 </g>
   
 
-<style lang='scss'>
+<style>
   .path-line {
-    fill: none;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    stroke-width: 2px;
+      fill: none;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-width: 2;
   }
 
-  .path-line-L {
-    stroke: blue;
-  }
-  .path-line-R {
-    stroke: red;
-  }
-
-
-  .threshold-group-online {
-    .path-line {
-      stroke-dasharray: 4 1
-    }
+  .path-polygon {
+    fill-opacity: 0.35
   }
 </style>

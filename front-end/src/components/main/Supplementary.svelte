@@ -11,7 +11,7 @@
     import inView from "../../actions/inView";
 
     // components
-    import SingleLineChart from "../graphs/SingleLineChart.svelte";
+    import SingleLineChart from "../graphs/archive/SingleLineChart.svelte";
     import TableWrapper from "../table/TableWrapper.svelte";
 
     // utils

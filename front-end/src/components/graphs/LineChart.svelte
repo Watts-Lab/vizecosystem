@@ -27,7 +27,7 @@
 	export let xKey : string;
 	export let yKey : string;
 	export let zKey : string;
-	export let yDomain : number[] = [0, null];
+	export let yDomain : number[] = [0, 100];
 	export let formatTickX : Function;
 	export let xTicks : number|Array<number>|Function = 6;
 	export let formatTickY : Function = (d : number) => d.toFixed(0);
@@ -36,8 +36,10 @@
 	export let markers : string[]
 
 	// variable declaration
-	let seriesNames = Array.from(colorMap).map(d => d[0])
-	let seriesColors = Array.from(colorMap).map(d => d[1])
+	// let seriesNames = Array.from(colorMap).map(d => d[0])
+	// let seriesColors = Array.from(colorMap).map(d => d[1])
+
+	// console.log(groupedData);
 
 </script>
 
@@ -51,11 +53,11 @@
 		y={ yKey }
 		{ yDomain }
 		yNice={ true }
-		z={ zKey }
-		zScale={ scaleOrdinal() }
-		zDomain={ seriesNames }
-		zRange={ seriesColors }
 	>
+	<!-- z={ zKey }
+	zScale={ scaleOrdinal() }
+	zDomain={ seriesNames }
+	zRange={ seriesColors } -->
 		<Svg>
 			<AxisX
 				gridlines={false}
@@ -68,18 +70,18 @@
 				ticks={4}
 				formatTick={formatTickY}
 			/>
-			<Markers data={ markers } />
+			<!-- <Markers data={ markers } /> -->
 			<Multiline activeChart={activeChart}/>
 		</Svg>
 
-		<Html>
+		<!-- <Html>
 			<SharedTooltip
 				dataset={data}
 				formatTitle={formatTickX}
 				formatKey={(d) => labelMap.get(d)}
 				formatValue={formatTickY}
 			/>
-		</Html>
+		</Html> -->
 	</LayerCake>
 </div>
 {#if includeCaption}

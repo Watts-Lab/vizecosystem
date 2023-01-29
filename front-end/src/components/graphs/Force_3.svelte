@@ -25,6 +25,8 @@
       simulation.alpha(1).restart();
     }
 
+    // console.log($data)
+
     // variable declaration
     let rRatio = 2;
     let simulationStopped = false;
@@ -43,10 +45,9 @@
     $: nodes = $data.map((d, i) => {
       const [ x, y ] = projection(d.coordinates)
       return ({ ...d, 
-        FAKE_VALUE: Math.random() * d.population / 1000000,  
         x, 
         y,
-        r: $rScale(Math.abs(d.data.value)) 
+        r: $rScale(d.data.left_pct)
       })
     });
     
@@ -70,10 +71,9 @@
       nodes = $data.map((d, i) => {
         const [ x, y ] = projection(d.coordinates)
         return ({ ...d, 
-          FAKE_VALUE: Math.random() * d.population / 1000000,  
           x, 
           y,
-          r: $rScale(Math.abs(d.data.value)) 
+          r: $rScale(d.data.left_pct) 
         })
       });
       restart()
@@ -106,11 +106,9 @@
 <g 
   class='bee-group'
 >
+
   {#each nodes as node}
-    {@const fill = $zScale(
-      (node.FAKE_VALUE) * 
-      (node.data.value > 0 ? 1 : -1)
-    )}
+    {@const fill = $zScale(node.data.left_pct)}
     <g class='node-group' transform={`translate(${node.x}, ${node.y})`}>
       <circle
         class='node'

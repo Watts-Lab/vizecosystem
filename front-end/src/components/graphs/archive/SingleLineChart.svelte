@@ -7,20 +7,20 @@
 	// import type Row from '../../types/TimeSeriesRow';
 
 	// components & molecules & atoms
-	import Line from './atoms/Line.svelte';
-	import AxisX from './atoms/AxisX.svelte';
-	import AxisY from './atoms/AxisY.svelte';
-	import SingleLineTooltip from './tooltips/SingleLineTooltip.svelte';
-	import Caption from './atoms/Caption.svelte';
+	import Line from '../atoms/Line.svelte';
+	import AxisX from '../atoms/AxisX.svelte';
+	import AxisY from '../atoms/AxisY.svelte';
+	import SingleLineTooltip from '../tooltips/SingleLineTooltip.svelte';
+	import Caption from '../atoms/Caption.svelte';
 
 	// import utils
 	// import colorMap from '../../utils/colors';
-	import labelMap from '../../utils/labels';
-	import { formatThousandsComma } from '../../utils/format-numbers'
+	import labelMap from '../../../utils/labels';
+	import { formatThousandsComma } from '../../../utils/format-numbers'
 
 
 	// // props declaration
-    export let caption: string;
+	export let caption: string;
 	export let data : any[];
 	export let url : string;
 	export let xKey : string;

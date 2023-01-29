@@ -40,13 +40,17 @@
             })
             return prev
         }, [])
+
+        render = true;
 	})
+
+    $: render = false
 
 </script>
 
 <div class="section section-2" use:inView={{ once }} on:enter={() => loaded = true }>
     <div class='chart-wrapper'>
-        {#if loaded && nodes && links}
+        {#if loaded && render}
             <FlowChart
                 { nodes }
                 { links }
@@ -83,6 +87,7 @@
             column-gap: 50px;
             grid-template-rows: auto auto auto 1fr auto;
         }
+        
     }
 
     .chart-placeholder {
@@ -102,7 +107,7 @@
         grid-column: span 12;
 
         @media (min-width: $bp-3) {
-            grid-column: span 7;
+            grid-column: 1 / span 7;
         }
     }
 

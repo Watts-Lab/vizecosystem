@@ -8,7 +8,7 @@
 	import type Row from '../../types/TimeSeriesRow';
 
 	// components & molecules & atoms
-	import Multiline from './atoms/Multiline.svelte';
+	import Multiline from './atoms/MultilineArea.svelte';
 	import AxisX from './atoms/AxisX.svelte';
 	import AxisY from './atoms/AxisY.svelte';
 	import SharedTooltip from './tooltips/SharedTooltip.svelte';

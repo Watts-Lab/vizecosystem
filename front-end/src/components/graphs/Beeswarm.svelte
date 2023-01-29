@@ -7,15 +7,20 @@
 	// import { extent, group } from 'd3-array';
 
 	// types
+	import type ChartConfig from '../../types/ChartConfig';
 
 	// components
-	import Force from './Force.svelte';
+	import Force from './Force_2.svelte';
+	import ForceDiverging from './Force_2.svelte';
+	import ForceLinear from './Force_3.svelte';
 	import PopupOverlay from './tooltips/PopupOverlay.svelte';
+	// import HowTo from './archive/HowTo.svelte'
 
 	// // utils
 	
 	// local data
 	import statesDict from '../../data/states.json'
+
 	const statesMap = new Map(statesDict.map(d => [d.state, d]))
 
 	// props declaration
@@ -23,6 +28,7 @@
 	export let states : any[];
 	export let dataMap : Map<string, any>
 	export let fullDataMap : Map<string, any>
+	export let activeChart : ChartConfig;
 
 	// variable declaration
 	const menuInfo : Map<string, string> = new Map([
@@ -31,16 +37,13 @@
     ['diet', 'diet'],
 		['tv', 'tv']
   ]);
-  // let politicalChecked : boolean = true;
-	// let political_lean: string = politicalChecked ? 'L' : 'R'
+	let colorInterpolator;
+	let politicalChecked : boolean = true;
 	let dietChecked : boolean = true;
-	// let diet_threshold: number = dietChecked ? 75 : 50
   let scenarioChecked : boolean = true;
-  // let partisanship_scenario : string = scenarioChecked ? 'lenient' : 'strict'
 	let tvChecked : boolean = true
-	// let medium : string = scenarioChecked ? 'tv' : 'online'
 	let period : string = '3';
-	// $: political_lean = politicalChecked ? 'L' : 'R'
+	$: political_lean = politicalChecked ? 'R' : 'L'
 	$: medium = tvChecked ? 'tv' : 'online';
 	$: diet_threshold = dietChecked ? 75 : 50;
   $: partisanship_scenario = scenarioChecked ? 'lenient' : 'strict';
@@ -61,19 +64,8 @@
 	onMount(() => {
 		render = true
 	})
-
-	$: dataIn = states
-		.map(d => {
-			const { abbr } = statesMap.get(d.state)
-			const data = dataMap
-				.get(abbr)
-				// .get(political_lean)
-				.get(medium)
-				.get(diet_threshold)
-				.get(partisanship_scenario)[0]
-			return { ...d, abbr, data  }
-		})
 	
+	// event handlers
 	function handleMouseEnter(e : CustomEvent<any>) { 
 		hideTooltip = false;
 		tooltip = e;
@@ -94,44 +86,69 @@
 		popup = null;
 	}
 
-	const breakpoints = [-0.5, -0.25, 0.25, 0.5]
+	// reactive variables
+	$: dataIn = states
+		.map(d => {
+			const { abbr } = statesMap.get(d.state)
+			const data = dataMap
+				.get(abbr)
+				// .get(political_lean)
+				.get(medium)
+				.get(diet_threshold)
+				.get(partisanship_scenario)[0]
+			return { ...d, abbr, data  }
+		})
 
-	const colorInterpolator = scaleDiverging()
-		.domain([-2, 0, 2])
-		.interpolator(piecewise(
-			interpolateRgb.gamma(0.5), 
-			["#011f5b", "#D4BAC7", "#990000"]
-		))
+	$: rScale = activeChart.rScale()
+		.domain(activeChart.rDomain)
+		.range(activeChart.rRange);
 
-	const colorPalette : number[] = [-1, -0.5, 0, 0.5, 1].map(colorInterpolator);
+	$: {
+		colorInterpolator = activeChart.colorInterpolator()
+			.domain(activeChart.colorInterpolatorDomain)
+		
+		if (activeChart.type === 'diverging') {
+			colorInterpolator.interpolator(piecewise(
+				interpolateRgb.gamma(0.5),
+				activeChart.colorInterpolatorScheme
+			))
+		}
+		else if (activeChart.type === 'linear') {
+			colorInterpolator.range([
+				activeChart.colorInterpolatorScheme, 
+				political_lean === 'R' ? '#990000' : "#011f5b"
+			])
+		}
+	}
 
-	const rScale = scaleSqrt()
-		.domain([0, 20])
-		.range([10, 50]);
-	const zScale = scaleThreshold()
-		.domain(breakpoints)
+	$: colorPalette = activeChart.colorPaletteAnchors.map(colorInterpolator)
+
+	$: zScale = activeChart.zScale()
+		.domain(activeChart.zDomain)
 		.range(colorPalette)
 
 </script>
 
 <div class='chart-info-wrapper main-column'>
 	<div class='controls'>
-		<!-- <div class='control control-switch'>
-			<div class='control-title'>
-				Political lean 
-				<span 
-					class='info' 
-					on:mouseenter={() => { console.log(menuInfo.get('tv')) }} 
-					on:mouseleave={() => {}}
-				>?</span>
+		{#if activeChart.type === 'linear'}
+			<div class='control control-switch'>
+				<div class='control-title'>
+					Political lean 
+					<span 
+						class='info' 
+						on:mouseenter={() => { console.log(menuInfo.get('tv')) }} 
+						on:mouseleave={() => {}}
+					>?</span>
+				</div>
+				<div class='control-label {!politicalChecked ? 'active' : ''}'>L</div>
+				<label class='switch'>
+					<input type="checkbox" id="medium" name="medium" bind:checked={politicalChecked}>
+					<span class="slider"></span>
+				</label>
+				<div class='control-label {politicalChecked ? 'active' : ''}'>R</div>
 			</div>
-			<div class='control-label {!politicalChecked ? 'active' : ''}'>L</div>
-			<label class='switch'>
-				<input type="checkbox" id="medium" name="medium" bind:checked={politicalChecked}>
-				<span class="slider"></span>
-			</label>
-			<div class='control-label {politicalChecked ? 'active' : ''}'>R</div>
-		</div> -->
+		{/if}
 		
 		<div id='medium' class='control control-switch'>
 			<div class='control-title'>
@@ -194,7 +211,7 @@
 	</div>
 	<div class='legend'>
 		<div class='legend-item legend-item-color'>
-			<h5>Partisan lean difference</h5>
+			<h5>Partisan lean</h5>
 			<span>More left</span>
 			{#each colorPalette as d}
 				<div class='legend-block' style="--color: {d}"></div>
@@ -203,13 +220,18 @@
 		</div>
 		
 		<div class='legend-item legend-item-size'>
-			<h5>Per capita news consumption</h5>
-			<svg>
-				<text x={rScale(20) + rScale(10) + 2} y={rScale(10)}>20 per 100,000</text>
-				<circle cx={rScale(20) + 2} cy={rScale(20) + 2} r={rScale(10)} fill='none' stroke='black' stroke-width={1}></circle>
-				<circle cx={rScale(20) + 2} cy={rScale(20) + rScale(10/2)} r={rScale(0)} fill='none' stroke='black' stroke-width={1}></circle>
-				<text x={rScale(20) + rScale(0) + 2} y={rScale(20) + rScale(10/2) - 8}>5</text>
-			</svg>
+			<h5>How to read this chart?</h5>
+			<div>
+				<!-- <svg>
+					<circle cy={rScale(5)+1} cx={rScale(0)+1} r={rScale(0)} fill='none' stroke='black'></circle>
+					<circle cy={rScale(5)+1} cx={rScale(5)+1} r={rScale(5)} fill='none' stroke='black'></circle>
+
+					<text y={rScale(5)+rScale(0)} x={2*rScale(0)+1} r={rScale(0)}>{rScale(0)}%</text>
+					<text y={rScale(5)+rScale(0)} x={2*rScale(5)+1} r={rScale(5)}>{rScale(5)}% of adult population</text>
+				</svg> -->
+			</div>
+			
+			<!-- <HowTo /> -->
 		</div>
 	</div>
 </div>
@@ -228,16 +250,33 @@
 		>
 	<Svg>
 		{#if render}
-			<Force
-				{ medium }
-				{ diet_threshold }
-				{ partisanship_scenario }
-				collideStrength={ 0.1 }
-				manyBodyStrength={ -0.5 }
-				on:mouseenter={ handleMouseEnter }
-				on:mouseleave={ handleMouseLeave }
-				on:click={ handleClick }
-			/>
+
+			{#if activeChart.type === 'diverging'}
+				<ForceDiverging
+					{ medium }
+					{ diet_threshold }
+					{ partisanship_scenario }
+					collideStrength={ 0.1 }
+					manyBodyStrength={ -0.5 }
+					on:mouseenter={ handleMouseEnter }
+					on:mouseleave={ handleMouseLeave }
+					on:click={ handleClick }
+				/>
+			{/if}
+
+			{#if activeChart.type === 'linear'}
+				<ForceLinear
+					{ medium }
+					{ diet_threshold }
+					{ partisanship_scenario }
+					collideStrength={ 0.1 }
+					manyBodyStrength={ -0.5 }
+					on:mouseenter={ handleMouseEnter }
+					on:mouseleave={ handleMouseLeave }
+					on:click={ handleClick }
+				/>
+			{/if}
+
 		{/if}
 		<!-- { political_lean } -->
 	</Svg>
@@ -324,13 +363,26 @@
 		}
 
 		.legend-item-size {
-			svg {
-				max-height: 100px;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
 
-				text {
-					@include fs-xs;
+			div {
+				flex-grow: 1;
+				flex-shrink: 0;
+
+				svg {
+					height: 95px;
+					width: 100%;
 				}
 			}
+			// svg {
+			// 	max-height: 100px;
+
+			// 	text {
+			// 		@include fs-xs;
+			// 	}
+			// }
 		}
 
 	}

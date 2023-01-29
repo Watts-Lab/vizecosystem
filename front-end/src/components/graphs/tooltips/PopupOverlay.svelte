@@ -1,6 +1,7 @@
 <script lang='ts'>
   // node_modules
 	import { createEventDispatcher } from 'svelte';
+  import { fade } from 'svelte/transition';
 
 	const dispatch = createEventDispatcher();
 
@@ -29,7 +30,7 @@
 <div class='overlay {!hidePopup ? 'active' : ''}'>
   {#if !hidePopup}
     {@const { abbr, state } = popup.detail.node}
-    <h1 class='title'><span>{abbr}</span> {state}</h1>
+    <h1 class='title' out:fade="{{ delay: 300 }}"><span>{abbr}</span> {state}</h1>
     <div class='overlay-bowtie-container'>
       <RadarChart
         data={ dataMap.get(abbr).get(diet_threshold).get(partisanship_scenario) }
@@ -74,20 +75,20 @@
   .overlay {
     position: absolute;
     top: 0;
-    left: -150%;
+    left: -250%;
     width: 100%;
     height: 100%;
     background-color: $off-white;
-    transition: left 0.3s ease-out;
     padding: 50px;
     display: grid;
     column-gap: 50px;
     grid-template-rows: auto 1fr 0.3fr;
     grid-template-columns: 1fr 1fr;
+    transition: left 0.3s ease-out;
   }
 
   .overlay.active {
-    left: 0
+    left: 0;
   }
 
   .overlay-bowtie-container {

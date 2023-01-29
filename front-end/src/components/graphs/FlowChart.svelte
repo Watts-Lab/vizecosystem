@@ -1,7 +1,7 @@
 <script lang="ts">
   // node_modules
   import { onMount } from 'svelte';
-	import { Html, LayerCake, Svg } from 'layercake';
+	import { LayerCake, Svg } from 'layercake';
 
   // components & molecules & atoms
   import FlowNodes from './atoms/FlowNodes.svelte';
@@ -17,7 +17,9 @@
 	export let spanCol : number
 	export let customClass : string = ''
 
-  onMount(() => render = true);
+  onMount(() => {
+    render = true
+  });
 
   $: render = false
 
@@ -25,27 +27,27 @@
 
 <div class="chart flow-chart {customClass}">
   <LayerCake
-		padding={ margins }
+    padding={ render ? margins : {} }
     custom={{ nodes, links }}
-	>
-  <Svg>
-    <defs>
-      <marker
-        id="triangle"
-        viewBox="0 0 10 10"
-        refX="1"
-        refY="5"
-        markerUnits="userSpaceOnUse"
-        markerWidth="6"
-        markerHeight="6"
-        orient="auto">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
-      </marker>
-    </defs>
-    {#if render}
-      <FlowNodes></FlowNodes>
-    {/if}
-  </Svg>
+  >
+    <Svg>
+      <defs>
+        <marker
+          id="triangle"
+          viewBox="0 0 10 10"
+          refX="1"
+          refY="5"
+          markerUnits="userSpaceOnUse"
+          markerWidth="6"
+          markerHeight="6"
+          orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+        </marker>
+      </defs>
+      {#if render}
+        <FlowNodes></FlowNodes>
+      {/if}
+    </Svg>
   </LayerCake>
 </div>
 {#if includeCaption}
