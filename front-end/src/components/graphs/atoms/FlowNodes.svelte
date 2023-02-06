@@ -3,7 +3,7 @@
   import { draw, scale } from 'svelte/transition';
   import { path } from 'd3-path'
   import { line, curveNatural } from 'd3-shape'
-  import { group } from 'd3-array'
+  // import { group } from 'd3-array'
   import SVGPathCommander from 'svg-path-commander';
 
   const { custom, width, height } = getContext('LayerCake');

@@ -24,7 +24,7 @@
 	export let caption : string = '';
 	export let data : Row[];
 	export let url : string = '';
-	export let groupedData : [];
+	export let groupedData : any[];
 	export let xKey : string;
 	export let yKey : string;
 	export let zKey : number;
@@ -48,7 +48,7 @@
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
 
-	// $: console.log(data.filter(d => +d.date >= minDate && +d.date <= maxDate))
+	// console.log(groupedData)
 </script>
 
 <div class="chart line-chart {customClass}">

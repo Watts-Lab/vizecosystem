@@ -1,6 +1,6 @@
 <script lang='ts'>
   import { getContext } from 'svelte';
-  import { line, area, curveBasis } from 'd3-shape';
+  import { line, curveBasis } from 'd3-shape';
 
   const { data, xGet, yGet, xScale, yScale, zScale } = getContext('LayerCake');
 
@@ -12,7 +12,15 @@
     .y(d => $yGet(d))
     .curve(curveBasis)
 
-  // console.log($zScale.domain(), $zScale.range())
+  function drawPath(node, { from, to }, { delay, duration }) {
+    const len = node.getTotalLength();
+    return {
+      delay,
+      duration,
+      css: (t, u) =>
+        `stroke-dasharray: ${t * len} ${u * len}`
+    };
+  }
 
 </script>
 
@@ -21,15 +29,13 @@
       {@const areaData = group[1][0][1]
         .map((d, i) => ({ ...d, value_2: group[1][1][1][i]['value'] }))
       }
-      <!-- {@const color = $zScale(group[0])} -->
       <g class='threshold-group threshold-group-{group[0]}'>
-        {#each group[1] as d, l}
+        {#each group[1] as d, l (d)}
           <path
             class={`path-line path-line-${d[0]}`}
             d={ path(d[1]) }
-            
+            animate:drawPath={{ delay: 0, duration: 500 }}
           ></path>
-          <!-- stroke={ color } -->
         {/each}
     </g>
   {/each}

@@ -2,17 +2,16 @@
 	// node_modules
 	import { onMount } from 'svelte';
 	import { LayerCake, Svg, Html } from 'layercake';
-	import { scaleDiverging, scaleThreshold, scaleSqrt } from 'd3-scale';
-	import { piecewise, interpolateRgb } from 'd3-interpolate'
-	// import { extent, group } from 'd3-array';
+	import { piecewise, interpolateRgb } from 'd3-interpolate';
+	import { timeFormat } from 'd3-time-format';
 
 	// types
 	import type ChartConfig from '../../types/ChartConfig';
 
 	// components
-	import Force from './Force_2.svelte';
-	import ForceDiverging from './Force_2.svelte';
-	import ForceLinear from './Force_3.svelte';
+	// import Force from './Force_2.svelte';
+	import ForceDiverging from './ForceDiverging.svelte';
+	import ForceLinear from './ForceLinear.svelte';
 	import PopupOverlay from './tooltips/PopupOverlay.svelte';
 	// import HowTo from './archive/HowTo.svelte'
 
@@ -26,8 +25,8 @@
 	// props declaration
 	export let data : any[];
 	export let states : any[];
-	export let dataMap : Map<string, any>
-	export let fullDataMap : Map<string, any>
+	export let dataMap : Map<string|number, any>
+	export let fullDataMap : Map<string|number, any>
 	export let activeChart : ChartConfig;
 
 	// variable declaration
@@ -38,11 +37,11 @@
 		['tv', 'tv']
   ]);
 	let colorInterpolator;
-	let politicalChecked : boolean = true;
+	// let politicalChecked : boolean = true;
+	export let politicalChecked : boolean;
 	let dietChecked : boolean = true;
   let scenarioChecked : boolean = true;
 	let tvChecked : boolean = true
-	let period : string = '3';
 	$: political_lean = politicalChecked ? 'R' : 'L'
 	$: medium = tvChecked ? 'tv' : 'online';
 	$: diet_threshold = dietChecked ? 75 : 50;
@@ -87,12 +86,15 @@
 	}
 
 	// reactive variables
+	$: dates = [ ...new Set(data.map(d => +d.date)) ];
+	$: period = dates[0]
+
 	$: dataIn = states
 		.map(d => {
 			const { abbr } = statesMap.get(d.state)
 			const data = dataMap
+				.get(period)
 				.get(abbr)
-				// .get(political_lean)
 				.get(medium)
 				.get(diet_threshold)
 				.get(partisanship_scenario)[0]
@@ -127,29 +129,12 @@
 		.domain(activeChart.zDomain)
 		.range(colorPalette)
 
+	
 </script>
 
 <div class='chart-info-wrapper main-column'>
 	<div class='controls'>
-		{#if activeChart.type === 'linear'}
-			<div class='control control-switch'>
-				<div class='control-title'>
-					Political lean 
-					<span 
-						class='info' 
-						on:mouseenter={() => { console.log(menuInfo.get('tv')) }} 
-						on:mouseleave={() => {}}
-					>?</span>
-				</div>
-				<div class='control-label {!politicalChecked ? 'active' : ''}'>L</div>
-				<label class='switch'>
-					<input type="checkbox" id="medium" name="medium" bind:checked={politicalChecked}>
-					<span class="slider"></span>
-				</label>
-				<div class='control-label {politicalChecked ? 'active' : ''}'>R</div>
-			</div>
-		{/if}
-		
+				
 		<div id='medium' class='control control-switch'>
 			<div class='control-title'>
 				Medium 
@@ -203,20 +188,26 @@
 
 		<div id='period' class='control control-menu'>
 			<div class='control-title'>Period</div>
-			<select id="period" name="period" bind:value={period}>
-				<option value=3 selected>March</option>
-				<option value=4>April</option>
+			<select id="period-menu" name="period" bind:value={period}>
+				{#each dates as date, i}
+					{@const dateObj = new Date(date)}
+					<option value={date}>
+						{timeFormat('%Y-%b')(dateObj)}
+					</option>
+				{/each}
 			</select>
 		</div>
 	</div>
 	<div class='legend'>
 		<div class='legend-item legend-item-color'>
 			<h5>Partisan lean</h5>
-			<span>More left</span>
+			{#if activeChart.type !== 'linear'}
+				<span>More left</span>
+			{/if}
 			{#each colorPalette as d}
 				<div class='legend-block' style="--color: {d}"></div>
 			{/each}
-			<span>More right</span>
+			<span>More { political_lean === 'L' ? 'left' : 'right' }</span>
 		</div>
 		
 		<div class='legend-item legend-item-size'>
@@ -247,61 +238,49 @@
 		zDomain={ zScale.domain() }
 		zRange={ zScale.range() }
 		padding={ { top: 0, right: 0, bottom: 0, left: 0 } }
-		>
-	<Svg>
-		{#if render}
+	>
+		<Svg>
+			{#if render}
 
-			{#if activeChart.type === 'diverging'}
-				<ForceDiverging
-					{ medium }
-					{ diet_threshold }
-					{ partisanship_scenario }
-					collideStrength={ 0.1 }
-					manyBodyStrength={ -0.5 }
-					on:mouseenter={ handleMouseEnter }
-					on:mouseleave={ handleMouseLeave }
-					on:click={ handleClick }
-				/>
+				{#if activeChart.type === 'diverging'}
+					<ForceDiverging
+						{ medium }
+						{ diet_threshold }
+						{ partisanship_scenario }
+						collideStrength={ 0.1 }
+						manyBodyStrength={ -0.5 }
+						on:mouseenter={ handleMouseEnter }
+						on:mouseleave={ handleMouseLeave }
+						on:click={ handleClick }
+					/>
+				{/if}
+
+				{#if activeChart.type === 'linear'}
+					<ForceLinear
+						{ medium }
+						{ diet_threshold }
+						{ partisanship_scenario }
+						collideStrength={ 0.1 }
+						manyBodyStrength={ -0.5 }
+						on:mouseenter={ handleMouseEnter }
+						on:mouseleave={ handleMouseLeave }
+						on:click={ handleClick }
+					/>
+				{/if}
+
 			{/if}
-
-			{#if activeChart.type === 'linear'}
-				<ForceLinear
-					{ medium }
-					{ diet_threshold }
-					{ partisanship_scenario }
-					collideStrength={ 0.1 }
-					manyBodyStrength={ -0.5 }
-					on:mouseenter={ handleMouseEnter }
-					on:mouseleave={ handleMouseLeave }
-					on:click={ handleClick }
-				/>
-			{/if}
-
-		{/if}
-		<!-- { political_lean } -->
-	</Svg>
-	<Html pointerEvents={!hidePopup}>
-		{#if hideTooltip !== true}
-			{@const { abbr, x, y, r } = tooltip.detail.node }
-			{@const xAng = (x - 16) + r * Math.cos(-3 * Math.PI / 4)}
-			{@const yAng = (y - 16) + r * Math.sin(-3 * Math.PI / 4)}
-			<div
-				class='label'
-				style='transform: translate({xAng}px, {yAng}px)'
-			>
-				{ abbr }
-			</div>
-		{/if}
-
-		<PopupOverlay 
-			{ hidePopup }
-			{ diet_threshold }
-			{ partisanship_scenario }
-			popup={ popup }
-			dataMap={ fullDataMap }
-			on:closePopup={ handleClosePopup } 
-		/>
-	</Html>
+		</Svg>
+		<Html pointerEvents={!hidePopup}>
+			<PopupOverlay 
+				{ hidePopup }
+				{ diet_threshold }
+				{ partisanship_scenario }
+				{ medium }
+				popup={ popup }
+				dataMap={ fullDataMap }
+				on:closePopup={ handleClosePopup } 
+			/>
+		</Html>
 	</LayerCake>
 </div>
 
@@ -391,7 +370,7 @@
     // grid-row: 1 / span 1;
     grid-column: 1 / span 1;
     display: grid;
-    row-gap: 5px;
+    row-gap: 7px;
     grid-template-columns: auto auto 1fr;
     grid-template-rows: auto;
     grid-template-areas:
@@ -413,10 +392,6 @@
     #period {
       grid-area: four;
     }
-
-    // .control {
-    //   width: 50%;
-    // }
 
     .control-switch, 
     .control-menu {
@@ -449,6 +424,13 @@
         text-decoration: underline;
       }
     }
+
+		.control-menu {
+			#period-menu {
+				margin: 0;
+				@include fs-sm;
+			}
+		}
   }
 
   /* The switch */
@@ -494,11 +476,11 @@
   }
 
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #555;
   }
 
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #555;
   }
 
   input:checked + .slider:before {

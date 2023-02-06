@@ -1,12 +1,16 @@
 <script lang='ts'>
   // node_modules
 	import { createEventDispatcher } from 'svelte';
+  import { flatten } from 'layercake';
   import { fade } from 'svelte/transition';
+  import { scaleLinear } from 'd3-scale';
+  import { extent } from 'd3-array';
 
 	const dispatch = createEventDispatcher();
 
   // componenents
   import RadarChart from "../RadarChart.svelte";
+  import LineAreaChart from '../LineAreaChart.svelte';
 
   // // import utils
   import { formatMonth } from '../../../utils/format-dates';
@@ -14,12 +18,16 @@
   // prop declaration
   export let hidePopup : boolean;
   export let popup : any;
-  export let dataMap : Map<string, any>;
+  export let dataMap : Map<string|number, any>;
   export let diet_threshold : number;
 	export let partisanship_scenario : string;
+  export let medium : string;
 
 
   // variable declaration
+  let xKey : string = 'date'
+  let yKey : string = 'value'
+  let zKey : number = 0
 
   // event handlers
   function onClick() {
@@ -30,18 +38,44 @@
 <div class='overlay {!hidePopup ? 'active' : ''}'>
   {#if !hidePopup}
     {@const { abbr, state } = popup.detail.node}
+    {@const data = dataMap
+      .get(abbr)
+      .get(medium)
+      .get(partisanship_scenario)
+    }
+    <!-- .get(diet_threshold) -->
+    {@const dataIn = flatten(data.map(d => [
+      { ...d, political_lean: 'R', value: d.right_pct },
+      { ...d, political_lean: 'L', value: d.left_pct },
+    ]))}
+    {@const [ start, end ] = extent(data, d => +d.date)}
     <h1 class='title' out:fade="{{ delay: 300 }}"><span>{abbr}</span> {state}</h1>
     <div class='overlay-bowtie-container'>
-      <RadarChart
+      <!-- <RadarChart
         data={ dataMap.get(abbr).get(diet_threshold).get(partisanship_scenario) }
         customClass={ 'popupOverlay' }
+      /> -->
+      <LineAreaChart 
+        data={ data }
+        groupedData={ dataIn }
+        scaleRange={scaleLinear().range([start, end])}
+        start={ 0 }
+        end={ 1 }
+        { yKey } 
+        { xKey } 
+        { zKey }
+        spanCol={12}
+        customClass={ 'popupOverlay' }
+        formatTickX={formatMonth}
+        url={''}
+        includeCaption={false}
       />
     </div>
-    <p class='caption overlay-bowtie-caption'>
+    <!-- <p class='caption overlay-bowtie-caption'>
       <span>TV & Web news diet polarization</span> Lorem ipsum dolor sit amet consectetur 
       adipisicing elit. Odit, inventore impedit deleniti magnam eum eveniet 
       dolorum porro, saepe molestiae quis et, quia libero suscipit numquam?
-    </p>
+    </p> -->
 
 
     <!-- <div class='overlay-other-container'>

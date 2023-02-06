@@ -20,8 +20,8 @@
 	import { formatMonth } from '../../utils/format-dates';
 
     // locat data
-    import statesDict from '../../data/states.json'
-    const statesMap = new Map(statesDict.map(d => [d.state, d]))
+    // import statesDict from '../../data/states.json'
+    // const statesMap = new Map(statesDict.map(d => [d.state, d]))
 
     // props
     let loaded : boolean = false;
@@ -37,7 +37,7 @@
         ['diet', 'diet'],
         ['tv', 'tv']
     ]);
-    let url : string = 'assets/data/dupe-data-by-state.csv'
+    let url : string = 'assets/data/dupe-data-by-gender.csv'
     let data : any[]
     let dataIn : Map<any,any>
     let xKey : string = 'date'
@@ -57,8 +57,6 @@
 
         const [ min, max ] = extent(data, d => +d.date);
         scaleRange.range([ min, max ])
-        // minDate = min
-        // maxDate = max
 	})
 
     const scaleDate : Function = (x) => {
@@ -73,7 +71,7 @@
     $: if (data) {
         dataIn = group(
             data, 
-            d => d.state, 
+            d => d.gender, 
             d => d.medium, 
             d => d.partisanship_scenario,
             d => d.age_group
@@ -82,12 +80,8 @@
 
     $: medium = tvChecked ? 'tv' : 'online'
     $: partisanship_scenario = scenarioChecked ? 'lenient' : 'strict'
-    $: state = 'US'
+    $: gender = 'All'
     $: age_group = 'under 18'
-    // $: start = 0;
-    // $: end = 1;
-    // $: minDate = scaleRange(start)
-    // $: maxDate = scaleRange(end)
 </script>
 
 <div class="section section-1" use:inView={{ once }} on:enter={() => loaded = true }>
@@ -128,18 +122,28 @@
                 <div class='control-label {scenarioChecked ? 'active' : ''}'>Strict</div>
             </div>
 
-            <div id='location' class='control control-menu'>
+            <div id='age-group' class='control control-menu'>
                 <div class='control-title'>Age group</div>
-                <select id="age-group" name="age-group" bind:value={age_group}>
-                    <option value='under 18' selected>Under 18</option>
-                    <option value='25-34' selected>25-34</option>
-                    <option value='35-44' selected>35-44</option>
-                    <option value='45-54' selected>45-54</option>
-                    <option value='55+' selected>55+</option>
+                <select id="age-group-menu" name="age-group" bind:value={age_group}>
+                    <option value='under 18'>Under 18</option>
+                    <option value='25-34'>25-34</option>
+                    <option value='35-44'>35-44</option>
+                    <option value='45-54'>45-54</option>
+                    <option value='55+'>55+</option>
                 </select>
             </div>
 
-            <div id='location' class='control control-menu'>
+
+            <div id='gender' class='control control-menu'>
+                <div class='control-title'>Gender</div>
+                <select id="gender-menu" name="location" bind:value={gender}>
+                    <option value='All' selected>All</option>
+                    <option value='Male'>Male</option>
+                    <option value='Female'>Female</option>
+                </select>
+            </div>
+
+            <!-- <div id='location' class='control control-menu'>
                 <div class='control-title'>Location</div>
                 <select id="location" name="location" bind:value={state}>
                     <option value='US' selected>United States</option>
@@ -147,7 +151,7 @@
                         <option value={states.abbr}>{states.state}</option>
                     {/each}
                 </select>
-            </div>
+            </div> -->
 
             {#if loaded && data}
                 <div id='period' class='control control-range'>
@@ -165,7 +169,7 @@
                 data={ data }
                 groupedData={
                     dataIn
-                        .get(state)
+                        .get(gender)
                         .get(medium)
                         .get(partisanship_scenario)
                         .get(age_group)
@@ -295,6 +299,16 @@
         }
         .control-range {
             flex-grow: 0.25;
+
+            .labels {
+                flex-grow: 1;
+                display: flex;
+                justify-content: space-between;
+
+                .label {
+                    @include fs-sm;
+                }
+            }
         }
     }
 
