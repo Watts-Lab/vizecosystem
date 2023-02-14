@@ -14,6 +14,7 @@
 
     // components
     import LineChart from "../graphs/LineChart.svelte";
+    import ControlSwitch from "../global/control-switch.svelte";
 
     // utils
     // import enforceOrder from "../../utils/order";
@@ -55,22 +56,13 @@
 
 <div class="section section-3" use:inView={{ once }} on:enter={() => loaded = true }>
     <div class='controls'>
-        <div id='medium' class='control control-switch'>
-            <div class='control-title'>
-                Medium 
-                <span 
-                    class='info' 
-                    on:mouseenter={() => { console.log(menuInfo.get('tv')) }} 
-                    on:mouseleave={() => {}}
-                >?</span>
-            </div>
-            <div class='control-label {!tvChecked ? 'active' : ''}'>TV</div>
-            <label class='switch'>
-                <input type="checkbox" id="medium" name="medium" bind:checked={tvChecked}>
-                <span class="slider"></span>
-            </label>
-            <div class='control-label {tvChecked ? 'active' : ''}'>Web</div>
-        </div>
+            <ControlSwitch 
+                id='medium' 
+                title='Medium'
+                labels={[ 'TV', 'Web' ]}
+                info='Internet or TV'
+                bind:checked={ tvChecked } 
+            />
     </div>
     <div class='chart-wrapper'>
         {#if loaded && data}
@@ -160,96 +152,6 @@
     
     .controls {
         display: flex;
-
-        .control-switch, 
-        .control-menu,
-        .control-range {
-            display: flex;
-            // align-items: center;
-            flex-wrap: wrap;
-            gap: 5px;
-        
-            .control-title {
-                width: 100%;
-                @include fs-xxs;
-                font-weight: 300;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-
-                .info {
-                background-color: $off-white;
-                display: inline-block;
-                width: 12px;
-                border-radius: 100%;
-                text-align: center;
-                @include fs-xs;
-                }
-            }
-
-            .control-label {
-                @include fs-sm;
-            }
-            .control-label.active {
-                text-decoration: underline;
-            }
-        }
-        .control-range {
-            flex-grow: 0.25;
-        }
-    }
-
-    $switch-width: 35px;
-    $switch-height: 24px;
-
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: $switch-width;
-        height: $switch-height;
-
-        input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-        }
-    }
-
-    /* The slider */
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    input:checked + .slider {
-        background-color: #2196F3;
-    }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked + .slider:before {
-        -webkit-transform: translateX(11px);
-        -ms-transform: translateX(11px);
-        transform: translateX(11px);
+        grid-column: 1 / span 3;
     }
 </style>

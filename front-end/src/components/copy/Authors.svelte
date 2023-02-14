@@ -105,6 +105,10 @@
 
 		
 		.author-container.active {
+			.author-name {
+				text-decoration: underline;
+			}
+			
 			.detail {
 				.detail-list {
 					display: block;

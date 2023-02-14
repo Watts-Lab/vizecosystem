@@ -15,6 +15,7 @@
     // import StackedAreas from '../graphs/StackedAreas.svelte';
     import LineAreaChart from "../graphs/LineAreaChart.svelte";
     import DoubleRangeSlider from "../global/double-range-slider.svelte";
+    import ControlSwitch from "../global/control-switch.svelte";
 
     // // import utils
 	import { formatMonth } from '../../utils/format-dates';
@@ -95,32 +96,21 @@
     </div>
     <div class='chart-wrapper'>
         <div class='controls'>
-            <div id='medium' class='control control-switch'>
-                <div class='control-title'>
-                    Medium 
-                    <span 
-                        class='info' 
-                        on:mouseenter={() => { console.log(menuInfo.get('tv')) }} 
-                        on:mouseleave={() => {}}
-                    >?</span>
-                </div>
-                <div class='control-label {!tvChecked ? 'active' : ''}'>TV</div>
-                <label class='switch'>
-                    <input type="checkbox" id="medium" name="medium" bind:checked={tvChecked}>
-                    <span class="slider"></span>
-                </label>
-                <div class='control-label {tvChecked ? 'active' : ''}'>Web</div>
-            </div>
-        
-            <div class='control control-switch'>
-                <div class='control-title'>Partisanship</div>
-                <div class='control-label {!scenarioChecked ? 'active' : ''}'>Lenient</div>
-                <label class='switch'>
-                <input type="checkbox" id="tv" name="tv" bind:checked={scenarioChecked}>
-                <span class="slider"></span>
-                </label>
-                <div class='control-label {scenarioChecked ? 'active' : ''}'>Strict</div>
-            </div>
+            <ControlSwitch 
+                id='medium' 
+                title='Medium'
+                labels={[ 'TV', 'Web' ]}
+                info='Internet or TV'
+                bind:checked={ tvChecked } 
+            />
+
+            <ControlSwitch 
+                id='partisanship' 
+                title='Partisanship'
+                labels={[ 'Lenient', 'Strict' ]}
+                info='Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The stric definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)'
+                bind:checked={ scenarioChecked } 
+            />
 
             <div id='age-group' class='control control-menu'>
                 <div class='control-title'>Age group</div>
@@ -133,7 +123,6 @@
                 </select>
             </div>
 
-
             <div id='gender' class='control control-menu'>
                 <div class='control-title'>Gender</div>
                 <select id="gender-menu" name="location" bind:value={gender}>
@@ -142,16 +131,6 @@
                     <option value='Female'>Female</option>
                 </select>
             </div>
-
-            <!-- <div id='location' class='control control-menu'>
-                <div class='control-title'>Location</div>
-                <select id="location" name="location" bind:value={state}>
-                    <option value='US' selected>United States</option>
-                    {#each statesDict.sort((a,b) => a.state.localeCompare(b.state)) as states, i}
-                        <option value={states.abbr}>{states.state}</option>
-                    {/each}
-                </select>
-            </div> -->
 
             {#if loaded && data}
                 <div id='period' class='control control-range'>
@@ -271,7 +250,6 @@
             display: flex;
             // align-items: center;
             flex-wrap: wrap;
-            gap: 5px;
         
             .control-title {
                 width: 100%;
@@ -296,6 +274,11 @@
             .control-label.active {
                 text-decoration: underline;
             }
+
+            select {
+                margin: 0;
+                @include fs-sm;
+            }
         }
         .control-range {
             flex-grow: 0.25;
@@ -310,60 +293,5 @@
                 }
             }
         }
-    }
-
-    $switch-width: 35px;
-    $switch-height: 24px;
-
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: $switch-width;
-        height: $switch-height;
-
-        input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-        }
-    }
-
-    /* The slider */
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    input:checked + .slider {
-        background-color: #2196F3;
-    }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked + .slider:before {
-        -webkit-transform: translateX(11px);
-        -ms-transform: translateX(11px);
-        transform: translateX(11px);
     }
 </style>

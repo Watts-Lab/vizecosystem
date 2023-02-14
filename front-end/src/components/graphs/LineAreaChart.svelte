@@ -2,7 +2,7 @@
 	// node_modules
 	import { Html, LayerCake, Svg } from 'layercake';
 	import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale'
-	import { group, groups } from 'd3-array'
+	import { groups } from 'd3-array'
 
 	// types
 	import type Row from '../../types/TimeSeriesRow';
@@ -13,11 +13,9 @@
 	import AxisY from './atoms/AxisY.svelte';
 	import SharedTooltip from './tooltips/SharedTooltip.svelte';
 	import Caption from './atoms/Caption.svelte';
-	import Markers from './atoms/Markers.svelte';
 
 	// import utils
 	import { politicsMap as colorMap } from '../../utils/colors';
-	import labelMap from '../../utils/labels';
 
 	// props declaration
 	export let margins : Object = { top: 20, right: 10, bottom: 20, left: 45 }

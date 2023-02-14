@@ -8,9 +8,9 @@
 
 	const dispatch = createEventDispatcher();
 
-  // componenents
-  import RadarChart from "../RadarChart.svelte";
+  // components
   import LineAreaChart from '../LineAreaChart.svelte';
+  import Table from '../Table.svelte';
 
   // // import utils
   import { formatMonth } from '../../../utils/format-dates';
@@ -19,10 +19,10 @@
   export let hidePopup : boolean;
   export let popup : any;
   export let dataMap : Map<string|number, any>;
+  export let tableMap : Map<string|number, any>;
   export let diet_threshold : number;
 	export let partisanship_scenario : string;
   export let medium : string;
-
 
   // variable declaration
   let xKey : string = 'date'
@@ -38,25 +38,21 @@
 <div class='overlay {!hidePopup ? 'active' : ''}'>
   {#if !hidePopup}
     {@const { abbr, state } = popup.detail.node}
-    {@const data = dataMap
+    {@const dataChart = dataMap
       .get(abbr)
       .get(medium)
       .get(partisanship_scenario)
     }
     <!-- .get(diet_threshold) -->
-    {@const dataIn = flatten(data.map(d => [
+    {@const dataIn = flatten(dataChart.map(d => [
       { ...d, political_lean: 'R', value: d.right_pct },
       { ...d, political_lean: 'L', value: d.left_pct },
     ]))}
-    {@const [ start, end ] = extent(data, d => +d.date)}
+    {@const [ start, end ] = extent(dataChart, d => +d.date)}
     <h1 class='title' out:fade="{{ delay: 300 }}"><span>{abbr}</span> {state}</h1>
-    <div class='overlay-bowtie-container'>
-      <!-- <RadarChart
-        data={ dataMap.get(abbr).get(diet_threshold).get(partisanship_scenario) }
-        customClass={ 'popupOverlay' }
-      /> -->
+    <div class='overlay-col1-container'>
       <LineAreaChart 
-        data={ data }
+        data={ dataChart }
         groupedData={ dataIn }
         scaleRange={scaleLinear().range([start, end])}
         start={ 0 }
@@ -65,37 +61,35 @@
         { xKey } 
         { zKey }
         spanCol={12}
-        customClass={ 'popupOverlay' }
+        customClass={ 'popup-overlay' }
         formatTickX={formatMonth}
         url={''}
         includeCaption={false}
       />
     </div>
-    <!-- <p class='caption overlay-bowtie-caption'>
+    <p class='caption overlay-col1-caption'>
       <span>TV & Web news diet polarization</span> Lorem ipsum dolor sit amet consectetur 
       adipisicing elit. Odit, inventore impedit deleniti magnam eum eveniet 
       dolorum porro, saepe molestiae quis et, quia libero suscipit numquam?
-    </p> -->
+    </p>
 
-
-    <!-- <div class='overlay-other-container'>
-      <div class='placeholder'></div>
+    {@const tableChart = tableMap
+      .get(abbr)
+      .get(medium)
+      .get(diet_threshold)
+      .get(partisanship_scenario)
+    }
+    <div class='overlay-col2-container'>
+      <Table 
+        data={ tableChart }
+      />
     </div>
 
-    <p class='caption overlay-other-caption'>
-      <span>Lorem, ipsum dolor.</span> Lorem ipsum dolor, sit amet consectetur 
-      adipisicing elit. Culpa doloribus autem provident, ea voluptatem aliquid 
-      temporibus, obcaecati totam aliquam ipsum ab cupiditate necessitatibus 
-      incidunt repellendus, itaque maiores rerum rem quidem sequi. Debitis, 
-      maxime! Est, beatae asperiores quasi minima quis sunt repellat. Quaerat 
-      nam consequuntur dicta est eos minima doloremque, esse sint sed praesentium 
-      expedita reiciendis blanditiis recusandae? Recusandae ipsum maxime libero 
-      voluptatibus. Labore, architecto possimus cum eaque quidem placeat ab. 
-      Temporibus error accusantium at? Deleniti illo a, quia odit doloremque 
-      voluptas animi ea quasi suscipit iste distinctio, consectetur consequatur 
-      maiores tempore deserunt excepturi voluptatem repellendus vitae? Sequi ea 
-      illum sunt.
-    </p> -->
+    <p class='caption overlay-col2-caption'>
+      <span>Most watched.</span> Lorem ipsum dolor sit amet consectetur 
+      adipisicing elit. Odit, inventore impedit deleniti magnam eum eveniet 
+      dolorum porro, saepe molestiae quis et, quia libero suscipit numquam?
+    </p>
   {/if}
   <div class='close-button' on:click={() => onClick() }></div>
 </div>
@@ -113,9 +107,10 @@
     width: 100%;
     height: 100%;
     background-color: $off-white;
-    padding: 50px;
+    padding: 30px 50px;
     display: grid;
     column-gap: 50px;
+    row-gap: 8px;
     grid-template-rows: auto 1fr 0.3fr;
     grid-template-columns: 1fr 1fr;
     transition: left 0.3s ease-out;
@@ -125,21 +120,21 @@
     left: 0;
   }
 
-  .overlay-bowtie-container {
+  .overlay-col1-container {
     grid-column: 1 / span 1;
     grid-row: 2 / span 1;
   }
 
-  .overlay-bowtie-caption {
+  .overlay-col1-caption {
     grid-column: 1 / span 1;
     grid-row: 3 / span 1;
   }
 
-  .overlay-other-container {
+  .overlay-col2-container {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
   }
-  .overlay-other-caption {
+  .overlay-col2-caption {
     grid-column: 2 / span 1;
     grid-row: 3 / span 1;
   }

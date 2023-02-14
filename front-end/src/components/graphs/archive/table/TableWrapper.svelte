@@ -2,12 +2,12 @@
   //Row component is optional and only serves to render odd/even row, you can use <tr> instead.
   //Sort component is optional
   import Table, { Pagination, Row, Search, Sort } from "./Table.svelte";
-  import { sortNumber, sortString } from "../../utils/sorting";
+  import { sortNumber, sortString } from "../../../../utils/sorting";
 
   // utils
-  import { channelMap as channelLabelMap } from '../../utils/labels'
-  import clusterColorMap from '../../utils/colors'
-  import { formatThousandsComma } from '../../utils/format-numbers'
+  import { channelMap as channelLabelMap } from '../../../../utils/labels'
+  import clusterColorMap from '../../../../utils/colors'
+  import { formatThousandsComma } from '../../../../utils/format-numbers'
 
   export let data = [];
   let page = 0; //first page

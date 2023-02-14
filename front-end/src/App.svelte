@@ -26,8 +26,8 @@
 <Header />
 <Main title={ data.title } { authors } standfirst={ data.standfirst } />
 <Section1 once={ true } copy={data['section-one'].copy} refs={data['section-one'].references} captions={data['section-one'].captions} />
-<!-- <Section2 once={ true } copy={data['section-two'].copy} refs={data['section-two'].references} captions={data['section-two'].captions} /> -->
-<!-- <Section3 once={ true } copy={data['section-three'].copy} refs={data['section-three'].references} captions={data['section-three'].captions} /> -->
+<Section2 once={ true } copy={data['section-two'].copy} refs={data['section-two'].references} captions={data['section-two'].captions} />
+<Section3 once={ true } copy={data['section-three'].copy} refs={data['section-three'].references} captions={data['section-three'].captions} />
 <!-- <Section4 once={ true } copy={data['section-four'].copy} refs={data['section-four'].references} captions={data['section-four'].captions} />
 <Section5 once={ true } copy={data['section-five'].copy} refs={data['section-five'].references} captions={data['section-five'].captions} />
 <Section6 once={ true } copy={data['section-six'].copy} refs={data['section-six'].references} captions={data['section-six'].captions} />
@@ -74,8 +74,8 @@
 		height: 800px;
 	}
 	
-	.chart-overlay {
-		height: 100%;
+	.popup-overlay {
+		height: 380px;
 	}
 
 	.caption {

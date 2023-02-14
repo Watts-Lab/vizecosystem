@@ -10,8 +10,8 @@ const colorMap : Map<string, string> = new Map([
 ])
 
 const politicsMap : Map<string, string> = new Map([
-    ['L', 'blue'],
-    ['R', 'red'],
+    ['L', '#011f5b'],
+    ['R', '#990000'],
 ])
 
 const mediumMap : Map<string, {}> = new Map([

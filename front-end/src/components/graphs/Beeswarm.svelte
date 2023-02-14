@@ -13,6 +13,7 @@
 	import ForceDiverging from './ForceDiverging.svelte';
 	import ForceLinear from './ForceLinear.svelte';
 	import PopupOverlay from './tooltips/PopupOverlay.svelte';
+	import ControlSwitch from '../global/control-switch.svelte';
 	// import HowTo from './archive/HowTo.svelte'
 
 	// // utils
@@ -27,17 +28,11 @@
 	export let states : any[];
 	export let dataMap : Map<string|number, any>
 	export let fullDataMap : Map<string|number, any>
+	export let tableMap : Map<string|number, any>
 	export let activeChart : ChartConfig;
 
 	// variable declaration
-	const menuInfo : Map<string, string> = new Map([
-    // ['political_lean', 'political_lean'],
-    ['partisanship', 'partisanship'],
-    ['diet', 'diet'],
-		['tv', 'tv']
-  ]);
 	let colorInterpolator;
-	// let politicalChecked : boolean = true;
 	export let politicalChecked : boolean;
 	let dietChecked : boolean = true;
   let scenarioChecked : boolean = true;
@@ -134,57 +129,29 @@
 
 <div class='chart-info-wrapper main-column'>
 	<div class='controls'>
-				
-		<div id='medium' class='control control-switch'>
-			<div class='control-title'>
-				Medium 
-				<span 
-					class='info' 
-					on:mouseenter={() => { console.log(menuInfo.get('tv')) }} 
-					on:mouseleave={() => {}}
-				>?</span>
-			</div>
-			<div class='control-label {!tvChecked ? 'active' : ''}'>TV</div>
-			<label class='switch'>
-				<input type="checkbox" id="medium" name="medium" bind:checked={tvChecked}>
-				<span class="slider"></span>
-			</label>
-			<div class='control-label {tvChecked ? 'active' : ''}'>Web</div>
-		</div>
+		<ControlSwitch 
+			id='medium' 
+			title='Medium'
+			labels={[ 'TV', 'Web' ]}
+			info='Internet or TV'
+			bind:checked={ tvChecked } 
+		/>
 
-		<div id='partisanship' class='control control-switch'>
-			<div class='control-title'>
-				Partisanship 
-				<span 
-					class='info' 
-					on:mouseenter={() => { console.log(menuInfo.get('partisanship')) }} 
-					on:mouseleave={() => {}}
-				>?</span>
-			</div>
-			<div class='control-label {!scenarioChecked ? 'active' : ''}'>Lenient</div>
-			<label class='switch'>
-				<input type="checkbox" id="partisanship" name="partisanship" bind:checked={scenarioChecked}>
-				<span class="slider"></span>
-			</label>
-			<div class='control-label {scenarioChecked ? 'active' : ''}'>Strict</div>
-		</div>
+		<ControlSwitch 
+			id='partisanship' 
+			title='Partisanship'
+			labels={[ 'Lenient', 'Strict' ]}
+			info='Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The stric definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)'
+			bind:checked={ scenarioChecked } 
+		/>
 
-		<div id='diet' class='control control-switch'>
-			<div class='control-title'>
-				Diet % 
-				<span 
-					class='info' 
-					on:mouseenter={() => { console.log(menuInfo.get('diet')) }} 
-					on:mouseleave={() => {}}
-				>?</span>
-			</div>
-			<div class='control-label {!dietChecked ? 'active' : ''}'>50%</div>
-			<label class='switch'>
-				<input type="checkbox" id="diet" name="diet" bind:checked={dietChecked}>
-				<span class="slider"></span>
-			</label>
-			<div class='control-label {dietChecked ? 'active' : ''}'>75%</div>
-		</div>
+		<ControlSwitch 
+			id='diet' 
+			title='Diet %'
+			labels={[ '50%', '75%' ]}
+			info='Percent of intra-individual news diets that must be partisan for partisan segregation'
+			bind:checked={ dietChecked } 
+		/>
 
 		<div id='period' class='control control-menu'>
 			<div class='control-title'>Period</div>
@@ -198,6 +165,7 @@
 			</select>
 		</div>
 	</div>
+
 	<div class='legend'>
 		<div class='legend-item legend-item-color'>
 			<h5>Partisan lean</h5>
@@ -278,6 +246,7 @@
 				{ medium }
 				popup={ popup }
 				dataMap={ fullDataMap }
+				tableMap={ tableMap.get(period) }
 				on:closePopup={ handleClosePopup } 
 			/>
 		</Html>
@@ -306,8 +275,8 @@
 	.chart-info-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    margin-top: 50px;
-		// margin-bottom: 50px;
+    margin-top: 10px;
+		margin-bottom: 15px;
   }
 
 	.legend {
@@ -377,23 +346,10 @@
       "one two empty"
       "three four four";
 
-    #medium {
-      grid-area: one;
-    }
-
-    #partisanship {
-      grid-area: two;
-    }
-
-    #diet {
-      grid-area: three;
-    }
-
     #period {
       grid-area: four;
     }
-
-    .control-switch, 
+ 
     .control-menu {
       display: flex;
       // align-items: center;
@@ -426,67 +382,11 @@
     }
 
 		.control-menu {
-			#period-menu {
+			select {
 				margin: 0;
 				@include fs-sm;
 			}
 		}
-  }
-
-  /* The switch */
-  $switch-width: 35px;
-  $switch-height: 24px;
-
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: $switch-width;
-    height: $switch-height;
-
-    input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-  }
-
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  input:checked + .slider {
-    background-color: #555;
-  }
-
-  input:focus + .slider {
-    box-shadow: 0 0 1px #555;
-  }
-
-  input:checked + .slider:before {
-    -webkit-transform: translateX(11px);
-    -ms-transform: translateX(11px);
-    transform: translateX(11px);
   }
 </style>
 
