@@ -77,7 +77,7 @@
 			type: "diverging",
 			rScale: scaleSqrt,
 			rDomain: [0, 0.5],
-			rRange: [5, 120],
+			rRange: [5, 100],
 			zScale: scaleThreshold,
 			zDomain: [-0.1, -0.025, -0.005, 0.005, 0.025, 0.1],
 			colorInterpolator: scaleDiverging,

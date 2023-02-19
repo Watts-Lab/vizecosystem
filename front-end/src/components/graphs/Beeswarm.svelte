@@ -4,7 +4,6 @@
 	import { LayerCake, Svg, Html } from 'layercake';
 	import { piecewise, interpolateRgb } from 'd3-interpolate';
 	import { timeFormat } from 'd3-time-format';
-	import {extent} from 'd3-array'
 
 	// types
 	import type ChartConfig from '../../types/ChartConfig';
@@ -81,15 +80,20 @@
 		popup = null;
 	}
 
-	// reactive variables
-	$: dates = [ ...new Set(data.map(d => +d.date)) ];
-	$: period = dates[0]
+	const dates = [ ...new Set(data.map(d => +d.date)) ]
+	let initPeriod = dates.slice(-1)[0]
+	let period = initPeriod
 
+	// $: console.log(period)
+	// // reactive variables
+	// // let period = dates[0]
+	// $: period = dates[0]
+	
 	$: dataIn = states
 		.map(d => {
 			const { abbr } = statesMap.get(d.state)
 			const data = dataMap
-				.get(period)
+				.get(period || initPeriod)
 				.get(abbr)
 				.get(medium)
 				.get(diet_threshold)
@@ -246,7 +250,7 @@
 				{ medium }
 				popup={ popup }
 				dataMap={ fullDataMap }
-				tableMap={ tableMap.get(period) }
+				tableMap={ tableMap.get(period || initPeriod) }
 				on:closePopup={ handleClosePopup } 
 			/>
 		</Html>
