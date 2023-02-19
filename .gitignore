@@ -10,3 +10,6 @@ front-end/node_modules/
 
 *.svg
 *.ai
+
+processed_data/
+raw_data/

@@ -4,6 +4,7 @@
 	import { LayerCake, Svg, Html } from 'layercake';
 	import { piecewise, interpolateRgb } from 'd3-interpolate';
 	import { timeFormat } from 'd3-time-format';
+	import {extent} from 'd3-array'
 
 	// types
 	import type ChartConfig from '../../types/ChartConfig';
@@ -40,7 +41,7 @@
 	$: political_lean = politicalChecked ? 'R' : 'L'
 	$: medium = tvChecked ? 'tv' : 'online';
 	$: diet_threshold = dietChecked ? 75 : 50;
-  $: partisanship_scenario = scenarioChecked ? 'lenient' : 'strict';
+  $: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent';
 
 	// tooltip togglers
 	$: tooltip = null;
@@ -123,8 +124,6 @@
 	$: zScale = activeChart.zScale()
 		.domain(activeChart.zDomain)
 		.range(colorPalette)
-
-	
 </script>
 
 <div class='chart-info-wrapper main-column'>
@@ -140,7 +139,7 @@
 		<ControlSwitch 
 			id='partisanship' 
 			title='Partisanship'
-			labels={[ 'Lenient', 'Strict' ]}
+			labels={[ 'Lenient', 'Stringent' ]}
 			info='Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The stric definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)'
 			bind:checked={ scenarioChecked } 
 		/>
@@ -228,6 +227,7 @@
 						{ medium }
 						{ diet_threshold }
 						{ partisanship_scenario }
+						{ political_lean }
 						collideStrength={ 0.1 }
 						manyBodyStrength={ -0.5 }
 						on:mouseenter={ handleMouseEnter }

@@ -33,7 +33,7 @@
 	let dataMap : Map<string, any>
   let fullDataMap : Map<string, any>
 	let tableMap : Map<string|number, any>
-	const urlChart : string  = 'assets/data/dupe-data-by-state-grid-map.csv'
+	const urlChart : string  = 'assets/data/EchoCh-TV-by_state.csv'
 	const urlTable : string  = 'assets/data/dupe-data-by-state-PROGRAMS.csv'
 	
 	onMount(async () => {
@@ -76,10 +76,10 @@
 		[0, {
 			type: "diverging",
 			rScale: scaleSqrt,
-			rDomain: [0, 20],
-			rRange: [3, 150],
+			rDomain: [0, 0.5],
+			rRange: [5, 120],
 			zScale: scaleThreshold,
-			zDomain: [-0.75, -0.5, -0.1, 0.1, 0.5, 0.75],
+			zDomain: [-0.1, -0.025, -0.005, 0.005, 0.025, 0.1],
 			colorInterpolator: scaleDiverging,
 			colorInterpolatorDomain: [-1, 0, 1],
 			colorInterpolatorScheme: ["#011f5b", "gainsboro", "#990000"],
@@ -88,10 +88,10 @@
 		[1, {
 			type: "linear",
 			rScale: scaleSqrt,
-			rDomain: [0, 20],
-			rRange: [3, 150],
+			rDomain: [0, 0.5],
+			rRange: [5, 150],
 			zScale: scaleThreshold,
-			zDomain: [0, 0.25, 0.5, 1],
+			zDomain: [0, 0.01, 0.025, 0.05],
 			colorInterpolator: scaleLinear,
 			colorInterpolatorDomain: [0, 1],
 			colorInterpolatorScheme: "gainsboro",
@@ -125,7 +125,7 @@
 					<ControlSwitch 
 						id='medium' 
 						title='Political lean'
-						labels={[ 'R', 'L' ]}
+						labels={[ 'L', 'R' ]}
 						info='Right or left leaning'
 						colors={[ "#AA3737", "#384E83" ]}
 						bind:checked={ politicalChecked } 

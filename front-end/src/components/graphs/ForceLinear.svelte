@@ -13,6 +13,7 @@
     export let medium;
     export let diet_threshold;
     export let partisanship_scenario;
+    export let political_lean;
 
     // instantiate event dispatcher
     const dispatch = createEventDispatcher();
@@ -47,7 +48,7 @@
       return ({ ...d, 
         x, 
         y,
-        r: $rScale(d.data.left_pct)
+        r: $rScale(d.data[`${lean}_pct`])
       })
     });
     
@@ -73,7 +74,7 @@
         return ({ ...d, 
           x, 
           y,
-          r: $rScale(d.data.left_pct) 
+          r: $rScale(d.data[`${lean}_pct`])
         })
       });
       restart()
@@ -81,9 +82,7 @@
 
     $: labelActive = false;
 
-    // $: {
-    //   if (simulationStoppedsimulation.alpha())
-    // }
+    $: lean = political_lean === 'R' ? 'right' : 'left';
 
     function handleMouseEnter(e, d) {
       dispatch('mouseenter', { target: e.target, node: d })
@@ -108,7 +107,7 @@
 >
 
   {#each nodes as node}
-    {@const fill = $zScale(node.data.left_pct)}
+    {@const fill = $zScale(node.data.right_pct)}
     <g class='node-group' transform={`translate(${node.x}, ${node.y})`}>
       <circle
         class='node'
