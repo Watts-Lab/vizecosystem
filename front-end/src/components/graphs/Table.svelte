@@ -4,6 +4,8 @@
 
   // prop declaration
   export let data : any[];
+
+  console.log(data)
 </script>
 
 <div class='table-container'>

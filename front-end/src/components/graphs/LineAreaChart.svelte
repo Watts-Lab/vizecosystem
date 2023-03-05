@@ -46,57 +46,58 @@
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
 
-	// console.log(groupedData)
 </script>
 
 <div class="chart line-chart {customClass}">
-	<LayerCake
-		padding={ margins }
-		flatData = { data.filter(d => +d.date >= minDate && +d.date <= maxDate) }
-		data = { 
-			groups(
-				groupedData.filter(d => +d.date >= minDate && +d.date <= maxDate), 
-				d => d.political_lean, 
-				d => d.diet_threshold
-			) 
-		}
-		x={ xKey }
-		xScale={ xKey === 'date' ? scaleTime() : scaleLinear() }
-		y={ yKey }
-		{ yDomain }
-		yNice={ true }
-		z={ zKey }
-		zScale={ scaleOrdinal() }
-		zDomain={ seriesNames }
-		zRange={ seriesColors }
-	>
-		<Svg>
-			{#if includeAxis}
-				<AxisX
-					gridlines={false}
-					ticks={xTicks}
-					formatTick={formatTickX}
-					snapTicks={false}
-					tickMarks={true}
+	{#if data && data.length}
+		<LayerCake
+			padding={ margins }
+			flatData = { data.filter(d => +d.date >= minDate && +d.date <= maxDate) }
+			data = { 
+				groups(
+					groupedData.filter(d => +d.date >= minDate && +d.date <= maxDate), 
+					d => d.political_lean, 
+					d => d.diet_threshold
+				) 
+			}
+			x={ xKey }
+			xScale={ xKey === 'date' ? scaleTime() : scaleLinear() }
+			y={ yKey }
+			{ yDomain }
+			yNice={ true }
+			z={ zKey }
+			zScale={ scaleOrdinal() }
+			zDomain={ seriesNames }
+			zRange={ seriesColors }
+		>
+			<Svg>
+				{#if includeAxis}
+					<AxisX
+						gridlines={false}
+						ticks={xTicks}
+						formatTick={formatTickX}
+						snapTicks={false}
+						tickMarks={true}
+						/>
+					<AxisY
+						ticks={4}
+						formatTick={formatTickY}
 					/>
-				<AxisY
-					ticks={4}
-					formatTick={formatTickY}
-				/>
-			{/if}
-			<!-- <Markers data={ markers } /> -->
-			<Multiline activeChart={'test'}/>
-		</Svg>
+				{/if}
+				<!-- <Markers data={ markers } /> -->
+				<Multiline activeChart={'test'}/>
+			</Svg>
 
-		<Html>
-			<!-- <SharedTooltip
-				dataset={data}
-				formatTitle={formatTickX}
-				formatKey={(d) => labelMap.get(d)}
-				formatValue={formatTickY}
-			/> -->
-		</Html>
-	</LayerCake>
+			<Html>
+				<!-- <SharedTooltip
+					dataset={data}
+					formatTitle={formatTickX}
+					formatKey={(d) => labelMap.get(d)}
+					formatValue={formatTickY}
+				/> -->
+			</Html>
+		</LayerCake>
+	{/if}
 </div>
 {#if includeCaption}
 	<Caption { caption } { url } type={spanCol === 12 ? 'split-cols' : 'single-cols'} />

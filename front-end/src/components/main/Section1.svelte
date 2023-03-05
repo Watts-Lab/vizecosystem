@@ -38,7 +38,7 @@
         ['diet', 'diet'],
         ['tv', 'tv']
     ]);
-    let url : string = 'assets/data/dupe-data-by-gender.csv'
+    let url : string = 'assets/data/EchoCh-TV-nationwide-by_gender-or-age_group.csv'
     let data : any[]
     let dataIn : Map<any,any>
     let xKey : string = 'date'
@@ -47,16 +47,18 @@
     let tvChecked : boolean = true;
     let scenarioChecked : boolean = true;
     let medium : string = tvChecked ? 'tv' : 'online'
-    let partisanship_scenario : string = scenarioChecked ? 'lenient' : 'strict'
+    let partisanship_scenario : string = scenarioChecked ? 'lenient' : 'stringent'
     const scaleRange : Function = scaleLinear();
     let start = 0
     let end = 1
+    let gender = 'All'
+    let age_group = 'All'
     
     onMount(async () => {
         const res = await csv(url, autoType)
         data = res.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
 
-        const [ min, max ] = extent(data, d => +d.date);
+        const [ min, max ] = extent(data, d => +d.date); 
         scaleRange.range([ min, max ])
 	})
 
@@ -67,6 +69,13 @@
         date.setMilliseconds(0)
 
         return +date
+    }
+
+    function resetAge() {
+        age_group = 'All'
+    }
+    function resetGender() {
+        gender = 'All'
     }
 
     $: if (data) {
@@ -80,9 +89,12 @@
     }
 
     $: medium = tvChecked ? 'tv' : 'online'
-    $: partisanship_scenario = scenarioChecked ? 'lenient' : 'strict'
+    $: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent'
     $: gender = 'All'
-    $: age_group = 'under 18'
+    $: age_group = 'All'
+
+    $: if (age_group !== 'All') resetGender()
+    $: if (gender !== 'All') resetAge()
 </script>
 
 <div class="section section-1" use:inView={{ once }} on:enter={() => loaded = true }>
@@ -114,23 +126,26 @@
 
             <div id='age-group' class='control control-menu'>
                 <div class='control-title'>Age group</div>
-                <select id="age-group-menu" name="age-group" bind:value={age_group}>
-                    <option value='under 18'>Under 18</option>
+                <select id="age-group-menu" name="age-group" bind:value={age_group} on:change={ () => console.log(age_group) }>
+                    <option value='All'>All</option>
+                    <option value='18-24'>18-24</option>
                     <option value='25-34'>25-34</option>
                     <option value='35-44'>35-44</option>
                     <option value='45-54'>45-54</option>
                     <option value='55+'>55+</option>
                 </select>
             </div>
+            <!-- on:change={() => { if (age_group !== 'All') gender = 'All' }} -->
 
             <div id='gender' class='control control-menu'>
                 <div class='control-title'>Gender</div>
-                <select id="gender-menu" name="location" bind:value={gender}>
+                <select id="gender-menu" name="location" bind:value={gender} on:change={ () => console.log(gender) }>
                     <option value='All' selected>All</option>
                     <option value='Male'>Male</option>
                     <option value='Female'>Female</option>
                 </select>
             </div>
+            <!-- on:change={() => { if (gender !== 'All') age_group = 'All' }} -->
 
             {#if loaded && data}
                 <div id='period' class='control control-range'>

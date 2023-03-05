@@ -32,18 +32,17 @@
 	let table : any[];
 	let dataMap : Map<string, any>
   let fullDataMap : Map<string, any>
-	let tableMap : Map<string|number, any>
 	const urlChart : string  = 'assets/data/EchoCh-TV-by_state.csv'
-	const urlTable : string  = 'assets/data/dupe-data-by-state-PROGRAMS.csv'
 	
 	onMount(async () => {
 		// load data for map + line chart
 		const resChart = await csv(urlChart, autoType)
-		data = resChart.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
+		data = resChart
+		// .map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
     // parse data for 
 		dataMap = group(
 			data,
-			d => +d.date,
+			d => d.period,
 			d => d.state,
 			d => d.medium, 
 			d => d.diet_threshold,
@@ -54,20 +53,6 @@
 			data,
 			d => d.state,
 			d => d.medium, 
-			d => d.partisanship_scenario
-			
-		)
-
-		// load data for tables
-		// load data for map + line chart
-		const resTable = await csv(urlTable, autoType)
-		table = resTable.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
-		tableMap = group(
-			table,
-			d => +d.date,
-			d => d.state,
-			d => d.medium,
-			d => d.diet_threshold,
 			d => d.partisanship_scenario
 		)
 	})
@@ -136,13 +121,12 @@
 
 
 	
-	{#if (data && data.length) && (table && table.length)}
+	{#if (data && data.length)}
 		<Beeswarm
 			{ data }
 			{ states }
 			{ dataMap }
       { fullDataMap }
-			{ tableMap }
 			{ activeChart }
 			{ politicalChecked }
 		/>

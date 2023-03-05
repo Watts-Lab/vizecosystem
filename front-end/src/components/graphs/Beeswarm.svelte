@@ -28,7 +28,6 @@
 	export let states : any[];
 	export let dataMap : Map<string|number, any>
 	export let fullDataMap : Map<string|number, any>
-	export let tableMap : Map<string|number, any>
 	export let activeChart : ChartConfig;
 
 	// variable declaration
@@ -80,14 +79,9 @@
 		popup = null;
 	}
 
-	const dates = [ ...new Set(data.map(d => +d.date)) ]
-	let initPeriod = dates.slice(-1)[0]
+	const dates = [ ...new Set(data.map(d => d.period)) ]
+	let initPeriod = 'Last month'
 	let period = initPeriod
-
-	// $: console.log(period)
-	// // reactive variables
-	// // let period = dates[0]
-	// $: period = dates[0]
 	
 	$: dataIn = states
 		.map(d => {
@@ -160,9 +154,8 @@
 			<div class='control-title'>Period</div>
 			<select id="period-menu" name="period" bind:value={period}>
 				{#each dates as date, i}
-					{@const dateObj = new Date(date)}
 					<option value={date}>
-						{timeFormat('%Y-%b')(dateObj)}
+						{date}
 					</option>
 				{/each}
 			</select>
@@ -248,9 +241,8 @@
 				{ diet_threshold }
 				{ partisanship_scenario }
 				{ medium }
+				period={ period || initPeriod }
 				popup={ popup }
-				dataMap={ fullDataMap }
-				tableMap={ tableMap.get(period || initPeriod) }
 				on:closePopup={ handleClosePopup } 
 			/>
 		</Html>
@@ -264,7 +256,7 @@
 		position: relative;
 
 		@media (min-width: $bp-3) {
-			height: 600px
+			height: 800px;
 		}
 	}
 

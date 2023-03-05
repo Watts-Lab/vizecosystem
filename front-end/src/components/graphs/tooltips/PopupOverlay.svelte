@@ -1,10 +1,12 @@
 <script lang='ts'>
   // node_modules
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
+	import { csv } from "d3-fetch";
+  import { autoType } from "d3-dsv";
   import { flatten } from 'layercake';
   import { fade } from 'svelte/transition';
   import { scaleLinear } from 'd3-scale';
-  import { extent } from 'd3-array';
+  import { extent, group, max } from 'd3-array';
 
 	const dispatch = createEventDispatcher();
 
@@ -18,16 +20,44 @@
   // prop declaration
   export let hidePopup : boolean;
   export let popup : any;
-  export let dataMap : Map<string|number, any>;
-  export let tableMap : Map<string|number, any>;
   export let diet_threshold : number;
 	export let partisanship_scenario : string;
   export let medium : string;
+  export let period : string;
 
   // variable declaration
   let xKey : string = 'date'
   let yKey : string = 'value'
   let zKey : number = 0
+  let data : any[];
+  let dataMap : Map<string|number, any>;
+  let table : any[];
+  let tableMap : Map<string|number, any>
+  const urlChart : string  = 'assets/data/EchoCh-TV-by_state_full-timeseries.csv'
+  const urlTable : string  = 'assets/data/dupe-data-by-state-PROGRAMS.csv'
+
+  onMount(async () => {
+    const resChart = await csv(urlChart, autoType)
+		data = resChart.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
+    // parse data for 
+		dataMap = group(
+			data,
+			d => d.state,
+			d => d.medium,
+		)
+
+    // load data for tables
+		// load data for map + line chart
+		const table = await csv(urlTable, autoType)
+		tableMap = group(
+			table,
+			d => d.period,
+			d => d.state,
+			d => d.medium,
+			d => d.diet_threshold,
+			d => d.partisanship_scenario
+		)
+  })
 
   // event handlers
   function onClick() {
@@ -41,9 +71,8 @@
     {@const dataChart = dataMap
       .get(abbr)
       .get(medium)
-      .get(partisanship_scenario)
+      .map(d => ({ ...d, value: Math.max(d.right_pct, d.left_pct)}))
     }
-    <!-- .get(diet_threshold) -->
     {@const dataIn = flatten(dataChart.map(d => [
       { ...d, political_lean: 'R', value: d.right_pct },
       { ...d, political_lean: 'L', value: d.left_pct },
@@ -65,7 +94,7 @@
         formatTickX={formatMonth}
         url={''}
         includeCaption={false}
-      />
+      /> 
     </div>
     <p class='caption overlay-col1-caption'>
       <span>TV & Web news diet polarization</span> Lorem ipsum dolor sit amet consectetur 
@@ -74,6 +103,7 @@
     </p>
 
     {@const tableChart = tableMap
+      .get(period)
       .get(abbr)
       .get(medium)
       .get(diet_threshold)

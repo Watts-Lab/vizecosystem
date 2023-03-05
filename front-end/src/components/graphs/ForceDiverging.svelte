@@ -36,9 +36,9 @@
         'collide', 
         forceCollide(d => d.r + rRatio)
           .strength(collideStrength)
-          .iterations(2)
+          .iterations(5)
       )
-      .force('charge', forceManyBody().strength(manyBodyStrength));
+      .force('charge', forceManyBody().strength(manyBodyStrength))
 
     function parseNodes(arr) {
       return arr.map((d, i) => {
@@ -161,7 +161,6 @@
         dx={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
         dy={ -(node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
       >
-      <!-- fill={scaleTypeColor(fill)} -->
         {node.abbr}
       </text>
     </g>

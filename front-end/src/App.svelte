@@ -73,10 +73,6 @@
 	.chart-large {
 		height: 800px;
 	}
-	
-	.popup-overlay {
-		height: 380px;
-	}
 
 	.caption {
 		@include fs-sm;

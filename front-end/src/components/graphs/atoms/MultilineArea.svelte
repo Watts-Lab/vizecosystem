@@ -8,7 +8,6 @@
   export let activeChart : string;
   
   // variable declaration
-  // $: animated = false
 
   $: path = line()
     .x(d => $xGet(d))
@@ -19,6 +18,7 @@
     .x(d => $xGet(d))
     .y0(d => $yGet(d))
     .y1(d => $yScale(d.value_2))
+    .curve(curveBasis)
 
 
   function drawPath(node, { from, to }, { delay, duration }) {
