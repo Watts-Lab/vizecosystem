@@ -1,6 +1,6 @@
 <script lang="ts">
   // import utils
-  import { politicsMap } from "../../utils/labels";
+  // import { politicsMap } from "../../utils/labels";
 
   // prop declaration
   export let data : any[];
@@ -9,18 +9,18 @@
 </script>
 
 <div class='table-container'>
-  {#each data as d, i}
-    <div class={`table-wrapper table-wrapper-${d.political_lean}`}>
-      <div class={`row-head row-head-${d.political_lean}`}>
-        <span>{d.political_lean}</span> {politicsMap.get(d.political_lean).toLowerCase()}-leaning
-      </div>
-      <div class={`row-body ${d.political_lean}`}>
-        <div class={`row-value row-value-program`}>{d.program}</div>
-        <div class={`row-value row-value-network`}>{d.network}</div>
-        <div class={`row-value row-value-audience`}>{d.value}%</div>
-      </div>
+  <div class={`table-wrapper`}>
+    <div class={`row-head`}>
+      <div class={`row-header row-header-program`}>Program</div>
+      <div class={`row-header row-header-audience`}>Audience</div>
     </div>
-  {/each}
+    {#each data as row, i}
+      <div class={`row-body`}>
+        <div class={`row-value row-value-program`}>{row.program}</div>
+        <div class={`row-value row-value-audience`}>{row.value}</div>
+      </div>
+    {/each}
+  </div>
 </div>
 
 <style lang="scss">
@@ -36,30 +36,48 @@
       }
     }
 
-    .row-head-L {
-      background-color: transparentize($css-lab-dark-blue, 0.5);
-      color: $white;
+    .row-head {
+      display: flex;
+
+      .row-header-program {
+        width: 50%;
+      }
+
+      .row-header-audience {
+        flex: 1 0 auto;
+        text-align: end;
+      }
     }
 
-    .row-head-R {
-      background-color: transparentize($css-lab-dark-red, 0.5);
-      color: $white;
-    }
+    // .row-head-L {
+    //   background-color: transparentize($css-lab-dark-blue, 0.5);
+    //   color: $white;
+    // }
+
+    // .row-head-R {
+    //   background-color: transparentize($css-lab-dark-red, 0.5);
+    //   color: $white;
+    // }
 
     .row-body {
       display: flex;
       padding: 0 3px;
+      line-height: 2;
 
       .row-value-program {
         width: 50%;
       }
-      .row-value-network {
-        width: 30%;
-      }
+      // .row-value-network {
+      //   width: 30%;
+      // }
       .row-value-audience {
-        width: 20%;
+        flex: 1 0 auto;
         text-align: end;
       }
+    }
+
+    .row-body:nth-child(even) {
+      background-color: $light-grey;
     }
   }
 

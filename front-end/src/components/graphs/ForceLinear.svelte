@@ -83,23 +83,17 @@
     $: labelActive = false;
 
     $: lean = political_lean === 'R' ? 'right' : 'left';
-
-    function handleMouseEnter(e, d) {
-      dispatch('mouseenter', { target: e.target, node: d })
-    }
+    $: typeColors = political_lean === 'R' 
+        ? ['black', 'black', 'black', 'gainsboro', 'gainsboro']
+        : ['black', 'black', 'black', 'gainsboro', 'gainsboro']
 
     function handleClick(e, d) {
       dispatch('click', { target: e.target, node: d })
     }
 
-    function handleMouseLeave(e) {
-      dispatch('mouseleave')
-    }
-
-    const scaleTypeColor = scaleOrdinal()
+    $: scaleTypeColor = scaleOrdinal()
       .domain($zScale.range())
-      .range(['gainsboro', 'gainsboro', 'black', 'gainsboro', 'gainsboro'])
-
+      .range(typeColors)
 </script>
 
 <g 

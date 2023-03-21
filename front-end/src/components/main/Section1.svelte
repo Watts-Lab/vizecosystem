@@ -135,7 +135,6 @@
                     <option value='55+'>55+</option>
                 </select>
             </div>
-            <!-- on:change={() => { if (age_group !== 'All') gender = 'All' }} -->
 
             <div id='gender' class='control control-menu'>
                 <div class='control-title'>Gender</div>
@@ -145,7 +144,6 @@
                     <option value='Female'>Female</option>
                 </select>
             </div>
-            <!-- on:change={() => { if (gender !== 'All') age_group = 'All' }} -->
 
             {#if loaded && data}
                 <div id='period' class='control control-range'>

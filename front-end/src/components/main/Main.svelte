@@ -74,7 +74,7 @@
 			type: "linear",
 			rScale: scaleSqrt,
 			rDomain: [0, 0.5],
-			rRange: [5, 150],
+			rRange: [8, 100],
 			zScale: scaleThreshold,
 			zDomain: [0, 0.01, 0.025, 0.05],
 			colorInterpolator: scaleLinear,
@@ -84,7 +84,7 @@
 		}],
 	])
 
-	$: chart = "0"
+	$: chart = "1"
 	$: activeChart = chartConfig.get(+chart)
 	$: politicalChecked = true
 </script>

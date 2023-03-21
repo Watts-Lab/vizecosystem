@@ -34,7 +34,7 @@
   let table : any[];
   let tableMap : Map<string|number, any>
   const urlChart : string  = 'assets/data/EchoCh-TV-by_state_full-timeseries.csv'
-  const urlTable : string  = 'assets/data/dupe-data-by-state-PROGRAMS.csv'
+  const urlTable : string  = 'assets/data/EchoCh-TV-by_state_audiences.csv'
 
   onMount(async () => {
     const resChart = await csv(urlChart, autoType)
@@ -53,9 +53,7 @@
 			table,
 			d => d.period,
 			d => d.state,
-			d => d.medium,
-			d => d.diet_threshold,
-			d => d.partisanship_scenario
+			d => d.medium
 		)
   })
 
@@ -63,6 +61,7 @@
   function onClick() {
 		dispatch('closePopup')
 	}
+
 </script>
 
 <div class='overlay {!hidePopup ? 'active' : ''}'>
@@ -106,8 +105,6 @@
       .get(period)
       .get(abbr)
       .get(medium)
-      .get(diet_threshold)
-      .get(partisanship_scenario)
     }
     <div class='overlay-col2-container'>
       <Table 
