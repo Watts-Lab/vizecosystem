@@ -101,7 +101,7 @@
 >
 
   {#each nodes as node}
-    {@const fill = $zScale(node.data.right_pct)}
+    {@const fill = $zScale(node.data[`${lean}_pct`])}
     <g class='node-group' transform={`translate(${node.x}, ${node.y})`}>
       <circle
         class='node'
