@@ -31,13 +31,13 @@
 	export let activeChart : ChartConfig;
 
 	// variable declaration
-	let colorInterpolator;
+	let colorInterpolator : any;
 	export let politicalChecked : boolean;
 	let dietChecked : boolean = true;
   let scenarioChecked : boolean = true;
 	let tvChecked : boolean = true
 	$: political_lean = politicalChecked ? 'R' : 'L'
-	$: medium = tvChecked ? 'tv' : 'online';
+	$: medium = tvChecked ? 'web' : 'tv';
 	$: diet_threshold = dietChecked ? 75 : 50;
   $: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent';
 
@@ -134,10 +134,11 @@
 			bind:checked={ tvChecked } 
 		/>
 
+		<!-- inverting labels manually for now -->
 		<ControlSwitch 
 			id='partisanship' 
 			title='Partisanship'
-			labels={[ 'Lenient', 'Stringent' ]}
+			labels={[ 'Stringent', 'Lenient' ]} 
 			info='Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The stric definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)'
 			bind:checked={ scenarioChecked } 
 		/>
