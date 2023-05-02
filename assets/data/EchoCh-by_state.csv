@@ -1,0 +1,2041 @@
+period,state,medium,partisanship_scenario,diet_threshold,left_pct,right_pct
+Last 12 months,AK,tv,lenient,50,0.0178,0.0576
+Last 12 months,AK,tv,lenient,75,0.0069,0.0371
+Last 12 months,AK,tv,stringent,50,0.0074,0.0576
+Last 12 months,AK,tv,stringent,75,0.0024,0.0371
+Last 12 months,AK,web,lenient,50,0.0313,0.0465
+Last 12 months,AK,web,lenient,75,0.0247,0.0374
+Last 12 months,AK,web,stringent,50,0.0022,0.0279
+Last 12 months,AK,web,stringent,75,0.0006,0.0233
+Last 12 months,AL,tv,lenient,50,0.0353,0.1191
+Last 12 months,AL,tv,lenient,75,0.0161,0.0885
+Last 12 months,AL,tv,stringent,50,0.0052,0.1191
+Last 12 months,AL,tv,stringent,75,0.0004,0.0885
+Last 12 months,AL,web,lenient,50,0.0109,0.0091
+Last 12 months,AL,web,lenient,75,0.0067,0.0066
+Last 12 months,AL,web,stringent,50,0.0030,0.0035
+Last 12 months,AL,web,stringent,75,0.0018,0.0026
+Last 12 months,AR,tv,lenient,50,0.0300,0.1190
+Last 12 months,AR,tv,lenient,75,0.0144,0.1050
+Last 12 months,AR,tv,stringent,50,0.0047,0.1190
+Last 12 months,AR,tv,stringent,75,0.0004,0.1050
+Last 12 months,AR,web,lenient,50,0.0074,0.0283
+Last 12 months,AR,web,lenient,75,0.0048,0.0267
+Last 12 months,AR,web,stringent,50,0.0046,0.0045
+Last 12 months,AR,web,stringent,75,0.0030,0.0040
+Last 12 months,AZ,tv,lenient,50,0.0610,0.0701
+Last 12 months,AZ,tv,lenient,75,0.0305,0.0603
+Last 12 months,AZ,tv,stringent,50,0.0096,0.0701
+Last 12 months,AZ,tv,stringent,75,0.0013,0.0603
+Last 12 months,AZ,web,lenient,50,0.0249,0.0187
+Last 12 months,AZ,web,lenient,75,0.0190,0.0156
+Last 12 months,AZ,web,stringent,50,0.0101,0.0069
+Last 12 months,AZ,web,stringent,75,0.0083,0.0033
+Last 12 months,CA,tv,lenient,50,0.0658,0.0596
+Last 12 months,CA,tv,lenient,75,0.0314,0.0502
+Last 12 months,CA,tv,stringent,50,0.0124,0.0596
+Last 12 months,CA,tv,stringent,75,0.0011,0.0502
+Last 12 months,CA,web,lenient,50,0.0235,0.0095
+Last 12 months,CA,web,lenient,75,0.0161,0.0073
+Last 12 months,CA,web,stringent,50,0.0082,0.0032
+Last 12 months,CA,web,stringent,75,0.0058,0.0027
+Last 12 months,CO,tv,lenient,50,0.0461,0.0632
+Last 12 months,CO,tv,lenient,75,0.0248,0.0523
+Last 12 months,CO,tv,stringent,50,0.0094,0.0632
+Last 12 months,CO,tv,stringent,75,0.0021,0.0523
+Last 12 months,CO,web,lenient,50,0.0179,0.0125
+Last 12 months,CO,web,lenient,75,0.0116,0.0085
+Last 12 months,CO,web,stringent,50,0.0052,0.0035
+Last 12 months,CO,web,stringent,75,0.0032,0.0020
+Last 12 months,CT,tv,lenient,50,0.0731,0.0767
+Last 12 months,CT,tv,lenient,75,0.0331,0.0602
+Last 12 months,CT,tv,stringent,50,0.0156,0.0767
+Last 12 months,CT,tv,stringent,75,0.0011,0.0602
+Last 12 months,CT,web,lenient,50,0.0180,0.0133
+Last 12 months,CT,web,lenient,75,0.0126,0.0121
+Last 12 months,CT,web,stringent,50,0.0049,0.0001
+Last 12 months,CT,web,stringent,75,0.0042,0.0000
+Last 12 months,DC,tv,lenient,50,0.0665,0.0057
+Last 12 months,DC,tv,lenient,75,0.0392,0.0045
+Last 12 months,DC,tv,stringent,50,0.0147,0.0057
+Last 12 months,DC,tv,stringent,75,0.0004,0.0045
+Last 12 months,DC,web,lenient,50,0.0136,0.0070
+Last 12 months,DC,web,lenient,75,0.0048,0.0053
+Last 12 months,DC,web,stringent,50,0.0044,0.0061
+Last 12 months,DC,web,stringent,75,0.0009,0.0015
+Last 12 months,DE,tv,lenient,50,0.0742,0.0677
+Last 12 months,DE,tv,lenient,75,0.0340,0.0461
+Last 12 months,DE,tv,stringent,50,0.0106,0.0677
+Last 12 months,DE,tv,stringent,75,0.0020,0.0461
+Last 12 months,DE,web,lenient,50,0.0152,0.0111
+Last 12 months,DE,web,lenient,75,0.0127,0.0064
+Last 12 months,DE,web,stringent,50,0.0089,0.0021
+Last 12 months,DE,web,stringent,75,0.0086,0.0005
+Last 12 months,FL,tv,lenient,50,0.0531,0.0966
+Last 12 months,FL,tv,lenient,75,0.0240,0.0789
+Last 12 months,FL,tv,stringent,50,0.0105,0.0966
+Last 12 months,FL,tv,stringent,75,0.0010,0.0789
+Last 12 months,FL,web,lenient,50,0.0128,0.0166
+Last 12 months,FL,web,lenient,75,0.0089,0.0127
+Last 12 months,FL,web,stringent,50,0.0040,0.0041
+Last 12 months,FL,web,stringent,75,0.0026,0.0025
+Last 12 months,GA,tv,lenient,50,0.0485,0.0751
+Last 12 months,GA,tv,lenient,75,0.0239,0.0604
+Last 12 months,GA,tv,stringent,50,0.0090,0.0751
+Last 12 months,GA,tv,stringent,75,0.0011,0.0604
+Last 12 months,GA,web,lenient,50,0.0119,0.0091
+Last 12 months,GA,web,lenient,75,0.0088,0.0045
+Last 12 months,GA,web,stringent,50,0.0048,0.0037
+Last 12 months,GA,web,stringent,75,0.0041,0.0017
+Last 12 months,HI,tv,lenient,50,0.0494,0.0816
+Last 12 months,HI,tv,lenient,75,0.0161,0.0663
+Last 12 months,HI,tv,stringent,50,0.0059,0.0816
+Last 12 months,HI,tv,stringent,75,0.0028,0.0663
+Last 12 months,HI,web,lenient,50,0.0084,0.0073
+Last 12 months,HI,web,lenient,75,0.0078,0.0073
+Last 12 months,HI,web,stringent,50,0.0007,0.0073
+Last 12 months,HI,web,stringent,75,0.0005,0.0073
+Last 12 months,IA,tv,lenient,50,0.0357,0.0908
+Last 12 months,IA,tv,lenient,75,0.0166,0.0776
+Last 12 months,IA,tv,stringent,50,0.0053,0.0908
+Last 12 months,IA,tv,stringent,75,0.0018,0.0776
+Last 12 months,IA,web,lenient,50,0.0193,0.0213
+Last 12 months,IA,web,lenient,75,0.0111,0.0160
+Last 12 months,IA,web,stringent,50,0.0065,0.0045
+Last 12 months,IA,web,stringent,75,0.0026,0.0012
+Last 12 months,ID,tv,lenient,50,0.0236,0.1068
+Last 12 months,ID,tv,lenient,75,0.0114,0.0825
+Last 12 months,ID,tv,stringent,50,0.0042,0.1068
+Last 12 months,ID,tv,stringent,75,0.0000,0.0825
+Last 12 months,ID,web,lenient,50,0.0190,0.0227
+Last 12 months,ID,web,lenient,75,0.0132,0.0177
+Last 12 months,ID,web,stringent,50,0.0047,0.0120
+Last 12 months,ID,web,stringent,75,0.0019,0.0100
+Last 12 months,IL,tv,lenient,50,0.0462,0.0667
+Last 12 months,IL,tv,lenient,75,0.0200,0.0540
+Last 12 months,IL,tv,stringent,50,0.0097,0.0667
+Last 12 months,IL,tv,stringent,75,0.0012,0.0540
+Last 12 months,IL,web,lenient,50,0.0171,0.0061
+Last 12 months,IL,web,lenient,75,0.0106,0.0048
+Last 12 months,IL,web,stringent,50,0.0066,0.0023
+Last 12 months,IL,web,stringent,75,0.0040,0.0014
+Last 12 months,IN,tv,lenient,50,0.0324,0.0776
+Last 12 months,IN,tv,lenient,75,0.0161,0.0631
+Last 12 months,IN,tv,stringent,50,0.0067,0.0776
+Last 12 months,IN,tv,stringent,75,0.0006,0.0631
+Last 12 months,IN,web,lenient,50,0.0161,0.0143
+Last 12 months,IN,web,lenient,75,0.0118,0.0114
+Last 12 months,IN,web,stringent,50,0.0052,0.0044
+Last 12 months,IN,web,stringent,75,0.0033,0.0023
+Last 12 months,KS,tv,lenient,50,0.0345,0.0822
+Last 12 months,KS,tv,lenient,75,0.0184,0.0576
+Last 12 months,KS,tv,stringent,50,0.0062,0.0822
+Last 12 months,KS,tv,stringent,75,0.0001,0.0576
+Last 12 months,KS,web,lenient,50,0.0125,0.0103
+Last 12 months,KS,web,lenient,75,0.0085,0.0095
+Last 12 months,KS,web,stringent,50,0.0025,0.0016
+Last 12 months,KS,web,stringent,75,0.0016,0.0011
+Last 12 months,KY,tv,lenient,50,0.0334,0.1022
+Last 12 months,KY,tv,lenient,75,0.0190,0.0806
+Last 12 months,KY,tv,stringent,50,0.0027,0.1022
+Last 12 months,KY,tv,stringent,75,0.0005,0.0806
+Last 12 months,KY,web,lenient,50,0.0151,0.0138
+Last 12 months,KY,web,lenient,75,0.0104,0.0124
+Last 12 months,KY,web,stringent,50,0.0054,0.0084
+Last 12 months,KY,web,stringent,75,0.0031,0.0076
+Last 12 months,LA,tv,lenient,50,0.0443,0.0985
+Last 12 months,LA,tv,lenient,75,0.0163,0.0775
+Last 12 months,LA,tv,stringent,50,0.0152,0.0985
+Last 12 months,LA,tv,stringent,75,0.0015,0.0775
+Last 12 months,LA,web,lenient,50,0.0130,0.0075
+Last 12 months,LA,web,lenient,75,0.0079,0.0052
+Last 12 months,LA,web,stringent,50,0.0056,0.0030
+Last 12 months,LA,web,stringent,75,0.0024,0.0029
+Last 12 months,MA,tv,lenient,50,0.0808,0.0561
+Last 12 months,MA,tv,lenient,75,0.0367,0.0444
+Last 12 months,MA,tv,stringent,50,0.0155,0.0561
+Last 12 months,MA,tv,stringent,75,0.0018,0.0444
+Last 12 months,MA,web,lenient,50,0.0238,0.0025
+Last 12 months,MA,web,lenient,75,0.0198,0.0018
+Last 12 months,MA,web,stringent,50,0.0137,0.0009
+Last 12 months,MA,web,stringent,75,0.0114,0.0000
+Last 12 months,MD,tv,lenient,50,0.0811,0.0650
+Last 12 months,MD,tv,lenient,75,0.0443,0.0547
+Last 12 months,MD,tv,stringent,50,0.0128,0.0650
+Last 12 months,MD,tv,stringent,75,0.0015,0.0547
+Last 12 months,MD,web,lenient,50,0.0167,0.0116
+Last 12 months,MD,web,lenient,75,0.0119,0.0087
+Last 12 months,MD,web,stringent,50,0.0065,0.0024
+Last 12 months,MD,web,stringent,75,0.0041,0.0018
+Last 12 months,ME,tv,lenient,50,0.0265,0.0955
+Last 12 months,ME,tv,lenient,75,0.0141,0.0709
+Last 12 months,ME,tv,stringent,50,0.0042,0.0955
+Last 12 months,ME,tv,stringent,75,0.0000,0.0709
+Last 12 months,ME,web,lenient,50,0.0537,0.0106
+Last 12 months,ME,web,lenient,75,0.0420,0.0040
+Last 12 months,ME,web,stringent,50,0.0126,0.0013
+Last 12 months,ME,web,stringent,75,0.0098,0.0013
+Last 12 months,MI,tv,lenient,50,0.0452,0.0853
+Last 12 months,MI,tv,lenient,75,0.0203,0.0697
+Last 12 months,MI,tv,stringent,50,0.0083,0.0853
+Last 12 months,MI,tv,stringent,75,0.0009,0.0697
+Last 12 months,MI,web,lenient,50,0.0187,0.0134
+Last 12 months,MI,web,lenient,75,0.0124,0.0113
+Last 12 months,MI,web,stringent,50,0.0054,0.0056
+Last 12 months,MI,web,stringent,75,0.0042,0.0040
+Last 12 months,MN,tv,lenient,50,0.0474,0.0603
+Last 12 months,MN,tv,lenient,75,0.0187,0.0452
+Last 12 months,MN,tv,stringent,50,0.0115,0.0603
+Last 12 months,MN,tv,stringent,75,0.0016,0.0452
+Last 12 months,MN,web,lenient,50,0.0201,0.0185
+Last 12 months,MN,web,lenient,75,0.0153,0.0149
+Last 12 months,MN,web,stringent,50,0.0058,0.0089
+Last 12 months,MN,web,stringent,75,0.0043,0.0049
+Last 12 months,MO,tv,lenient,50,0.0384,0.0935
+Last 12 months,MO,tv,lenient,75,0.0173,0.0777
+Last 12 months,MO,tv,stringent,50,0.0097,0.0935
+Last 12 months,MO,tv,stringent,75,0.0014,0.0777
+Last 12 months,MO,web,lenient,50,0.0172,0.0170
+Last 12 months,MO,web,lenient,75,0.0106,0.0122
+Last 12 months,MO,web,stringent,50,0.0043,0.0072
+Last 12 months,MO,web,stringent,75,0.0027,0.0057
+Last 12 months,MS,tv,lenient,50,0.0257,0.0913
+Last 12 months,MS,tv,lenient,75,0.0088,0.0797
+Last 12 months,MS,tv,stringent,50,0.0089,0.0913
+Last 12 months,MS,tv,stringent,75,0.0007,0.0797
+Last 12 months,MS,web,lenient,50,0.0163,0.0117
+Last 12 months,MS,web,lenient,75,0.0088,0.0078
+Last 12 months,MS,web,stringent,50,0.0066,0.0041
+Last 12 months,MS,web,stringent,75,0.0033,0.0036
+Last 12 months,MT,tv,lenient,50,0.0116,0.1234
+Last 12 months,MT,tv,lenient,75,0.0011,0.0791
+Last 12 months,MT,tv,stringent,50,0.0026,0.1234
+Last 12 months,MT,tv,stringent,75,0.0000,0.0791
+Last 12 months,MT,web,lenient,50,0.0437,0.0537
+Last 12 months,MT,web,lenient,75,0.0352,0.0510
+Last 12 months,MT,web,stringent,50,0.0260,0.0108
+Last 12 months,MT,web,stringent,75,0.0245,0.0106
+Last 12 months,NC,tv,lenient,50,0.0522,0.0797
+Last 12 months,NC,tv,lenient,75,0.0260,0.0622
+Last 12 months,NC,tv,stringent,50,0.0086,0.0797
+Last 12 months,NC,tv,stringent,75,0.0010,0.0622
+Last 12 months,NC,web,lenient,50,0.0129,0.0134
+Last 12 months,NC,web,lenient,75,0.0093,0.0100
+Last 12 months,NC,web,stringent,50,0.0055,0.0068
+Last 12 months,NC,web,stringent,75,0.0037,0.0054
+Last 12 months,ND,tv,lenient,50,0.0217,0.1343
+Last 12 months,ND,tv,lenient,75,0.0139,0.1175
+Last 12 months,ND,tv,stringent,50,0.0016,0.1343
+Last 12 months,ND,tv,stringent,75,0.0000,0.1175
+Last 12 months,ND,web,lenient,50,0.0331,0.0052
+Last 12 months,ND,web,lenient,75,0.0263,0.0047
+Last 12 months,ND,web,stringent,50,0.0012,0.0043
+Last 12 months,ND,web,stringent,75,0.0003,0.0043
+Last 12 months,NE,tv,lenient,50,0.0250,0.1175
+Last 12 months,NE,tv,lenient,75,0.0083,0.1051
+Last 12 months,NE,tv,stringent,50,0.0062,0.1175
+Last 12 months,NE,tv,stringent,75,0.0000,0.1051
+Last 12 months,NE,web,lenient,50,0.0203,0.0230
+Last 12 months,NE,web,lenient,75,0.0116,0.0187
+Last 12 months,NE,web,stringent,50,0.0066,0.0064
+Last 12 months,NE,web,stringent,75,0.0042,0.0057
+Last 12 months,NH,tv,lenient,50,0.0434,0.0868
+Last 12 months,NH,tv,lenient,75,0.0223,0.0738
+Last 12 months,NH,tv,stringent,50,0.0086,0.0868
+Last 12 months,NH,tv,stringent,75,0.0020,0.0738
+Last 12 months,NH,web,lenient,50,0.0147,0.0099
+Last 12 months,NH,web,lenient,75,0.0082,0.0023
+Last 12 months,NH,web,stringent,50,0.0046,0.0002
+Last 12 months,NH,web,stringent,75,0.0041,0.0000
+Last 12 months,NJ,tv,lenient,50,0.0618,0.0933
+Last 12 months,NJ,tv,lenient,75,0.0310,0.0791
+Last 12 months,NJ,tv,stringent,50,0.0106,0.0933
+Last 12 months,NJ,tv,stringent,75,0.0016,0.0791
+Last 12 months,NJ,web,lenient,50,0.0149,0.0084
+Last 12 months,NJ,web,lenient,75,0.0104,0.0062
+Last 12 months,NJ,web,stringent,50,0.0049,0.0017
+Last 12 months,NJ,web,stringent,75,0.0029,0.0013
+Last 12 months,NM,tv,lenient,50,0.0508,0.0653
+Last 12 months,NM,tv,lenient,75,0.0164,0.0550
+Last 12 months,NM,tv,stringent,50,0.0101,0.0653
+Last 12 months,NM,tv,stringent,75,0.0009,0.0550
+Last 12 months,NM,web,lenient,50,0.0228,0.0073
+Last 12 months,NM,web,lenient,75,0.0137,0.0048
+Last 12 months,NM,web,stringent,50,0.0107,0.0031
+Last 12 months,NM,web,stringent,75,0.0069,0.0024
+Last 12 months,NV,tv,lenient,50,0.0710,0.0967
+Last 12 months,NV,tv,lenient,75,0.0249,0.0791
+Last 12 months,NV,tv,stringent,50,0.0216,0.0967
+Last 12 months,NV,tv,stringent,75,0.0015,0.0791
+Last 12 months,NV,web,lenient,50,0.0232,0.0148
+Last 12 months,NV,web,lenient,75,0.0181,0.0114
+Last 12 months,NV,web,stringent,50,0.0090,0.0026
+Last 12 months,NV,web,stringent,75,0.0078,0.0005
+Last 12 months,NY,tv,lenient,50,0.0716,0.0706
+Last 12 months,NY,tv,lenient,75,0.0266,0.0549
+Last 12 months,NY,tv,stringent,50,0.0167,0.0706
+Last 12 months,NY,tv,stringent,75,0.0020,0.0549
+Last 12 months,NY,web,lenient,50,0.0151,0.0065
+Last 12 months,NY,web,lenient,75,0.0104,0.0046
+Last 12 months,NY,web,stringent,50,0.0054,0.0030
+Last 12 months,NY,web,stringent,75,0.0037,0.0021
+Last 12 months,OH,tv,lenient,50,0.0377,0.0951
+Last 12 months,OH,tv,lenient,75,0.0176,0.0760
+Last 12 months,OH,tv,stringent,50,0.0077,0.0951
+Last 12 months,OH,tv,stringent,75,0.0010,0.0760
+Last 12 months,OH,web,lenient,50,0.0142,0.0086
+Last 12 months,OH,web,lenient,75,0.0098,0.0070
+Last 12 months,OH,web,stringent,50,0.0059,0.0027
+Last 12 months,OH,web,stringent,75,0.0037,0.0022
+Last 12 months,OK,tv,lenient,50,0.0321,0.1015
+Last 12 months,OK,tv,lenient,75,0.0164,0.0777
+Last 12 months,OK,tv,stringent,50,0.0042,0.1015
+Last 12 months,OK,tv,stringent,75,0.0005,0.0777
+Last 12 months,OK,web,lenient,50,0.0135,0.0163
+Last 12 months,OK,web,lenient,75,0.0109,0.0147
+Last 12 months,OK,web,stringent,50,0.0033,0.0033
+Last 12 months,OK,web,stringent,75,0.0017,0.0022
+Last 12 months,OR,tv,lenient,50,0.0404,0.0791
+Last 12 months,OR,tv,lenient,75,0.0160,0.0684
+Last 12 months,OR,tv,stringent,50,0.0129,0.0791
+Last 12 months,OR,tv,stringent,75,0.0011,0.0684
+Last 12 months,OR,web,lenient,50,0.0195,0.0099
+Last 12 months,OR,web,lenient,75,0.0133,0.0051
+Last 12 months,OR,web,stringent,50,0.0091,0.0048
+Last 12 months,OR,web,stringent,75,0.0050,0.0029
+Last 12 months,PA,tv,lenient,50,0.0674,0.1098
+Last 12 months,PA,tv,lenient,75,0.0284,0.0894
+Last 12 months,PA,tv,stringent,50,0.0153,0.1098
+Last 12 months,PA,tv,stringent,75,0.0012,0.0894
+Last 12 months,PA,web,lenient,50,0.0170,0.0133
+Last 12 months,PA,web,lenient,75,0.0099,0.0102
+Last 12 months,PA,web,stringent,50,0.0080,0.0064
+Last 12 months,PA,web,stringent,75,0.0038,0.0046
+Last 12 months,RI,tv,lenient,50,0.0579,0.0685
+Last 12 months,RI,tv,lenient,75,0.0242,0.0484
+Last 12 months,RI,tv,stringent,50,0.0112,0.0685
+Last 12 months,RI,tv,stringent,75,0.0008,0.0484
+Last 12 months,RI,web,lenient,50,0.0274,0.0124
+Last 12 months,RI,web,lenient,75,0.0156,0.0000
+Last 12 months,RI,web,stringent,50,0.0059,0.0000
+Last 12 months,RI,web,stringent,75,0.0040,0.0000
+Last 12 months,SC,tv,lenient,50,0.0422,0.1224
+Last 12 months,SC,tv,lenient,75,0.0175,0.1024
+Last 12 months,SC,tv,stringent,50,0.0095,0.1224
+Last 12 months,SC,tv,stringent,75,0.0013,0.1024
+Last 12 months,SC,web,lenient,50,0.0099,0.0083
+Last 12 months,SC,web,lenient,75,0.0079,0.0034
+Last 12 months,SC,web,stringent,50,0.0040,0.0033
+Last 12 months,SC,web,stringent,75,0.0035,0.0021
+Last 12 months,SD,tv,lenient,50,0.0524,0.1552
+Last 12 months,SD,tv,lenient,75,0.0096,0.1315
+Last 12 months,SD,tv,stringent,50,0.0177,0.1552
+Last 12 months,SD,tv,stringent,75,0.0008,0.1315
+Last 12 months,SD,web,lenient,50,0.0220,0.0446
+Last 12 months,SD,web,lenient,75,0.0143,0.0435
+Last 12 months,SD,web,stringent,50,0.0060,0.0428
+Last 12 months,SD,web,stringent,75,0.0053,0.0419
+Last 12 months,TN,tv,lenient,50,0.0365,0.1086
+Last 12 months,TN,tv,lenient,75,0.0169,0.0854
+Last 12 months,TN,tv,stringent,50,0.0049,0.1086
+Last 12 months,TN,tv,stringent,75,0.0008,0.0854
+Last 12 months,TN,web,lenient,50,0.0173,0.0290
+Last 12 months,TN,web,lenient,75,0.0125,0.0235
+Last 12 months,TN,web,stringent,50,0.0090,0.0036
+Last 12 months,TN,web,stringent,75,0.0065,0.0017
+Last 12 months,TX,tv,lenient,50,0.0385,0.0714
+Last 12 months,TX,tv,lenient,75,0.0179,0.0582
+Last 12 months,TX,tv,stringent,50,0.0070,0.0714
+Last 12 months,TX,tv,stringent,75,0.0007,0.0582
+Last 12 months,TX,web,lenient,50,0.0155,0.0121
+Last 12 months,TX,web,lenient,75,0.0107,0.0085
+Last 12 months,TX,web,stringent,50,0.0053,0.0044
+Last 12 months,TX,web,stringent,75,0.0033,0.0026
+Last 12 months,UT,tv,lenient,50,0.0331,0.0920
+Last 12 months,UT,tv,lenient,75,0.0165,0.0780
+Last 12 months,UT,tv,stringent,50,0.0022,0.0920
+Last 12 months,UT,tv,stringent,75,0.0005,0.0780
+Last 12 months,UT,web,lenient,50,0.0134,0.1058
+Last 12 months,UT,web,lenient,75,0.0076,0.0918
+Last 12 months,UT,web,stringent,50,0.0028,0.0016
+Last 12 months,UT,web,stringent,75,0.0021,0.0003
+Last 12 months,VA,tv,lenient,50,0.0601,0.1000
+Last 12 months,VA,tv,lenient,75,0.0272,0.0820
+Last 12 months,VA,tv,stringent,50,0.0080,0.1000
+Last 12 months,VA,tv,stringent,75,0.0011,0.0820
+Last 12 months,VA,web,lenient,50,0.0234,0.0148
+Last 12 months,VA,web,lenient,75,0.0172,0.0098
+Last 12 months,VA,web,stringent,50,0.0122,0.0052
+Last 12 months,VA,web,stringent,75,0.0084,0.0037
+Last 12 months,VT,tv,lenient,50,0.0820,0.0702
+Last 12 months,VT,tv,lenient,75,0.0136,0.0639
+Last 12 months,VT,tv,stringent,50,0.0349,0.0702
+Last 12 months,VT,tv,stringent,75,0.0004,0.0639
+Last 12 months,VT,web,lenient,50,0.0197,0.0166
+Last 12 months,VT,web,lenient,75,0.0151,0.0102
+Last 12 months,VT,web,stringent,50,0.0014,0.0053
+Last 12 months,VT,web,stringent,75,0.0002,0.0051
+Last 12 months,WA,tv,lenient,50,0.0535,0.0776
+Last 12 months,WA,tv,lenient,75,0.0270,0.0655
+Last 12 months,WA,tv,stringent,50,0.0122,0.0776
+Last 12 months,WA,tv,stringent,75,0.0017,0.0655
+Last 12 months,WA,web,lenient,50,0.0209,0.0173
+Last 12 months,WA,web,lenient,75,0.0132,0.0122
+Last 12 months,WA,web,stringent,50,0.0045,0.0046
+Last 12 months,WA,web,stringent,75,0.0025,0.0026
+Last 12 months,WI,tv,lenient,50,0.0260,0.0893
+Last 12 months,WI,tv,lenient,75,0.0118,0.0686
+Last 12 months,WI,tv,stringent,50,0.0044,0.0893
+Last 12 months,WI,tv,stringent,75,0.0009,0.0686
+Last 12 months,WI,web,lenient,50,0.0199,0.0169
+Last 12 months,WI,web,lenient,75,0.0144,0.0093
+Last 12 months,WI,web,stringent,50,0.0038,0.0094
+Last 12 months,WI,web,stringent,75,0.0029,0.0041
+Last 12 months,WV,tv,lenient,50,0.0208,0.1258
+Last 12 months,WV,tv,lenient,75,0.0085,0.0987
+Last 12 months,WV,tv,stringent,50,0.0038,0.1258
+Last 12 months,WV,tv,stringent,75,0.0009,0.0987
+Last 12 months,WV,web,lenient,50,0.0151,0.0168
+Last 12 months,WV,web,lenient,75,0.0121,0.0063
+Last 12 months,WV,web,stringent,50,0.0011,0.0018
+Last 12 months,WV,web,stringent,75,0.0006,0.0016
+Last 12 months,WY,tv,lenient,50,0.0117,0.0748
+Last 12 months,WY,tv,lenient,75,0.0062,0.0609
+Last 12 months,WY,tv,stringent,50,0.0013,0.0748
+Last 12 months,WY,tv,stringent,75,0.0006,0.0609
+Last 12 months,WY,web,lenient,50,0.0271,0.0055
+Last 12 months,WY,web,lenient,75,0.0169,0.0017
+Last 12 months,WY,web,stringent,50,0.0144,0.0036
+Last 12 months,WY,web,stringent,75,0.0077,0.0002
+Last 3 months,AK,tv,lenient,50,0.0499,0.0756
+Last 3 months,AK,tv,lenient,75,0.0151,0.0619
+Last 3 months,AK,tv,stringent,50,0.0205,0.0756
+Last 3 months,AK,tv,stringent,75,0.0095,0.0619
+Last 3 months,AK,web,lenient,50,0.0297,0.0782
+Last 3 months,AK,web,lenient,75,0.0258,0.0782
+Last 3 months,AK,web,stringent,50,0.0000,0.0589
+Last 3 months,AK,web,stringent,75,0.0000,0.0589
+Last 3 months,AL,tv,lenient,50,0.0355,0.1155
+Last 3 months,AL,tv,lenient,75,0.0173,0.0880
+Last 3 months,AL,tv,stringent,50,0.0075,0.1155
+Last 3 months,AL,tv,stringent,75,0.0002,0.0880
+Last 3 months,AL,web,lenient,50,0.0087,0.0166
+Last 3 months,AL,web,lenient,75,0.0061,0.0123
+Last 3 months,AL,web,stringent,50,0.0021,0.0054
+Last 3 months,AL,web,stringent,75,0.0016,0.0025
+Last 3 months,AR,tv,lenient,50,0.0338,0.1335
+Last 3 months,AR,tv,lenient,75,0.0165,0.1155
+Last 3 months,AR,tv,stringent,50,0.0045,0.1335
+Last 3 months,AR,tv,stringent,75,0.0002,0.1155
+Last 3 months,AR,web,lenient,50,0.0120,0.0249
+Last 3 months,AR,web,lenient,75,0.0070,0.0247
+Last 3 months,AR,web,stringent,50,0.0074,0.0047
+Last 3 months,AR,web,stringent,75,0.0038,0.0047
+Last 3 months,AZ,tv,lenient,50,0.0578,0.0638
+Last 3 months,AZ,tv,lenient,75,0.0296,0.0573
+Last 3 months,AZ,tv,stringent,50,0.0130,0.0638
+Last 3 months,AZ,tv,stringent,75,0.0020,0.0573
+Last 3 months,AZ,web,lenient,50,0.0250,0.0192
+Last 3 months,AZ,web,lenient,75,0.0188,0.0156
+Last 3 months,AZ,web,stringent,50,0.0079,0.0079
+Last 3 months,AZ,web,stringent,75,0.0063,0.0035
+Last 3 months,CA,tv,lenient,50,0.0631,0.0564
+Last 3 months,CA,tv,lenient,75,0.0291,0.0486
+Last 3 months,CA,tv,stringent,50,0.0148,0.0564
+Last 3 months,CA,tv,stringent,75,0.0015,0.0486
+Last 3 months,CA,web,lenient,50,0.0229,0.0109
+Last 3 months,CA,web,lenient,75,0.0171,0.0083
+Last 3 months,CA,web,stringent,50,0.0083,0.0036
+Last 3 months,CA,web,stringent,75,0.0055,0.0024
+Last 3 months,CO,tv,lenient,50,0.0468,0.0552
+Last 3 months,CO,tv,lenient,75,0.0241,0.0480
+Last 3 months,CO,tv,stringent,50,0.0120,0.0552
+Last 3 months,CO,tv,stringent,75,0.0026,0.0480
+Last 3 months,CO,web,lenient,50,0.0163,0.0111
+Last 3 months,CO,web,lenient,75,0.0082,0.0098
+Last 3 months,CO,web,stringent,50,0.0057,0.0004
+Last 3 months,CO,web,stringent,75,0.0027,0.0003
+Last 3 months,CT,tv,lenient,50,0.0569,0.0804
+Last 3 months,CT,tv,lenient,75,0.0228,0.0652
+Last 3 months,CT,tv,stringent,50,0.0115,0.0804
+Last 3 months,CT,tv,stringent,75,0.0009,0.0652
+Last 3 months,CT,web,lenient,50,0.0135,0.0153
+Last 3 months,CT,web,lenient,75,0.0128,0.0121
+Last 3 months,CT,web,stringent,50,0.0035,0.0000
+Last 3 months,CT,web,stringent,75,0.0030,0.0000
+Last 3 months,DC,tv,lenient,50,0.0597,0.0000
+Last 3 months,DC,tv,lenient,75,0.0429,0.0000
+Last 3 months,DC,tv,stringent,50,0.0080,0.0000
+Last 3 months,DC,tv,stringent,75,0.0000,0.0000
+Last 3 months,DC,web,lenient,50,0.0193,0.0059
+Last 3 months,DC,web,lenient,75,0.0120,0.0059
+Last 3 months,DC,web,stringent,50,0.0073,0.0059
+Last 3 months,DC,web,stringent,75,0.0017,0.0059
+Last 3 months,DE,tv,lenient,50,0.0915,0.0660
+Last 3 months,DE,tv,lenient,75,0.0387,0.0413
+Last 3 months,DE,tv,stringent,50,0.0157,0.0660
+Last 3 months,DE,tv,stringent,75,0.0000,0.0413
+Last 3 months,DE,web,lenient,50,0.0305,0.0070
+Last 3 months,DE,web,lenient,75,0.0214,0.0008
+Last 3 months,DE,web,stringent,50,0.0144,0.0005
+Last 3 months,DE,web,stringent,75,0.0144,0.0004
+Last 3 months,FL,tv,lenient,50,0.0489,0.0893
+Last 3 months,FL,tv,lenient,75,0.0227,0.0708
+Last 3 months,FL,tv,stringent,50,0.0097,0.0893
+Last 3 months,FL,tv,stringent,75,0.0013,0.0708
+Last 3 months,FL,web,lenient,50,0.0139,0.0163
+Last 3 months,FL,web,lenient,75,0.0112,0.0104
+Last 3 months,FL,web,stringent,50,0.0054,0.0018
+Last 3 months,FL,web,stringent,75,0.0038,0.0015
+Last 3 months,GA,tv,lenient,50,0.0509,0.0741
+Last 3 months,GA,tv,lenient,75,0.0264,0.0625
+Last 3 months,GA,tv,stringent,50,0.0090,0.0741
+Last 3 months,GA,tv,stringent,75,0.0015,0.0625
+Last 3 months,GA,web,lenient,50,0.0124,0.0071
+Last 3 months,GA,web,lenient,75,0.0103,0.0043
+Last 3 months,GA,web,stringent,50,0.0056,0.0035
+Last 3 months,GA,web,stringent,75,0.0051,0.0020
+Last 3 months,HI,tv,lenient,50,0.0692,0.0733
+Last 3 months,HI,tv,lenient,75,0.0370,0.0646
+Last 3 months,HI,tv,stringent,50,0.0163,0.0733
+Last 3 months,HI,tv,stringent,75,0.0077,0.0646
+Last 3 months,HI,web,lenient,50,0.0124,0.0000
+Last 3 months,HI,web,lenient,75,0.0124,0.0000
+Last 3 months,HI,web,stringent,50,0.0002,0.0000
+Last 3 months,HI,web,stringent,75,0.0002,0.0000
+Last 3 months,IA,tv,lenient,50,0.0398,0.0952
+Last 3 months,IA,tv,lenient,75,0.0121,0.0811
+Last 3 months,IA,tv,stringent,50,0.0087,0.0952
+Last 3 months,IA,tv,stringent,75,0.0019,0.0811
+Last 3 months,IA,web,lenient,50,0.0106,0.0167
+Last 3 months,IA,web,lenient,75,0.0029,0.0056
+Last 3 months,IA,web,stringent,50,0.0039,0.0050
+Last 3 months,IA,web,stringent,75,0.0006,0.0004
+Last 3 months,ID,tv,lenient,50,0.0171,0.1126
+Last 3 months,ID,tv,lenient,75,0.0091,0.0867
+Last 3 months,ID,tv,stringent,50,0.0055,0.1126
+Last 3 months,ID,tv,stringent,75,0.0000,0.0867
+Last 3 months,ID,web,lenient,50,0.0164,0.0359
+Last 3 months,ID,web,lenient,75,0.0150,0.0232
+Last 3 months,ID,web,stringent,50,0.0068,0.0145
+Last 3 months,ID,web,stringent,75,0.0064,0.0082
+Last 3 months,IL,tv,lenient,50,0.0434,0.0677
+Last 3 months,IL,tv,lenient,75,0.0193,0.0572
+Last 3 months,IL,tv,stringent,50,0.0092,0.0677
+Last 3 months,IL,tv,stringent,75,0.0014,0.0572
+Last 3 months,IL,web,lenient,50,0.0155,0.0062
+Last 3 months,IL,web,lenient,75,0.0107,0.0041
+Last 3 months,IL,web,stringent,50,0.0080,0.0022
+Last 3 months,IL,web,stringent,75,0.0055,0.0005
+Last 3 months,IN,tv,lenient,50,0.0349,0.0694
+Last 3 months,IN,tv,lenient,75,0.0197,0.0572
+Last 3 months,IN,tv,stringent,50,0.0049,0.0694
+Last 3 months,IN,tv,stringent,75,0.0009,0.0572
+Last 3 months,IN,web,lenient,50,0.0157,0.0155
+Last 3 months,IN,web,lenient,75,0.0117,0.0132
+Last 3 months,IN,web,stringent,50,0.0048,0.0047
+Last 3 months,IN,web,stringent,75,0.0029,0.0031
+Last 3 months,KS,tv,lenient,50,0.0348,0.0831
+Last 3 months,KS,tv,lenient,75,0.0209,0.0568
+Last 3 months,KS,tv,stringent,50,0.0048,0.0831
+Last 3 months,KS,tv,stringent,75,0.0004,0.0568
+Last 3 months,KS,web,lenient,50,0.0111,0.0127
+Last 3 months,KS,web,lenient,75,0.0106,0.0124
+Last 3 months,KS,web,stringent,50,0.0007,0.0005
+Last 3 months,KS,web,stringent,75,0.0007,0.0002
+Last 3 months,KY,tv,lenient,50,0.0287,0.0922
+Last 3 months,KY,tv,lenient,75,0.0172,0.0725
+Last 3 months,KY,tv,stringent,50,0.0027,0.0922
+Last 3 months,KY,tv,stringent,75,0.0001,0.0725
+Last 3 months,KY,web,lenient,50,0.0164,0.0039
+Last 3 months,KY,web,lenient,75,0.0141,0.0034
+Last 3 months,KY,web,stringent,50,0.0039,0.0000
+Last 3 months,KY,web,stringent,75,0.0036,0.0000
+Last 3 months,LA,tv,lenient,50,0.0375,0.1048
+Last 3 months,LA,tv,lenient,75,0.0130,0.0781
+Last 3 months,LA,tv,stringent,50,0.0148,0.1048
+Last 3 months,LA,tv,stringent,75,0.0017,0.0781
+Last 3 months,LA,web,lenient,50,0.0136,0.0089
+Last 3 months,LA,web,lenient,75,0.0057,0.0026
+Last 3 months,LA,web,stringent,50,0.0060,0.0020
+Last 3 months,LA,web,stringent,75,0.0016,0.0018
+Last 3 months,MA,tv,lenient,50,0.0750,0.0467
+Last 3 months,MA,tv,lenient,75,0.0343,0.0365
+Last 3 months,MA,tv,stringent,50,0.0159,0.0467
+Last 3 months,MA,tv,stringent,75,0.0018,0.0365
+Last 3 months,MA,web,lenient,50,0.0203,0.0026
+Last 3 months,MA,web,lenient,75,0.0155,0.0025
+Last 3 months,MA,web,stringent,50,0.0123,0.0015
+Last 3 months,MA,web,stringent,75,0.0080,0.0001
+Last 3 months,MD,tv,lenient,50,0.0854,0.0501
+Last 3 months,MD,tv,lenient,75,0.0398,0.0437
+Last 3 months,MD,tv,stringent,50,0.0155,0.0501
+Last 3 months,MD,tv,stringent,75,0.0016,0.0437
+Last 3 months,MD,web,lenient,50,0.0141,0.0100
+Last 3 months,MD,web,lenient,75,0.0115,0.0062
+Last 3 months,MD,web,stringent,50,0.0054,0.0003
+Last 3 months,MD,web,stringent,75,0.0052,0.0002
+Last 3 months,ME,tv,lenient,50,0.0243,0.0823
+Last 3 months,ME,tv,lenient,75,0.0134,0.0690
+Last 3 months,ME,tv,stringent,50,0.0027,0.0823
+Last 3 months,ME,tv,stringent,75,0.0000,0.0690
+Last 3 months,ME,web,lenient,50,0.0272,0.0107
+Last 3 months,ME,web,lenient,75,0.0235,0.0097
+Last 3 months,ME,web,stringent,50,0.0015,0.0000
+Last 3 months,ME,web,stringent,75,0.0005,0.0000
+Last 3 months,MI,tv,lenient,50,0.0490,0.0740
+Last 3 months,MI,tv,lenient,75,0.0218,0.0614
+Last 3 months,MI,tv,stringent,50,0.0092,0.0740
+Last 3 months,MI,tv,stringent,75,0.0009,0.0614
+Last 3 months,MI,web,lenient,50,0.0237,0.0090
+Last 3 months,MI,web,lenient,75,0.0185,0.0085
+Last 3 months,MI,web,stringent,50,0.0061,0.0019
+Last 3 months,MI,web,stringent,75,0.0055,0.0017
+Last 3 months,MN,tv,lenient,50,0.0381,0.0506
+Last 3 months,MN,tv,lenient,75,0.0170,0.0387
+Last 3 months,MN,tv,stringent,50,0.0072,0.0506
+Last 3 months,MN,tv,stringent,75,0.0012,0.0387
+Last 3 months,MN,web,lenient,50,0.0264,0.0134
+Last 3 months,MN,web,lenient,75,0.0198,0.0109
+Last 3 months,MN,web,stringent,50,0.0061,0.0093
+Last 3 months,MN,web,stringent,75,0.0041,0.0073
+Last 3 months,MO,tv,lenient,50,0.0446,0.0999
+Last 3 months,MO,tv,lenient,75,0.0204,0.0862
+Last 3 months,MO,tv,stringent,50,0.0112,0.0999
+Last 3 months,MO,tv,stringent,75,0.0019,0.0862
+Last 3 months,MO,web,lenient,50,0.0103,0.0144
+Last 3 months,MO,web,lenient,75,0.0082,0.0062
+Last 3 months,MO,web,stringent,50,0.0049,0.0010
+Last 3 months,MO,web,stringent,75,0.0039,0.0004
+Last 3 months,MS,tv,lenient,50,0.0204,0.0877
+Last 3 months,MS,tv,lenient,75,0.0097,0.0785
+Last 3 months,MS,tv,stringent,50,0.0046,0.0877
+Last 3 months,MS,tv,stringent,75,0.0000,0.0785
+Last 3 months,MS,web,lenient,50,0.0274,0.0194
+Last 3 months,MS,web,lenient,75,0.0172,0.0157
+Last 3 months,MS,web,stringent,50,0.0123,0.0091
+Last 3 months,MS,web,stringent,75,0.0057,0.0091
+Last 3 months,MT,tv,lenient,50,0.0354,0.1491
+Last 3 months,MT,tv,lenient,75,0.0000,0.0994
+Last 3 months,MT,tv,stringent,50,0.0076,0.1491
+Last 3 months,MT,tv,stringent,75,0.0000,0.0994
+Last 3 months,MT,web,lenient,50,0.0272,0.0760
+Last 3 months,MT,web,lenient,75,0.0214,0.0667
+Last 3 months,MT,web,stringent,50,0.0207,0.0104
+Last 3 months,MT,web,stringent,75,0.0207,0.0104
+Last 3 months,NC,tv,lenient,50,0.0500,0.0730
+Last 3 months,NC,tv,lenient,75,0.0232,0.0575
+Last 3 months,NC,tv,stringent,50,0.0084,0.0730
+Last 3 months,NC,tv,stringent,75,0.0006,0.0575
+Last 3 months,NC,web,lenient,50,0.0154,0.0127
+Last 3 months,NC,web,lenient,75,0.0095,0.0091
+Last 3 months,NC,web,stringent,50,0.0058,0.0049
+Last 3 months,NC,web,stringent,75,0.0026,0.0045
+Last 3 months,ND,tv,lenient,50,0.0101,0.1202
+Last 3 months,ND,tv,lenient,75,0.0101,0.1145
+Last 3 months,ND,tv,stringent,50,0.0000,0.1202
+Last 3 months,ND,tv,stringent,75,0.0000,0.1145
+Last 3 months,ND,web,lenient,50,0.0402,0.0170
+Last 3 months,ND,web,lenient,75,0.0186,0.0170
+Last 3 months,ND,web,stringent,50,0.0011,0.0170
+Last 3 months,ND,web,stringent,75,0.0000,0.0170
+Last 3 months,NE,tv,lenient,50,0.0218,0.1403
+Last 3 months,NE,tv,lenient,75,0.0056,0.1210
+Last 3 months,NE,tv,stringent,50,0.0075,0.1403
+Last 3 months,NE,tv,stringent,75,0.0000,0.1210
+Last 3 months,NE,web,lenient,50,0.0267,0.0090
+Last 3 months,NE,web,lenient,75,0.0242,0.0080
+Last 3 months,NE,web,stringent,50,0.0132,0.0014
+Last 3 months,NE,web,stringent,75,0.0114,0.0014
+Last 3 months,NH,tv,lenient,50,0.0541,0.0698
+Last 3 months,NH,tv,lenient,75,0.0309,0.0591
+Last 3 months,NH,tv,stringent,50,0.0134,0.0698
+Last 3 months,NH,tv,stringent,75,0.0008,0.0591
+Last 3 months,NH,web,lenient,50,0.0173,0.0011
+Last 3 months,NH,web,lenient,75,0.0115,0.0000
+Last 3 months,NH,web,stringent,50,0.0053,0.0004
+Last 3 months,NH,web,stringent,75,0.0053,0.0000
+Last 3 months,NJ,tv,lenient,50,0.0631,0.0895
+Last 3 months,NJ,tv,lenient,75,0.0314,0.0790
+Last 3 months,NJ,tv,stringent,50,0.0139,0.0895
+Last 3 months,NJ,tv,stringent,75,0.0015,0.0790
+Last 3 months,NJ,web,lenient,50,0.0162,0.0097
+Last 3 months,NJ,web,lenient,75,0.0106,0.0083
+Last 3 months,NJ,web,stringent,50,0.0049,0.0010
+Last 3 months,NJ,web,stringent,75,0.0027,0.0010
+Last 3 months,NM,tv,lenient,50,0.0527,0.0657
+Last 3 months,NM,tv,lenient,75,0.0201,0.0559
+Last 3 months,NM,tv,stringent,50,0.0138,0.0657
+Last 3 months,NM,tv,stringent,75,0.0018,0.0559
+Last 3 months,NM,web,lenient,50,0.0324,0.0137
+Last 3 months,NM,web,lenient,75,0.0241,0.0071
+Last 3 months,NM,web,stringent,50,0.0246,0.0071
+Last 3 months,NM,web,stringent,75,0.0162,0.0060
+Last 3 months,NV,tv,lenient,50,0.0727,0.0999
+Last 3 months,NV,tv,lenient,75,0.0198,0.0833
+Last 3 months,NV,tv,stringent,50,0.0275,0.0999
+Last 3 months,NV,tv,stringent,75,0.0017,0.0833
+Last 3 months,NV,web,lenient,50,0.0286,0.0132
+Last 3 months,NV,web,lenient,75,0.0242,0.0130
+Last 3 months,NV,web,stringent,50,0.0083,0.0005
+Last 3 months,NV,web,stringent,75,0.0080,0.0005
+Last 3 months,NY,tv,lenient,50,0.0705,0.0662
+Last 3 months,NY,tv,lenient,75,0.0241,0.0508
+Last 3 months,NY,tv,stringent,50,0.0207,0.0662
+Last 3 months,NY,tv,stringent,75,0.0025,0.0508
+Last 3 months,NY,web,lenient,50,0.0178,0.0084
+Last 3 months,NY,web,lenient,75,0.0125,0.0061
+Last 3 months,NY,web,stringent,50,0.0063,0.0031
+Last 3 months,NY,web,stringent,75,0.0046,0.0019
+Last 3 months,OH,tv,lenient,50,0.0397,0.0925
+Last 3 months,OH,tv,lenient,75,0.0163,0.0707
+Last 3 months,OH,tv,stringent,50,0.0094,0.0925
+Last 3 months,OH,tv,stringent,75,0.0009,0.0707
+Last 3 months,OH,web,lenient,50,0.0162,0.0106
+Last 3 months,OH,web,lenient,75,0.0115,0.0100
+Last 3 months,OH,web,stringent,50,0.0064,0.0030
+Last 3 months,OH,web,stringent,75,0.0043,0.0027
+Last 3 months,OK,tv,lenient,50,0.0245,0.1039
+Last 3 months,OK,tv,lenient,75,0.0097,0.0801
+Last 3 months,OK,tv,stringent,50,0.0049,0.1039
+Last 3 months,OK,tv,stringent,75,0.0002,0.0801
+Last 3 months,OK,web,lenient,50,0.0129,0.0236
+Last 3 months,OK,web,lenient,75,0.0116,0.0208
+Last 3 months,OK,web,stringent,50,0.0028,0.0009
+Last 3 months,OK,web,stringent,75,0.0027,0.0006
+Last 3 months,OR,tv,lenient,50,0.0361,0.0832
+Last 3 months,OR,tv,lenient,75,0.0164,0.0766
+Last 3 months,OR,tv,stringent,50,0.0092,0.0832
+Last 3 months,OR,tv,stringent,75,0.0001,0.0766
+Last 3 months,OR,web,lenient,50,0.0185,0.0192
+Last 3 months,OR,web,lenient,75,0.0120,0.0096
+Last 3 months,OR,web,stringent,50,0.0068,0.0119
+Last 3 months,OR,web,stringent,75,0.0032,0.0075
+Last 3 months,PA,tv,lenient,50,0.0629,0.1012
+Last 3 months,PA,tv,lenient,75,0.0268,0.0799
+Last 3 months,PA,tv,stringent,50,0.0160,0.1012
+Last 3 months,PA,tv,stringent,75,0.0014,0.0799
+Last 3 months,PA,web,lenient,50,0.0171,0.0145
+Last 3 months,PA,web,lenient,75,0.0100,0.0106
+Last 3 months,PA,web,stringent,50,0.0065,0.0059
+Last 3 months,PA,web,stringent,75,0.0030,0.0044
+Last 3 months,RI,tv,lenient,50,0.0531,0.0586
+Last 3 months,RI,tv,lenient,75,0.0210,0.0396
+Last 3 months,RI,tv,stringent,50,0.0135,0.0586
+Last 3 months,RI,tv,stringent,75,0.0004,0.0396
+Last 3 months,RI,web,lenient,50,0.0652,0.0000
+Last 3 months,RI,web,lenient,75,0.0520,0.0000
+Last 3 months,RI,web,stringent,50,0.0129,0.0000
+Last 3 months,RI,web,stringent,75,0.0129,0.0000
+Last 3 months,SC,tv,lenient,50,0.0416,0.1105
+Last 3 months,SC,tv,lenient,75,0.0169,0.0936
+Last 3 months,SC,tv,stringent,50,0.0077,0.1105
+Last 3 months,SC,tv,stringent,75,0.0002,0.0936
+Last 3 months,SC,web,lenient,50,0.0105,0.0076
+Last 3 months,SC,web,lenient,75,0.0094,0.0053
+Last 3 months,SC,web,stringent,50,0.0056,0.0009
+Last 3 months,SC,web,stringent,75,0.0050,0.0007
+Last 3 months,SD,tv,lenient,50,0.0587,0.1708
+Last 3 months,SD,tv,lenient,75,0.0143,0.1481
+Last 3 months,SD,tv,stringent,50,0.0188,0.1708
+Last 3 months,SD,tv,stringent,75,0.0033,0.1481
+Last 3 months,SD,web,lenient,50,0.0327,0.0335
+Last 3 months,SD,web,lenient,75,0.0327,0.0312
+Last 3 months,SD,web,stringent,50,0.0169,0.0322
+Last 3 months,SD,web,stringent,75,0.0169,0.0299
+Last 3 months,TN,tv,lenient,50,0.0329,0.1111
+Last 3 months,TN,tv,lenient,75,0.0140,0.0846
+Last 3 months,TN,tv,stringent,50,0.0069,0.1111
+Last 3 months,TN,tv,stringent,75,0.0012,0.0846
+Last 3 months,TN,web,lenient,50,0.0151,0.0357
+Last 3 months,TN,web,lenient,75,0.0106,0.0273
+Last 3 months,TN,web,stringent,50,0.0071,0.0043
+Last 3 months,TN,web,stringent,75,0.0031,0.0026
+Last 3 months,TX,tv,lenient,50,0.0337,0.0653
+Last 3 months,TX,tv,lenient,75,0.0156,0.0541
+Last 3 months,TX,tv,stringent,50,0.0060,0.0653
+Last 3 months,TX,tv,stringent,75,0.0004,0.0541
+Last 3 months,TX,web,lenient,50,0.0120,0.0111
+Last 3 months,TX,web,lenient,75,0.0083,0.0070
+Last 3 months,TX,web,stringent,50,0.0038,0.0042
+Last 3 months,TX,web,stringent,75,0.0023,0.0020
+Last 3 months,UT,tv,lenient,50,0.0335,0.0883
+Last 3 months,UT,tv,lenient,75,0.0169,0.0761
+Last 3 months,UT,tv,stringent,50,0.0022,0.0883
+Last 3 months,UT,tv,stringent,75,0.0003,0.0761
+Last 3 months,UT,web,lenient,50,0.0140,0.0729
+Last 3 months,UT,web,lenient,75,0.0081,0.0562
+Last 3 months,UT,web,stringent,50,0.0025,0.0010
+Last 3 months,UT,web,stringent,75,0.0022,0.0003
+Last 3 months,VA,tv,lenient,50,0.0543,0.0854
+Last 3 months,VA,tv,lenient,75,0.0222,0.0686
+Last 3 months,VA,tv,stringent,50,0.0083,0.0854
+Last 3 months,VA,tv,stringent,75,0.0005,0.0686
+Last 3 months,VA,web,lenient,50,0.0221,0.0153
+Last 3 months,VA,web,lenient,75,0.0157,0.0108
+Last 3 months,VA,web,stringent,50,0.0105,0.0023
+Last 3 months,VA,web,stringent,75,0.0077,0.0019
+Last 3 months,VT,tv,lenient,50,0.0898,0.0551
+Last 3 months,VT,tv,lenient,75,0.0190,0.0434
+Last 3 months,VT,tv,stringent,50,0.0350,0.0551
+Last 3 months,VT,tv,stringent,75,0.0017,0.0434
+Last 3 months,VT,web,lenient,50,0.0288,0.0150
+Last 3 months,VT,web,lenient,75,0.0208,0.0150
+Last 3 months,VT,web,stringent,50,0.0009,0.0000
+Last 3 months,VT,web,stringent,75,0.0009,0.0000
+Last 3 months,WA,tv,lenient,50,0.0402,0.0654
+Last 3 months,WA,tv,lenient,75,0.0246,0.0547
+Last 3 months,WA,tv,stringent,50,0.0061,0.0654
+Last 3 months,WA,tv,stringent,75,0.0019,0.0547
+Last 3 months,WA,web,lenient,50,0.0227,0.0240
+Last 3 months,WA,web,lenient,75,0.0160,0.0189
+Last 3 months,WA,web,stringent,50,0.0060,0.0095
+Last 3 months,WA,web,stringent,75,0.0041,0.0079
+Last 3 months,WI,tv,lenient,50,0.0246,0.0894
+Last 3 months,WI,tv,lenient,75,0.0098,0.0750
+Last 3 months,WI,tv,stringent,50,0.0031,0.0894
+Last 3 months,WI,tv,stringent,75,0.0001,0.0750
+Last 3 months,WI,web,lenient,50,0.0187,0.0116
+Last 3 months,WI,web,lenient,75,0.0156,0.0056
+Last 3 months,WI,web,stringent,50,0.0060,0.0002
+Last 3 months,WI,web,stringent,75,0.0039,0.0001
+Last 3 months,WV,tv,lenient,50,0.0209,0.1145
+Last 3 months,WV,tv,lenient,75,0.0045,0.0981
+Last 3 months,WV,tv,stringent,50,0.0098,0.1145
+Last 3 months,WV,tv,stringent,75,0.0016,0.0981
+Last 3 months,WV,web,lenient,50,0.0098,0.0158
+Last 3 months,WV,web,lenient,75,0.0089,0.0154
+Last 3 months,WV,web,stringent,50,0.0019,0.0005
+Last 3 months,WV,web,stringent,75,0.0013,0.0004
+Last 3 months,WY,tv,lenient,50,0.0112,0.1070
+Last 3 months,WY,tv,lenient,75,0.0070,0.0700
+Last 3 months,WY,tv,stringent,50,0.0010,0.1070
+Last 3 months,WY,tv,stringent,75,0.0000,0.0700
+Last 3 months,WY,web,lenient,50,0.0152,0.0160
+Last 3 months,WY,web,lenient,75,0.0017,0.0017
+Last 3 months,WY,web,stringent,50,0.0026,0.0134
+Last 3 months,WY,web,stringent,75,0.0017,0.0000
+Last 6 months,AK,tv,lenient,50,0.0328,0.0766
+Last 6 months,AK,tv,lenient,75,0.0138,0.0543
+Last 6 months,AK,tv,stringent,50,0.0119,0.0766
+Last 6 months,AK,tv,stringent,75,0.0047,0.0543
+Last 6 months,AK,web,lenient,50,0.0379,0.0695
+Last 6 months,AK,web,lenient,75,0.0309,0.0604
+Last 6 months,AK,web,stringent,50,0.0017,0.0489
+Last 6 months,AK,web,stringent,75,0.0009,0.0398
+Last 6 months,AL,tv,lenient,50,0.0356,0.1151
+Last 6 months,AL,tv,lenient,75,0.0177,0.0872
+Last 6 months,AL,tv,stringent,50,0.0068,0.1151
+Last 6 months,AL,tv,stringent,75,0.0006,0.0872
+Last 6 months,AL,web,lenient,50,0.0089,0.0103
+Last 6 months,AL,web,lenient,75,0.0066,0.0074
+Last 6 months,AL,web,stringent,50,0.0023,0.0032
+Last 6 months,AL,web,stringent,75,0.0016,0.0016
+Last 6 months,AR,tv,lenient,50,0.0349,0.1243
+Last 6 months,AR,tv,lenient,75,0.0167,0.1090
+Last 6 months,AR,tv,stringent,50,0.0052,0.1243
+Last 6 months,AR,tv,stringent,75,0.0002,0.1090
+Last 6 months,AR,web,lenient,50,0.0081,0.0247
+Last 6 months,AR,web,lenient,75,0.0050,0.0241
+Last 6 months,AR,web,stringent,50,0.0052,0.0041
+Last 6 months,AR,web,stringent,75,0.0031,0.0039
+Last 6 months,AZ,tv,lenient,50,0.0590,0.0698
+Last 6 months,AZ,tv,lenient,75,0.0285,0.0615
+Last 6 months,AZ,tv,stringent,50,0.0116,0.0698
+Last 6 months,AZ,tv,stringent,75,0.0017,0.0615
+Last 6 months,AZ,web,lenient,50,0.0243,0.0167
+Last 6 months,AZ,web,lenient,75,0.0165,0.0147
+Last 6 months,AZ,web,stringent,50,0.0086,0.0054
+Last 6 months,AZ,web,stringent,75,0.0060,0.0020
+Last 6 months,CA,tv,lenient,50,0.0649,0.0571
+Last 6 months,CA,tv,lenient,75,0.0293,0.0491
+Last 6 months,CA,tv,stringent,50,0.0141,0.0571
+Last 6 months,CA,tv,stringent,75,0.0012,0.0491
+Last 6 months,CA,web,lenient,50,0.0230,0.0092
+Last 6 months,CA,web,lenient,75,0.0167,0.0073
+Last 6 months,CA,web,stringent,50,0.0080,0.0032
+Last 6 months,CA,web,stringent,75,0.0059,0.0023
+Last 6 months,CO,tv,lenient,50,0.0448,0.0565
+Last 6 months,CO,tv,lenient,75,0.0215,0.0480
+Last 6 months,CO,tv,stringent,50,0.0105,0.0565
+Last 6 months,CO,tv,stringent,75,0.0016,0.0480
+Last 6 months,CO,web,lenient,50,0.0152,0.0114
+Last 6 months,CO,web,lenient,75,0.0077,0.0076
+Last 6 months,CO,web,stringent,50,0.0038,0.0026
+Last 6 months,CO,web,stringent,75,0.0019,0.0006
+Last 6 months,CT,tv,lenient,50,0.0641,0.0780
+Last 6 months,CT,tv,lenient,75,0.0299,0.0627
+Last 6 months,CT,tv,stringent,50,0.0137,0.0780
+Last 6 months,CT,tv,stringent,75,0.0012,0.0627
+Last 6 months,CT,web,lenient,50,0.0183,0.0142
+Last 6 months,CT,web,lenient,75,0.0125,0.0123
+Last 6 months,CT,web,stringent,50,0.0051,0.0001
+Last 6 months,CT,web,stringent,75,0.0049,0.0000
+Last 6 months,DC,tv,lenient,50,0.0591,0.0031
+Last 6 months,DC,tv,lenient,75,0.0383,0.0031
+Last 6 months,DC,tv,stringent,50,0.0090,0.0031
+Last 6 months,DC,tv,stringent,75,0.0000,0.0031
+Last 6 months,DC,web,lenient,50,0.0184,0.0061
+Last 6 months,DC,web,lenient,75,0.0097,0.0052
+Last 6 months,DC,web,stringent,50,0.0055,0.0061
+Last 6 months,DC,web,stringent,75,0.0017,0.0030
+Last 6 months,DE,tv,lenient,50,0.0816,0.0687
+Last 6 months,DE,tv,lenient,75,0.0356,0.0485
+Last 6 months,DE,tv,stringent,50,0.0148,0.0687
+Last 6 months,DE,tv,stringent,75,0.0039,0.0485
+Last 6 months,DE,web,lenient,50,0.0174,0.0109
+Last 6 months,DE,web,lenient,75,0.0126,0.0049
+Last 6 months,DE,web,stringent,50,0.0082,0.0002
+Last 6 months,DE,web,stringent,75,0.0082,0.0002
+Last 6 months,FL,tv,lenient,50,0.0493,0.0918
+Last 6 months,FL,tv,lenient,75,0.0226,0.0740
+Last 6 months,FL,tv,stringent,50,0.0092,0.0918
+Last 6 months,FL,tv,stringent,75,0.0010,0.0740
+Last 6 months,FL,web,lenient,50,0.0131,0.0149
+Last 6 months,FL,web,lenient,75,0.0098,0.0103
+Last 6 months,FL,web,stringent,50,0.0040,0.0026
+Last 6 months,FL,web,stringent,75,0.0030,0.0014
+Last 6 months,GA,tv,lenient,50,0.0493,0.0729
+Last 6 months,GA,tv,lenient,75,0.0258,0.0615
+Last 6 months,GA,tv,stringent,50,0.0088,0.0729
+Last 6 months,GA,tv,stringent,75,0.0013,0.0615
+Last 6 months,GA,web,lenient,50,0.0137,0.0090
+Last 6 months,GA,web,lenient,75,0.0115,0.0045
+Last 6 months,GA,web,stringent,50,0.0061,0.0034
+Last 6 months,GA,web,stringent,75,0.0054,0.0016
+Last 6 months,HI,tv,lenient,50,0.0549,0.0786
+Last 6 months,HI,tv,lenient,75,0.0245,0.0652
+Last 6 months,HI,tv,stringent,50,0.0082,0.0786
+Last 6 months,HI,tv,stringent,75,0.0038,0.0652
+Last 6 months,HI,web,lenient,50,0.0070,0.0000
+Last 6 months,HI,web,lenient,75,0.0070,0.0000
+Last 6 months,HI,web,stringent,50,0.0001,0.0000
+Last 6 months,HI,web,stringent,75,0.0001,0.0000
+Last 6 months,IA,tv,lenient,50,0.0363,0.0898
+Last 6 months,IA,tv,lenient,75,0.0143,0.0765
+Last 6 months,IA,tv,stringent,50,0.0079,0.0898
+Last 6 months,IA,tv,stringent,75,0.0022,0.0765
+Last 6 months,IA,web,lenient,50,0.0140,0.0182
+Last 6 months,IA,web,lenient,75,0.0073,0.0093
+Last 6 months,IA,web,stringent,50,0.0031,0.0056
+Last 6 months,IA,web,stringent,75,0.0011,0.0008
+Last 6 months,ID,tv,lenient,50,0.0159,0.1002
+Last 6 months,ID,tv,lenient,75,0.0087,0.0745
+Last 6 months,ID,tv,stringent,50,0.0036,0.1002
+Last 6 months,ID,tv,stringent,75,0.0000,0.0745
+Last 6 months,ID,web,lenient,50,0.0137,0.0268
+Last 6 months,ID,web,lenient,75,0.0117,0.0183
+Last 6 months,ID,web,stringent,50,0.0036,0.0094
+Last 6 months,ID,web,stringent,75,0.0032,0.0059
+Last 6 months,IL,tv,lenient,50,0.0448,0.0688
+Last 6 months,IL,tv,lenient,75,0.0206,0.0580
+Last 6 months,IL,tv,stringent,50,0.0098,0.0688
+Last 6 months,IL,tv,stringent,75,0.0015,0.0580
+Last 6 months,IL,web,lenient,50,0.0163,0.0059
+Last 6 months,IL,web,lenient,75,0.0101,0.0042
+Last 6 months,IL,web,stringent,50,0.0077,0.0023
+Last 6 months,IL,web,stringent,75,0.0051,0.0013
+Last 6 months,IN,tv,lenient,50,0.0324,0.0696
+Last 6 months,IN,tv,lenient,75,0.0173,0.0572
+Last 6 months,IN,tv,stringent,50,0.0055,0.0696
+Last 6 months,IN,tv,stringent,75,0.0008,0.0572
+Last 6 months,IN,web,lenient,50,0.0133,0.0127
+Last 6 months,IN,web,lenient,75,0.0089,0.0105
+Last 6 months,IN,web,stringent,50,0.0034,0.0044
+Last 6 months,IN,web,stringent,75,0.0019,0.0026
+Last 6 months,KS,tv,lenient,50,0.0327,0.0789
+Last 6 months,KS,tv,lenient,75,0.0166,0.0552
+Last 6 months,KS,tv,stringent,50,0.0059,0.0789
+Last 6 months,KS,tv,stringent,75,0.0003,0.0552
+Last 6 months,KS,web,lenient,50,0.0103,0.0120
+Last 6 months,KS,web,lenient,75,0.0095,0.0115
+Last 6 months,KS,web,stringent,50,0.0018,0.0007
+Last 6 months,KS,web,stringent,75,0.0014,0.0003
+Last 6 months,KY,tv,lenient,50,0.0329,0.0912
+Last 6 months,KY,tv,lenient,75,0.0194,0.0720
+Last 6 months,KY,tv,stringent,50,0.0041,0.0912
+Last 6 months,KY,tv,stringent,75,0.0007,0.0720
+Last 6 months,KY,web,lenient,50,0.0163,0.0105
+Last 6 months,KY,web,lenient,75,0.0100,0.0101
+Last 6 months,KY,web,stringent,50,0.0061,0.0067
+Last 6 months,KY,web,stringent,75,0.0025,0.0066
+Last 6 months,LA,tv,lenient,50,0.0395,0.0998
+Last 6 months,LA,tv,lenient,75,0.0130,0.0787
+Last 6 months,LA,tv,stringent,50,0.0150,0.0998
+Last 6 months,LA,tv,stringent,75,0.0013,0.0787
+Last 6 months,LA,web,lenient,50,0.0119,0.0072
+Last 6 months,LA,web,lenient,75,0.0072,0.0037
+Last 6 months,LA,web,stringent,50,0.0039,0.0032
+Last 6 months,LA,web,stringent,75,0.0016,0.0030
+Last 6 months,MA,tv,lenient,50,0.0782,0.0517
+Last 6 months,MA,tv,lenient,75,0.0374,0.0410
+Last 6 months,MA,tv,stringent,50,0.0158,0.0517
+Last 6 months,MA,tv,stringent,75,0.0023,0.0410
+Last 6 months,MA,web,lenient,50,0.0206,0.0016
+Last 6 months,MA,web,lenient,75,0.0161,0.0015
+Last 6 months,MA,web,stringent,50,0.0120,0.0009
+Last 6 months,MA,web,stringent,75,0.0097,0.0000
+Last 6 months,MD,tv,lenient,50,0.0818,0.0546
+Last 6 months,MD,tv,lenient,75,0.0423,0.0460
+Last 6 months,MD,tv,stringent,50,0.0133,0.0546
+Last 6 months,MD,tv,stringent,75,0.0012,0.0460
+Last 6 months,MD,web,lenient,50,0.0163,0.0109
+Last 6 months,MD,web,lenient,75,0.0123,0.0080
+Last 6 months,MD,web,stringent,50,0.0063,0.0013
+Last 6 months,MD,web,stringent,75,0.0047,0.0011
+Last 6 months,ME,tv,lenient,50,0.0292,0.0919
+Last 6 months,ME,tv,lenient,75,0.0190,0.0745
+Last 6 months,ME,tv,stringent,50,0.0049,0.0919
+Last 6 months,ME,tv,stringent,75,0.0000,0.0745
+Last 6 months,ME,web,lenient,50,0.0452,0.0121
+Last 6 months,ME,web,lenient,75,0.0307,0.0052
+Last 6 months,ME,web,stringent,50,0.0070,0.0000
+Last 6 months,ME,web,stringent,75,0.0062,0.0000
+Last 6 months,MI,tv,lenient,50,0.0456,0.0771
+Last 6 months,MI,tv,lenient,75,0.0207,0.0637
+Last 6 months,MI,tv,stringent,50,0.0079,0.0771
+Last 6 months,MI,tv,stringent,75,0.0005,0.0637
+Last 6 months,MI,web,lenient,50,0.0226,0.0104
+Last 6 months,MI,web,lenient,75,0.0156,0.0091
+Last 6 months,MI,web,stringent,50,0.0061,0.0044
+Last 6 months,MI,web,stringent,75,0.0051,0.0031
+Last 6 months,MN,tv,lenient,50,0.0432,0.0532
+Last 6 months,MN,tv,lenient,75,0.0183,0.0390
+Last 6 months,MN,tv,stringent,50,0.0109,0.0532
+Last 6 months,MN,tv,stringent,75,0.0021,0.0390
+Last 6 months,MN,web,lenient,50,0.0272,0.0162
+Last 6 months,MN,web,lenient,75,0.0217,0.0144
+Last 6 months,MN,web,stringent,50,0.0065,0.0069
+Last 6 months,MN,web,stringent,75,0.0043,0.0047
+Last 6 months,MO,tv,lenient,50,0.0417,0.0997
+Last 6 months,MO,tv,lenient,75,0.0188,0.0845
+Last 6 months,MO,tv,stringent,50,0.0099,0.0997
+Last 6 months,MO,tv,stringent,75,0.0014,0.0845
+Last 6 months,MO,web,lenient,50,0.0114,0.0163
+Last 6 months,MO,web,lenient,75,0.0082,0.0102
+Last 6 months,MO,web,stringent,50,0.0040,0.0040
+Last 6 months,MO,web,stringent,75,0.0032,0.0023
+Last 6 months,MS,tv,lenient,50,0.0222,0.0892
+Last 6 months,MS,tv,lenient,75,0.0092,0.0783
+Last 6 months,MS,tv,stringent,50,0.0074,0.0892
+Last 6 months,MS,tv,stringent,75,0.0006,0.0783
+Last 6 months,MS,web,lenient,50,0.0189,0.0164
+Last 6 months,MS,web,lenient,75,0.0103,0.0090
+Last 6 months,MS,web,stringent,50,0.0089,0.0056
+Last 6 months,MS,web,stringent,75,0.0038,0.0051
+Last 6 months,MT,tv,lenient,50,0.0199,0.1432
+Last 6 months,MT,tv,lenient,75,0.0021,0.0944
+Last 6 months,MT,tv,stringent,50,0.0038,0.1432
+Last 6 months,MT,tv,stringent,75,0.0000,0.0944
+Last 6 months,MT,web,lenient,50,0.0366,0.0585
+Last 6 months,MT,web,lenient,75,0.0324,0.0535
+Last 6 months,MT,web,stringent,50,0.0182,0.0058
+Last 6 months,MT,web,stringent,75,0.0178,0.0058
+Last 6 months,NC,tv,lenient,50,0.0510,0.0744
+Last 6 months,NC,tv,lenient,75,0.0249,0.0583
+Last 6 months,NC,tv,stringent,50,0.0090,0.0744
+Last 6 months,NC,tv,stringent,75,0.0010,0.0583
+Last 6 months,NC,web,lenient,50,0.0111,0.0150
+Last 6 months,NC,web,lenient,75,0.0067,0.0108
+Last 6 months,NC,web,stringent,50,0.0037,0.0072
+Last 6 months,NC,web,stringent,75,0.0019,0.0060
+Last 6 months,ND,tv,lenient,50,0.0117,0.1356
+Last 6 months,ND,tv,lenient,75,0.0085,0.1308
+Last 6 months,ND,tv,stringent,50,0.0032,0.1356
+Last 6 months,ND,tv,stringent,75,0.0000,0.1308
+Last 6 months,ND,web,lenient,50,0.0458,0.0085
+Last 6 months,ND,web,lenient,75,0.0343,0.0085
+Last 6 months,ND,web,stringent,50,0.0012,0.0085
+Last 6 months,ND,web,stringent,75,0.0000,0.0085
+Last 6 months,NE,tv,lenient,50,0.0214,0.1303
+Last 6 months,NE,tv,lenient,75,0.0066,0.1147
+Last 6 months,NE,tv,stringent,50,0.0074,0.1303
+Last 6 months,NE,tv,stringent,75,0.0000,0.1147
+Last 6 months,NE,web,lenient,50,0.0181,0.0157
+Last 6 months,NE,web,lenient,75,0.0131,0.0146
+Last 6 months,NE,web,stringent,50,0.0070,0.0019
+Last 6 months,NE,web,stringent,75,0.0061,0.0015
+Last 6 months,NH,tv,lenient,50,0.0489,0.0738
+Last 6 months,NH,tv,lenient,75,0.0270,0.0594
+Last 6 months,NH,tv,stringent,50,0.0082,0.0738
+Last 6 months,NH,tv,stringent,75,0.0005,0.0594
+Last 6 months,NH,web,lenient,50,0.0160,0.0090
+Last 6 months,NH,web,lenient,75,0.0093,0.0000
+Last 6 months,NH,web,stringent,50,0.0029,0.0002
+Last 6 months,NH,web,stringent,75,0.0027,0.0000
+Last 6 months,NJ,tv,lenient,50,0.0604,0.0902
+Last 6 months,NJ,tv,lenient,75,0.0317,0.0796
+Last 6 months,NJ,tv,stringent,50,0.0110,0.0902
+Last 6 months,NJ,tv,stringent,75,0.0017,0.0796
+Last 6 months,NJ,web,lenient,50,0.0142,0.0104
+Last 6 months,NJ,web,lenient,75,0.0107,0.0082
+Last 6 months,NJ,web,stringent,50,0.0039,0.0027
+Last 6 months,NJ,web,stringent,75,0.0025,0.0020
+Last 6 months,NM,tv,lenient,50,0.0532,0.0637
+Last 6 months,NM,tv,lenient,75,0.0196,0.0537
+Last 6 months,NM,tv,stringent,50,0.0110,0.0637
+Last 6 months,NM,tv,stringent,75,0.0010,0.0537
+Last 6 months,NM,web,lenient,50,0.0261,0.0091
+Last 6 months,NM,web,lenient,75,0.0180,0.0053
+Last 6 months,NM,web,stringent,50,0.0170,0.0045
+Last 6 months,NM,web,stringent,75,0.0097,0.0037
+Last 6 months,NV,tv,lenient,50,0.0743,0.0964
+Last 6 months,NV,tv,lenient,75,0.0235,0.0786
+Last 6 months,NV,tv,stringent,50,0.0247,0.0964
+Last 6 months,NV,tv,stringent,75,0.0015,0.0786
+Last 6 months,NV,web,lenient,50,0.0266,0.0116
+Last 6 months,NV,web,lenient,75,0.0210,0.0113
+Last 6 months,NV,web,stringent,50,0.0085,0.0007
+Last 6 months,NV,web,stringent,75,0.0073,0.0007
+Last 6 months,NY,tv,lenient,50,0.0699,0.0678
+Last 6 months,NY,tv,lenient,75,0.0254,0.0534
+Last 6 months,NY,tv,stringent,50,0.0184,0.0678
+Last 6 months,NY,tv,stringent,75,0.0024,0.0534
+Last 6 months,NY,web,lenient,50,0.0165,0.0063
+Last 6 months,NY,web,lenient,75,0.0116,0.0050
+Last 6 months,NY,web,stringent,50,0.0058,0.0025
+Last 6 months,NY,web,stringent,75,0.0041,0.0016
+Last 6 months,OH,tv,lenient,50,0.0381,0.0940
+Last 6 months,OH,tv,lenient,75,0.0166,0.0752
+Last 6 months,OH,tv,stringent,50,0.0081,0.0940
+Last 6 months,OH,tv,stringent,75,0.0008,0.0752
+Last 6 months,OH,web,lenient,50,0.0148,0.0101
+Last 6 months,OH,web,lenient,75,0.0108,0.0088
+Last 6 months,OH,web,stringent,50,0.0053,0.0025
+Last 6 months,OH,web,stringent,75,0.0033,0.0020
+Last 6 months,OK,tv,lenient,50,0.0248,0.1016
+Last 6 months,OK,tv,lenient,75,0.0111,0.0781
+Last 6 months,OK,tv,stringent,50,0.0036,0.1016
+Last 6 months,OK,tv,stringent,75,0.0003,0.0781
+Last 6 months,OK,web,lenient,50,0.0083,0.0210
+Last 6 months,OK,web,lenient,75,0.0072,0.0190
+Last 6 months,OK,web,stringent,50,0.0019,0.0012
+Last 6 months,OK,web,stringent,75,0.0017,0.0007
+Last 6 months,OR,tv,lenient,50,0.0360,0.0819
+Last 6 months,OR,tv,lenient,75,0.0150,0.0736
+Last 6 months,OR,tv,stringent,50,0.0096,0.0819
+Last 6 months,OR,tv,stringent,75,0.0001,0.0736
+Last 6 months,OR,web,lenient,50,0.0166,0.0120
+Last 6 months,OR,web,lenient,75,0.0125,0.0069
+Last 6 months,OR,web,stringent,50,0.0049,0.0066
+Last 6 months,OR,web,stringent,75,0.0024,0.0043
+Last 6 months,PA,tv,lenient,50,0.0638,0.1017
+Last 6 months,PA,tv,lenient,75,0.0265,0.0832
+Last 6 months,PA,tv,stringent,50,0.0159,0.1017
+Last 6 months,PA,tv,stringent,75,0.0012,0.0832
+Last 6 months,PA,web,lenient,50,0.0150,0.0126
+Last 6 months,PA,web,lenient,75,0.0086,0.0096
+Last 6 months,PA,web,stringent,50,0.0062,0.0055
+Last 6 months,PA,web,stringent,75,0.0029,0.0042
+Last 6 months,RI,tv,lenient,50,0.0589,0.0617
+Last 6 months,RI,tv,lenient,75,0.0256,0.0426
+Last 6 months,RI,tv,stringent,50,0.0111,0.0617
+Last 6 months,RI,tv,stringent,75,0.0007,0.0426
+Last 6 months,RI,web,lenient,50,0.0345,0.0000
+Last 6 months,RI,web,lenient,75,0.0260,0.0000
+Last 6 months,RI,web,stringent,50,0.0071,0.0000
+Last 6 months,RI,web,stringent,75,0.0064,0.0000
+Last 6 months,SC,tv,lenient,50,0.0387,0.1158
+Last 6 months,SC,tv,lenient,75,0.0159,0.0988
+Last 6 months,SC,tv,stringent,50,0.0075,0.1158
+Last 6 months,SC,tv,stringent,75,0.0002,0.0988
+Last 6 months,SC,web,lenient,50,0.0091,0.0099
+Last 6 months,SC,web,lenient,75,0.0067,0.0051
+Last 6 months,SC,web,stringent,50,0.0038,0.0050
+Last 6 months,SC,web,stringent,75,0.0033,0.0026
+Last 6 months,SD,tv,lenient,50,0.0604,0.1682
+Last 6 months,SD,tv,lenient,75,0.0153,0.1403
+Last 6 months,SD,tv,stringent,50,0.0210,0.1682
+Last 6 months,SD,tv,stringent,75,0.0017,0.1403
+Last 6 months,SD,web,lenient,50,0.0203,0.0445
+Last 6 months,SD,web,lenient,75,0.0180,0.0433
+Last 6 months,SD,web,stringent,50,0.0092,0.0438
+Last 6 months,SD,web,stringent,75,0.0087,0.0427
+Last 6 months,TN,tv,lenient,50,0.0327,0.1079
+Last 6 months,TN,tv,lenient,75,0.0150,0.0840
+Last 6 months,TN,tv,stringent,50,0.0047,0.1079
+Last 6 months,TN,tv,stringent,75,0.0007,0.0840
+Last 6 months,TN,web,lenient,50,0.0149,0.0353
+Last 6 months,TN,web,lenient,75,0.0112,0.0283
+Last 6 months,TN,web,stringent,50,0.0083,0.0039
+Last 6 months,TN,web,stringent,75,0.0052,0.0016
+Last 6 months,TX,tv,lenient,50,0.0355,0.0689
+Last 6 months,TX,tv,lenient,75,0.0166,0.0573
+Last 6 months,TX,tv,stringent,50,0.0067,0.0689
+Last 6 months,TX,tv,stringent,75,0.0007,0.0573
+Last 6 months,TX,web,lenient,50,0.0137,0.0114
+Last 6 months,TX,web,lenient,75,0.0098,0.0077
+Last 6 months,TX,web,stringent,50,0.0054,0.0043
+Last 6 months,TX,web,stringent,75,0.0037,0.0022
+Last 6 months,UT,tv,lenient,50,0.0325,0.0887
+Last 6 months,UT,tv,lenient,75,0.0165,0.0749
+Last 6 months,UT,tv,stringent,50,0.0020,0.0887
+Last 6 months,UT,tv,stringent,75,0.0004,0.0749
+Last 6 months,UT,web,lenient,50,0.0111,0.0904
+Last 6 months,UT,web,lenient,75,0.0072,0.0787
+Last 6 months,UT,web,stringent,50,0.0027,0.0011
+Last 6 months,UT,web,stringent,75,0.0017,0.0003
+Last 6 months,VA,tv,lenient,50,0.0562,0.0932
+Last 6 months,VA,tv,lenient,75,0.0248,0.0766
+Last 6 months,VA,tv,stringent,50,0.0087,0.0932
+Last 6 months,VA,tv,stringent,75,0.0011,0.0766
+Last 6 months,VA,web,lenient,50,0.0201,0.0134
+Last 6 months,VA,web,lenient,75,0.0155,0.0079
+Last 6 months,VA,web,stringent,50,0.0103,0.0039
+Last 6 months,VA,web,stringent,75,0.0084,0.0020
+Last 6 months,VT,tv,lenient,50,0.0851,0.0612
+Last 6 months,VT,tv,lenient,75,0.0114,0.0514
+Last 6 months,VT,tv,stringent,50,0.0395,0.0612
+Last 6 months,VT,tv,stringent,75,0.0009,0.0514
+Last 6 months,VT,web,lenient,50,0.0156,0.0098
+Last 6 months,VT,web,lenient,75,0.0110,0.0091
+Last 6 months,VT,web,stringent,50,0.0005,0.0000
+Last 6 months,VT,web,stringent,75,0.0005,0.0000
+Last 6 months,WA,tv,lenient,50,0.0395,0.0701
+Last 6 months,WA,tv,lenient,75,0.0231,0.0585
+Last 6 months,WA,tv,stringent,50,0.0056,0.0701
+Last 6 months,WA,tv,stringent,75,0.0013,0.0585
+Last 6 months,WA,web,lenient,50,0.0221,0.0188
+Last 6 months,WA,web,lenient,75,0.0144,0.0138
+Last 6 months,WA,web,stringent,50,0.0058,0.0062
+Last 6 months,WA,web,stringent,75,0.0037,0.0042
+Last 6 months,WI,tv,lenient,50,0.0235,0.0869
+Last 6 months,WI,tv,lenient,75,0.0100,0.0695
+Last 6 months,WI,tv,stringent,50,0.0032,0.0869
+Last 6 months,WI,tv,stringent,75,0.0002,0.0695
+Last 6 months,WI,web,lenient,50,0.0210,0.0168
+Last 6 months,WI,web,lenient,75,0.0157,0.0091
+Last 6 months,WI,web,stringent,50,0.0044,0.0084
+Last 6 months,WI,web,stringent,75,0.0032,0.0043
+Last 6 months,WV,tv,lenient,50,0.0210,0.1147
+Last 6 months,WV,tv,lenient,75,0.0085,0.0953
+Last 6 months,WV,tv,stringent,50,0.0051,0.1147
+Last 6 months,WV,tv,stringent,75,0.0008,0.0953
+Last 6 months,WV,web,lenient,50,0.0132,0.0173
+Last 6 months,WV,web,lenient,75,0.0119,0.0082
+Last 6 months,WV,web,stringent,50,0.0013,0.0004
+Last 6 months,WV,web,stringent,75,0.0008,0.0004
+Last 6 months,WY,tv,lenient,50,0.0134,0.0813
+Last 6 months,WY,tv,lenient,75,0.0075,0.0603
+Last 6 months,WY,tv,stringent,50,0.0005,0.0813
+Last 6 months,WY,tv,stringent,75,0.0000,0.0603
+Last 6 months,WY,web,lenient,50,0.0293,0.0080
+Last 6 months,WY,web,lenient,75,0.0140,0.0009
+Last 6 months,WY,web,stringent,50,0.0157,0.0067
+Last 6 months,WY,web,stringent,75,0.0067,0.0000
+Last month,AK,tv,lenient,50,0.0784,0.0899
+Last month,AK,tv,lenient,75,0.0454,0.0899
+Last month,AK,tv,stringent,50,0.0614,0.0899
+Last month,AK,tv,stringent,75,0.0284,0.0899
+Last month,AK,web,lenient,50,0.0135,0.0619
+Last month,AK,web,lenient,75,0.0098,0.0619
+Last month,AK,web,stringent,50,0.0000,0.0039
+Last month,AK,web,stringent,75,0.0000,0.0039
+Last month,AL,tv,lenient,50,0.0334,0.1157
+Last month,AL,tv,lenient,75,0.0136,0.0850
+Last month,AL,tv,stringent,50,0.0089,0.1157
+Last month,AL,tv,stringent,75,0.0003,0.0850
+Last month,AL,web,lenient,50,0.0052,0.0226
+Last month,AL,web,lenient,75,0.0043,0.0135
+Last month,AL,web,stringent,50,0.0018,0.0151
+Last month,AL,web,stringent,75,0.0009,0.0070
+Last month,AR,tv,lenient,50,0.0221,0.1401
+Last month,AR,tv,lenient,75,0.0051,0.1244
+Last month,AR,tv,stringent,50,0.0000,0.1401
+Last month,AR,tv,stringent,75,0.0000,0.1244
+Last month,AR,web,lenient,50,0.0074,0.0278
+Last month,AR,web,lenient,75,0.0067,0.0270
+Last month,AR,web,stringent,50,0.0013,0.0015
+Last month,AR,web,stringent,75,0.0007,0.0013
+Last month,AZ,tv,lenient,50,0.0574,0.0671
+Last month,AZ,tv,lenient,75,0.0330,0.0587
+Last month,AZ,tv,stringent,50,0.0118,0.0671
+Last month,AZ,tv,stringent,75,0.0012,0.0587
+Last month,AZ,web,lenient,50,0.0166,0.0208
+Last month,AZ,web,lenient,75,0.0135,0.0161
+Last month,AZ,web,stringent,50,0.0037,0.0090
+Last month,AZ,web,stringent,75,0.0014,0.0045
+Last month,CA,tv,lenient,50,0.0548,0.0554
+Last month,CA,tv,lenient,75,0.0255,0.0480
+Last month,CA,tv,stringent,50,0.0138,0.0554
+Last month,CA,tv,stringent,75,0.0017,0.0480
+Last month,CA,web,lenient,50,0.0228,0.0118
+Last month,CA,web,lenient,75,0.0149,0.0085
+Last month,CA,web,stringent,50,0.0105,0.0044
+Last month,CA,web,stringent,75,0.0068,0.0021
+Last month,CO,tv,lenient,50,0.0380,0.0593
+Last month,CO,tv,lenient,75,0.0210,0.0525
+Last month,CO,tv,stringent,50,0.0116,0.0593
+Last month,CO,tv,stringent,75,0.0031,0.0525
+Last month,CO,web,lenient,50,0.0208,0.0192
+Last month,CO,web,lenient,75,0.0081,0.0159
+Last month,CO,web,stringent,50,0.0061,0.0006
+Last month,CO,web,stringent,75,0.0008,0.0006
+Last month,CT,tv,lenient,50,0.0504,0.0792
+Last month,CT,tv,lenient,75,0.0201,0.0665
+Last month,CT,tv,stringent,50,0.0103,0.0792
+Last month,CT,tv,stringent,75,0.0021,0.0665
+Last month,CT,web,lenient,50,0.0119,0.0176
+Last month,CT,web,lenient,75,0.0113,0.0158
+Last month,CT,web,stringent,50,0.0021,0.0000
+Last month,CT,web,stringent,75,0.0010,0.0000
+Last month,DC,tv,lenient,50,0.0409,0.0000
+Last month,DC,tv,lenient,75,0.0219,0.0000
+Last month,DC,tv,stringent,50,0.0030,0.0000
+Last month,DC,tv,stringent,75,0.0000,0.0000
+Last month,DC,web,lenient,50,0.0142,0.0069
+Last month,DC,web,lenient,75,0.0142,0.0069
+Last month,DC,web,stringent,50,0.0000,0.0069
+Last month,DC,web,stringent,75,0.0000,0.0069
+Last month,DE,tv,lenient,50,0.0787,0.0668
+Last month,DE,tv,lenient,75,0.0270,0.0531
+Last month,DE,tv,stringent,50,0.0073,0.0668
+Last month,DE,tv,stringent,75,0.0000,0.0531
+Last month,DE,web,lenient,50,0.0219,0.0208
+Last month,DE,web,lenient,75,0.0208,0.0023
+Last month,DE,web,stringent,50,0.0012,0.0012
+Last month,DE,web,stringent,75,0.0012,0.0012
+Last month,FL,tv,lenient,50,0.0481,0.0905
+Last month,FL,tv,lenient,75,0.0233,0.0733
+Last month,FL,tv,stringent,50,0.0102,0.0905
+Last month,FL,tv,stringent,75,0.0018,0.0733
+Last month,FL,web,lenient,50,0.0157,0.0180
+Last month,FL,web,lenient,75,0.0129,0.0115
+Last month,FL,web,stringent,50,0.0076,0.0009
+Last month,FL,web,stringent,75,0.0055,0.0006
+Last month,GA,tv,lenient,50,0.0474,0.0733
+Last month,GA,tv,lenient,75,0.0240,0.0656
+Last month,GA,tv,stringent,50,0.0079,0.0733
+Last month,GA,tv,stringent,75,0.0009,0.0656
+Last month,GA,web,lenient,50,0.0139,0.0114
+Last month,GA,web,lenient,75,0.0122,0.0060
+Last month,GA,web,stringent,50,0.0070,0.0056
+Last month,GA,web,stringent,75,0.0065,0.0030
+Last month,HI,tv,lenient,50,0.0412,0.0615
+Last month,HI,tv,lenient,75,0.0133,0.0473
+Last month,HI,tv,stringent,50,0.0133,0.0615
+Last month,HI,tv,stringent,75,0.0000,0.0473
+Last month,HI,web,lenient,50,0.0346,0.0000
+Last month,HI,web,lenient,75,0.0346,0.0000
+Last month,HI,web,stringent,50,0.0005,0.0000
+Last month,HI,web,stringent,75,0.0005,0.0000
+Last month,IA,tv,lenient,50,0.0368,0.1000
+Last month,IA,tv,lenient,75,0.0030,0.0866
+Last month,IA,tv,stringent,50,0.0070,0.1000
+Last month,IA,tv,stringent,75,0.0000,0.0866
+Last month,IA,web,lenient,50,0.0061,0.0248
+Last month,IA,web,lenient,75,0.0047,0.0124
+Last month,IA,web,stringent,50,0.0018,0.0131
+Last month,IA,web,stringent,75,0.0018,0.0007
+Last month,ID,tv,lenient,50,0.0235,0.1065
+Last month,ID,tv,lenient,75,0.0105,0.0862
+Last month,ID,tv,stringent,50,0.0055,0.1065
+Last month,ID,tv,stringent,75,0.0000,0.0862
+Last month,ID,web,lenient,50,0.0024,0.0219
+Last month,ID,web,lenient,75,0.0024,0.0219
+Last month,ID,web,stringent,50,0.0000,0.0015
+Last month,ID,web,stringent,75,0.0000,0.0015
+Last month,IL,tv,lenient,50,0.0418,0.0686
+Last month,IL,tv,lenient,75,0.0162,0.0560
+Last month,IL,tv,stringent,50,0.0110,0.0686
+Last month,IL,tv,stringent,75,0.0010,0.0560
+Last month,IL,web,lenient,50,0.0119,0.0047
+Last month,IL,web,lenient,75,0.0066,0.0037
+Last month,IL,web,stringent,50,0.0074,0.0011
+Last month,IL,web,stringent,75,0.0054,0.0007
+Last month,IN,tv,lenient,50,0.0268,0.0662
+Last month,IN,tv,lenient,75,0.0142,0.0569
+Last month,IN,tv,stringent,50,0.0025,0.0662
+Last month,IN,tv,stringent,75,0.0000,0.0569
+Last month,IN,web,lenient,50,0.0211,0.0135
+Last month,IN,web,lenient,75,0.0113,0.0133
+Last month,IN,web,stringent,50,0.0112,0.0130
+Last month,IN,web,stringent,75,0.0064,0.0086
+Last month,KS,tv,lenient,50,0.0326,0.0757
+Last month,KS,tv,lenient,75,0.0186,0.0600
+Last month,KS,tv,stringent,50,0.0038,0.0757
+Last month,KS,tv,stringent,75,0.0000,0.0600
+Last month,KS,web,lenient,50,0.0128,0.0168
+Last month,KS,web,lenient,75,0.0128,0.0168
+Last month,KS,web,stringent,50,0.0007,0.0007
+Last month,KS,web,stringent,75,0.0007,0.0007
+Last month,KY,tv,lenient,50,0.0292,0.0913
+Last month,KY,tv,lenient,75,0.0164,0.0713
+Last month,KY,tv,stringent,50,0.0047,0.0913
+Last month,KY,tv,stringent,75,0.0004,0.0713
+Last month,KY,web,lenient,50,0.0113,0.0095
+Last month,KY,web,lenient,75,0.0098,0.0090
+Last month,KY,web,stringent,50,0.0023,0.0001
+Last month,KY,web,stringent,75,0.0018,0.0001
+Last month,LA,tv,lenient,50,0.0365,0.1135
+Last month,LA,tv,lenient,75,0.0201,0.0958
+Last month,LA,tv,stringent,50,0.0150,0.1135
+Last month,LA,tv,stringent,75,0.0049,0.0958
+Last month,LA,web,lenient,50,0.0124,0.0147
+Last month,LA,web,lenient,75,0.0113,0.0055
+Last month,LA,web,stringent,50,0.0026,0.0044
+Last month,LA,web,stringent,75,0.0021,0.0044
+Last month,MA,tv,lenient,50,0.0668,0.0451
+Last month,MA,tv,lenient,75,0.0286,0.0359
+Last month,MA,tv,stringent,50,0.0174,0.0451
+Last month,MA,tv,stringent,75,0.0021,0.0359
+Last month,MA,web,lenient,50,0.0205,0.0006
+Last month,MA,web,lenient,75,0.0156,0.0003
+Last month,MA,web,stringent,50,0.0153,0.0003
+Last month,MA,web,stringent,75,0.0107,0.0003
+Last month,MD,tv,lenient,50,0.0715,0.0485
+Last month,MD,tv,lenient,75,0.0346,0.0426
+Last month,MD,tv,stringent,50,0.0144,0.0485
+Last month,MD,tv,stringent,75,0.0032,0.0426
+Last month,MD,web,lenient,50,0.0126,0.0111
+Last month,MD,web,lenient,75,0.0114,0.0065
+Last month,MD,web,stringent,50,0.0010,0.0003
+Last month,MD,web,stringent,75,0.0010,0.0000
+Last month,ME,tv,lenient,50,0.0238,0.0671
+Last month,ME,tv,lenient,75,0.0067,0.0581
+Last month,ME,tv,stringent,50,0.0000,0.0671
+Last month,ME,tv,stringent,75,0.0000,0.0581
+Last month,ME,web,lenient,50,0.0191,0.0000
+Last month,ME,web,lenient,75,0.0144,0.0000
+Last month,ME,web,stringent,50,0.0015,0.0000
+Last month,ME,web,stringent,75,0.0000,0.0000
+Last month,MI,tv,lenient,50,0.0386,0.0770
+Last month,MI,tv,lenient,75,0.0173,0.0628
+Last month,MI,tv,stringent,50,0.0074,0.0770
+Last month,MI,tv,stringent,75,0.0000,0.0628
+Last month,MI,web,lenient,50,0.0200,0.0079
+Last month,MI,web,lenient,75,0.0119,0.0075
+Last month,MI,web,stringent,50,0.0021,0.0042
+Last month,MI,web,stringent,75,0.0010,0.0040
+Last month,MN,tv,lenient,50,0.0357,0.0472
+Last month,MN,tv,lenient,75,0.0147,0.0362
+Last month,MN,tv,stringent,50,0.0077,0.0472
+Last month,MN,tv,stringent,75,0.0000,0.0362
+Last month,MN,web,lenient,50,0.0319,0.0208
+Last month,MN,web,lenient,75,0.0267,0.0150
+Last month,MN,web,stringent,50,0.0009,0.0105
+Last month,MN,web,stringent,75,0.0009,0.0051
+Last month,MO,tv,lenient,50,0.0417,0.0938
+Last month,MO,tv,lenient,75,0.0165,0.0811
+Last month,MO,tv,stringent,50,0.0115,0.0938
+Last month,MO,tv,stringent,75,0.0012,0.0811
+Last month,MO,web,lenient,50,0.0089,0.0103
+Last month,MO,web,lenient,75,0.0074,0.0051
+Last month,MO,web,stringent,50,0.0070,0.0012
+Last month,MO,web,stringent,75,0.0055,0.0003
+Last month,MS,tv,lenient,50,0.0189,0.0741
+Last month,MS,tv,lenient,75,0.0061,0.0691
+Last month,MS,tv,stringent,50,0.0084,0.0741
+Last month,MS,tv,stringent,75,0.0000,0.0691
+Last month,MS,web,lenient,50,0.0049,0.0175
+Last month,MS,web,lenient,75,0.0034,0.0157
+Last month,MS,web,stringent,50,0.0036,0.0000
+Last month,MS,web,stringent,75,0.0020,0.0000
+Last month,MT,tv,lenient,50,0.0342,0.2049
+Last month,MT,tv,lenient,75,0.0000,0.1180
+Last month,MT,tv,stringent,50,0.0229,0.2049
+Last month,MT,tv,stringent,75,0.0000,0.1180
+Last month,MT,web,lenient,50,0.0300,0.0561
+Last month,MT,web,lenient,75,0.0300,0.0561
+Last month,MT,web,stringent,50,0.0300,0.0000
+Last month,MT,web,stringent,75,0.0300,0.0000
+Last month,NC,tv,lenient,50,0.0471,0.0706
+Last month,NC,tv,lenient,75,0.0225,0.0556
+Last month,NC,tv,stringent,50,0.0106,0.0706
+Last month,NC,tv,stringent,75,0.0009,0.0556
+Last month,NC,web,lenient,50,0.0195,0.0163
+Last month,NC,web,lenient,75,0.0085,0.0119
+Last month,NC,web,stringent,50,0.0086,0.0072
+Last month,NC,web,stringent,75,0.0013,0.0070
+Last month,ND,tv,lenient,50,0.0000,0.0991
+Last month,ND,tv,lenient,75,0.0000,0.0991
+Last month,ND,tv,stringent,50,0.0000,0.0991
+Last month,ND,tv,stringent,75,0.0000,0.0991
+Last month,ND,web,lenient,50,0.0525,0.0510
+Last month,ND,web,lenient,75,0.0525,0.0510
+Last month,ND,web,stringent,50,0.0000,0.0510
+Last month,ND,web,stringent,75,0.0000,0.0510
+Last month,NE,tv,lenient,50,0.0231,0.1709
+Last month,NE,tv,lenient,75,0.0107,0.1419
+Last month,NE,tv,stringent,50,0.0073,0.1709
+Last month,NE,tv,stringent,75,0.0000,0.1419
+Last month,NE,web,lenient,50,0.0019,0.0205
+Last month,NE,web,lenient,75,0.0010,0.0196
+Last month,NE,web,stringent,50,0.0000,0.0020
+Last month,NE,web,stringent,75,0.0000,0.0020
+Last month,NH,tv,lenient,50,0.0517,0.0624
+Last month,NH,tv,lenient,75,0.0319,0.0552
+Last month,NH,tv,stringent,50,0.0148,0.0624
+Last month,NH,tv,stringent,75,0.0025,0.0552
+Last month,NH,web,lenient,50,0.0154,0.0009
+Last month,NH,web,lenient,75,0.0145,0.0000
+Last month,NH,web,stringent,50,0.0145,0.0000
+Last month,NH,web,stringent,75,0.0145,0.0000
+Last month,NJ,tv,lenient,50,0.0593,0.0862
+Last month,NJ,tv,lenient,75,0.0275,0.0749
+Last month,NJ,tv,stringent,50,0.0147,0.0862
+Last month,NJ,tv,stringent,75,0.0012,0.0749
+Last month,NJ,web,lenient,50,0.0145,0.0093
+Last month,NJ,web,lenient,75,0.0105,0.0093
+Last month,NJ,web,stringent,50,0.0078,0.0030
+Last month,NJ,web,stringent,75,0.0042,0.0030
+Last month,NM,tv,lenient,50,0.0511,0.0659
+Last month,NM,tv,lenient,75,0.0178,0.0547
+Last month,NM,tv,stringent,50,0.0195,0.0659
+Last month,NM,tv,stringent,75,0.0040,0.0547
+Last month,NM,web,lenient,50,0.0338,0.0062
+Last month,NM,web,lenient,75,0.0309,0.0048
+Last month,NM,web,stringent,50,0.0295,0.0062
+Last month,NM,web,stringent,75,0.0266,0.0029
+Last month,NV,tv,lenient,50,0.0661,0.1037
+Last month,NV,tv,lenient,75,0.0104,0.0847
+Last month,NV,tv,stringent,50,0.0244,0.1037
+Last month,NV,tv,stringent,75,0.0016,0.0847
+Last month,NV,web,lenient,50,0.0201,0.0108
+Last month,NV,web,lenient,75,0.0103,0.0102
+Last month,NV,web,stringent,50,0.0000,0.0000
+Last month,NV,web,stringent,75,0.0000,0.0000
+Last month,NY,tv,lenient,50,0.0660,0.0681
+Last month,NY,tv,lenient,75,0.0229,0.0552
+Last month,NY,tv,stringent,50,0.0210,0.0681
+Last month,NY,tv,stringent,75,0.0027,0.0552
+Last month,NY,web,lenient,50,0.0200,0.0114
+Last month,NY,web,lenient,75,0.0122,0.0087
+Last month,NY,web,stringent,50,0.0112,0.0056
+Last month,NY,web,stringent,75,0.0072,0.0033
+Last month,OH,tv,lenient,50,0.0378,0.0915
+Last month,OH,tv,lenient,75,0.0152,0.0669
+Last month,OH,tv,stringent,50,0.0110,0.0915
+Last month,OH,tv,stringent,75,0.0017,0.0669
+Last month,OH,web,lenient,50,0.0173,0.0083
+Last month,OH,web,lenient,75,0.0149,0.0078
+Last month,OH,web,stringent,50,0.0092,0.0010
+Last month,OH,web,stringent,75,0.0059,0.0008
+Last month,OK,tv,lenient,50,0.0235,0.1075
+Last month,OK,tv,lenient,75,0.0075,0.0844
+Last month,OK,tv,stringent,50,0.0064,0.1075
+Last month,OK,tv,stringent,75,0.0000,0.0844
+Last month,OK,web,lenient,50,0.0017,0.0185
+Last month,OK,web,lenient,75,0.0011,0.0185
+Last month,OK,web,stringent,50,0.0000,0.0011
+Last month,OK,web,stringent,75,0.0000,0.0005
+Last month,OR,tv,lenient,50,0.0347,0.0800
+Last month,OR,tv,lenient,75,0.0152,0.0764
+Last month,OR,tv,stringent,50,0.0083,0.0800
+Last month,OR,tv,stringent,75,0.0000,0.0764
+Last month,OR,web,lenient,50,0.0054,0.0158
+Last month,OR,web,lenient,75,0.0034,0.0085
+Last month,OR,web,stringent,50,0.0030,0.0158
+Last month,OR,web,stringent,75,0.0010,0.0085
+Last month,PA,tv,lenient,50,0.0495,0.1001
+Last month,PA,tv,lenient,75,0.0206,0.0773
+Last month,PA,tv,stringent,50,0.0144,0.1001
+Last month,PA,tv,stringent,75,0.0011,0.0773
+Last month,PA,web,lenient,50,0.0127,0.0160
+Last month,PA,web,lenient,75,0.0056,0.0132
+Last month,PA,web,stringent,50,0.0054,0.0057
+Last month,PA,web,stringent,75,0.0032,0.0031
+Last month,RI,tv,lenient,50,0.0492,0.0621
+Last month,RI,tv,lenient,75,0.0229,0.0490
+Last month,RI,tv,stringent,50,0.0104,0.0621
+Last month,RI,tv,stringent,75,0.0013,0.0490
+Last month,RI,web,lenient,50,0.0762,0.0000
+Last month,RI,web,lenient,75,0.0762,0.0000
+Last month,RI,web,stringent,50,0.0386,0.0000
+Last month,RI,web,stringent,75,0.0386,0.0000
+Last month,SC,tv,lenient,50,0.0487,0.1022
+Last month,SC,tv,lenient,75,0.0165,0.0855
+Last month,SC,tv,stringent,50,0.0139,0.1022
+Last month,SC,tv,stringent,75,0.0000,0.0855
+Last month,SC,web,lenient,50,0.0172,0.0191
+Last month,SC,web,lenient,75,0.0163,0.0131
+Last month,SC,web,stringent,50,0.0082,0.0010
+Last month,SC,web,stringent,75,0.0077,0.0010
+Last month,SD,tv,lenient,50,0.0208,0.1663
+Last month,SD,tv,lenient,75,0.0100,0.1360
+Last month,SD,tv,stringent,50,0.0100,0.1663
+Last month,SD,tv,stringent,75,0.0100,0.1360
+Last month,SD,web,lenient,50,0.0947,0.0031
+Last month,SD,web,lenient,75,0.0947,0.0031
+Last month,SD,web,stringent,50,0.0474,0.0031
+Last month,SD,web,stringent,75,0.0474,0.0031
+Last month,TN,tv,lenient,50,0.0328,0.1097
+Last month,TN,tv,lenient,75,0.0131,0.0842
+Last month,TN,tv,stringent,50,0.0059,0.1097
+Last month,TN,tv,stringent,75,0.0021,0.0842
+Last month,TN,web,lenient,50,0.0082,0.0273
+Last month,TN,web,lenient,75,0.0075,0.0212
+Last month,TN,web,stringent,50,0.0059,0.0010
+Last month,TN,web,stringent,75,0.0059,0.0003
+Last month,TX,tv,lenient,50,0.0283,0.0639
+Last month,TX,tv,lenient,75,0.0120,0.0541
+Last month,TX,tv,stringent,50,0.0063,0.0639
+Last month,TX,tv,stringent,75,0.0005,0.0541
+Last month,TX,web,lenient,50,0.0068,0.0077
+Last month,TX,web,lenient,75,0.0058,0.0043
+Last month,TX,web,stringent,50,0.0023,0.0025
+Last month,TX,web,stringent,75,0.0016,0.0009
+Last month,UT,tv,lenient,50,0.0234,0.0901
+Last month,UT,tv,lenient,75,0.0156,0.0827
+Last month,UT,tv,stringent,50,0.0017,0.0901
+Last month,UT,tv,stringent,75,0.0008,0.0827
+Last month,UT,web,lenient,50,0.0023,0.0799
+Last month,UT,web,lenient,75,0.0008,0.0673
+Last month,UT,web,stringent,50,0.0016,0.0015
+Last month,UT,web,stringent,75,0.0008,0.0008
+Last month,VA,tv,lenient,50,0.0520,0.0843
+Last month,VA,tv,lenient,75,0.0257,0.0664
+Last month,VA,tv,stringent,50,0.0088,0.0843
+Last month,VA,tv,stringent,75,0.0008,0.0664
+Last month,VA,web,lenient,50,0.0190,0.0144
+Last month,VA,web,lenient,75,0.0134,0.0064
+Last month,VA,web,stringent,50,0.0043,0.0017
+Last month,VA,web,stringent,75,0.0036,0.0012
+Last month,VT,tv,lenient,50,0.0767,0.0547
+Last month,VT,tv,lenient,75,0.0000,0.0368
+Last month,VT,tv,stringent,50,0.0482,0.0547
+Last month,VT,tv,stringent,75,0.0000,0.0368
+Last month,VT,web,lenient,50,0.0056,0.0000
+Last month,VT,web,lenient,75,0.0056,0.0000
+Last month,VT,web,stringent,50,0.0000,0.0000
+Last month,VT,web,stringent,75,0.0000,0.0000
+Last month,WA,tv,lenient,50,0.0363,0.0575
+Last month,WA,tv,lenient,75,0.0220,0.0505
+Last month,WA,tv,stringent,50,0.0037,0.0575
+Last month,WA,tv,stringent,75,0.0004,0.0505
+Last month,WA,web,lenient,50,0.0136,0.0245
+Last month,WA,web,lenient,75,0.0127,0.0202
+Last month,WA,web,stringent,50,0.0048,0.0105
+Last month,WA,web,stringent,75,0.0041,0.0080
+Last month,WI,tv,lenient,50,0.0245,0.0837
+Last month,WI,tv,lenient,75,0.0090,0.0718
+Last month,WI,tv,stringent,50,0.0033,0.0837
+Last month,WI,tv,stringent,75,0.0000,0.0718
+Last month,WI,web,lenient,50,0.0236,0.0059
+Last month,WI,web,lenient,75,0.0220,0.0059
+Last month,WI,web,stringent,50,0.0163,0.0003
+Last month,WI,web,stringent,75,0.0110,0.0003
+Last month,WV,tv,lenient,50,0.0166,0.1190
+Last month,WV,tv,lenient,75,0.0046,0.1058
+Last month,WV,tv,stringent,50,0.0068,0.1190
+Last month,WV,tv,stringent,75,0.0000,0.1058
+Last month,WV,web,lenient,50,0.0045,0.0174
+Last month,WV,web,lenient,75,0.0045,0.0172
+Last month,WV,web,stringent,50,0.0019,0.0014
+Last month,WV,web,stringent,75,0.0009,0.0011
+Last month,WY,tv,lenient,50,0.0099,0.1045
+Last month,WY,tv,lenient,75,0.0051,0.0679
+Last month,WY,tv,stringent,50,0.0000,0.1045
+Last month,WY,tv,stringent,75,0.0000,0.0679
+Last month,WY,web,lenient,50,0.0027,0.0053
+Last month,WY,web,lenient,75,0.0027,0.0027
+Last month,WY,web,stringent,50,0.0027,0.0000
+Last month,WY,web,stringent,75,0.0027,0.0000
+Since 2016,AK,tv,lenient,50,0.0177,0.0875
+Since 2016,AK,tv,lenient,75,0.0081,0.0707
+Since 2016,AK,tv,stringent,50,0.0041,0.0875
+Since 2016,AK,tv,stringent,75,0.0013,0.0707
+Since 2016,AK,web,lenient,50,0.0189,0.0369
+Since 2016,AK,web,lenient,75,0.0123,0.0208
+Since 2016,AK,web,stringent,50,0.0069,0.0095
+Since 2016,AK,web,stringent,75,0.0035,0.0062
+Since 2016,AL,tv,lenient,50,0.0513,0.1143
+Since 2016,AL,tv,lenient,75,0.0211,0.0846
+Since 2016,AL,tv,stringent,50,0.0094,0.1143
+Since 2016,AL,tv,stringent,75,0.0012,0.0846
+Since 2016,AL,web,lenient,50,0.0156,0.0229
+Since 2016,AL,web,lenient,75,0.0105,0.0167
+Since 2016,AL,web,stringent,50,0.0072,0.0071
+Since 2016,AL,web,stringent,75,0.0050,0.0041
+Since 2016,AR,tv,lenient,50,0.0348,0.0899
+Since 2016,AR,tv,lenient,75,0.0147,0.0700
+Since 2016,AR,tv,stringent,50,0.0071,0.0899
+Since 2016,AR,tv,stringent,75,0.0016,0.0700
+Since 2016,AR,web,lenient,50,0.0168,0.0309
+Since 2016,AR,web,lenient,75,0.0103,0.0227
+Since 2016,AR,web,stringent,50,0.0063,0.0079
+Since 2016,AR,web,stringent,75,0.0039,0.0054
+Since 2016,AZ,tv,lenient,50,0.0629,0.0777
+Since 2016,AZ,tv,lenient,75,0.0280,0.0607
+Since 2016,AZ,tv,stringent,50,0.0124,0.0777
+Since 2016,AZ,tv,stringent,75,0.0018,0.0607
+Since 2016,AZ,web,lenient,50,0.0250,0.0250
+Since 2016,AZ,web,lenient,75,0.0154,0.0168
+Since 2016,AZ,web,stringent,50,0.0097,0.0099
+Since 2016,AZ,web,stringent,75,0.0058,0.0051
+Since 2016,CA,tv,lenient,50,0.0736,0.0586
+Since 2016,CA,tv,lenient,75,0.0325,0.0449
+Since 2016,CA,tv,stringent,50,0.0148,0.0586
+Since 2016,CA,tv,stringent,75,0.0020,0.0449
+Since 2016,CA,web,lenient,50,0.0271,0.0132
+Since 2016,CA,web,lenient,75,0.0173,0.0088
+Since 2016,CA,web,stringent,50,0.0101,0.0052
+Since 2016,CA,web,stringent,75,0.0063,0.0031
+Since 2016,CO,tv,lenient,50,0.0549,0.0774
+Since 2016,CO,tv,lenient,75,0.0237,0.0601
+Since 2016,CO,tv,stringent,50,0.0125,0.0774
+Since 2016,CO,tv,stringent,75,0.0017,0.0601
+Since 2016,CO,web,lenient,50,0.0218,0.0201
+Since 2016,CO,web,lenient,75,0.0137,0.0127
+Since 2016,CO,web,stringent,50,0.0079,0.0078
+Since 2016,CO,web,stringent,75,0.0045,0.0042
+Since 2016,CT,tv,lenient,50,0.0777,0.0777
+Since 2016,CT,tv,lenient,75,0.0300,0.0566
+Since 2016,CT,tv,stringent,50,0.0206,0.0777
+Since 2016,CT,tv,stringent,75,0.0018,0.0566
+Since 2016,CT,web,lenient,50,0.0228,0.0241
+Since 2016,CT,web,lenient,75,0.0145,0.0104
+Since 2016,CT,web,stringent,50,0.0084,0.0117
+Since 2016,CT,web,stringent,75,0.0052,0.0027
+Since 2016,DC,tv,lenient,50,0.1260,0.0155
+Since 2016,DC,tv,lenient,75,0.0450,0.0116
+Since 2016,DC,tv,stringent,50,0.0369,0.0155
+Since 2016,DC,tv,stringent,75,0.0020,0.0116
+Since 2016,DC,web,lenient,50,0.0387,0.0048
+Since 2016,DC,web,lenient,75,0.0236,0.0038
+Since 2016,DC,web,stringent,50,0.0212,0.0026
+Since 2016,DC,web,stringent,75,0.0132,0.0018
+Since 2016,DE,tv,lenient,50,0.0730,0.0747
+Since 2016,DE,tv,lenient,75,0.0346,0.0527
+Since 2016,DE,tv,stringent,50,0.0109,0.0747
+Since 2016,DE,tv,stringent,75,0.0016,0.0527
+Since 2016,DE,web,lenient,50,0.0156,0.0417
+Since 2016,DE,web,lenient,75,0.0107,0.0212
+Since 2016,DE,web,stringent,50,0.0056,0.0084
+Since 2016,DE,web,stringent,75,0.0038,0.0040
+Since 2016,FL,tv,lenient,50,0.0665,0.0945
+Since 2016,FL,tv,lenient,75,0.0268,0.0714
+Since 2016,FL,tv,stringent,50,0.0149,0.0945
+Since 2016,FL,tv,stringent,75,0.0017,0.0714
+Since 2016,FL,web,lenient,50,0.0172,0.0191
+Since 2016,FL,web,lenient,75,0.0111,0.0126
+Since 2016,FL,web,stringent,50,0.0070,0.0063
+Since 2016,FL,web,stringent,75,0.0041,0.0034
+Since 2016,GA,tv,lenient,50,0.0637,0.0874
+Since 2016,GA,tv,lenient,75,0.0308,0.0654
+Since 2016,GA,tv,stringent,50,0.0114,0.0874
+Since 2016,GA,tv,stringent,75,0.0016,0.0654
+Since 2016,GA,web,lenient,50,0.0177,0.0155
+Since 2016,GA,web,lenient,75,0.0121,0.0092
+Since 2016,GA,web,stringent,50,0.0074,0.0055
+Since 2016,GA,web,stringent,75,0.0048,0.0031
+Since 2016,HI,tv,lenient,50,0.0589,0.0877
+Since 2016,HI,tv,lenient,75,0.0226,0.0691
+Since 2016,HI,tv,stringent,50,0.0103,0.0877
+Since 2016,HI,tv,stringent,75,0.0023,0.0691
+Since 2016,HI,web,lenient,50,0.0192,0.0102
+Since 2016,HI,web,lenient,75,0.0133,0.0068
+Since 2016,HI,web,stringent,50,0.0087,0.0049
+Since 2016,HI,web,stringent,75,0.0051,0.0028
+Since 2016,IA,tv,lenient,50,0.0303,0.0715
+Since 2016,IA,tv,lenient,75,0.0150,0.0534
+Since 2016,IA,tv,stringent,50,0.0059,0.0715
+Since 2016,IA,tv,stringent,75,0.0011,0.0534
+Since 2016,IA,web,lenient,50,0.0194,0.0184
+Since 2016,IA,web,lenient,75,0.0106,0.0131
+Since 2016,IA,web,stringent,50,0.0070,0.0061
+Since 2016,IA,web,stringent,75,0.0034,0.0037
+Since 2016,ID,tv,lenient,50,0.0249,0.1049
+Since 2016,ID,tv,lenient,75,0.0113,0.0839
+Since 2016,ID,tv,stringent,50,0.0070,0.1049
+Since 2016,ID,tv,stringent,75,0.0012,0.0839
+Since 2016,ID,web,lenient,50,0.0247,0.0318
+Since 2016,ID,web,lenient,75,0.0166,0.0225
+Since 2016,ID,web,stringent,50,0.0093,0.0097
+Since 2016,ID,web,stringent,75,0.0063,0.0069
+Since 2016,IL,tv,lenient,50,0.0580,0.0650
+Since 2016,IL,tv,lenient,75,0.0246,0.0490
+Since 2016,IL,tv,stringent,50,0.0127,0.0650
+Since 2016,IL,tv,stringent,75,0.0018,0.0490
+Since 2016,IL,web,lenient,50,0.0200,0.0117
+Since 2016,IL,web,lenient,75,0.0123,0.0076
+Since 2016,IL,web,stringent,50,0.0086,0.0045
+Since 2016,IL,web,stringent,75,0.0051,0.0027
+Since 2016,IN,tv,lenient,50,0.0420,0.0765
+Since 2016,IN,tv,lenient,75,0.0161,0.0580
+Since 2016,IN,tv,stringent,50,0.0118,0.0765
+Since 2016,IN,tv,stringent,75,0.0016,0.0580
+Since 2016,IN,web,lenient,50,0.0173,0.0169
+Since 2016,IN,web,lenient,75,0.0109,0.0122
+Since 2016,IN,web,stringent,50,0.0071,0.0055
+Since 2016,IN,web,stringent,75,0.0043,0.0029
+Since 2016,KS,tv,lenient,50,0.0392,0.0793
+Since 2016,KS,tv,lenient,75,0.0162,0.0560
+Since 2016,KS,tv,stringent,50,0.0090,0.0793
+Since 2016,KS,tv,stringent,75,0.0014,0.0560
+Since 2016,KS,web,lenient,50,0.0170,0.0265
+Since 2016,KS,web,lenient,75,0.0106,0.0173
+Since 2016,KS,web,stringent,50,0.0050,0.0065
+Since 2016,KS,web,stringent,75,0.0028,0.0043
+Since 2016,KY,tv,lenient,50,0.0381,0.0968
+Since 2016,KY,tv,lenient,75,0.0157,0.0710
+Since 2016,KY,tv,stringent,50,0.0083,0.0968
+Since 2016,KY,tv,stringent,75,0.0013,0.0710
+Since 2016,KY,web,lenient,50,0.0174,0.0147
+Since 2016,KY,web,lenient,75,0.0112,0.0102
+Since 2016,KY,web,stringent,50,0.0078,0.0053
+Since 2016,KY,web,stringent,75,0.0046,0.0036
+Since 2016,LA,tv,lenient,50,0.0514,0.0925
+Since 2016,LA,tv,lenient,75,0.0204,0.0686
+Since 2016,LA,tv,stringent,50,0.0130,0.0925
+Since 2016,LA,tv,stringent,75,0.0017,0.0686
+Since 2016,LA,web,lenient,50,0.0148,0.0225
+Since 2016,LA,web,lenient,75,0.0086,0.0142
+Since 2016,LA,web,stringent,50,0.0063,0.0079
+Since 2016,LA,web,stringent,75,0.0035,0.0047
+Since 2016,MA,tv,lenient,50,0.0906,0.0569
+Since 2016,MA,tv,lenient,75,0.0418,0.0425
+Since 2016,MA,tv,stringent,50,0.0164,0.0569
+Since 2016,MA,tv,stringent,75,0.0022,0.0425
+Since 2016,MA,web,lenient,50,0.0272,0.0151
+Since 2016,MA,web,lenient,75,0.0187,0.0082
+Since 2016,MA,web,stringent,50,0.0114,0.0054
+Since 2016,MA,web,stringent,75,0.0071,0.0030
+Since 2016,MD,tv,lenient,50,0.1001,0.0729
+Since 2016,MD,tv,lenient,75,0.0469,0.0569
+Since 2016,MD,tv,stringent,50,0.0180,0.0729
+Since 2016,MD,tv,stringent,75,0.0023,0.0569
+Since 2016,MD,web,lenient,50,0.0232,0.0199
+Since 2016,MD,web,lenient,75,0.0145,0.0138
+Since 2016,MD,web,stringent,50,0.0088,0.0063
+Since 2016,MD,web,stringent,75,0.0053,0.0036
+Since 2016,ME,tv,lenient,50,0.0354,0.0745
+Since 2016,ME,tv,lenient,75,0.0139,0.0546
+Since 2016,ME,tv,stringent,50,0.0076,0.0745
+Since 2016,ME,tv,stringent,75,0.0013,0.0546
+Since 2016,ME,web,lenient,50,0.0352,0.0167
+Since 2016,ME,web,lenient,75,0.0248,0.0102
+Since 2016,ME,web,stringent,50,0.0100,0.0052
+Since 2016,ME,web,stringent,75,0.0069,0.0022
+Since 2016,MI,tv,lenient,50,0.0498,0.0770
+Since 2016,MI,tv,lenient,75,0.0200,0.0590
+Since 2016,MI,tv,stringent,50,0.0130,0.0770
+Since 2016,MI,tv,stringent,75,0.0017,0.0590
+Since 2016,MI,web,lenient,50,0.0203,0.0208
+Since 2016,MI,web,lenient,75,0.0132,0.0133
+Since 2016,MI,web,stringent,50,0.0096,0.0075
+Since 2016,MI,web,stringent,75,0.0063,0.0043
+Since 2016,MN,tv,lenient,50,0.0511,0.0595
+Since 2016,MN,tv,lenient,75,0.0208,0.0434
+Since 2016,MN,tv,stringent,50,0.0115,0.0595
+Since 2016,MN,tv,stringent,75,0.0014,0.0434
+Since 2016,MN,web,lenient,50,0.0210,0.0201
+Since 2016,MN,web,lenient,75,0.0145,0.0134
+Since 2016,MN,web,stringent,50,0.0090,0.0089
+Since 2016,MN,web,stringent,75,0.0058,0.0053
+Since 2016,MO,tv,lenient,50,0.0408,0.0811
+Since 2016,MO,tv,lenient,75,0.0162,0.0613
+Since 2016,MO,tv,stringent,50,0.0103,0.0811
+Since 2016,MO,tv,stringent,75,0.0014,0.0613
+Since 2016,MO,web,lenient,50,0.0189,0.0210
+Since 2016,MO,web,lenient,75,0.0116,0.0142
+Since 2016,MO,web,stringent,50,0.0071,0.0091
+Since 2016,MO,web,stringent,75,0.0044,0.0059
+Since 2016,MS,tv,lenient,50,0.0468,0.0952
+Since 2016,MS,tv,lenient,75,0.0167,0.0741
+Since 2016,MS,tv,stringent,50,0.0167,0.0952
+Since 2016,MS,tv,stringent,75,0.0020,0.0741
+Since 2016,MS,web,lenient,50,0.0145,0.0199
+Since 2016,MS,web,lenient,75,0.0089,0.0128
+Since 2016,MS,web,stringent,50,0.0058,0.0065
+Since 2016,MS,web,stringent,75,0.0035,0.0042
+Since 2016,MT,tv,lenient,50,0.0334,0.1112
+Since 2016,MT,tv,lenient,75,0.0095,0.0767
+Since 2016,MT,tv,stringent,50,0.0161,0.1112
+Since 2016,MT,tv,stringent,75,0.0016,0.0767
+Since 2016,MT,web,lenient,50,0.0244,0.0220
+Since 2016,MT,web,lenient,75,0.0190,0.0176
+Since 2016,MT,web,stringent,50,0.0133,0.0089
+Since 2016,MT,web,stringent,75,0.0109,0.0063
+Since 2016,NC,tv,lenient,50,0.0546,0.0843
+Since 2016,NC,tv,lenient,75,0.0232,0.0629
+Since 2016,NC,tv,stringent,50,0.0125,0.0843
+Since 2016,NC,tv,stringent,75,0.0015,0.0629
+Since 2016,NC,web,lenient,50,0.0223,0.0180
+Since 2016,NC,web,lenient,75,0.0136,0.0112
+Since 2016,NC,web,stringent,50,0.0101,0.0074
+Since 2016,NC,web,stringent,75,0.0049,0.0041
+Since 2016,ND,tv,lenient,50,0.0244,0.1168
+Since 2016,ND,tv,lenient,75,0.0088,0.0836
+Since 2016,ND,tv,stringent,50,0.0046,0.1168
+Since 2016,ND,tv,stringent,75,0.0006,0.0836
+Since 2016,ND,web,lenient,50,0.0180,0.0295
+Since 2016,ND,web,lenient,75,0.0125,0.0150
+Since 2016,ND,web,stringent,50,0.0055,0.0096
+Since 2016,ND,web,stringent,75,0.0038,0.0056
+Since 2016,NE,tv,lenient,50,0.0308,0.0793
+Since 2016,NE,tv,lenient,75,0.0140,0.0623
+Since 2016,NE,tv,stringent,50,0.0053,0.0793
+Since 2016,NE,tv,stringent,75,0.0005,0.0623
+Since 2016,NE,web,lenient,50,0.0197,0.0319
+Since 2016,NE,web,lenient,75,0.0118,0.0229
+Since 2016,NE,web,stringent,50,0.0078,0.0110
+Since 2016,NE,web,stringent,75,0.0051,0.0069
+Since 2016,NH,tv,lenient,50,0.0571,0.0989
+Since 2016,NH,tv,lenient,75,0.0207,0.0712
+Since 2016,NH,tv,stringent,50,0.0117,0.0989
+Since 2016,NH,tv,stringent,75,0.0021,0.0712
+Since 2016,NH,web,lenient,50,0.0184,0.0170
+Since 2016,NH,web,lenient,75,0.0118,0.0108
+Since 2016,NH,web,stringent,50,0.0058,0.0051
+Since 2016,NH,web,stringent,75,0.0035,0.0034
+Since 2016,NJ,tv,lenient,50,0.0893,0.0843
+Since 2016,NJ,tv,lenient,75,0.0386,0.0632
+Since 2016,NJ,tv,stringent,50,0.0159,0.0843
+Since 2016,NJ,tv,stringent,75,0.0023,0.0632
+Since 2016,NJ,web,lenient,50,0.0198,0.0174
+Since 2016,NJ,web,lenient,75,0.0129,0.0114
+Since 2016,NJ,web,stringent,50,0.0079,0.0047
+Since 2016,NJ,web,stringent,75,0.0051,0.0028
+Since 2016,NM,tv,lenient,50,0.0499,0.0741
+Since 2016,NM,tv,lenient,75,0.0172,0.0558
+Since 2016,NM,tv,stringent,50,0.0111,0.0741
+Since 2016,NM,tv,stringent,75,0.0012,0.0558
+Since 2016,NM,web,lenient,50,0.0255,0.0202
+Since 2016,NM,web,lenient,75,0.0147,0.0155
+Since 2016,NM,web,stringent,50,0.0119,0.0087
+Since 2016,NM,web,stringent,75,0.0071,0.0056
+Since 2016,NV,tv,lenient,50,0.0662,0.1073
+Since 2016,NV,tv,lenient,75,0.0224,0.0837
+Since 2016,NV,tv,stringent,50,0.0173,0.1073
+Since 2016,NV,tv,stringent,75,0.0016,0.0837
+Since 2016,NV,web,lenient,50,0.0178,0.0171
+Since 2016,NV,web,lenient,75,0.0124,0.0117
+Since 2016,NV,web,stringent,50,0.0070,0.0052
+Since 2016,NV,web,stringent,75,0.0049,0.0027
+Since 2016,NY,tv,lenient,50,0.0833,0.0654
+Since 2016,NY,tv,lenient,75,0.0327,0.0480
+Since 2016,NY,tv,stringent,50,0.0171,0.0654
+Since 2016,NY,tv,stringent,75,0.0024,0.0480
+Since 2016,NY,web,lenient,50,0.0262,0.0092
+Since 2016,NY,web,lenient,75,0.0164,0.0057
+Since 2016,NY,web,stringent,50,0.0116,0.0031
+Since 2016,NY,web,stringent,75,0.0068,0.0018
+Since 2016,OH,tv,lenient,50,0.0486,0.0817
+Since 2016,OH,tv,lenient,75,0.0200,0.0597
+Since 2016,OH,tv,stringent,50,0.0107,0.0817
+Since 2016,OH,tv,stringent,75,0.0015,0.0597
+Since 2016,OH,web,lenient,50,0.0173,0.0156
+Since 2016,OH,web,lenient,75,0.0111,0.0100
+Since 2016,OH,web,stringent,50,0.0068,0.0067
+Since 2016,OH,web,stringent,75,0.0041,0.0039
+Since 2016,OK,tv,lenient,50,0.0348,0.0865
+Since 2016,OK,tv,lenient,75,0.0145,0.0639
+Since 2016,OK,tv,stringent,50,0.0061,0.0865
+Since 2016,OK,tv,stringent,75,0.0009,0.0639
+Since 2016,OK,web,lenient,50,0.0161,0.0222
+Since 2016,OK,web,lenient,75,0.0114,0.0162
+Since 2016,OK,web,stringent,50,0.0063,0.0105
+Since 2016,OK,web,stringent,75,0.0042,0.0074
+Since 2016,OR,tv,lenient,50,0.0541,0.0722
+Since 2016,OR,tv,lenient,75,0.0233,0.0565
+Since 2016,OR,tv,stringent,50,0.0141,0.0722
+Since 2016,OR,tv,stringent,75,0.0020,0.0565
+Since 2016,OR,web,lenient,50,0.0293,0.0216
+Since 2016,OR,web,lenient,75,0.0186,0.0146
+Since 2016,OR,web,stringent,50,0.0156,0.0078
+Since 2016,OR,web,stringent,75,0.0089,0.0042
+Since 2016,PA,tv,lenient,50,0.0638,0.0897
+Since 2016,PA,tv,lenient,75,0.0256,0.0676
+Since 2016,PA,tv,stringent,50,0.0148,0.0897
+Since 2016,PA,tv,stringent,75,0.0018,0.0676
+Since 2016,PA,web,lenient,50,0.0195,0.0184
+Since 2016,PA,web,lenient,75,0.0119,0.0123
+Since 2016,PA,web,stringent,50,0.0087,0.0062
+Since 2016,PA,web,stringent,75,0.0051,0.0039
+Since 2016,RI,tv,lenient,50,0.0630,0.0568
+Since 2016,RI,tv,lenient,75,0.0224,0.0395
+Since 2016,RI,tv,stringent,50,0.0164,0.0568
+Since 2016,RI,tv,stringent,75,0.0018,0.0395
+Since 2016,RI,web,lenient,50,0.0286,0.0126
+Since 2016,RI,web,lenient,75,0.0192,0.0062
+Since 2016,RI,web,stringent,50,0.0129,0.0062
+Since 2016,RI,web,stringent,75,0.0091,0.0038
+Since 2016,SC,tv,lenient,50,0.0500,0.0926
+Since 2016,SC,tv,lenient,75,0.0196,0.0684
+Since 2016,SC,tv,stringent,50,0.0115,0.0926
+Since 2016,SC,tv,stringent,75,0.0016,0.0684
+Since 2016,SC,web,lenient,50,0.0155,0.0170
+Since 2016,SC,web,lenient,75,0.0110,0.0108
+Since 2016,SC,web,stringent,50,0.0061,0.0049
+Since 2016,SC,web,stringent,75,0.0042,0.0029
+Since 2016,SD,tv,lenient,50,0.0304,0.0909
+Since 2016,SD,tv,lenient,75,0.0091,0.0660
+Since 2016,SD,tv,stringent,50,0.0102,0.0909
+Since 2016,SD,tv,stringent,75,0.0032,0.0660
+Since 2016,SD,web,lenient,50,0.0234,0.0393
+Since 2016,SD,web,lenient,75,0.0159,0.0295
+Since 2016,SD,web,stringent,50,0.0090,0.0238
+Since 2016,SD,web,stringent,75,0.0071,0.0181
+Since 2016,TN,tv,lenient,50,0.0402,0.1036
+Since 2016,TN,tv,lenient,75,0.0161,0.0767
+Since 2016,TN,tv,stringent,50,0.0079,0.1036
+Since 2016,TN,tv,stringent,75,0.0010,0.0767
+Since 2016,TN,web,lenient,50,0.0205,0.0233
+Since 2016,TN,web,lenient,75,0.0140,0.0145
+Since 2016,TN,web,stringent,50,0.0085,0.0062
+Since 2016,TN,web,stringent,75,0.0060,0.0033
+Since 2016,TX,tv,lenient,50,0.0464,0.0697
+Since 2016,TX,tv,lenient,75,0.0216,0.0530
+Since 2016,TX,tv,stringent,50,0.0079,0.0697
+Since 2016,TX,tv,stringent,75,0.0013,0.0530
+Since 2016,TX,web,lenient,50,0.0178,0.0226
+Since 2016,TX,web,lenient,75,0.0118,0.0153
+Since 2016,TX,web,stringent,50,0.0070,0.0083
+Since 2016,TX,web,stringent,75,0.0043,0.0046
+Since 2016,UT,tv,lenient,50,0.0375,0.0821
+Since 2016,UT,tv,lenient,75,0.0166,0.0649
+Since 2016,UT,tv,stringent,50,0.0057,0.0821
+Since 2016,UT,tv,stringent,75,0.0011,0.0649
+Since 2016,UT,web,lenient,50,0.0238,0.1073
+Since 2016,UT,web,lenient,75,0.0132,0.0846
+Since 2016,UT,web,stringent,50,0.0064,0.0060
+Since 2016,UT,web,stringent,75,0.0041,0.0031
+Since 2016,VA,tv,lenient,50,0.0680,0.0921
+Since 2016,VA,tv,lenient,75,0.0291,0.0702
+Since 2016,VA,tv,stringent,50,0.0126,0.0921
+Since 2016,VA,tv,stringent,75,0.0018,0.0702
+Since 2016,VA,web,lenient,50,0.0246,0.0239
+Since 2016,VA,web,lenient,75,0.0156,0.0170
+Since 2016,VA,web,stringent,50,0.0109,0.0066
+Since 2016,VA,web,stringent,75,0.0070,0.0038
+Since 2016,VT,tv,lenient,50,0.0709,0.0563
+Since 2016,VT,tv,lenient,75,0.0153,0.0442
+Since 2016,VT,tv,stringent,50,0.0249,0.0563
+Since 2016,VT,tv,stringent,75,0.0014,0.0442
+Since 2016,VT,web,lenient,50,0.0343,0.0175
+Since 2016,VT,web,lenient,75,0.0183,0.0108
+Since 2016,VT,web,stringent,50,0.0103,0.0077
+Since 2016,VT,web,stringent,75,0.0048,0.0049
+Since 2016,WA,tv,lenient,50,0.0647,0.0684
+Since 2016,WA,tv,lenient,75,0.0281,0.0540
+Since 2016,WA,tv,stringent,50,0.0156,0.0684
+Since 2016,WA,tv,stringent,75,0.0023,0.0540
+Since 2016,WA,web,lenient,50,0.0245,0.0226
+Since 2016,WA,web,lenient,75,0.0147,0.0152
+Since 2016,WA,web,stringent,50,0.0099,0.0066
+Since 2016,WA,web,stringent,75,0.0056,0.0036
+Since 2016,WI,tv,lenient,50,0.0388,0.0736
+Since 2016,WI,tv,lenient,75,0.0159,0.0545
+Since 2016,WI,tv,stringent,50,0.0087,0.0736
+Since 2016,WI,tv,stringent,75,0.0012,0.0545
+Since 2016,WI,web,lenient,50,0.0217,0.0242
+Since 2016,WI,web,lenient,75,0.0141,0.0131
+Since 2016,WI,web,stringent,50,0.0089,0.0090
+Since 2016,WI,web,stringent,75,0.0052,0.0037
+Since 2016,WV,tv,lenient,50,0.0344,0.1248
+Since 2016,WV,tv,lenient,75,0.0179,0.0936
+Since 2016,WV,tv,stringent,50,0.0059,0.1248
+Since 2016,WV,tv,stringent,75,0.0021,0.0936
+Since 2016,WV,web,lenient,50,0.0151,0.0152
+Since 2016,WV,web,lenient,75,0.0098,0.0092
+Since 2016,WV,web,stringent,50,0.0053,0.0059
+Since 2016,WV,web,stringent,75,0.0033,0.0036
+Since 2016,WY,tv,lenient,50,0.0320,0.0842
+Since 2016,WY,tv,lenient,75,0.0177,0.0697
+Since 2016,WY,tv,stringent,50,0.0086,0.0842
+Since 2016,WY,tv,stringent,75,0.0035,0.0697
+Since 2016,WY,web,lenient,50,0.0203,0.0208
+Since 2016,WY,web,lenient,75,0.0123,0.0132
+Since 2016,WY,web,stringent,50,0.0097,0.0089
+Since 2016,WY,web,stringent,75,0.0056,0.0035
