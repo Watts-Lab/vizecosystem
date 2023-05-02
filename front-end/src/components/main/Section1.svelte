@@ -38,7 +38,7 @@
         ['diet', 'diet'],
         ['tv', 'tv']
     ]);
-    let url : string = 'assets/data/EchoCh-TV-nationwide-by_gender-or-age_group.csv'
+    let url : string = 'assets/data/EchoCh-nationwide-by_gender-or-age_group.csv'
     let data : any[]
     let dataIn : Map<any,any>
     let xKey : string = 'date'
@@ -46,7 +46,7 @@
     let zKey : number = 0
     let tvChecked : boolean = true;
     let scenarioChecked : boolean = true;
-    let medium : string = tvChecked ? 'tv' : 'online'
+    let medium : string = tvChecked ? 'web' : 'tv'
     let partisanship_scenario : string = scenarioChecked ? 'lenient' : 'stringent'
     const scaleRange : Function = scaleLinear();
     let start = 0
@@ -88,7 +88,7 @@
         )
     }
 
-    $: medium = tvChecked ? 'tv' : 'online'
+    $: medium = tvChecked ? 'web' : 'tv'
     $: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent'
     $: gender = 'All'
     $: age_group = 'All'
