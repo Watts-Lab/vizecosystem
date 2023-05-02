@@ -33,7 +33,7 @@
   let dataMap : Map<string|number, any>;
   let table : any[];
   let tableMap : Map<string|number, any>
-  const urlChart : string  = 'assets/data/EchoCh-TV-by_state_full-timeseries.csv'
+  const urlChart : string  = 'assets/data/EchoCh-by_state_full-timeseries.csv'
   const urlTable : string  = 'assets/data/EchoCh-TV-by_state_audiences.csv'
 
   onMount(async () => {
@@ -48,7 +48,7 @@
 
     // load data for tables
 		// load data for map + line chart
-		const table = await csv(urlTable, autoType)
+		table = await csv(urlTable, autoType)
 		tableMap = group(
 			table,
 			d => d.period,
@@ -100,17 +100,19 @@
       adipisicing elit. Odit, inventore impedit deleniti magnam eum eveniet 
       dolorum porro, saepe molestiae quis et, quia libero suscipit numquam?
     </p>
-
-    {@const tableChart = tableMap
-      .get(period)
-      .get(abbr)
-      .get(medium)
-    }
-    <div class='overlay-col2-container'>
-      <Table 
-        data={ tableChart }
-      />
-    </div>
+    
+    {#if medium === 'tv'}
+      {@const tableChart = tableMap
+        .get(period)
+        .get(abbr)
+        .get(medium)
+      }
+      <div class='overlay-col2-container'>
+        <Table 
+          data={ tableChart }
+        />
+      </div>
+    {/if}
 
     <p class='caption overlay-col2-caption'>
       <span>Most watched.</span> Lorem ipsum dolor sit amet consectetur 
