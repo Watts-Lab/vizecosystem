@@ -32,7 +32,7 @@
 	let table : any[];
 	let dataMap : Map<string, any>
   let fullDataMap : Map<string, any>
-	const urlChart : string  = 'assets/data/EchoCh-TV-by_state.csv'
+	const urlChart : string  = 'assets/data/EchoCh-by_state.csv'
 	
 	onMount(async () => {
 		// load data for map + line chart
@@ -84,7 +84,7 @@
 		}],
 	])
 
-	$: chart = "1"
+	$: chart = "0"
 	$: activeChart = chartConfig.get(+chart)
 	$: politicalChecked = true
 </script>
@@ -118,8 +118,6 @@
 				</div>
 			{/if}
 	</div>
-
-
 	
 	{#if (data && data.length)}
 		<Beeswarm
