@@ -47,7 +47,7 @@
     let tvChecked : boolean = true;
     let scenarioChecked : boolean = true;
     let medium : string = tvChecked ? 'web' : 'tv'
-    let partisanship_scenario : string = scenarioChecked ? 'lenient' : 'stringent'
+    let partisanship_scenario : string = scenarioChecked ? 'stringent' : 'lenient'
     const scaleRange : Function = scaleLinear();
     let start = 0
     let end = 1
@@ -89,7 +89,7 @@
     }
 
     $: medium = tvChecked ? 'web' : 'tv'
-    $: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent'
+    $: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
     $: gender = 'All'
     $: age_group = 'All'
 
