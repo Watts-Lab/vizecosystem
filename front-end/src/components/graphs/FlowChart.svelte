@@ -12,6 +12,7 @@
 	export let caption : string = '';
 	export let nodes : any[];
   export let links : any[];
+  export let flatLinks : any[];
   export let url : string = '';
   export let includeCaption : boolean = true;
 	export let spanCol : number
@@ -22,13 +23,13 @@
   });
 
   $: render = false
+  $: nodesIn = nodes
 
 </script>
 
 <div class="chart flow-chart {customClass}">
   <LayerCake
     padding={ render ? margins : {} }
-    custom={{ nodes, links }}
   >
     <Svg>
       <defs>
@@ -45,7 +46,7 @@
         </marker>
       </defs>
       {#if render}
-        <FlowNodes></FlowNodes>
+        <FlowNodes { nodes } { links } { flatLinks } />
       {/if}
     </Svg>
   </LayerCake>

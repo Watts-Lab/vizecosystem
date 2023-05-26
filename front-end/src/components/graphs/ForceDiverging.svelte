@@ -44,8 +44,8 @@
       return arr.map((d, i) => {
         const [ x, y ] = projection(d.coordinates)
         const r = $rScale(Math.abs(d.data.value))
-        const r_L = $rScale(Math.abs(d.data.left_pct))
-        const r_R = $rScale(Math.abs(d.data.right_pct))
+        const r_L = $rScale(Math.abs(d.data.left_size))
+        const r_R = $rScale(Math.abs(d.data.right_size))
 
         const rightPathString = arcGen(path(), { r: r_R, start: -Math.PI/2, end: Math.PI/2 })
         const fillR = $zScale(d.data.right_pct * 1)
@@ -56,7 +56,6 @@
         const fullPath = pathGen(path(), { r: r_R }, { r: r_L })
 
         return ({ ...d, 
-          FAKE_VALUE: Math.random() * d.population / 1000000,  
           x, 
           y,
           r: Math.max(r_L, r_R),
@@ -203,7 +202,3 @@
     }
   }
 </style>
-<!-- on:mouseenter={(e) => handleMouseEnter(e, node)}
-on:focus={(e) => handleMouseLeave(e, node)}
-on:mouseleave={(e) => handleMouseLeave(e)}
-on:blur={(e) => handleMouseLeave(e)} -->

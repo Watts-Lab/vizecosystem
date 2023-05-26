@@ -1,14 +1,26 @@
 <script lang='ts'>
-  import { getContext, onMount, afterUpdate } from 'svelte';
+  import { getContext, onMount } from 'svelte';
   import { draw, scale } from 'svelte/transition';
   import { path } from 'd3-path'
   import { line, curveNatural } from 'd3-shape'
-  // import { group } from 'd3-array'
+  import { scaleLinear, scaleSqrt } from 'd3-scale'
+  import { extent } from 'd3-array'
   import SVGPathCommander from 'svg-path-commander';
 
-  const { custom, width, height } = getContext('LayerCake');
+  import nodesOrderMap from '../../../utils/nodes';
+  import slugify from '../../../utils/slugify';
 
-  const { nodes, links } = $custom;
+  const { width, height } = getContext('LayerCake');
+
+  // props declaration
+  export let nodes : any[];
+  export let links : any[];
+  export let flatLinks : any[];
+
+  const scaleLineWidth = scaleLinear()
+    .range([1,25])
+  const scaleNodeSize = scaleSqrt()
+    .range([5,25])
 
   // global variables
   let linksIn = [];
@@ -24,34 +36,16 @@
   // offset points so that circle is in the middle of slice
   const angleOffset : number = availableAngle / 2 - angleSlice / 2
 
-  // pre-calculate positions for each object
-  const dataIn : any[] = nodes.map((d : any, i : number) => {
-    let x : number;
-    let y : number;
-    let r : number;
+  let dataIn;
 
-    if (d.node < 9) {
-      x = $width / 2 + outerRadius * Math.cos(angleSlice * i - (Math.PI / 2) - angleOffset)
-      y = (1 + Math.sin(angleSlice * i - (Math.PI / 2) - angleOffset)) * outerRadius
-      r = d.population_size / (1 + 4 * Math.random())      
-    }
-    else {
-      r = 20
-      x = $width / 2
-      y = $height - r
-    }
-
-    return { ...d, x, y, r }
-  })
-
-  const positionMap : Map<any,any> = new Map(dataIn.map(d => [d.node.toFixed(0), d]))
+  let positionMap : Map<any,any>
 
   // const linksFromMap : Map<any,any> =  group(links, (d : any) => d.from)
 
   function pathGen(context, pos) {
     context.moveTo(pos.from.x, pos.from.y);
  
-    if (pos.link.to === '9') {
+    if (pos.link.to === 'No or Minimal News') {
       const ctrX = pos.from.x > $width / 2 ? $width : 0
       context.quadraticCurveTo(ctrX, $height / 1.5, pos.to.x, pos.to.y);
     }
@@ -59,7 +53,7 @@
       context.lineTo(pos.to.x, pos.to.y);
     }
     else {
-      context.quadraticCurveTo($width / 2, 0.1 + Math.random() * $height, pos.to.x, pos.to.y);
+      context.quadraticCurveTo($width / 2, 0.01 + Math.random() * $height, pos.to.x, pos.to.y);
     }
     
     return context;
@@ -68,14 +62,15 @@
   const lineGen = line().x(d => d.x).y(d => d.y).curve(curveNatural)
 
   function handleMouseEnter(ev, details) {
+    const slug = slugify(details.node)
     // select parent group
     const linkGroup = document.getElementById('link-group');
 
     // select connections
-    const linkFrom = document.getElementsByClassName(`linkFrom-${details.node}`);
-    const arrowFrom = document.getElementsByClassName(`arrowFrom-${details.node}`);
-    const linkTo = document.getElementsByClassName(`linkTo-${details.node}`);
-    const arrowTo = document.getElementsByClassName(`arrowTo-${details.node}`);
+    const linkFrom = document.getElementsByClassName(`linkFrom-${slug}`);
+    const arrowFrom = document.getElementsByClassName(`arrowFrom-${slug}`);
+    const linkTo = document.getElementsByClassName(`linkTo-${slug}`);
+    const arrowTo = document.getElementsByClassName(`arrowTo-${slug}`);
 
     // prepare array for element raising
     const moveList = [];
@@ -114,11 +109,12 @@
   }
 
   function handleMouseLeave(ev, details) {
+    const slug = slugify(details.node)
     // select connections
-    const linkFrom = document.getElementsByClassName(`linkFrom-${details.node}`);
-    const arrowFrom = document.getElementsByClassName(`arrowFrom-${details.node}`);
-    const linkTo = document.getElementsByClassName(`linkTo-${details.node}`);
-    const arrowTo = document.getElementsByClassName(`arrowTo-${details.node}`);
+    const linkFrom = document.getElementsByClassName(`linkFrom-${slug}`);
+    const arrowFrom = document.getElementsByClassName(`arrowFrom-${slug}`);
+    const linkTo = document.getElementsByClassName(`linkTo-${slug}`);
+    const arrowTo = document.getElementsByClassName(`arrowTo-${slug}`);
 
     // iterate over links, remove class for color
     for (const el of linkFrom) {
@@ -137,6 +133,28 @@
   }
 
   onMount(() => {
+    scaleNodeSize.domain(extent(nodes, d => d.value))
+    scaleLineWidth.domain(extent(links, d => d.value))
+    dataIn = nodes.map((d : any) => {
+      const i : number = nodesOrderMap.get(d.node)
+      let x : number;
+      let y : number;
+      const r : number = scaleNodeSize(d.value);
+
+      if (d.node !== 'No or Minimal News') {
+        x = $width / 2 + outerRadius * Math.cos(angleSlice * i - (Math.PI / 2) - angleOffset)
+        y = (1 + Math.sin(angleSlice * i - (Math.PI / 2) - angleOffset)) * outerRadius
+      }
+      else {
+        x = $width / 2
+        y = $height - r
+      }
+
+      return { ...d, x, y, r }
+    })
+
+    positionMap = new Map(dataIn.map(d => [d.node, d]))
+
     linksIn = links.map((link, i) => {
       const from = positionMap.get(link.from)
       const to = positionMap.get(link.to)
@@ -157,6 +175,7 @@
         start,
         midpoint,
         end,
+        w: scaleLineWidth(link.value),
       }
     })
 
@@ -167,9 +186,58 @@
   $: totalLinks = 0;
   $: actionable = false;
 
+  $: {
+    scaleNodeSize.domain(extent(nodes, d => d.value))
+    scaleLineWidth.domain(extent(links, d => d.value))
+    dataIn = nodes.map((d : any) => {
+      const i : number = nodesOrderMap.get(d.node)
+      let x : number;
+      let y : number;
+      const r : number = scaleNodeSize(d.value);
+
+      if (d.node !== 'No or Minimal News') {
+        x = $width / 2 + outerRadius * Math.cos(angleSlice * i - (Math.PI / 2) - angleOffset)
+        y = (1 + Math.sin(angleSlice * i - (Math.PI / 2) - angleOffset)) * outerRadius
+      }
+      else {
+        x = $width / 2
+        y = $height - r
+      }
+
+      return { ...d, x, y, r }
+    })
+
+    positionMap = new Map(dataIn.map(d => [d.node, d]))
+
+    linksIn = links.map((link, i) => {
+      const from = positionMap.get(link.from)
+      const to = positionMap.get(link.to)
+      const pathString = pathGen(path(), { from, to, link }).toString()
+      const pathInstance = new SVGPathCommander(pathString)
+      const totalLength = +pathInstance.getTotalLength().toPrecision(2)
+      const start = pathInstance.getPointAtLength(totalLength * 0.48)
+      const midpoint = pathInstance.getPointAtLength(totalLength * 0.5)
+      const end = pathInstance.getPointAtLength(totalLength * 0.52)
+
+      return {
+        ...link,
+        to,
+        from,
+        pathString,
+        pathInstance,
+        totalLength,
+        start,
+        midpoint,
+        end,
+        w: scaleLineWidth(link.value)
+      }
+    })
+  }
+
   $: if (linksIn.length > 0 && linksIn.length === totalLinks) {
     actionable = true;
   }
+
   
 </script>
 
@@ -181,14 +249,14 @@
     {#each linksIn as link, i}
       <!-- svelte-ignore component-name-lowercase -->
       <path
-        class='link linkTo-{link.to.node} linkFrom-{link.from.node}'
-        stroke-width={link.value}
+        class='link linkTo-{slugify(link.to.node)} linkFrom-{slugify(link.from.node)}'
+        stroke-width={link.w}
         d={link.pathString}
-        in:draw="{{ duration: 1000, delay: 200 + (10 * link.value) }}"
+        in:draw="{{ duration: 1000, delay: 200 + (10 * 1) }}"
         on:introend={() => totalLinks += 1}  
       ></path>
       <path
-        class='arrow arrowTo-{link.to.node} arrowFrom-{link.from.node}'
+        class='arrow arrowTo-{slugify(link.to.node)} arrowFrom-{slugify(link.from.node)}'
         d={lineGen([link.start, link.midpoint, link.end])}
         marker-end="url(#triangle)"
       ></path>
@@ -202,7 +270,7 @@
   <g 
     class='node-group'
   >
-    {#each dataIn.filter(d => d.node < 9) as node, i}
+    {#each dataIn.filter(d => d.node !== 'No or Minimal News') as node, i}
       <g transform='translate({node.x}, {node.y})'>
         <circle
           class='node {actionable ? 'active' : ''}'
@@ -214,7 +282,7 @@
         <text class='node-label' dy={-(node.r + 3)}>{node.archetype}</text>
       </g>
     {/each}
-    {#each dataIn.filter(d => d.node === 9) as node, i}
+    {#each dataIn.filter(d => d.node === 'No or Minimal News') as node, i}
       <g transform='translate({node.x}, {node.y})'>
         <circle
           class='node {actionable ? 'active' : ''}'
@@ -232,7 +300,7 @@
 <style lang="scss">
   .node {
     stroke: none;
-    fill: $css-lab-dark-red;
+    fill: $dark-grey;
     pointer-events: none;
   }
 
@@ -242,6 +310,7 @@
 
   .node-label {
     text-anchor: middle;
+    @include fs-sm;
   }
 
   .link {
@@ -251,13 +320,13 @@
   }
 
   .linkTo {
-    stroke: cyan;
-    opacity: 0.85;
+    stroke: transparentize($css-lab-dark-blue, 0.1);
+    // opacity: 0.85;
   }
 
   .linkFrom {
-    stroke: salmon;
-    opacity: 0.85;
+    stroke: transparentize($css-lab-dark-red, 0.1);
+    // opacity: 0.85;
   }
 
   .arrow {

@@ -33,7 +33,7 @@
 	// variable declaration
 	let colorInterpolator : any;
 	export let politicalChecked : boolean;
-	let dietChecked : boolean = true;
+	let dietChecked : boolean = false;
   let scenarioChecked : boolean = true;
 	let tvChecked : boolean = true
 	$: political_lean = politicalChecked ? 'R' : 'L'
@@ -80,7 +80,7 @@
 	}
 
 	const dates = [ ...new Set(data.map(d => d.period)) ]
-	let initPeriod = 'Last month'
+	let initPeriod = 'Last 3 months'
 	let period = initPeriod
 	
 	$: dataIn = states
@@ -143,13 +143,13 @@
 			bind:checked={ scenarioChecked } 
 		/>
 
-		<ControlSwitch 
+		<!-- <ControlSwitch 
 			id='diet' 
 			title='Diet %'
 			labels={[ '50%', '75%' ]}
 			info='Percent of intra-individual news diets that must be partisan for partisan segregation'
 			bind:checked={ dietChecked } 
-		/>
+		/> -->
 
 		<div id='period' class='control control-menu'>
 			<div class='control-title'>Period</div>
@@ -176,18 +176,42 @@
 		</div>
 		
 		<div class='legend-item legend-item-size'>
-			<h5>How to read this chart?</h5>
+			<h5>Echo chamber size</h5>
 			<div>
-				<!-- <svg>
-					<circle cy={rScale(5)+1} cx={rScale(0)+1} r={rScale(0)} fill='none' stroke='black'></circle>
-					<circle cy={rScale(5)+1} cx={rScale(5)+1} r={rScale(5)} fill='none' stroke='black'></circle>
+				<svg>
+					<circle 
+						cy={0} 
+						cx={rScale(activeChart.rDomain[1] / 2) + 1}
+						r={rScale(activeChart.rDomain[1] / 15)} 
+						fill='none' 
+						stroke='black'
+						class='legend-circle'
+					></circle>
+					<text
+						y={rScale(activeChart.rDomain[1] / 15)} 
+						x={rScale(activeChart.rDomain[1] / 2) + 1}
+						class='legend-circle-label'
+					>
+						{activeChart.rDomain[0].toLocaleString('en-NZ', { notation: "compact" })}
+					</text>
 
-					<text y={rScale(5)+rScale(0)} x={2*rScale(0)+1} r={rScale(0)}>{rScale(0)}%</text>
-					<text y={rScale(5)+rScale(0)} x={2*rScale(5)+1} r={rScale(5)}>{rScale(5)}% of adult population</text>
-				</svg> -->
+					<circle 
+						cy={0} 
+						cx={rScale(activeChart.rDomain[1] / 2) + 2} 
+						r={rScale(activeChart.rDomain[1] / 2)} 
+						fill='none' 
+						stroke='black'
+						class='legend-circle'
+					></circle> 
+					<text 
+						y={rScale(activeChart.rDomain[1] / 2)} 
+						x={rScale(activeChart.rDomain[1] / 2) + 2}
+						class='legend-circle-label'
+					>
+						{(activeChart.rDomain[1] / 2).toLocaleString('en-NZ', { notation: "compact" })}
+					</text>
+				</svg>
 			</div>
-			
-			<!-- <HowTo /> -->
 		</div>
 	</div>
 </div>
@@ -261,14 +285,6 @@
 		}
 	}
 
-	// .label {
-	// 	color: var(--color);
-	// 	font-weight: 700;
-	// 	position: absolute;
-	// 	text-shadow: 1px 1px 1px $white, -1px 1px 1px $white, 1px -1px 1px $white, -1px -1px 1px $white;
-	// 	@include fs-sm;
-	// }
-
 	.chart-info-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -319,15 +335,17 @@
 				svg {
 					height: 95px;
 					width: 100%;
+				
+					text {
+						@include fs-xs;
+						paint-order: stroke;
+						stroke-width: 3px;
+						stroke-linecap: butt;
+						stroke-linejoin: miter;
+						stroke: $white;
+					}
 				}
 			}
-			// svg {
-			// 	max-height: 100px;
-
-			// 	text {
-			// 		@include fs-xs;
-			// 	}
-			// }
 		}
 
 	}
@@ -341,7 +359,7 @@
     grid-template-rows: auto;
     grid-template-areas:
       "one two empty"
-      "three four four";
+      "four four four";
 
     #period {
       grid-area: four;
@@ -386,22 +404,3 @@
 		}
   }
 </style>
-
-<!-- <Tooltip
-	{evt}
-	let:detail
->
-	{@const tooltipData = { ...detail.props }}
-	<div class='channel-label'>{tooltipData.channel_name}</div>
-	<div
-		class='cluster-label'
-		style="--color: {colorMap.get(tooltipData.cluster)}"
-	>{labelMap.get(tooltipData.cluster)}</div>
-	{#each ['total_videos', 'subscribers'] as key}
-		{@const keyCapitalized = key.replace(/^\w/, d => d.toUpperCase()).replace('_', ' ')}
-		{@const value = tooltipData[key]}
-		{#if value}
-			<div class="row"><span>{keyCapitalized}:</span> {value.toLocaleString()}</div>
-		{/if}
-	{/each}
-</Tooltip> -->

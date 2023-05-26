@@ -12,63 +12,129 @@ from pandas.tseries.offsets import DateOffset
 def load(f):
   return read_csv(f)
 
-def parse_web(b):
-  # load data
-  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
-
+def parse_web_frac(d):
   # # keep only needed columns
   cols = [
     'activityyear', 'activitymonth', 'state',  
   ]
   values = [
     'frac of weights (50) (R) (lenient)',
-    'frac of weights (75) (R) (lenient)',
+    # 'frac of weights (75) (R) (lenient)',
     'frac of weights (50) (R) (stringent)',
-    'frac of weights (75) (R) (stringent)',
+    # 'frac of weights (75) (R) (stringent)',
     'frac of weights (50) (L) (lenient)',
-    'frac of weights (75) (L) (lenient)',
+    # 'frac of weights (75) (L) (lenient)',
     'frac of weights (50) (L) (stringent)',
-    'frac of weights (75) (L) (stringent)'
+    # 'frac of weights (75) (L) (stringent)'
   ]
   # # unpivot data
-  b_data = melt(
-    b_data,
+  frac_data = melt(
+    d,
     id_vars=cols,
     value_vars=values,
     var_name='subset'
   )
 
   # # clean values
-  extract_subset = b_data['subset'].str.extractall(
+  extract_subset = frac_data['subset'].str.extractall(
     r'.*\s\((?P<diet_threshold>.*)\)\s\((?P<political_lean>.*)\)\s\((?P<partisanship_scenario>.*)\)'
   )\
     .reset_index()
   # join extracted data back into b_data (using indexes)
-  b_data = merge(
-    b_data,
+  frac_data = merge(
+    frac_data,
     extract_subset.loc[:,['diet_threshold', 'political_lean', 'partisanship_scenario']],
     left_index=True,
     right_index=True
   )
 
   # assign subset columns
-  b_data['medium'] = 'web'
+  frac_data['medium'] = 'web'
   # clean partisanship scenario column
-  b_data['political_lean'] = b_data['political_lean'].apply(lambda x: 'left' if x == 'L' else 'right')
+  frac_data['political_lean'] = frac_data['political_lean'].apply(lambda x: 'left' if x == 'L' else 'right')
 
-  return b_data.drop('subset', axis = 1)
+  return frac_data.drop('subset', axis = 1)
 
-def parse_tv(df):
-  # keep only needed columns
+def parse_web_size(d):
+  # # keep only needed columns
+  cols = [
+    'activityyear', 'activitymonth', 'state',  
+  ]
+  values = [
+    'weighted_count_r_ec_50',
+    # 'weighted_count_r_ec_75',
+    'weighted_count_fr_ec_50',
+    # 'weighted_count_fr_ec_75',
+    'weighted_count_l_ec_50',
+    # 'weighted_count_l_ec_75',
+    'weighted_count_fl_ec_50',
+    # 'weighted_count_fl_ec_75'
+  ]
+  # # unpivot data
+  size_data = melt(
+    d,
+    id_vars=cols,
+    value_vars=values,
+    value_name='size',
+    var_name='subset'
+  )
+
+  # # clean values
+  extract_subset = size_data['subset'].str.extractall(
+    r'weighted_count_(?P<political_lean>.*)_.*_(?P<diet_threshold>.*)'
+  )\
+    .reset_index()
+  # join extracted data back into b_data (using indexes)
+  size_data = merge(
+    size_data,
+    extract_subset.loc[:,['diet_threshold', 'political_lean']],
+    left_index=True,
+    right_index=True
+  )
+
+  partisan_political_map = {
+    'l': { 'partisanship': 'lenient', 'political': 'left' },
+    'r': { 'partisanship': 'lenient', 'political': 'right' },
+    'fl': { 'partisanship': 'stringent', 'political': 'left' },
+    'fr': { 'partisanship': 'stringent', 'political': 'right' }
+  }
+
+  # assign subset columns
+  size_data['medium'] = 'web'
+  # # add lenient & stringent scenario
+  size_data['partisanship_scenario'] = size_data['political_lean'].apply(lambda x: partisan_political_map[x]['partisanship'])
+  # # clean partisanship scenario column
+  size_data['political_lean'] = size_data['political_lean'].apply(lambda x: partisan_political_map[x]['political'])
+
+  return size_data.drop('subset', axis = 1)
+
+def parse_web(b):
+  # load data
+  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
+
+  frac_data = parse_web_frac(b_data)
+  size_data = parse_web_size(b_data)
+  
+  return merge(
+    frac_data,
+    size_data,
+    on=['activityyear', 'activitymonth', 'state', 'diet_threshold', 'political_lean', 'medium', 'partisanship_scenario']
+  )
+
+def parse_tv_frac(d):
+  #  keep only needed columns
   cols = [
     'activityyear', 'activitymonth', 'medium', 'state', 
     'political_lean', 'partisanship_scenario'
   ]
-  values = ['frac of weights (50)', 'frac of weights (75)']
+  values = [
+    'frac of weights (50)', 
+    # 'frac of weights (75)'
+  ]
 
   # unpivot data
   data = melt(
-    df,
+    d,
     id_vars=cols,
     value_vars=values,
     var_name='diet_threshold'
@@ -76,6 +142,43 @@ def parse_tv(df):
 
   # clean values
   data['diet_threshold'] = data['diet_threshold'].str.extract(r'.*\s\((.*)\)')
+  
+  return data
+
+def parse_tv_size(d):
+  #  keep only needed columns
+  cols = [
+    'activityyear', 'activitymonth', 'medium', 'state', 
+    'political_lean', 'partisanship_scenario'
+  ]
+  values = [
+    'weighted_count_50', 
+    # 'weighted_count_75'
+  ]
+
+  # unpivot data
+  data = melt(
+    d,
+    id_vars=cols,
+    value_vars=values,
+    value_name='size',
+    var_name='diet_threshold'
+  )
+
+  # clean values
+  data['diet_threshold'] = data['diet_threshold'].str.extract(r'weighted_count_(.*)')
+  
+  return data
+
+def parse_tv(df):
+  frac_data = parse_tv_frac(df)
+  size_data = parse_tv_size(df)
+
+  data = merge(
+    frac_data,
+    size_data,
+    on=['activityyear', 'activitymonth', 'state', 'diet_threshold', 'political_lean', 'medium', 'partisanship_scenario']
+  )
 
   return data
 
@@ -139,19 +242,19 @@ def group_data(df, *args):
     .assign(period=name)
 
 def parse(file):
-  # loads & parses data
-  # let's start with the TV dataset
-  # we need to account for the fact that the R Stringent
-  # file is the same as R Lenient file, but it is not saved
-  # in raw-data. We'll need to manually add those rows to
-  # the data set.
+  # # loads & parses data
+  # # let's start with the TV dataset
+  # # we need to account for the fact that the R Stringent
+  # # file is the same as R Lenient file, but it is not saved
+  # # in raw-data. We'll need to manually add those rows to
+  # # the data set.
   d_tv = concat(
     reduce(concat_tv, file['url'][0:3], []),
     ignore_index = True
   )
-  # then we parse the web dataset,
-  # which is different as it comes all 
-  # #in one single file
+  # # then we parse the web dataset,
+  # # which is different as it comes all 
+  # # in one single file
   d_web = parse_web(file['url'][3])
 
   # # now we parse the TV data into what it needs to be to match the web data
@@ -169,9 +272,6 @@ def parse(file):
   # # add timestamp column to data
   data['timestamp'] = to_datetime(data.apply(lambda x: f"{x['activityyear']}-{x['activitymonth']}", axis=1), format='%Y-%m')
 
-  ####### FAKING DATA ALIGNMENT ########
-  data.loc[data['medium'] == 'tv', 'timestamp'] = data.loc[data['medium'] == 'tv', 'timestamp'].apply(lambda x: x + DateOffset(months=2))
-
   # # remove unused columns
   data = data.drop(['activityyear', 'activitymonth'], axis=1)
 
@@ -179,7 +279,7 @@ def parse(file):
   last_date = data['timestamp'].max()
   first_date = data['timestamp'].min()
   bounds = [
-    ('Last month', last_date, last_date),
+    # ('Last month', last_date, last_date),
     ('Last 3 months', last_date, last_date - DateOffset(months=3)),
     ('Last 6 months', last_date, last_date - DateOffset(months=6)),
     ('Last 12 months', last_date, last_date - DateOffset(months=12)),
@@ -192,12 +292,23 @@ def parse(file):
   grouped_data = concat(
     [group_data(data, *x) for x in bounds],
     ignore_index = True
-  )
-
-  # # pivot political lean data & return 
-  return grouped_data.pivot(
+  )\
+  .pivot(
+    # # pivot political lean data
     index=['period', 'state', 'medium', 'partisanship_scenario', 'diet_threshold'],
     columns='political_lean',
-    values='value'
-  ).reset_index()\
-  .rename(columns={ 'left': 'left_pct', 'right': 'right_pct' })
+    values=['value', 'size']
+  )
+  # then transform multi-level cols into single level cols
+  grouped_data.columns = ['_'.join(col) for col in grouped_data.columns.values]
+
+  # rename cols, reset index & return
+  return grouped_data.rename(
+    columns={ 
+      'value_left': 'left_pct', 
+      'value_right': 'right_pct',
+      'size_left': 'left_size',
+      'size_right': 'right_size'
+    }
+  )\
+  .reset_index()
