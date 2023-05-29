@@ -1,13 +1,8 @@
 # built-in modules
-from functools import reduce
 from re import search
 
 # venv modules
-from pandas import read_csv, concat, melt, to_datetime, Grouper, DataFrame
-from pandas.tseries.offsets import DateOffset
-
-# local modules
-import enforce_order
+from pandas import read_csv, concat, to_datetime, Grouper
 
 def load(f):
   return read_csv(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{f}')
@@ -20,7 +15,7 @@ def get_top_n(x, n, val):
 def format_df(file):
   d = load(file)
 
-  # if file contains date info, filt for just last month
+  # if file contains date info, filter for just last month
   time_cols = ['activityyear', 'activitymonth']
   if any([x in d.columns for x in time_cols]):
     counts = d.loc[:,time_cols]\
@@ -40,17 +35,17 @@ def format_df(file):
 
   # get what subset this is
   period = search(
-    r'news_program_ranked_by_audiences_agg=(.*)_dem.*', file
+    r'.*_ranked_by_audiences_agg=(.*)_dem.*', file
   )\
     .group(1)\
     .replace('_', ' ')\
-    .replace('monthly', 'Last month')\
+    .replace('monthly', 'Last month')
     
-  d['period'] = period
+  d['period'] = period.capitalize()
 
   return d
 
-def parse(file):
+def parse_tv(file):
   values = 'audience_size_est_60'
   cols = [
     'state',
@@ -60,11 +55,35 @@ def parse(file):
   ]
   d = [
     format_df(f).sort_values(values, ascending = False) 
-    for f in file['url']
+    for f in file
   ]
   d = concat([get_top_n(f, 10, values) for f in d])
-  
+
   # # # keep only needed columns
   return d.loc[d['state'] != 'PR', cols + [values]]\
     .assign(medium='tv')\
     .rename({ values: 'value', 'program_name': 'program' }, axis = 1)
+
+def parse_web(file):
+  values = 'audience_size_est_60'
+  cols = [
+    'state',
+    'domain',
+    'period',
+  ]
+  d = [
+    format_df(f).sort_values(values, ascending = False) 
+    for f in file
+  ]
+  d = concat([get_top_n(f, 10, values) for f in d])
+
+  # # # keep only needed columns
+  return d.loc[d['state'] != 'PR', cols + [values]]\
+    .assign(medium='web')\
+    .rename({ values: 'value' }, axis = 1)
+
+def parse(file):
+  d_tv = parse_tv(file['url'][:5])
+  d_web = parse_web(file['url'][5:])
+
+  return concat([d_tv, d_web])

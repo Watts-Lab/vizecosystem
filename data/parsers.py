@@ -12,7 +12,7 @@ class Parser:
     self.steps = {
       'EchoCh-by_state.csv': main_grouped.parse,
       'EchoCh-by_state_full-timeseries.csv': main_timeseries.parse,
-      'EchoCh-TV-by_state_audiences.csv': main_timeseries_audiences.parse,
+      'EchoCh-by_state_audiences.csv': main_timeseries_audiences.parse,
       'EchoCh-nationwide-by_gender-or-age_group.csv': section1.parse,
       'EchoCh-links.csv': section2_links.parse,
       'EchoCh-nodes.csv': section2_nodes.parse,
