@@ -29,7 +29,7 @@
 	export let yDomain : number[] = [0, null];
 	export let formatTickX : Function;
 	export let xTicks : number|Array<number>|Function = 6;
-	export let formatTickY : Function = (d : number) => d.toFixed(2);
+	export let formatTickY : Function = (d : number) => d.toLocaleString('en-NZ', { style: 'percent' });
 	export let includeCaption : boolean = true;
 	export let spanCol : number
 	export let customClass : string
@@ -84,18 +84,8 @@
 						formatTick={formatTickY}
 					/>
 				{/if}
-				<!-- <Markers data={ markers } /> -->
 				<Multiline activeChart={'test'}/>
 			</Svg>
-
-			<Html>
-				<!-- <SharedTooltip
-					dataset={data}
-					formatTitle={formatTickX}
-					formatKey={(d) => labelMap.get(d)}
-					formatValue={formatTickY}
-				/> -->
-			</Html>
 		</LayerCake>
 	{/if}
 </div>

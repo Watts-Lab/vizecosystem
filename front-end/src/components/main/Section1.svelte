@@ -44,7 +44,7 @@
     let xKey : string = 'date'
     let yKey : string = 'value'
     let zKey : number = 0
-    let tvChecked : boolean = true;
+    let tvChecked : boolean = false;
     let scenarioChecked : boolean = true;
     let medium : string = tvChecked ? 'web' : 'tv'
     let partisanship_scenario : string = scenarioChecked ? 'stringent' : 'lenient'

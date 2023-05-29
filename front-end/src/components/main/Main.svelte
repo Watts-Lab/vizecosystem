@@ -38,7 +38,6 @@
 		// load data for map + line chart
 		const resChart = await csv(urlChart, autoType)
 		data = resChart
-		// .map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
     // parse data for 
 		dataMap = group(
 			data,
@@ -61,20 +60,20 @@
 		[0, {
 			type: "diverging",
 			rScale: scaleSqrt,
-			rDomain: [0, 3e6],
-			rRange: [5, 100],
+			rDomain: [1e3, 3e6],
+			rRange: [10, 90],
 			zScale: scaleThreshold,
-			zDomain: [-0.1, -0.025, -0.005, 0.005, 0.025, 0.1],
+			zDomain: [-0.1, -0.05, -0.01, 0.01, 0.05, 0.1],
 			colorInterpolator: scaleDiverging,
-			colorInterpolatorDomain: [-1, 0, 1],
+			colorInterpolatorDomain: [-0.75, 0, 0.75],
 			colorInterpolatorScheme: ["#011f5b", "gainsboro", "#990000"],
-			colorPaletteAnchors: [-0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75]
+			colorPaletteAnchors: [-0.7, -0.35, -0.18, 0, 0.18, 0.35, 0.85]
 		}],
 		[1, {
 			type: "linear",
 			rScale: scaleSqrt,
-			rDomain: [0, 0.5],
-			rRange: [8, 100],
+			rDomain: [1e3, 3e6],
+			rRange: [10, 90],
 			zScale: scaleThreshold,
 			zDomain: [0, 0.01, 0.025, 0.05],
 			colorInterpolator: scaleLinear,

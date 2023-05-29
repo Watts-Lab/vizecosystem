@@ -4,7 +4,6 @@
     import { forceSimulation, forceCollide, forceManyBody } from 'd3-force';
     import { scaleOrdinal } from 'd3-scale';
 
-  
     const { height, width, rScale, zScale, data, } = getContext('LayerCake');
 
     export let collideStrength = 1;
@@ -48,7 +47,7 @@
       return ({ ...d, 
         x, 
         y,
-        r: $rScale(d.data[`${lean}_pct`])
+        r: $rScale(d.data[`${lean}_size`])
       })
     });
     
@@ -74,7 +73,7 @@
         return ({ ...d, 
           x, 
           y,
-          r: $rScale(d.data[`${lean}_pct`])
+          r: $rScale(d.data[`${lean}_size`])
         })
       });
       restart()

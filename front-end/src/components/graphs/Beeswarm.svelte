@@ -3,20 +3,15 @@
 	import { onMount } from 'svelte';
 	import { LayerCake, Svg, Html } from 'layercake';
 	import { piecewise, interpolateRgb } from 'd3-interpolate';
-	import { timeFormat } from 'd3-time-format';
 
 	// types
 	import type ChartConfig from '../../types/ChartConfig';
 
 	// components
-	// import Force from './Force_2.svelte';
 	import ForceDiverging from './ForceDiverging.svelte';
 	import ForceLinear from './ForceLinear.svelte';
 	import PopupOverlay from './tooltips/PopupOverlay.svelte';
 	import ControlSwitch from '../global/control-switch.svelte';
-	// import HowTo from './archive/HowTo.svelte'
-
-	// // utils
 	
 	// local data
 	import statesDict from '../../data/states.json'
@@ -33,13 +28,13 @@
 	// variable declaration
 	let colorInterpolator : any;
 	export let politicalChecked : boolean;
-	let dietChecked : boolean = false;
-  let scenarioChecked : boolean = true;
-	let tvChecked : boolean = true
+	let dietChecked : boolean = false
+  let scenarioChecked : boolean = true
+	let tvChecked : boolean = false
 	$: political_lean = politicalChecked ? 'R' : 'L'
-	$: medium = tvChecked ? 'web' : 'tv';
-	$: diet_threshold = dietChecked ? 75 : 50;
-  $: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent';
+	$: medium = tvChecked ? 'web' : 'tv'
+	$: diet_threshold = dietChecked ? 75 : 50
+  $: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent'
 
 	// tooltip togglers
 	$: tooltip = null;
@@ -49,6 +44,7 @@
 	let hidePopup : boolean = true;
 	// other global vars
 	let render : boolean = false;
+	let renderAnnotation : boolean = false;
 	let dataIn : any;
 
 	// when component is rendered, set render to true
@@ -79,8 +75,13 @@
 		popup = null;
 	}
 
-	const dates = [ ...new Set(data.map(d => d.period)) ]
-	let initPeriod = 'Last 3 months'
+	const dates = [
+		'Since 2016',
+		'Last 3 months', 
+		'Last 6 months', 
+		'Last 12 months',
+	]
+	let initPeriod = 'Since 2016'
 	let period = initPeriod
 	
 	$: dataIn = states
@@ -118,10 +119,15 @@
 	}
 
 	$: colorPalette = activeChart.colorPaletteAnchors.map(colorInterpolator)
-
+	$: colorAnchors = activeChart.zDomain
+	
 	$: zScale = activeChart.zScale()
 		.domain(activeChart.zDomain)
 		.range(colorPalette)
+
+	onMount(() => {
+		setTimeout(() => renderAnnotation = true, 2000)
+	})
 </script>
 
 <div class='chart-info-wrapper main-column'>
@@ -167,12 +173,21 @@
 		<div class='legend-item legend-item-color'>
 			<h5>Partisan lean</h5>
 			{#if activeChart.type !== 'linear'}
-				<span>More left</span>
+				<span class='legend-block-label legend-block-label-L'>More left</span>
 			{/if}
-			{#each colorPalette as d}
-				<div class='legend-block' style="--color: {d}"></div>
+			{#each colorPalette as d, i}
+				{@const anchor = colorAnchors[i]}
+				<div class='legend-block' style="--color: {d}">
+					{#if anchor !== undefined}
+						<div
+							class={`legend-anchor-label legend-anchor-label-${anchor > 0 ? 'R' : 'L'}`}
+						>
+							{Math.abs(anchor).toLocaleString('en-NZ', { style: 'percent', maximumFractionDigits: 1, minimumFractionDigits: 0 })}
+						</div>
+					{/if}
+				</div>
 			{/each}
-			<span>More { political_lean === 'L' ? 'left' : 'right' }</span>
+			<span class='legend-block-label legend-block-label-R'>More { political_lean === 'L' ? 'left' : 'right' }</span>
 		</div>
 		
 		<div class='legend-item legend-item-size'>
@@ -189,15 +204,31 @@
 					></circle>
 					<text
 						y={rScale(activeChart.rDomain[1] / 15)} 
-						x={rScale(activeChart.rDomain[1] / 2) + 1}
+						x={rScale(activeChart.rDomain[1] / 2)}
 						class='legend-circle-label'
 					>
 						{activeChart.rDomain[0].toLocaleString('en-NZ', { notation: "compact" })}
 					</text>
+					
+					<circle 
+						cy={0} 
+						cx={rScale(activeChart.rDomain[1] / 2)} 
+						r={rScale(activeChart.rDomain[1] / 4.5)} 
+						fill='none' 
+						stroke='black'
+						class='legend-circle'
+					></circle> 
+					<text 
+						y={rScale(activeChart.rDomain[1] / 4.5)} 
+						x={rScale(activeChart.rDomain[1] / 2)}
+						class='legend-circle-label'
+					>
+						{(activeChart.rDomain[1] / 4.5).toLocaleString('en-NZ', { notation: "compact" })}
+					</text>
 
 					<circle 
 						cy={0} 
-						cx={rScale(activeChart.rDomain[1] / 2) + 2} 
+						cx={rScale(activeChart.rDomain[1] / 2)} 
 						r={rScale(activeChart.rDomain[1] / 2)} 
 						fill='none' 
 						stroke='black'
@@ -205,7 +236,7 @@
 					></circle> 
 					<text 
 						y={rScale(activeChart.rDomain[1] / 2)} 
-						x={rScale(activeChart.rDomain[1] / 2) + 2}
+						x={rScale(activeChart.rDomain[1] / 2)}
 						class='legend-circle-label'
 					>
 						{(activeChart.rDomain[1] / 2).toLocaleString('en-NZ', { notation: "compact" })}
@@ -230,7 +261,6 @@
 	>
 		<Svg>
 			{#if render}
-
 				{#if activeChart.type === 'diverging'}
 					<ForceDiverging
 						{ medium }
@@ -238,6 +268,7 @@
 						{ partisanship_scenario }
 						collideStrength={ 0.1 }
 						manyBodyStrength={ -0.5 }
+						{ renderAnnotation }
 						on:mouseenter={ handleMouseEnter }
 						on:mouseleave={ handleMouseLeave }
 						on:click={ handleClick }
@@ -257,7 +288,6 @@
 						on:click={ handleClick }
 					/>
 				{/if}
-
 			{/if}
 		</Svg>
 		<Html pointerEvents={!hidePopup}>
@@ -297,29 +327,60 @@
 		align-items: flex-start;
 
 		.legend-item {
-			width: 50%;
-
+			row-gap: 5px;
 			h5 {
 				width: 100%;
 			}
 		}
 
 		.legend-item-color {
+			width: 65%;
 			display: flex;
 			align-items: center;
 			flex-wrap: wrap;
 
-			span {
+			.legend-block-label {
 				@include fs-xxs;
         font-weight: 300;
         letter-spacing: 1px;
         text-transform: uppercase;
 			}
 
+			.legend-block-label-L {
+				margin-right: 5px;
+			}
+
+			.legend-block-label-R {
+				margin-left: 5px;
+			}
+
 			.legend-block {
+				width: 35%;
 				background-color: var(--color);
 				height: 25px;
 				width: 25px;
+				border-left: 1pt solid $white;
+
+				.legend-anchor-label {
+					@include fs-xxxs;
+					position: relative;
+					width: 100%;
+					top: 24px;
+					left: 14px;
+					text-align: center;
+				}
+
+				// .legend-anchor-label-L {
+				// 	left: 14px;
+				// }
+
+				// .legend-anchor-label-R {
+				// 	left: -9px;
+				// }
+			}
+
+			.legend-block:first-of-type {
+				border-left: none;
 			}
 		}
 
@@ -351,7 +412,6 @@
 	}
 
 	.controls {
-    // grid-row: 1 / span 1;
     grid-column: 1 / span 1;
     display: grid;
     row-gap: 7px;

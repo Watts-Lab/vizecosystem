@@ -4,8 +4,7 @@
 
   // prop declaration
   export let data : any[];
-
-  console.log(data)
+  export let medium : string;
 </script>
 
 <div class='table-container'>
@@ -14,10 +13,14 @@
       <div class={`row-header row-header-program`}>Program</div>
       <div class={`row-header row-header-audience`}>Audience</div>
     </div>
-    {#each data as row, i}
+    {#each data.filter(d => d.value > 0) as row, i}
       <div class={`row-body`}>
-        <div class={`row-value row-value-program`}>{row.program}</div>
-        <div class={`row-value row-value-audience`}>{row.value}</div>
+        {#if medium === 'tv'}
+          <div class={`row-value row-value-program`}>{row.program}</div>
+          <div class={`row-value row-value-program`}>{row.network}</div>
+          {:else} <div class={`row-value row-value-program`}>{row.domain}</div>
+        {/if}
+          <div class={`row-value row-value-audience`}>{row.value.toLocaleString()}</div>
       </div>
     {/each}
   </div>

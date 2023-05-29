@@ -2,17 +2,18 @@
     import { getContext, createEventDispatcher } from 'svelte';
     import { geoAlbersUsa } from 'd3-geo'
     import { forceSimulation, forceCollide, forceManyBody } from 'd3-force';
-    import { scaleOrdinal } from 'd3-scale';
     import { path } from 'd3-path'
-  
+    
     const { height, width, rScale, zScale, data } = getContext('LayerCake');
+    
+    import IntroAnnotation from './tooltips/IntroAnnotation.svelte';
 
     export let collideStrength = 1;
     export let manyBodyStrength = 1;
-    // export let political_lean;
     export let medium;
     export let diet_threshold;
     export let partisanship_scenario;
+    export let renderAnnotation;
 
     // instantiate event dispatcher
     const dispatch = createEventDispatcher();
@@ -95,21 +96,9 @@
 
     $: labelActive = false;
 
-    function handleMouseEnter(e, d) {
-      dispatch('mouseenter', { target: e.target, node: d })
-    }
-
     function handleClick(e, d) {
       dispatch('click', { target: e.target, node: d })
     }
-
-    function handleMouseLeave(e) {
-      dispatch('mouseleave')
-    }
-
-    const scaleTypeColor = scaleOrdinal()
-      .domain($zScale.range())
-      .range(['gainsboro', 'gainsboro', 'black', 'gainsboro', 'gainsboro'])
 
     function arcGen(context, pos) {
       context.arc(0, 0, pos.r, pos.start, pos.end)
@@ -123,7 +112,6 @@
       context.closePath()
       return context
     }
-
 </script>
 
 <g 
@@ -131,7 +119,7 @@
 >
   {#each nodes as node}
     <g 
-      class='node-group' 
+      class={`node-group node-group-${node.abbr}`} 
       transform={`translate(${node.x}, ${node.y})`}
       on:click={(e) => handleClick(e, node)}
     >
@@ -166,11 +154,14 @@
   {/each}
 </g>
 
+{#if renderAnnotation}
+  <IntroAnnotation data={ nodes }/>
+{/if}
+
 <style lang='scss'>
   .node {
     stroke: $true-black;
     stroke-width: 0;
-    // transition: 0.5s stroke-width;
     cursor: pointer;
   }
 

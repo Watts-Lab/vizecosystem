@@ -34,7 +34,7 @@
   let table : any[];
   let tableMap : Map<string|number, any>
   const urlChart : string  = 'assets/data/EchoCh-by_state_full-timeseries.csv'
-  const urlTable : string  = 'assets/data/EchoCh-TV-by_state_audiences.csv'
+  const urlTable : string  = 'assets/data/EchoCh-by_state_audiences.csv'
 
   onMount(async () => {
     const resChart = await csv(urlChart, autoType)
@@ -101,7 +101,7 @@
       dolorum porro, saepe molestiae quis et, quia libero suscipit numquam?
     </p>
     
-    {#if medium === 'tv'}
+    <!-- {#if medium === 'tv'} -->
       {@const tableChart = tableMap
         .get(period)
         .get(abbr)
@@ -110,12 +110,13 @@
       <div class='overlay-col2-container'>
         <Table 
           data={ tableChart }
+          { medium }
         />
       </div>
-    {/if}
+    <!-- {/if} -->
 
     <p class='caption overlay-col2-caption'>
-      <span>Most watched.</span> Lorem ipsum dolor sit amet consectetur 
+      <span>Most {medium === 'tv' ? 'watched' : 'viewed'}.</span> Lorem ipsum dolor sit amet consectetur 
       adipisicing elit. Odit, inventore impedit deleniti magnam eum eveniet 
       dolorum porro, saepe molestiae quis et, quia libero suscipit numquam?
     </p>
