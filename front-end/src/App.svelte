@@ -9,7 +9,7 @@
 	import Main from './components/main/Main.svelte';
 	import Section1 from './components/main/Section1.svelte';
 	import Section2 from './components/main/Section2.svelte';
-	// import Supplementary from './components/main/Supplementary.svelte';
+	import Section3 from './components/main/Section3.svelte';
 
 	// export let title : string = 'Your title goes here';
 	// export let standfirst : any[]
@@ -21,7 +21,7 @@
 <Main title={ data.title } { authors } standfirst={ data.standfirst } />
 <Section1 once={ true } copy={data['section-one'].copy} refs={data['section-one'].references} captions={data['section-one'].captions} />
 <Section2 once={ true } copy={data['section-two'].copy} refs={data['section-two'].references} captions={data['section-two'].captions} />
-<!-- <Supplementary once={ true } copy={data['supplementary'].copy} refs={data['supplementary'].references} captions={data['supplementary'].captions} /> --> -->
+<Section3 once={ true } copy={data['section-three'].copy} refs={data['section-three'].references} captions={data['section-three'].captions} />
 <Footer />
 
 <style lang='scss' global>

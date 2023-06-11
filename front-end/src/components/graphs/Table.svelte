@@ -10,14 +10,13 @@
 <div class='table-container'>
   <div class={`table-wrapper`}>
     <div class={`row-head`}>
-      <div class={`row-header row-header-program`}>Program</div>
+      <div class={`row-header row-header-program`}>{medium === 'tv' ? 'Program' : 'Domain'}</div>
       <div class={`row-header row-header-audience`}>Audience</div>
     </div>
     {#each data.filter(d => d.value > 0) as row, i}
       <div class={`row-body`}>
         {#if medium === 'tv'}
-          <div class={`row-value row-value-program`}>{row.program}</div>
-          <div class={`row-value row-value-program`}>{row.network}</div>
+          <div class={`row-value row-value-program`}>{row.program} <span class={`row-value row-value-network`}>{row.network}</span> </div>
           {:else} <div class={`row-value row-value-program`}>{row.domain}</div>
         {/if}
           <div class={`row-value row-value-audience`}>{row.value.toLocaleString()}</div>
@@ -29,7 +28,7 @@
 <style lang="scss">
   .table-wrapper {
     .row-head {
-      @include fs-sm;
+      @include fs-base;
       line-height: 2;
       padding: 0 3px;
       font-weight: 300;
@@ -52,27 +51,23 @@
       }
     }
 
-    // .row-head-L {
-    //   background-color: transparentize($css-lab-dark-blue, 0.5);
-    //   color: $white;
-    // }
-
-    // .row-head-R {
-    //   background-color: transparentize($css-lab-dark-red, 0.5);
-    //   color: $white;
-    // }
-
     .row-body {
       display: flex;
-      padding: 0 3px;
+      align-items: center;
+      gap: 5px;
+      padding: 0 5px;
       line-height: 2;
+      min-height: 40px;
+      @include fs-root;
+      border-bottom: 0.5pt solid $light-grey;
 
-      .row-value-program {
-        width: 50%;
-      }
-      // .row-value-network {
-      //   width: 30%;
+      // .row-value-program {
+      //   width: 60%;
       // }
+      .row-value-network {
+        // width: 30%;
+        @include fs-sm;
+      }
       .row-value-audience {
         flex: 1 0 auto;
         text-align: end;
@@ -80,7 +75,11 @@
     }
 
     .row-body:nth-child(even) {
-      background-color: $light-grey;
+      background-color: transparentize($light-grey, 0.5);
+    }
+
+    .row-body:last-child {
+      border-bottom: none;
     }
   }
 

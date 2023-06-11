@@ -141,7 +141,7 @@
     display: grid;
     column-gap: 50px;
     row-gap: 8px;
-    grid-template-rows: auto 1fr 0.3fr;
+    grid-template-rows: 0fr 1fr 0.3fr;
     grid-template-columns: 1fr 1fr;
     transition: left 0.3s ease-out;
   }

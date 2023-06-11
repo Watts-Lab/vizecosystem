@@ -3,40 +3,59 @@
     import { onMount } from "svelte";
     import { csv } from "d3-fetch";
     import { autoType } from "d3-dsv";
-	import { scaleLinear } from 'd3-scale'
-    import { group, extent } from 'd3-array'
-    
+    import { group, extent } from "d3-array"
+    import { scaleLinear } from 'd3-scale'
+	
     // actions
     import inView from "../../actions/inView";
 
     // components
-    import FlowChart from '../graphs/FlowChart.svelte';
-    import ControlSwitch from '../global/control-switch.svelte';
+    import LineAreaChart from "../graphs/LineAreaChart.svelte";
     import DoubleRangeSlider from "../global/double-range-slider.svelte";
+    import ControlSwitch from "../global/control-switch.svelte";
 
     // // import utils
 	import { formatMonth } from '../../utils/format-dates';
-    
+
     // props
     let loaded : boolean = false;
     export let once : boolean;
-    export let copy : any[];
-    export let refs : any[];
-    export let captions : any[];
+    export let copy : any[]
+    export let refs : any[]
+    export let captions : any[]
 
     // variable declaration
-    let url_nodes : string = 'assets/data/EchoCh-nodes.csv'
-    let nodes : any[]
-    let nodesMap : Map<any, any>
-    let nodesIn : any[]
-    let url_links : string = 'assets/data/EchoCh-links.csv'
-    let links : any[]
-    let linksMap : Map<any, any>
-    let linksIn : any[]
-
-    // scales
+    const menuInfo : Map<string, string> = new Map([
+        // ['political_lean', 'political_lean'],
+        ['partisanship', 'partisanship'],
+        ['diet', 'diet'],
+        ['tv', 'tv']
+    ]);
+    let url : string = 'assets/data/EchoCh-nationwide-by_gender-or-age_group.csv'
+    let data : any[]
+    let dataIn : Map<any,any>
+    let xKey : string = 'date'
+    let yKey : string = 'value'
+    let zKey : number = 0
+    let tvChecked : boolean = false;
+    let scenarioChecked : boolean = true;
+    let medium : string = tvChecked ? 'web' : 'tv'
+    let partisanship_scenario : string = scenarioChecked ? 'stringent' : 'lenient'
     const scaleRange : Function = scaleLinear();
-    const scaleDate : Function = (x : any) => {
+    let start = 0
+    let end = 1
+    let gender = 'All'
+    let age_group = 'All'
+    
+    onMount(async () => {
+        const res = await csv(url, autoType)
+        data = res.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
+
+        const [ min, max ] = extent(data, d => +d.date); 
+        scaleRange.range([ min, max ])
+	})
+
+    const scaleDate : Function = (x) => {
         const date = new Date(scaleRange(x))
         date.setDate(1)
         date.setHours(0, 0, 0)
@@ -45,79 +64,81 @@
         return +date
     }
 
-    onMount(async () => {
-        // load nodes and assign to global variable
-        const nodesRes = await csv(url_nodes, autoType)
-        nodes = nodesRes
-            .map(d => ({ ...d, node: d.archetype, date: new Date(d.year, d.month, 1)  }))
-
-        nodesMap = group(nodes, d => +d.date, d => d.variable)
-            // .filter(d => d['year'] === 2016 && d['month'] === 1 && d.variable === sizeVar)
-
-        const [ min, max ] = extent(Array.from(nodesMap).map(d => d[0]));
-        scaleRange.range([ min, max ])
-
-        // load links, parse into long format, assign to global variable
-        const linksRes = await csv(url_links, autoType)
-        links = linksRes
-            .map(d => ({ 
-                ...d, 
-                start_date: new Date(d['start year'], d['start month'], 1), 
-                end_date: new Date(d['end year'], d['end month'], 1) 
-            }))
-            .reduce((prev : any[], curr : Object) => {
-                const entries = Object.entries(curr)
-                const values = entries.filter(
-                    d => !['start year', 'end year', 'start month', 'end month', 'from', 'start_date', 'end_date'].includes(d[0]) && 
-                    d[1] !== null
-                    )
-                    const from = entries.filter(d => d[0] === 'from')[0][1]
-                values.forEach(d => {
-                    prev.push({ 
-                        from, 
-                        to: d[0], 
-                        value: d[1], 
-                        start_date: curr.start_date, 
-                        end_date: curr.end_date 
-                    })
-                })
-                return prev
-            }, [])
-
-        linksMap = group(links, d => +d.start_date, d => +d.end_date)
-
-        render = true;
-        start_date = scaleDate(0)
-        end_date = scaleDate(1)
-	})
-
-    $: render = false
-    $: sizeChecked = true
-    $: sizeVar = sizeChecked ? 'sizes' : 'mins_p_person'
-
-    $: start = 0
-    $: end = 1
-
-    $: start_date = scaleDate(start)
-    $: end_date = scaleDate(end)
-
-    $: if (render) {
-        nodesIn = nodesMap.get(end_date).get(sizeVar)
-        linksIn = linksMap.get(start_date).get(end_date)
+    function resetAge() {
+        age_group = 'All'
     }
+    function resetGender() {
+        gender = 'All'
+    }
+
+    $: if (data) {
+        dataIn = group(
+            data, 
+            d => d.gender, 
+            d => d.medium, 
+            d => d.partisanship_scenario,
+            d => d.age_group
+        )
+    }
+
+    $: medium = tvChecked ? 'web' : 'tv'
+    $: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
+    $: gender = 'All'
+    $: age_group = 'All'
+
+    $: if (age_group !== 'All') resetGender()
+    $: if (gender !== 'All') resetAge()
 </script>
 
 <div class="section section-2" use:inView={{ once }} on:enter={() => loaded = true }>
+    <h1 class='section-title'>Section title</h1>
+    <div class='copy copy-1'>
+        {#each copy.slice(0,2) as d, i}
+            <p>
+                {d.value}
+            </p>
+        {/each}
+    </div>
     <div class='chart-wrapper'>
         <div class='controls'>
             <ControlSwitch 
-                id='audience' 
-                title='Node size'
-                labels={[ 'Audience', 'Consumption' ]}
-                info='Audience size or average consumption'
-                bind:checked={ sizeChecked } 
+                id='medium' 
+                title='Medium'
+                labels={[ 'TV', 'Web' ]}
+                info='Internet or TV'
+                bind:checked={ tvChecked } 
             />
-            {#if loaded && render}
+
+            <ControlSwitch 
+                id='partisanship' 
+                title='Partisanship'
+                labels={[ 'Lenient', 'Strict' ]}
+                info='Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The stric definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)'
+                bind:checked={ scenarioChecked } 
+            />
+
+            <div id='age-group' class='control control-menu'>
+                <div class='control-title'>Age group</div>
+                <select id="age-group-menu" name="age-group" bind:value={age_group} on:change={ () => console.log(age_group) }>
+                    <option value='All'>All</option>
+                    <option value='18-24'>18-24</option>
+                    <option value='25-34'>25-34</option>
+                    <option value='35-44'>35-44</option>
+                    <option value='45-54'>45-54</option>
+                    <option value='55+'>55+</option>
+                </select>
+            </div>
+
+            <div id='gender' class='control control-menu'>
+                <div class='control-title'>Gender</div>
+                <select id="gender-menu" name="location" bind:value={gender} on:change={ () => console.log(gender) }>
+                    <option value='All' selected>All</option>
+                    <option value='Male'>Male</option>
+                    <option value='Female'>Female</option>
+                </select>
+            </div>
+
+            {#if loaded && data}
                 <div id='period' class='control control-range'>
                     <div class='control-title'>Period</div>
                         <DoubleRangeSlider bind:start bind:end />
@@ -128,20 +149,33 @@
                 </div>
             {/if}
         </div>
-        {#if loaded && render}
-            <FlowChart
-                nodes={ nodesIn }
-                links={ linksIn }
-                flatLinks={ links }
+        {#if loaded && data}
+            <LineAreaChart 
+                data={ data }
+                groupedData={
+                    dataIn
+                        .get(gender)
+                        .get(medium)
+                        .get(partisanship_scenario)
+                        .get(age_group)
+                }
+                scaleRange={ scaleDate }
+                { start }
+                { end }
+                { yKey } 
+                { xKey } 
+                { zKey }
                 spanCol={12}
-                url={ url_nodes }
+                customClass={'chart-medium'}
+                formatTickX={formatMonth}
+                url={ url }
                 caption={captions[0].value}
-                customClass='chart-large'
             />
+        {:else} <div class='chart-placeholder'></div>
         {/if}
     </div>
-    <div class='copy'>
-        {#each copy as d, i}
+    <div class='copy copy-2'>
+        {#each copy.slice(2) as d, i}
             <p>
                 {d.value}
             </p>
@@ -164,11 +198,10 @@
 
         @media (min-width: $bp-3) {
             column-gap: 50px;
-            grid-template-rows: auto auto auto 1fr auto;
+            grid-template-rows: auto auto auto auto 1fr auto;
         }
-        
     }
-
+    
     .chart-placeholder {
         height: 500px;
         background-color: lightgrey;
@@ -176,17 +209,26 @@
 
     .section-title {
         border-bottom: 1pt solid black;
-        margin: 0 0 25px 0;
+        // margin: 0 0 25px 0;
         grid-row: 1 / span 1;
         grid-column: span 12;
     }
 
-    .copy {
+    .copy-1 {
+        grid-row: 2 / span 1;
+        grid-column: span 12;
+
+        @media (min-width: $bp-3) {
+            grid-column: span 7;
+        }
+    }
+
+    .copy-2 {
         grid-row: 5 / span 1;
         grid-column: span 12;
 
         @media (min-width: $bp-3) {
-            grid-column: 1 / span 7;
+            grid-column: span 7;
         }
     }
 
@@ -195,7 +237,7 @@
         grid-column: span 12;
 
         @media (min-width: $bp-3) {
-            grid-row: 5 / span 1;
+            grid-row: 5/ span 1;
             grid-column: span 5;
         }
     }
@@ -208,7 +250,8 @@
     .controls {
         display: flex;
 
-        .control-switch,
+        .control-switch, 
+        .control-menu,
         .control-range {
             display: flex;
             // align-items: center;

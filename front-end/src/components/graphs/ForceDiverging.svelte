@@ -1,7 +1,7 @@
 <script>
     import { getContext, createEventDispatcher } from 'svelte';
     import { geoAlbersUsa } from 'd3-geo'
-    import { forceSimulation, forceCollide, forceManyBody } from 'd3-force';
+    import { forceSimulation, forceCollide, forceManyBody, forceX } from 'd3-force';
     import { path } from 'd3-path'
     
     const { height, width, rScale, zScale, data } = getContext('LayerCake');
@@ -40,11 +40,11 @@
           .iterations(5)
       )
       .force('charge', forceManyBody().strength(manyBodyStrength))
+      .force('bounds', forceX().x(d => d.x - 1).strength(1))
 
     function parseNodes(arr) {
       return arr.map((d, i) => {
         const [ x, y ] = projection(d.coordinates)
-        const r = $rScale(Math.abs(d.data.value))
         const r_L = $rScale(Math.abs(d.data.left_size))
         const r_R = $rScale(Math.abs(d.data.right_size))
 
@@ -114,6 +114,10 @@
     }
 </script>
 
+{#if renderAnnotation}
+  <IntroAnnotation data={ nodes }/>
+{/if}
+
 <g 
   class='bee-group'
 >
@@ -153,10 +157,6 @@
     </g>
   {/each}
 </g>
-
-{#if renderAnnotation}
-  <IntroAnnotation data={ nodes }/>
-{/if}
 
 <style lang='scss'>
   .node {

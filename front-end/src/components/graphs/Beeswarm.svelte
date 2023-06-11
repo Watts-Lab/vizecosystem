@@ -197,17 +197,33 @@
 					<circle 
 						cy={0} 
 						cx={rScale(activeChart.rDomain[1] / 2) + 1}
-						r={rScale(activeChart.rDomain[1] / 15)} 
+						r={rScale(activeChart.rDomain[0])} 
 						fill='none' 
 						stroke='black'
 						class='legend-circle'
 					></circle>
 					<text
-						y={rScale(activeChart.rDomain[1] / 15)} 
+						y={rScale(activeChart.rDomain[0]) + 2} 
 						x={rScale(activeChart.rDomain[1] / 2)}
 						class='legend-circle-label'
 					>
 						{activeChart.rDomain[0].toLocaleString('en-NZ', { notation: "compact" })}
+					</text>
+
+					<circle 
+						cy={0} 
+						cx={rScale(activeChart.rDomain[1] / 2) + 1}
+						r={rScale(activeChart.rDomain[1] / 18)} 
+						fill='none' 
+						stroke='black'
+						class='legend-circle'
+					></circle>
+					<text
+						y={rScale(activeChart.rDomain[1] / 18) + 2} 
+						x={rScale(activeChart.rDomain[1] / 2)}
+						class='legend-circle-label'
+					>
+						{(activeChart.rDomain[1] / 18).toLocaleString('en-NZ', { notation: "compact" })}
 					</text>
 					
 					<circle 
@@ -219,7 +235,7 @@
 						class='legend-circle'
 					></circle> 
 					<text 
-						y={rScale(activeChart.rDomain[1] / 4.5)} 
+						y={rScale(activeChart.rDomain[1] / 4.5) + 2} 
 						x={rScale(activeChart.rDomain[1] / 2)}
 						class='legend-circle-label'
 					>
@@ -235,7 +251,7 @@
 						class='legend-circle'
 					></circle> 
 					<text 
-						y={rScale(activeChart.rDomain[1] / 2)} 
+						y={rScale(activeChart.rDomain[1] / 2) + 2} 
 						x={rScale(activeChart.rDomain[1] / 2)}
 						class='legend-circle-label'
 					>
@@ -369,14 +385,6 @@
 					left: 14px;
 					text-align: center;
 				}
-
-				// .legend-anchor-label-L {
-				// 	left: 14px;
-				// }
-
-				// .legend-anchor-label-R {
-				// 	left: -9px;
-				// }
 			}
 
 			.legend-block:first-of-type {
@@ -400,7 +408,7 @@
 					text {
 						@include fs-xs;
 						paint-order: stroke;
-						stroke-width: 3px;
+						stroke-width: 5px;
 						stroke-linecap: butt;
 						stroke-linejoin: miter;
 						stroke: $white;

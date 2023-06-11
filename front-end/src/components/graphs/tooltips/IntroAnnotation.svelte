@@ -1,16 +1,12 @@
 <script lang="ts">
   // node_modules
-	import { onMount, getContext } from 'svelte';
+	import { getContext } from 'svelte';
 
   const { width, height } = getContext('LayerCake')
 
   export let data : any[]
 
   function hide() { render = false }
-
-  onMount(() => {
-    // setTimeout(hide, 5000)
-  })
 
   $: render = true
 
@@ -24,28 +20,35 @@
     <foreignObject width={$width} height={$height}>
       <div class='annotation-wrapper'>
         {#each newYork as node, i}
-          <div class='annotation' style="top: {node.y - (node.r_L + 60)}px; left: {node.x - (node.r_L + 60)}px">
-            In NY, 5 to 10% of the population
-            experience partisan in their news
+          <div class='annotation' style="top: {node.y - (node.r_L + 80)}px; left: {node.x - (node.r_L + 80)}px">
+            In <b>NY</b>, 5 to 10% of the population
+            experience partisanship in their news
             diets.
           </div>
         {/each}
         {#each northDakota as node, i}
-          <div class='annotation' style="top: {node.y - (node.r_L + 90)}px; left: {node.x + (node.r_R)}px">
-            ND's right-leaning echo chamber is
+          <div class='annotation' style="top: {node.y - (node.r_L + 140)}px; left: {node.x + (node.r_R + 20)}px">
+            <b>ND</b>'s right-leaning echo chamber is
             much more sizeable and intense: over 
             10% of the population.
+            <div class='close-button' on:click={hide}></div>
           </div>
         {/each}
       </div>
     </foreignObject>
-    <!-- <foreignObject></foreignObject> -->
+    {#each newYork as node, i}
+      <line class='annotation-line' x1={node.x - (node.r_L + 5)} x2={node.x - (node.r_L - 10)} y1={node.y - (node.r_L + 16)} y2={node.y - (node.r_L - 16)}></line>
+    {/each}
+    {#each northDakota as node, i}
+      <line class='annotation-line' x1={node.x + (node.r_R + 45)} x2={node.x - (node.r_L - 35)} y1={node.y - (node.r_L + 45)} y2={node.y - (node.r_L)}></line>
+    {/each}
   </g>
 {/if}
 
 <style lang="scss">
-  .intro-annotation {
-    pointer-events: none;
+  .annotation-line {
+    stroke: black;
+    stroke-width: 1pt;
   }
 
   .annotation-wrapper {
@@ -54,9 +57,21 @@
     position: relative;
 
     .annotation {
-      @include fs-xs;
+      @include fs-sm;
       position: absolute;
-      max-width: 100px;
+      max-width: 125px;
     }
+  }
+
+  .close-button {
+    position: absolute;
+    top: -5px;
+    right: 0;
+  }
+
+  .close-button:after {
+    content: '\2715';
+    @include fs-root;
+    line-height: 1;
   }
 </style>

@@ -14,17 +14,16 @@
 	import Title from '../copy/Title.svelte';
 	import Description from '../copy/Description.svelte';
 	import Authors from '../copy/Authors.svelte';
-	import Beeswarm from '../graphs/Beeswarm.svelte';
 	import ChartPlaceholder from '../global/chart-placeholder.svelte';
-	import ControlSwitch from '../global/control-switch.svelte';
-
+	
 	// prop declaration
 	export let title : string;
 	export let standfirst : any[] = [{value: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi consequatur inventore exercitationem ex perferendis provident, earum cumque maiores quam quidem labore, mollitia odit eaque laborum?'}]
 	export let authors : Author[];
 
 	// local data
-	import states from '../../data/states_centroids.json'
+	// import states from '../../data/states_centroids.json'
+  
 
 	// chart config
 	
@@ -95,40 +94,7 @@
 		<Authors authors={ authors }></Authors>
 	</div>
 	
-	<div class='title-container main-column'>
-			<h3 class='chart-title'>
-				Partisan Segregation in the US:
-				<select class='menu' bind:value={chart}>
-					<option value="0">Comparison view</option>
-					<option value="1">Single political lean view</option>
-				</select>
-			</h3>
-
-			{#if activeChart.type === 'linear'}
-				<div class='controls'>
-					<ControlSwitch 
-						id='medium' 
-						title='Political lean'
-						labels={[ 'L', 'R' ]}
-						info='Right or left leaning'
-						colors={[ "#AA3737", "#384E83" ]}
-						bind:checked={ politicalChecked } 
-					/>
-				</div>
-			{/if}
-	</div>
-	
-	{#if (data && data.length)}
-		<Beeswarm
-			{ data }
-			{ states }
-			{ dataMap }
-      { fullDataMap }
-			{ activeChart }
-			{ politicalChecked }
-		/>
-		{:else} <ChartPlaceholder />
-	{/if}
+	<ChartPlaceholder />
 </main>
 
 <style lang='scss'>
