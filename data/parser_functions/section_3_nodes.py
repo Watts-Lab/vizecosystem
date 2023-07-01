@@ -10,7 +10,7 @@ def load(f):
 
 def concat_sets(a, b):
   # # load data
-  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
 
   # parse subset from type from file name
   file_name = b.split('_archetype_')[-1].replace('.csv', '')

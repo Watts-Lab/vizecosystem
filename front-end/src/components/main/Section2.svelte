@@ -49,7 +49,9 @@
     
     onMount(async () => {
         const res = await csv(url, autoType)
-        data = res.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
+        data = res
+            .filter(d => !(d.year === 2022 && d.month >= 11)) // PROVISIONAL
+            .map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
 
         const [ min, max ] = extent(data, d => +d.date); 
         scaleRange.range([ min, max ])
@@ -86,8 +88,8 @@
     $: gender = 'All'
     $: age_group = 'All'
 
-    $: if (age_group !== 'All') resetGender()
-    $: if (gender !== 'All') resetAge()
+    // $: if (age_group !== 'All') resetGender()
+    // $: if (gender !== 'All') resetAge()
 </script>
 
 <div class="section section-2" use:inView={{ once }} on:enter={() => loaded = true }>
@@ -119,7 +121,7 @@
 
             <div id='age-group' class='control control-menu'>
                 <div class='control-title'>Age group</div>
-                <select id="age-group-menu" name="age-group" bind:value={age_group} on:change={ () => console.log(age_group) }>
+                <select id="age-group-menu" name="age-group" bind:value={age_group}>
                     <option value='All'>All</option>
                     <option value='18-24'>18-24</option>
                     <option value='25-34'>25-34</option>
@@ -131,7 +133,7 @@
 
             <div id='gender' class='control control-menu'>
                 <div class='control-title'>Gender</div>
-                <select id="gender-menu" name="location" bind:value={gender} on:change={ () => console.log(gender) }>
+                <select id="gender-menu" name="location" bind:value={gender}>
                     <option value='All' selected>All</option>
                     <option value='Male'>Male</option>
                     <option value='Female'>Female</option>

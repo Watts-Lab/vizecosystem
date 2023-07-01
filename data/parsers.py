@@ -2,9 +2,9 @@
 import parser_functions.main_grouped as main_grouped
 import parser_functions.main_timeseries as main_timeseries
 import parser_functions.main_timeseries_audiences as main_timeseries_audiences
-import parser_functions.section_1 as section1
-import parser_functions.section_2_links as section2_links
-import parser_functions.section_2_nodes as section2_nodes
+import parser_functions.section_2 as section2
+import parser_functions.section_3_links as section3_links
+import parser_functions.section_3_nodes as section3_nodes
 
 class Parser:
   def __init__(self, creds):
@@ -13,9 +13,9 @@ class Parser:
       'EchoCh-by_state.csv': main_grouped.parse,
       'EchoCh-by_state_full-timeseries.csv': main_timeseries.parse,
       'EchoCh-by_state_audiences.csv': main_timeseries_audiences.parse,
-      'EchoCh-nationwide-by_gender-or-age_group.csv': section1.parse,
-      'EchoCh-links.csv': section2_links.parse,
-      'EchoCh-nodes.csv': section2_nodes.parse,
+      'EchoCh-nationwide-by_gender-or-age_group.csv': section2.parse,
+      'EchoCh-links.csv': section3_links.parse,
+      'EchoCh-nodes.csv': section3_nodes.parse,
     }
 
   def parse(self, file):

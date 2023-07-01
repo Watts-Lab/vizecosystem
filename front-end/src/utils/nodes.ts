@@ -5,9 +5,9 @@ const nodesOrderMap : Map<string,number> = new Map(
     ['Other Cable', 2],
     ['Hard Broadcast News', 3],
     ['Soft Broadcast News', 4],
-    ['Soft+Hard broadcast News', 5],
-    ['Spanish News', 6],
-    ['FOX', 7],
+    ['Spanish News', 5],
+    ['FOX', 6],
+    ['Soft+Hard broadcast News', 7],
   ]
 )
 

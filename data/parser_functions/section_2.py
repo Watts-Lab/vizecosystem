@@ -79,22 +79,26 @@ def parse_tv(df):
 
 def concat_web(a, b):
   # # load data
-  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
 
   # parse subset from type from file name
-  file_name = b.split('_')[-1].replace('.csv', '')
+  file_name = b.split('/')[1].split('_sizes_')[-1].replace('.csv', '')
   
-  # assign subset columns
+  # # assign subset columns
   b_data['medium'] = 'web'
 
-  if file_name == 'adults':
+  if file_name == 'all_adults':
     b_data['age_group'] = 'All'
     b_data['gender'] = 'All'
-  elif file_name == 'age':
+  elif file_name == 'by_age':
     b_data['gender'] = 'All'
-  else: 
+  elif file_name == 'by_gender':
     b_data['age_group'] = 'All'
     b_data['gender'] = b_data['gender_id'].replace({ 1: 'Male', 2: 'Female' })
+  else:
+    b_data['gender'] = b_data['gender_id'].replace({ 1: 'Male', 2: 'Female' })
+  
+  if 'gender_id' in b_data.columns: 
     b_data = b_data.drop('gender_id', axis = 1)
 
   a.append(b_data)
@@ -103,8 +107,7 @@ def concat_web(a, b):
 
 def concat_tv(a, b):
   # # load data
-  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
-
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
   # parse subset from file name
   # - political lean
   # - partisanship definition
@@ -112,27 +115,29 @@ def concat_tv(a, b):
 
   political_lean, partisanship_scenario, file_type = map(
     str.lower,
-    search(r'TV(.*)EchoCh(.*)_.*_(.*).csv', file_name).group(1, 2, 3)
+    search(r'TV(.*)EchoCh(.*?)_b?y?_?(.*).csv', file_name).group(1, 2, 3)
   )
-  
-  # assign subset columns
+
+  # # # assign subset columns
   b_data['political_lean'] = political_lean
   b_data['partisanship_scenario'] = partisanship_scenario
   b_data['medium'] = 'tv'
 
-  if file_type == 'adults':
+  if file_type == 'all_adults':
     b_data['age_group'] = 'All'
     b_data['gender'] = 'All'
   elif file_type == 'age':
     b_data['gender'] = 'All'
-  else: 
-    b_data['age_group'] = 'All'
+  elif file_type == 'gender':
+     b_data['age_group'] = 'All'
+     b_data['gender'] = b_data['gender'].replace({ 1: 'Male', 2: 'Female' })
+  else:
     b_data['gender'] = b_data['gender'].replace({ 1: 'Male', 2: 'Female' })
-  
-  # append data & return list
+
+  # # append data & return list
   a.append(b_data)
 
-  # manually adding R Stringent values
+  # # manually adding R Stringent values
   if ((political_lean == 'right') and (partisanship_scenario == 'lenient')):
     manual_addition = b_data.copy()
     manual_addition['partisanship_scenario'] = 'stringent'
@@ -150,29 +155,29 @@ def parse(file):
   # in raw-data. We'll need to manually add those rows to
   # the data set.
   d_tv = concat(
-    reduce(concat_tv, file['url'][0:9], []),
+    reduce(concat_tv, file['url'][0:12], []),
     ignore_index = True
   )
 
   d_tv = parse_tv(d_tv)
 
-  # then we parse the web dataset,
-  # which is different as it comes all 
-  # #in one single file
+  # # # then we parse the web dataset,
+  # # # which is different as it comes all 
+  # # # #in one single file
   d_web = concat(
-    reduce(concat_web, file['url'][9:], []),
+    reduce(concat_web, file['url'][12:], []),
     ignore_index = True
   )
 
   d_web = parse_web(d_web)
 
-  # # now concat web and tv together
+  # # # # now concat web and tv together
   data = concat(
     [d_tv, d_web],
     ignore_index = True
   )
 
-  # rename time columns
+  # # rename time columns
   data = data.rename({'activityyear': 'year', 'activitymonth': 'month'}, axis=1)
 
   return data

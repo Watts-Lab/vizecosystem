@@ -9,7 +9,7 @@ def load(f):
   return read_csv(f)
 
 def parse(file):
-  data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{file["url"]}')
+  data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{file["url"]}')
 
   return data.drop('Unnamed: 0', axis = 1)\
     .pivot(
