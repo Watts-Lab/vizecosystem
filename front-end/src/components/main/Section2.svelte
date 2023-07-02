@@ -26,12 +26,6 @@
     export let captions : any[]
 
     // variable declaration
-    const menuInfo : Map<string, string> = new Map([
-        // ['political_lean', 'political_lean'],
-        ['partisanship', 'partisanship'],
-        ['diet', 'diet'],
-        ['tv', 'tv']
-    ]);
     let url : string = 'assets/data/EchoCh-nationwide-by_gender-or-age_group.csv'
     let data : any[]
     let dataIn : Map<any,any>
@@ -50,9 +44,7 @@
     
     onMount(async () => {
         const res = await csv(url, autoType)
-        data = res
-            .filter(d => !(d.year === 2022 && d.month >= 11)) // PROVISIONAL
-            .map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
+        data = res.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
 
         const [ min, max ] = extent(data, d => +d.date); 
         scaleRange.range([ min, max ])
@@ -65,13 +57,6 @@
         date.setMilliseconds(0)
 
         return +date
-    }
-
-    function resetAge() {
-        age_group = 'All'
-    }
-    function resetGender() {
-        gender = 'All'
     }
 
     $: if (data) {
@@ -88,9 +73,6 @@
     $: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
     $: gender = 'All'
     $: age_group = 'All'
-
-    // $: if (age_group !== 'All') resetGender()
-    // $: if (gender !== 'All') resetAge()
 </script>
 
 <div class="section section-2" use:inView={{ once }} on:enter={() => loaded = true }>
