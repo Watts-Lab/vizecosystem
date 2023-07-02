@@ -40,7 +40,6 @@
           .iterations(5)
       )
       .force('charge', forceManyBody().strength(manyBodyStrength))
-      .force('bounds', forceX().x(d => d.x - 1).strength(1))
 
     function parseNodes(arr) {
       return arr.map((d, i) => {
@@ -120,6 +119,7 @@
 
 <g 
   class='bee-group'
+  transform={`translate(-35, 0)`}
 >
   {#each nodes as node}
     <g 

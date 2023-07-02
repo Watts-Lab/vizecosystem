@@ -16,7 +16,10 @@
 </script>
 
 {#if render}
-  <g class='intro-annotation'>
+  <g 
+    class='intro-annotation'
+    transform={`translate(-35, 0)`}
+  >
     <foreignObject width={$width} height={$height}>
       <div class='annotation-wrapper'>
         {#each newYork as node, i}
