@@ -325,6 +325,8 @@
 		width: 100%;
 		height: 500px;
 		position: relative;
+		grid-row: 5 / span 1;
+		grid-column: span 12;
 
 		@media (min-width: $bp-3) {
 			height: 800px;
@@ -332,11 +334,13 @@
 	}
 
 	.chart-info-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    margin-top: 10px;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		margin-top: 10px;
 		margin-bottom: 15px;
-  }
+		grid-row: 4 / span 1;
+		grid-column: span 12;
+	}
 
 	.legend {
 		display: flex;
@@ -357,9 +361,9 @@
 
 			.legend-block-label {
 				@include fs-xxs;
-        font-weight: 300;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+				font-weight: 300;
+				letter-spacing: 1px;
+				text-transform: uppercase;
 			}
 
 			.legend-block-label-L {
@@ -420,49 +424,49 @@
 	}
 
 	.controls {
-    grid-column: 1 / span 1;
-    display: grid;
-    row-gap: 7px;
-    grid-template-columns: auto auto 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "one two empty"
-      "four four four";
+		grid-column: 1 / span 1;
+		display: grid;
+		row-gap: 7px;
+		grid-template-columns: auto auto 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+		"one two empty"
+		"four four four";
 
-    #period {
-      grid-area: four;
-    }
- 
-    .control-menu {
-      display: flex;
-      // align-items: center;
-      flex-wrap: wrap;
-      gap: 5px;
-      
-      .control-title {
-        width: 100%;
-        @include fs-xxs;
-        font-weight: 300;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+		#period {
+		grid-area: four;
+		}
+		
+		.control-menu {
+		display: flex;
+		// align-items: center;
+		flex-wrap: wrap;
+		gap: 5px;
+		
+		.control-title {
+			width: 100%;
+			@include fs-xxs;
+			font-weight: 300;
+			letter-spacing: 1px;
+			text-transform: uppercase;
 
-        .info {
-          background-color: $off-white;
-          display: inline-block;
-          width: 12px;
-          border-radius: 100%;
-          text-align: center;
-          @include fs-xs;
-        }
-      }
+			.info {
+			background-color: $off-white;
+			display: inline-block;
+			width: 12px;
+			border-radius: 100%;
+			text-align: center;
+			@include fs-xs;
+			}
+		}
 
-      .control-label {
-        @include fs-sm;
-      }
-      .control-label.active {
-        text-decoration: underline;
-      }
-    }
+		.control-label {
+			@include fs-sm;
+		}
+		.control-label.active {
+			text-decoration: underline;
+		}
+		}
 
 		.control-menu {
 			select {
@@ -470,5 +474,5 @@
 				@include fs-sm;
 			}
 		}
-  }
+	}
 </style>

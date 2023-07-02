@@ -30,7 +30,7 @@
 	let data : any[];
 	let table : any[];
 	let dataMap : Map<string, any>
-  let fullDataMap : Map<string, any>
+	let fullDataMap : Map<string, any>
 	const urlChart : string  = 'assets/data/EchoCh-by_state.csv'
 	
 	onMount(async () => {
@@ -94,7 +94,7 @@
 		<Authors authors={ authors }></Authors>
 	</div>
 	
-	<ChartPlaceholder />
+	<ChartPlaceholder row={0}/>
 </main>
 
 <style lang='scss'>

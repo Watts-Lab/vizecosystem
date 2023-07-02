@@ -13,6 +13,7 @@
     import FlowChart from '../graphs/FlowChart.svelte';
     import ControlSwitch from '../global/control-switch.svelte';
     import DoubleRangeSlider from "../global/double-range-slider.svelte";
+    import ChartPlaceholder from '../global/chart-placeholder.svelte';
 
     // // import utils
 	import { formatMonth } from '../../utils/format-dates';
@@ -107,7 +108,7 @@
     }
 </script>
 
-<div class="section section-2" use:inView={{ once }} on:enter={() => loaded = true }>
+<div class="section section-3" use:inView={{ once }} on:enter={() => loaded = true }>
     <div class='chart-wrapper'>
         <div class='controls'>
             <ControlSwitch 
@@ -138,6 +139,7 @@
                 caption={captions[0].value}
                 customClass='chart-large'
             />
+            {:else} <ChartPlaceholder row={1}/>
         {/if}
     </div>
     <div class='copy'>
@@ -157,7 +159,7 @@
 </div>
 
 <style lang='scss'>
-    .section-2 {
+    .section-3 {
         grid-template-columns: repeat(12, 1fr);
         column-gap: 0;
         grid-template-rows: auto auto auto 1fr auto auto;

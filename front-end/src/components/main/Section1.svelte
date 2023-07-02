@@ -7,7 +7,6 @@
 	import { scaleDiverging, scaleThreshold, scaleSqrt, scaleLinear } from 'd3-scale';
 
 	// types
-	import type Author from '../../types/Authors';
 	import type ChartConfig from '../../types/ChartConfig';
 
 	// actions
@@ -20,10 +19,10 @@
 
 	// prop declaration
 	let loaded : boolean = false;
-	export let title : string;
 	export let once : boolean;
-	export let standfirst : any[] = [{value: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi consequatur inventore exercitationem ex perferendis provident, earum cumque maiores quam quidem labore, mollitia odit eaque laborum?'}]
-	export let authors : Author[];
+	export let copy : any[]
+    export let refs : any[]
+    export let captions : any[]
 
 	// local data
 	import states from '../../data/states_centroids.json'
@@ -90,6 +89,15 @@
 </script>
 
 <div class="section section-1" use:inView={{ once }} on:enter={() => loaded = true }>
+	<h1 class='section-title'>Section title</h1>
+    <div class='copy'>
+        {#each copy as d, i}
+            <p>
+                {d.value}
+            </p>
+        {/each}
+    </div>
+
 	<div class='title-container'>
 			<h3 class='chart-title'>
 				Partisan Segregation in the US:
@@ -118,36 +126,24 @@
 			{ data }
 			{ states }
 			{ dataMap }
-      { fullDataMap }
+			{ fullDataMap }
 			{ activeChart }
 			{ politicalChecked }
 		/>
-		{:else} <ChartPlaceholder />
+		{:else} <ChartPlaceholder row={5}/>
 	{/if}
 </div>
 
 <style lang='scss'>
-	main {
-		max-width: $column-width * 1.25;
-		margin: 0 auto;
-	}
+	.section-1 {
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 0;
+        grid-template-rows: auto auto auto auto auto;
 
-	.header-wrapper {
-		@include grid-mobile;
-		@include centerH;
-		align-items: center;
-		margin-top: 25px;
-
-		@media (min-width: $bp-3) {
-			@include grid;
-			margin-top: 120px;
-		}
-	}
-
-	.title-container {
-		display: flex;
-		gap: 25px;
-	}
+        @media (min-width: $bp-3) {
+            column-gap: 50px;
+        }
+    }
 
 	.menu {
 		margin-left: 5px;
@@ -156,11 +152,32 @@
 	.controls {
 		max-height: 45px;
 		display: grid;
-    row-gap: 5px;
-    grid-template-columns: auto auto 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "one two empty"
-      "three four four";
+		row-gap: 5px;
+		grid-template-columns: auto auto 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+		"one two empty"
+		"three four four";
+	}
+
+	.section-title {
+        border-bottom: 1pt solid black;
+        // margin: 0 0 25px 0;
+        grid-row: 1 / span 1;
+        grid-column: span 12;
+    }
+
+    .copy {
+        grid-row: 2 / span 1;
+        grid-column: span 12;
+
+        @media (min-width: $bp-3) {
+            grid-column: span 7;
+        }
+    }
+
+	.title-container {
+		grid-row: 3 / span 1;
+		grid-column: span 12;
 	}
 </style>

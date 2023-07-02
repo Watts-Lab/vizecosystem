@@ -13,6 +13,7 @@
     import LineAreaChart from "../graphs/LineAreaChart.svelte";
     import DoubleRangeSlider from "../global/double-range-slider.svelte";
     import ControlSwitch from "../global/control-switch.svelte";
+    import ChartPlaceholder from '../global/chart-placeholder.svelte';
 
     // // import utils
 	import { formatMonth } from '../../utils/format-dates';
@@ -173,7 +174,7 @@
                 url={ url }
                 caption={captions[0].value}
             />
-        {:else} <div class='chart-placeholder'></div>
+        {:else} <ChartPlaceholder row={3}/>
         {/if}
     </div>
     <div class='copy copy-2'>
