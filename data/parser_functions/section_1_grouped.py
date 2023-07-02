@@ -6,9 +6,6 @@ from re import search
 from pandas import read_csv, concat, merge, melt, to_datetime, Grouper, DataFrame, DateOffset
 from pandas.tseries.offsets import DateOffset
 
-# # local modules
-# import enforce_order
-
 def load(f):
   return read_csv(f)
 
@@ -110,7 +107,7 @@ def parse_web_size(d):
 
 def parse_web(b):
   # load data
-  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
 
   frac_data = parse_web_frac(b_data)
   size_data = parse_web_size(b_data)

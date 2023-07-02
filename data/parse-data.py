@@ -1,9 +1,7 @@
 # modules
 from os import getenv
-# import pandas as pd
   
 # local modules
-# import enforce_order
 from parsers import Parser
 
 
@@ -14,6 +12,14 @@ bucket = getenv('bucket')
 
 # # datasets
 datasets = [
+  {
+    'url': [
+      'raw_data/all_adults_national_tv_consumption_f1.csv',
+      'raw_data/all_adults_desktop_web_consumption_f1.csv',
+    ],
+    'out_name': 'EchoCh-national_consumption_tv_and_web.csv',
+    'format': '%.3f'
+  },
   # {
   #   'url': [
   #     'raw_data/TVLeftEchoChLenient_by_state.csv',
@@ -72,19 +78,19 @@ datasets = [
   #   'out_name': 'EchoCh-nationwide-by_gender-or-age_group.csv',
   #   'format': '%.3f'
   # },
-  {
-    'url': 'raw_data/tv_archetype_flow_data.csv',
-    'out_name': 'EchoCh-links.csv',
-    'format': '%.3f'
-  },
-  {
-  'url': [
-    'raw_data/tv_archetype_sizes.csv',
-    'raw_data/tv_archetype_mins_p_person.csv'
-    ],
-  'out_name': 'EchoCh-nodes.csv',
-  'format': '%.5f'
-  },
+  # {
+  #   'url': 'raw_data/tv_archetype_flow_data.csv',
+  #   'out_name': 'EchoCh-links.csv',
+  #   'format': '%.3f'
+  # },
+  # {
+  # 'url': [
+  #   'raw_data/tv_archetype_sizes.csv',
+  #   'raw_data/tv_archetype_mins_p_person.csv'
+  #   ],
+  # 'out_name': 'EchoCh-nodes.csv',
+  # 'format': '%.5f'
+  # },
 ]
 # credentials
 creds = {
@@ -97,8 +103,11 @@ file_parser = Parser(creds)
 # # iterate over files that need parsing 
 for file in datasets:
   out_data = file_parser.parse(file)
-  out_data.to_csv(
-    f'~/Desktop/upenn/media-consumption/vizecosystem/processed_data/{file["out_name"]}',
-    index=False,
-    float_format=file["format"]
-  )
+  
+  print(out_data)
+
+  # out_data.to_csv(
+  #   f'~/Desktop/upenn/media-consumption/vizecosystem/processed_data/{file["out_name"]}',
+  #   index=False,
+  #   float_format=file["format"]
+  # )
