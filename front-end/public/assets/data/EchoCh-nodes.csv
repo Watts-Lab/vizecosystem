@@ -34,7 +34,7 @@ year,month,variable,archetype,value
 2018,9,sizes,No or Minimal News,72464162.89999
 2018,10,sizes,No or Minimal News,72789240.38706
 2018,11,sizes,No or Minimal News,67281711.16668
-2018,12,sizes,No or Minimal News,72214666.70967
+2018,12,sizes,No or Minimal News,72213810.83871
 2019,1,sizes,No or Minimal News,82534222.45161
 2019,2,sizes,No or Minimal News,85824792.67857
 2019,3,sizes,No or Minimal News,87708352.22581
@@ -61,26 +61,26 @@ year,month,variable,archetype,value
 2020,12,sizes,No or Minimal News,102784414.06452
 2021,1,sizes,No or Minimal News,93167169.77419
 2021,2,sizes,No or Minimal News,112029274.67857
-2021,3,sizes,No or Minimal News,111495060.12903
+2021,3,sizes,No or Minimal News,111419185.70968
 2021,4,sizes,No or Minimal News,111431588.26667
 2021,5,sizes,No or Minimal News,116319186.03226
-2021,6,sizes,No or Minimal News,119343573.26667
+2021,6,sizes,No or Minimal News,119333373.43333
 2021,7,sizes,No or Minimal News,119277304.80645
 2021,8,sizes,No or Minimal News,116352854.80645
 2021,9,sizes,No or Minimal News,118983617.56667
 2021,10,sizes,No or Minimal News,118547538.96774
-2021,11,sizes,No or Minimal News,118025751.53333
-2021,12,sizes,No or Minimal News,116904885.06452
-2022,1,sizes,No or Minimal News,116031584.51613
-2022,2,sizes,No or Minimal News,119763747.21429
-2022,3,sizes,No or Minimal News,117170670.90323
-2022,4,sizes,No or Minimal News,126037407.16667
-2022,5,sizes,No or Minimal News,125173933.61290
-2022,6,sizes,No or Minimal News,126308381.33333
-2022,7,sizes,No or Minimal News,131349477.51613
-2022,8,sizes,No or Minimal News,131644711.03226
-2022,9,sizes,No or Minimal News,124115194.53333
-2022,10,sizes,No or Minimal News,128431153.48387
+2021,11,sizes,No or Minimal News,118027836.20000
+2021,12,sizes,No or Minimal News,116908346.54839
+2022,1,sizes,No or Minimal News,116032274.77419
+2022,2,sizes,No or Minimal News,119794722.39286
+2022,3,sizes,No or Minimal News,117196286.74194
+2022,4,sizes,No or Minimal News,126069193.93333
+2022,5,sizes,No or Minimal News,125187466.41936
+2022,6,sizes,No or Minimal News,126323332.36667
+2022,7,sizes,No or Minimal News,131385898.35484
+2022,8,sizes,No or Minimal News,131666938.32258
+2022,9,sizes,No or Minimal News,124128260.33333
+2022,10,sizes,No or Minimal News,128458162.67742
 2016,1,mins_p_person,No or Minimal News,3.84482
 2016,2,mins_p_person,No or Minimal News,3.68379
 2016,3,mins_p_person,No or Minimal News,3.78646
@@ -116,7 +116,7 @@ year,month,variable,archetype,value
 2018,9,mins_p_person,No or Minimal News,2.90421
 2018,10,mins_p_person,No or Minimal News,2.94581
 2018,11,mins_p_person,No or Minimal News,2.96372
-2018,12,mins_p_person,No or Minimal News,2.92823
+2018,12,mins_p_person,No or Minimal News,2.93226
 2019,1,mins_p_person,No or Minimal News,3.13949
 2019,2,mins_p_person,No or Minimal News,2.92900
 2019,3,mins_p_person,No or Minimal News,3.19096
@@ -129,7 +129,7 @@ year,month,variable,archetype,value
 2019,10,mins_p_person,No or Minimal News,2.98470
 2019,11,mins_p_person,No or Minimal News,2.98831
 2019,12,mins_p_person,No or Minimal News,2.99607
-2020,1,mins_p_person,No or Minimal News,2.86364
+2020,1,mins_p_person,No or Minimal News,2.86930
 2020,2,mins_p_person,No or Minimal News,2.68069
 2020,3,mins_p_person,No or Minimal News,2.67012
 2020,4,mins_p_person,No or Minimal News,2.53294
@@ -139,1339 +139,1339 @@ year,month,variable,archetype,value
 2020,8,mins_p_person,No or Minimal News,2.36680
 2020,9,mins_p_person,No or Minimal News,2.37821
 2020,10,mins_p_person,No or Minimal News,2.39960
-2020,11,mins_p_person,No or Minimal News,2.39053
+2020,11,mins_p_person,No or Minimal News,2.39217
 2020,12,mins_p_person,No or Minimal News,2.51773
 2021,1,mins_p_person,No or Minimal News,2.41938
 2021,2,mins_p_person,No or Minimal News,2.17855
-2021,3,mins_p_person,No or Minimal News,2.24877
+2021,3,mins_p_person,No or Minimal News,2.25556
 2021,4,mins_p_person,No or Minimal News,2.18994
 2021,5,mins_p_person,No or Minimal News,2.24740
-2021,6,mins_p_person,No or Minimal News,2.09734
+2021,6,mins_p_person,No or Minimal News,2.09630
 2021,7,mins_p_person,No or Minimal News,2.04521
 2021,8,mins_p_person,No or Minimal News,2.08356
 2021,9,mins_p_person,No or Minimal News,2.04233
 2021,10,mins_p_person,No or Minimal News,2.21059
-2021,11,mins_p_person,No or Minimal News,2.16975
-2021,12,mins_p_person,No or Minimal News,2.25135
-2022,1,mins_p_person,No or Minimal News,2.19297
-2022,2,mins_p_person,No or Minimal News,2.04418
-2022,3,mins_p_person,No or Minimal News,1.98171
-2022,4,mins_p_person,No or Minimal News,1.96342
-2022,5,mins_p_person,No or Minimal News,1.92905
-2022,6,mins_p_person,No or Minimal News,1.89118
-2022,7,mins_p_person,No or Minimal News,1.69716
-2022,8,mins_p_person,No or Minimal News,1.75012
-2022,9,mins_p_person,No or Minimal News,1.82856
-2022,10,mins_p_person,No or Minimal News,1.81314
-2016,1,sizes,Hard Broadcast News,34853699.61291
-2016,2,sizes,Hard Broadcast News,29720819.89281
-2016,3,sizes,Hard Broadcast News,29991329.19355
-2016,4,sizes,Hard Broadcast News,29683893.89998
-2016,5,sizes,Hard Broadcast News,28890632.25806
-2016,6,sizes,Hard Broadcast News,30394022.56670
-2016,7,sizes,Hard Broadcast News,34378258.16138
-2016,8,sizes,Hard Broadcast News,30742240.90327
-2016,9,sizes,Hard Broadcast News,33648423.43327
-2016,10,sizes,Hard Broadcast News,38206444.45158
-2016,11,sizes,Hard Broadcast News,37691519.69999
-2016,12,sizes,Hard Broadcast News,27886692.09679
-2017,1,sizes,Hard Broadcast News,32586738.29034
-2017,2,sizes,Hard Broadcast News,28172373.96425
-2017,3,sizes,Hard Broadcast News,27994340.99997
-2017,4,sizes,Hard Broadcast News,28002626.06664
-2017,5,sizes,Hard Broadcast News,27280159.61296
-2017,6,sizes,Hard Broadcast News,29220019.26669
-2017,7,sizes,Hard Broadcast News,26768726.25802
-2017,8,sizes,Hard Broadcast News,30153883.77421
-2017,9,sizes,Hard Broadcast News,29701071.73334
-2017,10,sizes,Hard Broadcast News,31318091.71429
-2017,11,sizes,Hard Broadcast News,25205312.93331
-2017,12,sizes,Hard Broadcast News,26614934.03227
-2018,1,sizes,Hard Broadcast News,26819204.29034
-2018,2,sizes,Hard Broadcast News,28486443.24998
-2018,3,sizes,Hard Broadcast News,27340936.41936
-2018,4,sizes,Hard Broadcast News,28170448.10002
-2018,5,sizes,Hard Broadcast News,26047852.16129
-2018,6,sizes,Hard Broadcast News,27181213.96670
-2018,7,sizes,Hard Broadcast News,27762016.32256
-2018,8,sizes,Hard Broadcast News,28118155.54839
-2018,9,sizes,Hard Broadcast News,31384770.36668
-2018,10,sizes,Hard Broadcast News,26072779.16133
-2018,11,sizes,Hard Broadcast News,27513370.73335
-2018,12,sizes,Hard Broadcast News,29743159.64520
-2019,1,sizes,Hard Broadcast News,44964598.83871
-2019,2,sizes,Hard Broadcast News,44755830.60714
-2019,3,sizes,Hard Broadcast News,43271628.48387
-2019,4,sizes,Hard Broadcast News,40388440.70000
-2019,5,sizes,Hard Broadcast News,40925363.87097
-2019,6,sizes,Hard Broadcast News,45840864.06667
-2019,7,sizes,Hard Broadcast News,42140646.03226
-2019,8,sizes,Hard Broadcast News,42347200.51613
-2019,9,sizes,Hard Broadcast News,45845711.10000
-2019,10,sizes,Hard Broadcast News,42490802.74194
-2019,11,sizes,Hard Broadcast News,47260342.36667
-2019,12,sizes,Hard Broadcast News,46411909.03226
-2020,1,sizes,Hard Broadcast News,48287689.54839
-2020,2,sizes,Hard Broadcast News,45616225.62069
-2020,3,sizes,Hard Broadcast News,51475561.70968
-2020,4,sizes,Hard Broadcast News,43519583.70000
-2020,5,sizes,Hard Broadcast News,41178913.45161
-2020,6,sizes,Hard Broadcast News,41173515.46667
-2020,7,sizes,Hard Broadcast News,41217366.00000
-2020,8,sizes,Hard Broadcast News,43238819.45161
-2020,9,sizes,Hard Broadcast News,47361391.80000
-2020,10,sizes,Hard Broadcast News,50368852.38710
-2020,11,sizes,Hard Broadcast News,46004433.63333
-2020,12,sizes,Hard Broadcast News,40152386.64516
-2021,1,sizes,Hard Broadcast News,43735679.87097
-2021,2,sizes,Hard Broadcast News,37642851.53571
-2021,3,sizes,Hard Broadcast News,39785422.45161
-2021,4,sizes,Hard Broadcast News,37199893.63333
-2021,5,sizes,Hard Broadcast News,38133972.54839
-2021,6,sizes,Hard Broadcast News,35564805.50000
-2021,7,sizes,Hard Broadcast News,39320664.00000
-2021,8,sizes,Hard Broadcast News,40314198.67742
-2021,9,sizes,Hard Broadcast News,39776630.30000
-2021,10,sizes,Hard Broadcast News,40485957.74194
-2021,11,sizes,Hard Broadcast News,37295385.56667
-2021,12,sizes,Hard Broadcast News,39993655.90323
-2022,1,sizes,Hard Broadcast News,41234311.58065
-2022,2,sizes,Hard Broadcast News,36909243.42857
-2022,3,sizes,Hard Broadcast News,38794771.25806
-2022,4,sizes,Hard Broadcast News,35903781.63333
-2022,5,sizes,Hard Broadcast News,36078498.25806
-2022,6,sizes,Hard Broadcast News,36550649.43333
-2022,7,sizes,Hard Broadcast News,37521449.00000
-2022,8,sizes,Hard Broadcast News,36247269.93548
-2022,9,sizes,Hard Broadcast News,41792430.56667
-2022,10,sizes,Hard Broadcast News,41357918.96774
-2016,1,mins_p_person,Hard Broadcast News,1697.38366
-2016,2,mins_p_person,Hard Broadcast News,1517.00244
-2016,3,mins_p_person,Hard Broadcast News,1799.46981
-2016,4,mins_p_person,Hard Broadcast News,1481.04035
-2016,5,mins_p_person,Hard Broadcast News,1598.74360
-2016,6,mins_p_person,Hard Broadcast News,1449.90454
-2016,7,mins_p_person,Hard Broadcast News,1476.57766
-2016,8,mins_p_person,Hard Broadcast News,1386.11415
-2016,9,mins_p_person,Hard Broadcast News,1114.69305
-2016,10,mins_p_person,Hard Broadcast News,1323.62310
-2016,11,mins_p_person,Hard Broadcast News,1305.34446
-2016,12,mins_p_person,Hard Broadcast News,1272.20659
-2017,1,mins_p_person,Hard Broadcast News,1517.55903
-2017,2,mins_p_person,Hard Broadcast News,1258.15950
-2017,3,mins_p_person,Hard Broadcast News,1544.75303
-2017,4,mins_p_person,Hard Broadcast News,1345.78845
-2017,5,mins_p_person,Hard Broadcast News,1522.68192
-2017,6,mins_p_person,Hard Broadcast News,1452.62925
-2017,7,mins_p_person,Hard Broadcast News,1337.64300
-2017,8,mins_p_person,Hard Broadcast News,1502.90693
-2017,9,mins_p_person,Hard Broadcast News,1591.16442
-2017,10,mins_p_person,Hard Broadcast News,1846.24350
-2017,11,mins_p_person,Hard Broadcast News,1336.78439
-2017,12,mins_p_person,Hard Broadcast News,1353.09310
-2018,1,mins_p_person,Hard Broadcast News,1359.91549
-2018,2,mins_p_person,Hard Broadcast News,1337.79861
-2018,3,mins_p_person,Hard Broadcast News,1383.08439
-2018,4,mins_p_person,Hard Broadcast News,1391.91728
-2018,5,mins_p_person,Hard Broadcast News,1439.82224
-2018,6,mins_p_person,Hard Broadcast News,1300.86408
-2018,7,mins_p_person,Hard Broadcast News,1464.72910
-2018,8,mins_p_person,Hard Broadcast News,1434.64259
-2018,9,mins_p_person,Hard Broadcast News,1552.48303
-2018,10,mins_p_person,Hard Broadcast News,1369.02994
-2018,11,mins_p_person,Hard Broadcast News,1197.14548
-2018,12,mins_p_person,Hard Broadcast News,1368.34217
-2019,1,mins_p_person,Hard Broadcast News,992.31324
-2019,2,mins_p_person,Hard Broadcast News,838.58499
-2019,3,mins_p_person,Hard Broadcast News,876.08383
-2019,4,mins_p_person,Hard Broadcast News,866.00221
-2019,5,mins_p_person,Hard Broadcast News,856.85115
-2019,6,mins_p_person,Hard Broadcast News,830.99403
-2019,7,mins_p_person,Hard Broadcast News,1055.13952
-2019,8,mins_p_person,Hard Broadcast News,883.97792
-2019,9,mins_p_person,Hard Broadcast News,835.99065
-2019,10,mins_p_person,Hard Broadcast News,904.83480
-2019,11,mins_p_person,Hard Broadcast News,1146.50354
-2019,12,mins_p_person,Hard Broadcast News,952.82547
-2020,1,mins_p_person,Hard Broadcast News,1231.16572
-2020,2,mins_p_person,Hard Broadcast News,923.39834
-2020,3,mins_p_person,Hard Broadcast News,1276.34653
-2020,4,mins_p_person,Hard Broadcast News,1206.03212
-2020,5,mins_p_person,Hard Broadcast News,1106.69177
-2020,6,mins_p_person,Hard Broadcast News,1051.36529
-2020,7,mins_p_person,Hard Broadcast News,1090.47987
-2020,8,mins_p_person,Hard Broadcast News,1066.28931
-2020,9,mins_p_person,Hard Broadcast News,869.45166
-2020,10,mins_p_person,Hard Broadcast News,991.33556
-2020,11,mins_p_person,Hard Broadcast News,1069.20660
-2020,12,mins_p_person,Hard Broadcast News,1029.62441
-2021,1,mins_p_person,Hard Broadcast News,1128.80667
-2021,2,mins_p_person,Hard Broadcast News,971.41828
-2021,3,mins_p_person,Hard Broadcast News,998.03389
-2021,4,mins_p_person,Hard Broadcast News,907.61476
-2021,5,mins_p_person,Hard Broadcast News,897.20833
-2021,6,mins_p_person,Hard Broadcast News,824.14187
-2021,7,mins_p_person,Hard Broadcast News,806.42305
-2021,8,mins_p_person,Hard Broadcast News,924.80460
-2021,9,mins_p_person,Hard Broadcast News,939.72011
-2021,10,mins_p_person,Hard Broadcast News,813.58917
-2021,11,mins_p_person,Hard Broadcast News,868.96431
-2021,12,mins_p_person,Hard Broadcast News,851.29727
-2022,1,mins_p_person,Hard Broadcast News,839.39699
-2022,2,mins_p_person,Hard Broadcast News,948.62329
-2022,3,mins_p_person,Hard Broadcast News,940.59618
-2022,4,mins_p_person,Hard Broadcast News,899.62349
-2022,5,mins_p_person,Hard Broadcast News,913.59926
-2022,6,mins_p_person,Hard Broadcast News,976.63625
-2022,7,mins_p_person,Hard Broadcast News,931.91217
-2022,8,mins_p_person,Hard Broadcast News,941.07404
-2022,9,mins_p_person,Hard Broadcast News,991.99168
-2022,10,mins_p_person,Hard Broadcast News,1042.32163
-2016,1,sizes,Soft Broadcast News,57723029.80644
-2016,2,sizes,Soft Broadcast News,60313563.75003
-2016,3,sizes,Soft Broadcast News,55377702.58059
-2016,4,sizes,Soft Broadcast News,57523408.46659
-2016,5,sizes,Soft Broadcast News,59886700.70968
-2016,6,sizes,Soft Broadcast News,53713890.20003
-2016,7,sizes,Soft Broadcast News,40601964.70969
-2016,8,sizes,Soft Broadcast News,57236955.03225
-2016,9,sizes,Soft Broadcast News,55788679.80007
-2016,10,sizes,Soft Broadcast News,51268619.74189
-2016,11,sizes,Soft Broadcast News,48184254.46669
-2016,12,sizes,Soft Broadcast News,63601795.29030
-2017,1,sizes,Soft Broadcast News,51727524.96774
-2017,2,sizes,Soft Broadcast News,53717405.21430
-2017,3,sizes,Soft Broadcast News,56300628.48386
-2017,4,sizes,Soft Broadcast News,52514113.36670
-2017,5,sizes,Soft Broadcast News,53274005.54848
-2017,6,sizes,Soft Broadcast News,50500849.00000
-2017,7,sizes,Soft Broadcast News,49530128.38713
-2017,8,sizes,Soft Broadcast News,49482227.25807
-2017,9,sizes,Soft Broadcast News,52835469.66676
-2017,10,sizes,Soft Broadcast News,48766943.71426
-2017,11,sizes,Soft Broadcast News,56448553.89994
-2017,12,sizes,Soft Broadcast News,55449263.93550
-2018,1,sizes,Soft Broadcast News,56758002.16137
-2018,2,sizes,Soft Broadcast News,49454042.39283
-2018,3,sizes,Soft Broadcast News,52441029.90314
-2018,4,sizes,Soft Broadcast News,51897321.50004
-2018,5,sizes,Soft Broadcast News,51979643.74192
-2018,6,sizes,Soft Broadcast News,48319508.86677
-2018,7,sizes,Soft Broadcast News,43679848.77428
-2018,8,sizes,Soft Broadcast News,44636728.58067
-2018,9,sizes,Soft Broadcast News,42587366.56669
-2018,10,sizes,Soft Broadcast News,50455318.54836
-2018,11,sizes,Soft Broadcast News,50607020.36664
-2018,12,sizes,Soft Broadcast News,45948390.12898
-2019,1,sizes,Soft Broadcast News,21476749.51613
-2019,2,sizes,Soft Broadcast News,17677736.17857
-2019,3,sizes,Soft Broadcast News,19223970.51613
-2019,4,sizes,Soft Broadcast News,20114766.96667
-2019,5,sizes,Soft Broadcast News,21212488.74194
-2019,6,sizes,Soft Broadcast News,16219099.00000
-2019,7,sizes,Soft Broadcast News,15848648.70968
-2019,8,sizes,Soft Broadcast News,16802681.09677
-2019,9,sizes,Soft Broadcast News,16228797.26667
-2019,10,sizes,Soft Broadcast News,18272988.67742
-2019,11,sizes,Soft Broadcast News,14624288.80000
-2019,12,sizes,Soft Broadcast News,16191578.35484
-2020,1,sizes,Soft Broadcast News,13746134.93548
-2020,2,sizes,Soft Broadcast News,14118052.10345
-2020,3,sizes,Soft Broadcast News,9769804.22581
-2020,4,sizes,Soft Broadcast News,12371636.46667
-2020,5,sizes,Soft Broadcast News,12678514.00000
-2020,6,sizes,Soft Broadcast News,11944537.80000
-2020,7,sizes,Soft Broadcast News,10963698.83871
-2020,8,sizes,Soft Broadcast News,9160906.32258
-2020,9,sizes,Soft Broadcast News,10436357.43333
-2020,10,sizes,Soft Broadcast News,8722895.09677
-2020,11,sizes,Soft Broadcast News,8183444.53333
-2020,12,sizes,Soft Broadcast News,13460888.51613
-2021,1,sizes,Soft Broadcast News,8844415.77419
-2021,2,sizes,Soft Broadcast News,9385544.39286
-2021,3,sizes,Soft Broadcast News,11495731.51613
-2021,4,sizes,Soft Broadcast News,12172532.13333
-2021,5,sizes,Soft Broadcast News,12531478.67742
-2021,6,sizes,Soft Broadcast News,12511772.50000
-2021,7,sizes,Soft Broadcast News,12895679.45161
-2021,8,sizes,Soft Broadcast News,12177734.25806
-2021,9,sizes,Soft Broadcast News,13126181.96667
-2021,10,sizes,Soft Broadcast News,13855358.29032
-2021,11,sizes,Soft Broadcast News,15544109.40000
-2021,12,sizes,Soft Broadcast News,15392575.58065
-2022,1,sizes,Soft Broadcast News,13762412.48387
-2022,2,sizes,Soft Broadcast News,12464341.42857
-2022,3,sizes,Soft Broadcast News,11095560.58065
-2022,4,sizes,Soft Broadcast News,12765744.10000
-2022,5,sizes,Soft Broadcast News,13270133.00000
-2022,6,sizes,Soft Broadcast News,11877444.06667
-2022,7,sizes,Soft Broadcast News,10158384.74194
-2022,8,sizes,Soft Broadcast News,11358117.80645
-2022,9,sizes,Soft Broadcast News,10079900.86667
-2022,10,sizes,Soft Broadcast News,11261525.64516
-2016,1,mins_p_person,Soft Broadcast News,3159.99007
-2016,2,mins_p_person,Soft Broadcast News,2682.26961
-2016,3,mins_p_person,Soft Broadcast News,3005.19099
-2016,4,mins_p_person,Soft Broadcast News,2764.39865
-2016,5,mins_p_person,Soft Broadcast News,2887.83130
-2016,6,mins_p_person,Soft Broadcast News,2618.00267
-2016,7,mins_p_person,Soft Broadcast News,2691.35631
-2016,8,mins_p_person,Soft Broadcast News,2707.68261
-2016,9,mins_p_person,Soft Broadcast News,2885.74269
-2016,10,mins_p_person,Soft Broadcast News,3219.05781
-2016,11,mins_p_person,Soft Broadcast News,3475.72892
-2016,12,mins_p_person,Soft Broadcast News,2877.22205
-2017,1,mins_p_person,Soft Broadcast News,3422.79985
-2017,2,mins_p_person,Soft Broadcast News,2823.01429
-2017,3,mins_p_person,Soft Broadcast News,3025.81268
-2017,4,mins_p_person,Soft Broadcast News,2642.41577
-2017,5,mins_p_person,Soft Broadcast News,2907.96487
-2017,6,mins_p_person,Soft Broadcast News,2866.97834
-2017,7,mins_p_person,Soft Broadcast News,2563.94452
-2017,8,mins_p_person,Soft Broadcast News,3053.57433
-2017,9,mins_p_person,Soft Broadcast News,2937.05104
-2017,10,mins_p_person,Soft Broadcast News,2943.80037
-2017,11,mins_p_person,Soft Broadcast News,2805.03811
-2017,12,mins_p_person,Soft Broadcast News,3260.97789
-2018,1,mins_p_person,Soft Broadcast News,3656.71153
-2018,2,mins_p_person,Soft Broadcast News,2850.12473
-2018,3,mins_p_person,Soft Broadcast News,3207.84011
-2018,4,mins_p_person,Soft Broadcast News,3333.76231
-2018,5,mins_p_person,Soft Broadcast News,3076.41736
-2018,6,mins_p_person,Soft Broadcast News,2932.05438
-2018,7,mins_p_person,Soft Broadcast News,3071.29530
-2018,8,mins_p_person,Soft Broadcast News,2990.21127
-2018,9,mins_p_person,Soft Broadcast News,3294.88068
-2018,10,mins_p_person,Soft Broadcast News,3223.92650
-2018,11,mins_p_person,Soft Broadcast News,3167.58283
-2018,12,mins_p_person,Soft Broadcast News,3150.57300
-2019,1,mins_p_person,Soft Broadcast News,1547.54731
-2019,2,mins_p_person,Soft Broadcast News,1127.35896
-2019,3,mins_p_person,Soft Broadcast News,1202.70343
-2019,4,mins_p_person,Soft Broadcast News,1243.72088
-2019,5,mins_p_person,Soft Broadcast News,1201.61385
-2019,6,mins_p_person,Soft Broadcast News,1108.83163
-2019,7,mins_p_person,Soft Broadcast News,1105.82048
-2019,8,mins_p_person,Soft Broadcast News,1162.16431
-2019,9,mins_p_person,Soft Broadcast News,1037.55582
-2019,10,mins_p_person,Soft Broadcast News,1127.17501
-2019,11,mins_p_person,Soft Broadcast News,845.59188
-2019,12,mins_p_person,Soft Broadcast News,969.02881
-2020,1,mins_p_person,Soft Broadcast News,1172.21388
-2020,2,mins_p_person,Soft Broadcast News,1105.98122
-2020,3,mins_p_person,Soft Broadcast News,1200.36489
-2020,4,mins_p_person,Soft Broadcast News,1383.75878
-2020,5,mins_p_person,Soft Broadcast News,1273.71021
-2020,6,mins_p_person,Soft Broadcast News,1223.53514
-2020,7,mins_p_person,Soft Broadcast News,1245.87699
-2020,8,mins_p_person,Soft Broadcast News,1199.43745
-2020,9,mins_p_person,Soft Broadcast News,1204.76438
-2020,10,mins_p_person,Soft Broadcast News,1244.77208
-2020,11,mins_p_person,Soft Broadcast News,1250.55626
-2020,12,mins_p_person,Soft Broadcast News,1163.77198
-2021,1,mins_p_person,Soft Broadcast News,1505.46313
-2021,2,mins_p_person,Soft Broadcast News,814.06863
-2021,3,mins_p_person,Soft Broadcast News,1219.28506
-2021,4,mins_p_person,Soft Broadcast News,1085.98015
-2021,5,mins_p_person,Soft Broadcast News,1056.66767
-2021,6,mins_p_person,Soft Broadcast News,1080.45951
-2021,7,mins_p_person,Soft Broadcast News,969.01005
-2021,8,mins_p_person,Soft Broadcast News,1048.48326
-2021,9,mins_p_person,Soft Broadcast News,1003.45580
-2021,10,mins_p_person,Soft Broadcast News,1067.63692
-2021,11,mins_p_person,Soft Broadcast News,1027.19486
-2021,12,mins_p_person,Soft Broadcast News,1057.78673
-2022,1,mins_p_person,Soft Broadcast News,1143.91737
-2022,2,mins_p_person,Soft Broadcast News,1027.06353
-2022,3,mins_p_person,Soft Broadcast News,1238.57981
-2022,4,mins_p_person,Soft Broadcast News,1142.49114
-2022,5,mins_p_person,Soft Broadcast News,1100.96710
-2022,6,mins_p_person,Soft Broadcast News,954.01401
-2022,7,mins_p_person,Soft Broadcast News,998.89020
-2022,8,mins_p_person,Soft Broadcast News,1081.17226
-2022,9,mins_p_person,Soft Broadcast News,955.90006
-2022,10,mins_p_person,Soft Broadcast News,1036.84518
-2016,1,sizes,FOX,17270929.09675
-2016,2,sizes,FOX,15314318.10716
-2016,3,sizes,FOX,17621890.16127
-2016,4,sizes,FOX,15381534.03333
-2016,5,sizes,FOX,14891171.80649
-2016,6,sizes,FOX,15897924.76665
-2016,7,sizes,FOX,19322944.67745
-2016,8,sizes,FOX,16192675.54838
-2016,9,sizes,FOX,18220916.63335
-2016,10,sizes,FOX,18288195.16129
-2016,11,sizes,FOX,24272090.90001
-2016,12,sizes,FOX,18814022.09680
-2017,1,sizes,FOX,21882155.67738
-2017,2,sizes,FOX,21200434.53569
-2017,3,sizes,FOX,18940709.38706
-2017,4,sizes,FOX,20149235.86665
-2017,5,sizes,FOX,18598529.09679
-2017,6,sizes,FOX,19210509.26667
-2017,7,sizes,FOX,18046973.80641
-2017,8,sizes,FOX,18898235.90323
-2017,9,sizes,FOX,18959845.43333
-2017,10,sizes,FOX,19704744.97144
-2017,11,sizes,FOX,18598605.56660
-2017,12,sizes,FOX,18174260.41934
-2018,1,sizes,FOX,18716110.58062
-2018,2,sizes,FOX,17813497.07140
-2018,3,sizes,FOX,17392828.96769
-2018,4,sizes,FOX,17875771.10007
-2018,5,sizes,FOX,17651438.83866
-2018,6,sizes,FOX,18831163.13336
-2018,7,sizes,FOX,17815013.19355
-2018,8,sizes,FOX,17335813.25806
-2018,9,sizes,FOX,18724530.93333
-2018,10,sizes,FOX,19773503.06453
-2018,11,sizes,FOX,18992159.03330
-2018,12,sizes,FOX,17027945.58064
-2019,1,sizes,FOX,20354279.77419
-2019,2,sizes,FOX,21039180.00000
-2019,3,sizes,FOX,20444915.54839
-2019,4,sizes,FOX,20192154.33333
-2019,5,sizes,FOX,19229238.19355
-2019,6,sizes,FOX,19246539.56667
-2019,7,sizes,FOX,20314699.16129
-2019,8,sizes,FOX,20307379.16129
-2019,9,sizes,FOX,20042359.10000
-2019,10,sizes,FOX,20453253.93548
-2019,11,sizes,FOX,20448244.96667
-2019,12,sizes,FOX,21246806.83871
-2020,1,sizes,FOX,23385867.90323
-2020,2,sizes,FOX,22669744.00000
-2020,3,sizes,FOX,27022884.74194
-2020,4,sizes,FOX,26510360.10000
-2020,5,sizes,FOX,24353692.35484
-2020,6,sizes,FOX,24610083.26667
-2020,7,sizes,FOX,23485780.61290
-2020,8,sizes,FOX,25295467.12903
-2020,9,sizes,FOX,26067764.56667
-2020,10,sizes,FOX,26964649.19355
-2020,11,sizes,FOX,31400999.43333
-2020,12,sizes,FOX,20090569.96774
-2021,1,sizes,FOX,22666878.74194
-2021,2,sizes,FOX,19669670.28571
-2021,3,sizes,FOX,18925501.64516
-2021,4,sizes,FOX,19283154.73333
-2021,5,sizes,FOX,18114995.29032
-2021,6,sizes,FOX,18055813.86667
-2021,7,sizes,FOX,17648391.87097
-2021,8,sizes,FOX,20242236.19355
-2021,9,sizes,FOX,19872514.13333
-2021,10,sizes,FOX,19348082.80645
-2021,11,sizes,FOX,21043257.43333
-2021,12,sizes,FOX,19533802.19355
-2022,1,sizes,FOX,19363072.00000
-2022,2,sizes,FOX,22169579.35714
-2022,3,sizes,FOX,22528166.41935
-2022,4,sizes,FOX,20226911.86667
-2022,5,sizes,FOX,19544617.96774
-2022,6,sizes,FOX,19370331.50000
-2022,7,sizes,FOX,18623275.96774
-2022,8,sizes,FOX,18786508.19355
-2022,9,sizes,FOX,18789711.00000
-2022,10,sizes,FOX,18563191.54839
-2016,1,mins_p_person,FOX,3794.72384
-2016,2,mins_p_person,FOX,3710.71091
-2016,3,mins_p_person,FOX,3641.17738
-2016,4,mins_p_person,FOX,3179.76203
-2016,5,mins_p_person,FOX,3477.87403
-2016,6,mins_p_person,FOX,3287.64681
-2016,7,mins_p_person,FOX,3598.01768
-2016,8,mins_p_person,FOX,3480.66029
-2016,9,mins_p_person,FOX,3447.31588
-2016,10,mins_p_person,FOX,3604.13746
-2016,11,mins_p_person,FOX,3632.18121
-2016,12,mins_p_person,FOX,3700.02604
-2017,1,mins_p_person,FOX,4189.60790
-2017,2,mins_p_person,FOX,3564.37824
-2017,3,mins_p_person,FOX,3500.83910
-2017,4,mins_p_person,FOX,3383.35715
-2017,5,mins_p_person,FOX,3337.53493
-2017,6,mins_p_person,FOX,3360.61308
-2017,7,mins_p_person,FOX,3165.78597
-2017,8,mins_p_person,FOX,3208.70478
-2017,9,mins_p_person,FOX,3194.86875
-2017,10,mins_p_person,FOX,3420.80392
-2017,11,mins_p_person,FOX,3334.61085
-2017,12,mins_p_person,FOX,3546.87230
-2018,1,mins_p_person,FOX,3792.16091
-2018,2,mins_p_person,FOX,3284.61878
-2018,3,mins_p_person,FOX,3416.44387
-2018,4,mins_p_person,FOX,3458.00670
-2018,5,mins_p_person,FOX,3515.72930
-2018,6,mins_p_person,FOX,3326.71108
-2018,7,mins_p_person,FOX,3363.82347
-2018,8,mins_p_person,FOX,3331.47177
-2018,9,mins_p_person,FOX,3458.53961
-2018,10,mins_p_person,FOX,3697.93546
-2018,11,mins_p_person,FOX,3311.16091
-2018,12,mins_p_person,FOX,3088.70257
-2019,1,mins_p_person,FOX,2799.84314
-2019,2,mins_p_person,FOX,2679.44453
-2019,3,mins_p_person,FOX,2868.84353
-2019,4,mins_p_person,FOX,2720.22861
-2019,5,mins_p_person,FOX,2906.97939
-2019,6,mins_p_person,FOX,2695.27518
-2019,7,mins_p_person,FOX,2803.38879
-2019,8,mins_p_person,FOX,2716.08097
-2019,9,mins_p_person,FOX,2735.89999
-2019,10,mins_p_person,FOX,2987.69205
-2019,11,mins_p_person,FOX,3003.70519
-2019,12,mins_p_person,FOX,3017.64348
-2020,1,mins_p_person,FOX,3252.25929
-2020,2,mins_p_person,FOX,3242.15586
-2020,3,mins_p_person,FOX,3481.15129
-2020,4,mins_p_person,FOX,3384.77408
-2020,5,mins_p_person,FOX,3185.77389
-2020,6,mins_p_person,FOX,2907.21527
-2020,7,mins_p_person,FOX,2931.62722
-2020,8,mins_p_person,FOX,2978.76120
-2020,9,mins_p_person,FOX,2827.66567
-2020,10,mins_p_person,FOX,3343.34750
-2020,11,mins_p_person,FOX,2290.68909
-2020,12,mins_p_person,FOX,2687.49652
-2021,1,mins_p_person,FOX,2549.46821
-2021,2,mins_p_person,FOX,2538.65525
-2021,3,mins_p_person,FOX,2759.39854
-2021,4,mins_p_person,FOX,2500.11023
-2021,5,mins_p_person,FOX,2532.40288
-2021,6,mins_p_person,FOX,2549.36680
-2021,7,mins_p_person,FOX,2590.42090
-2021,8,mins_p_person,FOX,2905.32512
-2021,9,mins_p_person,FOX,2750.16242
-2021,10,mins_p_person,FOX,2777.94319
-2021,11,mins_p_person,FOX,2787.61755
-2021,12,mins_p_person,FOX,2731.90531
-2022,1,mins_p_person,FOX,2969.78407
-2022,2,mins_p_person,FOX,2718.16343
-2022,3,mins_p_person,FOX,3126.21455
-2022,4,mins_p_person,FOX,2791.91585
-2022,5,mins_p_person,FOX,2894.15833
-2022,6,mins_p_person,FOX,2729.18288
-2022,7,mins_p_person,FOX,2711.15662
-2022,8,mins_p_person,FOX,2948.35469
-2022,9,mins_p_person,FOX,2830.46547
-2022,10,mins_p_person,FOX,2973.97252
-2016,1,sizes,CNN,6203254.54839
-2016,2,sizes,CNN,8295540.67858
-2016,3,sizes,CNN,10843683.06451
-2016,4,sizes,CNN,8516345.66667
-2016,5,sizes,CNN,7103806.54840
-2016,6,sizes,CNN,8493822.26669
-2016,7,sizes,CNN,12626952.22580
-2016,8,sizes,CNN,6949556.29031
-2016,9,sizes,CNN,8802324.13335
-2016,10,sizes,CNN,10199705.03229
-2016,11,sizes,CNN,13521006.66666
-2016,12,sizes,CNN,6064354.12904
-2017,1,sizes,CNN,8903237.41936
-2017,2,sizes,CNN,8725366.35716
-2017,3,sizes,CNN,7943430.35483
-2017,4,sizes,CNN,8409343.06666
-2017,5,sizes,CNN,8315143.90321
-2017,6,sizes,CNN,8265921.56664
-2017,7,sizes,CNN,7851627.80643
-2017,8,sizes,CNN,9262294.38709
-2017,9,sizes,CNN,10232464.09997
-2017,10,sizes,CNN,7615103.37143
-2017,11,sizes,CNN,6699427.10000
-2017,12,sizes,CNN,7253105.64518
-2018,1,sizes,CNN,6650868.80645
-2018,2,sizes,CNN,6505977.32141
-2018,3,sizes,CNN,6756100.16128
-2018,4,sizes,CNN,7013732.20001
-2018,5,sizes,CNN,7483278.16126
-2018,6,sizes,CNN,6181049.96669
-2018,7,sizes,CNN,6474629.93546
-2018,8,sizes,CNN,7002942.06454
-2018,9,sizes,CNN,7934299.86668
-2018,10,sizes,CNN,7089723.64517
-2018,11,sizes,CNN,8515374.06666
-2018,12,sizes,CNN,7659809.64514
-2019,1,sizes,CNN,10164765.70968
-2019,2,sizes,CNN,9378239.89286
-2019,3,sizes,CNN,8235772.48387
-2019,4,sizes,CNN,7834778.03333
-2019,5,sizes,CNN,7420351.77419
-2019,6,sizes,CNN,6949052.30000
-2019,7,sizes,CNN,11084465.48387
-2019,8,sizes,CNN,8702314.00000
-2019,9,sizes,CNN,8626952.06667
-2019,10,sizes,CNN,10017835.90323
-2019,11,sizes,CNN,9208445.26667
-2019,12,sizes,CNN,9924994.25806
-2020,1,sizes,CNN,11445578.87097
-2020,2,sizes,CNN,8689080.93103
-2020,3,sizes,CNN,15585294.45161
-2020,4,sizes,CNN,14536981.63333
-2020,5,sizes,CNN,14414606.19355
-2020,6,sizes,CNN,13987949.66667
-2020,7,sizes,CNN,11310094.19355
-2020,8,sizes,CNN,12354625.16129
-2020,9,sizes,CNN,12091232.16667
-2020,10,sizes,CNN,14319130.54839
-2020,11,sizes,CNN,23203950.43333
-2020,12,sizes,CNN,13973192.67742
-2021,1,sizes,CNN,22597803.00000
-2021,2,sizes,CNN,13978221.17857
-2021,3,sizes,CNN,10445709.80645
-2021,4,sizes,CNN,10864267.93333
-2021,5,sizes,CNN,8464508.80645
-2021,6,sizes,CNN,8645373.06667
-2021,7,sizes,CNN,8770651.41935
-2021,8,sizes,CNN,9726422.80645
-2021,9,sizes,CNN,8429842.20000
-2021,10,sizes,CNN,6899196.19355
-2021,11,sizes,CNN,7104172.06667
-2021,12,sizes,CNN,8056665.16129
-2022,1,sizes,CNN,6617854.19355
-2022,2,sizes,CNN,10346368.60714
-2022,3,sizes,CNN,11095840.67742
-2022,4,sizes,CNN,7846328.50000
-2022,5,sizes,CNN,7436335.70968
-2022,6,sizes,CNN,7467619.30000
-2022,7,sizes,CNN,7652279.06452
-2022,8,sizes,CNN,7190794.67742
-2022,9,sizes,CNN,9169790.30000
-2022,10,sizes,CNN,6760102.16129
-2016,1,mins_p_person,CNN,2890.41511
-2016,2,mins_p_person,CNN,2457.89451
-2016,3,mins_p_person,CNN,2628.80486
-2016,4,mins_p_person,CNN,2151.44414
-2016,5,mins_p_person,CNN,2540.62329
-2016,6,mins_p_person,CNN,2409.58837
-2016,7,mins_p_person,CNN,2559.06196
-2016,8,mins_p_person,CNN,2904.48727
-2016,9,mins_p_person,CNN,2598.29086
-2016,10,mins_p_person,CNN,3035.10561
-2016,11,mins_p_person,CNN,2010.25147
-2016,12,mins_p_person,CNN,2282.05880
-2017,1,mins_p_person,CNN,2671.20466
-2017,2,mins_p_person,CNN,2802.76187
-2017,3,mins_p_person,CNN,3267.83253
-2017,4,mins_p_person,CNN,2477.04290
-2017,5,mins_p_person,CNN,3000.30676
-2017,6,mins_p_person,CNN,2795.02223
-2017,7,mins_p_person,CNN,2548.35803
-2017,8,mins_p_person,CNN,2662.97552
-2017,9,mins_p_person,CNN,2395.83157
-2017,10,mins_p_person,CNN,2667.43358
-2017,11,mins_p_person,CNN,2695.62768
-2017,12,mins_p_person,CNN,2457.16058
-2018,1,mins_p_person,CNN,3269.25844
-2018,2,mins_p_person,CNN,2848.88986
-2018,3,mins_p_person,CNN,3267.00404
-2018,4,mins_p_person,CNN,2998.53404
-2018,5,mins_p_person,CNN,2701.16749
-2018,6,mins_p_person,CNN,2663.90152
-2018,7,mins_p_person,CNN,2847.42753
-2018,8,mins_p_person,CNN,3042.77149
-2018,9,mins_p_person,CNN,2903.66794
-2018,10,mins_p_person,CNN,2969.00205
-2018,11,mins_p_person,CNN,2560.13759
-2018,12,mins_p_person,CNN,3043.64096
-2019,1,mins_p_person,CNN,2727.48061
-2019,2,mins_p_person,CNN,2366.73691
-2019,3,mins_p_person,CNN,2392.68037
-2019,4,mins_p_person,CNN,2185.49552
-2019,5,mins_p_person,CNN,2527.40481
-2019,6,mins_p_person,CNN,2325.31783
-2019,7,mins_p_person,CNN,1870.08653
-2019,8,mins_p_person,CNN,2267.15962
-2019,9,mins_p_person,CNN,2349.57052
-2019,10,mins_p_person,CNN,2510.97003
-2019,11,mins_p_person,CNN,3043.81657
-2019,12,mins_p_person,CNN,2148.90896
-2020,1,mins_p_person,CNN,2252.58892
-2020,2,mins_p_person,CNN,2305.29236
-2020,3,mins_p_person,CNN,2884.98532
-2020,4,mins_p_person,CNN,3165.45674
-2020,5,mins_p_person,CNN,2628.30030
-2020,6,mins_p_person,CNN,2654.71774
-2020,7,mins_p_person,CNN,2917.33350
-2020,8,mins_p_person,CNN,2717.38116
-2020,9,mins_p_person,CNN,2421.08812
-2020,10,mins_p_person,CNN,3222.93340
-2020,11,mins_p_person,CNN,2677.98668
-2020,12,mins_p_person,CNN,2922.09616
-2021,1,mins_p_person,CNN,3389.99453
-2021,2,mins_p_person,CNN,2567.92309
-2021,3,mins_p_person,CNN,2474.63799
-2021,4,mins_p_person,CNN,2193.16320
-2021,5,mins_p_person,CNN,2011.90028
-2021,6,mins_p_person,CNN,2016.06668
-2021,7,mins_p_person,CNN,1923.80001
-2021,8,mins_p_person,CNN,1892.97909
-2021,9,mins_p_person,CNN,1834.93383
-2021,10,mins_p_person,CNN,1918.49976
-2021,11,mins_p_person,CNN,1886.25227
-2021,12,mins_p_person,CNN,1712.70313
-2022,1,mins_p_person,CNN,2114.13687
-2022,2,mins_p_person,CNN,1731.37304
-2022,3,mins_p_person,CNN,2352.58783
-2022,4,mins_p_person,CNN,2009.31801
-2022,5,mins_p_person,CNN,1779.07821
-2022,6,mins_p_person,CNN,1657.57439
-2022,7,mins_p_person,CNN,1875.27418
-2022,8,mins_p_person,CNN,2032.36513
-2022,9,mins_p_person,CNN,1840.10006
-2022,10,mins_p_person,CNN,1944.37400
-2016,1,sizes,MSNBC,6739759.61289
-2016,2,sizes,MSNBC,6882844.60717
-2016,3,sizes,MSNBC,8697133.70964
-2016,4,sizes,MSNBC,7783604.73333
-2016,5,sizes,MSNBC,8052688.58062
-2016,6,sizes,MSNBC,8253761.39998
-2016,7,sizes,MSNBC,10959555.70971
-2016,8,sizes,MSNBC,8907086.80645
-2016,9,sizes,MSNBC,9754605.20003
-2016,10,sizes,MSNBC,10187118.38713
-2016,11,sizes,MSNBC,10030736.26666
-2016,12,sizes,MSNBC,7488390.58065
-2017,1,sizes,MSNBC,9631469.25806
-2017,2,sizes,MSNBC,9684011.35714
-2017,3,sizes,MSNBC,10615996.09677
-2017,4,sizes,MSNBC,10578373.73337
-2017,5,sizes,MSNBC,11171584.29032
-2017,6,sizes,MSNBC,10970362.43333
-2017,7,sizes,MSNBC,11559956.61288
-2017,8,sizes,MSNBC,11440460.41938
-2017,9,sizes,MSNBC,10955944.33336
-2017,10,sizes,MSNBC,12352732.22857
-2017,11,sizes,MSNBC,12235707.20002
-2017,12,sizes,MSNBC,12312179.87098
-2018,1,sizes,MSNBC,11666514.64515
-2018,2,sizes,MSNBC,11992032.92854
-2018,3,sizes,MSNBC,12250164.70967
-2018,4,sizes,MSNBC,12014749.19999
-2018,5,sizes,MSNBC,11763689.96775
-2018,6,sizes,MSNBC,11762598.50002
-2018,7,sizes,MSNBC,12286366.77420
-2018,8,sizes,MSNBC,12807820.64516
-2018,9,sizes,MSNBC,12992124.20000
-2018,10,sizes,MSNBC,11706647.38712
-2018,11,sizes,MSNBC,12476566.29999
-2018,12,sizes,MSNBC,12474607.32257
-2019,1,sizes,MSNBC,13601239.45161
-2019,2,sizes,MSNBC,13216289.00000
-2019,3,sizes,MSNBC,12558573.35484
-2019,4,sizes,MSNBC,12221506.50000
-2019,5,sizes,MSNBC,12003199.61290
-2019,6,sizes,MSNBC,12993741.96667
-2019,7,sizes,MSNBC,11592324.87097
-2019,8,sizes,MSNBC,11967237.54839
-2019,9,sizes,MSNBC,12405744.16667
-2019,10,sizes,MSNBC,13354664.35484
-2019,11,sizes,MSNBC,13843532.10000
-2019,12,sizes,MSNBC,12610984.51613
-2020,1,sizes,MSNBC,13632649.90323
-2020,2,sizes,MSNBC,13794154.72414
-2020,3,sizes,MSNBC,14789096.06452
-2020,4,sizes,MSNBC,14028384.80000
-2020,5,sizes,MSNBC,13887066.06452
-2020,6,sizes,MSNBC,13700387.03333
-2020,7,sizes,MSNBC,13836360.45161
-2020,8,sizes,MSNBC,14539789.93548
-2020,9,sizes,MSNBC,13798365.10000
-2020,10,sizes,MSNBC,14296710.29032
-2020,11,sizes,MSNBC,17348772.96667
-2020,12,sizes,MSNBC,13715753.93548
-2021,1,sizes,MSNBC,16174871.09677
-2021,2,sizes,MSNBC,13860487.89286
-2021,3,sizes,MSNBC,12477025.67742
-2021,4,sizes,MSNBC,11932601.66667
-2021,5,sizes,MSNBC,11021263.48387
-2021,6,sizes,MSNBC,10336603.86667
-2021,7,sizes,MSNBC,10065647.83871
-2021,8,sizes,MSNBC,10005337.83871
-2021,9,sizes,MSNBC,9589970.96667
-2021,10,sizes,MSNBC,9232142.00000
-2021,11,sizes,MSNBC,8992593.93333
-2021,12,sizes,MSNBC,8712010.12903
-2022,1,sizes,MSNBC,8632789.48387
-2022,2,sizes,MSNBC,9351574.92857
-2022,3,sizes,MSNBC,9460245.38710
-2022,4,sizes,MSNBC,8377170.03333
-2022,5,sizes,MSNBC,8272917.29032
-2022,6,sizes,MSNBC,9729200.23333
-2022,7,sizes,MSNBC,8446370.09677
-2022,8,sizes,MSNBC,8858543.61290
-2022,9,sizes,MSNBC,8256674.36667
-2022,10,sizes,MSNBC,7670198.61290
-2016,1,mins_p_person,MSNBC,3855.50866
-2016,2,mins_p_person,MSNBC,3947.03417
-2016,3,mins_p_person,MSNBC,5213.29477
-2016,4,mins_p_person,MSNBC,3784.19735
-2016,5,mins_p_person,MSNBC,3599.54148
-2016,6,mins_p_person,MSNBC,4591.86476
-2016,7,mins_p_person,MSNBC,4758.35038
-2016,8,mins_p_person,MSNBC,5600.84829
-2016,9,mins_p_person,MSNBC,5319.04961
-2016,10,mins_p_person,MSNBC,6187.15268
-2016,11,mins_p_person,MSNBC,4560.39095
-2016,12,mins_p_person,MSNBC,4220.49896
-2017,1,mins_p_person,MSNBC,5362.67479
-2017,2,mins_p_person,MSNBC,5157.38755
-2017,3,mins_p_person,MSNBC,6259.27556
-2017,4,mins_p_person,MSNBC,4969.25257
-2017,5,mins_p_person,MSNBC,5976.32081
-2017,6,mins_p_person,MSNBC,5702.24153
-2017,7,mins_p_person,MSNBC,5606.77232
-2017,8,mins_p_person,MSNBC,6623.13325
-2017,9,mins_p_person,MSNBC,5205.74902
-2017,10,mins_p_person,MSNBC,5839.59527
-2017,11,mins_p_person,MSNBC,5961.27109
-2017,12,mins_p_person,MSNBC,6104.68523
-2018,1,mins_p_person,MSNBC,6727.77295
-2018,2,mins_p_person,MSNBC,6043.16867
-2018,3,mins_p_person,MSNBC,6736.26371
-2018,4,mins_p_person,MSNBC,6326.96249
-2018,5,mins_p_person,MSNBC,6593.39670
-2018,6,mins_p_person,MSNBC,5962.01830
-2018,7,mins_p_person,MSNBC,6170.51212
-2018,8,mins_p_person,MSNBC,6941.26608
-2018,9,mins_p_person,MSNBC,6671.82457
-2018,10,mins_p_person,MSNBC,6618.78245
-2018,11,mins_p_person,MSNBC,6362.82790
-2018,12,mins_p_person,MSNBC,6690.58985
-2019,1,mins_p_person,MSNBC,6223.48106
-2019,2,mins_p_person,MSNBC,5714.26210
-2019,3,mins_p_person,MSNBC,5714.12767
-2019,4,mins_p_person,MSNBC,5402.56075
-2019,5,mins_p_person,MSNBC,5646.03498
-2019,6,mins_p_person,MSNBC,4650.84626
-2019,7,mins_p_person,MSNBC,5562.73947
-2019,8,mins_p_person,MSNBC,5475.27571
-2019,9,mins_p_person,MSNBC,5397.17559
-2019,10,mins_p_person,MSNBC,6505.31284
-2019,11,mins_p_person,MSNBC,5826.74675
-2019,12,mins_p_person,MSNBC,5274.67688
-2020,1,mins_p_person,MSNBC,5670.63918
-2020,2,mins_p_person,MSNBC,4903.42340
-2020,3,mins_p_person,MSNBC,6785.24011
-2020,4,mins_p_person,MSNBC,7030.03124
-2020,5,mins_p_person,MSNBC,6253.07113
-2020,6,mins_p_person,MSNBC,6532.51018
-2020,7,mins_p_person,MSNBC,6643.65593
-2020,8,mins_p_person,MSNBC,5913.05274
-2020,9,mins_p_person,MSNBC,6213.44135
-2020,10,mins_p_person,MSNBC,7059.66774
-2020,11,mins_p_person,MSNBC,6274.50181
-2020,12,mins_p_person,MSNBC,6559.63636
-2021,1,mins_p_person,MSNBC,7130.81644
-2021,2,mins_p_person,MSNBC,5988.55372
-2021,3,mins_p_person,MSNBC,6231.59902
-2021,4,mins_p_person,MSNBC,5482.14732
-2021,5,mins_p_person,MSNBC,4941.18161
-2021,6,mins_p_person,MSNBC,4903.71793
-2021,7,mins_p_person,MSNBC,5191.26057
-2021,8,mins_p_person,MSNBC,4932.08258
-2021,9,mins_p_person,MSNBC,4962.39819
-2021,10,mins_p_person,MSNBC,4731.45282
-2021,11,mins_p_person,MSNBC,4707.12790
-2021,12,mins_p_person,MSNBC,4866.12285
-2022,1,mins_p_person,MSNBC,5038.90184
-2022,2,mins_p_person,MSNBC,4620.70155
-2022,3,mins_p_person,MSNBC,5159.28303
-2022,4,mins_p_person,MSNBC,4663.83826
-2022,5,mins_p_person,MSNBC,4323.14082
-2022,6,mins_p_person,MSNBC,5071.75083
-2022,7,mins_p_person,MSNBC,4966.83766
-2022,8,mins_p_person,MSNBC,5320.76309
-2022,9,mins_p_person,MSNBC,5363.05072
-2022,10,mins_p_person,MSNBC,5120.42094
-2016,1,sizes,Soft+Hard broadcast News,34304766.22579
-2016,2,sizes,Soft+Hard broadcast News,33753463.39288
-2016,3,sizes,Soft+Hard broadcast News,31665751.80640
-2016,4,sizes,Soft+Hard broadcast News,30233397.73338
-2016,5,sizes,Soft+Hard broadcast News,30102861.38714
-2016,6,sizes,Soft+Hard broadcast News,31545146.86670
-2016,7,sizes,Soft+Hard broadcast News,32013115.38709
-2016,8,sizes,Soft+Hard broadcast News,29627521.58066
-2016,9,sizes,Soft+Hard broadcast News,31250353.39999
-2016,10,sizes,Soft+Hard broadcast News,34197835.41932
-2016,11,sizes,Soft+Hard broadcast News,35384937.23331
-2016,12,sizes,Soft+Hard broadcast News,30673060.58064
-2017,1,sizes,Soft+Hard broadcast News,34152345.83868
-2017,2,sizes,Soft+Hard broadcast News,28278507.10718
-2017,3,sizes,Soft+Hard broadcast News,27511444.80641
-2017,4,sizes,Soft+Hard broadcast News,27688330.39998
-2017,5,sizes,Soft+Hard broadcast News,28124062.32252
-2017,6,sizes,Soft+Hard broadcast News,27701483.00000
-2017,7,sizes,Soft+Hard broadcast News,26102577.51614
-2017,8,sizes,Soft+Hard broadcast News,28192988.87098
-2017,9,sizes,Soft+Hard broadcast News,28820562.73334
-2017,10,sizes,Soft+Hard broadcast News,30155940.20000
-2017,11,sizes,Soft+Hard broadcast News,28728444.90000
-2017,12,sizes,Soft+Hard broadcast News,28135042.16131
-2018,1,sizes,Soft+Hard broadcast News,27982519.74196
-2018,2,sizes,Soft+Hard broadcast News,28451824.82144
-2018,3,sizes,Soft+Hard broadcast News,27148843.00001
-2018,4,sizes,Soft+Hard broadcast News,24475870.43337
-2018,5,sizes,Soft+Hard broadcast News,26759927.83871
-2018,6,sizes,Soft+Hard broadcast News,25894649.70000
-2018,7,sizes,Soft+Hard broadcast News,27191025.29038
-2018,8,sizes,Soft+Hard broadcast News,26343964.16133
-2018,9,sizes,Soft+Hard broadcast News,29137268.19996
-2018,10,sizes,Soft+Hard broadcast News,27008581.48382
-2018,11,sizes,Soft+Hard broadcast News,28270112.53339
-2018,12,sizes,Soft+Hard broadcast News,30670430.29037
-2019,1,sizes,Soft+Hard broadcast News,21551979.74194
-2019,2,sizes,Soft+Hard broadcast News,22221102.50000
-2019,3,sizes,Soft+Hard broadcast News,20890216.35484
-2019,4,sizes,Soft+Hard broadcast News,19793194.03333
-2019,5,sizes,Soft+Hard broadcast News,21000617.77419
-2019,6,sizes,Soft+Hard broadcast News,20044617.23333
-2019,7,sizes,Soft+Hard broadcast News,17405555.06452
-2019,8,sizes,Soft+Hard broadcast News,16191821.06452
-2019,9,sizes,Soft+Hard broadcast News,20697364.86667
-2019,10,sizes,Soft+Hard broadcast News,19694174.29032
-2019,11,sizes,Soft+Hard broadcast News,21263948.76667
-2019,12,sizes,Soft+Hard broadcast News,22009990.22581
-2020,1,sizes,Soft+Hard broadcast News,19204769.74194
-2020,2,sizes,Soft+Hard broadcast News,19081403.24138
-2020,3,sizes,Soft+Hard broadcast News,20398798.09677
-2020,4,sizes,Soft+Hard broadcast News,17482259.06667
-2020,5,sizes,Soft+Hard broadcast News,16192951.12903
-2020,6,sizes,Soft+Hard broadcast News,14677789.60000
-2020,7,sizes,Soft+Hard broadcast News,13705657.77419
-2020,8,sizes,Soft+Hard broadcast News,12809441.00000
-2020,9,sizes,Soft+Hard broadcast News,13603562.66667
-2020,10,sizes,Soft+Hard broadcast News,14113931.41935
-2020,11,sizes,Soft+Hard broadcast News,14132292.03333
-2020,12,sizes,Soft+Hard broadcast News,15597282.96774
-2021,1,sizes,Soft+Hard broadcast News,14023340.77419
-2021,2,sizes,Soft+Hard broadcast News,12968976.21429
-2021,3,sizes,Soft+Hard broadcast News,13679675.48387
-2021,4,sizes,Soft+Hard broadcast News,14254000.83333
-2021,5,sizes,Soft+Hard broadcast News,13844923.45161
-2021,6,sizes,Soft+Hard broadcast News,13004934.90000
-2021,7,sizes,Soft+Hard broadcast News,13152415.16129
-2021,8,sizes,Soft+Hard broadcast News,12602752.80645
-2021,9,sizes,Soft+Hard broadcast News,14098878.73333
-2021,10,sizes,Soft+Hard broadcast News,14138103.83871
-2021,11,sizes,Soft+Hard broadcast News,14685573.30000
-2021,12,sizes,Soft+Hard broadcast News,14551957.12903
-2022,1,sizes,Soft+Hard broadcast News,16280456.58065
-2022,2,sizes,Soft+Hard broadcast News,12878535.57143
-2022,3,sizes,Soft+Hard broadcast News,13532460.35484
-2022,4,sizes,Soft+Hard broadcast News,12908803.46667
-2022,5,sizes,Soft+Hard broadcast News,13483750.09677
-2022,6,sizes,Soft+Hard broadcast News,13035409.83333
-2022,7,sizes,Soft+Hard broadcast News,11626516.54839
-2022,8,sizes,Soft+Hard broadcast News,11320349.25806
-2022,9,sizes,Soft+Hard broadcast News,13934783.43333
-2022,10,sizes,Soft+Hard broadcast News,13133442.54839
-2016,1,mins_p_person,Soft+Hard broadcast News,3151.06845
-2016,2,mins_p_person,Soft+Hard broadcast News,2936.46728
-2016,3,mins_p_person,Soft+Hard broadcast News,3356.49334
-2016,4,mins_p_person,Soft+Hard broadcast News,2904.61647
-2016,5,mins_p_person,Soft+Hard broadcast News,3110.24276
-2016,6,mins_p_person,Soft+Hard broadcast News,2882.30595
-2016,7,mins_p_person,Soft+Hard broadcast News,3190.05631
-2016,8,mins_p_person,Soft+Hard broadcast News,2733.57754
-2016,9,mins_p_person,Soft+Hard broadcast News,2541.14947
-2016,10,mins_p_person,Soft+Hard broadcast News,3088.03727
-2016,11,mins_p_person,Soft+Hard broadcast News,2878.01659
-2016,12,mins_p_person,Soft+Hard broadcast News,2676.28610
-2017,1,mins_p_person,Soft+Hard broadcast News,3391.51619
-2017,2,mins_p_person,Soft+Hard broadcast News,2799.71467
-2017,3,mins_p_person,Soft+Hard broadcast News,2929.53982
-2017,4,mins_p_person,Soft+Hard broadcast News,2891.57616
-2017,5,mins_p_person,Soft+Hard broadcast News,3031.05857
-2017,6,mins_p_person,Soft+Hard broadcast News,3086.63127
-2017,7,mins_p_person,Soft+Hard broadcast News,2780.54886
-2017,8,mins_p_person,Soft+Hard broadcast News,3203.42483
-2017,9,mins_p_person,Soft+Hard broadcast News,3139.63974
-2017,10,mins_p_person,Soft+Hard broadcast News,3335.96997
-2017,11,mins_p_person,Soft+Hard broadcast News,2943.21154
-2017,12,mins_p_person,Soft+Hard broadcast News,3133.70694
-2018,1,mins_p_person,Soft+Hard broadcast News,3156.77556
-2018,2,mins_p_person,Soft+Hard broadcast News,3152.19021
-2018,3,mins_p_person,Soft+Hard broadcast News,2923.23329
-2018,4,mins_p_person,Soft+Hard broadcast News,3106.48893
-2018,5,mins_p_person,Soft+Hard broadcast News,3167.43117
-2018,6,mins_p_person,Soft+Hard broadcast News,2957.27870
-2018,7,mins_p_person,Soft+Hard broadcast News,3192.96178
-2018,8,mins_p_person,Soft+Hard broadcast News,3308.27952
-2018,9,mins_p_person,Soft+Hard broadcast News,3593.76340
-2018,10,mins_p_person,Soft+Hard broadcast News,3177.32891
-2018,11,mins_p_person,Soft+Hard broadcast News,3012.53590
-2018,12,mins_p_person,Soft+Hard broadcast News,3353.60609
-2019,1,mins_p_person,Soft+Hard broadcast News,1811.83791
-2019,2,mins_p_person,Soft+Hard broadcast News,1559.01219
-2019,3,mins_p_person,Soft+Hard broadcast News,1494.26143
-2019,4,mins_p_person,Soft+Hard broadcast News,1423.73702
-2019,5,mins_p_person,Soft+Hard broadcast News,1500.25025
-2019,6,mins_p_person,Soft+Hard broadcast News,1484.36700
-2019,7,mins_p_person,Soft+Hard broadcast News,1614.62689
-2019,8,mins_p_person,Soft+Hard broadcast News,1454.84658
-2019,9,mins_p_person,Soft+Hard broadcast News,1537.81227
-2019,10,mins_p_person,Soft+Hard broadcast News,1430.45212
-2019,11,mins_p_person,Soft+Hard broadcast News,1687.13162
-2019,12,mins_p_person,Soft+Hard broadcast News,1574.46592
-2020,1,mins_p_person,Soft+Hard broadcast News,1861.16277
-2020,2,mins_p_person,Soft+Hard broadcast News,1576.68999
-2020,3,mins_p_person,Soft+Hard broadcast News,2190.87559
-2020,4,mins_p_person,Soft+Hard broadcast News,1943.24222
-2020,5,mins_p_person,Soft+Hard broadcast News,1763.09048
-2020,6,mins_p_person,Soft+Hard broadcast News,1743.27324
-2020,7,mins_p_person,Soft+Hard broadcast News,1748.75845
-2020,8,mins_p_person,Soft+Hard broadcast News,1806.83018
-2020,9,mins_p_person,Soft+Hard broadcast News,1540.25573
-2020,10,mins_p_person,Soft+Hard broadcast News,1822.14018
-2020,11,mins_p_person,Soft+Hard broadcast News,1900.69495
-2020,12,mins_p_person,Soft+Hard broadcast News,1615.54512
-2021,1,mins_p_person,Soft+Hard broadcast News,2089.47152
-2021,2,mins_p_person,Soft+Hard broadcast News,1459.30085
-2021,3,mins_p_person,Soft+Hard broadcast News,1726.71127
-2021,4,mins_p_person,Soft+Hard broadcast News,1694.91054
-2021,5,mins_p_person,Soft+Hard broadcast News,1522.05382
-2021,6,mins_p_person,Soft+Hard broadcast News,1465.08705
-2021,7,mins_p_person,Soft+Hard broadcast News,1365.02352
-2021,8,mins_p_person,Soft+Hard broadcast News,1530.53175
-2021,9,mins_p_person,Soft+Hard broadcast News,1526.14461
-2021,10,mins_p_person,Soft+Hard broadcast News,1309.57695
-2021,11,mins_p_person,Soft+Hard broadcast News,1413.99320
-2021,12,mins_p_person,Soft+Hard broadcast News,1363.03569
-2022,1,mins_p_person,Soft+Hard broadcast News,1422.96637
-2022,2,mins_p_person,Soft+Hard broadcast News,1378.10406
-2022,3,mins_p_person,Soft+Hard broadcast News,1561.96472
-2022,4,mins_p_person,Soft+Hard broadcast News,1408.93631
-2022,5,mins_p_person,Soft+Hard broadcast News,1392.81880
-2022,6,mins_p_person,Soft+Hard broadcast News,1599.37973
-2022,7,mins_p_person,Soft+Hard broadcast News,1619.38823
-2022,8,mins_p_person,Soft+Hard broadcast News,1590.57163
-2022,9,mins_p_person,Soft+Hard broadcast News,1645.60189
-2022,10,mins_p_person,Soft+Hard broadcast News,1566.07007
-2016,1,sizes,Spanish News,16078046.99997
-2016,2,sizes,Spanish News,14932486.99997
-2016,3,sizes,Spanish News,14434628.38711
-2016,4,sizes,Spanish News,14451108.86667
-2016,5,sizes,Spanish News,14115284.41937
-2016,6,sizes,Spanish News,13999827.49996
-2016,7,sizes,Spanish News,13906042.06448
-2016,8,sizes,Spanish News,14338898.90324
-2016,9,sizes,Spanish News,14649861.89999
-2016,10,sizes,Spanish News,14693494.90324
-2016,11,sizes,Spanish News,15247661.63332
-2016,12,sizes,Spanish News,14502715.64518
-2017,1,sizes,Spanish News,15030880.12905
-2017,2,sizes,Spanish News,14669723.42857
-2017,3,sizes,Spanish News,14510175.48391
-2017,4,sizes,Spanish News,14230073.86666
-2017,5,sizes,Spanish News,13871338.38712
-2017,6,sizes,Spanish News,13664272.73334
-2017,7,sizes,Spanish News,13334273.22583
-2017,8,sizes,Spanish News,13714372.00002
-2017,9,sizes,Spanish News,15318345.26665
-2017,10,sizes,Spanish News,13745067.97144
-2017,11,sizes,Spanish News,13631584.33331
-2017,12,sizes,Spanish News,13681300.32259
-2018,1,sizes,Spanish News,14235656.99999
-2018,2,sizes,Spanish News,13643081.28574
-2018,3,sizes,Spanish News,13653747.90319
-2018,4,sizes,Spanish News,13577278.43334
-2018,5,sizes,Spanish News,13280959.67743
-2018,6,sizes,Spanish News,13888540.40000
-2018,7,sizes,Spanish News,13252607.64514
-2018,8,sizes,Spanish News,12556014.32260
-2018,9,sizes,Spanish News,13069865.20000
-2018,10,sizes,Spanish News,12950519.64516
-2018,11,sizes,Spanish News,13308063.63338
-2018,12,sizes,Spanish News,12747978.48387
-2019,1,sizes,Spanish News,13282223.45161
-2019,2,sizes,Spanish News,13048877.67857
-2019,3,sizes,Spanish News,12525446.22581
-2019,4,sizes,Spanish News,12474336.00000
-2019,5,sizes,Spanish News,12668498.51613
-2019,6,sizes,Spanish News,12434724.50000
-2019,7,sizes,Spanish News,12422380.67742
-2019,8,sizes,Spanish News,12346679.35484
-2019,9,sizes,Spanish News,12879400.56667
-2019,10,sizes,Spanish News,12918462.03226
-2019,11,sizes,Spanish News,12722994.33333
-2019,12,sizes,Spanish News,12509148.61290
-2020,1,sizes,Spanish News,13105701.80645
-2020,2,sizes,Spanish News,13150344.17241
-2020,3,sizes,Spanish News,13892313.35484
-2020,4,sizes,Spanish News,13081108.20000
-2020,5,sizes,Spanish News,12045866.93548
-2020,6,sizes,Spanish News,11609450.10000
-2020,7,sizes,Spanish News,11494502.45161
-2020,8,sizes,Spanish News,11385153.93548
-2020,9,sizes,Spanish News,11202793.66667
-2020,10,sizes,Spanish News,11045414.58065
-2020,11,sizes,Spanish News,12166172.86667
-2020,12,sizes,Spanish News,11475488.45161
-2021,1,sizes,Spanish News,11755575.12903
-2021,2,sizes,Spanish News,10463734.39286
-2021,3,sizes,Spanish News,11110525.35484
-2021,4,sizes,Spanish News,11495564.86667
-2021,5,sizes,Spanish News,11228464.22581
-2021,6,sizes,Spanish News,11606605.20000
-2021,7,sizes,Spanish News,11054140.58065
-2021,8,sizes,Spanish News,10908730.45161
-2021,9,sizes,Spanish News,10985555.66667
-2021,10,sizes,Spanish News,11157643.87097
-2021,11,sizes,Spanish News,10948148.96667
-2021,12,sizes,Spanish News,11288252.16129
-2022,1,sizes,Spanish News,11305755.16129
-2022,2,sizes,Spanish News,10962904.82143
-2022,3,sizes,Spanish News,11854608.03226
-2022,4,sizes,Spanish News,10331330.60000
-2022,5,sizes,Spanish News,10744607.90323
-2022,6,sizes,Spanish News,10149861.70000
-2022,7,sizes,Spanish News,9955534.38710
-2022,8,sizes,Spanish News,9649048.74194
-2022,9,sizes,Spanish News,10616592.20000
-2022,10,sizes,Spanish News,9997945.83871
-2016,1,mins_p_person,Spanish News,1279.68578
-2016,2,mins_p_person,Spanish News,1176.41372
-2016,3,mins_p_person,Spanish News,1058.42596
-2016,4,mins_p_person,Spanish News,985.98546
-2016,5,mins_p_person,Spanish News,972.24293
-2016,6,mins_p_person,Spanish News,909.14850
-2016,7,mins_p_person,Spanish News,976.65239
-2016,8,mins_p_person,Spanish News,1018.98147
-2016,9,mins_p_person,Spanish News,1120.15469
-2016,10,mins_p_person,Spanish News,1153.45109
-2016,11,mins_p_person,Spanish News,1263.33693
-2016,12,mins_p_person,Spanish News,1064.78513
-2017,1,mins_p_person,Spanish News,1329.90275
-2017,2,mins_p_person,Spanish News,1169.61734
-2017,3,mins_p_person,Spanish News,1122.03271
-2017,4,mins_p_person,Spanish News,1038.11656
-2017,5,mins_p_person,Spanish News,1105.14368
-2017,6,mins_p_person,Spanish News,1070.19021
-2017,7,mins_p_person,Spanish News,921.49781
-2017,8,mins_p_person,Spanish News,1130.69717
-2017,9,mins_p_person,Spanish News,1376.02784
-2017,10,mins_p_person,Spanish News,1125.11343
-2017,11,mins_p_person,Spanish News,1031.98784
-2017,12,mins_p_person,Spanish News,993.65230
-2018,1,mins_p_person,Spanish News,1163.63728
-2018,2,mins_p_person,Spanish News,1081.52512
-2018,3,mins_p_person,Spanish News,1060.76070
-2018,4,mins_p_person,Spanish News,1062.51586
-2018,5,mins_p_person,Spanish News,1062.71089
-2018,6,mins_p_person,Spanish News,988.05806
-2018,7,mins_p_person,Spanish News,912.57338
-2018,8,mins_p_person,Spanish News,1022.39029
-2018,9,mins_p_person,Spanish News,1034.29607
-2018,10,mins_p_person,Spanish News,1126.04744
-2018,11,mins_p_person,Spanish News,1143.40346
-2018,12,mins_p_person,Spanish News,1107.94370
-2019,1,mins_p_person,Spanish News,807.41036
-2019,2,mins_p_person,Spanish News,653.68445
-2019,3,mins_p_person,Spanish News,590.45267
-2019,4,mins_p_person,Spanish News,575.78523
-2019,5,mins_p_person,Spanish News,576.64647
-2019,6,mins_p_person,Spanish News,505.09213
-2019,7,mins_p_person,Spanish News,537.41403
-2019,8,mins_p_person,Spanish News,571.66230
-2019,9,mins_p_person,Spanish News,568.98061
-2019,10,mins_p_person,Spanish News,668.72130
-2019,11,mins_p_person,Spanish News,572.59442
-2019,12,mins_p_person,Spanish News,540.71134
-2020,1,mins_p_person,Spanish News,632.84487
-2020,2,mins_p_person,Spanish News,539.28480
-2020,3,mins_p_person,Spanish News,803.13034
-2020,4,mins_p_person,Spanish News,867.89897
-2020,5,mins_p_person,Spanish News,651.33390
-2020,6,mins_p_person,Spanish News,638.00761
-2020,7,mins_p_person,Spanish News,630.29822
-2020,8,mins_p_person,Spanish News,601.74262
-2020,9,mins_p_person,Spanish News,578.18900
-2020,10,mins_p_person,Spanish News,606.26027
-2020,11,mins_p_person,Spanish News,785.04732
-2020,12,mins_p_person,Spanish News,638.81520
-2021,1,mins_p_person,Spanish News,802.68169
-2021,2,mins_p_person,Spanish News,653.74315
-2021,3,mins_p_person,Spanish News,633.30943
-2021,4,mins_p_person,Spanish News,576.39240
-2021,5,mins_p_person,Spanish News,540.86510
-2021,6,mins_p_person,Spanish News,573.56126
-2021,7,mins_p_person,Spanish News,547.05415
-2021,8,mins_p_person,Spanish News,616.55101
-2021,9,mins_p_person,Spanish News,619.32249
-2021,10,mins_p_person,Spanish News,614.74586
-2021,11,mins_p_person,Spanish News,600.74726
-2021,12,mins_p_person,Spanish News,642.74842
-2022,1,mins_p_person,Spanish News,652.29295
-2022,2,mins_p_person,Spanish News,645.01805
-2022,3,mins_p_person,Spanish News,680.67943
-2022,4,mins_p_person,Spanish News,612.25480
-2022,5,mins_p_person,Spanish News,635.71797
-2022,6,mins_p_person,Spanish News,610.27436
-2022,7,mins_p_person,Spanish News,591.23507
-2022,8,mins_p_person,Spanish News,628.84695
-2022,9,mins_p_person,Spanish News,624.69442
-2022,10,mins_p_person,Spanish News,666.23290
-2016,1,sizes,Other Cable,12586157.19355
-2016,2,sizes,Other Cable,12907244.53572
-2016,3,sizes,Other Cable,12977219.83871
-2016,4,sizes,Other Cable,12795269.53334
-2016,5,sizes,Other Cable,12372126.58063
-2016,6,sizes,Other Cable,13586614.63330
-2016,7,sizes,Other Cable,12838346.45161
-2016,8,sizes,Other Cable,12677470.87095
-2016,9,sizes,Other Cable,10959395.46667
-2016,10,sizes,Other Cable,10200475.48387
-2016,11,sizes,Other Cable,10725327.60000
-2016,12,sizes,Other Cable,11619573.61290
-2017,1,sizes,Other Cable,12014699.35482
-2017,2,sizes,Other Cable,12200412.67857
-2017,3,sizes,Other Cable,11967045.83873
-2017,4,sizes,Other Cable,11789225.90002
-2017,5,sizes,Other Cable,12134906.25811
-2017,6,sizes,Other Cable,11167230.53330
-2017,7,sizes,Other Cable,11875322.38713
-2017,8,sizes,Other Cable,11832845.67739
-2017,9,sizes,Other Cable,11089097.16668
-2017,10,sizes,Other Cable,13983896.77144
-2017,11,sizes,Other Cable,14105438.90000
-2017,12,sizes,Other Cable,13472434.25806
-2018,1,sizes,Other Cable,13946807.77420
-2018,2,sizes,Other Cable,14450372.67860
-2018,3,sizes,Other Cable,15209724.32258
-2018,4,sizes,Other Cable,14817190.49996
-2018,5,sizes,Other Cable,15085213.93549
-2018,6,sizes,Other Cable,14362715.16665
-2018,7,sizes,Other Cable,14379155.12904
-2018,8,sizes,Other Cable,14418738.80649
-2018,9,sizes,Other Cable,12839517.19998
-2018,10,sizes,Other Cable,13350625.48383
-2018,11,sizes,Other Cable,14187339.59998
-2018,12,sizes,Other Cable,12662590.74193
-2019,1,sizes,Other Cable,13284668.12903
-2019,2,sizes,Other Cable,14064297.67857
-2019,3,sizes,Other Cable,16299423.70968
-2019,4,sizes,Other Cable,16437893.86667
-2019,5,sizes,Other Cable,15975318.51613
-2019,6,sizes,Other Cable,15833242.10000
-2019,7,sizes,Other Cable,15393705.00000
-2019,8,sizes,Other Cable,16057675.09677
-2019,9,sizes,Other Cable,14185873.73333
-2019,10,sizes,Other Cable,13518544.77419
-2019,11,sizes,Other Cable,13298663.46667
-2019,12,sizes,Other Cable,13046228.22581
-2020,1,sizes,Other Cable,13077776.93548
-2020,2,sizes,Other Cable,14334548.03448
-2020,3,sizes,Other Cable,12172417.00000
-2020,4,sizes,Other Cable,12758924.63333
-2020,5,sizes,Other Cable,12512616.48387
-2020,6,sizes,Other Cable,12914024.13333
-2020,7,sizes,Other Cable,12616187.48387
-2020,8,sizes,Other Cable,12825214.38710
-2020,9,sizes,Other Cable,12535282.26667
-2020,10,sizes,Other Cable,12214035.03226
-2020,11,sizes,Other Cable,10057524.30000
-2020,12,sizes,Other Cable,12682694.29032
-2021,1,sizes,Other Cable,10902543.80645
-2021,2,sizes,Other Cable,13975834.78571
-2021,3,sizes,Other Cable,14541071.06452
-2021,4,sizes,Other Cable,15267193.70000
-2021,5,sizes,Other Cable,14281639.96774
-2021,6,sizes,Other Cable,14921006.06667
-2021,7,sizes,Other Cable,11720290.58065
-2021,8,sizes,Other Cable,11729692.09677
-2021,9,sizes,Other Cable,12408974.40000
-2021,10,sizes,Other Cable,13481554.54839
-2021,11,sizes,Other Cable,13577718.50000
-2021,12,sizes,Other Cable,12791760.87097
-2022,1,sizes,Other Cable,14004444.03226
-2022,2,sizes,Other Cable,12469033.53571
-2022,3,sizes,Other Cable,11689158.09677
-2022,4,sizes,Other Cable,12782520.90000
-2022,5,sizes,Other Cable,13172690.16129
-2022,6,sizes,Other Cable,12712473.43333
-2022,7,sizes,Other Cable,11902478.12903
-2022,8,sizes,Other Cable,12227988.19355
-2022,9,sizes,Other Cable,10695913.46667
-2022,10,sizes,Other Cable,11054641.61290
-2016,1,mins_p_person,Other Cable,1161.47425
-2016,2,mins_p_person,Other Cable,1032.30010
-2016,3,mins_p_person,Other Cable,1110.33735
-2016,4,mins_p_person,Other Cable,1058.25489
-2016,5,mins_p_person,Other Cable,992.92155
-2016,6,mins_p_person,Other Cable,1022.46207
-2016,7,mins_p_person,Other Cable,1325.82083
-2016,8,mins_p_person,Other Cable,1247.56109
-2016,9,mins_p_person,Other Cable,1545.94463
-2016,10,mins_p_person,Other Cable,1586.12503
-2016,11,mins_p_person,Other Cable,1723.49296
-2016,12,mins_p_person,Other Cable,1628.30541
-2017,1,mins_p_person,Other Cable,2249.86450
-2017,2,mins_p_person,Other Cable,1801.90583
-2017,3,mins_p_person,Other Cable,1258.10824
-2017,4,mins_p_person,Other Cable,1239.61236
-2017,5,mins_p_person,Other Cable,1256.52431
-2017,6,mins_p_person,Other Cable,1185.59392
-2017,7,mins_p_person,Other Cable,1193.60894
-2017,8,mins_p_person,Other Cable,1250.45795
-2017,9,mins_p_person,Other Cable,1364.11411
-2017,10,mins_p_person,Other Cable,2148.73546
-2017,11,mins_p_person,Other Cable,2063.67865
-2017,12,mins_p_person,Other Cable,2277.05752
-2018,1,mins_p_person,Other Cable,2196.99037
-2018,2,mins_p_person,Other Cable,2166.29503
-2018,3,mins_p_person,Other Cable,1980.76538
-2018,4,mins_p_person,Other Cable,1984.21930
-2018,5,mins_p_person,Other Cable,1878.54400
-2018,6,mins_p_person,Other Cable,1815.22518
-2018,7,mins_p_person,Other Cable,1894.04834
-2018,8,mins_p_person,Other Cable,2059.90353
-2018,9,mins_p_person,Other Cable,2130.56237
-2018,10,mins_p_person,Other Cable,2150.02749
-2018,11,mins_p_person,Other Cable,2423.97577
-2018,12,mins_p_person,Other Cable,2233.78799
-2019,1,mins_p_person,Other Cable,1000.67760
-2019,2,mins_p_person,Other Cable,859.60138
-2019,3,mins_p_person,Other Cable,913.80588
-2019,4,mins_p_person,Other Cable,841.97474
-2019,5,mins_p_person,Other Cable,920.62994
-2019,6,mins_p_person,Other Cable,844.22594
-2019,7,mins_p_person,Other Cable,886.69578
-2019,8,mins_p_person,Other Cable,954.27258
-2019,9,mins_p_person,Other Cable,937.99637
-2019,10,mins_p_person,Other Cable,978.82933
-2019,11,mins_p_person,Other Cable,956.14792
-2019,12,mins_p_person,Other Cable,1080.05161
-2020,1,mins_p_person,Other Cable,1126.28419
-2020,2,mins_p_person,Other Cable,1075.93882
-2020,3,mins_p_person,Other Cable,1414.16879
-2020,4,mins_p_person,Other Cable,1234.39589
-2020,5,mins_p_person,Other Cable,1176.77367
-2020,6,mins_p_person,Other Cable,1165.03830
-2020,7,mins_p_person,Other Cable,1122.06736
-2020,8,mins_p_person,Other Cable,1102.47341
-2020,9,mins_p_person,Other Cable,1108.12478
-2020,10,mins_p_person,Other Cable,1166.28976
-2020,11,mins_p_person,Other Cable,1272.67987
-2020,12,mins_p_person,Other Cable,1131.67716
-2021,1,mins_p_person,Other Cable,1229.84891
-2021,2,mins_p_person,Other Cable,987.03904
-2021,3,mins_p_person,Other Cable,1157.44370
-2021,4,mins_p_person,Other Cable,1081.59582
-2021,5,mins_p_person,Other Cable,1011.84352
-2021,6,mins_p_person,Other Cable,1005.09419
-2021,7,mins_p_person,Other Cable,1136.85811
-2021,8,mins_p_person,Other Cable,1189.22650
-2021,9,mins_p_person,Other Cable,1126.56537
-2021,10,mins_p_person,Other Cable,1169.93030
-2021,11,mins_p_person,Other Cable,1190.74752
-2021,12,mins_p_person,Other Cable,1246.86590
-2022,1,mins_p_person,Other Cable,1243.54677
-2022,2,mins_p_person,Other Cable,1214.63903
-2022,3,mins_p_person,Other Cable,1310.62246
-2022,4,mins_p_person,Other Cable,1149.99953
-2022,5,mins_p_person,Other Cable,1228.40801
-2022,6,mins_p_person,Other Cable,1112.68151
-2022,7,mins_p_person,Other Cable,1144.38064
-2022,8,mins_p_person,Other Cable,1144.51917
-2022,9,mins_p_person,Other Cable,1134.31915
-2022,10,mins_p_person,Other Cable,1177.36124
+2021,11,mins_p_person,No or Minimal News,2.17016
+2021,12,mins_p_person,No or Minimal News,2.25122
+2022,1,mins_p_person,No or Minimal News,2.19091
+2022,2,mins_p_person,No or Minimal News,2.04497
+2022,3,mins_p_person,No or Minimal News,1.98377
+2022,4,mins_p_person,No or Minimal News,1.96545
+2022,5,mins_p_person,No or Minimal News,1.92669
+2022,6,mins_p_person,No or Minimal News,1.89114
+2022,7,mins_p_person,No or Minimal News,1.70009
+2022,8,mins_p_person,No or Minimal News,1.75130
+2022,9,mins_p_person,No or Minimal News,1.82979
+2022,10,mins_p_person,No or Minimal News,1.81303
+2016,1,sizes,Hard Broadcast News,67401550.64515
+2016,2,sizes,Hard Broadcast News,68984398.46430
+2016,3,sizes,Hard Broadcast News,64275626.29027
+2016,4,sizes,Hard Broadcast News,61007970.46669
+2016,5,sizes,Hard Broadcast News,61440744.06456
+2016,6,sizes,Hard Broadcast News,64239617.86669
+2016,7,sizes,Hard Broadcast News,63750258.09688
+2016,8,sizes,Hard Broadcast News,58788093.58071
+2016,9,sizes,Hard Broadcast News,65521497.36663
+2016,10,sizes,Hard Broadcast News,72568197.99994
+2016,11,sizes,Hard Broadcast News,69179938.16665
+2016,12,sizes,Hard Broadcast News,59383496.09681
+2017,1,sizes,Hard Broadcast News,62450664.45161
+2017,2,sizes,Hard Broadcast News,55990054.99998
+2017,3,sizes,Hard Broadcast News,56768932.29025
+2017,4,sizes,Hard Broadcast News,55474412.23331
+2017,5,sizes,Hard Broadcast News,56403052.09679
+2017,6,sizes,Hard Broadcast News,59415458.60006
+2017,7,sizes,Hard Broadcast News,53746081.35479
+2017,8,sizes,Hard Broadcast News,59526239.80647
+2017,9,sizes,Hard Broadcast News,59776375.66668
+2017,10,sizes,Hard Broadcast News,59703103.02859
+2017,11,sizes,Hard Broadcast News,54211418.93329
+2017,12,sizes,Hard Broadcast News,54722277.64523
+2018,1,sizes,Hard Broadcast News,53807415.58069
+2018,2,sizes,Hard Broadcast News,54043820.14282
+2018,3,sizes,Hard Broadcast News,53829195.83871
+2018,4,sizes,Hard Broadcast News,53626291.13336
+2018,5,sizes,Hard Broadcast News,51080170.35488
+2018,6,sizes,Hard Broadcast News,54163257.16672
+2018,7,sizes,Hard Broadcast News,51989189.29036
+2018,8,sizes,Hard Broadcast News,54501644.74196
+2018,9,sizes,Hard Broadcast News,58054994.83333
+2018,10,sizes,Hard Broadcast News,50871798.74191
+2018,11,sizes,Hard Broadcast News,53213839.23339
+2018,12,sizes,Hard Broadcast News,56072028.41942
+2019,1,sizes,Hard Broadcast News,65408114.61290
+2019,2,sizes,Hard Broadcast News,66506486.35714
+2019,3,sizes,Hard Broadcast News,63250113.51613
+2019,4,sizes,Hard Broadcast News,60067926.23333
+2019,5,sizes,Hard Broadcast News,63194360.54839
+2019,6,sizes,Hard Broadcast News,64704834.56667
+2019,7,sizes,Hard Broadcast News,58762084.70968
+2019,8,sizes,Hard Broadcast News,56732879.90323
+2019,9,sizes,Hard Broadcast News,66450291.93333
+2019,10,sizes,Hard Broadcast News,62406232.61290
+2019,11,sizes,Hard Broadcast News,67830223.10000
+2019,12,sizes,Hard Broadcast News,67659962.64516
+2020,1,sizes,Hard Broadcast News,66824418.87097
+2020,2,sizes,Hard Broadcast News,63082528.20690
+2020,3,sizes,Hard Broadcast News,69813082.00000
+2020,4,sizes,Hard Broadcast News,58970195.50000
+2020,5,sizes,Hard Broadcast News,55643215.35484
+2020,6,sizes,Hard Broadcast News,54498239.73333
+2020,7,sizes,Hard Broadcast News,52822322.96774
+2020,8,sizes,Hard Broadcast News,53333757.45161
+2020,9,sizes,Hard Broadcast News,59150883.13333
+2020,10,sizes,Hard Broadcast News,62434988.93548
+2020,11,sizes,Hard Broadcast News,57101131.03333
+2020,12,sizes,Hard Broadcast News,53405516.25806
+2021,1,sizes,Hard Broadcast News,54479497.90323
+2021,2,sizes,Hard Broadcast News,48460847.85714
+2021,3,sizes,Hard Broadcast News,51669276.48387
+2021,4,sizes,Hard Broadcast News,50376458.00000
+2021,5,sizes,Hard Broadcast News,50582532.19355
+2021,6,sizes,Hard Broadcast News,46884216.60000
+2021,7,sizes,Hard Broadcast News,49911258.77419
+2021,8,sizes,Hard Broadcast News,50181828.00000
+2021,9,sizes,Hard Broadcast News,52069512.66667
+2021,10,sizes,Hard Broadcast News,52293790.25806
+2021,11,sizes,Hard Broadcast News,51214070.66667
+2021,12,sizes,Hard Broadcast News,53513524.45161
+2022,1,sizes,Hard Broadcast News,55013615.83871
+2022,2,sizes,Hard Broadcast News,46968365.78571
+2022,3,sizes,Hard Broadcast News,49973898.83871
+2022,4,sizes,Hard Broadcast News,47683721.80000
+2022,5,sizes,Hard Broadcast News,47966134.16129
+2022,6,sizes,Hard Broadcast News,49589813.80000
+2022,7,sizes,Hard Broadcast News,47077023.32258
+2022,8,sizes,Hard Broadcast News,45629889.48387
+2022,9,sizes,Hard Broadcast News,54778453.23333
+2022,10,sizes,Hard Broadcast News,52564264.51613
+2016,1,mins_p_person,Hard Broadcast News,2242.43009
+2016,2,mins_p_person,Hard Broadcast News,2079.49265
+2016,3,mins_p_person,Hard Broadcast News,2486.88950
+2016,4,mins_p_person,Hard Broadcast News,2044.98320
+2016,5,mins_p_person,Hard Broadcast News,2177.60841
+2016,6,mins_p_person,Hard Broadcast News,1988.16463
+2016,7,mins_p_person,Hard Broadcast News,2112.69956
+2016,8,mins_p_person,Hard Broadcast News,1872.69115
+2016,9,mins_p_person,Hard Broadcast News,1704.00018
+2016,10,mins_p_person,Hard Broadcast News,2081.94544
+2016,11,mins_p_person,Hard Broadcast News,1946.77446
+2016,12,mins_p_person,Hard Broadcast News,1852.41609
+2017,1,mins_p_person,Hard Broadcast News,2194.45679
+2017,2,mins_p_person,Hard Broadcast News,1893.66733
+2017,3,mins_p_person,Hard Broadcast News,2103.80579
+2017,4,mins_p_person,Hard Broadcast News,1943.41106
+2017,5,mins_p_person,Hard Broadcast News,2139.15318
+2017,6,mins_p_person,Hard Broadcast News,2052.55366
+2017,7,mins_p_person,Hard Broadcast News,1870.97576
+2017,8,mins_p_person,Hard Broadcast News,2167.20473
+2017,9,mins_p_person,Hard Broadcast News,2275.41881
+2017,10,mins_p_person,Hard Broadcast News,2440.75116
+2017,11,mins_p_person,Hard Broadcast News,2038.06993
+2017,12,mins_p_person,Hard Broadcast News,2121.50325
+2018,1,mins_p_person,Hard Broadcast News,2171.46616
+2018,2,mins_p_person,Hard Broadcast News,1964.43536
+2018,3,mins_p_person,Hard Broadcast News,2023.26912
+2018,4,mins_p_person,Hard Broadcast News,2076.54194
+2018,5,mins_p_person,Hard Broadcast News,2146.02009
+2018,6,mins_p_person,Hard Broadcast News,1922.81250
+2018,7,mins_p_person,Hard Broadcast News,2095.13782
+2018,8,mins_p_person,Hard Broadcast News,2174.91460
+2018,9,mins_p_person,Hard Broadcast News,2324.30367
+2018,10,mins_p_person,Hard Broadcast News,2106.49630
+2018,11,mins_p_person,Hard Broadcast News,1975.60902
+2018,12,mins_p_person,Hard Broadcast News,2131.89268
+2019,1,mins_p_person,Hard Broadcast News,1149.87929
+2019,2,mins_p_person,Hard Broadcast News,1001.81526
+2019,3,mins_p_person,Hard Broadcast News,1014.84793
+2019,4,mins_p_person,Hard Broadcast News,981.56015
+2019,5,mins_p_person,Hard Broadcast News,1008.91064
+2019,6,mins_p_person,Hard Broadcast News,956.89413
+2019,7,mins_p_person,Hard Broadcast News,1150.21701
+2019,8,mins_p_person,Hard Broadcast News,968.34263
+2019,9,mins_p_person,Hard Broadcast News,993.03053
+2019,10,mins_p_person,Hard Broadcast News,1003.65597
+2019,11,mins_p_person,Hard Broadcast News,1249.56240
+2019,12,mins_p_person,Hard Broadcast News,1089.69246
+2020,1,mins_p_person,Hard Broadcast News,1347.29761
+2020,2,mins_p_person,Hard Broadcast News,1052.72084
+2020,3,mins_p_person,Hard Broadcast News,1458.59043
+2020,4,mins_p_person,Hard Broadcast News,1333.27547
+2020,5,mins_p_person,Hard Broadcast News,1213.48667
+2020,6,mins_p_person,Hard Broadcast News,1168.46411
+2020,7,mins_p_person,Hard Broadcast News,1191.88315
+2020,8,mins_p_person,Hard Broadcast News,1176.79977
+2020,9,mins_p_person,Hard Broadcast News,964.76618
+2020,10,mins_p_person,Hard Broadcast News,1116.91381
+2020,11,mins_p_person,Hard Broadcast News,1216.46508
+2020,12,mins_p_person,Hard Broadcast News,1125.07747
+2021,1,mins_p_person,Hard Broadcast News,1297.35684
+2021,2,mins_p_person,Hard Broadcast News,1050.16086
+2021,3,mins_p_person,Hard Broadcast News,1117.98768
+2021,4,mins_p_person,Hard Broadcast News,1042.91127
+2021,5,mins_p_person,Hard Broadcast News,1000.81427
+2021,6,mins_p_person,Hard Broadcast News,927.52914
+2021,7,mins_p_person,Hard Broadcast News,874.49509
+2021,8,mins_p_person,Hard Broadcast News,999.03994
+2021,9,mins_p_person,Hard Broadcast News,1023.88171
+2021,10,mins_p_person,Hard Broadcast News,891.15294
+2021,11,mins_p_person,Hard Broadcast News,959.37965
+2021,12,mins_p_person,Hard Broadcast News,910.08865
+2022,1,mins_p_person,Hard Broadcast News,948.44411
+2022,2,mins_p_person,Hard Broadcast News,1005.72111
+2022,3,mins_p_person,Hard Broadcast News,1043.06372
+2022,4,mins_p_person,Hard Broadcast News,988.01095
+2022,5,mins_p_person,Hard Broadcast News,992.07037
+2022,6,mins_p_person,Hard Broadcast News,1059.19852
+2022,7,mins_p_person,Hard Broadcast News,1026.59663
+2022,8,mins_p_person,Hard Broadcast News,1025.60109
+2022,9,mins_p_person,Hard Broadcast News,1094.42456
+2022,10,mins_p_person,Hard Broadcast News,1115.76686
+2016,1,sizes,Soft Broadcast News,59011177.16127
+2016,2,sizes,Soft Broadcast News,54306954.57143
+2016,3,sizes,Soft Broadcast News,52292491.74188
+2016,4,sizes,Soft Broadcast News,55929503.03327
+2016,5,sizes,Soft Broadcast News,56971962.67742
+2016,6,sizes,Soft Broadcast News,50982639.13341
+2016,7,sizes,Soft Broadcast News,42843513.06452
+2016,8,sizes,Soft Broadcast News,58197169.67741
+2016,9,sizes,Soft Broadcast News,54561492.56670
+2016,10,sizes,Soft Broadcast News,50610384.38703
+2016,11,sizes,Soft Broadcast News,51594082.30001
+2016,12,sizes,Soft Broadcast News,62163984.19348
+2017,1,sizes,Soft Broadcast News,55373304.29030
+2017,2,sizes,Soft Broadcast News,53617998.00004
+2017,3,sizes,Soft Broadcast News,54628348.90322
+2017,4,sizes,Soft Broadcast News,52146497.06666
+2017,5,sizes,Soft Broadcast News,51828300.09684
+2017,6,sizes,Soft Broadcast News,47637868.36666
+2017,7,sizes,Soft Broadcast News,48334205.67747
+2017,8,sizes,Soft Broadcast News,47802218.22582
+2017,9,sizes,Soft Broadcast News,50940970.03342
+2017,10,sizes,Soft Broadcast News,49918344.42853
+2017,11,sizes,Soft Broadcast News,55588577.36662
+2017,12,sizes,Soft Broadcast News,54794203.87095
+2018,1,sizes,Soft Broadcast News,57024340.12912
+2018,2,sizes,Soft Broadcast News,51666597.71429
+2018,3,sizes,Soft Broadcast News,52441061.99992
+2018,4,sizes,Soft Broadcast News,50341797.00007
+2018,5,sizes,Soft Broadcast News,53117558.12898
+2018,6,sizes,Soft Broadcast News,46698261.10007
+2018,7,sizes,Soft Broadcast News,46124199.67750
+2018,8,sizes,Soft Broadcast News,44093525.00004
+2018,9,sizes,Soft Broadcast News,44637277.93333
+2018,10,sizes,Soft Broadcast News,52120865.90320
+2018,11,sizes,Soft Broadcast News,52546308.86665
+2018,12,sizes,Soft Broadcast News,49873300.12901
+2019,1,sizes,Soft Broadcast News,22834451.06452
+2019,2,sizes,Soft Broadcast News,18225954.14286
+2019,3,sizes,Soft Broadcast News,20215609.48387
+2019,4,sizes,Soft Broadcast News,20232739.76667
+2019,5,sizes,Soft Broadcast News,20048066.41935
+2019,6,sizes,Soft Broadcast News,17533295.03333
+2019,7,sizes,Soft Broadcast News,16677144.03226
+2019,8,sizes,Soft Broadcast News,18497053.54839
+2019,9,sizes,Soft Broadcast News,16464159.66667
+2019,10,sizes,Soft Broadcast News,18154455.41935
+2019,11,sizes,Soft Broadcast News,15458788.56667
+2019,12,sizes,Soft Broadcast News,17086507.06452
+2020,1,sizes,Soft Broadcast News,14551550.38710
+2020,2,sizes,Soft Broadcast News,15960959.37931
+2020,3,sizes,Soft Broadcast News,12114727.32258
+2020,4,sizes,Soft Broadcast News,14568665.63333
+2020,5,sizes,Soft Broadcast News,14495172.06452
+2020,6,sizes,Soft Broadcast News,13332036.93333
+2020,7,sizes,Soft Broadcast News,13026155.45161
+2020,8,sizes,Soft Broadcast News,11822847.64516
+2020,9,sizes,Soft Broadcast News,12167893.83333
+2020,10,sizes,Soft Broadcast News,10679069.96774
+2020,11,sizes,Soft Broadcast News,10647889.63333
+2020,12,sizes,Soft Broadcast News,14840506.64516
+2021,1,sizes,Soft Broadcast News,11161539.48387
+2021,2,sizes,Soft Broadcast News,10798562.64286
+2021,3,sizes,Soft Broadcast News,12831419.19355
+2021,4,sizes,Soft Broadcast News,12611347.53333
+2021,5,sizes,Soft Broadcast News,13351597.00000
+2021,6,sizes,Soft Broadcast News,13654219.50000
+2021,7,sizes,Soft Broadcast News,14813316.16129
+2021,8,sizes,Soft Broadcast News,14060507.22581
+2021,9,sizes,Soft Broadcast News,14047233.16667
+2021,10,sizes,Soft Broadcast News,15389868.38710
+2021,11,sizes,Soft Broadcast News,15733248.66667
+2021,12,sizes,Soft Broadcast News,15882091.58065
+2022,1,sizes,Soft Broadcast News,15570283.19355
+2022,2,sizes,Soft Broadcast News,14674947.75000
+2022,3,sizes,Soft Broadcast News,12914593.74194
+2022,4,sizes,Soft Broadcast News,13533893.63333
+2022,5,sizes,Soft Broadcast News,14280409.38710
+2022,6,sizes,Soft Broadcast News,11401544.30000
+2022,7,sizes,Soft Broadcast News,11643380.45161
+2022,8,sizes,Soft Broadcast News,12535224.25806
+2022,9,sizes,Soft Broadcast News,10729849.63333
+2022,10,sizes,Soft Broadcast News,12623076.54839
+2016,1,mins_p_person,Soft Broadcast News,3327.34498
+2016,2,mins_p_person,Soft Broadcast News,2952.37718
+2016,3,mins_p_person,Soft Broadcast News,3149.63627
+2016,4,mins_p_person,Soft Broadcast News,2933.07682
+2016,5,mins_p_person,Soft Broadcast News,3102.56058
+2016,6,mins_p_person,Soft Broadcast News,2859.58978
+2016,7,mins_p_person,Soft Broadcast News,2927.87055
+2016,8,mins_p_person,Soft Broadcast News,2856.84691
+2016,9,mins_p_person,Soft Broadcast News,3002.59801
+2016,10,mins_p_person,Soft Broadcast News,3298.97848
+2016,11,mins_p_person,Soft Broadcast News,3510.21370
+2016,12,mins_p_person,Soft Broadcast News,3030.85302
+2017,1,mins_p_person,Soft Broadcast News,3643.87409
+2017,2,mins_p_person,Soft Broadcast News,2942.74618
+2017,3,mins_p_person,Soft Broadcast News,3171.25277
+2017,4,mins_p_person,Soft Broadcast News,2812.00891
+2017,5,mins_p_person,Soft Broadcast News,3090.87515
+2017,6,mins_p_person,Soft Broadcast News,3128.43331
+2017,7,mins_p_person,Soft Broadcast News,2763.11132
+2017,8,mins_p_person,Soft Broadcast News,3256.01977
+2017,9,mins_p_person,Soft Broadcast News,3028.24241
+2017,10,mins_p_person,Soft Broadcast News,3085.89147
+2017,11,mins_p_person,Soft Broadcast News,2952.08489
+2017,12,mins_p_person,Soft Broadcast News,3402.04052
+2018,1,mins_p_person,Soft Broadcast News,3726.27878
+2018,2,mins_p_person,Soft Broadcast News,3084.51319
+2018,3,mins_p_person,Soft Broadcast News,3305.61914
+2018,4,mins_p_person,Soft Broadcast News,3468.95716
+2018,5,mins_p_person,Soft Broadcast News,3196.29286
+2018,6,mins_p_person,Soft Broadcast News,3152.39393
+2018,7,mins_p_person,Soft Broadcast News,3264.04435
+2018,8,mins_p_person,Soft Broadcast News,3168.00388
+2018,9,mins_p_person,Soft Broadcast News,3505.82727
+2018,10,mins_p_person,Soft Broadcast News,3351.64195
+2018,11,mins_p_person,Soft Broadcast News,3238.64053
+2018,12,mins_p_person,Soft Broadcast News,3347.21808
+2019,1,mins_p_person,Soft Broadcast News,1836.68483
+2019,2,mins_p_person,Soft Broadcast News,1396.46780
+2019,3,mins_p_person,Soft Broadcast News,1387.08946
+2019,4,mins_p_person,Soft Broadcast News,1434.06831
+2019,5,mins_p_person,Soft Broadcast News,1411.38917
+2019,6,mins_p_person,Soft Broadcast News,1373.22628
+2019,7,mins_p_person,Soft Broadcast News,1344.71939
+2019,8,mins_p_person,Soft Broadcast News,1352.03796
+2019,9,mins_p_person,Soft Broadcast News,1279.67449
+2019,10,mins_p_person,Soft Broadcast News,1355.15735
+2019,11,mins_p_person,Soft Broadcast News,1157.67753
+2019,12,mins_p_person,Soft Broadcast News,1230.48739
+2020,1,mins_p_person,Soft Broadcast News,1482.97553
+2020,2,mins_p_person,Soft Broadcast News,1351.76031
+2020,3,mins_p_person,Soft Broadcast News,1689.77305
+2020,4,mins_p_person,Soft Broadcast News,1717.13420
+2020,5,mins_p_person,Soft Broadcast News,1563.77673
+2020,6,mins_p_person,Soft Broadcast News,1480.03310
+2020,7,mins_p_person,Soft Broadcast News,1495.97102
+2020,8,mins_p_person,Soft Broadcast News,1446.85930
+2020,9,mins_p_person,Soft Broadcast News,1430.79922
+2020,10,mins_p_person,Soft Broadcast News,1581.43400
+2020,11,mins_p_person,Soft Broadcast News,1535.80182
+2020,12,mins_p_person,Soft Broadcast News,1453.20897
+2021,1,mins_p_person,Soft Broadcast News,1854.57208
+2021,2,mins_p_person,Soft Broadcast News,1089.13794
+2021,3,mins_p_person,Soft Broadcast News,1516.84136
+2021,4,mins_p_person,Soft Broadcast News,1421.55624
+2021,5,mins_p_person,Soft Broadcast News,1326.15059
+2021,6,mins_p_person,Soft Broadcast News,1321.73145
+2021,7,mins_p_person,Soft Broadcast News,1216.47741
+2021,8,mins_p_person,Soft Broadcast News,1310.35016
+2021,9,mins_p_person,Soft Broadcast News,1288.61078
+2021,10,mins_p_person,Soft Broadcast News,1228.70861
+2021,11,mins_p_person,Soft Broadcast News,1239.75482
+2021,12,mins_p_person,Soft Broadcast News,1313.03770
+2022,1,mins_p_person,Soft Broadcast News,1326.14972
+2022,2,mins_p_person,Soft Broadcast News,1209.19339
+2022,3,mins_p_person,Soft Broadcast News,1452.95984
+2022,4,mins_p_person,Soft Broadcast News,1312.44947
+2022,5,mins_p_person,Soft Broadcast News,1286.86205
+2022,6,mins_p_person,Soft Broadcast News,1307.22178
+2022,7,mins_p_person,Soft Broadcast News,1287.39510
+2022,8,mins_p_person,Soft Broadcast News,1354.44271
+2022,9,mins_p_person,Soft Broadcast News,1316.99758
+2022,10,mins_p_person,Soft Broadcast News,1273.00818
+2016,1,sizes,FOX,17392553.12901
+2016,2,sizes,FOX,15353728.17859
+2016,3,sizes,FOX,17722785.35482
+2016,4,sizes,FOX,15483975.13334
+2016,5,sizes,FOX,14978234.96778
+2016,6,sizes,FOX,15980576.19999
+2016,7,sizes,FOX,19409990.19358
+2016,8,sizes,FOX,16299045.32257
+2016,9,sizes,FOX,18330822.90001
+2016,10,sizes,FOX,18439943.70968
+2016,11,sizes,FOX,24391058.33335
+2016,12,sizes,FOX,18881582.19358
+2017,1,sizes,FOX,22056332.58061
+2017,2,sizes,FOX,21297146.96426
+2017,3,sizes,FOX,19016470.45158
+2017,4,sizes,FOX,20251746.39999
+2017,5,sizes,FOX,18715721.41937
+2017,6,sizes,FOX,19276965.26667
+2017,7,sizes,FOX,18161442.19351
+2017,8,sizes,FOX,19026387.41936
+2017,9,sizes,FOX,19064637.36667
+2017,10,sizes,FOX,19809288.68573
+2017,11,sizes,FOX,18674563.23327
+2017,12,sizes,FOX,18305543.19353
+2018,1,sizes,FOX,18860184.25804
+2018,2,sizes,FOX,17953214.32140
+2018,3,sizes,FOX,17519661.51608
+2018,4,sizes,FOX,18018748.40007
+2018,5,sizes,FOX,17794725.90318
+2018,6,sizes,FOX,18938127.56669
+2018,7,sizes,FOX,17931700.00001
+2018,8,sizes,FOX,17428082.67742
+2018,9,sizes,FOX,18815687.20000
+2018,10,sizes,FOX,19824760.70970
+2018,11,sizes,FOX,19140219.39997
+2018,12,sizes,FOX,17081919.45161
+2019,1,sizes,FOX,20339273.90323
+2019,2,sizes,FOX,21052644.35714
+2019,3,sizes,FOX,20405207.54839
+2019,4,sizes,FOX,20188489.70000
+2019,5,sizes,FOX,19215964.93548
+2019,6,sizes,FOX,19225905.33333
+2019,7,sizes,FOX,20335770.96774
+2019,8,sizes,FOX,20319221.03226
+2019,9,sizes,FOX,20030297.46667
+2019,10,sizes,FOX,20427375.77419
+2019,11,sizes,FOX,20465316.86667
+2019,12,sizes,FOX,21220776.83871
+2020,1,sizes,FOX,23395890.00000
+2020,2,sizes,FOX,22682140.37931
+2020,3,sizes,FOX,26984879.41935
+2020,4,sizes,FOX,26533996.73333
+2020,5,sizes,FOX,24387905.80645
+2020,6,sizes,FOX,24637755.70000
+2020,7,sizes,FOX,23513568.45161
+2020,8,sizes,FOX,25240923.48387
+2020,9,sizes,FOX,25976170.03333
+2020,10,sizes,FOX,26892496.54839
+2020,11,sizes,FOX,30602991.20000
+2020,12,sizes,FOX,19032198.67742
+2021,1,sizes,FOX,21322650.16129
+2021,2,sizes,FOX,18866205.67857
+2021,3,sizes,FOX,18326115.67742
+2021,4,sizes,FOX,18728703.00000
+2021,5,sizes,FOX,17665050.35484
+2021,6,sizes,FOX,17418986.53333
+2021,7,sizes,FOX,17101528.87097
+2021,8,sizes,FOX,19474153.16129
+2021,9,sizes,FOX,19273393.33333
+2021,10,sizes,FOX,18830792.41935
+2021,11,sizes,FOX,20608060.70000
+2021,12,sizes,FOX,19105527.51613
+2022,1,sizes,FOX,18859536.41935
+2022,2,sizes,FOX,21465099.89286
+2022,3,sizes,FOX,21992495.77419
+2022,4,sizes,FOX,19826023.63333
+2022,5,sizes,FOX,19249771.48387
+2022,6,sizes,FOX,19029272.53333
+2022,7,sizes,FOX,18179663.54839
+2022,8,sizes,FOX,18298451.61290
+2022,9,sizes,FOX,18499693.96667
+2022,10,sizes,FOX,18212042.64516
+2016,1,mins_p_person,FOX,3806.63892
+2016,2,mins_p_person,FOX,3726.85827
+2016,3,mins_p_person,FOX,3648.74143
+2016,4,mins_p_person,FOX,3201.98894
+2016,5,mins_p_person,FOX,3488.45221
+2016,6,mins_p_person,FOX,3302.10731
+2016,7,mins_p_person,FOX,3611.08079
+2016,8,mins_p_person,FOX,3482.85555
+2016,9,mins_p_person,FOX,3452.94803
+2016,10,mins_p_person,FOX,3625.94762
+2016,11,mins_p_person,FOX,3645.49102
+2016,12,mins_p_person,FOX,3715.28945
+2017,1,mins_p_person,FOX,4199.11679
+2017,2,mins_p_person,FOX,3562.68264
+2017,3,mins_p_person,FOX,3499.31253
+2017,4,mins_p_person,FOX,3389.40917
+2017,5,mins_p_person,FOX,3341.47589
+2017,6,mins_p_person,FOX,3367.59563
+2017,7,mins_p_person,FOX,3169.37283
+2017,8,mins_p_person,FOX,3213.87764
+2017,9,mins_p_person,FOX,3198.50103
+2017,10,mins_p_person,FOX,3422.72834
+2017,11,mins_p_person,FOX,3345.37674
+2017,12,mins_p_person,FOX,3552.73137
+2018,1,mins_p_person,FOX,3801.33325
+2018,2,mins_p_person,FOX,3290.15428
+2018,3,mins_p_person,FOX,3432.81100
+2018,4,mins_p_person,FOX,3465.10903
+2018,5,mins_p_person,FOX,3518.11976
+2018,6,mins_p_person,FOX,3340.03978
+2018,7,mins_p_person,FOX,3368.03913
+2018,8,mins_p_person,FOX,3345.86255
+2018,9,mins_p_person,FOX,3465.31164
+2018,10,mins_p_person,FOX,3703.68193
+2018,11,mins_p_person,FOX,3305.24006
+2018,12,mins_p_person,FOX,3091.17419
+2019,1,mins_p_person,FOX,2804.18441
+2019,2,mins_p_person,FOX,2686.82637
+2019,3,mins_p_person,FOX,2874.63317
+2019,4,mins_p_person,FOX,2724.68248
+2019,5,mins_p_person,FOX,2909.85002
+2019,6,mins_p_person,FOX,2697.21589
+2019,7,mins_p_person,FOX,2803.29868
+2019,8,mins_p_person,FOX,2721.40370
+2019,9,mins_p_person,FOX,2738.71739
+2019,10,mins_p_person,FOX,2988.87967
+2019,11,mins_p_person,FOX,3005.68250
+2019,12,mins_p_person,FOX,3021.43907
+2020,1,mins_p_person,FOX,3252.97139
+2020,2,mins_p_person,FOX,3243.77665
+2020,3,mins_p_person,FOX,3487.85086
+2020,4,mins_p_person,FOX,3387.47582
+2020,5,mins_p_person,FOX,3182.21830
+2020,6,mins_p_person,FOX,2907.45905
+2020,7,mins_p_person,FOX,2937.69877
+2020,8,mins_p_person,FOX,2984.11744
+2020,9,mins_p_person,FOX,2833.35633
+2020,10,mins_p_person,FOX,3346.46037
+2020,11,mins_p_person,FOX,2295.07015
+2020,12,mins_p_person,FOX,2727.44399
+2021,1,mins_p_person,FOX,2591.52460
+2021,2,mins_p_person,FOX,2555.92582
+2021,3,mins_p_person,FOX,2777.97915
+2021,4,mins_p_person,FOX,2512.85762
+2021,5,mins_p_person,FOX,2536.42189
+2021,6,mins_p_person,FOX,2570.55635
+2021,7,mins_p_person,FOX,2600.87533
+2021,8,mins_p_person,FOX,2933.93294
+2021,9,mins_p_person,FOX,2768.25449
+2021,10,mins_p_person,FOX,2787.03194
+2021,11,mins_p_person,FOX,2791.29848
+2021,12,mins_p_person,FOX,2759.17265
+2022,1,mins_p_person,FOX,2987.10639
+2022,2,mins_p_person,FOX,2720.88177
+2022,3,mins_p_person,FOX,3134.27415
+2022,4,mins_p_person,FOX,2769.02941
+2022,5,mins_p_person,FOX,2872.48289
+2022,6,mins_p_person,FOX,2719.48259
+2022,7,mins_p_person,FOX,2708.74670
+2022,8,mins_p_person,FOX,2946.95717
+2022,9,mins_p_person,FOX,2815.99313
+2022,10,mins_p_person,FOX,2963.59847
+2016,1,sizes,CNN,6296820.64516
+2016,2,sizes,CNN,8396625.96429
+2016,3,sizes,CNN,10930144.96774
+2016,4,sizes,CNN,8622152.30001
+2016,5,sizes,CNN,7220292.74194
+2016,6,sizes,CNN,8578353.13336
+2016,7,sizes,CNN,12674648.67741
+2016,8,sizes,CNN,7029680.29031
+2016,9,sizes,CNN,8975097.30001
+2016,10,sizes,CNN,10336500.64520
+2016,11,sizes,CNN,13676703.06666
+2016,12,sizes,CNN,6268885.70969
+2017,1,sizes,CNN,9039138.09678
+2017,2,sizes,CNN,8836436.10716
+2017,3,sizes,CNN,7998553.12902
+2017,4,sizes,CNN,8503201.70000
+2017,5,sizes,CNN,8373479.74192
+2017,6,sizes,CNN,8342600.19997
+2017,7,sizes,CNN,7863603.29030
+2017,8,sizes,CNN,9375808.45160
+2017,9,sizes,CNN,10478610.76664
+2017,10,sizes,CNN,7726310.14286
+2017,11,sizes,CNN,6813221.66667
+2017,12,sizes,CNN,7335440.35486
+2018,1,sizes,CNN,6730847.67742
+2018,2,sizes,CNN,6667742.07141
+2018,3,sizes,CNN,6819211.25806
+2018,4,sizes,CNN,7107812.86667
+2018,5,sizes,CNN,7532026.83868
+2018,6,sizes,CNN,6237473.60002
+2018,7,sizes,CNN,6495790.77417
+2018,8,sizes,CNN,7052935.87099
+2018,9,sizes,CNN,7990329.56668
+2018,10,sizes,CNN,7135107.41936
+2018,11,sizes,CNN,8614654.63333
+2018,12,sizes,CNN,7714431.61288
+2019,1,sizes,CNN,10132421.54839
+2019,2,sizes,CNN,9330900.78571
+2019,3,sizes,CNN,8230476.51613
+2019,4,sizes,CNN,7830451.43333
+2019,5,sizes,CNN,7404242.45161
+2019,6,sizes,CNN,6931026.43333
+2019,7,sizes,CNN,11048177.61290
+2019,8,sizes,CNN,8707354.96774
+2019,9,sizes,CNN,8566234.56667
+2019,10,sizes,CNN,9988456.09677
+2019,11,sizes,CNN,9135569.40000
+2019,12,sizes,CNN,9854605.83871
+2020,1,sizes,CNN,11307396.48387
+2020,2,sizes,CNN,8595784.55172
+2020,3,sizes,CNN,15482790.70968
+2020,4,sizes,CNN,14494184.13333
+2020,5,sizes,CNN,14372450.54839
+2020,6,sizes,CNN,13986441.60000
+2020,7,sizes,CNN,11232278.54839
+2020,8,sizes,CNN,12385847.96774
+2020,9,sizes,CNN,12060712.66667
+2020,10,sizes,CNN,14220846.06452
+2020,11,sizes,CNN,23056237.03333
+2020,12,sizes,CNN,13846067.09677
+2021,1,sizes,CNN,22406966.00000
+2021,2,sizes,CNN,13866696.75000
+2021,3,sizes,CNN,10393927.58065
+2021,4,sizes,CNN,10857146.43333
+2021,5,sizes,CNN,8348160.45161
+2021,6,sizes,CNN,8538504.13333
+2021,7,sizes,CNN,8699462.45161
+2021,8,sizes,CNN,9695967.35484
+2021,9,sizes,CNN,8422656.90000
+2021,10,sizes,CNN,6873645.64516
+2021,11,sizes,CNN,7023844.30000
+2021,12,sizes,CNN,8017401.90323
+2022,1,sizes,CNN,6531785.38710
+2022,2,sizes,CNN,10272820.96429
+2022,3,sizes,CNN,11049340.41935
+2022,4,sizes,CNN,7788664.56667
+2022,5,sizes,CNN,7398075.29032
+2022,6,sizes,CNN,7410237.96667
+2022,7,sizes,CNN,7656648.87097
+2022,8,sizes,CNN,7151649.32258
+2022,9,sizes,CNN,9012240.56667
+2022,10,sizes,CNN,6755384.83871
+2016,1,mins_p_person,CNN,2953.62305
+2016,2,mins_p_person,CNN,2464.30782
+2016,3,mins_p_person,CNN,2632.18407
+2016,4,mins_p_person,CNN,2161.93008
+2016,5,mins_p_person,CNN,2586.15246
+2016,6,mins_p_person,CNN,2463.02337
+2016,7,mins_p_person,CNN,2585.46963
+2016,8,mins_p_person,CNN,2935.65621
+2016,9,mins_p_person,CNN,2606.68904
+2016,10,mins_p_person,CNN,3097.88734
+2016,11,mins_p_person,CNN,2055.67315
+2016,12,mins_p_person,CNN,2310.37049
+2017,1,mins_p_person,CNN,2713.60174
+2017,2,mins_p_person,CNN,2839.03302
+2017,3,mins_p_person,CNN,3294.72075
+2017,4,mins_p_person,CNN,2509.27879
+2017,5,mins_p_person,CNN,3008.52445
+2017,6,mins_p_person,CNN,2852.23177
+2017,7,mins_p_person,CNN,2577.90732
+2017,8,mins_p_person,CNN,2677.57043
+2017,9,mins_p_person,CNN,2445.79674
+2017,10,mins_p_person,CNN,2654.86528
+2017,11,mins_p_person,CNN,2711.11851
+2017,12,mins_p_person,CNN,2505.76408
+2018,1,mins_p_person,CNN,3278.31973
+2018,2,mins_p_person,CNN,2884.80558
+2018,3,mins_p_person,CNN,3316.05772
+2018,4,mins_p_person,CNN,3027.58715
+2018,5,mins_p_person,CNN,2706.08036
+2018,6,mins_p_person,CNN,2694.97815
+2018,7,mins_p_person,CNN,2844.33072
+2018,8,mins_p_person,CNN,3063.91927
+2018,9,mins_p_person,CNN,2901.18799
+2018,10,mins_p_person,CNN,2959.63039
+2018,11,mins_p_person,CNN,2644.67189
+2018,12,mins_p_person,CNN,3069.73303
+2019,1,mins_p_person,CNN,2732.81215
+2019,2,mins_p_person,CNN,2371.78631
+2019,3,mins_p_person,CNN,2398.78053
+2019,4,mins_p_person,CNN,2192.48118
+2019,5,mins_p_person,CNN,2536.40281
+2019,6,mins_p_person,CNN,2328.47412
+2019,7,mins_p_person,CNN,1877.11393
+2019,8,mins_p_person,CNN,2269.63205
+2019,9,mins_p_person,CNN,2355.65432
+2019,10,mins_p_person,CNN,2522.06345
+2019,11,mins_p_person,CNN,3051.70068
+2019,12,mins_p_person,CNN,2138.57441
+2020,1,mins_p_person,CNN,2253.53222
+2020,2,mins_p_person,CNN,2311.41273
+2020,3,mins_p_person,CNN,2896.25952
+2020,4,mins_p_person,CNN,3164.15719
+2020,5,mins_p_person,CNN,2635.68475
+2020,6,mins_p_person,CNN,2658.21029
+2020,7,mins_p_person,CNN,2930.04707
+2020,8,mins_p_person,CNN,2721.19964
+2020,9,mins_p_person,CNN,2426.76236
+2020,10,mins_p_person,CNN,3219.67253
+2020,11,mins_p_person,CNN,2681.55422
+2020,12,mins_p_person,CNN,2938.40575
+2021,1,mins_p_person,CNN,3407.05424
+2021,2,mins_p_person,CNN,2578.80133
+2021,3,mins_p_person,CNN,2470.66431
+2021,4,mins_p_person,CNN,2189.76180
+2021,5,mins_p_person,CNN,2007.89533
+2021,6,mins_p_person,CNN,2033.93995
+2021,7,mins_p_person,CNN,1921.55912
+2021,8,mins_p_person,CNN,1898.35753
+2021,9,mins_p_person,CNN,1826.13695
+2021,10,mins_p_person,CNN,1923.94006
+2021,11,mins_p_person,CNN,1901.29131
+2021,12,mins_p_person,CNN,1710.74304
+2022,1,mins_p_person,CNN,2111.99269
+2022,2,mins_p_person,CNN,1727.78854
+2022,3,mins_p_person,CNN,2355.52552
+2022,4,mins_p_person,CNN,2009.11415
+2022,5,mins_p_person,CNN,1774.17674
+2022,6,mins_p_person,CNN,1654.19371
+2022,7,mins_p_person,CNN,1884.88796
+2022,8,mins_p_person,CNN,2041.46833
+2022,9,mins_p_person,CNN,1829.29359
+2022,10,mins_p_person,CNN,1942.67422
+2016,1,sizes,MSNBC,6811723.25805
+2016,2,sizes,MSNBC,6927684.10717
+2016,3,sizes,MSNBC,8779047.35480
+2016,4,sizes,MSNBC,7875024.43333
+2016,5,sizes,MSNBC,8129048.80643
+2016,6,sizes,MSNBC,8318587.06665
+2016,7,sizes,MSNBC,11014152.93551
+2016,8,sizes,MSNBC,8980480.54838
+2016,9,sizes,MSNBC,9811894.80003
+2016,10,sizes,MSNBC,10213123.25810
+2016,11,sizes,MSNBC,10063849.13332
+2016,12,sizes,MSNBC,7560881.87097
+2017,1,sizes,MSNBC,9719690.41935
+2017,2,sizes,MSNBC,9766168.03572
+2017,3,sizes,MSNBC,10680575.51612
+2017,4,sizes,MSNBC,10716179.33337
+2017,5,sizes,MSNBC,11215590.90322
+2017,6,sizes,MSNBC,11014808.36666
+2017,7,sizes,MSNBC,11553959.74192
+2017,8,sizes,MSNBC,11479979.67744
+2017,9,sizes,MSNBC,11008201.03337
+2017,10,sizes,MSNBC,12441372.00000
+2017,11,sizes,MSNBC,12339579.66669
+2017,12,sizes,MSNBC,12446484.64517
+2018,1,sizes,MSNBC,11715482.19354
+2018,2,sizes,MSNBC,12082479.82140
+2018,3,sizes,MSNBC,12328128.45160
+2018,4,sizes,MSNBC,12046233.76666
+2018,5,sizes,MSNBC,11832718.51613
+2018,6,sizes,MSNBC,11820213.80002
+2018,7,sizes,MSNBC,12421671.54840
+2018,8,sizes,MSNBC,12907430.61290
+2018,9,sizes,MSNBC,13055527.93333
+2018,10,sizes,MSNBC,11799074.12905
+2018,11,sizes,MSNBC,12553120.16666
+2018,12,sizes,MSNBC,12531468.83871
+2019,1,sizes,MSNBC,13570431.12903
+2019,2,sizes,MSNBC,13156468.64286
+2019,3,sizes,MSNBC,12523026.03226
+2019,4,sizes,MSNBC,12177790.96667
+2019,5,sizes,MSNBC,11930581.64516
+2019,6,sizes,MSNBC,12915292.46667
+2019,7,sizes,MSNBC,11574396.93548
+2019,8,sizes,MSNBC,11972355.67742
+2019,9,sizes,MSNBC,12343039.83333
+2019,10,sizes,MSNBC,13281958.29032
+2019,11,sizes,MSNBC,13775036.00000
+2019,12,sizes,MSNBC,12610330.74194
+2020,1,sizes,MSNBC,13608715.06452
+2020,2,sizes,MSNBC,13712997.10345
+2020,3,sizes,MSNBC,14737549.00000
+2020,4,sizes,MSNBC,13978777.26667
+2020,5,sizes,MSNBC,13826900.41935
+2020,6,sizes,MSNBC,13682507.46667
+2020,7,sizes,MSNBC,13808773.12903
+2020,8,sizes,MSNBC,14538227.48387
+2020,9,sizes,MSNBC,13785464.33333
+2020,10,sizes,MSNBC,14280892.61290
+2020,11,sizes,MSNBC,17323888.93333
+2020,12,sizes,MSNBC,13682216.87097
+2021,1,sizes,MSNBC,16080482.48387
+2021,2,sizes,MSNBC,13789472.89286
+2021,3,sizes,MSNBC,12393545.19355
+2021,4,sizes,MSNBC,11931363.96667
+2021,5,sizes,MSNBC,10972543.09677
+2021,6,sizes,MSNBC,10275348.20000
+2021,7,sizes,MSNBC,10013727.16129
+2021,8,sizes,MSNBC,9966843.77419
+2021,9,sizes,MSNBC,9565792.70000
+2021,10,sizes,MSNBC,9209886.45161
+2021,11,sizes,MSNBC,8906411.66667
+2021,12,sizes,MSNBC,8665780.12903
+2022,1,sizes,MSNBC,8596587.25806
+2022,2,sizes,MSNBC,9324003.53571
+2022,3,sizes,MSNBC,9415838.58065
+2022,4,sizes,MSNBC,8294868.26667
+2022,5,sizes,MSNBC,8224215.09677
+2022,6,sizes,MSNBC,9671465.50000
+2022,7,sizes,MSNBC,8402404.80645
+2022,8,sizes,MSNBC,8796757.93548
+2022,9,sizes,MSNBC,8214682.80000
+2022,10,sizes,MSNBC,7662324.22581
+2016,1,mins_p_person,MSNBC,3876.09784
+2016,2,mins_p_person,MSNBC,4006.09111
+2016,3,mins_p_person,MSNBC,5270.91507
+2016,4,mins_p_person,MSNBC,3826.79810
+2016,5,mins_p_person,MSNBC,3666.98763
+2016,6,mins_p_person,MSNBC,4625.28100
+2016,7,mins_p_person,MSNBC,4779.97415
+2016,8,mins_p_person,MSNBC,5609.21127
+2016,9,mins_p_person,MSNBC,5369.05628
+2016,10,mins_p_person,MSNBC,6220.69962
+2016,11,mins_p_person,MSNBC,4594.50804
+2016,12,mins_p_person,MSNBC,4213.07179
+2017,1,mins_p_person,MSNBC,5389.57831
+2017,2,mins_p_person,MSNBC,5169.11439
+2017,3,mins_p_person,MSNBC,6239.07798
+2017,4,mins_p_person,MSNBC,4955.79639
+2017,5,mins_p_person,MSNBC,5927.78006
+2017,6,mins_p_person,MSNBC,5697.01800
+2017,7,mins_p_person,MSNBC,5623.53738
+2017,8,mins_p_person,MSNBC,6618.17505
+2017,9,mins_p_person,MSNBC,5220.56522
+2017,10,mins_p_person,MSNBC,5848.13614
+2017,11,mins_p_person,MSNBC,5950.44956
+2017,12,mins_p_person,MSNBC,6095.97820
+2018,1,mins_p_person,MSNBC,6708.04131
+2018,2,mins_p_person,MSNBC,6057.78440
+2018,3,mins_p_person,MSNBC,6723.43038
+2018,4,mins_p_person,MSNBC,6338.50527
+2018,5,mins_p_person,MSNBC,6605.70973
+2018,6,mins_p_person,MSNBC,5962.51816
+2018,7,mins_p_person,MSNBC,6167.65743
+2018,8,mins_p_person,MSNBC,6963.18807
+2018,9,mins_p_person,MSNBC,6676.67697
+2018,10,mins_p_person,MSNBC,6620.32378
+2018,11,mins_p_person,MSNBC,6369.15284
+2018,12,mins_p_person,MSNBC,6683.48750
+2019,1,mins_p_person,MSNBC,6236.37459
+2019,2,mins_p_person,MSNBC,5721.89929
+2019,3,mins_p_person,MSNBC,5731.14028
+2019,4,mins_p_person,MSNBC,5418.38091
+2019,5,mins_p_person,MSNBC,5672.88818
+2019,6,mins_p_person,MSNBC,4672.48339
+2019,7,mins_p_person,MSNBC,5568.95182
+2019,8,mins_p_person,MSNBC,5480.33619
+2019,9,mins_p_person,MSNBC,5418.44013
+2019,10,mins_p_person,MSNBC,6524.77689
+2019,11,mins_p_person,MSNBC,5846.22740
+2019,12,mins_p_person,MSNBC,5278.31737
+2020,1,mins_p_person,MSNBC,5674.00075
+2020,2,mins_p_person,MSNBC,4925.14163
+2020,3,mins_p_person,MSNBC,6802.61542
+2020,4,mins_p_person,MSNBC,7051.18143
+2020,5,mins_p_person,MSNBC,6278.17875
+2020,6,mins_p_person,MSNBC,6539.75316
+2020,7,mins_p_person,MSNBC,6652.12996
+2020,8,mins_p_person,MSNBC,5923.71744
+2020,9,mins_p_person,MSNBC,6221.58288
+2020,10,mins_p_person,MSNBC,7079.12445
+2020,11,mins_p_person,MSNBC,6290.09515
+2020,12,mins_p_person,MSNBC,6574.30587
+2021,1,mins_p_person,MSNBC,7172.36876
+2021,2,mins_p_person,MSNBC,6014.04030
+2021,3,mins_p_person,MSNBC,6263.32349
+2021,4,mins_p_person,MSNBC,5497.35078
+2021,5,mins_p_person,MSNBC,4955.02812
+2021,6,mins_p_person,MSNBC,4931.92672
+2021,7,mins_p_person,MSNBC,5212.68844
+2021,8,mins_p_person,MSNBC,4952.04655
+2021,9,mins_p_person,MSNBC,4981.38095
+2021,10,mins_p_person,MSNBC,4752.39392
+2021,11,mins_p_person,MSNBC,4730.22198
+2021,12,mins_p_person,MSNBC,4885.32039
+2022,1,mins_p_person,MSNBC,5074.46711
+2022,2,mins_p_person,MSNBC,4627.85180
+2022,3,mins_p_person,MSNBC,5180.99822
+2022,4,mins_p_person,MSNBC,4697.63396
+2022,5,mins_p_person,MSNBC,4332.87633
+2022,6,mins_p_person,MSNBC,5099.70728
+2022,7,mins_p_person,MSNBC,4985.32203
+2022,8,mins_p_person,MSNBC,5346.57553
+2022,9,mins_p_person,MSNBC,5372.96903
+2022,10,mins_p_person,MSNBC,5132.41019
+2016,1,sizes,Newsmax,0.00000
+2016,2,sizes,Newsmax,0.00000
+2016,3,sizes,Newsmax,0.00000
+2016,4,sizes,Newsmax,0.00000
+2016,5,sizes,Newsmax,0.00000
+2016,6,sizes,Newsmax,0.00000
+2016,7,sizes,Newsmax,0.00000
+2016,8,sizes,Newsmax,0.00000
+2016,9,sizes,Newsmax,0.00000
+2016,10,sizes,Newsmax,0.00000
+2016,11,sizes,Newsmax,0.00000
+2016,12,sizes,Newsmax,0.00000
+2017,1,sizes,Newsmax,0.00000
+2017,2,sizes,Newsmax,0.00000
+2017,3,sizes,Newsmax,0.00000
+2017,4,sizes,Newsmax,0.00000
+2017,5,sizes,Newsmax,0.00000
+2017,6,sizes,Newsmax,0.00000
+2017,7,sizes,Newsmax,0.00000
+2017,8,sizes,Newsmax,0.00000
+2017,9,sizes,Newsmax,0.00000
+2017,10,sizes,Newsmax,0.00000
+2017,11,sizes,Newsmax,0.00000
+2017,12,sizes,Newsmax,0.00000
+2018,1,sizes,Newsmax,0.00000
+2018,2,sizes,Newsmax,0.00000
+2018,3,sizes,Newsmax,0.00000
+2018,4,sizes,Newsmax,0.00000
+2018,5,sizes,Newsmax,0.00000
+2018,6,sizes,Newsmax,0.00000
+2018,7,sizes,Newsmax,0.00000
+2018,8,sizes,Newsmax,0.00000
+2018,9,sizes,Newsmax,0.00000
+2018,10,sizes,Newsmax,0.00000
+2018,11,sizes,Newsmax,0.00000
+2018,12,sizes,Newsmax,0.00000
+2019,1,sizes,Newsmax,0.00000
+2019,2,sizes,Newsmax,0.00000
+2019,3,sizes,Newsmax,0.00000
+2019,4,sizes,Newsmax,0.00000
+2019,5,sizes,Newsmax,0.00000
+2019,6,sizes,Newsmax,0.00000
+2019,7,sizes,Newsmax,0.00000
+2019,8,sizes,Newsmax,0.00000
+2019,9,sizes,Newsmax,0.00000
+2019,10,sizes,Newsmax,0.00000
+2019,11,sizes,Newsmax,0.00000
+2019,12,sizes,Newsmax,0.00000
+2020,1,sizes,Newsmax,0.00000
+2020,2,sizes,Newsmax,0.00000
+2020,3,sizes,Newsmax,0.00000
+2020,4,sizes,Newsmax,0.00000
+2020,5,sizes,Newsmax,0.00000
+2020,6,sizes,Newsmax,7606.63333
+2020,7,sizes,Newsmax,115513.48387
+2020,8,sizes,Newsmax,187382.77419
+2020,9,sizes,Newsmax,246352.43333
+2020,10,sizes,Newsmax,356679.87097
+2020,11,sizes,Newsmax,1694927.83333
+2020,12,sizes,Newsmax,2416882.51613
+2021,1,sizes,Newsmax,2882131.35484
+2021,2,sizes,Newsmax,1911701.71429
+2021,3,sizes,Newsmax,1465479.96774
+2021,4,sizes,Newsmax,1407949.46667
+2021,5,sizes,Newsmax,1401902.12903
+2021,6,sizes,Newsmax,1592741.46667
+2021,7,sizes,Newsmax,1456289.90323
+2021,8,sizes,Newsmax,1899503.12903
+2021,9,sizes,Newsmax,1783953.66667
+2021,10,sizes,Newsmax,1559296.19355
+2021,11,sizes,Newsmax,1462227.66667
+2021,12,sizes,Newsmax,1216556.09677
+2022,1,sizes,Newsmax,1624104.35484
+2022,2,sizes,Newsmax,1577999.03571
+2022,3,sizes,Newsmax,1473134.58065
+2022,4,sizes,Newsmax,1314648.06667
+2022,5,sizes,Newsmax,1287748.03226
+2022,6,sizes,Newsmax,1303916.26667
+2022,7,sizes,Newsmax,1377673.67742
+2022,8,sizes,Newsmax,1697807.48387
+2022,9,sizes,Newsmax,1255477.43333
+2022,10,sizes,Newsmax,1321160.64516
+2016,1,mins_p_person,Newsmax,0.00000
+2016,2,mins_p_person,Newsmax,0.00000
+2016,3,mins_p_person,Newsmax,0.00000
+2016,4,mins_p_person,Newsmax,0.00000
+2016,5,mins_p_person,Newsmax,0.00000
+2016,6,mins_p_person,Newsmax,0.00000
+2016,7,mins_p_person,Newsmax,0.00000
+2016,8,mins_p_person,Newsmax,0.00000
+2016,9,mins_p_person,Newsmax,0.00000
+2016,10,mins_p_person,Newsmax,0.00000
+2016,11,mins_p_person,Newsmax,0.00000
+2016,12,mins_p_person,Newsmax,0.00000
+2017,1,mins_p_person,Newsmax,0.00000
+2017,2,mins_p_person,Newsmax,0.00000
+2017,3,mins_p_person,Newsmax,0.00000
+2017,4,mins_p_person,Newsmax,0.00000
+2017,5,mins_p_person,Newsmax,0.00000
+2017,6,mins_p_person,Newsmax,0.00000
+2017,7,mins_p_person,Newsmax,0.00000
+2017,8,mins_p_person,Newsmax,0.00000
+2017,9,mins_p_person,Newsmax,0.00000
+2017,10,mins_p_person,Newsmax,0.00000
+2017,11,mins_p_person,Newsmax,0.00000
+2017,12,mins_p_person,Newsmax,0.00000
+2018,1,mins_p_person,Newsmax,0.00000
+2018,2,mins_p_person,Newsmax,0.00000
+2018,3,mins_p_person,Newsmax,0.00000
+2018,4,mins_p_person,Newsmax,0.00000
+2018,5,mins_p_person,Newsmax,0.00000
+2018,6,mins_p_person,Newsmax,0.00000
+2018,7,mins_p_person,Newsmax,0.00000
+2018,8,mins_p_person,Newsmax,0.00000
+2018,9,mins_p_person,Newsmax,0.00000
+2018,10,mins_p_person,Newsmax,0.00000
+2018,11,mins_p_person,Newsmax,0.00000
+2018,12,mins_p_person,Newsmax,0.00000
+2019,1,mins_p_person,Newsmax,0.00000
+2019,2,mins_p_person,Newsmax,0.00000
+2019,3,mins_p_person,Newsmax,0.00000
+2019,4,mins_p_person,Newsmax,0.00000
+2019,5,mins_p_person,Newsmax,0.00000
+2019,6,mins_p_person,Newsmax,0.00000
+2019,7,mins_p_person,Newsmax,0.00000
+2019,8,mins_p_person,Newsmax,0.00000
+2019,9,mins_p_person,Newsmax,0.00000
+2019,10,mins_p_person,Newsmax,0.00000
+2019,11,mins_p_person,Newsmax,0.00000
+2019,12,mins_p_person,Newsmax,0.00000
+2020,1,mins_p_person,Newsmax,0.00000
+2020,2,mins_p_person,Newsmax,0.00000
+2020,3,mins_p_person,Newsmax,0.00000
+2020,4,mins_p_person,Newsmax,0.00000
+2020,5,mins_p_person,Newsmax,0.00000
+2020,6,mins_p_person,Newsmax,99.79172
+2020,7,mins_p_person,Newsmax,362.39085
+2020,8,mins_p_person,Newsmax,460.75364
+2020,9,mins_p_person,Newsmax,777.15414
+2020,10,mins_p_person,Newsmax,742.15265
+2020,11,mins_p_person,Newsmax,1437.71940
+2020,12,mins_p_person,Newsmax,1223.98848
+2021,1,mins_p_person,Newsmax,1274.87788
+2021,2,mins_p_person,Newsmax,1347.67743
+2021,3,mins_p_person,Newsmax,1434.54974
+2021,4,mins_p_person,Newsmax,1264.08071
+2021,5,mins_p_person,Newsmax,1300.63877
+2021,6,mins_p_person,Newsmax,1164.62256
+2021,7,mins_p_person,Newsmax,1343.20106
+2021,8,mins_p_person,Newsmax,1308.79841
+2021,9,mins_p_person,Newsmax,1200.51079
+2021,10,mins_p_person,Newsmax,1296.61200
+2021,11,mins_p_person,Newsmax,1443.96254
+2021,12,mins_p_person,Newsmax,1305.19709
+2022,1,mins_p_person,Newsmax,1361.57923
+2022,2,mins_p_person,Newsmax,1474.95051
+2022,3,mins_p_person,Newsmax,1492.76366
+2022,4,mins_p_person,Newsmax,1516.54160
+2022,5,mins_p_person,Newsmax,1471.27200
+2022,6,mins_p_person,Newsmax,1324.83279
+2022,7,mins_p_person,Newsmax,1302.10107
+2022,8,mins_p_person,Newsmax,1432.58850
+2022,9,mins_p_person,Newsmax,1562.48130
+2022,10,mins_p_person,Newsmax,1549.14930
+2016,1,sizes,Spanish News,16107355.25804
+2016,2,sizes,Spanish News,14971908.17854
+2016,3,sizes,Spanish News,14453733.51614
+2016,4,sizes,Spanish News,14484087.50000
+2016,5,sizes,Spanish News,14129405.64517
+2016,6,sizes,Spanish News,14029084.76663
+2016,7,sizes,Spanish News,13912884.64512
+2016,8,sizes,Spanish News,14389996.54840
+2016,9,sizes,Spanish News,14673308.36666
+2016,10,sizes,Spanish News,14702217.12905
+2016,11,sizes,Spanish News,15268421.79999
+2016,12,sizes,Spanish News,14498766.74195
+2017,1,sizes,Spanish News,15032064.00002
+2017,2,sizes,Spanish News,14676673.00000
+2017,3,sizes,Spanish News,14530843.35487
+2017,4,sizes,Spanish News,14272506.76666
+2017,5,sizes,Spanish News,13901677.45163
+2017,6,sizes,Spanish News,13686773.36667
+2017,7,sizes,Spanish News,13357420.77422
+2017,8,sizes,Spanish News,13708601.41937
+2017,9,sizes,Spanish News,15335731.76666
+2017,10,sizes,Spanish News,13770554.71430
+2017,11,sizes,Spanish News,13643914.36664
+2017,12,sizes,Spanish News,13719077.03227
+2018,1,sizes,Spanish News,14247432.48386
+2018,2,sizes,Spanish News,13651725.75002
+2018,3,sizes,Spanish News,13671484.19352
+2018,4,sizes,Spanish News,13588195.40000
+2018,5,sizes,Spanish News,13292508.25808
+2018,6,sizes,Spanish News,13924249.63333
+2018,7,sizes,Spanish News,13270113.99998
+2018,8,sizes,Spanish News,12566286.61292
+2018,9,sizes,Spanish News,13057271.70000
+2018,10,sizes,Spanish News,12954358.03225
+2018,11,sizes,Spanish News,13323186.90004
+2018,12,sizes,Spanish News,12763990.77419
+2019,1,sizes,Spanish News,13250422.70968
+2019,2,sizes,Spanish News,13025482.50000
+2019,3,sizes,Spanish News,12511342.25806
+2019,4,sizes,Spanish News,12453060.63333
+2019,5,sizes,Spanish News,12660081.70968
+2019,6,sizes,Spanish News,12424736.00000
+2019,7,sizes,Spanish News,12408193.19355
+2019,8,sizes,Spanish News,12351559.61290
+2019,9,sizes,Spanish News,12852970.86667
+2019,10,sizes,Spanish News,12943918.64516
+2019,11,sizes,Spanish News,12721615.66667
+2019,12,sizes,Spanish News,12507881.80645
+2020,1,sizes,Spanish News,13091319.25806
+2020,2,sizes,Spanish News,13138862.75862
+2020,3,sizes,Spanish News,13883408.25806
+2020,4,sizes,Spanish News,13072861.46667
+2020,5,sizes,Spanish News,12041807.03226
+2020,6,sizes,Spanish News,11598810.43333
+2020,7,sizes,Spanish News,11498880.74194
+2020,8,sizes,Spanish News,11351274.70968
+2020,9,sizes,Spanish News,11211767.46667
+2020,10,sizes,Spanish News,11048505.41935
+2020,11,sizes,Spanish News,12142517.96667
+2020,12,sizes,Spanish News,11439066.22581
+2021,1,sizes,Spanish News,11720776.38710
+2021,2,sizes,Spanish News,10462153.96429
+2021,3,sizes,Spanish News,11096532.67742
+2021,4,sizes,Spanish News,11488032.60000
+2021,5,sizes,Spanish News,11229484.45161
+2021,6,sizes,Spanish News,11573976.70000
+2021,7,sizes,Spanish News,11033082.64516
+2021,8,sizes,Spanish News,10899234.64516
+2021,9,sizes,Spanish News,10946353.13333
+2021,10,sizes,Spanish News,11134432.70968
+2021,11,sizes,Spanish News,10929731.66667
+2021,12,sizes,Spanish News,11292789.96774
+2022,1,sizes,Spanish News,11280747.77419
+2022,2,sizes,Spanish News,10954830.92857
+2022,3,sizes,Spanish News,11714700.03226
+2022,4,sizes,Spanish News,10045774.66667
+2022,5,sizes,Spanish News,10525453.90323
+2022,6,sizes,Spanish News,10050915.36667
+2022,7,sizes,Spanish News,9774008.74194
+2022,8,sizes,Spanish News,9468501.06452
+2022,9,sizes,Spanish News,10272592.96667
+2022,10,sizes,Spanish News,9701876.09677
+2016,1,mins_p_person,Spanish News,1280.87533
+2016,2,mins_p_person,Spanish News,1179.74066
+2016,3,mins_p_person,Spanish News,1058.83551
+2016,4,mins_p_person,Spanish News,986.57295
+2016,5,mins_p_person,Spanish News,971.89971
+2016,6,mins_p_person,Spanish News,909.86109
+2016,7,mins_p_person,Spanish News,976.53927
+2016,8,mins_p_person,Spanish News,1022.46333
+2016,9,mins_p_person,Spanish News,1121.38435
+2016,10,mins_p_person,Spanish News,1153.39302
+2016,11,mins_p_person,Spanish News,1263.99480
+2016,12,mins_p_person,Spanish News,1064.43642
+2017,1,mins_p_person,Spanish News,1330.27428
+2017,2,mins_p_person,Spanish News,1173.30531
+2017,3,mins_p_person,Spanish News,1123.46373
+2017,4,mins_p_person,Spanish News,1040.86982
+2017,5,mins_p_person,Spanish News,1105.11590
+2017,6,mins_p_person,Spanish News,1071.29270
+2017,7,mins_p_person,Spanish News,922.13458
+2017,8,mins_p_person,Spanish News,1130.83411
+2017,9,mins_p_person,Spanish News,1378.06328
+2017,10,mins_p_person,Spanish News,1125.24002
+2017,11,mins_p_person,Spanish News,1032.83271
+2017,12,mins_p_person,Spanish News,994.24201
+2018,1,mins_p_person,Spanish News,1163.57483
+2018,2,mins_p_person,Spanish News,1083.18934
+2018,3,mins_p_person,Spanish News,1060.62288
+2018,4,mins_p_person,Spanish News,1063.70322
+2018,5,mins_p_person,Spanish News,1066.76200
+2018,6,mins_p_person,Spanish News,988.05544
+2018,7,mins_p_person,Spanish News,911.44845
+2018,8,mins_p_person,Spanish News,1023.75692
+2018,9,mins_p_person,Spanish News,1041.80770
+2018,10,mins_p_person,Spanish News,1128.92692
+2018,11,mins_p_person,Spanish News,1143.60188
+2018,12,mins_p_person,Spanish News,1110.95953
+2019,1,mins_p_person,Spanish News,806.76064
+2019,2,mins_p_person,Spanish News,654.31377
+2019,3,mins_p_person,Spanish News,590.34454
+2019,4,mins_p_person,Spanish News,576.27767
+2019,5,mins_p_person,Spanish News,576.91253
+2019,6,mins_p_person,Spanish News,505.14923
+2019,7,mins_p_person,Spanish News,537.33155
+2019,8,mins_p_person,Spanish News,572.19322
+2019,9,mins_p_person,Spanish News,569.50941
+2019,10,mins_p_person,Spanish News,669.70045
+2019,11,mins_p_person,Spanish News,572.85083
+2019,12,mins_p_person,Spanish News,541.01703
+2020,1,mins_p_person,Spanish News,632.64359
+2020,2,mins_p_person,Spanish News,539.75663
+2020,3,mins_p_person,Spanish News,803.23815
+2020,4,mins_p_person,Spanish News,869.00025
+2020,5,mins_p_person,Spanish News,650.80927
+2020,6,mins_p_person,Spanish News,637.70069
+2020,7,mins_p_person,Spanish News,631.51218
+2020,8,mins_p_person,Spanish News,602.93618
+2020,9,mins_p_person,Spanish News,578.61327
+2020,10,mins_p_person,Spanish News,607.62272
+2020,11,mins_p_person,Spanish News,787.33949
+2020,12,mins_p_person,Spanish News,635.90239
+2021,1,mins_p_person,Spanish News,804.87376
+2021,2,mins_p_person,Spanish News,654.64139
+2021,3,mins_p_person,Spanish News,634.19561
+2021,4,mins_p_person,Spanish News,576.61715
+2021,5,mins_p_person,Spanish News,540.49992
+2021,6,mins_p_person,Spanish News,573.42700
+2021,7,mins_p_person,Spanish News,547.82090
+2021,8,mins_p_person,Spanish News,616.29401
+2021,9,mins_p_person,Spanish News,620.45283
+2021,10,mins_p_person,Spanish News,615.88477
+2021,11,mins_p_person,Spanish News,601.23239
+2021,12,mins_p_person,Spanish News,642.60574
+2022,1,mins_p_person,Spanish News,646.68827
+2022,2,mins_p_person,Spanish News,644.97368
+2022,3,mins_p_person,Spanish News,654.31034
+2022,4,mins_p_person,Spanish News,571.49978
+2022,5,mins_p_person,Spanish News,613.77547
+2022,6,mins_p_person,Spanish News,599.14603
+2022,7,mins_p_person,Spanish News,569.91758
+2022,8,mins_p_person,Spanish News,607.59197
+2022,9,mins_p_person,Spanish News,581.12974
+2022,10,mins_p_person,Spanish News,619.04181
+2016,1,sizes,Other Cable,12738463.00000
+2016,2,sizes,Other Cable,13178982.50000
+2016,3,sizes,Other Cable,13155509.51612
+2016,4,sizes,Other Cable,12965850.06667
+2016,5,sizes,Other Cable,12545583.38708
+2016,6,sizes,Other Cable,13756152.03330
+2016,7,sizes,Other Cable,13041731.77418
+2016,8,sizes,Other Cable,12987939.96772
+2016,9,sizes,Other Cable,11200446.66667
+2016,10,sizes,Other Cable,10371521.45161
+2016,11,sizes,Other Cable,10883481.66667
+2016,12,sizes,Other Cable,11893007.22580
+2017,1,sizes,Other Cable,12257857.09676
+2017,2,sizes,Other Cable,12463757.53571
+2017,3,sizes,Other Cable,12160047.80648
+2017,4,sizes,Other Cable,11996778.76669
+2017,5,sizes,Other Cable,12331907.70972
+2017,6,sizes,Other Cable,11326173.63330
+2017,7,sizes,Other Cable,12052872.96778
+2017,8,sizes,Other Cable,12058073.29030
+2017,9,sizes,Other Cable,11308273.80001
+2017,10,sizes,Other Cable,14273547.94287
+2017,11,sizes,Other Cable,14381799.60000
+2017,12,sizes,Other Cable,13769493.90322
+2018,1,sizes,Other Cable,14389982.67743
+2018,2,sizes,Other Cable,14731691.92860
+2018,3,sizes,Other Cable,15584632.12903
+2018,4,sizes,Other Cable,15113282.89996
+2018,5,sizes,Other Cable,15402296.32259
+2018,6,sizes,Other Cable,14639856.83332
+2018,7,sizes,Other Cable,14607997.77420
+2018,8,sizes,Other Cable,14670271.87101
+2018,9,sizes,Other Cable,13058653.36665
+2018,10,sizes,Other Cable,13701733.48384
+2018,11,sizes,Other Cable,14478677.06665
+2018,12,sizes,Other Cable,12898628.48387
+2019,1,sizes,Other Cable,13145389.64516
+2019,2,sizes,Other Cable,14103616.75000
+2019,3,sizes,Other Cable,16314171.32258
+2019,4,sizes,Other Cable,16506611.70000
+2019,5,sizes,Other Cable,15981779.29032
+2019,6,sizes,Other Cable,15826790.90000
+2019,7,sizes,Other Cable,15396657.54839
+2019,8,sizes,Other Cable,16142563.09677
+2019,9,sizes,Other Cable,14205208.53333
+2019,10,sizes,Other Cable,13518329.87097
+2019,11,sizes,Other Cable,13283910.46667
+2019,12,sizes,Other Cable,13011575.12903
+2020,1,sizes,Other Cable,13106879.58065
+2020,2,sizes,Other Cable,14280280.44828
+2020,3,sizes,Other Cable,12089732.93548
+2020,4,sizes,Other Cable,12670557.86667
+2020,5,sizes,Other Cable,12496775.38710
+2020,6,sizes,Other Cable,12874338.56667
+2020,7,sizes,Other Cable,12612155.03226
+2020,8,sizes,Other Cable,12749155.80645
+2020,9,sizes,Other Cable,12497505.76667
+2020,10,sizes,Other Cable,12132139.12903
+2020,11,sizes,Other Cable,9928006.56667
+2020,12,sizes,Other Cable,12485803.16129
+2021,1,sizes,Other Cable,10647064.41935
+2021,2,sizes,Other Cable,13789679.17857
+2021,3,sizes,Other Cable,14360240.64516
+2021,4,sizes,Other Cable,15068208.50000
+2021,5,sizes,Other Cable,14069976.77419
+2021,6,sizes,Other Cable,14719121.66667
+2021,7,sizes,Other Cable,11599214.93548
+2021,8,sizes,Other Cable,11529067.83871
+2021,9,sizes,Other Cable,12179652.80000
+2021,10,sizes,Other Cable,13306327.22581
+2021,11,sizes,Other Cable,13311279.16667
+2021,12,sizes,Other Cable,12623546.00000
+2022,1,sizes,Other Cable,13723745.03226
+2022,2,sizes,Other Cable,12282538.60714
+2022,3,sizes,Other Cable,11491193.00000
+2022,4,sizes,Other Cable,12623209.70000
+2022,5,sizes,Other Cable,13058210.22581
+2022,6,sizes,Other Cable,12420872.73333
+2022,7,sizes,Other Cable,11739063.67742
+2022,8,sizes,Other Cable,12038111.96774
+2022,9,sizes,Other Cable,10559739.80000
+2022,10,sizes,Other Cable,10931828.22581
+2016,1,mins_p_person,Other Cable,1175.50044
+2016,2,mins_p_person,Other Cable,1072.76548
+2016,3,mins_p_person,Other Cable,1125.81275
+2016,4,mins_p_person,Other Cable,1065.99642
+2016,5,mins_p_person,Other Cable,1002.13599
+2016,6,mins_p_person,Other Cable,1033.76325
+2016,7,mins_p_person,Other Cable,1344.11032
+2016,8,mins_p_person,Other Cable,1277.97602
+2016,9,mins_p_person,Other Cable,1563.32859
+2016,10,mins_p_person,Other Cable,1621.69547
+2016,11,mins_p_person,Other Cable,1745.18668
+2016,12,mins_p_person,Other Cable,1652.10007
+2017,1,mins_p_person,Other Cable,2293.94415
+2017,2,mins_p_person,Other Cable,1836.88413
+2017,3,mins_p_person,Other Cable,1292.44726
+2017,4,mins_p_person,Other Cable,1257.06960
+2017,5,mins_p_person,Other Cable,1268.36817
+2017,6,mins_p_person,Other Cable,1210.01524
+2017,7,mins_p_person,Other Cable,1208.23929
+2017,8,mins_p_person,Other Cable,1304.29634
+2017,9,mins_p_person,Other Cable,1394.30937
+2017,10,mins_p_person,Other Cable,2172.92790
+2017,11,mins_p_person,Other Cable,2067.33357
+2017,12,mins_p_person,Other Cable,2271.78444
+2018,1,mins_p_person,Other Cable,2259.38871
+2018,2,mins_p_person,Other Cable,2206.32366
+2018,3,mins_p_person,Other Cable,2028.97139
+2018,4,mins_p_person,Other Cable,1997.65215
+2018,5,mins_p_person,Other Cable,1930.46212
+2018,6,mins_p_person,Other Cable,1843.56878
+2018,7,mins_p_person,Other Cable,1922.75381
+2018,8,mins_p_person,Other Cable,2084.53925
+2018,9,mins_p_person,Other Cable,2184.56232
+2018,10,mins_p_person,Other Cable,2188.29003
+2018,11,mins_p_person,Other Cable,2454.63188
+2018,12,mins_p_person,Other Cable,2269.01124
+2019,1,mins_p_person,Other Cable,995.44041
+2019,2,mins_p_person,Other Cable,867.58571
+2019,3,mins_p_person,Other Cable,911.36421
+2019,4,mins_p_person,Other Cable,845.91926
+2019,5,mins_p_person,Other Cable,923.87998
+2019,6,mins_p_person,Other Cable,842.45529
+2019,7,mins_p_person,Other Cable,889.62539
+2019,8,mins_p_person,Other Cable,967.91725
+2019,9,mins_p_person,Other Cable,942.97837
+2019,10,mins_p_person,Other Cable,992.14789
+2019,11,mins_p_person,Other Cable,954.00001
+2019,12,mins_p_person,Other Cable,1084.36979
+2020,1,mins_p_person,Other Cable,1129.96480
+2020,2,mins_p_person,Other Cable,1081.68400
+2020,3,mins_p_person,Other Cable,1423.12973
+2020,4,mins_p_person,Other Cable,1241.91859
+2020,5,mins_p_person,Other Cable,1186.39912
+2020,6,mins_p_person,Other Cable,1166.70762
+2020,7,mins_p_person,Other Cable,1122.17988
+2020,8,mins_p_person,Other Cable,1112.04599
+2020,9,mins_p_person,Other Cable,1120.38251
+2020,10,mins_p_person,Other Cable,1170.70835
+2020,11,mins_p_person,Other Cable,1280.88930
+2020,12,mins_p_person,Other Cable,1141.59833
+2021,1,mins_p_person,Other Cable,1236.47583
+2021,2,mins_p_person,Other Cable,987.22335
+2021,3,mins_p_person,Other Cable,1173.03627
+2021,4,mins_p_person,Other Cable,1090.77038
+2021,5,mins_p_person,Other Cable,1013.09535
+2021,6,mins_p_person,Other Cable,1010.94313
+2021,7,mins_p_person,Other Cable,1147.64479
+2021,8,mins_p_person,Other Cable,1207.78455
+2021,9,mins_p_person,Other Cable,1135.28379
+2021,10,mins_p_person,Other Cable,1178.16993
+2021,11,mins_p_person,Other Cable,1197.28657
+2021,12,mins_p_person,Other Cable,1247.36136
+2022,1,mins_p_person,Other Cable,1242.32612
+2022,2,mins_p_person,Other Cable,1209.28469
+2022,3,mins_p_person,Other Cable,1307.09019
+2022,4,mins_p_person,Other Cable,1159.54921
+2022,5,mins_p_person,Other Cable,1224.86548
+2022,6,mins_p_person,Other Cable,1108.87696
+2022,7,mins_p_person,Other Cable,1144.55239
+2022,8,mins_p_person,Other Cable,1129.65972
+2022,9,mins_p_person,Other Cable,1133.90022
+2022,10,mins_p_person,Other Cable,1177.36310

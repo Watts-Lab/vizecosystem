@@ -5,7 +5,7 @@ from re import search
 from pandas import read_csv, concat, to_datetime, Grouper
 
 def load(f):
-  return read_csv(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{f}')
+  return read_csv(f'~/Desktop/upenn/media-consumption/vizecosystem/{f}')
 
 def get_top_n(x, n, val):
   return x.sort_values(val, ascending=False)\

@@ -29,12 +29,12 @@
 	let colorInterpolator : any;
 	export let politicalChecked : boolean;
 	let dietChecked : boolean = false
-  let scenarioChecked : boolean = true
+  	let scenarioChecked : boolean = true
 	let tvChecked : boolean = false
 	$: political_lean = politicalChecked ? 'R' : 'L'
 	$: medium = tvChecked ? 'web' : 'tv'
 	$: diet_threshold = dietChecked ? 75 : 50
-  $: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent'
+  	$: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent'
 
 	// tooltip togglers
 	$: tooltip = null;
@@ -323,7 +323,7 @@
 <style lang='scss'>
 	.chart {
 		width: 100%;
-		height: 500px;
+		height: 730px;
 		position: relative;
 		grid-row: 5 / span 1;
 		grid-column: span 12;

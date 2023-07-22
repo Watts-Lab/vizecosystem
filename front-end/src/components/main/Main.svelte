@@ -1,90 +1,91 @@
 <script lang="ts">
 	// node_modules
 	import { onMount } from 'svelte';
+	import { flatten } from 'layercake';
 	import { csv } from "d3-fetch";
-  import { autoType } from "d3-dsv";
-	import { group } from 'd3-array';
-	import { scaleDiverging, scaleThreshold, scaleSqrt, scaleLinear } from 'd3-scale';
+  	import { autoType } from "d3-dsv";
+	import { group, rollup, rollups, max, sum, zip } from 'd3-array';
 
 	// types
 	import type Author from '../../types/Authors';
-	import type ChartConfig from '../../types/ChartConfig';
+
+	// import state data
+	import states from '../../data/states.json'
 
 	// components
 	import Title from '../copy/Title.svelte';
 	import Description from '../copy/Description.svelte';
 	import Authors from '../copy/Authors.svelte';
 	import ChartPlaceholder from '../global/chart-placeholder.svelte';
+	import ControlSwitch from "../global/control-switch.svelte";
+	import StackedAreas from '../graphs/StackedAreas.svelte';
+
+	// // import utils
+	import { formatMonth } from '../../utils/format-dates';
+	import labelMap from '../../utils/labels';
 	
 	// prop declaration
 	export let title : string;
 	export let standfirst : any[] = [{value: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi consequatur inventore exercitationem ex perferendis provident, earum cumque maiores quam quidem labore, mollitia odit eaque laborum?'}]
 	export let authors : Author[];
 
-	// local data
-	// import states from '../../data/states_centroids.json'
-  
-
 	// chart config
-	
 	let data : any[];
-	let table : any[];
 	let dataMap : Map<string, any>
-	let fullDataMap : Map<string, any>
-	const urlChart : string  = 'assets/data/EchoCh-by_state.csv'
+	let rows : number[]
+	let tvChecked : boolean = false;
+	const urlChart : string  = 'assets/data/EchoCh-national_consumption_tv_and_web.csv'
 	
 	onMount(async () => {
 		// load data for map + line chart
 		const resChart = await csv(urlChart, autoType)
 		data = resChart
-    // parse data for 
+			.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
+			.sort((a, b) => +a.date - +b.date)
+    	// parse data for 
 		dataMap = group(
 			data,
-			d => d.period,
+			d => d.medium,
+			d => d.gender,
+			d => d.age_group,
 			d => d.state,
-			d => d.medium, 
-			d => d.diet_threshold,
-			d => d.partisanship_scenario
+			d => +d.date,
+			d => d.category
 		)
 
-    fullDataMap = group(
-			data,
-			d => d.state,
-			d => d.medium, 
-			d => d.partisanship_scenario
-		)
+		rows = Array.from(new Set(data.map(d => +d.date)))
 	})
 
-	const chartConfig : Map<number,ChartConfig> = new Map([
-		[0, {
-			type: "diverging",
-			rScale: scaleSqrt,
-			rDomain: [1e3, 3e6],
-			rRange: [10, 90],
-			zScale: scaleThreshold,
-			zDomain: [-0.1, -0.05, -0.01, 0.01, 0.05, 0.1],
-			colorInterpolator: scaleDiverging,
-			colorInterpolatorDomain: [-0.75, 0, 0.75],
-			colorInterpolatorScheme: ["#011f5b", "gainsboro", "#990000"],
-			colorPaletteAnchors: [-0.7, -0.35, -0.18, 0, 0.18, 0.35, 0.85]
-		}],
-		[1, {
-			type: "linear",
-			rScale: scaleSqrt,
-			rDomain: [1e3, 3e6],
-			rRange: [10, 90],
-			zScale: scaleThreshold,
-			zDomain: [0, 0.01, 0.025, 0.05],
-			colorInterpolator: scaleLinear,
-			colorInterpolatorDomain: [0, 1],
-			colorInterpolatorScheme: "gainsboro",
-			colorPaletteAnchors: [0, 0.25, 0.5, 0.75, 1]
+	
+
+	const chartConfig : Map<string, { order : string[], colors: string[] }> = new Map([
+		['tv', {
+			order: ['non-news', 'news'],
+			colors: ['#33a02c', '#b2df8a'],
+			yDomain: [0, 750]
+		}
+		],
+		['web', {
+			order: ['other_news', 'facebook', 'hard_news', 'youtube', 'twitter', 'reddit', 'fake_news'],
+			colors: ['#a6cee3',  '#e31a1c', '#fb9a99', '#cab2d6', '#fdbf6f', '#ff7f00', '#6a3d9a'],
+			yDomain: [0, 100]
 		}],
 	])
 
-	$: chart = "0"
-	$: activeChart = chartConfig.get(+chart)
-	$: politicalChecked = true
+	
+	// $: politicalChecked = true
+	$: medium = tvChecked ? 'web' : 'tv'
+	$: gender = 'All'
+    $: age_group = 'All'
+	$: location = 'US'
+	$: activeChart = chartConfig.get(medium)
+
+	function resetAge() { age_group = 'All' }
+    function resetGender() { gender = 'All' }
+	function resetState() { location = 'US' }
+
+	$: if (location !== 'US') { resetGender(); resetAge(); }
+	$: if (age_group !== 'All' || gender !== 'All') { resetState() }
 </script>
 
 <main>
@@ -93,13 +94,79 @@
 		<Description standfirst={ standfirst }></Description>
 		<Authors authors={ authors }></Authors>
 	</div>
+
+	<div class='chart-wrapper'>
+        <div class='controls'>
+            <ControlSwitch 
+                id='medium' 
+                title='Medium'
+                labels={[ 'TV', 'Web' ]}
+				info='Internet or TV'
+                bind:checked={ tvChecked } 
+            />
+
+			<div id='location' class='control control-menu'>
+                <div class='control-title'>Location</div>
+                <select id="age-group-menu" name="location" bind:value={location}>
+					<option value={'US'}>US</option>
+					{#each states.sort((a,b) => a.state.localeCompare(b.state)) as state}
+                    	<option value={state.abbr}>{state.state}</option>
+					{/each}
+                </select>
+            </div>
+
+			<div id='age-group' class='control control-menu'>
+                <div class='control-title'>Age group</div>
+                <select id="age-group-menu" name="age-group" bind:value={age_group}>
+                    <option value='All'>All</option>
+                    <option value='18-24'>18-24</option>
+                    <option value='25-34'>25-34</option>
+                    <option value='35-44'>35-44</option>
+                    <option value='45-54'>45-54</option>
+                    <option value='55+'>55+</option>
+                </select>
+            </div>
+
+            <div id='gender' class='control control-menu'>
+                <div class='control-title'>Gender</div>
+                <select id="gender-menu" name="location" bind:value={gender}>
+                    <option value='All' selected>All</option>
+                    <option value='Male'>Male</option>
+                    <option value='Female'>Female</option>
+                </select>
+            </div>
+		</div>
+
+		<div class='legend'>
+			{#each zip(activeChart.colors, activeChart.order) as cat}
+				<div class='legend-item'>
+					<div class={'legend-color'} style='--color: {cat[0]}'></div>
+					<div>{labelMap.get(cat[1])}</div>
+				</div>
+			{/each}
+		</div>
+
+		{#if data}
+			<StackedAreas 
+				dataMap={dataMap.get(medium).get(gender).get(age_group).get(location)} 
+				{data} 
+				{rows} 
+				categories={activeChart.order} 
+				colors={activeChart.colors}
+				yDomain={activeChart.yDomain}
+				formatter={formatMonth}
+			/>
+			
+			{:else} <ChartPlaceholder row={0}/>
+		{/if}
+	</div>
 	
-	<ChartPlaceholder row={0}/>
+	
 </main>
 
 <style lang='scss'>
 	main {
-		max-width: $column-width * 1.25;
+		max-width: $column-width;
 		margin: 0 auto;
 	}
 
@@ -126,13 +193,61 @@
 	}
 
 	.controls {
-		max-height: 45px;
-		display: grid;
-    row-gap: 5px;
-    grid-template-columns: auto auto 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "one two empty"
-      "three four four";
+        display: flex;
+
+        .control-switch, 
+        .control-menu,
+        .control-range {
+            display: flex;
+            // align-items: center;
+            flex-wrap: wrap;
+        
+            .control-title {
+                width: 100%;
+                @include fs-xxs;
+                font-weight: 300;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+
+                .info {
+                background-color: $off-white;
+                display: inline-block;
+                width: 12px;
+                border-radius: 100%;
+                text-align: center;
+                @include fs-xs;
+                }
+            }
+
+            .control-label {
+                @include fs-sm;
+            }
+            .control-label.active {
+                text-decoration: underline;
+            }
+
+            select {
+                margin: 0;
+                @include fs-sm;
+            }
+        }
+	}
+
+	.legend {
+		display: flex; 
+		gap: 10px;
+		margin-top: 15px;
+
+		.legend-item {
+			display: flex;
+			align-items: center;
+			gap: 3px;
+			
+			.legend-color {
+				background-color: var(--color);
+				width: 15px;
+				height: 15px;
+			}
+		}
 	}
 </style>

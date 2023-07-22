@@ -181,7 +181,7 @@ def parse_tv(df):
 
 def concat_tv(a, b):
   # load data
-  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
 
   # # if TV:
   # parse subset from file name

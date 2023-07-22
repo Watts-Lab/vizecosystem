@@ -1,148 +1,71 @@
 <script lang="ts">
-	// node_modules
-	import { LayerCake, Svg, Html, flatten } from 'layercake';
-	// import { group } from 'd3-array';
+	// // node_modules
+	import { LayerCake, Svg, flatten } from 'layercake';
 	import { scaleTime, scaleOrdinal } from 'd3-scale'
-	import { stack } from 'd3-shape'
+	import { stack, stackOrderDescending } from 'd3-shape'
 
-	// // types
-	// import type Row from '../../types/TimeSeriesRow';
+	// // // types
 
-	// // components & molecules & atoms
-	import BarStacked from './atoms/BarStacked.svelte';
+	// // // components & molecules & atoms
 	import AxisY from './atoms/AxisY.svelte';
 	import AxisX from './atoms/AxisX.svelte';
-	import Tooltip from './tooltips/Tooltip.svelte';
-	import Caption from './atoms/Caption.svelte';
 	import AreaStacked from './atoms/AreaStacked.svelte';
 
+	// // // import utils
 
-	// // import utils
-	import colorMap from '../../utils/colors';
-	import labelMap from '../../utils/labels';
-	import { formatPct } from '../../utils/format-numbers';
+	// // // props declaration
+	export let margins : Object = { top: 20, right: 10, bottom: 20, left: 45 }
+	export let data : any[]
+	export let dataMap : Map<any, any>
+	export let categories : string[]
+	export let colors : string[]
+	export let rows : number[]
+	export let formatter : Function
+	export let yDomain : number[]
 
-	// // props declaration
-	export let data : any[]|any;
-	export let url : string;
-	export let yKey : number[];
-	export let xKey : string;
-	export let zKey : string;
-	export let formatter : Function = formatPct(0)
-	export let clusterLabelMap : Map<string,string> = labelMap
-	export let keyLabelMap : Map<string,string> = labelMap
-	export let clusterColorMap : Map<string,string> = colorMap
-	export let keyColorMap : Map<string,string> = colorMap
-	export let caption: string = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, tempore?';;
-	export let includeCaption : boolean = true;
-	export let spanCol : number = 12;
-	export let row : number = 4;
-	export let customClass : string = 'chart-large';
-	export let tooltipType : string = 'arrow';
-	export let title : string;
+	$: wideData = rows.map(r => {
+		const obj = {}
+		const dataForThisDate = dataMap.get(r)
+		if (dataForThisDate !== undefined) {
+			categories.forEach(c => {
+				if (dataForThisDate.has(c)) obj[c] = dataForThisDate.get(c)[0].value
+			})
+			return { date: new Date(r), ...obj }
+		}
+	}).filter(d => d !== undefined)
 
-	// variable declaration
-	const columns = data.columns.filter(d => d !== xKey);
-	const stacker = stack()
-		.keys(columns)
-	const stackedData = stacker(data)
+	$: columns = Object.keys(wideData[0]).filter(d => d !== 'date')
+	$: stacker = stack().keys(columns).order(stackOrderDescending)
+	$: stackedData = stacker(wideData)
 
-	// let yDomain : any[] = enforceOrder(data.map(d => d[yKey]), prefOrder)
-	let zRange : any[] = Array.from(keyColorMap).filter(d => columns.includes(d[0])).map(d => d[1])
-	// variable declaration
-	let evt;
-	let hideTooltip : boolean|CustomEvent<any> = true;
 </script>
 
-
-<div 
-	class={`chart-wrapper ${spanCol === 12 ? 'split-cols' : 'single-cols'}`} 
-	style={`--spanCol: ${spanCol}; --row: ${row}`}
->
-	<div class={`chart stacked-area-chart ${customClass}`}>
-		<LayerCake
-			padding={{ top: 0, right: 0, bottom: 15, left: 55 }}
-			flatData={ flatten(stackedData) }
-			data={ stackedData }
-			x={ d => d.data[xKey] }
-      xScale={ scaleTime() }
-			y={ yKey }
-			z={ zKey }
-			zScale={ scaleOrdinal() }
-			{ zRange }
-			zDomain={ columns }
-		>
-			<Svg>
-				<AxisX
-					gridlines={false}
-					ticks={3}
-					snapTicks={true}
-					tickMarks={true}
-					formatTick={formatter}
-				/>
-				<AxisY gridlines={ false } formatTick={ d => d } />
-        <AreaStacked />
-			</Svg>
-			<!-- <Html
-				pointerEvents={false}
-			>
-				{#if hideTooltip !== true}
-					<Tooltip
-						{evt}
-						offset={-10}
-						let:detail
-					>	
-						{#if tooltipType === 'arrow'}
-							{@const tooltipData = { ...detail.props }}
-							<div>
-								<span
-									class='cluster-label'
-									style="--color: {keyColorMap.get(tooltipData.key)}"
-								>
-									{keyLabelMap.get(tooltipData.key)}
-								</span> ➞
-								<span 
-									class='cluster-label' 
-									style="--color: {clusterColorMap.get(tooltipData.cluster)}"
-								>
-									{clusterLabelMap.get(tooltipData.cluster)}
-								</span>
-							</div>
-							{#each ['value'] as key}
-								{@const value = tooltipData[tooltipData.key]}
-								<div class="row">{formatter(value)}</div>
-							{/each}
-
-							{:else}
-								{@const tooltipData = { ...detail.props }}
-								<div>
-									<p>Community: <span 
-										class='cluster-label' 
-										style="--color: {clusterColorMap.get(tooltipData.cluster)}"
-									>
-										{clusterLabelMap.get(tooltipData.cluster)}
-									</span></p>
-									<p>Content: <span
-										class='cluster-label'
-										style="--color: {keyColorMap.get(tooltipData.key)}"
-									>
-										{keyLabelMap.get(tooltipData.key)}
-									</span></p>
-									
-								</div>
-								{#each ['value'] as key}
-									{@const value = tooltipData[tooltipData.key]}
-									<div class="row">Share: {formatter(value)}</div>
-								{/each}
-						{/if}
-					</Tooltip>
-				{/if}
-			</Html> -->
-		</LayerCake>
-	</div>
-	{#if includeCaption}
-        <Caption { caption } { url} type={spanCol === 12 ? 'split-cols' : 'single-cols'}/>
-    {/if}
+<div class={`chart stacked-area-chart`}>
+	<LayerCake
+		padding={ margins }
+		flatData={ flatten(stackedData) }
+		data={ stackedData }
+		x={ d => d.data.date }
+		xScale={ scaleTime() }
+		y={ [0, 1] }
+		yDomain={ yDomain }
+		z={ 'key' }
+		zScale={scaleOrdinal()}
+		zDomain={categories}
+		zRange={colors}
+	>
+		<Svg>
+			<AxisX
+				gridlines={false}
+				ticks={3}
+				snapTicks={true}
+				tickMarks={true}
+				formatTick={formatter}
+			/>
+			<AxisY formatTick={ d => d } ticks={ 4 } />
+			<AreaStacked />
+		</Svg>
+	</LayerCake>
 </div>
 
 <style lang='scss'>

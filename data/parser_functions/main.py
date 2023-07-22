@@ -1,91 +1,131 @@
 # built-in modules
-from math import ceil
+from functools import reduce
 
 # venv modules
-from pandas import read_csv, melt
-
-month_range = range(1,13)
+from pandas import read_csv, melt, concat
 
 def load(f):
   return read_csv(f)
 
-def CREATE_FAKE_DATES(d):
-    # THIS IS PROVISIONAL BECAUSE THE DATA DOESNT HAVE DATES
-    n_rows = d.shape[0]
-    
-    total_years = ceil(n_rows / len(month_range))
-    
-    year_range = range(2016, 2016 + total_years)
-    
-    add_months = (list(month_range) * total_years)[0:n_rows]
-    add_years = sorted(list(year_range) * 12)[0:n_rows]
-    
-    d['month'] = add_months
-    d['year'] = add_years
-
-    return d
-
 def parse_tv(d):
-    d = CREATE_FAKE_DATES(d)
+    # clean NaNs
+    d['age_group'] = d['age_group'].fillna('All')
+    d['gender'] = d['gender'].fillna('All')
+    d['state'] = d['state'].fillna('US')
+
+    # replace values 1/2 values for gender
+    d['gender'] = d['gender'].replace({ 1: 'Male', 2: 'Female' })
 
     cols = [
-        'year',
-        'month',
+      'activityyear',
+      'activitymonth',
+      'state',
+      'gender',
+      'age_group'
     ]
 
     values = [
-        'avg news mins / person / day',
-        'avg non-news mins / person / day'
+      'avg news mins / person / day',
+      'avg non-news mins / person / day'
     ]
 
     d = melt(
-        d,
-        id_vars=cols,
-        value_vars=values,
-        var_name='category'
+      d,
+      id_vars=cols,
+      value_vars=values,
+      var_name='category'
     )
 
     d['category'] = d['category']\
-        .str.extract(r'avg (.*)[_|\s]mins \/ person \/ day')
+      .str.extract(r'avg (.*)[_|\s]mins \/ person \/ day')
+
+    d.loc[:,'medium'] = 'tv'
 
     return d
 
 def parse_web(d):
-    d = CREATE_FAKE_DATES(d)
+    # # clean NaNs
+    d['age_group'] = d['age_group'].fillna('All')
+    d['gender'] = d['gender_id'].fillna('All')
+    d['state'] = d['state'].fillna('US')
+
+    # # replace values 1/2 values for gender
+    d['gender'] = d['gender'].replace({ 1: 'Male', 2: 'Female' })
+    d = d.drop('gender_id', axis = 1)
+
     cols = [
-        'year',
-        'month',
+      'activityyear',
+      'activitymonth',
+      'state',
+      'gender',
+      'age_group'
     ]
+
     values = [
-        'avg hard_news_mins / person / day',
-        'avg fake_news_mins / person / day',
-        'avg facebook_mins / person / day',
-        'avg twitter_mins / person / day',
-        'avg youtube_mins / person / day',
-        'avg reddit_mins / person / day',
-        'avg ALL_mins / person / day'
+      'avg hard_news_mins / person / day',
+      'avg fake_news_mins / person / day',
+      'avg facebook_mins / person / day',
+      'avg twitter_mins / person / day',
+      'avg youtube_mins / person / day',
+      'avg reddit_mins / person / day',
+      'avg ALL_mins / person / day'
     ]
+
+    calculated_category = 'avg other_news_mins / person / day'
+
+    d.loc[:, calculated_category] = d.loc[:, values[-1]] - d.loc[:, values[:-1]].apply(sum, axis = 1)
 
     d = melt(
-        d,
-        id_vars=cols,
-        value_vars=values,
-        var_name='category'
+      d,
+      id_vars=cols,
+      value_vars=values + [calculated_category],
+      var_name='category'
     )
 
+    d = d.loc[d['category'] != values[-1]]
+
     d['category'] = d['category']\
-        .str.extract(r'avg (.*)[_|\s]mins \/ person \/ day')
+      .str.extract(r'avg (.*)[_|\s]mins \/ person \/ day')
+
+    d.loc[:,'medium'] = 'web'
 
     return d
 
+def concat_tv(a, b):
+  # load data
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+
+  # # append data & return list
+  a.append(b_data)
+
+  return a
+
+def concat_web(a, b):
+  # load data
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+
+  # append data & return list
+  a.append(b_data)
+
+  return a
+
 def parse(file):
-    # # loads & parses data
-    # # let's start with the TV dataset
-    d_tv = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{file["url"][0]}')
-    d_tv = parse_tv(d_tv)
+  # # # loads & parses data
+  # # # let's start with the TV dataset
+  d_tv = concat(
+    reduce(concat_tv, file['url'][:5], []),
+    ignore_index = True
+  )
+  d_tv = parse_tv(d_tv)
 
-    # # let's start with the TV dataset
-    d_web = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{file["url"][1]}')
-    d_web = parse_web(d_web)
+  # # # now we do the same for the web data
+  d_web = concat(
+    reduce(concat_web, file['url'][5:], []),
+    ignore_index = True
+  )
+  d_web = parse_web(d_web)
 
-    return d_web
+  # and we put those 2 together
+  d = concat([d_tv, d_web]) 
+
+  return d.rename({'activityyear': 'year', 'activitymonth': 'month'}, axis=1)

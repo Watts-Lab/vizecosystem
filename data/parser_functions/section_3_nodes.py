@@ -31,7 +31,7 @@ def parse(file):
 
   id_cols = ['year', 'month', 'variable']
 
-  data = data.drop('Unnamed: 0', axis = 1)
+  # data = data.drop('Unnamed: 0', axis = 1)
     
   return data\
     .melt(

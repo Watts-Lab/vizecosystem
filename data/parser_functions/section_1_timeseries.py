@@ -12,7 +12,7 @@ def load(f):
 
 def parse_web(b):
   # load data
-  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
 
   # # keep only needed columns
   cols = [
@@ -79,7 +79,7 @@ def parse_tv(df):
 
 def concat_tv(a, b):
   # load data
-  b_data = load(f'~/Documents/felippe/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
 
   # filter Puerto Rico out
   b_data = b_data.loc[b_data['state'] != 'PR']

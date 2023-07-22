@@ -29,7 +29,6 @@
 
 	// chart config
 	let data : any[];
-	let table : any[];
 	let dataMap : Map<string, any>
 	let fullDataMap : Map<string, any>
 	const urlChart : string  = 'assets/data/EchoCh-by_state.csv'
