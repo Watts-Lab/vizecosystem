@@ -30,10 +30,16 @@
     let nodes : any[]
     let nodesMap : Map<any, any>
     let nodesIn : any[]
+    
     let url_links : string = 'assets/data/EchoCh-links.csv'
     let links : any[]
     let linksMap : Map<any, any>
     let linksIn : any[]
+
+    // let url_net_flow : string = 'assets/data/EchoCh-nodes-net.csv'
+    // let netFlow : any[]
+    // let netFlowMap : Map<any, any>
+    // let netFlowIn : any[]
 
     // scales
     const scaleRange : Function = scaleLinear();
@@ -86,6 +92,14 @@
             }, [])
 
         linksMap = group(links, d => +d.start_date, d => +d.end_date)
+
+        // // load nodes and assign to global variable
+        // const netFlowRes = await csv(url_net_flow, autoType)
+        // netFlow = netFlowRes.map(d => ({ 
+        //         ...d, 
+        //         start_date: new Date(d['start year'], d['start month'], 1), 
+        //         end_date: new Date(d['end year'], d['end month'], 1) 
+        //     }))
 
         render = true;
         start_date = scaleDate(0)

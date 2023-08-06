@@ -2,6 +2,7 @@
   // node_modules
   import { onMount } from 'svelte';
 	import { LayerCake, Svg } from 'layercake';
+  import { rollup, sum } from 'd3-array'
 
   // components & molecules & atoms
   import FlowNodes from './atoms/FlowNodes.svelte';
@@ -18,12 +19,25 @@
 	export let spanCol : number
 	export let customClass : string = ''
 
+  let netFlowMap : Map<string,number>
+
   onMount(() => {
     render = true
   });
 
   $: render = false
   $: nodesIn = nodes
+
+  $: {
+    const gains = rollup(links, v => sum(v, w => w.value), d => d.to)
+    const losses = rollup(links, v => sum(v, w => w.value), d => d.from)
+    netFlowMap = new Map(
+      nodes.map(d => ([
+        d.archetype, 
+        (gains.has(d.archetype) ? gains.get(d.archetype) : 0) - (losses.has(d.archetype) ? losses.get(d.archetype) : 0)
+      ]))
+    )
+  }
 
 </script>
 
@@ -46,7 +60,7 @@
         </marker>
       </defs>
       {#if render}
-        <FlowNodes { nodes } { links } { flatLinks } />
+        <FlowNodes { nodes } { links } { flatLinks } { netFlowMap } />
       {/if}
     </Svg>
   </LayerCake>

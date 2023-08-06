@@ -10,12 +10,15 @@
   import nodesOrderMap from '../../../utils/nodes';
   import slugify from '../../../utils/slugify';
 
+  import { formatPositiveNegative } from '../../../utils/format-numbers'
+
   const { width, height } = getContext('LayerCake');
 
   // props declaration
   export let nodes : any[];
   export let links : any[];
   export let flatLinks : any[];
+  export let netFlowMap : Map<string,number>;
 
   const scaleLineWidth = scaleLinear()
     .range([1,25])
@@ -108,7 +111,6 @@
     }
 
     showTooltip = details.node;
-    console.log(linksIn)
   }
 
   function handleMouseLeave(ev, details) {
@@ -285,7 +287,13 @@
         ></circle>
         <text class='node-label' dy={-(node.r + 3)}>{node.archetype}</text>
         {#if showTooltip}
-          <text class='node-tooltip {showTooltip === node.archetype ? 'active' : ''}'>{node.archetype}</text>
+          <text 
+            class='node-tooltip {showTooltip === node.archetype ? 'active' : ''} {netFlowMap.get(node.archetype) >= 0 ? 'positive' : 'negative'}'
+            dx={(node.r + 3)}
+            dy={5}
+          >
+            {formatPositiveNegative(netFlowMap.get(node.archetype))}
+          </text>
         {/if}
       </g>
     {/each}
@@ -300,8 +308,12 @@
         ></circle>
         <text class='node-label' dy={node.r + 18}>{node.archetype}</text>
         {#if showTooltip}
-          <text class='node-tooltip {showTooltip === node.archetype ? 'active' : ''}'>
-            {console.log(node)}</text>
+          <text 
+              class='node-tooltip {showTooltip === node.archetype ? 'active' : ''} {netFlowMap.get(node.archetype) >= 0 ? 'positive' : 'negative'}'
+              dx={(node.r + 3)}
+            >
+              {formatPositiveNegative(netFlowMap.get(node.archetype))}
+            </text>
         {/if}
       </g>
     {/each}
@@ -327,6 +339,18 @@
   .node-tooltip {
     opacity: 0;
     pointer-events: none;
+    font-weight: 700;
+    paint-order: stroke;
+    stroke: white;
+    stroke-width: 4pt;
+  }
+  
+  .node-tooltip.positive {
+    fill: $css-lab-dark-blue;
+  }
+
+  .node-tooltip.negative {
+    fill: $css-lab-dark-red;
   }
 
   .node-tooltip.active {
@@ -341,12 +365,10 @@
 
   .linkTo {
     stroke: transparentize($css-lab-dark-blue, 0.1);
-    // opacity: 0.85;
   }
 
   .linkFrom {
     stroke: transparentize($css-lab-dark-red, 0.1);
-    // opacity: 0.85;
   }
 
   .arrow {

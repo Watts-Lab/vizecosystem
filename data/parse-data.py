@@ -92,6 +92,11 @@ datasets = [
     'format': '%.3f'
   },
   {
+    'url': 'raw_data/tv_archetype_flow_data.csv',
+    'out_name': 'EchoCh-nodes-net.csv',
+    'format': '%.2f'
+  },
+  {
   'url': [
     'raw_data/tv_archetype_sizes.csv',
     'raw_data/tv_archetype_mins_p_person.csv'
