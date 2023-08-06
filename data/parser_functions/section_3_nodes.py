@@ -1,9 +1,8 @@
 # built-in modules
 from functools import reduce
-from re import search
 
 # venv modules
-from pandas import read_csv, concat, melt, merge
+from pandas import read_csv, concat
 
 def load(f):
   return read_csv(f)

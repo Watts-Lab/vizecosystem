@@ -28,6 +28,7 @@
 	export let title : string;
 	export let standfirst : any[] = [{value: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi consequatur inventore exercitationem ex perferendis provident, earum cumque maiores quam quidem labore, mollitia odit eaque laborum?'}]
 	export let authors : Author[];
+	export let captions : any[]
 
 	// chart config
 	let data : any[];
@@ -155,6 +156,8 @@
 				colors={activeChart.colors}
 				yDomain={activeChart.yDomain}
 				formatter={formatMonth}
+				caption={captions[0].value}
+				url={ urlChart }
 			/>
 			
 			{:else} <ChartPlaceholder row={0}/>

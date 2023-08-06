@@ -3,13 +3,17 @@
     "standfirst": [
         {
             "type": "text",
-            "value": "YouTube is arguably the largest and most engaging online media platform in the world. Its scale has fueled concerns that YouTube users are being radicalized by biased recommendations and professedly apolitical “anti-woke” channels."
-        },
-        {
-            "type": "text",
-            "value": "Here we test this hypothesis using a panel of more than 300,000 Americans and their individual-level browsing behavior, on and off YouTube, from January 2016 to September 2021. The dashboards below present key findings from our analysis."
+            "value": "The idea of a media “echo chamber"
         }
     ],
+    "main-section": {
+        "captions": [
+            {
+                "type": "text",
+                "value": "Percent of YouTube users falling into the six political categories. In other words, out of all American YouTube viewers, 1.3% were in the left cluster in February 2020"
+            }
+        ]
+    },
     "section-one": {
         "copy": [
             {
@@ -40,6 +44,10 @@
             }
         ],
         "captions": [
+            {
+                "type": "text",
+                "value": "Caption for the map"
+            },
             {
                 "type": "text",
                 "value": "Percent of YouTube users falling into the six political categories. In other words, out of all American YouTube viewers, 1.3% were in the left cluster in February 2020. This shows how large YouTube’s political communities are relative to the entire platform."

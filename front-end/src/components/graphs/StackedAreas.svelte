@@ -10,11 +10,15 @@
 	import AxisY from './atoms/AxisY.svelte';
 	import AxisX from './atoms/AxisX.svelte';
 	import AreaStacked from './atoms/AreaStacked.svelte';
+	import Caption from './atoms/Caption.svelte';
 
 	// // // import utils
 
 	// // // props declaration
 	export let margins : Object = { top: 20, right: 10, bottom: 20, left: 45 }
+	export let caption : string = '';
+	export let includeCaption : boolean = true;
+	export let url : string = '';
 	export let data : any[]
 	export let dataMap : Map<any, any>
 	export let categories : string[]
@@ -67,6 +71,11 @@
 		</Svg>
 	</LayerCake>
 </div>
+{#if includeCaption}
+	<Caption { caption } { url } type={'single-cols'} />
+{/if}
+
+
 
 <style lang='scss'>
 	.chart-title {

@@ -12,6 +12,7 @@
 	import ForceLinear from './ForceLinear.svelte';
 	import PopupOverlay from './tooltips/PopupOverlay.svelte';
 	import ControlSwitch from '../global/control-switch.svelte';
+	import Caption from './atoms/Caption.svelte';
 	
 	// local data
 	import statesDict from '../../data/states.json'
@@ -24,6 +25,9 @@
 	export let dataMap : Map<string|number, any>
 	export let fullDataMap : Map<string|number, any>
 	export let activeChart : ChartConfig;
+	export let caption : string = '';
+	export let url : string = '';
+	export let includeCaption : boolean = true;
 
 	// variable declaration
 	let colorInterpolator : any;
@@ -128,6 +132,7 @@
 	onMount(() => {
 		setTimeout(() => renderAnnotation = true, 2000)
 	})
+	
 </script>
 
 <div class='chart-info-wrapper main-column'>
@@ -148,14 +153,6 @@
 			info='Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The stric definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)'
 			bind:checked={ scenarioChecked } 
 		/>
-
-		<!-- <ControlSwitch 
-			id='diet' 
-			title='Diet %'
-			labels={[ '50%', '75%' ]}
-			info='Percent of intra-individual news diets that must be partisan for partisan segregation'
-			bind:checked={ dietChecked } 
-		/> -->
 
 		<div id='period' class='control control-menu'>
 			<div class='control-title'>Period</div>
@@ -319,6 +316,10 @@
 		</Html>
 	</LayerCake>
 </div>
+{#if includeCaption}
+	<Caption { caption } { url } type={'single-cols'} />
+{/if}
+
 
 <style lang='scss'>
 	.chart {

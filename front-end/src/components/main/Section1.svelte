@@ -2,8 +2,8 @@
 	// node_modules
 	import { onMount } from 'svelte';
 	import { csv } from "d3-fetch";
-  import { autoType } from "d3-dsv";
-	import { group } from 'd3-array';
+  	import { autoType } from "d3-dsv";
+	import { group, rollup, descending, rank } from 'd3-array';
 	import { scaleDiverging, scaleThreshold, scaleSqrt, scaleLinear } from 'd3-scale';
 
 	// types
@@ -36,8 +36,34 @@
 	onMount(async () => {
 		// load data for map + line chart
 		const resChart = await csv(urlChart, autoType)
-		data = resChart
-    // parse data for 
+		const rankVars : string[] = ['left_pct', 'right_pct', 'left_size', 'right_size']
+		const ranks = rollup(
+			resChart, 
+			v => {
+				const varObj = {}
+				rankVars.forEach(r => {
+					const statesObj = {}
+					const ranked = rank(v.map(d => d[r]), descending)
+					v.forEach((d, i)=> { statesObj[d.state] = ranked[i] + 1 })
+					varObj[r] = statesObj
+				})
+
+				return varObj
+			}, 
+			d => d.period, 
+			d => d.medium, 
+			d => d.diet_threshold, 
+			d => d.partisanship_scenario
+		)
+		data = resChart.map(d => ({ 
+			...d,
+			left_pct_rk: ranks.get(d.period).get(d.medium).get(d.diet_threshold).get(d.partisanship_scenario)['left_pct'][d.state],
+			right_pct_rk: ranks.get(d.period).get(d.medium).get(d.diet_threshold).get(d.partisanship_scenario)['right_pct'][d.state],
+			left_size_rk: ranks.get(d.period).get(d.medium).get(d.diet_threshold).get(d.partisanship_scenario)['left_size'][d.state],
+			right_size_rk: ranks.get(d.period).get(d.medium).get(d.diet_threshold).get(d.partisanship_scenario)['right_size'][d.state]
+		}))
+
+   		// parse data for 
 		dataMap = group(
 			data,
 			d => d.period,
@@ -47,12 +73,13 @@
 			d => d.partisanship_scenario
 		)
 
-    fullDataMap = group(
+    	fullDataMap = group(
 			data,
 			d => d.state,
 			d => d.medium, 
 			d => d.partisanship_scenario
 		)
+		
 	})
 
 	const chartConfig : Map<number,ChartConfig> = new Map([
@@ -128,8 +155,10 @@
 			{ fullDataMap }
 			{ activeChart }
 			{ politicalChecked }
+			caption={ captions[0].value }
+			url={ urlChart }
 		/>
-		{:else} <ChartPlaceholder row={5}/>
+		{:else} <ChartPlaceholder row={5} />
 	{/if}
 </div>
 
@@ -137,7 +166,7 @@
 	.section-1 {
         grid-template-columns: repeat(12, 1fr);
         column-gap: 0;
-        grid-template-rows: auto auto auto auto auto;
+        grid-template-rows: repeat(6, auto);
 
         @media (min-width: $bp-3) {
             column-gap: 50px;

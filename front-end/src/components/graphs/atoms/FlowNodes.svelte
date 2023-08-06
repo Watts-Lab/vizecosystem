@@ -106,6 +106,9 @@
     for(const el of moveList) {
       linkGroup.appendChild(el.selection)
     }
+
+    showTooltip = details.node;
+    console.log(linksIn)
   }
 
   function handleMouseLeave(ev, details) {
@@ -130,6 +133,8 @@
     for (const el of arrowTo) {
       el.classList.toggle('arrowVisible');
     }
+
+    showTooltip = false;
   }
 
   onMount(() => {
@@ -185,6 +190,7 @@
   $: render = false;
   $: totalLinks = 0;
   $: actionable = false;
+  $: showTooltip = false;
 
   $: {
     scaleNodeSize.domain(extent(nodes, d => d.value))
@@ -236,9 +242,7 @@
 
   $: if (linksIn.length > 0 && linksIn.length === totalLinks) {
     actionable = true;
-  }
-
-  
+  }  
 </script>
 
 
@@ -280,6 +284,9 @@
           on:mouseleave={(ev) => handleMouseLeave(ev, node)}
         ></circle>
         <text class='node-label' dy={-(node.r + 3)}>{node.archetype}</text>
+        {#if showTooltip}
+          <text class='node-tooltip {showTooltip === node.archetype ? 'active' : ''}'>{node.archetype}</text>
+        {/if}
       </g>
     {/each}
     {#each dataIn.filter(d => d.node === 'No or Minimal News') as node, i}
@@ -292,6 +299,10 @@
           on:mouseleave={(ev) => handleMouseLeave(ev, node)}
         ></circle>
         <text class='node-label' dy={node.r + 18}>{node.archetype}</text>
+        {#if showTooltip}
+          <text class='node-tooltip {showTooltip === node.archetype ? 'active' : ''}'>
+            {console.log(node)}</text>
+        {/if}
       </g>
     {/each}
   </g>
@@ -311,6 +322,15 @@
   .node-label {
     text-anchor: middle;
     @include fs-sm;
+  }
+
+  .node-tooltip {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .node-tooltip.active {
+    opacity: 1;
   }
 
   .link {

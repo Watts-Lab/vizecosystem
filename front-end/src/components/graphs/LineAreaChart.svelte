@@ -1,6 +1,6 @@
 <script lang="ts">
 	// node_modules
-	import { Html, LayerCake, Svg } from 'layercake';
+	import { LayerCake, Svg } from 'layercake';
 	import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale'
 	import { groups } from 'd3-array'
 
@@ -11,7 +11,6 @@
 	import Multiline from './atoms/MultilineArea.svelte';
 	import AxisX from './atoms/AxisX.svelte';
 	import AxisY from './atoms/AxisY.svelte';
-	import SharedTooltip from './tooltips/SharedTooltip.svelte';
 	import Caption from './atoms/Caption.svelte';
 
 	// import utils

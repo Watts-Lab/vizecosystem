@@ -36,6 +36,7 @@
     }
 
     .caption-single-cols {
+        grid-column: 1 / span last-line;
         .download-button {
             margin: 0 !important;
         }

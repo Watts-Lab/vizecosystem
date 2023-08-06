@@ -18,8 +18,18 @@
 </script>
 
 <Header />
-<Main title={ data.title } { authors } standfirst={ data.standfirst } />
-<Section1 once={ true } copy={data['section-one'].copy} refs={data['section-one'].references} captions={data['section-one'].captions} />
+<Main 
+	title={ data.title } 
+	{ authors } 
+	standfirst={ data.standfirst }
+	captions={ data['main-section'].captions }
+/>
+<Section1 
+	once={ true } 
+	copy={data['section-one'].copy} 
+	refs={data['section-one'].references} 
+	captions={data['section-one'].captions} 
+/>
 <Section2 once={ true } copy={data['section-two'].copy} refs={data['section-two'].references} captions={data['section-two'].captions} />
 <Section3 once={ true } copy={data['section-three'].copy} refs={data['section-three'].references} captions={data['section-three'].captions} />
 <Footer />

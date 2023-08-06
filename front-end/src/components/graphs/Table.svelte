@@ -61,11 +61,7 @@
       @include fs-root;
       border-bottom: 0.5pt solid $light-grey;
 
-      // .row-value-program {
-      //   width: 60%;
-      // }
       .row-value-network {
-        // width: 30%;
         @include fs-sm;
       }
       .row-value-audience {
