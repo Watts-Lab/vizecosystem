@@ -16,6 +16,7 @@
 	
 	// local data
 	import statesDict from '../../data/states.json'
+	import copy_data from '../../data/copy.json'
 
 	const statesMap = new Map(statesDict.map(d => [d.state, d]))
 
@@ -139,18 +140,18 @@
 	<div class='controls'>
 		<ControlSwitch 
 			id='medium' 
-			title='Medium'
+			title={copy_data.controls.medium.title}
 			labels={[ 'TV', 'Web' ]}
-			info='Internet or TV'
+			info={copy_data.controls.medium.description}
 			bind:checked={ tvChecked } 
 		/>
 
 		<!-- inverting labels manually for now -->
 		<ControlSwitch 
 			id='partisanship' 
-			title='Partisanship'
+			title={copy_data.controls.medium.title}
 			labels={[ 'Stringent', 'Lenient' ]} 
-			info='Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The stric definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)'
+			info={copy_data.controls.partisanship.description}
 			bind:checked={ scenarioChecked } 
 		/>
 

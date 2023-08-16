@@ -17,6 +17,9 @@
 
     // // import utils
 	import { formatMonth } from '../../utils/format-dates';
+
+    // import local data
+    import data_copy from '../../data/copy.json'
     
     // props
     let loaded : boolean = false;
@@ -35,11 +38,6 @@
     let links : any[]
     let linksMap : Map<any, any>
     let linksIn : any[]
-
-    // let url_net_flow : string = 'assets/data/EchoCh-nodes-net.csv'
-    // let netFlow : any[]
-    // let netFlowMap : Map<any, any>
-    // let netFlowIn : any[]
 
     // scales
     const scaleRange : Function = scaleLinear();
@@ -93,14 +91,6 @@
 
         linksMap = group(links, d => +d.start_date, d => +d.end_date)
 
-        // // load nodes and assign to global variable
-        // const netFlowRes = await csv(url_net_flow, autoType)
-        // netFlow = netFlowRes.map(d => ({ 
-        //         ...d, 
-        //         start_date: new Date(d['start year'], d['start month'], 1), 
-        //         end_date: new Date(d['end year'], d['end month'], 1) 
-        //     }))
-
         render = true;
         start_date = scaleDate(0)
         end_date = scaleDate(1)
@@ -127,9 +117,9 @@
         <div class='controls'>
             <ControlSwitch 
                 id='audience' 
-                title='Node size'
+                title={data_copy.controls["node-size"].title}
                 labels={[ 'Audience', 'Consumption' ]}
-                info='Audience size or average consumption'
+                info={data_copy.controls["node-size"].description}
                 bind:checked={ sizeChecked } 
             />
             {#if loaded && render}

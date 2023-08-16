@@ -6,6 +6,20 @@
             "value": "The idea of a media “echo chamber"
         }
     ],
+    "controls": {
+        "medium": {
+            "title": "Medium",
+            "description": "Internet or TV"
+        },
+        "partisanship": {
+            "title": "Partisanship",
+            "description": "Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The strict definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)"
+        },
+        "node-size": {
+            "title": "Node size",
+            "description": "Audience size or average consumption"
+        }
+    },
     "main-section": {
         "captions": [
             {

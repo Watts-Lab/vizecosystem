@@ -11,6 +11,7 @@
 
 	// import state data
 	import states from '../../data/states.json'
+	import copy_data from '../../data/copy.json'
 
 	// components
 	import Title from '../copy/Title.svelte';
@@ -100,9 +101,9 @@
         <div class='controls'>
             <ControlSwitch 
                 id='medium' 
-                title='Medium'
+                title={copy_data.controls.medium.title}
                 labels={[ 'TV', 'Web' ]}
-				info='Internet or TV'
+				info={copy_data.controls.medium.description}
                 bind:checked={ tvChecked } 
             />
 

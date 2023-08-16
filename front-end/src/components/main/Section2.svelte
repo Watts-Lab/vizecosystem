@@ -18,6 +18,9 @@
     // // import utils
 	import { formatMonth } from '../../utils/format-dates';
 
+    // import local data
+    import copy_data from '../../data/copy.json'
+
     // props
     let loaded : boolean = false;
     export let once : boolean;
@@ -88,17 +91,17 @@
         <div class='controls'>
             <ControlSwitch 
                 id='medium' 
-                title='Medium'
+                title={copy_data.controls.medium.title}
                 labels={[ 'TV', 'Web' ]}
-                info='Internet or TV'
+                info={copy_data.controls.medium.description}
                 bind:checked={ tvChecked } 
             />
 
             <ControlSwitch 
                 id='partisanship' 
-                title='Partisanship'
+                title={copy_data.controls.partisanship.title}
                 labels={[ 'Lenient', 'Strict' ]}
-                info='Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The stric definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)'
+                info={copy_data.controls.partisanship.description}
                 bind:checked={ scenarioChecked } 
             />
 
