@@ -71,7 +71,7 @@ def parse_web(d):
       'avg ALL_mins / person / day'
     ]
 
-    calculated_category = 'avg other_news_mins / person / day'
+    calculated_category = 'avg non_news_mins / person / day'
 
     d.loc[:, calculated_category] = d.loc[:, values[-1]] - d.loc[:, values[:-1]].apply(sum, axis = 1)
 

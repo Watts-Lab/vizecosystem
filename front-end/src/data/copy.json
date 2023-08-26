@@ -1,9 +1,17 @@
 {
-    "title": "Information ecosystem",
+    "title": "Measuring the Information Ecosystem",
     "standfirst": [
         {
             "type": "text",
-            "value": "The idea of a media “echo chamber"
+            "value": "Where do Americans get their news? Who is the typical consumer of news? And how many people can really be counted as being in partisan “echo chambers”? We had these questions in mind when putting together the four interactive charts on this page, which are basically reproduced from two Science Advances articles published in 2020 and 2022 (read the originals here and here). The underlying datasets are derived from large panels (50-100k) of individuals who agreed to having their desktop internet browsing and TV viewing behavior passively tracked."
+        },
+        {
+            "type": "text",
+            "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, but especially for older Americans, TV news dominates online news articles in terms of total time spent. Put simply, when we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
+        },
+        {
+            "type": "text",
+            "value": "The analysis also reveals"
         }
     ],
     "controls": {
@@ -24,131 +32,102 @@
         "captions": [
             {
                 "type": "text",
-                "value": "Percent of YouTube users falling into the six political categories. In other words, out of all American YouTube viewers, 1.3% were in the left cluster in February 2020"
+                "value": "Minutes per person per day spent with news and other categories of content on TV and desktop browsing."
             }
         ]
     },
     "section-one": {
+        "title": "Title for section one",
         "copy": [
             {
                 "type": "text",
-                "value": "To check for overall trends in political category preferences, we examine changes in the six viewing clusters’ total consumption. Here, we track how many YouTube users fall into each political cluster over time, which tells us whether these communities are growing or shrinking."
+                "value": "The 2022 article was inspired by popular and academic discussion of “echo chambers,” or the idea that social media has led people to be exposed to overwhelmingly partisan and like-minded news content. To gauge the scale of the echo chamber problem, this figure asks, thow many people have a news diet that is made of majority highly partisan sources? The design of the figure is somewhat unique because we present results corresponding to multiple definitions of majority, 50% and 75%. You can also toggle the definition of “highly partisan” with the lenient/stringent button."
             },
             {
                 "type": "text",
-                "value": "Selecting “User share” from the dropdown above shows the percentages of the total number of YouTube users who fall into each of our six defined viewing clusters, corresponding to the political content categories."
-            },
-            {
-                "type": "text",
-                "value": "Selecting “Total consumption share” shows the percentages of the total amount (in minutes) of viewed YouTube content which fall into each of the six categories of news content."
-            },
-            {
-                "type": "text",
-                "value": "Our results reveal that news, in general, makes up only a small portion of YouTube consumption. However, even a small percentage of users can mean large absolute numbers at the scale of YouTube. For example, averaged over the 4-year period, 764,405 Americans consumed anti-woke content at least once in a given month, with that number growing steadily over time."
+                "value": "While most people think of echo chambers in terms of online information, we find that cable TV, especially Fox News, is more responsible for the partisan segregation in news audiences than any combination of far-right or far-left sites circulating the internet. For example, between 10%-15% of Americans aged 55 and older get the majority of their news from Fox News, depending on the month and the definition chosen. Meanwhile, the online echo chambers never eclipse even 5% of US internet users, for any month and any definition."
             }
         ],
         "references": [
             {
                 "type": "text",
-                "value": "Iyengar et al, The origins and consequences of affective polarization in the United States, 2019"
-            },
-            {
-                "type": "text",
-                "value": "Jones, Declining trust in congress: Effects of polarization and consequences for Democracy, 2015"
+                "value": "—nothing for now"
             }
         ],
         "captions": [
             {
                 "type": "text",
-                "value": "Caption for the map"
-            },
-            {
-                "type": "text",
-                "value": "Percent of YouTube users falling into the six political categories. In other words, out of all American YouTube viewers, 1.3% were in the left cluster in February 2020. This shows how large YouTube’s political communities are relative to the entire platform."
-            },
-            {
-                "type": "text",
-                "value": "Consumption share of the six political channel categories. For example, out of the total minutes of content that Americans viewed across the platform in October 2018, 1.76% of those minutes were far-right content. These statistics shed light on the amount of political content being consumed, and not necessarily the communities that consume it."
+                "value": "The monthly percent of Americans experiencing partisan segregation via TV or Web news. Bounds represent a range of percentages—from 50 to 75—of individual-level news diets that must be partisan for partisan segregation."
             }
         ]
     },
     "section-two": {
+        "title": "Title for section two",
         "copy": [
             {
                 "type": "text",
-                "value": "To check for overall trends in political category preferences, we examine changes in the six viewing clusters’ total consumption. Here, we track how many YouTube users fall into each political cluster over time, which tells us whether these communities are growing or shrinking."
+                "value": "In this map, the size of each semi-circle represents the number of people with segregated news diets in that state. You can click on a state for more information, including the most watched news programs & domains a state-level time series of audience segregation."
             },
             {
                 "type": "text",
-                "value": "Selecting “User share” from the dropdown above shows the percentages of the total number of YouTube users who fall into each of our six defined viewing clusters, corresponding to the political content categories."
+                "value": "When we break the TV audience segregation measurements down by state, we see surprisingly minimal geographic variation. In the “lenient” view, where CNN is counted as left-wing partisan, the Fox News echo chamber still dominates that of the left in nearly every state, with York and California being notable exceptions. If, however, we take the “stringent” definition of partisan, and count only MSNBC as leftwing partisan, then Fox News easily dominates in every single state (though not Washington DC)."
             },
             {
                 "type": "text",
-                "value": "Selecting “Total consumption share” shows the percentages of the total amount (in minutes) of viewed YouTube content which fall into each of the six categories of news content."
-            },
-            {
-                "type": "text",
-                "value": "Our results reveal that news, in general, makes up only a small portion of YouTube consumption. However, even a small percentage of users can mean large absolute numbers at the scale of YouTube. For example, averaged over the 4-year period, 764,405 Americans consumed anti-woke content at least once in a given month, with that number growing steadily over time."
+                "value": "Toggling to the web view, we can see that left-wing audience segregation is relatively bigger online."
             }
         ],
         "references": [
             {
                 "type": "text",
-                "value": "Iyengar et al, The origins and consequences of affective polarization in the United States, 2019"
-            },
-            {
-                "type": "text",
-                "value": "Jones, Declining trust in congress: Effects of polarization and consequences for Democracy, 2015"
+                "value": "None for now"
             }
         ],
         "captions": [
             {
                 "type": "text",
-                "value": "Percent of YouTube users falling into the six political categories. In other words, out of all American YouTube viewers, 1.3% were in the left cluster in February 2020. This shows how large YouTube’s political communities are relative to the entire platform."
+                "value": "Each state is represented in terms of the total number of residents whose news diets are dominated by right-wing and left-wing partisan sources. The shades of red and blue indicate the percentage of residents. Click on a state for more info."
             },
             {
                 "type": "text",
-                "value": "Consumption share of the six political channel categories. For example, out of the total minutes of content that Americans viewed across the platform in October 2018, 1.76% of those minutes were far-right content. These statistics shed light on the amount of political content being consumed, and not necessarily the communities that consume it."
+                "value": "State-level timeline of echo chamber size as % of total population"
+            },
+            {
+                "type": "text",
+                "value": "We define audience size on the program and domain level as our estimate of the number of people spent at least one hour in a given month"
             }
         ]
     },
     "section-three": {
+        "title": "Title for section three",
         "copy": [
             {
                 "type": "text",
-                "value": "To check for overall trends in political category preferences, we examine changes in the six viewing clusters’ total consumption. Here, we track how many YouTube users fall into each political cluster over time, which tells us whether these communities are growing or shrinking."
+                "value": "In the last figure we introduce one more concept, the news consumption archetype. Rather than assume there to be a singularly typical news viewer, we surface 8 archetypes of news consumption by clustering panelists with similarly distributed news diets. We can then measure the size of each archetype as well as individual movement from one type of behavior to another by assigning panelists each month to the cluster/archetype to which their news diet is most similar. [read the paper for more details]"
             },
             {
                 "type": "text",
-                "value": "Selecting “User share” from the dropdown above shows the percentages of the total number of YouTube users who fall into each of our six defined viewing clusters, corresponding to the political content categories."
+                "value": "It turns out that each archetypal news diet is dominated by a single category of news. In the figure, each archetype is represented by a node whose size corresponds to the number of people exhibiting that archetypal behavior and whose label is the dominant category. We also include a special archetype called “no news”, which represents all of the panelists that spend 30 minutes or less on news in a given month."
             },
             {
                 "type": "text",
-                "value": "Selecting “Total consumption share” shows the percentages of the total amount (in minutes) of viewed YouTube content which fall into each of the six categories of news content."
+                "value": "Hard broadcast news is the largest archetype, by millions of viewers, but it’s rapidly shrinking. The arrows between nodes represent “net flow” between archetypes, a metric of pairwise inflow minus outflow designed to capture viewership migrations. The universe of active."
             },
             {
                 "type": "text",
-                "value": "Our results reveal that news, in general, makes up only a small portion of YouTube consumption. However, even a small percentage of users can mean large absolute numbers at the scale of YouTube. For example, averaged over the 4-year period, 764,405 Americans consumed anti-woke content at least once in a given month, with that number growing steadily over time."
+                "value": ". In fact, While the overall universe of active consumer"
             }
         ],
         "references": [
             {
                 "type": "text",
-                "value": "Iyengar et al, The origins and consequences of affective polarization in the United States, 2019"
-            },
-            {
-                "type": "text",
-                "value": "Jones, Declining trust in congress: Effects of polarization and consequences for Democracy, 2015"
+                "value": "None for now"
             }
         ],
         "captions": [
             {
                 "type": "text",
-                "value": "Percent of YouTube users falling into the six political categories. In other words, out of all American YouTube viewers, 1.3% were in the left cluster in February 2020. This shows how large YouTube’s political communities are relative to the entire platform."
-            },
-            {
-                "type": "text",
-                "value": "Consumption share of the six political channel categories. For example, out of the total minutes of content that Americans viewed across the platform in October 2018, 1.76% of those minutes were far-right content. These statistics shed light on the amount of political content being consumed, and not necessarily the communities that consume it."
+                "value": "Television news consumption archetypes are each labeled according to the category of news most prominently consumed within the archetype, along with a large ninth group of people who are exposed to less than 30 min of news in a month, calculated independently in each month over the 4 years of analysis. The figure represents the direction and magnitude of turnover between each pair of archetypes. For example, if—over a given period of time—1M individuals moved from archetype A to archetype B, and over the same period of time 4M individuals did the reverse and moved from archetype B to A, then the net flow over that time period would be 3M from B to A."
             }
         ]
     }

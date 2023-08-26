@@ -1,7 +1,7 @@
 const labelMap : Map<string, string> = new Map([
-    ['non-news', 'Non news'], 
+    ['non-news', 'Non-news'], 
     ['news', 'News'],
-    ['other_news', 'Other news'], 
+    ['non_news', 'Non-news'], 
     ['facebook', 'Facebook'], 
     ['hard_news', 'Hard news'], 
     ['youtube', 'YouTube'], 

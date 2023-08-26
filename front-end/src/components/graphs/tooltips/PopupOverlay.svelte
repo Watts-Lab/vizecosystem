@@ -28,6 +28,7 @@
 	export let partisanship_scenario : string;
   export let medium : string;
   export let period : string;
+  export let tooltipCaptions : any[] = [];
 
   // variable declaration
   let xKey : string = 'date'
@@ -131,9 +132,7 @@
       /> 
     </div>
     <p class='caption overlay-col1-caption'>
-      <span>TV & Web news diet polarization</span> Lorem ipsum dolor sit amet consectetur 
-      adipisicing elit. Odit, inventore impedit deleniti magnam eum eveniet 
-      dolorum porro, saepe molestiae quis et, quia libero suscipit numquam?
+      <span>TV & Web news diet polarization.</span> { tooltipCaptions[0].value }
     </p>
     
     <!-- {#if medium === 'tv'} -->
@@ -151,9 +150,7 @@
     <!-- {/if} -->
 
     <p class='caption overlay-col2-caption'>
-      <span>Most {medium === 'tv' ? 'watched' : 'viewed'}.</span> Lorem ipsum dolor sit amet consectetur 
-      adipisicing elit. Odit, inventore impedit deleniti magnam eum eveniet 
-      dolorum porro, saepe molestiae quis et, quia libero suscipit numquam?
+      <span>Most {medium === 'tv' ? 'watched' : 'viewed'}.</span> { tooltipCaptions[1].value }
     </p>
   {/if}
   <div class='close-button' on:click={() => onClick() }></div>
@@ -165,6 +162,7 @@
     height: 100%;
     background-color: gainsboro;
   }
+
   .overlay {
     position: absolute;
     top: 0;
@@ -174,10 +172,10 @@
     background-color: $off-white;
     padding: 30px 50px;
     display: grid;
-    column-gap: 50px;
+    column-gap: 35px;
     row-gap: 8px;
     grid-template-rows: 0fr auto 1fr 0.3fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.62fr 0.38fr;
     transition: left 0.3s ease-out;
   }
 

@@ -58,8 +58,6 @@
 		rows = Array.from(new Set(data.map(d => +d.date)))
 	})
 
-	
-
 	const chartConfig : Map<string, { order : string[], colors: string[] }> = new Map([
 		['tv', {
 			order: ['non-news', 'news'],
@@ -68,7 +66,7 @@
 		}
 		],
 		['web', {
-			order: ['other_news', 'facebook', 'hard_news', 'youtube', 'twitter', 'reddit', 'fake_news'],
+			order: ['non_news', 'facebook', 'hard_news', 'youtube', 'twitter', 'reddit', 'fake_news'],
 			colors: ['#a6cee3',  '#e31a1c', '#fb9a99', '#cab2d6', '#fdbf6f', '#ff7f00', '#6a3d9a'],
 			yDomain: [0, 100]
 		}],
@@ -203,7 +201,6 @@
         .control-menu,
         .control-range {
             display: flex;
-            // align-items: center;
             flex-wrap: wrap;
         
             .control-title {

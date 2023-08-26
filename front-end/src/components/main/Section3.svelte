@@ -27,6 +27,7 @@
     export let copy : any[];
     export let refs : any[];
     export let captions : any[];
+    export let title : string = 'Title'
 
     // variable declaration
     let url_nodes : string = 'assets/data/EchoCh-nodes.csv'
@@ -113,6 +114,8 @@
 </script>
 
 <div class="section section-3" use:inView={{ once }} on:enter={() => loaded = true }>
+    <h1 class='section-title'>{ title }</h1>
+
     <div class='chart-wrapper'>
         <div class='controls'>
             <ControlSwitch 
@@ -170,7 +173,7 @@
 
         @media (min-width: $bp-3) {
             column-gap: 50px;
-            grid-template-rows: auto auto auto 1fr auto;
+            grid-template-rows: auto auto auto auto 1fr;
         }
         
     }
@@ -188,7 +191,7 @@
     }
 
     .copy {
-        grid-row: 5 / span 1;
+        grid-row: 3 / span 1;
         grid-column: span 12;
 
         @media (min-width: $bp-3) {
@@ -201,13 +204,13 @@
         grid-column: span 12;
 
         @media (min-width: $bp-3) {
-            grid-row: 5 / span 1;
+            grid-row: 3 / span 1;
             grid-column: span 5;
         }
     }
 
     .chart-wrapper {
-        grid-row: 3 / span 1;
+        grid-row: 5 / span 1;
         grid-column: 1 / span 12;
     }
 

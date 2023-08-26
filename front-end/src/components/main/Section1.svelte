@@ -23,6 +23,7 @@
 	export let copy : any[]
     export let refs : any[]
     export let captions : any[]
+	export let title : string = 'Title'
 
 	// local data
 	import states from '../../data/states_centroids.json'
@@ -115,7 +116,7 @@
 </script>
 
 <div class="section section-1" use:inView={{ once }} on:enter={() => loaded = true }>
-	<h1 class='section-title'>Section title</h1>
+	<h1 class='section-title'>{ title }</h1>
     <div class='copy'>
         {#each copy as d, i}
             <p>
@@ -126,11 +127,11 @@
 
 	<div class='title-container'>
 			<h3 class='chart-title'>
-				Partisan Segregation in the US:
-				<select class='menu' bind:value={chart}>
+				Partisan Segregation in the US
+				<!-- <select class='menu' bind:value={chart}>
 					<option value="0">Comparison view</option>
 					<option value="1">Single political lean view</option>
-				</select>
+				</select> -->
 			</h3>
 
 			{#if activeChart.type === 'linear'}
@@ -156,6 +157,7 @@
 			{ activeChart }
 			{ politicalChecked }
 			caption={ captions[0].value }
+			tooltipCaptions={ captions.slice(1) }
 			url={ urlChart }
 		/>
 		{:else} <ChartPlaceholder row={5} />

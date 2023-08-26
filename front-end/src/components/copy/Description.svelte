@@ -8,8 +8,11 @@
 </script>
 
 <div class='standfirst-wrapper'>
-	{#each standfirst as text}
-		<p>{ text.value }</p>
+	{#each standfirst as text, i}
+		<p>
+			{ text.value } 
+			{#if i === 0}<a href="#supplementary">Read more about the data.</a>{/if}
+		</p>
 	{/each}
 	<LinkButton url={'https://www.pnas.org/doi/10.1073/pnas.2101967118'} />
 </div>
@@ -29,7 +32,6 @@
 
 			@media (min-width: $bp-3) {
 				@include fs-md;
-				line-height: 1.4;
 			}
 		}
 

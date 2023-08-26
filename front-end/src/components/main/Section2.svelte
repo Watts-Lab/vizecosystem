@@ -27,6 +27,7 @@
     export let copy : any[]
     export let refs : any[]
     export let captions : any[]
+    export let title : string = 'Title'
 
     // variable declaration
     let url : string = 'assets/data/EchoCh-nationwide-by_gender-or-age_group.csv'
@@ -79,14 +80,15 @@
 </script>
 
 <div class="section section-2" use:inView={{ once }} on:enter={() => loaded = true }>
-    <h1 class='section-title'>Section title</h1>
+    <h1 class='section-title'>{ title }</h1>
     <div class='copy copy-1'>
-        {#each copy.slice(0,2) as d, i}
+        {#each copy.slice(0,1) as d, i}
             <p>
                 {d.value}
             </p>
         {/each}
     </div>
+    
     <div class='chart-wrapper'>
         <div class='controls'>
             <ControlSwitch 
@@ -163,7 +165,7 @@
         {/if}
     </div>
     <div class='copy copy-2'>
-        {#each copy.slice(2) as d, i}
+        {#each copy.slice(1) as d, i}
             <p>
                 {d.value}
             </p>

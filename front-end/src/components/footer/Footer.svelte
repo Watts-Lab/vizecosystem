@@ -156,7 +156,6 @@
 
 <style lang="scss">
     .et-l--footer {
-        margin-top: 4rem;
         background-color: $css-lab-dark-blue;
         color: $light-grey;
     }

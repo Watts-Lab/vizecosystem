@@ -7,9 +7,10 @@
 	import Header from './components/header/Header.svelte';
 	import Footer from './components/footer/Footer.svelte';
 	import Main from './components/main/Main.svelte';
-	import Section1 from './components/main/Section1.svelte';
-	import Section2 from './components/main/Section2.svelte';
+	import Section2 from './components/main/Section1.svelte';
+	import Section1 from './components/main/Section2.svelte';
 	import Section3 from './components/main/Section3.svelte';
+  	import Supplementary from './components/main/Supplementary.svelte';
 
 	// export let title : string = 'Your title goes here';
 	// export let standfirst : any[]
@@ -18,26 +19,51 @@
 </script>
 
 <Header />
+
 <Main 
 	title={ data.title } 
 	{ authors } 
 	standfirst={ data.standfirst }
 	captions={ data['main-section'].captions }
 />
-<Section1 
+
+<Section1
 	once={ true } 
-	copy={data['section-one'].copy} 
-	refs={data['section-one'].references} 
-	captions={data['section-one'].captions} 
+	copy={data['section-one'].copy}
+	refs={data['section-one'].references}
+	title={data['section-one'].title}
+	captions={data['section-one'].captions}
 />
-<Section2 once={ true } copy={data['section-two'].copy} refs={data['section-two'].references} captions={data['section-two'].captions} />
-<Section3 once={ true } copy={data['section-three'].copy} refs={data['section-three'].references} captions={data['section-three'].captions} />
+
+<Section2 
+	once={ true } 
+	copy={data['section-two'].copy}
+	refs={data['section-two'].references}
+	title={data['section-two'].title}
+	captions={data['section-two'].captions}
+/>
+
+<Section3 
+	once={ true } 
+	copy={data['section-three'].copy}
+	refs={data['section-three'].references}
+	title={data['section-three'].title}
+	captions={data['section-three'].captions}
+/>
+
+<Supplementary 
+	once={ true } 
+	copy={data['section-three'].copy}
+	refs={data['section-three'].references}
+/>
+
 <Footer />
 
 <style lang='scss' global>
 	main, .section {
 		padding: 0 1em;
 	}
+
 	@media (min-width: $column-width) {
 		main, .section {
 			padding: 0

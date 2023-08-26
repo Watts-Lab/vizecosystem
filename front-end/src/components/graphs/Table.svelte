@@ -58,11 +58,13 @@
       padding: 0 5px;
       line-height: 2;
       min-height: 40px;
-      @include fs-root;
+      @include fs-base;
       border-bottom: 0.5pt solid $light-grey;
 
       .row-value-network {
         @include fs-sm;
+        color: $dark-grey;
+        font-weight: 300;
       }
       .row-value-audience {
         flex: 1 0 auto;

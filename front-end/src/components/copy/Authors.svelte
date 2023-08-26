@@ -44,7 +44,7 @@
 
 		@media (min-width: $bp-3) {
 			grid-row: 1 / span 1;
-			grid-column: 7 / span 6;
+			grid-column: 9 / span last-line;
 		}
 
 		.author-container {
@@ -112,6 +112,7 @@
 			.detail {
 				.detail-list {
 					display: block;
+					box-shadow: transparentize($black, 0.5) 1px 1px 2.5px;
 				}
 			}
 		}

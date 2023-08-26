@@ -27,6 +27,7 @@
 	export let fullDataMap : Map<string|number, any>
 	export let activeChart : ChartConfig;
 	export let caption : string = '';
+	export let tooltipCaptions : any[] = [];
 	export let url : string = '';
 	export let includeCaption : boolean = true;
 
@@ -149,7 +150,7 @@
 		<!-- inverting labels manually for now -->
 		<ControlSwitch 
 			id='partisanship' 
-			title={copy_data.controls.medium.title}
+			title={copy_data.controls.partisanship.title}
 			labels={[ 'Stringent', 'Lenient' ]} 
 			info={copy_data.controls.partisanship.description}
 			bind:checked={ scenarioChecked } 
@@ -312,6 +313,7 @@
 				{ medium }
 				period={ period || initPeriod }
 				popup={ popup }
+				{ tooltipCaptions }
 				on:closePopup={ handleClosePopup } 
 			/>
 		</Html>
