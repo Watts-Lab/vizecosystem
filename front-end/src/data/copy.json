@@ -1,17 +1,21 @@
 {
-    "title": "Measuring the Information Ecosystem",
+    "title": "Mapping the (Political) Information Ecosystem",
     "standfirst": [
         {
             "type": "text",
-            "value": "Where do Americans get their news? Who is the typical consumer of news? And how many people can really be counted as being in partisan “echo chambers”? We had these questions in mind when putting together the four interactive charts on this page, which are basically reproduced from two Science Advances articles published in 2020 and 2022 (read the originals here and here). The underlying datasets are derived from large panels (50-100k) of individuals who agreed to having their desktop internet browsing and TV viewing behavior passively tracked."
+            "value": "Where do Americans get their news? Who is the typical consumer of news? And how many people are really in partisan “echo chambers”? We had these questions in mind when putting together the four interactive charts on this page."
         },
         {
             "type": "text",
-            "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, but especially for older Americans, TV news dominates online news articles in terms of total time spent. Put simply, when we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
+            "value": "The analyses here are mostly reproductions of figures from two Science Advances articles published in 2020 and 2022. The underlying datasets are derived from large panels (50-100k) of individuals who agreed to having their desktop internet browsing and TV viewing behavior passively tracked."
         },
         {
             "type": "text",
-            "value": "The analysis also reveals"
+            "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
+        },
+        {
+            "type": "text",
+            "value": "When we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
         }
     ],
     "controls": {
@@ -21,7 +25,7 @@
         },
         "partisanship": {
             "title": "Partisanship",
-            "description": "Lenient means that websites more partisan than TheGuardian.com (FoxNews.com) are counted as left (right), and CNN is counted as left-leaning. The strict definition means partisan content bounds are Slate.com (Breitbart.com) on the left (right)"
+            "description": "On the web, we use a popular, Twitter-based method to give each news domain a partisanship score. Lenient means that websites more to the left of TheGuardian.com, and to the right of FoxNews.com are counted as highly partisan. Stringent means that Slate.com and Breitbart.com—more less centrist news sources—define “highly partisan”."
         },
         "node-size": {
             "title": "Node size",
@@ -32,28 +36,27 @@
         "captions": [
             {
                 "type": "text",
-                "value": "Minutes per person per day spent with news and other categories of content on TV and desktop browsing."
+                "value": "Minutes per person per day spent with news and other categories of content on TV and desktop browsing. *Local TV News is not included."
             }
         ]
     },
     "section-one": {
-        "title": "Title for section one",
+        "title": "On Partisan “Echo Chambers”",
         "copy": [
             {
                 "type": "text",
-                "value": "The 2022 article was inspired by popular and academic discussion of “echo chambers,” or the idea that social media has led people to be exposed to overwhelmingly partisan and like-minded news content. To gauge the scale of the echo chamber problem, this figure asks, thow many people have a news diet that is made of majority highly partisan sources? The design of the figure is somewhat unique because we present results corresponding to multiple definitions of majority, 50% and 75%. You can also toggle the definition of “highly partisan” with the lenient/stringent button."
+                "value": "The 2022 article was inspired by all the talk about “echo chambers,” or the idea that social media has led people to be exposed to overwhelmingly partisan and like-minded news content. To gauge the scale of the echo chamber problem, we asked: how many people have a news diet that is made of majority highly partisan sources? The design of the figure below is somewhat unique because we present results corresponding to multiple definitions of “majority”--50% and 75% of an individual’s total news consumption. You can also toggle the definition of what content counts as “highly partisan” with the lenient/stringent button."
             },
             {
                 "type": "text",
-                "value": "While most people think of echo chambers in terms of online information, we find that cable TV, especially Fox News, is more responsible for the partisan segregation in news audiences than any combination of far-right or far-left sites circulating the internet. For example, between 10%-15% of Americans aged 55 and older get the majority of their news from Fox News, depending on the month and the definition chosen. Meanwhile, the online echo chambers never eclipse even 5% of US internet users, for any month and any definition."
-            }
-        ],
-        "references": [
+                "value": "While most people think of echo chambers in terms of social media and the internet, we find that cable TV, especially Fox News, is more responsible for the partisan segregation in news audiences than any combination of far-right or far-left sites circulating the internet. For example, between 10%-15% of Americans aged 55 and older get the majority of their news from Fox News, depending on the month and the definition chosen. The desktop web echo chambers never eclipse even 5% of US internet users for the same age group."
+            },
             {
                 "type": "text",
-                "value": "—nothing for now"
+                "value": "It is important to note that we only capture internet browsing on desktop computers—not mobile devices. So it is conceivable that people see even less or much more partisan content on their mobile devices."
             }
         ],
+        "references": [],
         "captions": [
             {
                 "type": "text",
@@ -62,19 +65,15 @@
         ]
     },
     "section-two": {
-        "title": "Title for section two",
+        "title": "Echo Chambers by State",
         "copy": [
             {
                 "type": "text",
-                "value": "In this map, the size of each semi-circle represents the number of people with segregated news diets in that state. You can click on a state for more information, including the most watched news programs & domains a state-level time series of audience segregation."
+                "value": "In this map, the size of each semi-circle represents the number of people with segregated news diets—or the size of the echo chamber—in that state. You can click on a state for more information, including the most watched news programs & domains. The blue and red shading of each circle indicates how common partisan segregation is in each state, independent of total state population."
             },
             {
                 "type": "text",
-                "value": "When we break the TV audience segregation measurements down by state, we see surprisingly minimal geographic variation. In the “lenient” view, where CNN is counted as left-wing partisan, the Fox News echo chamber still dominates that of the left in nearly every state, with York and California being notable exceptions. If, however, we take the “stringent” definition of partisan, and count only MSNBC as leftwing partisan, then Fox News easily dominates in every single state (though not Washington DC)."
-            },
-            {
-                "type": "text",
-                "value": "Toggling to the web view, we can see that left-wing audience segregation is relatively bigger online."
+                "value": "When we break the TV audience segregation measurements down like this, we see surprisingly minimal geographic variation. In the “lenient” view, where CNN is counted as left-wing partisan, the Fox News echo chamber still dominates that of the left in nearly every state, with New York and California being notable exceptions. If we count only MSNBC as leftwing partisan, then Fox News easily dominates in every single state (though not Washington DC)."
             }
         ],
         "references": [
@@ -90,7 +89,7 @@
             },
             {
                 "type": "text",
-                "value": "State-level timeline of echo chamber size as % of total population"
+                "value": "State-level timeline of echo chamber size as % of total population with TV/desktop computers."
             },
             {
                 "type": "text",
@@ -99,23 +98,19 @@
         ]
     },
     "section-three": {
-        "title": "Title for section three",
+        "title": "The changing behavior in TV News Audiences.",
         "copy": [
             {
                 "type": "text",
-                "value": "In the last figure we introduce one more concept, the news consumption archetype. Rather than assume there to be a singularly typical news viewer, we surface 8 archetypes of news consumption by clustering panelists with similarly distributed news diets. We can then measure the size of each archetype as well as individual movement from one type of behavior to another by assigning panelists each month to the cluster/archetype to which their news diet is most similar. [read the paper for more details]"
+                "value": "In this final figure we introduce a final concept: the news consumption archetype. Rather than assume there to be a singularly typical news viewer, we surface 8 archetypes of news consumption by clustering panelists with similarly distributed news diets. We can then measure the size of each archetype as well as individual-level changes from one type of behavior to another by assigning panelists each month to the cluster/archetype to which their news diet is most similar."
             },
             {
                 "type": "text",
-                "value": "It turns out that each archetypal news diet is dominated by a single category of news. In the figure, each archetype is represented by a node whose size corresponds to the number of people exhibiting that archetypal behavior and whose label is the dominant category. We also include a special archetype called “no news”, which represents all of the panelists that spend 30 minutes or less on news in a given month."
+                "value": "It turns out that each archetypal news diet is dominated by a single category of news. In the figure, each archetype is represented by a node whose size corresponds to the number of people exhibiting that archetypal behavior and whose label is the dominant category. We also include a special archetype called “no news”, which represents all of the panelists that spend 30 minutes or less on news in a given month. The arrows between nodes represent “net flow” between archetypes, a metric of pairwise inflow minus outflow designed to capture viewership migrations."
             },
             {
                 "type": "text",
-                "value": "Hard broadcast news is the largest archetype, by millions of viewers, but it’s rapidly shrinking. The arrows between nodes represent “net flow” between archetypes, a metric of pairwise inflow minus outflow designed to capture viewership migrations. The universe of active."
-            },
-            {
-                "type": "text",
-                "value": ". In fact, While the overall universe of active consumer"
+                "value": "Two major trends characterize the dynamics of TV News Audiences. First, huge numbers—tens of millions—of Americans are ceasing to get news from TV altogether, a mass exodus that is surely due in part to cord-cutting and the rise of streaming services. Second, those continuing to watch news on TV are increasingly becoming followers of the partisan cable news channels, MSNBC and Fox News. In summary, the TV news audience is getting smaller and more polarized."
             }
         ],
         "references": [

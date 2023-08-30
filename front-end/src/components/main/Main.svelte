@@ -62,7 +62,7 @@
 		['tv', {
 			order: ['non-news', 'news'],
 			colors: ['#33a02c', '#b2df8a'],
-			yDomain: [0, 750]
+			yDomain: [0, 250]
 		}
 		],
 		['web', {
@@ -71,7 +71,6 @@
 			yDomain: [0, 100]
 		}],
 	])
-
 	
 	// $: politicalChecked = true
 	$: medium = tvChecked ? 'web' : 'tv'

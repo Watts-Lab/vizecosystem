@@ -96,18 +96,18 @@
 			colorInterpolatorScheme: ["#011f5b", "gainsboro", "#990000"],
 			colorPaletteAnchors: [-0.7, -0.35, -0.18, 0, 0.18, 0.35, 0.85]
 		}],
-		[1, {
-			type: "linear",
-			rScale: scaleSqrt,
-			rDomain: [1e3, 3e6],
-			rRange: [8, 80],
-			zScale: scaleThreshold,
-			zDomain: [0, 0.01, 0.025, 0.05],
-			colorInterpolator: scaleLinear,
-			colorInterpolatorDomain: [0, 1],
-			colorInterpolatorScheme: "gainsboro",
-			colorPaletteAnchors: [0, 0.25, 0.5, 0.75, 1]
-		}],
+		// [1, {
+		// 	type: "linear",
+		// 	rScale: scaleSqrt,
+		// 	rDomain: [1e3, 3e6],
+		// 	rRange: [8, 80],
+		// 	zScale: scaleThreshold,
+		// 	zDomain: [0, 0.01, 0.025, 0.05],
+		// 	colorInterpolator: scaleLinear,
+		// 	colorInterpolatorDomain: [0, 1],
+		// 	colorInterpolatorScheme: "gainsboro",
+		// 	colorPaletteAnchors: [0, 0.25, 0.5, 0.75, 1]
+		// }],
 	])
 
 	$: chart = "0"
