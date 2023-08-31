@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { text } from "svelte/internal";
+
 	// components
 	import LinkButton from "./LinkButton.svelte";
 	
@@ -9,12 +11,21 @@
 
 <div class='standfirst-wrapper'>
 	{#each standfirst as text, i}
-		<p>
-			{ text.value } 
-			{#if i === 0}<a href="#supplementary">Read more about the data.</a>{/if}
-		</p>
+		{#if text.type === 'buttons'} 
+			<div>Read the original research:
+
+				{#each text.value as btn}
+					<LinkButton { ...btn } />
+				{/each}
+			</div>
+		{:else}
+			<p>
+				{ text.value } 
+				{#if i === 0}<a href="#supplementary">Read more about the data.</a>{/if}
+			</p>
+		{/if}
 	{/each}
-	<LinkButton url={'https://www.pnas.org/doi/10.1073/pnas.2101967118'} />
+	<!-- <LinkButton url={'https://www.pnas.org/doi/10.1073/pnas.2101967118'} /> -->
 </div>
 
 
@@ -26,7 +37,7 @@
 			grid-column: 1 / span 8;
 		}
 
-		p {
+		p, div {
 			margin-bottom: 1em;
 			@include fs-root;
 
@@ -34,7 +45,13 @@
 				@include fs-md;
 			}
 		}
-
 		
+		div {
+			display: flex;
+			gap: 5px;
+			align-items: baseline;
+			@include fs-base;
+		}
+
 	}
 </style>

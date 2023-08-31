@@ -10,6 +10,19 @@
             "value": "The analyses here are mostly reproductions of figures from two Science Advances articles published in 2020 and 2022. The underlying datasets are derived from large panels (50-100k) of individuals who agreed to having their desktop internet browsing and TV viewing behavior passively tracked."
         },
         {
+            "type": "buttons",
+            "value": [
+                {
+                    "title": "The fake news problem",
+                    "url": "https://www.science.org/doi/10.1126/sciadv.aay3539"
+                },
+                {
+                    "title": "Partisan news diets",
+                    "url": "https://www.science.org/doi/10.1126/sciadv.abn0083"
+                }
+            ]
+        },
+        {
             "type": "text",
             "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
         },

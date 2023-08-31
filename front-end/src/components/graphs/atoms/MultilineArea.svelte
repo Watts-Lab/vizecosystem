@@ -74,7 +74,7 @@
       fill: none;
       stroke-linejoin: round;
       stroke-linecap: round;
-      stroke-width: 2;
+      stroke-width: 1.5;
   }
 
   .path-polygon {

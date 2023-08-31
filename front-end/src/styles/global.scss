@@ -13,6 +13,10 @@
     row-gap: 15px;
 }
 
+@mixin grid-main {
+    grid-template-rows: repeat(2, auto);    
+}
+
 @mixin grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

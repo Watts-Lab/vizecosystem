@@ -61,8 +61,7 @@
 		<Svg>
 			<AxisX
 				gridlines={false}
-				ticks={3}
-				snapTicks={true}
+				snapTicks={false}
 				tickMarks={true}
 				formatTick={formatter}
 			/>

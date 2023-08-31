@@ -4,7 +4,7 @@
 	import { flatten } from 'layercake';
 	import { csv } from "d3-fetch";
   	import { autoType } from "d3-dsv";
-	import { group, rollup, rollups, max, sum, zip } from 'd3-array';
+	import { group, zip } from 'd3-array';
 
 	// types
 	import type Author from '../../types/Authors';
@@ -22,7 +22,7 @@
 	import StackedAreas from '../graphs/StackedAreas.svelte';
 
 	// // import utils
-	import { formatMonth } from '../../utils/format-dates';
+	import { formatYear } from '../../utils/format-dates';
 	import labelMap from '../../utils/labels';
 	
 	// prop declaration
@@ -62,7 +62,7 @@
 		['tv', {
 			order: ['non-news', 'news'],
 			colors: ['#33a02c', '#b2df8a'],
-			yDomain: [0, 250]
+			yDomain: [0, 350]
 		}
 		],
 		['web', {
@@ -153,7 +153,7 @@
 				categories={activeChart.order} 
 				colors={activeChart.colors}
 				yDomain={activeChart.yDomain}
-				formatter={formatMonth}
+				formatter={formatYear}
 				caption={captions[0].value}
 				url={ urlChart }
 			/>
@@ -175,10 +175,10 @@
 		@include grid-mobile;
 		@include centerH;
 		align-items: center;
-		margin-top: 25px;
+		margin: 25px 0;
 
 		@media (min-width: $bp-3) {
-			@include grid;
+			@include grid-main;
 			margin-top: 120px;
 		}
 	}
