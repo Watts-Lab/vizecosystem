@@ -1,15 +1,16 @@
 # built-in modules
-from functools import reduce
-from re import search
+from os import getenv
 
 # venv modules
 from pandas import read_csv
 
-def load(f):
-  return read_csv(f)
+bucket = getenv('bucket')
+
+def load(file):
+  return read_csv(f's3://{bucket}/{file}')
 
 def parse(file):
-  data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{file["url"]}')
+  data = load(file["url"])
 
   return data\
     .pivot(

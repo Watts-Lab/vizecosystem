@@ -1,11 +1,14 @@
 # built-in modules
 from functools import reduce
+from os import getenv
 
 # venv modules
 from pandas import read_csv, melt, concat
 
-def load(f):
-  return read_csv(f)
+bucket = getenv('bucket')
+
+def load(file):
+  return read_csv(f's3://{bucket}/{file}')
 
 def parse_tv(d):
     # clean NaNs
@@ -93,7 +96,7 @@ def parse_web(d):
 
 def concat_tv(a, b):
   # load data
-  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(b)
 
   # # append data & return list
   a.append(b_data)
@@ -102,7 +105,7 @@ def concat_tv(a, b):
 
 def concat_web(a, b):
   # load data
-  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(b)
 
   # append data & return list
   a.append(b_data)

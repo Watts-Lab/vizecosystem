@@ -1,11 +1,14 @@
 # built-in modules
 from functools import reduce
+from os import getenv
 
 # venv modules
 from pandas import read_csv, concat
 
-def load(f):
-  return read_csv(f'~/Desktop/upenn/media-consumption/vizecosystem/{f}')
+bucket = getenv('bucket')
+
+def load(file):
+  return read_csv(f's3://{bucket}/{file}')
 
 def concat_sets(a, b):
   # # load data

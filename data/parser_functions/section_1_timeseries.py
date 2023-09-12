@@ -1,18 +1,19 @@
 # built-in modules
 from functools import reduce
 from re import search
+from os import getenv
 
 # venv modules
 from pandas import read_csv, concat, melt, merge, Grouper, DataFrame
 
+bucket = getenv('bucket')
 
-def load(f):
-  return read_csv(f)
-  return f
+def load(file):
+  return read_csv(f's3://{bucket}/{file}')
 
 def parse_web(b):
   # load data
-  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(b)
 
   # # keep only needed columns
   cols = [
@@ -79,7 +80,7 @@ def parse_tv(df):
 
 def concat_tv(a, b):
   # load data
-  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(b)
 
   # filter Puerto Rico out
   b_data = b_data.loc[b_data['state'] != 'PR']

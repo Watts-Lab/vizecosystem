@@ -1,15 +1,15 @@
 # built-in modules
 from functools import reduce
 from re import search
+from os import getenv
 
 # venv modules
 from pandas import read_csv, concat, melt, merge
 
-# # local modules
-# import enforce_order
+bucket = getenv('bucket')
 
-def load(f):
-  return read_csv(f)
+def load(file):
+  return read_csv(f's3://{bucket}/{file}')
 
 def parse_web(df):
   # keep only needed columns
@@ -79,7 +79,7 @@ def parse_tv(df):
 
 def concat_web(a, b):
   # # load data
-  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(b)
 
   # parse subset from type from file name
   file_name = b.split('/')[1].split('_sizes_')[-1].replace('.csv', '')
@@ -107,7 +107,7 @@ def concat_web(a, b):
 
 def concat_tv(a, b):
   # # load data
-  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(b)
   # parse subset from file name
   # - political lean
   # - partisanship definition

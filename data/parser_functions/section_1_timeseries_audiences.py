@@ -1,11 +1,14 @@
 # built-in modules
 from re import search
+from os import getenv
 
 # venv modules
 from pandas import read_csv, concat, to_datetime, Grouper
 
-def load(f):
-  return read_csv(f'~/Desktop/upenn/media-consumption/vizecosystem/{f}')
+bucket = getenv('bucket')
+
+def load(file):
+  return read_csv(f's3://{bucket}/{file}')
 
 def get_top_n(x, n, val):
   return x.sort_values(val, ascending=False)\

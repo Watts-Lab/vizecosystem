@@ -1,13 +1,16 @@
 # built-in modules
 from functools import reduce
 from re import search
+from os import getenv
 
 # venv modules
 from pandas import read_csv, concat, merge, melt, to_datetime, Grouper, DataFrame, DateOffset
 from pandas.tseries.offsets import DateOffset
 
-def load(f):
-  return read_csv(f)
+bucket = getenv('bucket')
+
+def load(file):
+  return read_csv(f's3://{bucket}/{file}')
 
 def parse_web_frac(d):
   # # keep only needed columns
@@ -107,7 +110,7 @@ def parse_web_size(d):
 
 def parse_web(b):
   # load data
-  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(b)
 
   frac_data = parse_web_frac(b_data)
   size_data = parse_web_size(b_data)
@@ -181,7 +184,7 @@ def parse_tv(df):
 
 def concat_tv(a, b):
   # load data
-  b_data = load(f'~/Desktop/upenn/media-consumption/vizecosystem/{b}')
+  b_data = load(b)
 
   # # if TV:
   # parse subset from file name

@@ -4,7 +4,6 @@ from os import getenv
 # local modules
 from parsers import Parser
 
-
 # global vars
 AWS_ACCESS_KEY_ID = getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = getenv('AWS_SECRET_ACCESS_KEY')
@@ -112,8 +111,9 @@ file_parser = Parser(creds)
 for file in datasets:
   out_data = file_parser.parse(file)
 
+  # save data to different location
   out_data.to_csv(
-    f'~/Desktop/upenn/media-consumption/vizecosystem/processed_data/{file["out_name"]}',
+    f's3://{bucket}/processed/{file["out_name"]}',
     index=False,
     float_format=file["format"]
   )
