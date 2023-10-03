@@ -33,11 +33,16 @@
     let url : string = 'assets/data/EchoCh-nationwide-by_gender-or-age_group.csv'
     let data : any[]
     let dataIn : Map<any,any>
+    let groupedData : any[]
     let xKey : string = 'date'
     let yKey : string = 'value'
     let zKey : number = 0
     let tvChecked : boolean = false;
+    let tvChecked2 : boolean = false;
     let scenarioChecked : boolean = true;
+    let scenarioChecked2 : boolean = true;
+    let leanChecked : boolean = false;
+    let leanChecked2 : boolean = true;
     let medium : string = tvChecked ? 'web' : 'tv'
     let partisanship_scenario : string = scenarioChecked ? 'stringent' : 'lenient'
     const scaleRange : Function = scaleLinear();
@@ -69,14 +74,42 @@
             d => d.gender, 
             d => d.medium, 
             d => d.partisanship_scenario,
-            d => d.age_group
+            d => d.age_group,
+            d => d.political_lean,
         )
+    }
+
+    $: if (data && dataIn.size) {
+        groupedData = [
+            ...dataIn
+                .get(gender)
+                .get(medium)
+                .get(partisanship_scenario)
+                .get(age_group)
+                .get(lean)
+                .map(d => ({ ...d, idx: 0 })),
+            ...dataIn
+                .get(gender2)
+                .get(medium2)
+                .get(partisanship_scenario2)
+                .get(age_group2)
+                .get(lean2)
+                .map(d => ({ ...d, idx: 1 }))
+        ]
     }
 
     $: medium = tvChecked ? 'web' : 'tv'
     $: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
     $: gender = 'All'
     $: age_group = 'All'
+    $: lean = leanChecked ? 'R' : 'L';
+
+    $: medium2 = tvChecked2 ? 'web' : 'tv'
+    $: partisanship_scenario2 = scenarioChecked2 ? 'stringent' : 'lenient'
+    $: age_group2 = 'All'
+    $: gender2 = 'All'
+    $: lean2 = leanChecked2 ? 'R' : 'L';
+    
 </script>
 
 <div class="section section-2" use:inView={{ once }} on:enter={() => loaded = true }>
@@ -88,46 +121,105 @@
             </p>
         {/each}
     </div>
-    
+
     <div class='chart-wrapper'>
-        <div class='controls'>
-            <ControlSwitch 
-                id='medium' 
-                title={copy_data.controls.medium.title}
-                labels={[ 'TV', 'Web' ]}
-                info={copy_data.controls.medium.description}
-                bind:checked={ tvChecked } 
-            />
+        <div class='controls-wrapper'>
+            <div class='controls'>
+                <ControlSwitch 
+                    id='political-lean' 
+                    title={'A lean'}
+                    labels={[ 'L', 'R' ]}
+                    colors={[ '#011f5b' , '#ff0000' ]}
+                    info={copy_data.controls.medium.description}
+                    bind:checked={ leanChecked } 
+                />
+                <!-- title={copy_data.controls.medium.title} -->
+                <ControlSwitch 
+                    id='medium' 
+                    title={copy_data.controls.medium.title}
+                    labels={[ 'TV', 'Web' ]}
+                    info={copy_data.controls.medium.description}
+                    bind:checked={ tvChecked } 
+                />
 
-            <ControlSwitch 
-                id='partisanship' 
-                title={copy_data.controls.partisanship.title}
-                labels={[ 'Lenient', 'Strict' ]}
-                info={copy_data.controls.partisanship.description}
-                bind:checked={ scenarioChecked } 
-            />
+                <ControlSwitch 
+                    id='partisanship' 
+                    title={copy_data.controls.partisanship.title}
+                    labels={[ 'Lenient', 'Strict' ]}
+                    info={copy_data.controls.partisanship.description}
+                    bind:checked={ scenarioChecked } 
+                />
 
-            <div id='age-group' class='control control-menu'>
-                <div class='control-title'>Age group</div>
-                <select id="age-group-menu" name="age-group" bind:value={age_group}>
-                    <option value='All'>All</option>
-                    <option value='18-24'>18-24</option>
-                    <option value='25-34'>25-34</option>
-                    <option value='35-44'>35-44</option>
-                    <option value='45-54'>45-54</option>
-                    <option value='55+'>55+</option>
-                </select>
+                <div id='age-group' class='control control-menu'>
+                    <div class='control-title'>Age group</div>
+                    <select id="age-group-menu" name="age-group" bind:value={age_group}>
+                        <option value='All'>All</option>
+                        <option value='18-24'>18-24</option>
+                        <option value='25-34'>25-34</option>
+                        <option value='35-44'>35-44</option>
+                        <option value='45-54'>45-54</option>
+                        <option value='55+'>55+</option>
+                    </select>
+                </div>
+
+                <div id='gender' class='control control-menu'>
+                    <div class='control-title'>Gender</div>
+                    <select id="gender-menu" name="location" bind:value={gender}>
+                        <option value='All' selected>All</option>
+                        <option value='Male'>Male</option>
+                        <option value='Female'>Female</option>
+                    </select>
+                </div>
             </div>
 
-            <div id='gender' class='control control-menu'>
-                <div class='control-title'>Gender</div>
-                <select id="gender-menu" name="location" bind:value={gender}>
-                    <option value='All' selected>All</option>
-                    <option value='Male'>Male</option>
-                    <option value='Female'>Female</option>
-                </select>
-            </div>
+            <div class='controls'>
+                <ControlSwitch 
+                    id='political-lean' 
+                    title={'B lean'}
+                    labels={[ 'L', 'R' ]}
+                    colors={[ '#035aff' , '#990000' ]}
+                    info={copy_data.controls.medium.description}
+                    bind:checked={ leanChecked2 } 
+                />
+                <!-- title={copy_data.controls.medium.title} -->
+                <ControlSwitch 
+                    id='medium' 
+                    title={copy_data.controls.medium.title}
+                    labels={[ 'TV', 'Web' ]}
+                    info={copy_data.controls.medium.description}
+                    bind:checked={ tvChecked2 } 
+                />
 
+                <ControlSwitch 
+                    id='partisanship' 
+                    title={copy_data.controls.partisanship.title}
+                    labels={[ 'Lenient', 'Strict' ]}
+                    info={copy_data.controls.partisanship.description}
+                    bind:checked={ scenarioChecked2 } 
+                />
+
+                <div id='age-group' class='control control-menu'>
+                    <div class='control-title'>Age group</div>
+                    <select id="age-group-menu" name="age-group" bind:value={age_group2}>
+                        <option value='All'>All</option>
+                        <option value='18-24'>18-24</option>
+                        <option value='25-34'>25-34</option>
+                        <option value='35-44'>35-44</option>
+                        <option value='45-54'>45-54</option>
+                        <option value='55+'>55+</option>
+                    </select>
+                </div>
+
+                <div id='gender' class='control control-menu'>
+                    <div class='control-title'>Gender</div>
+                    <select id="gender-menu" name="location" bind:value={gender2}>
+                        <option value='All' selected>All</option>
+                        <option value='Male'>Male</option>
+                        <option value='Female'>Female</option>
+                    </select>
+                </div>
+            </div>
+            
             {#if loaded && data}
                 <div id='period' class='control control-range'>
                     <div class='control-title'>Period</div>
@@ -138,17 +230,13 @@
                         </div>
                 </div>
             {/if}
+
+            <div class='spacer'></div>
         </div>
         {#if loaded && data}
             <LineAreaChart 
                 data={ data }
-                groupedData={
-                    dataIn
-                        .get(gender)
-                        .get(medium)
-                        .get(partisanship_scenario)
-                        .get(age_group)
-                }
+                { groupedData }
                 scaleRange={ scaleDate }
                 { start }
                 { end }
@@ -237,8 +325,48 @@
         grid-column: 1 / span 12;
     }
 
+    .controls-wrapper {
+        display: grid;
+        grid-template-columns: 1fr auto 0.4fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 5px;
+
+        .spacer {
+            border-right: 1pt solid $light-grey;
+            grid-row: 1 / span 2;
+            grid-column: 2 / span 1;
+        }
+    }
+
+    #period {
+        grid-row: 1 / span 1;
+        grid-column: 3 / span 1;
+        padding-left: 25px;
+
+        .control-title {
+            width: 100%;
+            @include fs-xxs;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .labels {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+
+            .label {
+                @include fs-sm;
+            }
+        }
+    }
+
+
     .controls {
         display: flex;
+        grid-column: 1 / span 1;
 
         .control-switch, 
         .control-menu,
@@ -255,12 +383,12 @@
                 text-transform: uppercase;
 
                 .info {
-                background-color: $off-white;
-                display: inline-block;
-                width: 12px;
-                border-radius: 100%;
-                text-align: center;
-                @include fs-xs;
+                    background-color: $off-white;
+                    display: inline-block;
+                    width: 12px;
+                    border-radius: 100%;
+                    text-align: center;
+                    @include fs-xs;
                 }
             }
 
@@ -274,19 +402,6 @@
             select {
                 margin: 0;
                 @include fs-sm;
-            }
-        }
-        .control-range {
-            flex-grow: 0.25;
-
-            .labels {
-                flex-grow: 1;
-                display: flex;
-                justify-content: space-between;
-
-                .label {
-                    @include fs-sm;
-                }
             }
         }
     }

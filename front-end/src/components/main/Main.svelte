@@ -1,7 +1,6 @@
 <script lang="ts">
 	// node_modules
 	import { onMount } from 'svelte';
-	import { flatten } from 'layercake';
 	import { csv } from "d3-fetch";
   	import { autoType } from "d3-dsv";
 	import { group, zip } from 'd3-array';
@@ -61,14 +60,15 @@
 	const chartConfig : Map<string, { order : string[], colors: string[] }> = new Map([
 		['tv', {
 			order: ['non-news', 'news'],
-			colors: ['#33a02c', '#b2df8a'],
+			// colors: ['#33a02c', '#b2df8a'],
+			colors: ['#a6cee3', '#fb9a99'],
 			yDomain: [0, 350]
 		}
 		],
 		['web', {
 			order: ['non_news', 'facebook', 'hard_news', 'youtube', 'twitter', 'reddit', 'fake_news'],
 			colors: ['#a6cee3',  '#e31a1c', '#fb9a99', '#cab2d6', '#fdbf6f', '#ff7f00', '#6a3d9a'],
-			yDomain: [0, 100]
+			yDomain: [0, 80]
 		}],
 	])
 	

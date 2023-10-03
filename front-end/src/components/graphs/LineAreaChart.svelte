@@ -1,8 +1,9 @@
 <script lang="ts">
 	// node_modules
-	import { LayerCake, Svg } from 'layercake';
+	import { LayerCake, Svg, flatten } from 'layercake';
 	import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale'
 	import { groups } from 'd3-array'
+	import { color } from 'd3-color'
 
 	// types
 	import type Row from '../../types/TimeSeriesRow';
@@ -39,12 +40,17 @@
 
 
 	// variable declaration
-	let seriesNames = Array.from(colorMap).map(d => d[0])
-	let seriesColors = Array.from(colorMap).map(d => d[1])
+	let seriesNames = flatten(Array.from(colorMap)
+		.map(d => d[0])
+		.map(d => {
+			if (d === 'R') return [`${d}_1`, `${d}_0`]
+			return [`${d}_0`, `${d}_1`]
+		})
+	)
+	let seriesColors = flatten(Array.from(colorMap).map(d => d[1]).map(d => [d, color(d).brighter(3).formatHex()]))
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
-
 </script>
 
 <div class="chart line-chart {customClass}">
@@ -55,7 +61,7 @@
 			data = { 
 				groups(
 					groupedData.filter(d => +d.date >= minDate && +d.date <= maxDate), 
-					d => d.political_lean, 
+					d => `${d.political_lean}_${d.idx}`, 
 					d => d.diet_threshold
 				) 
 			}

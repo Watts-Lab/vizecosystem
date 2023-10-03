@@ -2,7 +2,7 @@
   import { getContext } from 'svelte';
   import { line, area, curveBasis } from 'd3-shape';
 
-  const { data, xGet, yGet, xScale, yScale, zScale } = getContext('LayerCake');
+  const { data, xGet, yGet, yScale, zScale } = getContext('LayerCake');
 
   // prop declaration
   export let activeChart : string;
@@ -20,7 +20,6 @@
     .y1(d => $yScale(d.value_2))
     .curve(curveBasis)
 
-
   function drawPath(node, { from, to }, { delay, duration }) {
     const len = node.getTotalLength();
     return {
@@ -31,7 +30,7 @@
     };
   }
   
-  function fade(node, { from, to}, { delay, duration }) {
+  function fade(node, { from, to }, { delay, duration }) {
     return {
       delay,
       duration,

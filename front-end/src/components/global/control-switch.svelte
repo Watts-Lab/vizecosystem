@@ -5,7 +5,7 @@
   export let labels : string[] = [ 'False', 'True' ]
   export let info : string = ''
   export let checked : boolean = true;
-  export let colors : string[] = ['#555', '#ccc']
+  export let colors : string[] = ['#ccc', '#555']
 
   $: showInfo = false;
   $: infoDetail = showInfo ? 'active' : '';
@@ -23,7 +23,7 @@
   <div class='control-label {!checked ? 'active' : ''}'>{ labels[0] }</div>
   <label class='switch'>
     <input type="checkbox" id="medium" name="medium" bind:checked={checked}>
-    <span class="slider" style='--colorFalse: {colors[0]}; --colorTrue: {colors[1]}'></span>
+    <span class="slider" style='--colorFalse: {colors[1]}; --colorTrue: {colors[0]}'></span>
   </label>
   <div class='control-label {checked ? 'active' : ''}'>{ labels[1] }</div>
   <div class='info-detail {infoDetail}'>{ info }</div>
