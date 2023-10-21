@@ -340,7 +340,7 @@
 	.chart-info-wrapper {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
-		margin-top: 10px;
+		margin-top: 25px;
 		margin-bottom: 15px;
 		grid-row: 4 / span 1;
 		grid-column: span 12;

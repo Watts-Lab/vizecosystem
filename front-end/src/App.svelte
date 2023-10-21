@@ -6,28 +6,45 @@
 	// sections
 	import Header from './components/header/Header.svelte';
 	import Footer from './components/footer/Footer.svelte';
+	import Intro from './components/main/Intro.svelte';
 	import Main from './components/main/Main.svelte';
 	import Section2 from './components/main/Section1.svelte';
 	import Section1 from './components/main/Section2.svelte';
 	import Section3 from './components/main/Section3.svelte';
   	import Supplementary from './components/main/Supplementary.svelte';
+	import Modal from './components/main/Modal.svelte'
 
 	// export let title : string = 'Your title goes here';
 	// export let standfirst : any[]
 	export let data : Data
 	export let authors : Author[];
+	export let modal: any;
+
+	$: modal = false
+	$: renderModal = modal && Object.hasOwn(modal, 'renderer')
 </script>
 
 <Header />
 
-<Main 
-	title={ data.title } 
-	{ authors } 
-	standfirst={ data.standfirst }
-	captions={ data['main-section'].captions }
-/>
+<main class:modal={renderModal} class:landing={!renderModal}>
+	<Intro 
+		title={ data.title } 
+		{ authors } 
+		standfirst={ data.standfirst }
+		bind:modal
+	/>
 
-<Section1
+	{#if renderModal}
+		<Modal comp={ modal }/>
+	{/if}
+</main>
+
+
+<!-- <Main
+	captions={ data['main-section'].captions }
+/> -->
+
+<!-- <Section1
 	once={ true } 
 	copy={data['section-one'].copy}
 	refs={data['section-one'].references}
@@ -55,7 +72,7 @@
 	once={ true } 
 	copy={data['section-three'].copy}
 	refs={data['section-three'].references}
-/>
+/> -->
 
 <Footer />
 

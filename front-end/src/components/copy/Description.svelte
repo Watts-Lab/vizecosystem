@@ -32,6 +32,7 @@
 <style lang='scss'>
 	.standfirst-wrapper {
 		grid-column: 1 / span 12;
+		grid-row: 3 / span 1;
 		
 		@media (min-width: $bp-3) {
 			grid-column: 1 / span 8;

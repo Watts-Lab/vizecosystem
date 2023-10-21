@@ -5,17 +5,11 @@
   	import { autoType } from "d3-dsv";
 	import { group, zip } from 'd3-array';
 
-	// types
-	import type Author from '../../types/Authors';
-
 	// import state data
 	import states from '../../data/states.json'
 	import copy_data from '../../data/copy.json'
 
-	// components
-	import Title from '../copy/Title.svelte';
-	import Description from '../copy/Description.svelte';
-	import Authors from '../copy/Authors.svelte';
+	// componenents
 	import ChartPlaceholder from '../global/chart-placeholder.svelte';
 	import ControlSwitch from "../global/control-switch.svelte";
 	import StackedAreas from '../graphs/StackedAreas.svelte';
@@ -25,9 +19,6 @@
 	import labelMap from '../../utils/labels';
 	
 	// prop declaration
-	export let title : string;
-	export let standfirst : any[] = [{value: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi consequatur inventore exercitationem ex perferendis provident, earum cumque maiores quam quidem labore, mollitia odit eaque laborum?'}]
-	export let authors : Author[];
 	export let captions : any[]
 
 	// chart config
@@ -88,12 +79,6 @@
 </script>
 
 <main>
-	<div class='header-wrapper main-column'>
-		<Title title={ title }></Title>
-		<Description standfirst={ standfirst }></Description>
-		<Authors authors={ authors }></Authors>
-	</div>
-
 	<div class='chart-wrapper'>
         <div class='controls'>
             <ControlSwitch 
@@ -169,24 +154,6 @@
 	main {
 		max-width: $column-width;
 		margin: 0 auto;
-	}
-
-	.header-wrapper {
-		@include grid-mobile;
-		@include centerH;
-		align-items: center;
-		margin: 25px 0;
-
-		@media (min-width: $bp-3) {
-			@include grid-main;
-			margin-top: 120px;
-		}
-	}
-
-	.title-container {
-		@include centerH;
-		display: flex;
-		gap: 25px;
 	}
 
 	.menu {

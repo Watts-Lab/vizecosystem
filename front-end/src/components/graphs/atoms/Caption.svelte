@@ -14,6 +14,7 @@
 <style lang='scss'>
     .caption {
         line-height: 1.65;
+        margin: 15px 0;
     }
 
     .caption-text {
@@ -37,9 +38,6 @@
 
     .caption-single-cols {
         grid-column: 1 / span last-line;
-        .download-button {
-            margin: 0 !important;
-        }
     }
 
     .feather {

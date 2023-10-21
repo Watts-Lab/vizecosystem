@@ -40,14 +40,18 @@
 
 
 	// variable declaration
-	let seriesNames = flatten(Array.from(colorMap)
+	let seriesNames = customClass === 'popup-overlay'
+	? Array.from(colorMap).map(d => d[0])
+	: flatten(Array.from(colorMap)
 		.map(d => d[0])
 		.map(d => {
 			if (d === 'R') return [`${d}_1`, `${d}_0`]
 			return [`${d}_0`, `${d}_1`]
 		})
 	)
-	let seriesColors = flatten(Array.from(colorMap).map(d => d[1]).map(d => [d, color(d).brighter(3).formatHex()]))
+	let seriesColors = customClass === 'popup-overlay'
+	? Array.from(colorMap).map(d => d[1])
+	: flatten(Array.from(colorMap).map(d => d[1]).map(d => [d, color(d).brighter(3).formatHex()]))
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)

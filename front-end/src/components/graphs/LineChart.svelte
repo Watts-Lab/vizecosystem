@@ -1,7 +1,7 @@
 <script lang="ts">
 	// node_modules
-	import { Html, LayerCake, Svg } from 'layercake';
-	import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale'
+	import { LayerCake, Svg } from 'layercake';
+	import { scaleTime, scaleLinear } from 'd3-scale'
 
 	// types
 	import type Row from '../../types/TimeSeriesRow';
@@ -10,13 +10,8 @@
 	import Multiline from './atoms/Multiline.svelte';
 	import AxisX from './atoms/AxisX.svelte';
 	import AxisY from './atoms/AxisY.svelte';
-	import SharedTooltip from './tooltips/SharedTooltip.svelte';
 	import Caption from './atoms/Caption.svelte';
-	import Markers from './atoms/Markers.svelte';
 
-	// import utils
-	import colorMap from '../../utils/colors';
-	import labelMap from '../../utils/labels';
 
 	// props declaration
 	export let caption : string;
@@ -33,14 +28,6 @@
 	export let formatTickY : Function = (d : number) => d.toFixed(0);
 	export let includeCaption : boolean = true;
 	export let spanCol : number
-	export let markers : string[]
-
-	// variable declaration
-	// let seriesNames = Array.from(colorMap).map(d => d[0])
-	// let seriesColors = Array.from(colorMap).map(d => d[1])
-
-	// console.log(groupedData);
-
 </script>
 
 <div class="chart line-chart">
@@ -54,10 +41,6 @@
 		{ yDomain }
 		yNice={ true }
 	>
-	<!-- z={ zKey }
-	zScale={ scaleOrdinal() }
-	zDomain={ seriesNames }
-	zRange={ seriesColors } -->
 		<Svg>
 			<AxisX
 				gridlines={false}
@@ -70,18 +53,9 @@
 				ticks={4}
 				formatTick={formatTickY}
 			/>
-			<!-- <Markers data={ markers } /> -->
 			<Multiline activeChart={activeChart}/>
 		</Svg>
 
-		<!-- <Html>
-			<SharedTooltip
-				dataset={data}
-				formatTitle={formatTickX}
-				formatKey={(d) => labelMap.get(d)}
-				formatValue={formatTickY}
-			/>
-		</Html> -->
 	</LayerCake>
 </div>
 {#if includeCaption}

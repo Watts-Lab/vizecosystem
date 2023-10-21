@@ -43,8 +43,8 @@
 		row-gap: 2.5px;
 
 		@media (min-width: $bp-3) {
-			grid-row: 1 / span 1;
-			grid-column: 9 / span last-line;
+			grid-row: 2 / span 1;
+			grid-column: 1 / span 8;
 		}
 
 		.author-container {
