@@ -37,7 +37,7 @@
     }
 
     .caption-single-cols {
-        grid-column: 1 / span last-line;
+        grid-column: span 12;
     }
 
     .feather {

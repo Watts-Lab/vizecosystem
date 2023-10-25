@@ -1,8 +1,8 @@
 name: Prepare data
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 #   schedule:
 #     - cron: '0 1 15 * *' # 1:00 on every 15th (UTC time)

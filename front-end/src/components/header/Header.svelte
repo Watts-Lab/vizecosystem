@@ -139,7 +139,7 @@
         width: 100%;
         box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
         position: relative;
-        z-index: 99999;
+        z-index: 9998;
 
         @media (min-width: $bp-3) {
             height: 84px;

@@ -1,6 +1,20 @@
 {
     "title": "Mapping the (Political) Information Ecosystem",
-    "standfirst": [
+    "controls": {
+        "medium": {
+            "title": "Medium",
+            "description": "Internet or TV"
+        },
+        "partisanship": {
+            "title": "Partisanship",
+            "description": "On the web, we use a popular, Twitter-based method to give each news domain a partisanship score. Lenient means that websites more to the left of TheGuardian.com, and to the right of FoxNews.com are counted as highly partisan. Stringent means that Slate.com and Breitbart.com—more less centrist news sources—define “highly partisan”."
+        },
+        "node-size": {
+            "title": "Node size",
+            "description": "Audience size or average consumption"
+        }
+    },
+    "intro": [
         {
             "type": "text",
             "value": "Where do Americans get their news? Who is the typical consumer of news? And how many people are really in partisan “echo chambers”? We had these questions in mind when putting together the four interactive charts on this page."
@@ -21,9 +35,34 @@
                     "url": "https://www.science.org/doi/10.1126/sciadv.abn0083"
                 }
             ]
+        },
+        {
+            "type": "tiles",
+            "value": [
+                {
+                    "title": "Overall News Consumption",
+                    "tag": "overall-news-consumption"
+                },
+                {
+                    "title": "Echo Chambers part 1",
+                    "tag": "echo-chambers-part1"
+                },
+                {
+                    "title": "Echo Chambers part 2",
+                    "tag": "echo-chambers-part2"
+                },
+                {
+                    "title": "Changing TV Audiences",
+                    "tag": "changing-tv-audiences"
+                }
+            ]
         }
     ],
     "overall-news-consumption": [
+        {
+            "type": "title",
+            "value": "Overall News Consumption"
+        },
         {
             "type": "text",
             "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
@@ -31,22 +70,82 @@
         {
             "type": "text",
             "value": "When we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
+        },
+        {
+            "type": "chart",
+            "value": {
+                "type": "line-area",
+                "title": "Chart title 1 - overall news consumption",
+                "captions": "Caption 1"
+            }
         }
     ],
-    "controls": {
-        "medium": {
-            "title": "Medium",
-            "description": "Internet or TV"
+    "echo-chambers-part1": [
+        {
+            "type": "title",
+            "value": "Echo chambers part 1"
         },
-        "partisanship": {
-            "title": "Partisanship",
-            "description": "On the web, we use a popular, Twitter-based method to give each news domain a partisanship score. Lenient means that websites more to the left of TheGuardian.com, and to the right of FoxNews.com are counted as highly partisan. Stringent means that Slate.com and Breitbart.com—more less centrist news sources—define “highly partisan”."
+        {
+            "type": "text",
+            "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
         },
-        "node-size": {
-            "title": "Node size",
-            "description": "Audience size or average consumption"
+        {
+            "type": "text",
+            "value": "When we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
+        },
+        {
+            "type": "chart",
+            "value": {
+                "type": "line-area",
+                "title": "Chart title 2 - echo chambers part 1",
+                "captions": "Caption 2"
+            }
         }
-    },
+    ],
+    "echo-chambers-part2": [
+        {
+            "type": "title",
+            "value": "Echo chambers part 2"
+        },
+        {
+            "type": "text",
+            "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
+        },
+        {
+            "type": "text",
+            "value": "When we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
+        },
+        {
+            "type": "chart",
+            "value": {
+                "type": "line-area",
+                "title": "Chart title 3 - echo chambers part 2",
+                "captions": "Caption 3"
+            }
+        }
+    ],
+    "changing-tv-audiences": [
+        {
+            "type": "title",
+            "value": "Changing TV news audiences"
+        },
+        {
+            "type": "text",
+            "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
+        },
+        {
+            "type": "text",
+            "value": "When we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
+        },
+        {
+            "type": "chart",
+            "value": {
+                "type": "flow-chart",
+                "title": "Chart title 4 - changing audiences",
+                "captions": "Caption 4"
+            }
+        }
+    ],
     "main-section": {
         "captions": [
             {

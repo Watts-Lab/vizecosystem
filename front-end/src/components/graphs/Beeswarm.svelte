@@ -329,7 +329,7 @@
 		width: 100%;
 		height: 730px;
 		position: relative;
-		grid-row: 5 / span 1;
+		// grid-row: 5 / span 1;
 		grid-column: span 12;
 
 		@media (min-width: $bp-3) {
@@ -342,7 +342,7 @@
 		grid-template-columns: 1fr 2fr;
 		margin-top: 25px;
 		margin-bottom: 15px;
-		grid-row: 4 / span 1;
+		// grid-row: 4 / span 1;
 		grid-column: span 12;
 	}
 

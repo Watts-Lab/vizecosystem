@@ -1,29 +1,27 @@
 <script lang="ts">
+	// import local data
+	import data from '../../data/copy.json'
+	import authors from '../../data/authors.json'
+
     // components
 	import Title from '../copy/Title.svelte';
 	import Description from '../copy/Description.svelte';
 	import Authors from '../copy/Authors.svelte';
-	import Menu from '../section-menu/menu.svelte';
-
-    // types
-	import type Author from '../../types/Authors';
+	import Menu from '../section-menu/Menu.svelte';
 
     // prop declaration
-	export let title : string;
-	export let standfirst : any[] = [{value: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi consequatur inventore exercitationem ex perferendis provident, earum cumque maiores quam quidem labore, mollitia odit eaque laborum?'}]
-	export let authors : Author[];
 	export let modal: any
 </script>
 
 
 <section>
     <div class='header-wrapper main-column'>
-        <Title title={ title }></Title>
-        <Description standfirst={ standfirst }></Description>
+        <Title title={ data.title }></Title>
+        <Description content={ data.intro.filter(d => d.type !== 'tiles') }></Description>
         <Authors authors={ authors }></Authors>
     </div>
 
-	<Menu bind:modal />
+	<Menu tiles={data.intro.filter(d => d.type === 'tiles')} bind:modal />
 </section>
 
 <style lang='scss'>
@@ -40,7 +38,7 @@
 
 		@media (min-width: $bp-3) {
 			@include grid-main;
-			margin-top: 120px;
+			margin-top: 60px;
 		}
 	}
 

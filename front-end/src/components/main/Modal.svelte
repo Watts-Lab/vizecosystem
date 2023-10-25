@@ -4,32 +4,44 @@
 
     export let comp: any;
 
-    const { renderer: Renderer } = comp
+    const { renderer: Renderer, tag } = comp
+    
+    const offset: number = 84
 
+    $: top = window.scrollY
+
+    $: height = window.innerHeight - offset
 </script>
 
-<div class='modal-wrapper' in:fly={{ y: 200, duration: 1000 }} out:fade>
-    <Renderer 
-        once={ true } 
-        copy={data['section-one'].copy}
-        refs={data['section-one'].references}
-        title={data['section-one'].title}
-        captions={data['section-one'].captions}
-    />
+<div class='modal-wrapper' in:fly={{ y: 200, duration: 1000 }} out:fade style='--top: {top + offset}px; --height: {height}px'>
+    <div class='modal'>
+        <Renderer 
+            once={ true } 
+            title={data[tag].filter(d => d.type === 'title')[0]}
+            body={data[tag].filter(d => d.type !== 'title')}
+            refs={data['section-one'].references}
+            captions={data['section-one'].captions}
+        />
+    </div>
 </div>
 
 <style lang="scss">
     .modal-wrapper {
         position: absolute;
-        top: 100px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: $column-width * 1.1;
+        left: 0;
+        right: 0;
+        top: var(--top);
+        height: var(--height);
         background-color: $white;
-        border: 1pt solid $black;
-        z-index: 1000;
+        z-index: 9999;
+        overflow-y: auto;
+        margin-bottom: 100px;
+
+        .modal {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: $column-width;
+        }
     }
 </style>
-
-
-<!--  -->
