@@ -11,6 +11,7 @@
     $: top = window.scrollY
 
     $: height = window.innerHeight - offset
+    
 </script>
 
 <div class='modal-wrapper' in:fly={{ y: 200, duration: 1000 }} out:fade style='--top: {top + offset}px; --height: {height}px'>
@@ -19,8 +20,8 @@
             once={ true } 
             title={data[tag].filter(d => d.type === 'title')[0]}
             body={data[tag].filter(d => d.type !== 'title')}
-            refs={data['section-one'].references}
-            captions={data['section-one'].captions}
+            refs={[]}
+            chart={data[tag].filter(d => d.type === 'chart')[0].value}
         />
     </div>
 </div>

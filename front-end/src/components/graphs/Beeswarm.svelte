@@ -26,7 +26,7 @@
 	export let dataMap : Map<string|number, any>
 	export let fullDataMap : Map<string|number, any>
 	export let activeChart : ChartConfig;
-	export let caption : string = '';
+	export let caption : string;
 	export let tooltipCaptions : any[] = [];
 	export let url : string = '';
 	export let includeCaption : boolean = true;
@@ -134,7 +134,6 @@
 	onMount(() => {
 		setTimeout(() => renderAnnotation = true, 2000)
 	})
-	
 </script>
 
 <div class='chart-info-wrapper main-column'>
@@ -342,7 +341,6 @@
 		grid-template-columns: 1fr 2fr;
 		margin-top: 25px;
 		margin-bottom: 15px;
-		// grid-row: 4 / span 1;
 		grid-column: span 12;
 	}
 

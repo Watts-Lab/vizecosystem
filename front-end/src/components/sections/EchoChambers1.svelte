@@ -15,15 +15,14 @@
 	// components
 	import Beeswarm from '../graphs/Beeswarm.svelte';
 	import ChartPlaceholder from '../global/chart-placeholder.svelte';
-	import ControlSwitch from '../global/control-switch.svelte';
 
 	// prop declaration
 	let loaded : boolean = false;
 	export let once : boolean;
-	export let body : any[]
-    export let refs : any[]
-    export let captions : any[]
-	export let title : any;
+	export let body : any[];
+    export let refs : any[];
+    export let chart : any;
+	export let title : any
 
 	// local data
 	import states from '../../data/states_centroids.json'
@@ -98,13 +97,15 @@
 		}],
 	])
 
-	$: chart = "0"
-	$: activeChart = chartConfig.get(+chart)
+	$: chartIdx = "0"
+	$: activeChart = chartConfig.get(+chartIdx)
 	$: politicalChecked = true
 </script>
 
 <div class="section" use:inView={{ once }} on:enter={() => loaded = true }>
-	<h1 class='section-title'>{ title.value }</h1>
+	<h1 class='section-title'>
+		{ title.value }
+	</h1>
         {#each body as d, i}
 			{#if d.type === 'text'}
 				<p class='copy'>
@@ -115,19 +116,6 @@
 					<h3 class='chart-title'>
 						{d.value.title}
 					</h3>
-			
-					{#if activeChart.type === 'linear'}
-						<div class='controls'>
-							<ControlSwitch 
-								id='medium' 
-								title='Political lean'
-								labels={[ 'L', 'R' ]}
-								info='Right or left leaning'
-								colors={[ "#AA3737", "#384E83" ]}
-								bind:checked={ politicalChecked } 
-							/>
-						</div>
-					{/if}
 				</div>
 				
 				{#if loaded && (data && data.length)}
@@ -138,10 +126,10 @@
 						{ fullDataMap }
 						{ activeChart }
 						{ politicalChecked }
-						caption={ captions[0].value }
-						tooltipCaptions={ captions.slice(1) }
+						caption={ chart.captions }
 						url={ urlChart }
 					/>
+					<!-- tooltipCaptions={ chart.captions.slice(1) } -->
 					{:else} <ChartPlaceholder row={5} />
 				{/if}
 			{/if}

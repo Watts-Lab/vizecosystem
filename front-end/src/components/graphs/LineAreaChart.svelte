@@ -19,7 +19,7 @@
 
 	// props declaration
 	export let margins : Object = { top: 20, right: 10, bottom: 20, left: 45 }
-	export let caption : string = '';
+	export let caption : string
 	export let data : Row[];
 	export let url : string = '';
 	export let groupedData : any[];

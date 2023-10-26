@@ -24,9 +24,9 @@
 	// prop declaration
 	let loaded : boolean = false;
 	export let once : boolean;
-	export let body : any[]
-    export let refs : any[]
-    export let captions : any[]
+	export let body : any[];
+    export let refs : any[];
+    export let chart : any;
 	export let title : any;
 
 	// chart config
@@ -156,9 +156,10 @@
 						colors={activeChart.colors}
 						yDomain={activeChart.yDomain}
 						formatter={formatYear}
-						caption={captions[0].value}
+						caption={chart.captions}
 						url={ urlChart }
 					/>
+					<!-- caption={captions[0].value} -->
 					
 					{:else} <ChartPlaceholder row={0}/>
 				{/if}

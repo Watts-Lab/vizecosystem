@@ -2,8 +2,7 @@
     // components
     import EchoChambers from "../sections/EchoChambers1.svelte";
     import NewsConsumption from "../sections/NewsConsumption.svelte";
-    import Section2 from "../sections/Section2.svelte";
-    import Section3 from "../sections/Section3.svelte";
+    import ChangingAudiences from "../sections/Section3.svelte";
     import Option from "./Option.svelte";
 
     
@@ -11,7 +10,7 @@
         ['overall-news-consumption', { renderer: NewsConsumption }],
         ['echo-chambers-part1', { renderer: EchoChambers }],
         ['echo-chambers-part2', { renderer: EchoChambers }],
-        ['changing-tv-audiences', { renderer: EchoChambers }]
+        ['changing-tv-audiences', { renderer: ChangingAudiences }]
     ]);
 
     export let tiles;
