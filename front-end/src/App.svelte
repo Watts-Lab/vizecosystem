@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
+
 	// sections
 	import Header from './components/header/Header.svelte';
 	import Footer from './components/footer/Footer.svelte';
@@ -18,55 +20,34 @@
 	$: document.body.classList[renderModal ? 'add' : 'remove']('noscroll');
 </script>
 
-<div class="body" class:modalType={renderModal} class:landingType={!renderModal}>
+<div 
+	class="body" 
+	class:modalType={renderModal} 
+	class:landingType={!renderModal}
+>
 	<Header />
 	<main>
 		<Intro bind:modal />
-
-		{#if renderModal}
-			<Modal comp={ modal }/>
-		{/if}
 	</main>
+	{#if renderModal}
+		<Modal comp={ modal } bind:modal />
+		<div 
+			class='modal-background'
+			in:fade
+			out:fade
+		></div>
+	{/if}
+
 	<Footer />
 </div>
-
-<!-- <Main
-	captions={ data['main-section'].captions }
-/> -->
-
-<!-- <Section1
-	once={ true } 
-	copy={data['section-one'].copy}
-	refs={data['section-one'].references}
-	title={data['section-one'].title}
-	captions={data['section-one'].captions}
-/>
-
-<Section2 
-	once={ true } 
-	copy={data['section-two'].copy}
-	refs={data['section-two'].references}
-	title={data['section-two'].title}
-	captions={data['section-two'].captions}
-/>
-
-<Section3 
-	once={ true } 
-	copy={data['section-three'].copy}
-	refs={data['section-three'].references}
-	title={data['section-three'].title}
-	captions={data['section-three'].captions}
-/>
-
-<Supplementary 
-	once={ true } 
-	copy={data['section-three'].copy}
-	refs={data['section-three'].references}
-/> -->
 
 <style lang='scss' global>
 	main, .section {
 		padding: 0 1em;
+	}
+
+	.body {
+		position: relative;
 	}
 
 	.body.landingType {
@@ -82,9 +63,21 @@
 			padding: 0
 		}
 	}
+
+	.modal-background {
+		background-color: transparentize($black, 0.3);
+		position: absolute;
+		top: 0;
+		height: 100%;
+		left: 0;
+		right: 0;
+		z-index: 9998;
+	}
+
 	.section {
 		max-width: $column-width;
-		margin: 3em auto;
+		margin: 1em auto 3em auto;
+		padding: 0 0.5em;
 		display: grid;
 	}
 
@@ -173,3 +166,37 @@
 		stroke-width: 2pt; 
 	}
 </style>
+
+<!-- <Main
+	captions={ data['main-section'].captions }
+/> -->
+
+<!-- <Section1
+	once={ true } 
+	copy={data['section-one'].copy}
+	refs={data['section-one'].references}
+	title={data['section-one'].title}
+	captions={data['section-one'].captions}
+/>
+
+<Section2 
+	once={ true } 
+	copy={data['section-two'].copy}
+	refs={data['section-two'].references}
+	title={data['section-two'].title}
+	captions={data['section-two'].captions}
+/>
+
+<Section3 
+	once={ true } 
+	copy={data['section-three'].copy}
+	refs={data['section-three'].references}
+	title={data['section-three'].title}
+	captions={data['section-three'].captions}
+/>
+
+<Supplementary 
+	once={ true } 
+	copy={data['section-three'].copy}
+	refs={data['section-three'].references}
+/> -->

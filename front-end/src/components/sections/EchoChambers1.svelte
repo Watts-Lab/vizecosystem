@@ -23,6 +23,7 @@
     export let refs : any[];
     export let chart : any;
 	export let title : any
+	export let modal : any;
 
 	// local data
 	import states from '../../data/states_centroids.json'
@@ -137,7 +138,7 @@
 </div>
 
 <style lang='scss'>
-	section {
+	.section {
         grid-template-columns: repeat(12, 1fr);
         column-gap: 0;
 

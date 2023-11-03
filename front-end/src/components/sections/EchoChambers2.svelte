@@ -24,6 +24,7 @@
     export let refs : any[]
     export let captions : any[]
 	export let title : string = 'Title'
+	export let modal : any;
 
 	// local data
 	import states from '../../data/states_centroids.json'

@@ -28,6 +28,7 @@
     export let refs : any[];
     export let chart : any;
 	export let title : any;
+	export let modal : any;
 
 	// chart config
 	let data : any[];
@@ -164,6 +165,12 @@
 					{:else} <ChartPlaceholder row={0}/>
 				{/if}
 			</div>
+			<div 
+				class='close-button bottom' 
+				on:click={() => modal = false }
+			>
+				GO BACK
+			</div>
 		{/if}
 	{/each}
 </div>
@@ -270,4 +277,21 @@
 			}
 		}
 	}
+
+	.close-button.bottom {
+		grid-column: 6 / span 2;
+		text-align: center;
+		cursor: pointer;
+        @include fs-sm;
+	}
+
+	.close-button:hover {
+        opacity: 0.85;
+    }
+
+    .close-button:after {
+        content: '\2715';
+        line-height: 1;
+        margin-left: 5px;
+    }
 </style>
