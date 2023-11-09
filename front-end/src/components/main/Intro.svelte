@@ -17,7 +17,13 @@
 <section>
     <div class='header-wrapper main-column'>
         <Title title={ data.title }></Title>
-        <Description content={ data.intro.filter(d => d.type !== 'tiles') }></Description>
+        <Description 
+			content={ 
+				data.intro
+					.filter(d => d.type !== 'tiles') 
+			}
+			bind:modal
+		></Description>
         <Authors authors={ authors }></Authors>
     </div>
 

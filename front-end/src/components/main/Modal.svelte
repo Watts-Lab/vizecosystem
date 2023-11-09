@@ -4,6 +4,7 @@
 
     export let comp: any;
     export let modal: any;
+    let chart: any = false;
 
     const { renderer: Renderer, tag } = comp
     
@@ -11,7 +12,15 @@
 
     // calculate 
 	$: top = window.scrollY
-    $: height = window.innerHeight - offset;
+    $: height = window.innerHeight;
+    $: title = data[tag].filter(d => d.type === 'title')[0]
+    $: body = data[tag].filter(d => d.type !== 'title')
+    $: {
+        // get chart 
+        const chartArray = data[tag].filter(d => d.type === 'chart')
+        if (chartArray && chartArray.length)
+            chart = chartArray[0].value
+    }
 </script>
 
 <div 
@@ -23,10 +32,10 @@
     <div class='modal'>
         <Renderer 
             once={ true } 
-            title={data[tag].filter(d => d.type === 'title')[0]}
-            body={data[tag].filter(d => d.type !== 'title')}
+            title={ title }
+            body={ body }
             refs={[]}
-            chart={data[tag].filter(d => d.type === 'chart')[0].value}
+            chart={ chart }
             bind:modal
         />
         <div 
@@ -41,8 +50,10 @@
 <style lang="scss">
     .modal-wrapper {
         position: absolute;
-        left: 0;
-        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: calc($column-width + 10px);
         top: calc(var(--top) - var(--offset));
         height: var(--height);
         z-index: 9999;
@@ -51,9 +62,7 @@
 
         .modal {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc($column-width + 10px);
+            width: 100%;
             background-color: $white;
         }
     }
@@ -62,7 +71,7 @@
         position: absolute;
         top: 15px;
         right: 0;
-        padding: 0.5em;
+        padding: 1em 1.75em;
         cursor: pointer;
         @include fs-md;
     }

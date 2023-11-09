@@ -158,6 +158,7 @@
     .et-l--footer {
         background-color: $css-lab-dark-blue;
         color: $light-grey;
+        margin-top: 4em;
     }
 
     .et_pb_section.et_pb_section_0_tb_footer {

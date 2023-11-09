@@ -1,8 +1,4 @@
-<script lang='ts'>
-  export let row : number
-</script>
-
-<div class='chart-placeholder' style={`--row: ${row}`}>
+<div class='chart-placeholder'>
   <div class="lds-roller">
     <div></div>
     <div></div>
@@ -21,7 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-row: var(--row);
     grid-column: span 12;
   }
 

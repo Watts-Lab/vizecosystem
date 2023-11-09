@@ -35,6 +35,9 @@
 			class='modal-background'
 			in:fade
 			out:fade
+			on:click={() => {
+				if (modal) modal = false;
+			}}
 		></div>
 	{/if}
 
@@ -65,7 +68,7 @@
 	}
 
 	.modal-background {
-		background-color: transparentize($black, 0.3);
+		background-color: transparentize($black, 0.1);
 		position: absolute;
 		top: 0;
 		height: 100%;
@@ -77,7 +80,7 @@
 	.section {
 		max-width: $column-width;
 		margin: 1em auto 3em auto;
-		padding: 0 0.5em;
+		padding: 0.5em 2em;
 		display: grid;
 	}
 

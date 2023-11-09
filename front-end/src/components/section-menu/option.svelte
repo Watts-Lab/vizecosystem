@@ -20,6 +20,7 @@
         border: 0.5pt solid $light-grey;
         box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2px;
         padding: 7.5px;
+        cursor: pointer;
 
         @media (min-width: $bp-3) {
 			grid-column: span 6;
@@ -38,7 +39,9 @@
                 background-size: contain;
             }
         }
+    }
 
-        
+    .option:hover {
+        opacity: 0.9;
     }
 </style>

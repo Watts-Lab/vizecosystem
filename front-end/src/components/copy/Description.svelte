@@ -1,9 +1,13 @@
 <script lang="ts">
-	// components
+ 	// components
 	import LinkButton from "./LinkButton.svelte";
+	import Methodology from "../sections/Methodology.svelte";
 	
 	// property definitions
 	export let content : any[];
+	export let modal : any;
+
+	const methodology = { tag: 'methodology', renderer : Methodology };
 
 </script>
 
@@ -20,7 +24,10 @@
 			<p>
 				{ text.value } 
 				{#if i === 0}
-					<a href="#supplementary">Read more about the data.</a>
+					<span 
+						class='methodology' 
+						on:click={() => modal = methodology }
+					>Read more about the data</span>
 				{/if}
 			</p>
 		{/if}
@@ -52,6 +59,14 @@
 			align-items: baseline;
 			@include fs-base;
 		}
+		
+		.methodology {
+			cursor: pointer;
+			border-bottom: 1pt solid $black;
+		}
 
+		.methodology:hover  {
+			opacity: 0.9;
+		}
 	}
 </style>

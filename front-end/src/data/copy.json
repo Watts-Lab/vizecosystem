@@ -21,7 +21,7 @@
         },
         {
             "type": "text",
-            "value": "The analyses here are mostly reproductions of figures from two Science Advances articles published in 2020 and 2022. The underlying datasets are derived from large panels (50-100k) of individuals who agreed to having their desktop internet browsing and TV viewing behavior passively tracked."
+            "value": "The analyses here are mostly reproductions of figures from two Science Advances articles published in 2020 and 2022. The underlying datasets are derived from large panels (50-100k) of individuals who agreed to having their desktop internet browsing and TV viewing behavior passively tracked. The data spanned over a period of seven years from February 2016 to January 2023."
         },
         {
             "type": "buttons",
@@ -68,16 +68,24 @@
             "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
         },
         {
-            "type": "text",
-            "value": "When we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
-        },
-        {
             "type": "chart",
             "value": {
                 "type": "line-area",
                 "title": "Chart title 1 - overall news consumption",
                 "captions": "Minutes per person per day spent with news and other categories of content on TV and desktop browsing. *Local TV News is not included."
             }
+        },
+        {
+            "type": "text",
+            "value": "When we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
+        },
+        {
+            "type": "text",
+            "value": "In the first figure, we tally the average time spent watching news and non-news on TV; online content is analyzed in terms of a larger set of categories, including social media platforms and hyper-partisan and fake sites. The clearest pattern is that older Americans spend much more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
+        },
+        {
+            "type": "text",
+            "value": "When we talk about traditional news audiences in the US, we are primarily talking about older people watching TV."
         }
     ],
     "echo-chambers-part1": [
@@ -124,16 +132,10 @@
             "value": {
                 "type": "line-area",
                 "title": "Chart title 3 - echo chambers part 2",
-                "captions": "Each state is represented in terms of the total number of residents whose news diets are dominated by right-wing and left-wing partisan sources. The shades of red and blue indicate the percentage of residents. Click on a state for more info."
+                "captions": "Each state is represented in terms of the total number of residents whose news diets are dominated by right-wing and left-wing partisan sources. The shades of red and blue indicate the percentage of residents. Click on a state for more info.",
+                "caption1": "State-level timeline of echo chamber size as % of total population with TV/desktop computers.",
+                "caption2": "We define audience size on the program and domain level as our estimate of the number of people spent at least one hour in a given month"
             }
-        },
-        {
-            "type": "caption1",
-            "value": "State-level timeline of echo chamber size as % of total population with TV/desktop computers."
-        },
-        {
-            "type": "caption2",
-            "value": "We define audience size on the program and domain level as our estimate of the number of people spent at least one hour in a given month"
         }
     ],
     "changing-tv-audiences": [
@@ -151,7 +153,7 @@
         },
         {
             "type": "text",
-            "value": "Two major trends characterize the dynamics of TV News Audiences. First, huge numbers—tens of millions—of Americans are ceasing to get news from TV altogether, a mass exodus that is surely due in part to cord-cutting and the rise of streaming services. Second, those continuing to watch news on TV are increasingly becoming followers of the partisan cable news channels, MSNBC and Fox News. In summary, the TV news audience is getting smaller and more polarized."
+            "value": "Two major trends characterize the dynamics of TV News Audiences. First, huge numbers—tens of millions—of Americans are ceasing to get news from TV altogether, a mass exodus that is surely due in part to cord-cutting and the rise of streaming services. Second, those continuing to watch news on TV are increasingly becoming followers of the partisan cable news channels, MSNBC and Fox News. In summary, the TV news audience is shrinking and becoming more polarized."
         },
         {
             "type": "chart",
@@ -160,6 +162,28 @@
                 "title": "Chart title 4 - changing audiences",
                 "captions": "Television news consumption archetypes are each labeled according to the category of news most prominently consumed within the archetype, along with a large ninth group of people who are exposed to less than 30 min of news in a month, calculated independently in each month over the 4 years of analysis. The figure represents the direction and magnitude of turnover between each pair of archetypes. For example, if—over a given period of time—1M individuals moved from archetype A to archetype B, and over the same period of time 4M individuals did the reverse and moved from archetype B to A, then the net flow over that time period would be 3M from B to A."
             }
+        }
+    ],
+    "methodology": [
+        {
+            "type": "title",
+            "value": "Methodology"
+        },
+        {
+            "type": "text",
+            "value": "In this final figure we introduce a final concept: the news consumption archetype. Rather than assume there to be a singularly typical news viewer, we surface 8 archetypes of news consumption by clustering panelists."
+        },
+        {
+            "type": "text",
+            "value": "With similarly distributed news diets. We can then measure the size of each archetype as well as individual-level changes from one type of behavior to another by assigning panelists each month to the cluster/archetype to which their news diet is most similar."
+        },
+        {
+            "type": "text",
+            "value": "We can then measure the size of each archetype as well as individual-level changes from one type of behavior to another by assigning panelists each month to the cluster/archetype to which their news diet is most similar."
+        },
+        {
+            "type": "text",
+            "value": "There to be a singularly typical news viewer, we surface 8 archetypes of news. We can then measure the size of each archetype as well as individual-level changes from one type."
         }
     ]
 }

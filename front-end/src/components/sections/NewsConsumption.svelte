@@ -160,19 +160,18 @@
 						caption={chart.captions}
 						url={ urlChart }
 					/>
-					<!-- caption={captions[0].value} -->
 					
-					{:else} <ChartPlaceholder row={0}/>
+					{:else} <ChartPlaceholder />
 				{/if}
-			</div>
-			<div 
-				class='close-button bottom' 
-				on:click={() => modal = false }
-			>
-				GO BACK
 			</div>
 		{/if}
 	{/each}
+	<div 
+		class='close-button bottom' 
+		on:click={() => modal = false }
+	>
+		GO BACK
+	</div>
 </div>
 
 <style lang='scss'>

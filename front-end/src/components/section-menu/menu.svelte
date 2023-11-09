@@ -1,19 +1,22 @@
 <script lang="ts">
     // components
-    import EchoChambers from "../sections/EchoChambers1.svelte";
+    import EchoChambers1 from "../sections/EchoChambers1.svelte";
+    import EchoChambers2 from "../sections/EchoChambers2.svelte";
     import NewsConsumption from "../sections/NewsConsumption.svelte";
-    import ChangingAudiences from "../sections/Section3.svelte";
+    import ChangingTVAudiences from "../sections/ChangingTVAudiences.svelte";
+    import Methodology from "../sections/Methodology.svelte";
     import Option from "./Option.svelte";
 
     
     const sectionMapper = new Map([
         ['overall-news-consumption', { renderer: NewsConsumption }],
-        ['echo-chambers-part1', { renderer: EchoChambers }],
-        ['echo-chambers-part2', { renderer: EchoChambers }],
-        ['changing-tv-audiences', { renderer: ChangingAudiences }]
+        ['echo-chambers-part1', { renderer: EchoChambers1 }],
+        ['echo-chambers-part2', { renderer: EchoChambers2 }],
+        ['changing-tv-audiences', { renderer: ChangingTVAudiences }]
     ]);
+    const methodology = { tag: 'methodology', renderer : Methodology };
 
-    export let tiles;
+    export let tiles: any[];
 
     // tiles
     const layout: any[] = tiles[0].value.map(d => ({
@@ -30,6 +33,10 @@
     {#each layout as comp, index}
         <Option {comp} {index} bind:modal />
     {/each}
+    <div 
+        class='methodology' 
+        on:click={() => modal = methodology }
+    >Read the methodology</div>
 </div>
 
 <style lang="scss">
@@ -41,22 +48,15 @@
         row-gap: 10px;
         margin: 0 0 50px 0;
     }
-</style>
 
-<!-- [
-    {
-        renderer: Section1,
-        image: 'http://placekitten.com/200/300',
-        title: 'Overall News Consumption'
-    },
-    {
-        renderer: Section2,
-        image: 'https://dummyimage.com/300/ffffff/000000',
-        title: 'Echo Chambers'
-    },
-    {
-        renderer: Section3,
-        image: 'https://placebear.com/200/300',
-        title: 'Changing TV News Audiences'
-    },
-] -->
+    .methodology {
+        grid-column: 1 / span 12;
+        margin: 25px 0 0 0;
+        cursor: pointer;
+        @include fs-sm;
+    }
+
+    .methodology:hover {
+        opacity: 0.9;
+    }
+</style>

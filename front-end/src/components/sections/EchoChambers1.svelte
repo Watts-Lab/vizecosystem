@@ -88,7 +88,7 @@
 			type: "diverging",
 			rScale: scaleSqrt,
 			rDomain: [1e3, 3e6],
-			rRange: [8, 80],
+			rRange: [8, 70],
 			zScale: scaleThreshold,
 			zDomain: [-0.1, -0.05, -0.01, 0.01, 0.05, 0.1],
 			colorInterpolator: scaleDiverging,
@@ -107,34 +107,39 @@
 	<h1 class='section-title'>
 		{ title.value }
 	</h1>
-        {#each body as d, i}
-			{#if d.type === 'text'}
-				<p class='copy'>
-					{d.value}
-				</p>
-			{:else}
-				<div class='title-container'>
-					<h3 class='chart-title'>
-						{d.value.title}
-					</h3>
-				</div>
-				
-				{#if loaded && (data && data.length)}
-					<Beeswarm
-						{ data }
-						{ states }
-						{ dataMap }
-						{ fullDataMap }
-						{ activeChart }
-						{ politicalChecked }
-						caption={ chart.captions }
-						url={ urlChart }
-					/>
-					<!-- tooltipCaptions={ chart.captions.slice(1) } -->
-					{:else} <ChartPlaceholder row={5} />
-				{/if}
+	{#each body as d, i}
+		{#if d.type === 'text'}
+			<p class='copy'>
+				{d.value}
+			</p>
+		{:else}
+			<div class='title-container'>
+				<h3 class='chart-title'>
+					{d.value.title}
+				</h3>
+			</div>
+			
+			{#if loaded && (data && data.length)}
+				<Beeswarm
+					{ data }
+					{ states }
+					{ dataMap }
+					{ fullDataMap }
+					{ activeChart }
+					{ politicalChecked }
+					caption={ chart.captions }
+					url={ urlChart }
+				/>
+				{:else} <ChartPlaceholder />
 			{/if}
-        {/each}
+		{/if}
+	{/each}
+	<div 
+		class='close-button bottom' 
+		on:click={() => modal = false }
+	>
+		GO BACK
+	</div>
 </div>
 
 <style lang='scss'>
@@ -190,4 +195,21 @@
 	.title-container {
 		grid-column: span 12;
 	}
+
+	.close-button.bottom {
+		grid-column: 6 / span 2;
+		text-align: center;
+		cursor: pointer;
+        @include fs-sm;
+	}
+
+	.close-button:hover {
+        opacity: 0.85;
+    }
+
+    .close-button:after {
+        content: '\2715';
+        line-height: 1;
+        margin-left: 5px;
+    }
 </style>
