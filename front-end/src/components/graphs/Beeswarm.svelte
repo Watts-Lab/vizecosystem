@@ -9,15 +9,13 @@
 
 	// components
 	import ForceDiverging from './ForceDiverging.svelte';
-	import ForceLinear from './ForceLinear.svelte';
 	import PopupOverlay from './tooltips/PopupOverlay.svelte';
 	import ControlSwitch from '../global/control-switch.svelte';
 	import Caption from './atoms/Caption.svelte';
 	
 	// local data
-	import statesDict from '../../data/states.json'
 	import copy_data from '../../data/copy.json'
-
+	import statesDict from '../../data/states.json'
 	const statesMap = new Map(statesDict.map(d => [d.state, d]))
 
 	// props declaration
@@ -52,6 +50,8 @@
 	let render : boolean = false;
 	let renderAnnotation : boolean = false;
 	let dataIn : any;
+
+	
 
 	// when component is rendered, set render to true
 	// this will allow the inner contents of the LayerCake
@@ -275,33 +275,17 @@
 	>
 		<Svg>
 			{#if render}
-				{#if activeChart.type === 'diverging'}
-					<ForceDiverging
-						{ medium }
-						{ diet_threshold }
-						{ partisanship_scenario }
-						collideStrength={ 0.1 }
-						manyBodyStrength={ -0.5 }
-						{ renderAnnotation }
-						on:mouseenter={ handleMouseEnter }
-						on:mouseleave={ handleMouseLeave }
-						on:click={ handleClick }
-					/>
-				{/if}
-
-				{#if activeChart.type === 'linear'}
-					<ForceLinear
-						{ medium }
-						{ diet_threshold }
-						{ partisanship_scenario }
-						{ political_lean }
-						collideStrength={ 0.1 }
-						manyBodyStrength={ -0.5 }
-						on:mouseenter={ handleMouseEnter }
-						on:mouseleave={ handleMouseLeave }
-						on:click={ handleClick }
-					/>
-				{/if}
+				<ForceDiverging
+					{ medium }
+					{ diet_threshold }
+					{ partisanship_scenario }
+					collideStrength={ 0.1 }
+					manyBodyStrength={ -0.5 }
+					{ renderAnnotation }
+					on:mouseenter={ handleMouseEnter }
+					on:mouseleave={ handleMouseLeave }
+					on:click={ handleClick }
+				/>
 			{/if}
 		</Svg>
 		<Html pointerEvents={!hidePopup}>

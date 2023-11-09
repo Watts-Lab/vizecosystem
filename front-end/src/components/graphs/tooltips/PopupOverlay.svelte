@@ -36,6 +36,7 @@
   let zKey : number = 0
   let data : any[];
   let dataMap : Map<string|number, any>;
+  let dataScale : Map<string|number, any>;
   let table : any[];
   let tableMap : Map<string|number, any>
   let nodeMap : Map<string|number, any>;
@@ -50,6 +51,13 @@
 			data,
 			d => d.state,
 			d => d.medium,
+      d => d.partisanship_scenario
+		)
+
+    dataScale = group(
+			data,
+			d => d.state,
+			d => d.medium
 		)
 
     // load data for tables
@@ -69,15 +77,16 @@
 	}
 
   $: nodeMap = group($nodesData, d => d.abbr)
-
 </script>
 
 <div class='overlay {!hidePopup ? 'active' : ''}'>
   {#if !hidePopup}
-    {@const { abbr, state, data: nodeData } = nodeMap.get(popup.detail.node.abbr)[0]} 
+    {@const { abbr, state, data: nodeData } 
+      = nodeMap.get(popup.detail.node.abbr)[0]} 
     {@const dataChart = dataMap
       .get(abbr)
       .get(medium)
+      .get(partisanship_scenario)
       .map(d => ({ ...d, value: Math.max(d.right_pct, d.left_pct)}))
     }
     {@const dataIn = flatten(dataChart.map(d => [
@@ -85,10 +94,13 @@
       { ...d, political_lean: 'L', value: d.left_pct },
     ]))}
     {@const [ start, end ] = extent(dataChart, d => +d.date)}
-    <h1 class='title' out:fade="{{ delay: 300 }}"><span>{abbr}</span> {state}</h1>
+    <h1 
+      class='title' 
+      out:fade="{{ delay: 300 }}"
+    ><span>{abbr}</span> {state}</h1>
     <div class='info'>
       <div class='info-inner'>
-        <h6>Partisan lean</h6>
+        <h6>Partisan lean population</h6>
         <span class='info-L info-pct'>
           <span class='info-label'>L</span>
           <span class='info-value'>{formatPct0(nodeData.left_pct)}</span>
@@ -116,7 +128,11 @@
     </div>
     <div class='overlay-col1-container'>
       <LineAreaChart 
-        data={ dataChart }
+        data={ dataScale
+          .get(abbr)
+          .get(medium) 
+          .map(d => ({ ...d, value: Math.max(d.right_pct, d.left_pct)}))
+        }
         groupedData={ dataIn }
         scaleRange={scaleLinear().range([start, end])}
         start={ 0 }
@@ -132,10 +148,9 @@
       /> 
     </div>
     <p class='caption overlay-col1-caption'>
-      <span>TV & Web news diet polarization.</span> { tooltipCaptions[0].value }
+      <span>TV & Web news diet polarization.</span> { tooltipCaptions[0] }
     </p>
     
-    <!-- {#if medium === 'tv'} -->
       {@const tableChart = tableMap
         .get(period)
         .get(abbr)
@@ -147,10 +162,9 @@
           { medium }
         />
       </div>
-    <!-- {/if} -->
 
     <p class='caption overlay-col2-caption'>
-      <span>Most {medium === 'tv' ? 'watched' : 'viewed'}.</span> { tooltipCaptions[1].value }
+      <span>Most {medium === 'tv' ? 'watched' : 'viewed'}.</span> { tooltipCaptions[1] }
     </p>
   {/if}
   <div class='close-button' on:click={() => onClick() }></div>
@@ -167,20 +181,20 @@
     position: absolute;
     top: 0;
     left: -250%;
-    width: 120%;
+    width: 105%;
     height: 100%;
     background-color: $off-white;
-    padding: 30px 50px;
+    padding: 20px 10px;
     display: grid;
     column-gap: 35px;
     row-gap: 8px;
-    grid-template-rows: 0fr auto 1fr 0.3fr;
-    grid-template-columns: 0.62fr 0.38fr;
+    grid-template-rows: 0fr 0fr 1fr 0.3fr;
+    grid-template-columns: 0.60fr 0.4fr;
     transition: left 0.3s ease-out;
   }
 
   .overlay.active {
-    left: -10%;
+    left: -2.5%;
   }
 
   .overlay-col1-container {

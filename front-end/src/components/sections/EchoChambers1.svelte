@@ -27,6 +27,7 @@
 
 	// local data
 	import states from '../../data/states_centroids.json'
+	import copy_data from '../../data/copy.json'
 
 	// chart config
 	let data : any[];
@@ -128,6 +129,13 @@
 					{ activeChart }
 					{ politicalChecked }
 					caption={ chart.captions }
+					tooltipCaptions={[1,2].map(d => (
+						copy_data['echo-chambers-part1']
+							.filter(d => d.type === 'chart')
+							[0]
+							.value
+							[`caption${d}`]
+					))}
 					url={ urlChart }
 				/>
 				{:else} <ChartPlaceholder />

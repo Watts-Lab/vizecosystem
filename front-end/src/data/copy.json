@@ -110,7 +110,9 @@
             "value": {
                 "type": "line-area",
                 "title": "Chart title 2 - echo chambers part 1",
-                "captions": "The monthly percent of Americans experiencing partisan segregation via TV or Web news. Bounds represent a range of percentages—from 50 to 75—of individual-level news diets that must be partisan for partisan segregation."
+                "captions": "The monthly percent of Americans experiencing partisan segregation via TV or Web news. Bounds represent a range of percentages—from 50 to 75—of individual-level news diets that must be partisan for partisan segregation.",
+                "caption1": "State-level timeline of echo chamber size as % of total population with TV/desktop computers.",
+                "caption2": "We define audience size on the program and domain level as our estimate of the number of people spent at least one hour in a given month"
             }
         }
     ],
@@ -132,9 +134,7 @@
             "value": {
                 "type": "line-area",
                 "title": "Chart title 3 - echo chambers part 2",
-                "captions": "Each state is represented in terms of the total number of residents whose news diets are dominated by right-wing and left-wing partisan sources. The shades of red and blue indicate the percentage of residents. Click on a state for more info.",
-                "caption1": "State-level timeline of echo chamber size as % of total population with TV/desktop computers.",
-                "caption2": "We define audience size on the program and domain level as our estimate of the number of people spent at least one hour in a given month"
+                "captions": "Each state is represented in terms of the total number of residents whose news diets are dominated by right-wing and left-wing partisan sources. The shades of red and blue indicate the percentage of residents. Click on a state for more info."
             }
         }
     ],

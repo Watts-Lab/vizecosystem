@@ -37,7 +37,11 @@
       css: (t, u) =>
         `opacity: ${1 * t}`
     };
+
   }
+
+  console.log($zScale.domain(), $zScale.range())
+  console.log($data)
 </script>
 
 <g class={`line-group line-group-${activeChart}`}>
@@ -55,6 +59,7 @@
             animate:drawPath={{ delay: 0, duration: 500 }}
           ></path>
         {/each}
+        
         {#each group[1].filter(e => e[0] === 50) as d, l (d)}
           <path
             class={`path-polygon path-polygon-${d[0]}`}

@@ -98,8 +98,12 @@
 		height: 400px;
 	}
 
-	.chart-mini, .popup-overlay {
+	.chart-mini {
 		height: 100%;
+	}
+
+	.popup-overlay {
+		display: flex;
 	}
 
 	.small-multiples,
@@ -169,37 +173,3 @@
 		stroke-width: 2pt; 
 	}
 </style>
-
-<!-- <Main
-	captions={ data['main-section'].captions }
-/> -->
-
-<!-- <Section1
-	once={ true } 
-	copy={data['section-one'].copy}
-	refs={data['section-one'].references}
-	title={data['section-one'].title}
-	captions={data['section-one'].captions}
-/>
-
-<Section2 
-	once={ true } 
-	copy={data['section-two'].copy}
-	refs={data['section-two'].references}
-	title={data['section-two'].title}
-	captions={data['section-two'].captions}
-/>
-
-<Section3 
-	once={ true } 
-	copy={data['section-three'].copy}
-	refs={data['section-three'].references}
-	title={data['section-three'].title}
-	captions={data['section-three'].captions}
-/>
-
-<Supplementary 
-	once={ true } 
-	copy={data['section-three'].copy}
-	refs={data['section-three'].references}
-/> -->

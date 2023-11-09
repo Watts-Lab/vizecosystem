@@ -13,13 +13,14 @@
 	import AxisX from './atoms/AxisX.svelte';
 	import AxisY from './atoms/AxisY.svelte';
 	import Caption from './atoms/Caption.svelte';
+	import Legend from './atoms/MultilineAreaLegend.svelte'
 
 	// import utils
 	import { politicsMap as colorMap } from '../../utils/colors';
 
 	// props declaration
 	export let margins : Object = { top: 20, right: 10, bottom: 20, left: 45 }
-	export let caption : string
+	export let caption : string = ''
 	export let data : Row[];
 	export let url : string = '';
 	export let groupedData : any[];
@@ -29,7 +30,11 @@
 	export let yDomain : number[] = [0, null];
 	export let formatTickX : Function;
 	export let xTicks : number|Array<number>|Function = 6;
-	export let formatTickY : Function = (d : number) => d.toLocaleString('en-NZ', { style: 'percent' });
+	export let formatTickY : Function = (d : number, i : number, a: number) => (
+		i === a - 1
+		? `${d.toLocaleString('en-NZ', { style: 'percent' })} of population`
+		: d.toLocaleString('en-NZ', { style: 'percent' })
+	);
 	export let includeCaption : boolean = true;
 	export let spanCol : number
 	export let customClass : string
@@ -57,46 +62,54 @@
 	$: maxDate = scaleRange(end)
 </script>
 
-<div class="chart line-chart {customClass}">
-	{#if data && data.length}
-		<LayerCake
-			padding={ margins }
-			flatData = { data.filter(d => +d.date >= minDate && +d.date <= maxDate) }
-			data = { 
-				groups(
-					groupedData.filter(d => +d.date >= minDate && +d.date <= maxDate), 
-					d => `${d.political_lean}_${d.idx}`, 
-					d => d.diet_threshold
-				) 
-			}
-			x={ xKey }
-			xScale={ xKey === 'date' ? scaleTime() : scaleLinear() }
-			y={ yKey }
-			{ yDomain }
-			yNice={ true }
-			z={ zKey }
-			zScale={ scaleOrdinal() }
-			zDomain={ seriesNames }
-			zRange={ seriesColors }
-		>
-			<Svg>
-				{#if includeAxis}
-					<AxisX
-						gridlines={false}
-						ticks={xTicks}
-						formatTick={formatTickX}
-						snapTicks={false}
-						tickMarks={true}
+<div class="chart-container">
+	<Legend />
+	<div class="chart line-chart {customClass}">
+		{#if data && data.length}
+			<LayerCake
+				padding={ margins }
+				flatData = { data.filter(d => +d.date >= minDate && +d.date <= maxDate) }
+				data = { 
+					groups(
+						groupedData.filter(d => +d.date >= minDate && +d.date <= maxDate), 
+						(d) => (
+							d.idx !== undefined
+							? `${d.political_lean}_${d.idx}`
+							: d.political_lean
+						), 
+						(d) => d.diet_threshold
+					) 
+				}
+				x={ xKey }
+				xScale={ xKey === 'date' ? scaleTime() : scaleLinear() }
+				y={ yKey }
+				{ yDomain }
+				yNice={ true }
+				z={ zKey }
+				zScale={ scaleOrdinal() }
+				zDomain={ seriesNames }
+				zRange={ seriesColors }
+			>
+				<Svg>
+					{#if includeAxis}
+						<AxisX
+							gridlines={false}
+							ticks={xTicks}
+							formatTick={formatTickX}
+							snapTicks={false}
+							tickMarks={true}
 						/>
-					<AxisY
-						ticks={4}
-						formatTick={formatTickY}
-					/>
-				{/if}
-				<Multiline activeChart={'test'}/>
-			</Svg>
-		</LayerCake>
-	{/if}
+						<AxisY
+							ticks={4}
+							formatTick={formatTickY}
+						/>
+						<Legend />
+					{/if}
+					<Multiline activeChart={'test'} />
+				</Svg>
+			</LayerCake>
+		{/if}
+	</div>
 </div>
 {#if includeCaption}
 	<Caption { caption } { url } type={spanCol === 12 ? 'split-cols' : 'single-cols'} />
