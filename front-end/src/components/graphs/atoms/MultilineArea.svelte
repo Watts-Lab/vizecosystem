@@ -39,9 +39,6 @@
     };
 
   }
-
-  console.log($zScale.domain(), $zScale.range())
-  console.log($data)
 </script>
 
 <g class={`line-group line-group-${activeChart}`}>
