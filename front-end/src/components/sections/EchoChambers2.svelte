@@ -1,115 +1,108 @@
 <script lang="ts">
-    // node_modules
-    import { onMount } from "svelte";
-    import { csv } from "d3-fetch";
-    import { autoType } from "d3-dsv";
-    import { group, extent } from "d3-array"
-    import { scaleLinear } from 'd3-scale'
+	// node_modules
+	import { onMount } from 'svelte';
+	import { csv } from "d3-fetch";
+  	import { autoType } from "d3-dsv";
+	import { group, rollup, descending, rank } from 'd3-array';
+	import { scaleDiverging, scaleThreshold, scaleSqrt } from 'd3-scale';
 	
+    // types
+	import type ChartConfig from '../../types/ChartConfig';
+
     // actions
     import inView from "../../actions/inView";
 
     // components
-    import LineAreaChart from "../graphs/LineAreaChart.svelte";
-    import DoubleRangeSlider from "../global/double-range-slider.svelte";
-    import ControlSwitch from "../global/control-switch.svelte";
+    import Beeswarm from '../graphs/Beeswarm.svelte';
     import ChartPlaceholder from '../global/chart-placeholder.svelte';
 
-    // // import utils
-	import { formatMonth } from '../../utils/format-dates';
-
-	// import copy data
-	import copy_data from '../../data/copy.json'
-
-	// prop declaration
-	let loaded : boolean = false;
-	export let once : boolean;
-	export let body : any[];
+    // prop declaration
+    let loaded : boolean = false;
+    export let once : boolean;
+    export let body : any[];
     export let refs : any[];
     export let chart : any;
-	export let title : any
-	export let modal : any;
+    export let title : any
+    export let modal : any;
 
-	// variable declaration
-    let url : string = 'assets/data/EchoCh-nationwide-by_gender-or-age_group.csv'
-    let data : any[]
-    let dataIn : Map<any,any>
-    let groupedData : any[]
-    let xKey : string = 'date'
-    let yKey : string = 'value'
-    let zKey : number = 0
-    let tvChecked : boolean = false;
-    let tvChecked2 : boolean = false;
-    let scenarioChecked : boolean = true;
-    let scenarioChecked2 : boolean = true;
-    let leanChecked : boolean = false;
-    let leanChecked2 : boolean = true;
-    let medium : string = tvChecked ? 'web' : 'tv'
-    let partisanship_scenario : string = scenarioChecked ? 'stringent' : 'lenient'
-    const scaleRange : Function = scaleLinear();
-    let start = 0
-    let end = 1
-    let gender = 'All'
-    let age_group = 'All'
-    
+    // local data
+    import states from '../../data/states_centroids.json'
+    import copy_data from '../../data/copy.json'
+
+    // chart config
+    let data : any[];
+    let dataMap : Map<string, any>
+    let fullDataMap : Map<string, any>
+    const urlChart : string  = 'assets/data/EchoCh-by_state.csv'
+
     onMount(async () => {
-        const res = await csv(url, autoType)
-        data = res.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
+        // load data for map + line chart
+        const resChart = await csv(urlChart, autoType)
+        const rankVars : string[] = ['left_pct', 'right_pct', 'left_size', 'right_size']
+        const ranks = rollup(
+            resChart, 
+            v => {
+                const varObj = {}
+                rankVars.forEach(r => {
+                    const statesObj = {}
+                    const ranked = rank(v.map(d => d[r]), descending)
+                    v.forEach((d, i)=> { statesObj[d.state] = ranked[i] + 1 })
+                    varObj[r] = statesObj
+                })
 
-        const [ min, max ] = extent(data, d => +d.date); 
-        scaleRange.range([ min, max ])
-	})
-
-    const scaleDate : Function = (x) => {
-        const date = new Date(scaleRange(x))
-        date.setDate(1)
-        date.setHours(0, 0, 0)
-        date.setMilliseconds(0)
-
-        return +date
-    }
-
-    $: if (data) {
-        dataIn = group(
-            data, 
-            d => d.gender, 
+                return varObj
+            }, 
+            d => d.period, 
             d => d.medium, 
-            d => d.partisanship_scenario,
-            d => d.age_group,
-            d => d.political_lean,
+            d => d.diet_threshold, 
+            d => d.partisanship_scenario
         )
-    }
+        data = resChart.map(d => ({ 
+            ...d,
+            left_pct_rk: ranks.get(d.period).get(d.medium).get(d.diet_threshold).get(d.partisanship_scenario)['left_pct'][d.state],
+            right_pct_rk: ranks.get(d.period).get(d.medium).get(d.diet_threshold).get(d.partisanship_scenario)['right_pct'][d.state],
+            left_size_rk: ranks.get(d.period).get(d.medium).get(d.diet_threshold).get(d.partisanship_scenario)['left_size'][d.state],
+            right_size_rk: ranks.get(d.period).get(d.medium).get(d.diet_threshold).get(d.partisanship_scenario)['right_size'][d.state]
+        }))
 
-    $: if (data && dataIn.size) {
-        groupedData = [
-            ...dataIn
-                .get(gender)
-                .get(medium)
-                .get(partisanship_scenario)
-                .get(age_group)
-                .get(lean)
-                .map(d => ({ ...d, idx: 0 })),
-            ...dataIn
-                .get(gender2)
-                .get(medium2)
-                .get(partisanship_scenario2)
-                .get(age_group2)
-                .get(lean2)
-                .map(d => ({ ...d, idx: 1 }))
-        ]
-    }
+        // parse data for 
+        dataMap = group(
+            data,
+            d => d.period,
+            d => d.state,
+            d => d.medium, 
+            d => d.diet_threshold,
+            d => d.partisanship_scenario
+        )
 
-    $: medium = tvChecked ? 'web' : 'tv'
-    $: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
-    $: gender = 'All'
-    $: age_group = 'All'
-    $: lean = leanChecked ? 'R' : 'L';
+        fullDataMap = group(
+            data,
+            d => d.state,
+            d => d.medium, 
+            d => d.partisanship_scenario
+        )
+        
+    })
 
-    $: medium2 = tvChecked2 ? 'web' : 'tv'
-    $: partisanship_scenario2 = scenarioChecked2 ? 'stringent' : 'lenient'
-    $: age_group2 = 'All'
-    $: gender2 = 'All'
-    $: lean2 = leanChecked2 ? 'R' : 'L';
+    const chartConfig : Map<number,ChartConfig> = new Map([
+        [0, {
+            type: "diverging",
+            rScale: scaleSqrt,
+            rDomain: [1e3, 3e6],
+            rRange: [8, 70],
+            zScale: scaleThreshold,
+            zDomain: [-0.1, -0.05, -0.01, 0.01, 0.05, 0.1],
+            colorInterpolator: scaleDiverging,
+            colorInterpolatorDomain: [-0.75, 0, 0.75],
+            colorInterpolatorScheme: ["#011f5b", "gainsboro", "#990000"],
+            colorPaletteAnchors: [-0.7, -0.35, -0.18, 0, 0.18, 0.35, 0.85]
+        }],
+    ])
+
+    $: chartIdx = "0"
+    $: activeChart = chartConfig.get(+chartIdx)
+    $: politicalChecked = true
+    
 </script>
 
 <div class="section" use:inView={{ once }} on:enter={() => loaded = true }>
@@ -129,136 +122,28 @@
 			</div>
 
 			<div class='chart-wrapper'>
-				<div class='controls-wrapper'>
-					<div class='controls'>
-						<ControlSwitch 
-							id='political-lean' 
-							title={'A lean'}
-							labels={[ 'L', 'R' ]}
-							colors={[ '#011f5b' , '#ff0000' ]}
-							info={copy_data.controls.medium.description}
-							bind:checked={ leanChecked } 
-						/>
-						<!-- title={copy_data.controls.medium.title} -->
-						<ControlSwitch 
-							id='medium' 
-							title={copy_data.controls.medium.title}
-							labels={[ 'TV', 'Web' ]}
-							info={copy_data.controls.medium.description}
-							bind:checked={ tvChecked } 
-						/>
-		
-						<ControlSwitch 
-							id='partisanship' 
-							title={copy_data.controls.partisanship.title}
-							labels={[ 'Lenient', 'Strict' ]}
-							info={copy_data.controls.partisanship.description}
-							bind:checked={ scenarioChecked } 
-						/>
-		
-						<div id='age-group' class='control control-menu'>
-							<div class='control-title'>Age group</div>
-							<select id="age-group-menu" name="age-group" bind:value={age_group}>
-								<option value='All'>All</option>
-								<option value='18-24'>18-24</option>
-								<option value='25-34'>25-34</option>
-								<option value='35-44'>35-44</option>
-								<option value='45-54'>45-54</option>
-								<option value='55+'>55+</option>
-							</select>
-						</div>
-		
-						<div id='gender' class='control control-menu'>
-							<div class='control-title'>Gender</div>
-							<select id="gender-menu" name="location" bind:value={gender}>
-								<option value='All' selected>All</option>
-								<option value='Male'>Male</option>
-								<option value='Female'>Female</option>
-							</select>
-						</div>
-					</div>
-		
-					<div class='controls'>
-						<ControlSwitch 
-							id='political-lean' 
-							title={'B lean'}
-							labels={[ 'L', 'R' ]}
-							colors={[ '#035aff' , '#990000' ]}
-							info={copy_data.controls.medium.description}
-							bind:checked={ leanChecked2 } 
-						/>
-						<!-- title={copy_data.controls.medium.title} -->
-						<ControlSwitch 
-							id='medium' 
-							title={copy_data.controls.medium.title}
-							labels={[ 'TV', 'Web' ]}
-							info={copy_data.controls.medium.description}
-							bind:checked={ tvChecked2 } 
-						/>
-		
-						<ControlSwitch 
-							id='partisanship' 
-							title={copy_data.controls.partisanship.title}
-							labels={[ 'Lenient', 'Strict' ]}
-							info={copy_data.controls.partisanship.description}
-							bind:checked={ scenarioChecked2 } 
-						/>
-		
-						<div id='age-group' class='control control-menu'>
-							<div class='control-title'>Age group</div>
-							<select id="age-group-menu" name="age-group" bind:value={age_group2}>
-								<option value='All'>All</option>
-								<option value='18-24'>18-24</option>
-								<option value='25-34'>25-34</option>
-								<option value='35-44'>35-44</option>
-								<option value='45-54'>45-54</option>
-								<option value='55+'>55+</option>
-							</select>
-						</div>
-		
-						<div id='gender' class='control control-menu'>
-							<div class='control-title'>Gender</div>
-							<select id="gender-menu" name="location" bind:value={gender2}>
-								<option value='All' selected>All</option>
-								<option value='Male'>Male</option>
-								<option value='Female'>Female</option>
-							</select>
-						</div>
-					</div>
-					
-					{#if loaded && data}
-						<div id='period' class='control control-range'>
-							<div class='control-title'>Period</div>
-								<DoubleRangeSlider bind:start bind:end />
-								<div class="labels">
-									<div class="label">{ formatMonth(scaleRange(start)) }</div>
-									<div class="label">{ formatMonth(scaleRange(end)) }</div>
-								</div>
-						</div>
-					{/if}
-		
-					<div class='spacer'></div>
-				</div>
-				{#if loaded && data}
-					<LineAreaChart 
-						data={ data }
-						{ groupedData }
-						scaleRange={ scaleDate }
-						{ start }
-						{ end }
-						{ yKey } 
-						{ xKey } 
-						{ zKey }
-						spanCol={12}
-						customClass={'chart-medium'}
-						formatTickX={formatMonth}
-						url={ url }
-						caption={chart.captions}
-					/>
-				{:else} <ChartPlaceholder />
-				{/if}
-			</div>
-
+                {#if loaded && (data && data.length)}
+                    <Beeswarm
+                        { data }
+                        { states }
+                        { dataMap }
+                        { fullDataMap }
+                        { activeChart }
+                        { politicalChecked }
+                        caption={ chart.captions }
+                        tooltipCaptions={[1,2].map(d => (
+                            copy_data['echo-chambers-part1']
+                            .filter(d => d.type === 'chart')
+                            [0]
+                            .value
+                            [`caption${d}`]
+                            ))}
+                            url={ urlChart }
+                    />
+                   {:else} <ChartPlaceholder />
+                {/if}
+                        
+            </div>
 		{/if}
 	{/each}
 	<div 
