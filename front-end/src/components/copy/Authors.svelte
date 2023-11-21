@@ -44,7 +44,7 @@
 
 		@media (min-width: $bp-3) {
 			grid-row: 2 / span 1;
-			grid-column: 1 / span 8;
+			grid-column: 3 / span 8;
 		}
 
 		.author-container {

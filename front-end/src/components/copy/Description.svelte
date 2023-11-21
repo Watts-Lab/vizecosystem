@@ -41,7 +41,7 @@
 		grid-row: 3 / span 1;
 		
 		@media (min-width: $bp-3) {
-			grid-column: 1 / span 8;
+			grid-column: 3 / span 8;
 		}
 
 		p, div {

@@ -21,7 +21,7 @@
     // tiles
     const layout: any[] = tiles[0].value.map(d => ({
         title: d.title,
-        image: 'https://dummyimage.com/300/000000/fec679', // d.tag
+        image: `/assets/images/${d.tag}.png`,
         tag: d.tag,
         renderer: sectionMapper.get(d.tag).renderer,
     }));

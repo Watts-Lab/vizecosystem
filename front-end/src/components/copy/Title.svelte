@@ -10,7 +10,7 @@
 		@include fs-xl;
 
 		@media (min-width: $bp-3) {
-			grid-column: 1 / span 8;
+			grid-column: 3 / span 8;
 			@include fs-xxl;
 		}
 	}

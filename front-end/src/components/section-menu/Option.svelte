@@ -5,7 +5,7 @@
 </script>
 
 <div class='option section-{index+1}' on:click={() => modal = comp}>
-    <div class='option-img' style='background-image: url("{comp.image}")'></div>
+    <div class='option-img' style='background-image: url({comp.image})'></div>
     <h4>{comp.title}</h4>
 </div>
 

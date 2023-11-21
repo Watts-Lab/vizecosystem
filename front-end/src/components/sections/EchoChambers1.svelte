@@ -280,7 +280,7 @@
     }
 
 	.section-title {
-        border-bottom: 1pt solid black;
+        border-bottom: 0.5pt solid black;
         grid-row: 1 / span 1;
         grid-column: span 12;
 		margin-bottom: 1em;
