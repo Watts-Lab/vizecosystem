@@ -6,6 +6,7 @@
     import ChangingTVAudiences from "../sections/ChangingTVAudiences.svelte";
     import Methodology from "../sections/Methodology.svelte";
     import Option from "./Option.svelte";
+    import LinkMethodology from "./LinkMethodology.svelte";
 
     
     const sectionMapper = new Map([
@@ -33,10 +34,15 @@
     {#each layout as comp, index}
         <Option {comp} {index} bind:modal />
     {/each}
-    <div 
+
+    <!-- <div 
         class='methodology' 
         on:click={() => modal = methodology }
-    >Read the methodology</div>
+    >Read the methodology</div> -->
+    <LinkMethodology 
+        title={'Read the methodology'} 
+        onClick={() => modal = methodology}
+    />
 </div>
 
 <style lang="scss">

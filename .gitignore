@@ -15,3 +15,6 @@ __pycache__/
 
 processed_data/
 raw_data/
+archive/
+
+move-files.sh

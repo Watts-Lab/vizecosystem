@@ -11,7 +11,8 @@ def load(file):
   return read_csv(f's3://{bucket}/{file}')
 
 def get_top_n(x, n, val):
-  return x.sort_values(val, ascending=False)\
+  return x.loc[x['is_hyper_partisan']]\
+    .sort_values(val, ascending=False)\
     .groupby(Grouper('state'))\
     .head(n)
 
@@ -61,6 +62,7 @@ def parse_tv(file):
     format_df(f).sort_values(values, ascending = False) 
     for f in file
   ]
+
   d = concat([get_top_n(f, 10, values) for f in d])
 
   # # # keep only needed columns

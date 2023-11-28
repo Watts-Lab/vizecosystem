@@ -28,17 +28,23 @@
 
         .option-img {
             height: 100%;
-            width: 200px;
+            width: auto;
+            aspect-ratio: 16 / 9;
+            // width: 200px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
 
             @media (min-width: $bp-3) {
-                height: 300px;
                 width: 100%;
+                height: auto;
                 background-size: contain;
             }
         }
+
+        // h4 {
+
+        // }
     }
 
     .option:hover {

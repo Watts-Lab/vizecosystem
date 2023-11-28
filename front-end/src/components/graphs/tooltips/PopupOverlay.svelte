@@ -13,6 +13,7 @@
   const { data: nodesData } = getContext('LayerCake');
 
   // components
+  import ControlSwitch from '../../global/control-switch.svelte';
   import LineAreaChart from '../LineAreaChart.svelte';
   import Table from '../Table.svelte';
 
@@ -39,9 +40,12 @@
   let dataScale : Map<string|number, any>;
   let table : any[];
   let tableMap : Map<string|number, any>
+  let tablePartisan : any[];
+  let tablePartisanMap : Map<string|number, any>
   let nodeMap : Map<string|number, any>;
   const urlChart : string  = 'assets/data/EchoCh-by_state_full-timeseries.csv'
   const urlTable : string  = 'assets/data/EchoCh-by_state_audiences.csv'
+  const urlTablePartisan : string  = 'assets/data/EchoCh-by_state_audiences_hyperpartisan.csv'
 
   onMount(async () => {
     const resChart = await csv(urlChart, autoType)
@@ -69,6 +73,14 @@
 			d => d.state,
 			d => d.medium
 		)
+
+    tablePartisan = await csv(urlTablePartisan, autoType)
+		tablePartisanMap = group(
+			tablePartisan,
+			d => d.period,
+			d => d.state,
+			d => d.medium
+		)
   })
 
   // event handlers
@@ -77,6 +89,8 @@
 	}
 
   $: nodeMap = group($nodesData, d => d.abbr)
+  $: partisan_flag = false;
+  $: tab = partisan_flag ? tablePartisanMap : tableMap;
 </script>
 
 <div class='overlay {!hidePopup ? 'active' : ''}'>
@@ -151,11 +165,22 @@
       <span>TV & Web news diet polarization.</span> { tooltipCaptions[0] }
     </p>
     
-      {@const tableChart = tableMap
+      {@const tableChart = tab
         .get(period)
         .get(abbr)
         .get(medium)
       }
+
+      <div class='control-wrapper'>
+        <ControlSwitch 
+          id='partisan programs' 
+          title={'Partisan content'}
+          labels={[ 'All', 'Partisan only' ]}
+          info={'test test test'}
+          bind:checked={ partisan_flag } 
+        />
+      </div>
+
       <div class='overlay-col2-container'>
         <Table 
           data={ tableChart }
@@ -218,7 +243,7 @@
 
   .info {
     grid-row: 2 / span 1;
-    grid-column: span 2;
+    grid-column: span 1;
     display: flex;
     gap: 10px;
 
@@ -282,5 +307,10 @@
     content: '\2715';
     @include fs-xl;
     line-height: 1;
+  }
+
+  .control-wrapper {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
   }
 </style>

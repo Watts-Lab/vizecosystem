@@ -49,18 +49,30 @@ datasets = [
   },
   {
     'url': [
-      'raw_data/news_program_ranked_by_audiences_agg=last_3_months_dem=state_top_programs.csv',
-      'raw_data/news_program_ranked_by_audiences_agg=last_6_months_dem=state_top_programs.csv',
-      'raw_data/news_program_ranked_by_audiences_agg=last_12_months_dem=state_top_programs.csv',
-      'raw_data/news_program_ranked_by_audiences_agg=monthly_dem=state_top_programs.csv',
-      'raw_data/news_program_ranked_by_audiences_agg=since 2016_dem=state_top_programs.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_programs.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_programs.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_programs.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_programs.csv',
       'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_domains.csv',
       'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_domains.csv',
       'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_domains.csv',
-      'raw_data/news_domains_ranked_by_audiences_agg=monthly_dem=state_top_domains.csv',
       'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_domains.csv',
     ],
     'out_name': 'EchoCh-by_state_audiences.csv',
+    'format': '%.0f'
+  },
+  {
+    'url': [
+      'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_programs.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_programs.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_programs.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_programs.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_domains.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_domains.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_domains.csv',
+      'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_domains.csv',
+    ],
+    'out_name': 'EchoCh-by_state_audiences_hyperpartisan.csv',
     'format': '%.0f'
   },
   {
@@ -111,9 +123,10 @@ file_parser = Parser(creds)
 for file in datasets:
   out_data = file_parser.parse(file)
 
-  # save data to different location
+  # # save data to different location
   out_data.to_csv(
-    f's3://{bucket}/processed/{file["out_name"]}',
+    # f's3://{bucket}/processed/{file["out_name"]}',
+    f'../processed_data/{file["out_name"]}',
     index=False,
     float_format=file["format"]
   )
