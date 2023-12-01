@@ -22,7 +22,7 @@
     // tiles
     const layout: any[] = tiles[0].value.map(d => ({
         title: d.title,
-        image: `/assets/images/${d.tag}.png`,
+        image: `assets/images/${d.tag}.png`,
         tag: d.tag,
         renderer: sectionMapper.get(d.tag).renderer,
     }));

@@ -71,7 +71,7 @@
             "type": "chart",
             "value": {
                 "type": "line-area",
-                "title": "Overall news consumption",
+                "title": "TV vs Online Consumption",
                 "captions": "Minutes per person per day spent with news and other categories of content on TV and desktop browsing. *Local TV News is not included."
             }
         },
@@ -93,7 +93,7 @@
             "type": "chart",
             "value": {
                 "type": "map",
-                "title": "Echo chambers part 1",
+                "title": "Echo Chambers on the TV and Internet",
                 "captions": "The monthly percent of Americans experiencing partisan segregation via TV or Web news. Bounds represent a range of percentages—from 50 to 75—of individual-level news diets that must be partisan for partisan segregation.",
                 "caption1": "State-level timeline of echo chamber size as % of total population with TV/desktop computers.",
                 "caption2": "We define audience size as the number of people who spend at least 30 minutes/1 minute with a given tv program/web domain."
@@ -121,7 +121,7 @@
             "type": "chart",
             "value": {
                 "type": "line-area",
-                "title": "Echo chambers part 2",
+                "title": "Mapping Partisan Echo Chambers",
                 "captions": "Each state is represented in terms of the total number of residents whose news diets are dominated by right-wing and left-wing partisan sources. The shades of red and blue indicate the percentage of residents. Click on a state for more info."
             }
         },
@@ -138,10 +138,6 @@
         {
             "type": "text",
             "value": "In this final figure we introduce a key concept: the news consumption archetype. We surface eight archetypes of news consumption by clustering panelists with similarly distributed news diets, including those who watch 30 minutes or less of news in a given month. Each archetype is dominated by a single news category; we tracked changes as individuals migrated between these archetypes (arrows between nodes represent “net flow” between archetypes)."
-        },
-        {
-            "type": "text",
-            "value": "Two major trends caught our attention. Notably, tens of millions of Americans are discontinuing TV news consumption, a mass exodus that is surely due in part to cord-cutting and the rise of streaming services. Second, those who continue to watch news on TV are increasingly engaging with partisan cable news channels including MSNBC and Fox News. In summary, the TV news audience is shrinking and becoming more polarized."
         },
         {
             "type": "chart",
