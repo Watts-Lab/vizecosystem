@@ -143,7 +143,7 @@
             "type": "chart",
             "value": {
                 "type": "flow-chart",
-                "title": "Changing audiences",
+                "title": "Shifting TV Viewership",
                 "captions": "Television news consumption archetypes are each labeled according to the category of news most prominently consumed within the archetype, along with a large ninth group of people who are exposed to less than 30 min of news in a month, calculated independently in each month over the 4 years of analysis. The figure represents the direction and magnitude of turnover between each pair of archetypes. For example, if—over a given period of time—1M individuals moved from archetype A to archetype B, and over the same period of time 4M individuals did the reverse and moved from archetype B to A, then the net flow over that time period would be 3M from B to A."
             }
         },

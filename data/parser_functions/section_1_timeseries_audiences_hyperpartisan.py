@@ -38,20 +38,21 @@ def format_df(file):
     ]
 
   # get what subset this is
+  
   period = search(
-    r'.*_ranked_by_audiences_agg=(.*)_dem.*', file
+    # r'.*_ranked_by_audiences_agg=(.*)_dem.*', file
+    r'.*_by_state_(.*)_top_.*', file
   )\
     .group(1)\
-    .replace('_', ' ')
-    # \
-    # .replace('monthly', 'Last month')
+    .replace('_', ' ')\
+    .replace('last since 2016', 'since 2016')
     
   d['period'] = period.capitalize()
 
   return d
 
 def parse_tv(file):
-  values = 'audience_size_est_60'
+  values = 'audience_size_est_30'
   cols = [
     'state',
     'program_name',
@@ -71,7 +72,7 @@ def parse_tv(file):
     .rename({ values: 'value', 'program_name': 'program' }, axis = 1)
 
 def parse_web(file):
-  values = 'audience_size_est_60'
+  values = 'audience_size_est_1'
   cols = [
     'state',
     'domain',

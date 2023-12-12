@@ -106,6 +106,10 @@
 		display: flex;
 	}
 
+	.chart-flow {
+		height: 600px;
+	}
+
 	.small-multiples,
 	.chart-large {
 		height: 800px;

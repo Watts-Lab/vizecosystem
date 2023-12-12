@@ -288,11 +288,11 @@
         <text class='node-label' dy={-(node.r + 3)}>{node.archetype}</text>
         {#if showTooltip}
           <text 
-            class='node-tooltip {showTooltip === node.archetype ? 'active' : ''} {netFlowMap.get(node.archetype) >= 0 ? 'positive' : 'negative'}'
+            class='node-tooltip {showTooltip === node.archetype ? 'active' : ''} {netFlowMap.get(node.archetype)[0].delta >= 0 ? 'positive' : 'negative'}'
             dx={(node.r + 3)}
             dy={5}
           >
-            {formatPositiveNegative(netFlowMap.get(node.archetype))}
+            {formatPositiveNegative(netFlowMap.get(node.archetype)[0].delta)}
           </text>
         {/if}
       </g>
@@ -309,10 +309,10 @@
         <text class='node-label' dy={node.r + 18}>{node.archetype}</text>
         {#if showTooltip}
           <text 
-              class='node-tooltip {showTooltip === node.archetype ? 'active' : ''} {netFlowMap.get(node.archetype) >= 0 ? 'positive' : 'negative'}'
+              class='node-tooltip {showTooltip === node.archetype ? 'active' : ''} {netFlowMap.get(node.archetype)[0].delta >= 0 ? 'positive' : 'negative'}'
               dx={(node.r + 3)}
             >
-              {formatPositiveNegative(netFlowMap.get(node.archetype))}
+              {formatPositiveNegative(netFlowMap.get(node.archetype)[0].delta)}
             </text>
         {/if}
       </g>

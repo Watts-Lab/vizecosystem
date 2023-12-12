@@ -13,13 +13,12 @@
 	export let caption : string = '';
 	export let nodes : any[];
   export let links : any[];
+  export let nodeSize : Map<any, any>;
   export let flatLinks : any[];
   export let url : string = '';
   export let includeCaption : boolean = true;
 	export let spanCol : number
 	export let customClass : string = ''
-
-  let netFlowMap : Map<string,number>
 
   onMount(() => {
     render = true
@@ -27,17 +26,6 @@
 
   $: render = false
   $: nodesIn = nodes
-
-  $: {
-    const gains = rollup(links, v => sum(v, w => w.value), d => d.to)
-    const losses = rollup(links, v => sum(v, w => w.value), d => d.from)
-    netFlowMap = new Map(
-      nodes.map(d => ([
-        d.archetype, 
-        (gains.has(d.archetype) ? gains.get(d.archetype) : 0) - (losses.has(d.archetype) ? losses.get(d.archetype) : 0)
-      ]))
-    )
-  }
 
 </script>
 
@@ -60,7 +48,7 @@
         </marker>
       </defs>
       {#if render}
-        <FlowNodes { nodes } { links } { flatLinks } { netFlowMap } />
+        <FlowNodes { nodes } { links } { flatLinks } netFlowMap={ nodeSize } />
       {/if}
     </Svg>
   </LayerCake>

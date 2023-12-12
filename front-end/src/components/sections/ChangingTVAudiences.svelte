@@ -35,6 +35,11 @@
     let nodes : any[]
     let nodesMap : Map<any, any>
     let nodesIn : any[]
+
+    let url_nodes_size : string = 'assets/data/EchoCh-nodes-net_change_in_size.csv'
+    let nodes_size : any[]
+    let nodesSizeMap : Map<any, any>
+    let nodeSizeIn : Map<any, any>
     
     let url_links : string = 'assets/data/EchoCh-links.csv'
     let links : any[]
@@ -93,6 +98,16 @@
 
         linksMap = group(links, d => +d.start_date, d => +d.end_date)
 
+        // load node size, parse into long format, assign to global variable
+        const nodeSizeRes = await csv(url_nodes_size, autoType)
+        nodes_size = nodeSizeRes
+            .map(d => ({ 
+                ...d, 
+                start_date: new Date(d['start year'], d['start month'], 1), 
+                end_date: new Date(d['end year'], d['end month'], 1) 
+            }))
+        nodesSizeMap = group(nodes_size, d => +d.start_date, d => +d.end_date, d => d.archetype)
+
         render = true;
         start_date = scaleDate(0)
         end_date = scaleDate(1)
@@ -111,6 +126,7 @@
     $: if (render) {
         nodesIn = nodesMap.get(end_date).get(sizeVar)
         linksIn = linksMap.get(start_date).get(end_date)
+        nodeSizeIn = nodesSizeMap.get(start_date).get(end_date)
 	}
 </script>
 
@@ -151,11 +167,12 @@
 					<FlowChart
 						nodes={ nodesIn }
 						links={ linksIn }
+                        nodeSize={ nodeSizeIn }
 						flatLinks={ links }
 						spanCol={12}
 						url={ url_nodes }
 						caption={chart.captions}
-						customClass='chart-large'
+						customClass='chart-flow'
 					/>
 					
 					{:else} <ChartPlaceholder />

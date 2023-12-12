@@ -39,10 +39,10 @@
         class='methodology' 
         on:click={() => modal = methodology }
     >Read the methodology</div> -->
-    <LinkMethodology 
+    <!-- <LinkMethodology 
         title={'Read the methodology'} 
         onClick={() => modal = methodology}
-    />
+    /> -->
 </div>
 
 <style lang="scss">
