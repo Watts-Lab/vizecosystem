@@ -24,14 +24,14 @@
       <div class='annotation-wrapper'>
         {#each newYork as node, i}
           <div class='annotation' style="top: {node.y - (node.r_L + 80)}px; left: {node.x - (node.r_L + 80)}px">
-            In <b>NY</b>, 5 to 10% of the population
+            In <strong>NY</strong>, 5 to 10% of the population
             experience partisanship in their news
             diets.
           </div>
         {/each}
         {#each northDakota as node, i}
           <div class='annotation' style="top: {node.y - (node.r_L + 140)}px; left: {node.x + (node.r_R + 20)}px">
-            <b>ND</b>'s right-leaning echo chamber is
+            <strong>ND</strong>'s right-leaning echo chamber is
             much more sizeable and intense: over 
             10% of the population.
             <div class='close-button' on:click={hide}></div>

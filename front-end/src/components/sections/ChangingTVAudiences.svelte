@@ -147,7 +147,10 @@
 					<ControlSwitch 
 						id='audience' 
 						title={data_copy.controls["node-size"].title}
-						labels={[ 'Audience', 'Consumption' ]}
+						labels={[ 
+                            data_copy.controls["node-size"]['label-left'], 
+                            data_copy.controls["node-size"]['label-right']
+                        ]}
 						info={data_copy.controls["node-size"].description}
 						bind:checked={ sizeChecked } 
 					/>

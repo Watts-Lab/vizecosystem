@@ -150,7 +150,10 @@
 					<ControlSwitch 
 						id='partisanship' 
 						title={copy_data.controls.partisanship.title}
-						labels={[ 'Lenient', 'Strict' ]}
+						labels={[ 
+							copy_data.controls.partisanship['label-left'], 
+							copy_data.controls.partisanship['label-right']
+						]}
 						info={copy_data.controls.partisanship.description}
 						bind:checked={ scenarioChecked } 
 					/>

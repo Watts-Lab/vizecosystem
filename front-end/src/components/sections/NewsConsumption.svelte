@@ -102,7 +102,10 @@
 					<ControlSwitch 
 						id='medium' 
 						title={copy_data.controls.medium.title}
-						labels={[ 'TV', 'Web' ]}
+						labels={[ 
+							copy_data.controls.medium['label-left'], 
+							copy_data.controls.medium['label-right']
+						]}
 						info={copy_data.controls.medium.description}
 						bind:checked={ tvChecked } 
 					/>

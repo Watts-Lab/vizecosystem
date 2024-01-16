@@ -3,14 +3,20 @@
     "controls": {
         "medium": {
             "title": "Medium",
+            "label-left": "TV",
+            "label-right": "Web",
             "description": "Internet or TV"
         },
         "partisanship": {
             "title": "Partisanship",
+            "label-left": "Lenient",
+            "label-right": "Strict",
             "description": "On the web, we use a popular, Twitter-based method to give each news domain a partisanship score. Lenient means that websites more to the left of TheGuardian.com, and to the right of FoxNews.com are counted as highly partisan. Stringent means that Slate.com and Breitbart.com—more less centrist news sources—define “highly partisan”."
         },
         "node-size": {
             "title": "Node size",
+            "label-left": "Audience size",
+            "label-right": "Total minutes",
             "description": "Audience size or average consumption"
         }
     },
@@ -115,7 +121,7 @@
         },
         {
             "type": "text",
-            "value": "In this map, the size of each semi-circle corresponds to the extent of partisan news segregation, or the size of echo chambers, in each state. You can click on a state for additional details, including the most-watched news programs and domains. The blue and red shading of each circle indicates the degree of partisan segregation, independent of a state's population. Surprisingly, when we break down TV audience segregation by political leanings, there is minimal geographic variation. Even in a \"lenient\" view where CNN is considered left-wing partisan, Fox News tends to dominate partisan viewership in almost every state, with New York and California being notable exceptions. When considering MSNBC as the left-wing partisan source, Fox News dominates in every state (though not Washington DC)."
+            "value": "In this map, the size of each semi-circle corresponds to the extent of partisan news segregation, or the size of echo chambers, in each state. You can click on a state for additional details, including the most-watched news programs and domains. The blue and red shading of each circle indicates the degree of partisan segregation, independent of a state's population."
         },
         {
             "type": "chart",
@@ -159,7 +165,15 @@
         },
         {
             "type": "text",
-            "value": "The analyses here are mostly reproductions of figures from two articles published in 2020 and 2022. The underlying datasets are derived from large panels (50-100k) of individuals who agreed to having their desktop internet browsing and TV viewing behavior passively tracked. The data spanned over a period of seven years from February 2016 to January 2023."
+            "value": "The analyses here are mostly reproductions of figures from two articles published in 2020 and 2022. The underlying datasets are derived from large panels (50-100k) of individuals who agreed to have their desktop internet browsing and TV viewing behavior passively tracked by the Nielsen company."
+        },
+        {
+            "type": "text",
+            "value": "Nielsen is a U.S.-based data analytics company that uses representative panels to estimate media consumption trends on TV, web, and mobile platforms. Every month, these panels are adjusted, where new panelists are added, and current panelists can choose to no longer participate. These panelists are usually involved in the panel for at least a year but no more than two years."
+        },
+        {
+            "type": "text",
+            "value": "We categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. For more details on how we define news content, see supplementary materials of the 2020 paper, and for more details on how we define echo chambers, see the supplementary materials of the 2022 paper."
         }
     ]
 }

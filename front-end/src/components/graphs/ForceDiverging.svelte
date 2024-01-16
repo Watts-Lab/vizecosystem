@@ -94,6 +94,8 @@
     }
 
     $: labelActive = false;
+    $: activeState = false;
+    $: hoverState = false;
 
     function handleClick(e, d) {
       dispatch('click', { target: e.target, node: d })
@@ -123,9 +125,11 @@
 >
   {#each nodes as node}
     <g 
-      class={`node-group node-group-${node.abbr}`} 
+      class={`node-group node-group-${node.abbr} ${activeState === node.abbr ? 'active' : ''} ${hoverState ? 'hover' : ''}`} 
       transform={`translate(${node.x}, ${node.y})`}
       on:click={(e) => handleClick(e, node)}
+      on:mouseenter={(e) => { activeState = node.abbr; hoverState = true; }}
+      on:mouseleave={(e) => { activeState = false; hoverState = false; }}
     >
       <!-- svelte-ignore component-name-lowercase -->
       <path
@@ -159,6 +163,18 @@
 </g>
 
 <style lang='scss'>
+  .node-group {
+    transition: 0.5s opacity;
+  }
+
+  .node-group.hover.active {
+    opacity: 1;
+  }
+
+  .node-group.hover {
+    opacity: 0.6;
+  }
+
   .node {
     stroke: $true-black;
     stroke-width: 0;
@@ -185,7 +201,7 @@
 
   .node-group:hover {
     .node-stroke {
-      stroke-width: 1px
+      stroke-width: 1.25px
     }
 
     .state-label {
