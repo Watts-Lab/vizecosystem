@@ -12,6 +12,8 @@
 
   const { data: nodesData } = getContext('LayerCake');
 
+  import data_copy from '../../../data/copy.json'
+
   // components
   import ControlSwitch from '../../global/control-switch.svelte';
   import LineAreaChart from '../LineAreaChart.svelte';
@@ -174,9 +176,12 @@
       <div class='control-wrapper'>
         <ControlSwitch 
           id='partisan programs' 
-          title={'Partisan content'}
-          labels={[ 'All', 'Partisan only' ]}
-          info={'test test test'}
+          title={data_copy.controls["partisan-content"].title}
+          labels={[ 
+              data_copy.controls["partisan-content"]['label-left'], 
+              data_copy.controls["partisan-content"]['label-right']
+          ]}
+          info={data_copy.controls["partisan-content"].description}
           bind:checked={ partisan_flag } 
         />
       </div>

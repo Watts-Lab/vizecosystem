@@ -16,6 +16,7 @@
 	// local data
 	import copy_data from '../../data/copy.json'
 	import statesDict from '../../data/states.json'
+  import ClickCta from './atoms/ClickCTA.svelte';
 	const statesMap = new Map(statesDict.map(d => [d.state, d]))
 
 	// props declaration
@@ -192,6 +193,9 @@
 				</div>
 			{/each}
 			<span class='legend-block-label legend-block-label-R'>More { political_lean === 'L' ? 'left' : 'right' }</span>
+			<div class='legend-block-cta'>
+				<ClickCta />
+			</div>
 		</div>
 		
 		<div class='legend-item legend-item-size'>
@@ -374,7 +378,7 @@
 				border-left: 1pt solid $white;
 
 				.legend-anchor-label {
-					@include fs-xxxs;
+					@include fs-xxs;
 					position: relative;
 					width: 100%;
 					top: 24px;
@@ -385,6 +389,10 @@
 
 			.legend-block:first-of-type {
 				border-left: none;
+			}
+
+			.legend-block-cta {
+				margin-top: 20px;
 			}
 		}
 

@@ -18,6 +18,8 @@
 	$: modal = false
 	$: renderModal = modal && Object.hasOwn(modal, 'renderer')
 	$: document.body.classList[renderModal ? 'add' : 'remove']('noscroll');
+
+	
 </script>
 
 <div 
@@ -26,6 +28,7 @@
 	class:landingType={!renderModal}
 >
 	<Header />
+	
 	<main>
 		<Intro bind:modal />
 	</main>
@@ -40,7 +43,6 @@
 			}}
 		></div>
 	{/if}
-
 	<Footer />
 </div>
 

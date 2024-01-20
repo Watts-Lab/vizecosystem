@@ -11,13 +11,19 @@
             "title": "Partisanship",
             "label-left": "Lenient",
             "label-right": "Strict",
-            "description": "On the web, we use a popular, Twitter-based method to give each news domain a partisanship score. Lenient means that websites more to the left of TheGuardian.com, and to the right of FoxNews.com are counted as highly partisan. Stringent means that Slate.com and Breitbart.com—more less centrist news sources—define “highly partisan”."
+            "description": "On the web, we use a popular, Twitter-based method to give each news domain a partisanship score. Lenient means that websites more to the left of TheGuardian.com, and to the right of FoxNews.com are counted as highly partisan. Stringent means that Slate.com and Breitbart.com—more less centrist news sources—define “highly partisan”. On TV, all programs from Fox News, Fox Business, and NewsMax are counted as right-wing partisan. Lenient means that both CNN and MSNBC are counted as left-wing partisan, while stringent means that only MSNBC is counted."
         },
         "node-size": {
             "title": "Node size",
             "label-left": "Audience size",
             "label-right": "Total minutes",
             "description": "Audience size or average consumption"
+        },
+        "partisan-content": {
+            "title": "Partisan content",
+            "label-left": "All",
+            "label-right": "Partisan only",
+            "description": "Edit the text here"
         }
     },
     "intro": [
