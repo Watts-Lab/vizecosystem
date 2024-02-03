@@ -11,9 +11,9 @@
 
 	// components
 	import FlowChart from '../graphs/FlowChart.svelte';
-    import ControlSwitch from '../global/control-switch.svelte';
     import DoubleRangeSlider from "../global/double-range-slider.svelte";
     import ChartPlaceholder from '../global/chart-placeholder.svelte';
+    import ClickCta from '../graphs/atoms/ClickCTA.svelte';
 
 	// // import utils
 	import { formatMonth } from '../../utils/format-dates';
@@ -60,11 +60,11 @@
     onMount(async () => {
         // load nodes and assign to global variable
         const nodesRes = await csv(url_nodes, autoType)
+        console.log(nodesRes)
         nodes = nodesRes
             .map(d => ({ ...d, node: d.archetype, date: new Date(d.year, d.month, 1)  }))
 
-        nodesMap = group(nodes, d => +d.date, d => d.variable)
-            // .filter(d => d['year'] === 2016 && d['month'] === 1 && d.variable === sizeVar)
+        nodesMap = group(nodes, d => +d.date)
 
         const [ min, max ] = extent(Array.from(nodesMap).map(d => d[0]));
         scaleRange.range([ min, max ])
@@ -96,6 +96,7 @@
                 return prev
             }, [])
 
+            
         linksMap = group(links, d => +d.start_date, d => +d.end_date)
 
         // load node size, parse into long format, assign to global variable
@@ -114,8 +115,6 @@
 	})
 
     $: render = false
-    $: sizeChecked = true
-    $: sizeVar = sizeChecked ? 'sizes' : 'mins_p_person'
 
     $: start = 0
     $: end = 1
@@ -124,7 +123,7 @@
     $: end_date = scaleDate(end)
 
     $: if (render) {
-        nodesIn = nodesMap.get(end_date).get(sizeVar)
+        nodesIn = nodesMap.get(end_date) //.get(sizeVar)
         linksIn = linksMap.get(start_date).get(end_date)
         nodeSizeIn = nodesSizeMap.get(start_date).get(end_date)
 	}
@@ -144,16 +143,6 @@
 				</h3>
 			
 				<div class='controls'>
-					<ControlSwitch 
-						id='audience' 
-						title={data_copy.controls["node-size"].title}
-						labels={[ 
-                            data_copy.controls["node-size"]['label-left'], 
-                            data_copy.controls["node-size"]['label-right']
-                        ]}
-						info={data_copy.controls["node-size"].description}
-						bind:checked={ sizeChecked } 
-					/>
 					{#if loaded && render}
 						<div id='period' class='control control-range'>
 							<div class='control-title'>Period</div>
@@ -165,6 +154,12 @@
 						</div>
 					{/if}
 				</div>
+
+                <div class='block-cta'>
+                    <ClickCta 
+                        message={'Hover over circles to see net flow for archetype'} 
+                    />
+                </div>
 			
 				{#if loaded && render}
 					<FlowChart
@@ -306,6 +301,10 @@
 			}
 		}
 	}
+
+    .block-cta {
+        margin: 20px 0;
+    }
 
 	.close-button.bottom {
 		grid-column: 6 / span 2;

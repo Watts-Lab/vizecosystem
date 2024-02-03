@@ -1,3 +1,7 @@
+<script lang='ts'>
+    export let message : string
+</script>
+
 <div class='cta-container'>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="24" height="24" fill="white"/>
@@ -10,23 +14,24 @@
         <path d="M6.44709 2.20444L7.48237 6.06814" stroke="black" stroke-width="0.75" stroke-linecap="round"/>
     </svg>
     
-    <span>Click on circles for a detailed view at the state level</span>
+    <span>{message}</span>
 </div>
 
 <style lang="scss">
     .cta-container {
         display: flex;
         align-items: center; 
+        justify-content: center;
     }
 
 
     svg {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
     }
 
     span {
-        @include fs-xs;
+        @include fs-sm;
         font-weight: 300;
         margin-left: 5px;
     }

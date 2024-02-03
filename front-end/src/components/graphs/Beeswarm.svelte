@@ -16,7 +16,7 @@
 	// local data
 	import copy_data from '../../data/copy.json'
 	import statesDict from '../../data/states.json'
-  import ClickCta from './atoms/ClickCTA.svelte';
+  	import ClickCta from './atoms/ClickCTA.svelte';
 	const statesMap = new Map(statesDict.map(d => [d.state, d]))
 
 	// props declaration
@@ -90,10 +90,11 @@
 	]
 	let initPeriod = 'Since 2016'
 	let period = initPeriod
-	
+
 	$: dataIn = states
 		.map(d => {
 			const { abbr } = statesMap.get(d.state)
+
 			const data = dataMap
 				.get(period || initPeriod)
 				.get(abbr)
@@ -150,7 +151,6 @@
 			bind:checked={ tvChecked } 
 		/>
 
-		<!-- inverting labels manually for now -->
 		<ControlSwitch 
 			id='partisanship' 
 			title={copy_data.controls.partisanship.title}
@@ -194,7 +194,9 @@
 			{/each}
 			<span class='legend-block-label legend-block-label-R'>More { political_lean === 'L' ? 'left' : 'right' }</span>
 			<div class='legend-block-cta'>
-				<ClickCta />
+				<ClickCta 
+					message={'Click on circles for a detailed view at the state level'} 
+				/>
 			</div>
 		</div>
 		

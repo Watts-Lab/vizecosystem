@@ -103,6 +103,7 @@
     $: activeChart = chartConfig.get(+chartIdx)
     $: politicalChecked = true
     
+
 </script>
 
 <div class="section" use:inView={{ once }} on:enter={() => loaded = true }>

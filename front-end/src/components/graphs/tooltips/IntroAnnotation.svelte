@@ -17,21 +17,20 @@
 
 {#if render}
   <g 
-    class='intro-annotation'
-    transform={`translate(-35, 0)`}
+    class='intro-annotation' 
   >
-    <foreignObject width={$width} height={$height}>
+    <foreignObject class='foreign-object' width={$width} height={$height}>
       <div class='annotation-wrapper'>
         {#each newYork as node, i}
-          <div class='annotation' style="top: {node.y - (node.r_L + 80)}px; left: {node.x - (node.r_L + 80)}px">
-            In <strong>NY</strong>, 5 to 10% of the population
+          <div class='annotation' style="top: {node.y - (node.r_L + 80)}px; left: {node.x - (node.r_L + 80)}px; transform: translate(-35px, 0)">
+            In NY, 5 to 10% of the population
             experience partisanship in their news
             diets.
           </div>
         {/each}
         {#each northDakota as node, i}
-          <div class='annotation' style="top: {node.y - (node.r_L + 140)}px; left: {node.x + (node.r_R + 20)}px">
-            <strong>ND</strong>'s right-leaning echo chamber is
+          <div class='annotation' style="top: {node.y - (node.r_L + 140)}px; left: {node.x + (node.r_R + 20)}px; transform: translate(-35px, 0)">
+            ND's right-leaning echo chamber is
             much more sizeable and intense: over 
             10% of the population.
             <div class='close-button' on:click={hide}></div>
@@ -40,15 +39,33 @@
       </div>
     </foreignObject>
     {#each newYork as node, i}
-      <line class='annotation-line' x1={node.x - (node.r_L + 5)} x2={node.x - (node.r_L - 10)} y1={node.y - (node.r_L + 16)} y2={node.y - (node.r_L - 16)}></line>
+      <line 
+        class='annotation-line' 
+        x1={node.x - (node.r_L + 5)} 
+        x2={node.x - (node.r_L - 10)} 
+        y1={node.y - (node.r_L + 16)} 
+        y2={node.y - (node.r_L - 16)} 
+        transform={`translate(-35, 0)`}
+      ></line>
     {/each}
     {#each northDakota as node, i}
-      <line class='annotation-line' x1={node.x + (node.r_R + 45)} x2={node.x - (node.r_L - 35)} y1={node.y - (node.r_L + 45)} y2={node.y - (node.r_L)}></line>
+      <line 
+        class='annotation-line' 
+        x1={node.x + (node.r_R + 45)} 
+        x2={node.x - (node.r_L - 35)} 
+        y1={node.y - (node.r_L + 45)} 
+        y2={node.y - (node.r_L)} 
+        transform={`translate(-35, 0)`}
+      ></line>
     {/each}
   </g>
 {/if}
 
 <style lang="scss">
+  .foreign-object {
+    transform: translateZ(0);
+  }
+
   .annotation-line {
     stroke: black;
     stroke-width: 1pt;
@@ -58,6 +75,7 @@
     width: 100%;
     height: 100%;
     position: relative;
+    pointer-events: none;
 
     .annotation {
       @include fs-sm;
@@ -70,6 +88,7 @@
     position: absolute;
     top: -5px;
     right: 0;
+    pointer-events: all;
   }
 
   .close-button:after {

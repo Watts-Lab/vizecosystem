@@ -1,13 +1,11 @@
 const nodesOrderMap : Map<string,number> = new Map(
   [
-    ['MSNBC', 0],
-    ['CNN', 1],
-    ['Other Cable', 2],
-    ['Hard Broadcast News', 3],
-    ['Soft Broadcast News', 4],
-    ['Spanish News', 5],
-    ['FOX', 6],
-    ['Newsmax', 7],
+    ['CNN+MSNBC', 0],
+    ['Other Cable', 1],
+    ['Hard Broadcast News', 2],
+    ['Soft Broadcast News', 3],
+    ['Spanish News', 4],
+    ['FOX+Newsmax', 5],
   ]
 )
 

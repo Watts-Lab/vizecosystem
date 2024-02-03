@@ -19,13 +19,9 @@ def parse_web_frac(d):
   ]
   values = [
     'frac of weights (50) (R) (lenient)',
-    # 'frac of weights (75) (R) (lenient)',
     'frac of weights (50) (R) (stringent)',
-    # 'frac of weights (75) (R) (stringent)',
     'frac of weights (50) (L) (lenient)',
-    # 'frac of weights (75) (L) (lenient)',
     'frac of weights (50) (L) (stringent)',
-    # 'frac of weights (75) (L) (stringent)'
   ]
   # # unpivot data
   frac_data = melt(
@@ -257,53 +253,60 @@ def parse(file):
   # # in one single file
   d_web = parse_web(file['url'][3])
 
-  # # now we parse the TV data into what it needs to be to match the web data
+  # # # now we parse the TV data into what it needs to be to match the web data
   d_tv = parse_tv(d_tv)
 
-  # # now concat web and tv together
-  data = concat(
-    [d_tv, d_web],
-    ignore_index = True
+  # # # for each subset, we need to perform a bunch of transformations
+  # # # let's crete a holder to concat subsets together at the end
+  subsets = []
+  for d in [d_tv, d_web]:
+    # # # filter Puerto Rico & VI out
+    data = d.loc[(d['state'] != 'PR') & (d['state'] != 'VI')]
+
+    # # # add timestamp column to data
+    data['timestamp'] = to_datetime(data.apply(lambda x: f"{x['activityyear']}-{x['activitymonth']}", axis=1), format='%Y-%m')
+
+    # # # remove unused columns
+    data = data.drop(['activityyear', 'activitymonth'], axis=1)
+
+    # # # create pairs of data. these are the bounds we're gonna use as a filter
+    # # # to aggregate temporaly
+    last_date = data['timestamp'].max()
+    first_date = data['timestamp'].min()
+    bounds = [
+      # ('Last month', last_date, last_date),
+      ('Last 3 months', last_date, last_date - DateOffset(months=3)),
+      ('Last 6 months', last_date, last_date - DateOffset(months=6)),
+      ('Last 12 months', last_date, last_date - DateOffset(months=12)),
+      (f'Since {first_date.strftime("%Y")}', last_date, first_date)
+    ]
+
+    # # # filter and group data according to bounds set above
+    # # # we call *x so that the tuple is passed to the 
+    # # # function as args that can be destructured/unpacked
+    grouped_data = concat(
+      [group_data(data, *x) for x in bounds],
+      ignore_index = True
+    )\
+    .pivot(
+      # # pivot political lean data
+      index=['period', 'state', 'medium', 'partisanship_scenario', 'diet_threshold'],
+      columns='political_lean',
+      values=['value', 'size']
+    )
+    # then transform multi-level cols into single level cols
+    grouped_data.columns = ['_'.join(col) for col in grouped_data.columns.values]
+
+    subsets.append(grouped_data)
+
+  # # # now concat web and tv together
+  out_data = concat(
+    subsets,
+    ignore_index = False
   )
-
-  # # and filter Puerto Rico & VI out
-  data = data.loc[(data['state'] != 'PR') & (data['state'] != 'VI')]
-
-  # # add timestamp column to data
-  data['timestamp'] = to_datetime(data.apply(lambda x: f"{x['activityyear']}-{x['activitymonth']}", axis=1), format='%Y-%m')
-
-  # # remove unused columns
-  data = data.drop(['activityyear', 'activitymonth'], axis=1)
-
-  # # create pairs of data. these a the bounds we're gonna use as a filter
-  last_date = data['timestamp'].max()
-  first_date = data['timestamp'].min()
-  bounds = [
-    # ('Last month', last_date, last_date),
-    ('Last 3 months', last_date, last_date - DateOffset(months=3)),
-    ('Last 6 months', last_date, last_date - DateOffset(months=6)),
-    ('Last 12 months', last_date, last_date - DateOffset(months=12)),
-    (f'Since {first_date.strftime("%Y")}', last_date, first_date)
-  ]
-
-  # # filter and group data according to bounds set above
-  # # we call *x so that the tuple is passed to the 
-  # # function as args that can be destructured/unpacked
-  grouped_data = concat(
-    [group_data(data, *x) for x in bounds],
-    ignore_index = True
-  )\
-  .pivot(
-    # # pivot political lean data
-    index=['period', 'state', 'medium', 'partisanship_scenario', 'diet_threshold'],
-    columns='political_lean',
-    values=['value', 'size']
-  )
-  # then transform multi-level cols into single level cols
-  grouped_data.columns = ['_'.join(col) for col in grouped_data.columns.values]
 
   # rename cols, reset index & return
-  return grouped_data.rename(
+  return out_data.rename(
     columns={ 
       'value_left': 'left_pct', 
       'value_right': 'right_pct',

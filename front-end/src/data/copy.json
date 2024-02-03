@@ -36,11 +36,11 @@
             "value": [
                 {
                     "title": "The fake news problem",
-                    "url": "https://www.science.org/doi/10.1126/sciadv.aay3539"
+                    "url": "https://www.science.org/doi/10.1126/sciadv.aay3539#sec-2"
                 },
                 {
                     "title": "Partisan news diets",
-                    "url": "https://www.science.org/doi/10.1126/sciadv.abn0083"
+                    "url": "https://www.science.org/doi/10.1126/sciadv.abn0083#sec-4"
                 }
             ]
         },
@@ -179,7 +179,7 @@
         },
         {
             "type": "text",
-            "value": "We categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. For more details on how we define news content, see supplementary materials of the 2020 paper, and for more details on how we define echo chambers, see the supplementary materials of the 2022 paper."
+            "value": "We categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. As a disclaimer, aggregation methods are our own, as Nielsen does not provide ideological labels to TV programs nor defines what programs are considered right-wing or left-wing. For more details on how we define news content, see supplementary materials of the 2020 paper, and for more details on how we define echo chambers, see the supplementary materials of the 2022 paper."
         }
     ]
 }

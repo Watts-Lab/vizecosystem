@@ -7,6 +7,7 @@ import parser_functions.section_1_timeseries_audiences_hyperpartisan as section_
 import parser_functions.section_2 as section2
 import parser_functions.section_3_links as section3_links
 import parser_functions.section_3_nodes as section3_nodes
+import parser_functions.section_3_nodes_net_change_in_size as section3_nodes_net_change_in_size
 
 class Parser:
   def __init__(self, creds):
@@ -20,6 +21,7 @@ class Parser:
       'EchoCh-nationwide-by_gender-or-age_group.csv': section2.parse,
       'EchoCh-links.csv': section3_links.parse,
       'EchoCh-nodes.csv': section3_nodes.parse,
+      'EchoCh-nodes-net_change_in_size.csv': section3_nodes_net_change_in_size.parse
     }
 
   def parse(self, file):

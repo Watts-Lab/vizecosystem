@@ -15,7 +15,7 @@ def concat_sets(a, b):
   b_data = load(b)
 
   # parse subset from type from file name
-  file_name = b.split('_archetype_')[-1].replace('.csv', '')
+  file_name = b.split('_archetype_')[-1].replace('_agg_networks=True.csv', '')
   
   # assign subset columns
   b_data['variable'] = file_name
@@ -32,10 +32,12 @@ def parse(file):
   )
 
   id_cols = ['year', 'month', 'variable']
-    
-  return data\
+  
+  out_data = data\
     .melt(
       id_vars=id_cols,
       value_vars=[x for x  in data.columns if x not in id_cols],
       var_name='archetype'
     )
+  
+  return out_data.loc[out_data['variable'] == 'sizes']

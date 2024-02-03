@@ -14,7 +14,7 @@
 	// prop declaration
 	export let modal: any
 
-	$: auth = false;
+	$: auth = true;
 	$: val = null;
 
 	function authenticate(e) {

@@ -60,11 +60,11 @@
 			const parentWidth = right - left;
 			const p = Math.min(Math.max((evt.detail.x - left) / parentWidth, 0), 1);
 			if (which === 'start') {
-				start = p;
-				end = Math.max(end, p);
+				start = Math.min(p, 0.95);
+				end = Math.max(end, p, start + 0.05);
 			} else {
-				start = Math.min(p, start);
-				end = p;
+				start = Math.min(p, start, end - 0.05);
+				end = Math.max(p, 0.05);
 			}
 		}
 	}
@@ -80,6 +80,28 @@
 		start = pStart;
 		end = pEnd;
 	}
+
+	// function handleMinimumDifference() {
+	// 	if (start > 0.95) {
+	// 		start = 0.95;
+	// 		console.log('maximum start reached')
+	// 	} 
+	// 	if (end < 0.05) {
+	// 		end = 0.05;
+	// 		console.log('minimum end reached')
+	// 	}
+	// 	if (start >= end - 0.05) {
+	// 		end += 0.05;
+	// 	}
+	// 	if (end >= end) {
+	// 		start = end - 0.05;
+	// 	}
+
+	// }
+
+
+
+
 </script>
 
 <div class="double-range-container">
@@ -151,9 +173,6 @@
 		border: 1px solid #7b7b7b;
 		transform: translate(-50%, -50%)
 	}
-	/* .handle[data-which="end"]:after{
-		transform: translate(-100%, -50%);
-	} */
 	.handle:active:after {
 		background-color: #ddd;
 		z-index: 9;
