@@ -203,6 +203,8 @@
 
     .menu-item, .menu-item-has-children {
         font-size: 14px;
+        color: $light-grey;
+        transition: 0.3s color cubic-bezier(0,1,.9,1);
 
         .sub-menu {
             position: absolute;
@@ -220,27 +222,36 @@
             -webkit-transform: translateZ(0);
             text-align: left;
         }
+
+        .sub-menu-item-anchor {
+            display: block;
+            color: $light-grey;
+            font-weight: 300;
+            margin: 0 auto;
+            transition: 0.3s color cubic-bezier(0,1,.9,1);
+        }
     }
 
-    .menu-item-has-children:hover {
+    .menu-item:hover {
+        color: $mid-grey;
+    }
+
+    .menu-item-has-children:hover { 
         .sub-menu {
             visibility: visible;
             opacity: 1;
             margin: 0;
         }
+
+        .sub-menu-item-anchor:hover {
+            color: $mid-grey;
+        }
     }
 
     .menu-item-anchor {
-        color: $light-grey;
         font-weight: 300;
         text-transform: uppercase;
-    }
-
-    .sub-menu-item-anchor {
-        display: block;
-        color: $light-grey;
-        font-weight: 300;
-        margin: 0 auto;
+        color: inherit;
     }
 
     .sub-menu {
