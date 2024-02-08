@@ -54,16 +54,22 @@
 		data = resChart.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
     // parse data for 
 		dataMap = group(
-			data,
-			d => d.state,
-			d => d.medium,
-      d => d.partisanship_scenario
+			[
+        ...data.map(d => ({ ...d, political_lean: 'R', value: d.right_pct })), 
+        ...data.map(d => ({ ...d, political_lean: 'L', value: d.left_pct})), 
+      ],
+			(d: any) => d.state,
+			(d: any) => d.medium,
+      (d: any) => d.partisanship_scenario,
+      (d: any) => d.political_lean,
+			(d: any) => d.medium,
+			(d: any) => d.diet_threshold,
 		)
 
     dataScale = group(
 			data,
-			d => d.state,
-			d => d.medium
+			(d: any) => d.state,
+			(d: any) => d.medium
 		)
 
     // load data for tables
@@ -71,17 +77,17 @@
 		table = await csv(urlTable, autoType)
 		tableMap = group(
 			table,
-			d => d.period,
-			d => d.state,
-			d => d.medium
+			(d: any) => d.period,
+			(d: any) => d.state,
+			(d: any) => d.medium
 		)
 
     tablePartisan = await csv(urlTablePartisan, autoType)
 		tablePartisanMap = group(
 			tablePartisan,
-			d => d.period,
-			d => d.state,
-			d => d.medium
+			(d: any) => d.period,
+			(d: any) => d.state,
+			(d: any) => d.medium
 		)
   })
 
@@ -103,13 +109,13 @@
       .get(abbr)
       .get(medium)
       .get(partisanship_scenario)
-      .map(d => ({ ...d, value: Math.max(d.right_pct, d.left_pct)}))
     }
-    {@const dataIn = flatten(dataChart.map(d => [
-      { ...d, political_lean: 'R', value: d.right_pct },
-      { ...d, political_lean: 'L', value: d.left_pct },
-    ]))}
-    {@const [ start, end ] = extent(dataChart, d => +d.date)}
+    {@const [ start, end ] = extent(
+      dataScale
+        .get(abbr)
+        .get(medium), 
+        d => +d.date
+      )}
     <h1 
       class='title' 
       out:fade="{{ delay: 300 }}"
@@ -149,7 +155,7 @@
           .get(medium) 
           .map(d => ({ ...d, value: Math.max(d.right_pct, d.left_pct)}))
         }
-        groupedData={ dataIn }
+        groupedData={ dataChart }
         scaleRange={scaleLinear().range([start, end])}
         start={ 0 }
         end={ 1 }

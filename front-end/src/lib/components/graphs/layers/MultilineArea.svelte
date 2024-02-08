@@ -6,6 +6,8 @@
 
   // prop declaration
   export let activeChart : string;
+
+  // $: console.log($data)
   
   // variable declaration
 
@@ -39,33 +41,39 @@
     };
 
   }
+
+  function parsePolygonData(d) {
+    const [_50, _75] = d
+
+    return _75[1].map((d, i) => {
+      return { ...d, value_2: _50[1][i]['value'] }
+    })
+  }
 </script>
 
-<g class={`line-group line-group-${activeChart}`}>
-  {#each $data as group, i}    
-      {@const areaData = group[1][0][1]
-        .map((d, i) => ({ ...d, value_2: group[1][1][1][i]['value'] }))
-      }
-      {@const color = $zScale(group[0])}
-      <g class='threshold-group threshold-group-{group[0]}'>
-        {#each group[1].filter(e => e[0] === 50) as d, l (d)}
+<g class='line-group line-group-{activeChart}'>
+  {#each $data as leanGroup, i}
+    <!-- {console.log(leanGroup)} -->
+    <g class='line-group-lean line-group-lean-{leanGroup[0]}'>
+      {#each leanGroup[1] as mediumGroup, j}
+        {@const fill = mediumGroup[0] === 'tv' ? `url(#diagonalHatch${leanGroup[0]})` : $zScale(leanGroup[0]) }
+        <g class='line-group-medium line-group-medium-{mediumGroup[0]}'>
           <path
-            class={`path-line path-line-${d[0]}`}
-            d={ path(d[1]) }
-            stroke={ color }
-            animate:drawPath={{ delay: 0, duration: 500 }}
+            class={`path-line path-line-${mediumGroup[0]}`}
+            d={ path(mediumGroup[1].get(50)) }
+            stroke={ $zScale(leanGroup[0]) }
           ></path>
-        {/each}
-        
-        {#each group[1].filter(e => e[0] === 50) as d, l (d)}
           <path
-            class={`path-polygon path-polygon-${d[0]}`}
-            d={ polygon(areaData) }
-            fill={ color }
-            animate:fade={{ delay: 500, duration: 500 }}
-          ></path>
-        {/each}
-      </g>
+            class={`path-polygon path-polygon-${mediumGroup[0]}`}
+            d={ polygon(
+              parsePolygonData(mediumGroup[1])
+            )}
+            { fill }
+            ></path>
+            
+        </g>
+      {/each}
+    </g>
   {/each}
 </g>
   

@@ -47,16 +47,18 @@
 	// variable declaration
 	let seriesNames = customClass === 'popup-overlay'
 	? Array.from(colorMap).map(d => d[0])
-	: flatten(Array.from(colorMap)
-		.map(d => d[0])
-		.map(d => {
-			if (d === 'R') return [`${d}_1`, `${d}_0`]
-			return [`${d}_0`, `${d}_1`]
-		})
-	)
+	: Array.from(colorMap).map(d => d[0])
+	// : flatten(Array.from(colorMap)
+	// 	.map(d => d[0])
+	// 	.map(d => {
+	// 		if (d === 'R') return [`${d}_1`, `${d}_0`]
+	// 		return [`${d}_0`, `${d}_1`]
+	// 	})
+	// )
 	let seriesColors = customClass === 'popup-overlay'
 	? Array.from(colorMap).map(d => d[1])
-	: flatten(Array.from(colorMap).map(d => d[1]).map(d => [d, color(d).brighter(3).formatHex()]))
+	: Array.from(colorMap).map(d => d[1])
+	// : flatten(Array.from(colorMap).map(d => d[1]).map(d => [d, color(d).brighter(3).formatHex()]))
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
@@ -69,17 +71,7 @@
 			<LayerCake
 				padding={ margins }
 				flatData = { data.filter(d => +d.date >= minDate && +d.date <= maxDate) }
-				data = { 
-					groups(
-						groupedData.filter(d => +d.date >= minDate && +d.date <= maxDate), 
-						(d) => (
-							d.idx !== undefined
-							? `${d.political_lean}_${d.idx}`
-							: d.political_lean
-						), 
-						(d) => d.diet_threshold
-					) 
-				}
+				data = {Array.from(groupedData).map(d => [d[0], Array.from(d[1])])}
 				x={ xKey }
 				xScale={ xKey === 'date' ? scaleTime() : scaleLinear() }
 				y={ yKey }
@@ -91,6 +83,18 @@
 				zRange={ seriesColors }
 			>
 				<Svg>
+					<pattern id="diagonalHatchR" patternUnits="userSpaceOnUse" width="4" height="4">
+						<path d="M-1,1 l2,-2
+								 M0,4 l4,-4
+								 M3,5 l2,-2" 
+						style="stroke:{colorMap.get('R')}; stroke-width:1.5" />
+					</pattern>
+					<pattern id="diagonalHatchL" patternUnits="userSpaceOnUse" width="4" height="4">
+						<path d="M-1,1 l2,-2
+								 M0,4 l4,-4
+								 M3,5 l2,-2" 
+						style="stroke:{colorMap.get('L')}; stroke-width:1.5" />
+					</pattern>
 					{#if includeAxis}
 						<AxisX
 							gridlines={false}
@@ -105,7 +109,7 @@
 						/>
 						<Legend />
 					{/if}
-					<Multiline activeChart={'test'} />
+					<Multiline activeChart={'activeChart'} />
 				</Svg>
 			</LayerCake>
 		{/if}
@@ -116,3 +120,16 @@
 {/if}
 
 <style lang='scss'></style>
+
+
+
+
+<!-- groups(
+	groupedData.filter(d => +d.date >= minDate && +d.date <= maxDate), 
+	(d) => (
+		d.idx !== undefined
+		? `${d.political_lean}_${d.idx}`
+		: d.political_lean
+	), 
+	(d) => d.diet_threshold
+)  -->

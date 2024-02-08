@@ -33,11 +33,7 @@
 	let yKey : string = 'value'
 	let zKey : number = 0
 	let tvChecked : boolean = false;
-	let tvChecked2 : boolean = false;
 	let scenarioChecked : boolean = true;
-	let scenarioChecked2 : boolean = true;
-	let leanChecked : boolean = false;
-	let leanChecked2 : boolean = true;
 	let medium : string = tvChecked ? 'web' : 'tv'
 	let partisanship_scenario : string = scenarioChecked ? 'stringent' : 'lenient'
 	const scaleRange : Function = scaleLinear();
@@ -66,44 +62,27 @@
 	$: if (data) {
 		dataIn = group(
 			data, 
-			d => d.gender, 
-			d => d.medium, 
-			d => d.partisanship_scenario,
-			d => d.age_group,
-			d => d.political_lean,
+			(d: any) => d.gender,
+			(d: any) => d.partisanship_scenario,
+			(d: any) => d.age_group,
+			(d: any) => d.political_lean,
+			(d: any) => d.medium,
+			(d: any) => d.diet_threshold,
 		)
 	}
 
 	$: if (data && dataIn.size) {
-		groupedData = [
-			...dataIn
-				.get(gender)
-				.get(medium)
-				.get(partisanship_scenario)
-				.get(age_group)
-				.get(lean)
-				.map(d => ({ ...d, idx: 0 })),
-			...dataIn
-				.get(gender2)
-				.get(medium2)
-				.get(partisanship_scenario2)
-				.get(age_group2)
-				.get(lean2)
-				.map(d => ({ ...d, idx: 1 }))
-		]
+		groupedData = dataIn
+			.get(gender)
+			.get(partisanship_scenario)
+			.get(age_group)
 	}
 
-	$: medium = tvChecked ? 'web' : 'tv'
 	$: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
 	$: gender = 'All'
 	$: age_group = 'All'
-	$: lean = leanChecked ? 'R' : 'L';
 
-	$: medium2 = tvChecked2 ? 'web' : 'tv'
-	$: partisanship_scenario2 = scenarioChecked2 ? 'stringent' : 'lenient'
-	$: age_group2 = 'All'
-	$: gender2 = 'All'
-	$: lean2 = leanChecked2 ? 'R' : 'L';
+	// $: console.log(data)
 </script>
 
 <div class="section" use:inView={{ once: true }} on:enter={() => loaded = true }>
@@ -122,7 +101,7 @@
 			
 			<div class='controls-wrapper'>
 				<div class='controls'>
-					<ControlSwitch 
+					<!-- <ControlSwitch 
 						id='political-lean' 
 						title={'A lean'}
 						labels={[ 'L', 'R' ]}
@@ -130,14 +109,14 @@
 						info={copy.controls.medium.description}
 						bind:checked={ leanChecked } 
 					/>
-					<!-- title={copy.controls.medium.title} -->
+					
 					<ControlSwitch 
 						id='medium' 
 						title={copy.controls.medium.title}
 						labels={[ 'TV', 'Web' ]}
 						info={copy.controls.medium.description}
 						bind:checked={ tvChecked } 
-					/>
+					/> -->
 	
 					<ControlSwitch 
 						id='partisanship' 
@@ -172,7 +151,7 @@
 					</div>
 				</div>
 	
-				<div class='controls'>
+				<!-- <div class='controls'>
 					<ControlSwitch 
 						id='political-lean' 
 						title={'B lean'}
@@ -181,7 +160,7 @@
 						info={copy.controls.medium.description}
 						bind:checked={ leanChecked2 } 
 					/>
-					<!-- title={copy.controls.medium.title} -->
+					
 					<ControlSwitch 
 						id='medium' 
 						title={copy.controls.medium.title}
@@ -218,7 +197,7 @@
 							<option value='Female'>Female</option>
 						</select>
 					</div>
-				</div>
+				</div> -->
 				
 				{#if loaded && data}
 					<div id='period' class='control control-range'>
@@ -231,7 +210,7 @@
 					</div>
 				{/if}
 	
-				<div class='spacer'></div>
+				<!-- <div class='spacer'></div> -->
 			</div>
 			<div class='chart-wrapper'>
 				{#if loaded && data}
