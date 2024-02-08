@@ -6,7 +6,7 @@
 
 	import hash from '$lib/utils/hasher';
 
-	$: auth = true;
+	$: auth = false;
 	$: val = null;
 
 	function authenticate(e) {
