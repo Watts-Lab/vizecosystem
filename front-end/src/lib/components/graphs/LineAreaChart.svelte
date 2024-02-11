@@ -1,9 +1,9 @@
 <script lang="ts">
 	// node_modules
-	import { LayerCake, Svg, flatten } from 'layercake';
+	import { LayerCake, Svg } from 'layercake';
 	import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale'
-	import { groups } from 'd3-array'
-	import { color } from 'd3-color'
+	// import { groups } from 'd3-array'
+	// import { color } from 'd3-color'
 
 	// types
 	import type Row from '$lib/types/TimeSeriesRow';
@@ -62,6 +62,7 @@
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
+
 </script>
 
 <div class="chart-container">
@@ -120,16 +121,3 @@
 {/if}
 
 <style lang='scss'></style>
-
-
-
-
-<!-- groups(
-	groupedData.filter(d => +d.date >= minDate && +d.date <= maxDate), 
-	(d) => (
-		d.idx !== undefined
-		? `${d.political_lean}_${d.idx}`
-		: d.political_lean
-	), 
-	(d) => d.diet_threshold
-)  -->

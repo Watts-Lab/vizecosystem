@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { csv } from "d3-fetch";
   	import { autoType } from "d3-dsv";
-	import { group, zip } from 'd3-array';
+	import { group, extent, zip } from 'd3-array';
 
 	// import state data
 	import states from '$lib/data/states.json'
@@ -16,7 +16,9 @@
 	// components
 	import ChartPlaceholder from '$lib/components/global/chart-placeholder.svelte';
 	import ControlSwitch from "$lib/components/global/control-switch.svelte";
+	import SelectMenu from '$lib/components/global/select-menu.svelte';
 	import StackedAreas from '$lib/components/graphs/StackedAreas.svelte';
+	import Caption from '$lib/components/graphs/layers/Caption.svelte';
 
 	// // import utils
 	import { formatYear } from '$lib/utils/format-dates';
@@ -29,30 +31,35 @@
 	let data : any[];
 	let dataMap : Map<string, any>
 	let rows : number[]
-	let tvChecked : boolean = false;
+	let xTicks : Date[]
+	let xDomain : Date[]
+	let axisChecked : boolean = false;
 	const urlChart : string  = 'assets/data/EchoCh-national_consumption_tv_and_web.csv'
 	
 	onMount(async () => {
 		// load data for map + line chart
 		const resChart = await csv(urlChart, autoType)
 		data = resChart
-			.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
-			.sort((a, b) => +a.date - +b.date)
+			.map((d: any) => ({ ...d, date: new Date(d.year, d.month, 1) }))
+			.sort((a: any, b: any) => +a.date - +b.date)
     	// parse data for 
 		dataMap = group(
 			data,
-			d => d.medium,
-			d => d.gender,
-			d => d.age_group,
-			d => d.state,
-			d => +d.date,
-			d => d.category
+			(d: any) => d.medium,
+			(d: any) => d.gender,
+			(d: any) => d.age_group,
+			(d: any) => d.race,
+			(d: any) => d.state,
+			(d: any) => +d.date,
+			(d: any) => d.category
 		)
 
-		rows = Array.from(new Set(data.map(d => +d.date)))
+		rows = Array.from(new Set(data.map((d: any) => +d.date)))
+		xTicks = Array.from(new Set(data.map(d => d.year))).map(d => new Date(d, 0, 1))
+		xDomain = extent(data, (d: any) => d.date)
 	})
 
-	const chartConfig : Map<string, { order : string[], colors: string[] }> = new Map([
+	const chartConfig : Map<string, { order : string[], colors: string[], yDomain: number[] }> = new Map([
 		['tv', {
 			order: ['non-news', 'news'],
 			colors: ['#a6cee3', '#fb9a99'],
@@ -60,25 +67,48 @@
 		}
 		],
 		['web', {
-			order: ['non_news', 'facebook', 'hard_news', 'youtube', 'twitter', 'reddit', 'fake_news'],
-			colors: ['#a6cee3',  '#e31a1c', '#fb9a99', '#cab2d6', '#fdbf6f', '#ff7f00', '#6a3d9a'],
-			yDomain: [0, 80]
+			order: ['non_news', 'hard_news', 'fake_news', 'social_media'],
+			colors: ['#a6cee3',  '#fb9a99', '#e31a1c', '#fdbf6f'],
+			yDomain: [0, 45]
+		}],
+		['mobile', {
+			order: ['music', 'news', 'other', 'social_media'],
+			colors: ['#17A589',  '#fb9a99', '#a6cee3', '#fdbf6f' ],
+			yDomain: [0, 45]
 		}],
 	])
 
-	$: medium = tvChecked ? 'web' : 'tv'
+	$: syncAxis = axisChecked === true
 	$: gender = 'All'
     $: age_group = 'All'
+	$: ethnicity = 'All'
 	$: location = 'US'
-	$: activeChart = chartConfig.get(medium)
+	$: disableMenus = location !== 'US'
 
 	function resetAge() { age_group = 'All' }
     function resetGender() { gender = 'All' }
+	function resetEthnicity() { ethnicity = 'All' }
 	function resetState() { location = 'US' }
 
-	$: if (location !== 'US') { resetGender(); resetAge(); }
+	$: if (location !== 'US') { resetGender(); resetAge(); resetEthnicity(); }
 	$: if (age_group !== 'All' || gender !== 'All') { resetState() }
+	$: disableAgeGroup = ethnicity !== 'All' && gender !== 'All'
+	$: disableGender = age_group !== 'All' && ethnicity !== 'All'
+	$: disableEthnicity = age_group !== 'All' && gender !== 'All'
+	
+	//@ts-ignore
+	$: stateMap = new Map<string,string>([
+		['US', 'US'],
+		...states.sort((a,b) => a.state.localeCompare(b.state)).map((d: any) => [d.abbr, d.state])
+	])
 
+	$: ethnicityMap =  new Map([
+		['All', 'All'],
+		['white+other', 'White/Other'],
+		['black', 'Black'],
+		['hispanic', 'Hispanic'],
+		['asian', 'Asian'],
+	])
 </script>
 
 <div class="section" use:inView={{ once: true }} on:enter={() => loaded = true }>
@@ -95,51 +125,65 @@
 				</h3>
 			
 				<div class='controls'>
-					<ControlSwitch 
-						id='medium' 
-						title={copy.controls.medium.title}
-						labels={[ 
-							copy.controls.medium['label-left'], 
-							copy.controls.medium['label-right']
-						]}
-						info={copy.controls.medium.description}
-						bind:checked={ tvChecked } 
+					<SelectMenu 
+						id='location' 
+						title={'Location'}
+						options={stateMap}
+						bind:value={location}
 					/>
-			
-					<div id='location' class='control control-menu'>
-						<div class='control-title'>Location</div>
-						<select id="age-group-menu" name="location" bind:value={location}>
-							<option value={'US'}>US</option>
-							{#each states.sort((a,b) => a.state.localeCompare(b.state)) as state}
-								<option value={state.abbr}>{state.state}</option>
-							{/each}
-						</select>
-					</div>
-			
-					<div id='age-group' class='control control-menu'>
-						<div class='control-title'>Age group</div>
-						<select id="age-group-menu" name="age-group" bind:value={age_group}>
-							<option value='All'>All</option>
-							<option value='18-24'>18-24</option>
-							<option value='25-34'>25-34</option>
-							<option value='35-44'>35-44</option>
-							<option value='45-54'>45-54</option>
-							<option value='55+'>55+</option>
-						</select>
-					</div>
-			
-					<div id='gender' class='control control-menu'>
-						<div class='control-title'>Gender</div>
-						<select id="gender-menu" name="location" bind:value={gender}>
-							<option value='All' selected>All</option>
-							<option value='Male'>Male</option>
-							<option value='Female'>Female</option>
-						</select>
-					</div>
+								
+					<SelectMenu 
+						id='age-group' 
+						title={'Age group'}
+						options={new Map([
+							['All', 'All'],
+							['18-24', '18-24'],
+							['25-34', '25-34'],
+							['35-44', '35-44'],
+							['45-54', '45-54'],
+							['55+', '55+']	
+						])}
+						disabled={disableMenus || disableAgeGroup}
+						bind:value={age_group}
+					/>
+
+					<SelectMenu 
+						id='gender' 
+						title={'Gender'}
+						options={new Map([
+							['All', 'All'],
+							['Male', 'Male'],
+							['Female', 'Female']
+						])}
+						disabled={disableMenus || disableGender}
+						bind:value={gender}
+					/>
+
+					<SelectMenu 
+						id='ethnicity' 
+						title={'Ethnicity'}
+						options={ethnicityMap}
+						disabled={disableMenus || disableEthnicity}
+						bind:value={ethnicity}
+					/>
+
+					<ControlSwitch 
+						id='axis' 
+						title={'Independent axis'}
+						labels={[ 
+							'Synced',
+							'Independent'
+						]}
+						info={'The axis bla bla bla'}
+						bind:checked={ axisChecked } 
+					/>
 				</div>
 			
 				<div class='legend'>
-					{#each zip(activeChart.colors, activeChart.order) as cat}
+					{#each zip(
+						[...chartConfig.get('tv').colors, ...chartConfig.get('web').colors, ...chartConfig.get('mobile').colors], 
+						[...chartConfig.get('tv').order, ...chartConfig.get('web').order, ...chartConfig.get('mobile').order]
+					) as cat}
 						<div class='legend-item'>
 							<div class={'legend-color'} style='--color: {cat[0]}'></div>
 							<div>{labelMap.get(cat[1])}</div>
@@ -148,20 +192,85 @@
 				</div>
 			
 				{#if data}
-					<StackedAreas 
-						dataMap={dataMap.get(medium).get(gender).get(age_group).get(location)} 
-						{data} 
-						{rows} 
-						categories={activeChart.order} 
-						colors={activeChart.colors}
-						yDomain={activeChart.yDomain}
-						formatter={formatYear}
-						caption={d.value.captions}
-						url={ urlChart }
-					/>
-					
+					<div class='chart-grid'>
+						<div class='chart-inner'>
+							<h4>TV</h4>
+							<StackedAreas 
+								dataMap={
+									dataMap
+									.get('tv')
+									.get(gender)
+									.get(age_group)
+									.get(ethnicity)
+									.get(location)
+								}
+								{data} 
+								{rows} 
+								categories={chartConfig.get('tv').order} 
+								colors={chartConfig.get('tv').colors}
+								yDomain={chartConfig.get('tv').yDomain}
+								{xDomain}
+								{xTicks}
+								formatter={formatYear}
+								includeCaption={false}
+								url={ urlChart }
+							/>
+						</div>
+
+						<div class='chart-inner'>
+							<h4>Desktop</h4>
+							<StackedAreas 
+								dataMap={
+									dataMap
+										.get('web')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+								}
+								{data} 
+								{rows} 
+								categories={chartConfig.get('web').order} 
+								colors={chartConfig.get('web').colors}
+								yDomain={chartConfig.get(syncAxis ? 'tv': 'web').yDomain}
+								{xDomain}
+								{xTicks}
+								addTickYLabel={false}
+								formatter={formatYear}
+								includeCaption={false}
+								url={ urlChart }
+							/>
+						</div>
+
+						<div class='chart-inner'>
+							<h4>Mobile</h4>
+							<StackedAreas 
+								dataMap={
+									dataMap
+										.get('mobile')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+								}
+								{data} 
+								{rows} 
+								categories={chartConfig.get('mobile').order} 
+								colors={chartConfig.get('mobile').colors}
+								yDomain={chartConfig.get(syncAxis ? 'tv': 'mobile').yDomain}
+								{xDomain}
+								{xTicks}
+								addTickYLabel={false}
+								formatter={formatYear}
+								includeCaption={false}
+								url={ urlChart }
+							/>
+						</div>
+					</div>
 					{:else} <ChartPlaceholder />
 				{/if}
+
+				<Caption caption={ d.value.captions } url={ urlChart } type={'single-cols'} />
 			</div>
 		{/if}
 	{/each}
@@ -206,13 +315,26 @@
 		h3 {
 			margin-bottom: 1em;
 		}
+
+		.chart-grid {
+			display: grid;
+			column-gap: 15px;
+			grid-template-columns: repeat(3, 1fr);
+
+			.chart-inner {
+				display: grid;
+
+				h4 {
+					margin: 15px 0 10px 0;
+				}
+			}
+		}
 	}
 
 	.controls {
         display: flex;
 
         .control-switch, 
-        .control-menu,
         .control-range {
             display: flex;
             flex-wrap: wrap;
@@ -251,7 +373,7 @@
 	.legend {
 		display: flex; 
 		gap: 15px;
-		margin-top: 15px;
+		margin: 15px 0;
 		font-size: 14px;
 
 		.legend-item {

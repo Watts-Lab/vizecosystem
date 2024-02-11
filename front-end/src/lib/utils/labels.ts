@@ -1,13 +1,12 @@
 const labelMap : Map<string, string> = new Map([
     ['non-news', 'Non-news'], 
+    ['non_news', 'Non-news'],
     ['news', 'News'],
-    ['non_news', 'Non-news'], 
-    ['facebook', 'Facebook'], 
     ['hard_news', 'Hard news'], 
-    ['youtube', 'YouTube'], 
-    ['twitter', 'Twitter'], 
-    ['reddit', 'Reddit'], 
-    ['fake_news', 'Fake News']
+    ['fake_news', 'Fake News'],
+    ['social_media', 'Social Media'],
+    ['music', 'Music'],
+    ['other', 'Other'],
 ])
 
 const orderMap : Map<string, number> = new Map([
