@@ -156,7 +156,7 @@
             "value": {
                 "type": "flow-chart",
                 "title": "Shifting TV Viewership",
-                "captions": "Television news consumption archetypes are each labeled according to the category of news most prominently consumed within the archetype, along with a large ninth group of people who are exposed to less than 30 min of news in a month, calculated independently in each month over the 4 years of analysis. The figure represents the direction and magnitude of turnover between each pair of archetypes. For example, if—over a given period of time—1M individuals moved from archetype A to archetype B, and over the same period of time 4M individuals did the reverse and moved from archetype B to A, then the net flow over that time period would be 3M from B to A."
+                "captions": "Television news consumption archetypes are each labeled according to the category of news most prominently consumed within the archetype, along with a large ninth group of people who are exposed to less than 30 min of news in a month, calculated independently in each month over the 6 years of analysis. The figure represents the direction and magnitude of turnover between each pair of archetypes. For example, if—over a given period of time—1M individuals moved from archetype A to archetype B, and over the same period of time 4M individuals did the reverse and moved from archetype B to A, then the net flow over that time period would be 3M from B to A."
             }
         },
         {
@@ -171,7 +171,7 @@
         },
         {
             "type": "text",
-            "value": "The analyses here are mostly reproductions of figures from two articles published in 2020 and 2022. The underlying datasets are derived from large panels (50-100k) of individuals who agreed to have their desktop internet browsing and TV viewing behavior passively tracked by the Nielsen company."
+            "value": "The analyses here are mostly reproductions of figures from two articles: Allen et al (2020) and Muise et al (2022). The underlying datasets are derived from large panels (50-100k) of individuals who agreed to have their desktop internet browsing and TV viewing behavior passively tracked by the Nielsen company."
         },
         {
             "type": "text",
@@ -179,7 +179,14 @@
         },
         {
             "type": "text",
-            "value": "We categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. As a disclaimer, aggregation methods are our own, as Nielsen does not provide ideological labels to TV programs nor defines what programs are considered right-wing or left-wing. For more details on how we define news content, see supplementary materials of [the 2020 paper|https://www.science.org/doi/10.1126/sciadv.aay3539], and for more details on how we define echo chambers, see the supplementary materials of [the 2022 paper|https://www.science.org/doi/10.1126/sciadv.abn0083]."
+            "value": "We note that partisan content labels are not provided by Nielsen. Rather, we categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. As a disclaimer, aggregation methods are our own, as Nielsen does not provide ideological labels to TV programs nor defines what programs are considered right-wing or left-wing. For more details on how we define news content, see methods section of [the 2020 paper|https://www.science.org/doi/10.1126/sciadv.aay3539#sec-2], and for more details on how we define echo chambers, see the methods section of [the 2022 paper|https://www.science.org/doi/10.1126/sciadv.abn0083#sec-4]."
+        },
+        {
+            "type": "references",
+            "value": [
+                "Allen, Jennifer, Baird Howland, Markus Mobius, David Rothschild, and Duncan J. Watts. “Evaluating the fake news problem at the scale of the information ecosystem.” _i_Science advances 6_i_, no. 14 (2020): eaay3539.",
+                "Muise, Daniel, Hosseinmardi, Homa, Howland, Markus Mobius, David Rothschild, and Duncan J. Watts. “Quantifying partisan news diets in Web and TV audiences.” _i_Science advances 8_i_, no. 28 (2022): eabn0083."
+            ]
         }
     ]
 }

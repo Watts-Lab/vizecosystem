@@ -53,24 +53,29 @@
 
 <g class='line-group line-group-{activeChart}'>
   {#each $data as leanGroup, i}
-    <!-- {console.log(leanGroup)} -->
     <g class='line-group-lean line-group-lean-{leanGroup[0]}'>
       {#each leanGroup[1] as mediumGroup, j}
         {@const fill = mediumGroup[0] === 'tv' ? `url(#diagonalHatch${leanGroup[0]})` : $zScale(leanGroup[0]) }
         <g class='line-group-medium line-group-medium-{mediumGroup[0]}'>
-          <path
-            class={`path-line path-line-${mediumGroup[0]}`}
-            d={ path(mediumGroup[1].get(50)) }
-            stroke={ $zScale(leanGroup[0]) }
-          ></path>
-          <path
-            class={`path-polygon path-polygon-${mediumGroup[0]}`}
-            d={ polygon(
-              parsePolygonData(mediumGroup[1])
-            )}
-            { fill }
+          <!-- These each blocks are "faked" to allow the animate directive -->
+          {#each [0] as d, l (`line-${leanGroup[0]}-${mediumGroup[0]}`)} 
+            <path
+              class={`path-line path-line-${mediumGroup[0]}`}
+              d={ path(mediumGroup[1].get(50)) }
+              stroke={ $zScale(leanGroup[0]) }
+              animate:drawPath={{ delay: 0, duration: 500 }}
             ></path>
-            
+          {/each}
+          {#each [0] as d, l (`polygon-${leanGroup[0]}-${mediumGroup[0]}`)} 
+            <path
+              class={`path-polygon path-polygon-${mediumGroup[0]}`}
+              d={ polygon(
+                parsePolygonData(mediumGroup[1])
+              )}
+              { fill }
+              animate:fade={{ delay: 500, duration: 500 }}
+            ></path>
+          {/each}
         </g>
       {/each}
     </g>

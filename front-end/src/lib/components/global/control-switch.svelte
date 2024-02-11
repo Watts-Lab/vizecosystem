@@ -11,7 +11,7 @@
   $: infoDetail = showInfo ? 'active' : '';
 </script>
 
-<div id='{ id }' class='control control-switch'>
+<div id='{id}' class='control control-switch'>
   <div class='control-title'>
     { title } 
     <span 

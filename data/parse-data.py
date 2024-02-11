@@ -11,32 +11,49 @@ bucket = getenv('bucket')
 
 # # datasets
 datasets = [
-  # {
-  #   'url': [
-  #     'raw_data/all_adults_national_tv_consumption_f1.csv',
-  #     'raw_data/by_age_national_tv_consumption_f1.csv',
-  #     'raw_data/by_age_x_gender_national_tv_consumption_f1.csv',
-  #     'raw_data/by_gender_national_tv_consumption_f1.csv',
-  #     'raw_data/by_state_national_tv_consumption_f1.csv',
-  #     'raw_data/all_adults_desktop_web_consumption_f1.csv',
-  #     'raw_data/by_gender_desktop_web_consumption_f1.csv',
-  #     'raw_data/by_age_desktop_web_consumption_f1.csv',
-  #     'raw_data/by_age_x_gender_desktop_web_consumption_f1.csv',
-  #     'raw_data/by_state_desktop_web_consumption_f1.csv',
-  #   ],
-  #   'out_name': 'EchoCh-national_consumption_tv_and_web.csv',
-  #   'format': '%.3f'
-  # },
   {
     'url': [
-      'raw_data/TVLeftEchoChLenient_by_state.csv',
-      'raw_data/TVLeftEchoChStringent_by_state.csv',
-      'raw_data/TVRightEchoChLenient_by_state.csv',
-      'raw_data/web_ec_sizes_by_state.csv',
-      ], 
-    'out_name': 'EchoCh-by_state.csv',
-    'format': '%.4f'
+      # # # tv
+      'raw_data/all_adults_national_tv_consumption_f1.csv',
+      'raw_data/by_age_national_tv_consumption_f1.csv',
+      'raw_data/by_age_x_gender_national_tv_consumption_f1.csv',
+      'raw_data/by_gender_national_tv_consumption_f1.csv',
+      'raw_data/by_race_national_tv_consumption_f1.csv',
+      'raw_data/by_gender_x_race_national_tv_consumption_f1.csv',
+      'raw_data/by_age_x_race_national_tv_consumption_f1.csv',
+      'raw_data/by_state_national_tv_consumption_f1.csv',
+      # # # web
+      'raw_data/all_adults_desktop_web_consumption_f1.csv',
+      'raw_data/by_gender_desktop_web_consumption_f1.csv',
+      'raw_data/by_age_desktop_web_consumption_f1.csv',
+      'raw_data/by_age_x_gender_desktop_web_consumption_f1.csv',
+      'raw_data/by_race_desktop_web_consumption_f1.csv',
+      'raw_data/by_gender_x_race_desktop_web_consumption_f1.csv',
+      'raw_data/by_age_x_race_desktop_web_consumption_f1.csv',
+      'raw_data/by_state_desktop_web_consumption_f1.csv',
+      # # # mobile
+      'raw_data/all_adults_mobile_consumption_f1.csv',
+      'raw_data/by_age_group_mobile_consumption_f1.csv',
+      'raw_data/by_gender_mobile_consumption_f1.csv',
+      'raw_data/by_race_mobile_consumption_f1.csv',
+      'raw_data/by_gender_by_race_mobile_consumption_f1.csv',
+      'raw_data/by_gender_by_age_group_mobile_consumption_f1.csv',
+      'raw_data/by_age_group_by_race_mobile_consumption_f1.csv',
+      'raw_data/by_state_mobile_consumption_f1.csv',
+    ],
+    'out_name': 'EchoCh-national_consumption_tv_and_web.csv',
+    'format': '%.3f'
   },
+  # {
+  #   'url': [
+  #     'raw_data/TVLeftEchoChLenient_by_state.csv',
+  #     'raw_data/TVLeftEchoChStringent_by_state.csv',
+  #     'raw_data/TVRightEchoChLenient_by_state.csv',
+  #     'raw_data/web_ec_sizes_by_state.csv',
+  #     ], 
+  #   'out_name': 'EchoCh-by_state.csv',
+  #   'format': '%.4f'
+  # },
   # {
   #   'url': [
   #     'raw_data/TVLeftEchoChLenient_by_state.csv',
