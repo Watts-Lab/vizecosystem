@@ -69,12 +69,12 @@
 		['web', {
 			order: ['non_news', 'hard_news', 'fake_news', 'social_media'],
 			colors: ['#a6cee3',  '#fb9a99', '#e31a1c', '#fdbf6f'],
-			yDomain: [0, 45]
+			yDomain: [0, 100]
 		}],
 		['mobile', {
 			order: ['music', 'news', 'other', 'social_media'],
 			colors: ['#17A589',  '#fb9a99', '#a6cee3', '#fdbf6f' ],
-			yDomain: [0, 45]
+			yDomain: [0, 60]
 		}],
 	])
 
