@@ -181,8 +181,6 @@ def parse(file):
 
   d_mob = parse_mob(d_mob)
 
-  print(d_mob)
-
   # # # # and we put those 2 together
   d = concat([d_tv, d_web, d_mob]) 
 

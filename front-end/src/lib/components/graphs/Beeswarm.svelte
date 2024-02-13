@@ -133,8 +133,11 @@
 		.domain(activeChart.zDomain)
 		.range(colorPalette)
 
+	$: userHasInteracted = false
+
 	onMount(() => {
 		setTimeout(() => renderAnnotation = true, 2000)
+		setTimeout(() => console.log(userHasInteracted), 5000)
 	})
 </script>
 
@@ -193,11 +196,11 @@
 				</div>
 			{/each}
 			<span class='legend-block-label legend-block-label-R'>More { political_lean === 'L' ? 'left' : 'right' }</span>
-			<div class='legend-block-cta'>
+			<!-- <div class='legend-block-cta'>
 				<ClickCta 
 					message={'Click on circles for a detailed view at the state level'} 
 				/>
-			</div>
+			</div> -->
 		</div>
 		
 		<div class='legend-item legend-item-size'>
@@ -283,7 +286,7 @@
 		{ zScale }
 		zDomain={ zScale.domain() }
 		zRange={ zScale.range() }
-		padding={ { top: 0, right: 0, bottom: 0, left: 0 } }
+		padding={ { top: -80, right: 0, bottom: 0, left: 0 } }
 	>
 		<Svg>
 			{#if render}
@@ -328,7 +331,7 @@
 		grid-column: span 12;
 
 		@media (min-width: $bp-3) {
-			height: 750px;
+			height: 630px;
 		}
 	}
 

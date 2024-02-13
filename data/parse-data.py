@@ -44,110 +44,110 @@ datasets = [
     'out_name': 'EchoCh-national_consumption_tv_and_web.csv',
     'format': '%.3f'
   },
-  # {
-  #   'url': [
-  #     'raw_data/TVLeftEchoChLenient_by_state.csv',
-  #     'raw_data/TVLeftEchoChStringent_by_state.csv',
-  #     'raw_data/TVRightEchoChLenient_by_state.csv',
-  #     'raw_data/web_ec_sizes_by_state.csv',
-  #     ], 
-  #   'out_name': 'EchoCh-by_state.csv',
-  #   'format': '%.4f'
-  # },
-  # {
-  #   'url': [
-  #     'raw_data/TVLeftEchoChLenient_by_state.csv',
-  #     'raw_data/TVLeftEchoChStringent_by_state.csv',
-  #     'raw_data/TVRightEchoChLenient_by_state.csv',
-  #     'raw_data/web_ec_sizes_by_state.csv',
-  #     ], 
-  #   'out_name': 'EchoCh-by_state_full-timeseries.csv',
-  #   'format': '%.3f'
-  # },
-  # {
-  #   'url': [
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_programs.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_programs.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_programs.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_programs.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_domains.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_domains.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_domains.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_domains.csv',
-  #     'raw_data/tv_top_content_by_state_last_3_months_top_programs.csv',
-  #     'raw_data/tv_top_content_by_state_last_6_months_top_programs.csv',
-  #     'raw_data/tv_top_content_by_state_last_12_months_top_programs.csv',
-  #     'raw_data/tv_top_content_by_state_last_since_2016_top_programs.csv',
-  #     'raw_data/desktop_top_content_by_state_last_3_months_top_domains.csv',
-  #     'raw_data/desktop_top_content_by_state_last_6_months_top_domains.csv',
-  #     'raw_data/desktop_top_content_by_state_last_12_months_top_domains.csv',
-  #     'raw_data/desktop_top_content_by_state_last_since_2016_top_domains.csv',
-  #   ],
-  #   'out_name': 'EchoCh-by_state_audiences.csv',
-  #   'format': '%.0f'
-  # },
-  # {
-  #   'url': [
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_programs.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_programs.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_programs.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_programs.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_domains.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_domains.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_domains.csv',
-  #     # 'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_domains.csv',
-  #     'raw_data/tv_top_content_by_state_last_3_months_top_programs.csv',
-  #     'raw_data/tv_top_content_by_state_last_6_months_top_programs.csv',
-  #     'raw_data/tv_top_content_by_state_last_12_months_top_programs.csv',
-  #     'raw_data/tv_top_content_by_state_last_since_2016_top_programs.csv',
-  #     'raw_data/desktop_top_content_by_state_last_3_months_top_domains.csv',
-  #     'raw_data/desktop_top_content_by_state_last_6_months_top_domains.csv',
-  #     'raw_data/desktop_top_content_by_state_last_12_months_top_domains.csv',
-  #     'raw_data/desktop_top_content_by_state_last_since_2016_top_domains.csv',
-  #   ],
-  #   'out_name': 'EchoCh-by_state_audiences_hyperpartisan.csv',
-  #   'format': '%.0f'
-  # },
-  # {
-  #   'url': [
-  #     'raw_data/TVLeftEchoChLenient_all_adults.csv',
-  #     'raw_data/TVLeftEchoChLenient_by_age_x_gender.csv',
-  #     'raw_data/TVLeftEchoChLenient_by_age.csv',
-  #     'raw_data/TVLeftEchoChLenient_by_gender.csv',
-  #     'raw_data/TVLeftEchoChStringent_all_adults.csv',
-  #     'raw_data/TVLeftEchoChStringent_by_age_x_gender.csv',
-  #     'raw_data/TVLeftEchoChStringent_by_age.csv',
-  #     'raw_data/TVLeftEchoChStringent_by_gender.csv',
-  #     'raw_data/TVRightEchoChLenient_all_adults.csv',
-  #     'raw_data/TVRightEchoChLenient_by_age_x_gender.csv',
-  #     'raw_data/TVRightEchoChLenient_by_age.csv',
-  #     'raw_data/TVRightEchoChLenient_by_gender.csv',
-  #     'raw_data/web_ec_sizes_all_adults.csv',
-  #     'raw_data/web_ec_sizes_by_age_x_gender.csv',
-  #     'raw_data/web_ec_sizes_by_age.csv',
-  #     'raw_data/web_ec_sizes_by_gender.csv',
-  #     ], 
-  #   'out_name': 'EchoCh-nationwide-by_gender-or-age_group.csv',
-  #   'format': '%.3f'
-  # },
-  # {
-  #   'url': 'raw_data/tv_archetype_flow_data_agg_networks=True.csv',
-  #   'out_name': 'EchoCh-links.csv',
-  #   'format': '%.3f'
-  # },
-  # {
-  #   'url': [
-  #     'raw_data/tv_archetype_sizes_agg_networks=True.csv',
-  #     'raw_data/tv_archetype_mins_p_person_agg_networks=True.csv'
-  #   ],
-  #   'out_name': 'EchoCh-nodes.csv',
-  #   'format': '%.5f'
-  # },
-  # {
-  #   'url': 'raw_data/tv_archetype_net_change_in_size_agg_networks=True.csv',
-  #   'out_name': 'EchoCh-nodes-net_change_in_size.csv',
-  #   'format': '%.0f'
-  # },
+  {
+    'url': [
+      'raw_data/TVLeftEchoChLenient_by_state.csv',
+      'raw_data/TVLeftEchoChStringent_by_state.csv',
+      'raw_data/TVRightEchoChLenient_by_state.csv',
+      'raw_data/web_ec_sizes_by_state.csv',
+      ], 
+    'out_name': 'EchoCh-by_state.csv',
+    'format': '%.4f'
+  },
+  {
+    'url': [
+      'raw_data/TVLeftEchoChLenient_by_state.csv',
+      'raw_data/TVLeftEchoChStringent_by_state.csv',
+      'raw_data/TVRightEchoChLenient_by_state.csv',
+      'raw_data/web_ec_sizes_by_state.csv',
+      ], 
+    'out_name': 'EchoCh-by_state_full-timeseries.csv',
+    'format': '%.3f'
+  },
+  {
+    'url': [
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_programs.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_programs.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_programs.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_programs.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_domains.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_domains.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_domains.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_domains.csv',
+      'raw_data/tv_top_content_by_state_last_3_months_top_programs.csv',
+      'raw_data/tv_top_content_by_state_last_6_months_top_programs.csv',
+      'raw_data/tv_top_content_by_state_last_12_months_top_programs.csv',
+      'raw_data/tv_top_content_by_state_last_since_2016_top_programs.csv',
+      'raw_data/desktop_top_content_by_state_last_3_months_top_domains.csv',
+      'raw_data/desktop_top_content_by_state_last_6_months_top_domains.csv',
+      'raw_data/desktop_top_content_by_state_last_12_months_top_domains.csv',
+      'raw_data/desktop_top_content_by_state_last_since_2016_top_domains.csv',
+    ],
+    'out_name': 'EchoCh-by_state_audiences.csv',
+    'format': '%.0f'
+  },
+  {
+    'url': [
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_programs.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_programs.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_programs.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_programs.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_3_months_dem=state_top_domains.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_6_months_dem=state_top_domains.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=last_12_months_dem=state_top_domains.csv',
+      # 'raw_data/news_domains_ranked_by_audiences_agg=since 2016_dem=state_top_domains.csv',
+      'raw_data/tv_top_content_by_state_last_3_months_top_programs.csv',
+      'raw_data/tv_top_content_by_state_last_6_months_top_programs.csv',
+      'raw_data/tv_top_content_by_state_last_12_months_top_programs.csv',
+      'raw_data/tv_top_content_by_state_last_since_2016_top_programs.csv',
+      'raw_data/desktop_top_content_by_state_last_3_months_top_domains.csv',
+      'raw_data/desktop_top_content_by_state_last_6_months_top_domains.csv',
+      'raw_data/desktop_top_content_by_state_last_12_months_top_domains.csv',
+      'raw_data/desktop_top_content_by_state_last_since_2016_top_domains.csv',
+    ],
+    'out_name': 'EchoCh-by_state_audiences_hyperpartisan.csv',
+    'format': '%.0f'
+  },
+  {
+    'url': [
+      'raw_data/TVLeftEchoChLenient_all_adults.csv',
+      'raw_data/TVLeftEchoChLenient_by_age_x_gender.csv',
+      'raw_data/TVLeftEchoChLenient_by_age.csv',
+      'raw_data/TVLeftEchoChLenient_by_gender.csv',
+      'raw_data/TVLeftEchoChStringent_all_adults.csv',
+      'raw_data/TVLeftEchoChStringent_by_age_x_gender.csv',
+      'raw_data/TVLeftEchoChStringent_by_age.csv',
+      'raw_data/TVLeftEchoChStringent_by_gender.csv',
+      'raw_data/TVRightEchoChLenient_all_adults.csv',
+      'raw_data/TVRightEchoChLenient_by_age_x_gender.csv',
+      'raw_data/TVRightEchoChLenient_by_age.csv',
+      'raw_data/TVRightEchoChLenient_by_gender.csv',
+      'raw_data/web_ec_sizes_all_adults.csv',
+      'raw_data/web_ec_sizes_by_age_x_gender.csv',
+      'raw_data/web_ec_sizes_by_age.csv',
+      'raw_data/web_ec_sizes_by_gender.csv',
+      ], 
+    'out_name': 'EchoCh-nationwide-by_gender-or-age_group.csv',
+    'format': '%.3f'
+  },
+  {
+    'url': 'raw_data/tv_archetype_flow_data_agg_networks=True.csv',
+    'out_name': 'EchoCh-links.csv',
+    'format': '%.3f'
+  },
+  {
+    'url': [
+      'raw_data/tv_archetype_sizes_agg_networks=True.csv',
+      'raw_data/tv_archetype_mins_p_person_agg_networks=True.csv'
+    ],
+    'out_name': 'EchoCh-nodes.csv',
+    'format': '%.5f'
+  },
+  {
+    'url': 'raw_data/tv_archetype_net_change_in_size_agg_networks=True.csv',
+    'out_name': 'EchoCh-nodes-net_change_in_size.csv',
+    'format': '%.0f'
+  },
 ]
 # credentials
 creds = {
