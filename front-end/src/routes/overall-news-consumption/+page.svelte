@@ -267,7 +267,7 @@
 							/>
 						</div>
 					</div>
-					{:else} <ChartPlaceholder />
+					{:else} <ChartPlaceholder height={350}/>
 				{/if}
 
 				<Caption caption={ d.value.captions } url={ urlChart } type={'single-cols'} />

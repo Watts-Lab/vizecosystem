@@ -5,13 +5,11 @@
 	import { stack, stackOrderDescending } from 'd3-shape'
 	import { extent } from 'd3-array'
 
-
 	// // // components & molecules & atoms
 	import AxisY from '$lib/components/graphs/layers/AxisY.svelte';
 	import AxisX from '$lib/components/graphs/layers/AxisX.svelte';
 	import AreaStacked from '$lib/components/graphs/layers/AreaStacked.svelte';
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
-
 
 	// // // props declaration
 	export let margins : Object = { top: 15, right: 10, bottom: 20, left: 45 }

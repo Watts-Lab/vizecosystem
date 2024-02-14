@@ -1,4 +1,8 @@
-<div class='chart-placeholder'>
+<script lang='ts'>
+  export let height: number = 600;
+</script>
+
+<div class='chart-placeholder' style="height: {height}px">
   <div class="lds-roller">
     <div></div>
     <div></div>
@@ -13,7 +17,6 @@
 
 <style lang='scss'>
   .chart-placeholder {
-    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +24,6 @@
   }
 
   .lds-roller {
-    transform: translate(0, -75%);
     display: inline-block;
     position: relative;
     width: 80px;
