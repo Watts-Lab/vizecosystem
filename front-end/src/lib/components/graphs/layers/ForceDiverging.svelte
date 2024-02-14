@@ -1,19 +1,23 @@
-<script>
+<script lang='ts'>
     import { getContext, createEventDispatcher } from 'svelte';
     import { geoAlbersUsa } from 'd3-geo'
-    import { forceSimulation, forceCollide, forceManyBody, forceX } from 'd3-force';
+    import { forceSimulation, forceCollide, forceManyBody } from 'd3-force';
     import { path } from 'd3-path'
     
     const { height, width, rScale, zScale, data } = getContext('LayerCake');
     
     import IntroAnnotation from '$lib/components/graphs/tooltips/IntroAnnotation.svelte';
+    import ClickCta from '$lib/components/graphs/layers/ClickCTA.svelte';
 
-    export let collideStrength = 1;
-    export let manyBodyStrength = 1;
-    export let medium;
-    export let diet_threshold;
-    export let partisanship_scenario;
-    export let renderAnnotation;
+    export let collideStrength: number = 1;
+    export let manyBodyStrength: number = 1;
+    export let medium: string;
+    export let diet_threshold: number;
+    export let partisanship_scenario: string;
+    export let renderAnnotation: boolean;
+    export let userHasInteracted: boolean;
+    export let userTakingTooLong: boolean;
+    export let renderCta: boolean;
 
     // instantiate event dispatcher
     const dispatch = createEventDispatcher();
@@ -124,11 +128,23 @@
   transform={`translate(-35, 0)`}
 >
   {#each nodes as node}
+    {@const highlightAnimation = renderCta && userTakingTooLong && node.abbr === 'WA'}
+    {@const fadeOpacity = renderCta && userTakingTooLong && node.abbr !== 'WA'}
     <g 
-      class={`node-group node-group-${node.abbr} ${activeState === node.abbr ? 'active' : ''} ${hoverState ? 'hover' : ''}`} 
+      class={`
+        node-group 
+        node-group-${node.abbr} 
+        ${(activeState === node.abbr) || highlightAnimation  ? 'active' : ''} 
+        ${hoverState || fadeOpacity ? 'hover' : ''}`
+      } 
       transform={`translate(${node.x}, ${node.y})`}
       on:click={(e) => handleClick(e, node)}
-      on:mouseenter={(e) => { activeState = node.abbr; hoverState = true; }}
+      on:mouseenter={(e) => { 
+        activeState = node.abbr; 
+        hoverState = true; 
+        userHasInteracted = true; 
+        userTakingTooLong = false;
+      }}
       on:mouseleave={(e) => { activeState = false; hoverState = false; }}
     >
       <!-- svelte-ignore component-name-lowercase -->
@@ -158,6 +174,11 @@
       >
         {node.abbr}
       </text>
+      {#if renderCta && userTakingTooLong && node.abbr === 'WA'}
+        <g class='cta-container'>
+          <ClickCta message="Click for more" />
+        </g>
+      {/if}
     </g>
   {/each}
 </g>
@@ -206,6 +227,19 @@
 
     .state-label {
       font-weight: 700;
+    }
+  }
+
+  .cta-container {
+    animation: move 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes move {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(20px, 20px);
     }
   }
 </style>

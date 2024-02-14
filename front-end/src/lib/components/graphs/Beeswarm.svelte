@@ -12,7 +12,6 @@
 	import PopupOverlay from '$lib/components/graphs/tooltips/PopupOverlay.svelte';
 	import ControlSwitch from '$lib/components/global/control-switch.svelte';
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
-	import ClickCta from '$lib/components/graphs/layers/ClickCTA.svelte';
 	
 	// local data
 	import copy_data from '../../data/copy.json'
@@ -51,8 +50,6 @@
 	let render : boolean = false;
 	let renderAnnotation : boolean = false;
 	let dataIn : any;
-
-	
 
 	// when component is rendered, set render to true
 	// this will allow the inner contents of the LayerCake
@@ -134,10 +131,17 @@
 		.range(colorPalette)
 
 	$: userHasInteracted = false
+	$: userTakingTooLong = false
+	$: renderCta = false
 
 	onMount(() => {
-		setTimeout(() => renderAnnotation = true, 2000)
-		setTimeout(() => console.log(userHasInteracted), 5000)
+		setTimeout(() => renderAnnotation = true, 1500)
+		setTimeout(() => {
+			if (!userHasInteracted) {
+				renderCta = true;
+				userTakingTooLong = true;
+			}
+		}, 3500)
 	})
 </script>
 
@@ -196,11 +200,6 @@
 				</div>
 			{/each}
 			<span class='legend-block-label legend-block-label-R'>More { political_lean === 'L' ? 'left' : 'right' }</span>
-			<!-- <div class='legend-block-cta'>
-				<ClickCta 
-					message={'Click on circles for a detailed view at the state level'} 
-				/>
-			</div> -->
 		</div>
 		
 		<div class='legend-item legend-item-size'>
@@ -286,7 +285,7 @@
 		{ zScale }
 		zDomain={ zScale.domain() }
 		zRange={ zScale.range() }
-		padding={ { top: -80, right: 0, bottom: 0, left: 0 } }
+		padding={ { top: -50, right: 0, bottom: 0, left: 0 } }
 	>
 		<Svg>
 			{#if render}
@@ -300,6 +299,9 @@
 					on:mouseenter={ handleMouseEnter }
 					on:mouseleave={ handleMouseLeave }
 					on:click={ handleClick }
+					bind:userHasInteracted
+					bind:userTakingTooLong
+					bind:renderCta
 				/>
 			{/if}
 		</Svg>
@@ -439,30 +441,32 @@
 		"four four four";
 
 		#period {
-		grid-area: four;
+			grid-area: four;
 		}
 		
 		.control-menu {
-		display: flex;
-		// align-items: center;
-		flex-wrap: wrap;
-		gap: 5px;
+			display: flex;
+			// align-items: center;
+			flex-wrap: wrap;
+			gap: 5px;
+			position: relative;
+			z-index: 100;
 		
-		.control-title {
-			width: 100%;
-			@include fs-xxs;
-			font-weight: 300;
-			letter-spacing: 1px;
-			text-transform: uppercase;
+			.control-title {
+				width: 100%;
+				@include fs-xxs;
+				font-weight: 300;
+				letter-spacing: 1px;
+				text-transform: uppercase;
 
-			.info {
-			background-color: $off-white;
-			display: inline-block;
-			width: 12px;
-			border-radius: 100%;
-			text-align: center;
-			@include fs-xs;
-			}
+				.info {
+				background-color: $off-white;
+				display: inline-block;
+				width: 12px;
+				border-radius: 100%;
+				text-align: center;
+				@include fs-xs;
+				}
 		}
 
 		.control-label {

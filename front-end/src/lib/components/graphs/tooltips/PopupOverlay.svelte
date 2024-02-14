@@ -224,9 +224,10 @@
     display: grid;
     column-gap: 35px;
     row-gap: 8px;
-    grid-template-rows: 0fr 0fr 1fr 0.3fr;
+    grid-template-rows: 0fr 0fr 0.7fr 0.3fr;
     grid-template-columns: 0.60fr 0.4fr;
     transition: left 0.3s ease-out;
+    z-index: 150;
   }
 
   .overlay.active {

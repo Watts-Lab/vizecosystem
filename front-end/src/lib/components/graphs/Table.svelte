@@ -58,7 +58,7 @@
       padding: 3px 5px;
       line-height: 2;
       min-height: 40px;
-      @include fs-base;
+      @include fs-sm;
       border-bottom: 0.5pt solid $light-grey;
 
       .row-value-network {

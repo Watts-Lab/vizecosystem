@@ -3,13 +3,15 @@
     import Header from '$lib/components/header/Header.svelte'
 	// @ts-ignore
 	import Footer from '$lib/components/footer/Footer.svelte';
+	
+	import { dev } from '$app/environment';
 
 	import hash from '$lib/utils/hasher';
 
-	$: auth = false;
+	$: auth = dev || false;
 	$: val = null;
 
-	function authenticate(e) {
+	function authenticate(e: Event) {
 		e.preventDefault();
 		if (hash(val) === '7cc1c93bdeaf85793bfe1bfbd33356e252c28bfe') {
 			auth = true;
