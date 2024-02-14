@@ -33,7 +33,7 @@
 	let rows : number[]
 	let xTicks : Date[]
 	let xDomain : Date[]
-	let axisChecked : boolean = false;
+	let axisChecked : boolean = true;
 	const urlChart : string  = 'assets/data/EchoCh-national_consumption_tv_and_web.csv'
 	
 	onMount(async () => {
@@ -171,8 +171,8 @@
 						id='axis' 
 						title={'Independent axis'}
 						labels={[ 
-							'Synced',
-							'Independent'
+							'Independent',
+							'Aligned'
 						]}
 						info={'The axis bla bla bla'}
 						bind:checked={ axisChecked } 
