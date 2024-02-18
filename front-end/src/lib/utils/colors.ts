@@ -19,7 +19,33 @@ const mediumMap : Map<string, {}> = new Map([
     ['online', { line:'#f7934c', polygon: '#f7c59f' }],
 ])
 
+const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map([
+		['tv', {
+            colorMap: new Map([
+                ['non-news', '#a6cee3'],
+                ['news', '#fb9a99']
+            ]),
+		}
+		],
+		['web', {
+            colorMap: new Map([
+                ['non_news', '#a6cee3'],
+                ['hard_news', '#fb9a99'],
+                ['fake_news', '#e31a1c'],
+                ['social_media', '#fdbf6f'],
+            ]),
+		}],
+		['mobile', {
+            colorMap: new Map([
+                ['music', '#17a589'],
+                ['news', '#fb9a99'],
+                ['other', '#a6cee3'],
+                ['social_media', '#fdbf6f'],
+            ]),
+		}],
+	])
+
 export default colorMap;
-export { politicsMap, mediumMap };
+export { politicsMap, mediumMap, colorMapByMedium };
   
 

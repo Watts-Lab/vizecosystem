@@ -7,17 +7,24 @@
   import { scaleLinear, scaleSqrt } from 'd3-scale'
   import { extent } from 'd3-array'
 
+  // utils
   import nodesOrderMap from '$lib/utils/nodes';
   import slugify from '$lib/utils/slugify';
   import { formatPositiveNegative } from '$lib/utils/format-numbers';
 
+  // components
+  import ClickCta from '$lib/components/graphs/layers/ClickCTA.svelte';
+
   const { width, height } = getContext('LayerCake');
 
   // props declaration
-  export let nodes : any[];
-  export let links : any[];
-  export let flatLinks : any[];
-  export let netFlowMap : Map<string,number>;
+  export let nodes: any[];
+  export let links: any[];
+  export let flatLinks: any[];
+  export let netFlowMap: Map<string,any>;
+  export let userHasInteracted: boolean;
+  export let userTakingTooLong: boolean;
+  export let renderCta: boolean;
 
   const scaleLineWidth = scaleLinear()
     .range([1,25])
@@ -64,6 +71,10 @@
   const lineGen = line().x(d => d.x).y(d => d.y).curve(curveNatural)
 
   function handleMouseEnter(ev, details) {
+    userHasInteracted = true;
+    userTakingTooLong = false;
+
+    ev.target.classList.add('highlight')
     const slug = slugify(details.node)
     // select parent group
     const linkGroup = document.getElementById('link-group');
@@ -113,6 +124,7 @@
   }
 
   function handleMouseLeave(ev, details) {
+    ev.target.classList.remove('highlight')
     const slug = slugify(details.node)
     // select connections
     const linkFrom = document.getElementsByClassName(`linkFrom-${slug}`);
@@ -244,6 +256,12 @@
   $: if (linksIn.length > 0 && linksIn.length === totalLinks) {
     actionable = true;
   }  
+
+  $: console.log(
+    userHasInteracted,
+    userTakingTooLong,
+    renderCta
+  )
 </script>
 
 
@@ -276,14 +294,23 @@
     class='node-group'
   >
     {#each dataIn.filter(d => d.node !== 'No or Minimal News') as node, i}
+      {@const ctaCheck = renderCta && userTakingTooLong && node.archetype === 'Hard Broadcast News'}
+      {@const ctaReverseCheck = renderCta && userTakingTooLong && node.archetype !== 'Hard Broadcast News'}
       <g transform='translate({node.x}, {node.y})'>
         <circle
           class='node {actionable ? 'active' : ''}'
+          class:highlight={ctaCheck}
+          class:unhighlight={ctaReverseCheck}
           r={node.r} 
           on:mouseenter={(ev) => handleMouseEnter(ev, node)}
           on:mouseleave={(ev) => handleMouseLeave(ev, node)}
         ></circle>
         <text class='node-label' dy={-(node.r + 3)}>{node.archetype}</text>
+        {#if ctaCheck}
+          <g class='cta-container'>
+            <ClickCta message="Hover for more" />
+          </g>
+        {/if}
         {#if showTooltip}
           <text 
             class='node-tooltip {showTooltip === node.archetype ? 'active' : ''} {netFlowMap.get(node.archetype)[0].delta >= 0 ? 'positive' : 'negative'}'
@@ -296,9 +323,11 @@
       </g>
     {/each}
     {#each dataIn.filter(d => d.node === 'No or Minimal News') as node, i}
+      {@const ctaCheck = renderCta && userTakingTooLong }
       <g transform='translate({node.x}, {node.y})'>
         <circle
           class='node {actionable ? 'active' : ''}'
+          class:unhighlight={ctaCheck}
           r={node.r}
           on:mouseenter={(ev) => handleMouseEnter(ev, node)}
           on:mouseleave={(ev) => handleMouseLeave(ev, node)}
@@ -321,6 +350,16 @@
   .node {
     stroke: none;
     fill: $dark-grey;
+    stroke: $white;
+    stroke-width: 2px;
+  }
+
+  .node.highlight {
+    fill: $black;
+  }
+
+  .node.unhighlight {
+    fill: $mid-grey;
   }
 
   .active {
@@ -377,5 +416,18 @@
 
   .arrowVisible {
     opacity: 1;
+  }
+
+  .cta-container {
+    animation: move 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes move {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(20px, 20px);
+    }
   }
 </style>

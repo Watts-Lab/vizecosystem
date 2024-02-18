@@ -21,10 +21,18 @@
 
   onMount(() => {
     render = true
+    setTimeout(() => {
+			if (!userHasInteracted) {
+				renderCta = true;
+				userTakingTooLong = true;
+			}
+		}, 3500)
   });
 
   $: render = false
-  $: nodesIn = nodes
+  $: userHasInteracted = false
+	$: userTakingTooLong = false
+	$: renderCta = false
 
 </script>
 
@@ -47,7 +55,15 @@
         </marker>
       </defs>
       {#if render}
-        <FlowNodes { nodes } { links } { flatLinks } netFlowMap={ nodeSize } />
+        <FlowNodes 
+          {nodes} 
+          {links} 
+          {flatLinks} 
+          netFlowMap={nodeSize} 
+          bind:userHasInteracted
+					bind:userTakingTooLong
+					bind:renderCta
+        />
       {/if}
     </Svg>
   </LayerCake>

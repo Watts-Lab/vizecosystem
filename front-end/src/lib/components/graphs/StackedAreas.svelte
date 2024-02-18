@@ -16,7 +16,6 @@
 	export let caption : string = '';
 	export let includeCaption : boolean = true;
 	export let url : string = '';
-	export let data : any[]
 	export let dataMap : Map<any, any>
 	export let categories : string[]
 	export let colors : string[]

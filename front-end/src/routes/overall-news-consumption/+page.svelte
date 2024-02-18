@@ -22,7 +22,8 @@
 
 	// // import utils
 	import { formatYear } from '$lib/utils/format-dates';
-	import labelMap from '$lib/utils/labels';
+	import Legend from '$lib/components/graphs/legend/legend.svelte';
+	import { colorMapByMedium } from '$lib/utils/colors';
 	
 	// prop declaration
 	let loaded : boolean = false;
@@ -59,7 +60,7 @@
 		xDomain = extent(data, (d: any) => d.date)
 	})
 
-	const chartConfig : Map<string, { order : string[], colors: string[], yDomain: number[] }> = new Map([
+	const chartConfig : Map<string, { yDomain: number[] }> = new Map([
 		['tv', {
 			order: ['non-news', 'news'],
 			colors: ['#a6cee3', '#fb9a99'],
@@ -179,7 +180,7 @@
 					/>
 				</div>
 			
-				<div class='legend'>
+				<!-- <div class='legend'>
 					{#each zip(
 						[...chartConfig.get('tv').colors, ...chartConfig.get('web').colors, ...chartConfig.get('mobile').colors], 
 						[...chartConfig.get('tv').order, ...chartConfig.get('web').order, ...chartConfig.get('mobile').order]
@@ -189,22 +190,33 @@
 							<div>{labelMap.get(cat[1])}</div>
 						</div>
 					{/each}
-				</div>
+				</div> -->
 			
 				{#if data}
 					<div class='chart-grid'>
 						<div class='chart-inner'>
 							<h4>TV</h4>
+							<Legend 
+								dataMap={
+									dataMap
+										.get('tv')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+										.get(xDomain[0])
+								}
+								colorMap={colorMapByMedium.get('tv').colorMap}
+							/>
 							<StackedAreas 
 								dataMap={
 									dataMap
-									.get('tv')
-									.get(gender)
-									.get(age_group)
-									.get(ethnicity)
-									.get(location)
+										.get('tv')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
 								}
-								{data} 
 								{rows} 
 								categories={chartConfig.get('tv').order} 
 								colors={chartConfig.get('tv').colors}
@@ -219,6 +231,18 @@
 
 						<div class='chart-inner'>
 							<h4>Desktop</h4>
+							<Legend 
+								dataMap={
+									dataMap
+										.get('web')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+										.get(xDomain[0])
+								}
+								colorMap={colorMapByMedium.get('web').colorMap}
+							/>
 							<StackedAreas 
 								dataMap={
 									dataMap
@@ -228,7 +252,6 @@
 										.get(ethnicity)
 										.get(location)
 								}
-								{data} 
 								{rows} 
 								categories={chartConfig.get('web').order} 
 								colors={chartConfig.get('web').colors}
@@ -244,6 +267,18 @@
 
 						<div class='chart-inner'>
 							<h4>Mobile</h4>
+							<Legend 
+								dataMap={
+									dataMap
+										.get('mobile')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+										.get(xDomain[1])
+								}
+								colorMap={colorMapByMedium.get('mobile').colorMap}
+							/>
 							<StackedAreas 
 								dataMap={
 									dataMap
@@ -253,7 +288,6 @@
 										.get(ethnicity)
 										.get(location)
 								}
-								{data} 
 								{rows} 
 								categories={chartConfig.get('mobile').order} 
 								colors={chartConfig.get('mobile').colors}
@@ -320,13 +354,12 @@
 			display: grid;
 			column-gap: 15px;
 			grid-template-columns: repeat(3, 1fr);
+			margin: 15px 0 0 0;
 
 			.chart-inner {
-				display: grid;
-
-				h4 {
-					margin: 15px 0 10px 0;
-				}
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
 			}
 		}
 	}
@@ -368,25 +401,5 @@
                 @include fs-sm;
             }
         }
-	}
-
-	.legend {
-		display: flex; 
-		gap: 15px;
-		margin: 15px 0;
-		font-size: 14px;
-
-		.legend-item {
-			display: flex;
-			align-items: center;
-			gap: 5px;
-			
-			.legend-color {
-				background-color: var(--color);
-				width: 17.5px;
-				height: 17.5px;
-				border-radius: 3px;
-			}
-		}
 	}
 </style>

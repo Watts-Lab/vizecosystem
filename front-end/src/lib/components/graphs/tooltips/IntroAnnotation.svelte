@@ -2,6 +2,11 @@
   // node_modules
 	import { getContext } from 'svelte';
 
+  // utils
+  import getBrowserInfo from "$lib/utils/system-info";
+	import { browser } from '$app/environment';
+
+  // dimensions
   const { width, height } = getContext('LayerCake')
 
   export let data : any[]
@@ -9,6 +14,9 @@
   function hide() { render = false }
 
   $: render = true
+  $: browserInfo = getBrowserInfo()
+  $: dy = (browserInfo === 'Chrome') || (browserInfo === 'Firefox') ? 0 : -50
+
 
   const newYork = data.filter(d => d.abbr === 'NY')
   const northDakota = data.filter(d => d.abbr === 'ND')
@@ -23,14 +31,14 @@
     <foreignObject class='foreign-object' width={$width} height={$height}>
       <div class='annotation-wrapper'>
         {#each newYork as node, i}
-          <div class='annotation' style="top: {node.y - (node.r_L + 95)}px; left: {node.x - (node.r_L + 80)}px; transform: translate(-35px, 0)">
+          <div class='annotation' style="top: {node.y - (node.r_L + 95)}px; left: {node.x - (node.r_L + 80)}px; transform: translate(-35px, {dy}px)">
             In <b>NY</b>, 5 to 10% of the population
             experience partisanship in their news
             diets.
           </div>
         {/each}
         {#each northDakota as node, i}
-          <div class='annotation' style="top: {node.y - (node.r_L + 140)}px; left: {node.x + (node.r_R + 20)}px; transform: translate(-35px, 0)">
+          <div class='annotation' style="top: {node.y - (node.r_L + 140)}px; left: {node.x + (node.r_R + 20)}px; transform: translate(-35px, {dy}px)">
             <b>ND</b>'s right-leaning echo chamber is
             much more sizeable and intense: over 
             10% of the population.
@@ -38,10 +46,13 @@
           </div>
         {/each}
         {#each maryland as node, i}
-          <div class='annotation' style="top: {node.y - (node.r_L - 235)}px; left: {node.x + (node.r_R)}px; transform: translate(-35px, 0)">
+          <div class='annotation' style="top: {node.y - (node.r_L - 235)}px; left: {node.x + (node.r_R)}px; transform: translate(-35px, {dy}px)">
             <b>MD</b> is the most left-leaning state after DC.
           </div>
         {/each}
+        <div class='annotation' style="top: 460px; left: 45px; transform: translate(-35px, {dy}px)">
+          <b>Fox News</b> dominates in almost every state.
+        </div>
       </div>
     </foreignObject>
     {#each newYork as node, i}
