@@ -1,9 +1,11 @@
 <script lang="ts">
 	// node_modules
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	
 	import { csv } from "d3-fetch";
   	import { autoType } from "d3-dsv";
-	import { group, extent, zip } from 'd3-array';
+	import { group, extent, max } from 'd3-array';
 
 	// import state data
 	import states from '$lib/data/states.json'
@@ -29,12 +31,14 @@
 	let loaded : boolean = false;
 
 	// chart config
-	let data : any[];
+	let data : any[]
 	let dataMap : Map<string, any>
 	let rows : number[]
 	let xTicks : Date[]
 	let xDomain : Date[]
-	let axisChecked : boolean = true;
+	let yDomain : Number[]
+	let axisChecked : boolean = true
+	let chartConfig : Map<string, { yDomain: number[] }>
 	const urlChart : string  = 'assets/data/EchoCh-national_consumption_tv_and_web.csv'
 	
 	onMount(async () => {
@@ -43,6 +47,7 @@
 		data = resChart
 			.map((d: any) => ({ ...d, date: new Date(d.year, d.month, 1) }))
 			.sort((a: any, b: any) => +a.date - +b.date)
+
     	// parse data for 
 		dataMap = group(
 			data,
@@ -60,11 +65,12 @@
 		xDomain = extent(data, (d: any) => d.date)
 	})
 
-	const chartConfig : Map<string, { yDomain: number[] }> = new Map([
+	$: if (data) chartConfig = new Map([
 		['tv', {
 			order: ['non-news', 'news'],
 			colors: ['#a6cee3', '#fb9a99'],
-			yDomain: [0, 350]
+			// yDomain: [0, max(data.filter((d: any) => d.state === location), (d: any) => d.value)]
+			yDomain: [0, 300]
 		}
 		],
 		['web', {
@@ -96,6 +102,11 @@
 	$: disableAgeGroup = ethnicity !== 'All' && gender !== 'All'
 	$: disableGender = age_group !== 'All' && ethnicity !== 'All'
 	$: disableEthnicity = age_group !== 'All' && gender !== 'All'
+	$: if ((disableAgeGroup || disableGender || disableEthnicity) || disableMenus) {
+		userHasReachedLastLevel = true;
+		renderReachedLastLevelLabel = true;
+		setTimeout(() => renderReachedLastLevelLabel = false, 5000);
+	}
 	
 	//@ts-ignore
 	$: stateMap = new Map<string,string>([
@@ -110,6 +121,9 @@
 		['hispanic', 'Hispanic'],
 		['asian', 'Asian'],
 	])
+
+	$: userHasReachedLastLevel = false
+	$: renderReachedLastLevelLabel = false;
 </script>
 
 <div class="section" use:inView={{ once: true }} on:enter={() => loaded = true }>
@@ -168,6 +182,13 @@
 						bind:value={ethnicity}
 					/>
 
+					{#if userHasReachedLastLevel && renderReachedLastLevelLabel}
+						<p 
+							class='warning'
+							in:fade
+						>No further breakdown available</p>
+					{/if}
+
 					<ControlSwitch 
 						id='axis' 
 						title={'Independent axis'}
@@ -175,22 +196,10 @@
 							'Independent',
 							'Aligned'
 						]}
-						info={'The axis bla bla bla'}
+						info={'Aligned y axis for comparison across media'}
 						bind:checked={ axisChecked } 
 					/>
 				</div>
-			
-				<!-- <div class='legend'>
-					{#each zip(
-						[...chartConfig.get('tv').colors, ...chartConfig.get('web').colors, ...chartConfig.get('mobile').colors], 
-						[...chartConfig.get('tv').order, ...chartConfig.get('web').order, ...chartConfig.get('mobile').order]
-					) as cat}
-						<div class='legend-item'>
-							<div class={'legend-color'} style='--color: {cat[0]}'></div>
-							<div>{labelMap.get(cat[1])}</div>
-						</div>
-					{/each}
-				</div> -->
 			
 				{#if data}
 					<div class='chart-grid'>
@@ -359,13 +368,14 @@
 			.chart-inner {
 				display: flex;
 				flex-direction: column;
-				gap: 5px;
+				gap: 10px;
 			}
 		}
 	}
 
 	.controls {
         display: flex;
+		position: relative;
 
         .control-switch, 
         .control-range {
@@ -401,5 +411,13 @@
                 @include fs-sm;
             }
         }
+
+		.warning {
+			position: absolute;
+			color: $css-lab-dark-red;
+			top: -15px;
+			left: 195px;
+			@include fs-xs;
+		}
 	}
 </style>

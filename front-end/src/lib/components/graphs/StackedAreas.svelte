@@ -3,7 +3,7 @@
 	import { LayerCake, Svg, flatten } from 'layercake';
 	import { scaleTime, scaleOrdinal } from 'd3-scale'
 	import { stack, stackOrderDescending } from 'd3-shape'
-	import { extent } from 'd3-array'
+	import { max, extent } from 'd3-array'
 
 	// // // components & molecules & atoms
 	import AxisY from '$lib/components/graphs/layers/AxisY.svelte';
@@ -45,22 +45,21 @@
 	$: columns = Object.keys(wideData[0]).filter(d => d !== 'date')
 	$: stacker = stack().keys(columns).order(stackOrderDescending)
 	$: stackedData = stacker(wideData)
-
-	// $: console.log(xDomain, xTicks)
-
+	$: flatData = flatten(stackedData)
 </script>
 
 <div class='chart stacked-area-chart'>
 	<LayerCake
-		padding={ margins }
-		flatData={ flatten(stackedData) }
-		data={ stackedData }
-		x={ d => d.data.date }
-		xScale={ scaleTime() }
-		xDomain={ extent(xDomain) }
-		y={ [0, 1] }
-		{yDomain}
-		z={ 'key' }
+		padding={margins}
+		{flatData}
+		data={stackedData}
+		x={d => d.data.date}
+		xScale={scaleTime()}
+		xDomain={extent(xDomain)}
+		y={[0, 1]}
+		yDomain={yDomain}
+		yNice={true}
+		z={'key'}
 		zScale={scaleOrdinal()}
 		zDomain={categories}
 		zRange={colors}

@@ -2,8 +2,6 @@
 	// node_modules
 	import { LayerCake, Svg } from 'layercake';
 	import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale'
-	// import { groups } from 'd3-array'
-	// import { color } from 'd3-color'
 
 	// types
 	import type Row from '$lib/types/TimeSeriesRow';
@@ -42,7 +40,6 @@
 	export let scaleRange : Function;
 	export let start : number;
 	export let end : number;
-
 
 	// variable declaration
 	let seriesNames = customClass === 'popup-overlay'

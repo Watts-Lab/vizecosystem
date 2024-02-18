@@ -5,8 +5,6 @@
     // prop declaration
     export let dataMap: Map<any, any>
     export let colorMap: Map<any, any>
-
-    console.log(dataMap)
 </script>
 
 <div class='legend'>
@@ -24,7 +22,7 @@
 		display: flex; 
 		flex-wrap: wrap;
 		column-gap: 15px;
-		row-gap: 10px;
+		row-gap: 5px;
 		align-items: flex-start;
         @include fs-sm;
 
