@@ -104,14 +104,21 @@
     function handleClick(e, d) {
       dispatch('click', { target: e.target, node: d })
     }
-
-    function arcGen(context, pos) {
+    
+    function arcGen(
+      context: Function, 
+      pos: { x: number, y: number }
+    ) {
       context.arc(0, 0, pos.r, pos.start, pos.end)
       context.closePath()
       return context;
     }
 
-    function pathGen(context, pos1, pos2) {
+    function pathGen(
+      context: Function, 
+      pos1: { x: number, y: number }, 
+      pos2: { x: number, y: number }
+    ) {
       context.arc(0, 0, pos1.r, -Math.PI/2, Math.PI/2)
       context.arc(0, 0, pos2.r, Math.PI/2, -Math.PI/2)
       context.closePath()

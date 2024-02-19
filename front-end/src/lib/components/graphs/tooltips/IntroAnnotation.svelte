@@ -1,10 +1,10 @@
 <script lang="ts">
   // node_modules
 	import { getContext } from 'svelte';
+  import { path } from 'd3-path';
 
   // utils
   import getBrowserInfo from "$lib/utils/system-info";
-	import { browser } from '$app/environment';
 
   // dimensions
   const { width, height } = getContext('LayerCake')
@@ -21,7 +21,13 @@
   const newYork = data.filter(d => d.abbr === 'NY')
   const northDakota = data.filter(d => d.abbr === 'ND')
   const maryland = data.filter(d => d.abbr === 'MD')
-  
+
+  function curveGen(context, start, ref, end) {
+    context.moveTo(start.x, start.y)
+    context.bezierCurveTo(ref.x, ref.y, ref.x, ref.y, end.x, end.y)
+    return context
+  }
+
 </script>
 
 {#if render}
@@ -56,34 +62,40 @@
       </div>
     </foreignObject>
     {#each newYork as node, i}
-      <line 
+      <path
         class='annotation-line' 
-        x1={node.x - (node.r_L + 5)} 
-        x2={node.x - (node.r_L - 10)} 
-        y1={node.y - (node.r_L + 16)} 
-        y2={node.y - (node.r_L - 16)} 
+        d={curveGen(
+          path(), 
+          {x: node.x - (node.r_L + 5), y: node.y - (node.r_L + 16)}, 
+          {x: node.x - (node.r_L + 5), y: node.y - (node.r_L + 6)}, 
+          {x: node.x - (node.r_L - 10), y: node.y - (node.r_L - 16)}
+        )}
         transform={`translate(-35, 0)`}
-      ></line>
+      />
     {/each}
     {#each northDakota as node, i}
-      <line 
+      <path
         class='annotation-line' 
-        x1={node.x + (node.r_R + 45)} 
-        x2={node.x - (node.r_L - 35)} 
-        y1={node.y - (node.r_L + 45)} 
-        y2={node.y - (node.r_L)} 
+        d={curveGen(
+          path(), 
+          {x: node.x + (node.r_R + 40), y: node.y - (node.r_L + 45)}, 
+          {x: node.x + (node.r_R + 40), y: node.y - (node.r_L + 35)},
+          {x: node.x - (node.r_L - 30), y: node.y - (node.r_L)}
+        )}
         transform={`translate(-35, 0)`}
-      ></line>
+      />
     {/each}
     {#each maryland as node, i}
-      <line 
-        class='annotation-line'
-        x1={node.x + (node.r_R + 50)} 
-        x2={node.x - (node.r_L - 50)} 
-        y1={node.y - (node.r_L - 225)} 
-        y2={node.y - (node.r_L - 65)} 
+      <path
+        class='annotation-line' 
+        d={curveGen(
+          path(), 
+          {x: node.x + (node.r_R - 5), y: node.y - (node.r_L - 265)}, 
+          {x: node.x - (node.r_R - 35), y: node.y - (node.r_L - 265)}, 
+          {x: node.x - (node.r_L - 25), y: node.y - (node.r_L - 70)}
+        )}
         transform={`translate(-35, 0)`}
-      ></line>
+      />
     {/each}
   </g>
 {/if}
@@ -103,6 +115,7 @@
   .annotation-line {
     stroke: black;
     stroke-width: 1pt;
+    fill: none;
   }
 
   .annotation-wrapper {
