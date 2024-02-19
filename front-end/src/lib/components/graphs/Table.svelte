@@ -11,15 +11,15 @@
   <div class={`table-wrapper`}>
     <div class={`row-head`}>
       <div class={`row-header row-header-program`}>{medium === 'tv' ? 'Program' : 'Domain'}</div>
-      <div class={`row-header row-header-audience`}>Audience</div>
+      <!-- <div class={`row-header row-header-audience`}>Audience</div> -->
     </div>
     {#each data.filter(d => d.value > 0) as row, i}
-      <div class={`row-body`}>
+      <div class='row-body'>
         {#if medium === 'tv'}
           <div class={`row-value row-value-program`}>{row.program} <p class={`row-value row-value-network`}>{row.network}</p> </div>
           {:else} <div class={`row-value row-value-program`}>{row.domain}</div>
         {/if}
-          <div class={`row-value row-value-audience`}>{row.value.toLocaleString()}</div>
+          <!-- <div class={`row-value row-value-audience`}>{row.value.toLocaleString()}</div> -->
       </div>
     {/each}
   </div>
@@ -60,6 +60,11 @@
       min-height: 40px;
       @include fs-sm;
       border-bottom: 0.5pt solid $light-grey;
+
+      .row-value {
+        display: flex;
+        gap: 5px;
+      }
 
       .row-value-network {
         @include fs-sm;
