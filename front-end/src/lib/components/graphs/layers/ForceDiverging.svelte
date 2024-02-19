@@ -6,7 +6,7 @@
     
     const { height, width, rScale, zScale, data } = getContext('LayerCake');
     
-    import IntroAnnotation from '$lib/components/graphs/tooltips/IntroAnnotation.svelte';
+    import MapAnnotation from '$lib/components/graphs/tooltips/MapAnnotation.svelte';
     import ClickCta from '$lib/components/graphs/layers/ClickCTA.svelte';
 
     export let collideStrength: number = 1;
@@ -127,7 +127,7 @@
 </script>
 
 {#if renderAnnotation}
-  <IntroAnnotation data={ nodes }/>
+  <MapAnnotation data={ nodes }/>
 {/if}
 
 <g 
