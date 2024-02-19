@@ -17,7 +17,6 @@
   $: browserInfo = getBrowserInfo()
   $: dy = (browserInfo === 'Chrome') || (browserInfo === 'Firefox') ? 0 : -50
 
-
   const newYork = data.filter(d => d.abbr === 'NY')
   const northDakota = data.filter(d => d.abbr === 'ND')
   const maryland = data.filter(d => d.abbr === 'MD')
@@ -27,7 +26,6 @@
     context.bezierCurveTo(ref.x, ref.y, ref.x, ref.y, end.x, end.y)
     return context
   }
-
 </script>
 
 {#if render}

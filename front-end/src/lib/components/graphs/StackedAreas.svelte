@@ -3,13 +3,14 @@
 	import { LayerCake, Svg, flatten } from 'layercake';
 	import { scaleTime, scaleOrdinal } from 'd3-scale'
 	import { stack, stackOrderDescending } from 'd3-shape'
-	import { max, extent } from 'd3-array'
+	import { extent } from 'd3-array'
 
 	// // // components & molecules & atoms
 	import AxisY from '$lib/components/graphs/layers/AxisY.svelte';
 	import AxisX from '$lib/components/graphs/layers/AxisX.svelte';
 	import AreaStacked from '$lib/components/graphs/layers/AreaStacked.svelte';
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
+	import AreaAnnotation from './tooltips/AreaAnnotation.svelte';
 
 	// // // props declaration
 	export let margins : Object = { top: 15, right: 10, bottom: 20, left: 45 }
@@ -30,6 +31,7 @@
 		? `${d} minutes per person per day`
 		: d
 	);
+	export let showAnnotation: boolean = false
 
 	$: wideData = rows.map(r => {
 		const obj = {}
@@ -74,6 +76,9 @@
 			/>
 			<AxisY formatTick={ formatTickY } ticks={ 4 } />
 			<AreaStacked />
+			{#if showAnnotation}
+				<AreaAnnotation />
+			{/if}
 		</Svg>
 	</LayerCake>
 </div>

@@ -6,20 +6,18 @@
 
   // prop declaration
   export let activeChart : string;
-
-  // $: console.log($data)
   
   // variable declaration
 
   $: path = line()
-    .x(d => $xGet(d))
-    .y(d => $yGet(d))
+    .x((d: any) => $xGet(d))
+    .y((d: any) => $yGet(d))
     .curve(curveBasis)
 
   $: polygon = area()
-    .x(d => $xGet(d))
-    .y0(d => $yGet(d))
-    .y1(d => $yScale(d.value_2))
+    .x((d: any) => $xGet(d))
+    .y0((d: any) => $yGet(d))
+    .y1((d: any) => $yScale(d.value_2))
     .curve(curveBasis)
 
   function drawPath(node, { from, to }, { delay, duration }) {
@@ -39,7 +37,6 @@
       css: (t, u) =>
         `opacity: ${1 * t}`
     };
-
   }
 
   function parsePolygonData(d) {

@@ -235,6 +235,7 @@
 								formatter={formatYear}
 								includeCaption={false}
 								url={ urlChart }
+								showAnnotation={true}
 							/>
 						</div>
 
