@@ -2,6 +2,9 @@
     // node_modules
 	import { getContext } from 'svelte';
     import { path } from 'd3-path';
+
+    // utils
+    import getBrowserInfo from "$lib/utils/system-info";
     
     const { width, height } = getContext('LayerCake')
 
@@ -14,12 +17,14 @@
     function hide() { render = false }
 
     $: render = true
+    $: browserInfo = getBrowserInfo()
+    $: dy = (browserInfo === 'Chrome') || (browserInfo === 'Firefox') ? 10 : 25
 </script>
 
 {#if render}
     <g>
         <foreignObject class="foreign-object" width={$width} height={$height}>
-            <div class="annotation-wrapper" style="transform: translate({$width/4}px,10px)">
+            <div class="annotation-wrapper" style="transform: translate({$width/4}px, {dy}px)">
                 <div class="annotation">
                     Across all age groups, TV news dominates online news in terms of total time spend
                     <div class='close-button' on:click={hide}></div>
