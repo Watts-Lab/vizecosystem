@@ -37,7 +37,7 @@
                 <img class='logo_img' src="https://css.seas.upenn.edu/wp-content/uploads/2021/09/WEBSITE-LOGO.png" alt="Computational Social Science Lab" id="logo" />
             </a>
             {#if pathname !== undefined && pathname !== `${base}/`}
-                <a class='back-button' href={`/${base}`}>
+                <a class='back-button' href={base === '' ? '/' : base}>
                     back to home
                 </a>
             {/if}
