@@ -23,7 +23,7 @@
             "title": "Partisan content",
             "label-left": "All",
             "label-right": "Partisan only",
-            "description": "Edit the text here"
+            "description": "Toggle to view all programs or left-leaning and right-leaning (partisan) programs"
         }
     },
     "intro": [
@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "value": "In the first figure, we tally the average time spent watching news and non-news on TV. Online (desktop only) content is analyzed in terms of a larger set of categories: news websites, “fake news” websites, all of Facebook, Reddit, and Twitter/X, and the rest of non-news web browsing."
+            "value": "In the first figure, we tally the average time spent watching news and non-news on three different mediums: TV, Desktop, and Mobile. The “Social Media” category under Desktop is composed of the following platforms: Facebook, Reddit, YouTube, and Twitter/X."
         },
         {
             "type": "text",
@@ -84,12 +84,8 @@
             "value": {
                 "type": "line-area",
                 "title": "TV vs Online Consumption",
-                "captions": "Minutes per person per day spent with news and other categories of content on TV and desktop browsing. *Local TV News is not included."
+                "captions": "Minutes per person per day spent with news and other categories of content on TV, desktop, and mobile browsing. *Local TV News is not included."
             }
-        },
-        {
-            "type": "text",
-            "value": "The clearest pattern is that older Americans spend significantly more time on news than younger Americans. Moreover, across all age groups, and especially for older Americans, TV news dominates online news articles in terms of total time spent."
         }
     ],
     "partisan-echo-chambers": [
@@ -99,7 +95,11 @@
         },
         {
             "type": "text",
-            "value": "The 2022 article was inspired by ongoing discussions on “echo chambers,” the idea that social media exposes people to overwhelmingly partisan and like-minded news content. To gauge the scale of the echo chamber problem, we asked: how many people have a news diet that is made of majority highly partisan sources? The figure below is somewhat unique because we present results corresponding to multiple definitions of “majority”--50% and 75% of an individual’s total news consumption. You can also adjust the “strictness” of the highly partisan content definition with the lenient/stringent button."
+            "value": "The 2022 article was inspired by ongoing discussions on “echo chambers,” the idea that the media exposes people to overwhelmingly partisan and like-minded news content. To gauge the scale of the echo chamber problem, we asked: how many people have a news diet that is made of majority highly partisan sources? The figure below is somewhat unique because we present results corresponding to multiple definitions of “majority”--50% and 75% of an individual’s total news consumption. You can also adjust the “strictness” of the highly partisan content definition with the lenient/stringent button."
+        },
+        {
+            "type": "text",
+            "value": "Note- only capture internet browsing on desktop computers—not mobile devices, so it is conceivable that people see even less or much more partisan content on their mobile devices."
         },
         {
             "type": "chart",
@@ -108,14 +108,6 @@
                 "title": "Echo Chambers on the TV and Internet",
                 "captions": "The monthly percent of Americans experiencing partisan segregation via TV or Web news. Bounds represent a range of percentages—from 50 to 75—of individual-level news diets that must be partisan for partisan segregation."
             }
-        },
-        {
-            "type": "text",
-            "value": "While most people think of echo chambers in terms of social media and the internet, we find that cable TV, especially Fox News, is more responsible for the partisan segregation in news audiences than any combination of far-right or far-left sites circulating the internet. For example, between 10%-15% of Americans aged 55 and older get the majority of their news from Fox News while the desktop web echo chambers are only able to influence about 5% of US internet users of the same age group."
-        },
-        {
-            "type": "text",
-            "value": "It is important to note that we only capture internet browsing on desktop computers—not mobile devices, so it is conceivable that people see even less or much more partisan content on their mobile devices."
         }
     ],
     "echo-chambers-map": [
@@ -136,10 +128,6 @@
                 "caption1": "State-level timeline of echo chamber size as % of total population with TV/desktop computers.",
                 "caption2": "We define audience size as the number of people who spend at least 30 minutes/1 minute with a given tv program/web domain."
             }
-        },
-        {
-            "type": "text",
-            "value": "Surprisingly, when we break down TV audience segregation by political leanings, there is minimal geographic variation. Even in a \"lenient\" view where CNN is considered left-wing partisan, Fox News tends to dominate partisan viewership in almost every state, with New York and California being notable exceptions. When considering MSNBC as the left-wing partisan source, Fox News dominates in every state (though not Washington DC)."
         }
     ],
     "changing-tv-audiences": [
@@ -158,10 +146,6 @@
                 "title": "Shifting TV Viewership",
                 "captions": "Television news consumption archetypes are each labeled according to the category of news most prominently consumed within the archetype, along with a large ninth group of people who are exposed to less than 30 min of news in a month, calculated independently in each month over the 6 years of analysis. The figure represents the direction and magnitude of turnover between each pair of archetypes. For example, if—over a given period of time—1M individuals moved from archetype A to archetype B, and over the same period of time 4M individuals did the reverse and moved from archetype B to A, then the net flow over that time period would be 3M from B to A."
             }
-        },
-        {
-            "type": "text",
-            "value": "Two major trends caught our attention. Notably, tens of millions of Americans are discontinuing TV news consumption, a mass exodus that is surely due in part to cord-cutting and the rise of streaming services. Second, those who continue to watch news on TV are increasingly engaging with partisan cable news channels including MSNBC and Fox News. In summary, the TV news audience is shrinking and becoming more polarized."
         }
     ],
     "methodology": [

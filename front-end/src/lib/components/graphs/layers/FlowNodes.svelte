@@ -256,12 +256,6 @@
   $: if (linksIn.length > 0 && linksIn.length === totalLinks) {
     actionable = true;
   }  
-
-  $: console.log(
-    userHasInteracted,
-    userTakingTooLong,
-    renderCta
-  )
 </script>
 
 
@@ -352,6 +346,7 @@
     fill: $dark-grey;
     stroke: $white;
     stroke-width: 2px;
+    transition: color 1s ease-in-out;
   }
 
   .node.highlight {

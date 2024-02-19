@@ -1,5 +1,10 @@
 <script lang='ts'>
     import { onMount } from 'svelte'
+    import { base } from '$app/paths';
+    import { afterNavigate } from '$app/navigation';
+
+    let pathname: string;
+
     let navMobile = null;
     function handleClick(e) {
         const { classList } = navMobile;
@@ -14,10 +19,11 @@
         }
     }
 
+    afterNavigate(() => pathname = window.location.pathname)
     onMount(() => {
         navMobile = document.getElementById('nav-mobile');
+        pathname = window.location.pathname
     })
-
 
 </script>
 
@@ -27,6 +33,11 @@
             <a class='logo_anchor' href="https://css.seas.upenn.edu/">
                 <img class='logo_img' src="https://css.seas.upenn.edu/wp-content/uploads/2021/09/WEBSITE-LOGO.png" alt="Computational Social Science Lab" id="logo" />
             </a>
+            {#if pathname !== undefined && pathname !== '/'}
+                <a class='back-button' href='/'>
+                    back to home
+                </a>
+            {/if}
         </div>
         <div id="et-top-navigation">
             <nav id="top-menu-nav">
@@ -161,6 +172,23 @@
     .logo_container {
         height: 60%;
         width: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .back-button {
+            position: relative;
+            top: 3px;
+            line-height: 1;
+            text-decoration: none;
+            color: $white;
+            font-weight: 300;
+            @include fs-sm;
+        }
+
+        .back-button:before {
+            content: '\2190';
+        }
     }
 
     .logo_anchor{
