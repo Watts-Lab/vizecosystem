@@ -25,6 +25,9 @@
         pathname = window.location.pathname
     })
 
+    $: console.log('base', base)
+    $: console.log('pathname', pathname)
+
 </script>
 
 <header id="main-header" data-height-onload="84" data-height-loaded="true" data-fixed-height-onload="84" style="top: 0px;">
@@ -33,7 +36,7 @@
             <a class='logo_anchor' href="https://css.seas.upenn.edu/">
                 <img class='logo_img' src="https://css.seas.upenn.edu/wp-content/uploads/2021/09/WEBSITE-LOGO.png" alt="Computational Social Science Lab" id="logo" />
             </a>
-            {#if pathname !== undefined && pathname !== `/${base}`}
+            {#if pathname !== undefined && pathname !== `${base}` && pathname !== `/` && pathname !== '/index.html'}
                 <a class='back-button' href='/'>
                     back to home
                 </a>
