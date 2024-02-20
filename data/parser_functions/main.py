@@ -119,26 +119,20 @@ def parse_mob(d):
     ]
 
     values = [
-      'avg music / person / day',
-      'avg other / person / day',
-      'avg news / person / day'
+      'avg social_media / person / day',
+      'avg entertainment / person / day',
+      'avg utility / person / day',
+      'avg communication / person / day',
+      'avg news / person / day',
+      'avg lifestyle / person / day',
+      'avg unlabeled_app / person / day',
+      'avg browser / person / day',
     ]
-
-    calculated_categories = {
-        'avg social_media / person / day': [
-          'avg social_media_1 / person / day',
-          'avg social_media_2 / person / day',
-    ]}
-
-    for category, sub_categories in calculated_categories.items():
-        d.loc[:, category] = d.loc[:, sub_categories].apply(sum, axis = 1)
-    
-    calculated_categories_cols = list(calculated_categories.keys())
 
     d = melt(
       d,
       id_vars=cols,
-      value_vars=values + calculated_categories_cols,
+      value_vars=values,
       var_name='category'
     )
 
