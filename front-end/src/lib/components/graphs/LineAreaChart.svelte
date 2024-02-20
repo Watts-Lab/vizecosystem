@@ -59,7 +59,6 @@
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
-
 </script>
 
 <div class="chart-container">

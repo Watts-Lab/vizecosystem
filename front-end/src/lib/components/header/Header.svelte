@@ -25,9 +25,6 @@
         pathname = window.location.pathname
     })
 
-    $: console.log('base', base)
-    $: console.log('pathname', pathname)
-
 </script>
 
 <header id="main-header" data-height-onload="84" data-height-loaded="true" data-fixed-height-onload="84" style="top: 0px;">

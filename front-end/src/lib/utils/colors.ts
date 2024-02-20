@@ -37,10 +37,15 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map
 		}],
 		['mobile', {
             colorMap: new Map([
-                ['music', '#17a589'],
                 ['news', '#fb9a99'],
                 ['other', '#a6cee3'],
                 ['social_media', '#fdbf6f'],
+                ['entertainment', '#17a589'],
+                ['utility', 'gainsboro'],
+                ['communication', 'MediumVioletRed'],
+                ['lifestyle', 'navy'],
+                ['unlabeled_app', 'DarkMagenta'],
+                ['browser', 'teal'],
             ]),
 		}],
 	])

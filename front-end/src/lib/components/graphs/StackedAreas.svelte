@@ -48,6 +48,7 @@
 	$: stacker = stack().keys(columns).order(stackOrderDescending)
 	$: stackedData = stacker(wideData)
 	$: flatData = flatten(stackedData)
+
 </script>
 
 <div class='chart stacked-area-chart'>

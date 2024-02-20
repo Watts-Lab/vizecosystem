@@ -5,8 +5,12 @@ const labelMap : Map<string, string> = new Map([
     ['hard_news', 'Hard news'], 
     ['fake_news', 'Fake News'],
     ['social_media', 'Social Media'],
-    ['music', 'Music'],
-    ['other', 'Other'],
+    ['entertainment', 'Entertainment'],
+    ['utility', 'Utility'],
+    ['communication', 'Communication'],
+    ['lifestyle', 'Lifestyle'],
+    ['unlabeled_app', 'Other'],
+    ['browser', 'Browser'],
 ])
 
 const orderMap : Map<string, number> = new Map([
