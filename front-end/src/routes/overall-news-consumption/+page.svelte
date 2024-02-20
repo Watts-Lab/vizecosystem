@@ -81,10 +81,9 @@
 		['mobile', {
 			order: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]), // ['music', 'news', 'other', 'social_media']
 			colors: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[1]), // ['#17A589',  '#fb9a99', '#a6cee3', '#fdbf6f' ],
-			yDomain: [0, 60]
+			yDomain: [0, 350]
 		}],
 	])
-
 
 	$: syncAxis = axisChecked === true
 	$: gender = 'All'
