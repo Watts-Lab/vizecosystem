@@ -8,7 +8,7 @@
   import { extent } from 'd3-array'
 
   // utils
-  import nodesOrderMap from '$lib/utils/nodes';
+  import nodesOrderMap, { nodesLabels } from '$lib/utils/nodes';
   import slugify from '$lib/utils/slugify';
   import { formatPositiveNegative } from '$lib/utils/format-numbers';
 
@@ -299,7 +299,9 @@
           on:mouseenter={(ev) => handleMouseEnter(ev, node)}
           on:mouseleave={(ev) => handleMouseLeave(ev, node)}
         ></circle>
-        <text class='node-label' dy={-(node.r + 3)}>{node.archetype}</text>
+        <text class='node-label' dy={-(node.r + 3)}>
+          {nodesLabels.has(node.archetype) ? nodesLabels.get(node.archetype) : node.archetype}
+        </text>
         {#if ctaCheck}
           <g class='cta-container'>
             <ClickCta message="Hover for more" />
@@ -326,7 +328,9 @@
           on:mouseenter={(ev) => handleMouseEnter(ev, node)}
           on:mouseleave={(ev) => handleMouseLeave(ev, node)}
         ></circle>
-        <text class='node-label' dy={node.r + 18}>{node.archetype}</text>
+        <text class='node-label' dy={node.r + 18}>
+          {nodesLabels.has(node.archetype) ? nodesLabels.get(node.archetype) : node.archetype}
+        </text>
         {#if showTooltip}
           <text 
               class='node-tooltip {showTooltip === node.archetype ? 'active' : ''} {netFlowMap.get(node.archetype)[0].delta >= 0 ? 'positive' : 'negative'}'

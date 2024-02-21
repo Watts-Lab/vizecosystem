@@ -9,4 +9,12 @@ const nodesOrderMap : Map<string,number> = new Map(
   ]
 )
 
+const nodesLabels : Map<string,number> = new Map(
+  [
+    ['Left Wing Cable', 'Partisan Left Cable'],
+    ['Right Wing Cable', 'Partisan Right Cable'],
+  ]
+)
+
 export default nodesOrderMap
+export { nodesLabels }
