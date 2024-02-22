@@ -23,6 +23,7 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map
 		['tv', {
             colorMap: new Map([
                 ['non-news', '#a6cee3'],
+                // ['non-news', 'gainsboro'],
                 ['news', '#fb9a99']
             ]),
 		}
@@ -30,6 +31,7 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map
 		['web', {
             colorMap: new Map([
                 ['non_news', '#a6cee3'],
+                // ['non_news', 'gainsboro'],
                 ['hard_news', '#fb9a99'],
                 ['fake_news', '#e31a1c'],
                 ['social_media', '#fdbf6f'],
@@ -38,11 +40,9 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map
 		['mobile', {
             colorMap: new Map([
                 ['news', '#fb9a99'],
-                ['other', '#a6cee3'],
+                // ['other', '#a6cee3'],
+                ['other', 'gainsboro'],
                 ['social_media', '#fdbf6f'],
-                ['entertainment', '#17a589'],
-                ['utility+lifestyle', 'gainsboro'],
-                ['communication', 'MediumVioletRed'],
                 // ['lifestyle', 'navy'],
                 // ['unlabeled_app', 'DarkMagenta'],
                 // ['browser', 'teal'],

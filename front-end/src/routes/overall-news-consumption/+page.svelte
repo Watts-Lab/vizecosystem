@@ -67,15 +67,15 @@
 
 	$: if (data) chartConfig = new Map([
 		['tv', {
-			order: ['non-news', 'news'],
-			colors: ['#a6cee3', '#fb9a99'],
+			order: Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[0]),//order: ['non-news', 'news'],
+			colors: Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[1]),// colors: ['#a6cee3',  '#fb9a99', '#e31a1c', '#fdbf6f'],//colors: ['#a6cee3', '#fb9a99'],
 			// yDomain: [0, max(data.filter((d: any) => d.state === location), (d: any) => d.value)]
 			yDomain: [0, 300]
 		}
 		],
 		['web', {
-			order: ['non_news', 'hard_news', 'fake_news', 'social_media'],
-			colors: ['#a6cee3',  '#fb9a99', '#e31a1c', '#fdbf6f'],
+			order: Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]),// order: ['non_news', 'hard_news', 'fake_news', 'social_media'],
+			colors: Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[1]),// colors: ['#a6cee3',  '#fb9a99', '#e31a1c', '#fdbf6f'],
 			yDomain: [0, 100]
 		}],
 		['mobile', {
@@ -91,6 +91,7 @@
 	$: ethnicity = 'All'
 	$: location = 'US'
 	$: disableMenus = location !== 'US'
+	$: userInteractedWithControls = false;
 
 	function resetAge() { age_group = 'All' }
     function resetGender() { gender = 'All' }
@@ -145,6 +146,7 @@
 						title={'Location'}
 						options={stateMap}
 						bind:value={location}
+						bind:userInteractedWithControls
 					/>
 								
 					<SelectMenu 
@@ -160,6 +162,7 @@
 						])}
 						disabled={disableMenus || disableAgeGroup}
 						bind:value={age_group}
+						bind:userInteractedWithControls
 					/>
 
 					<SelectMenu 
@@ -172,6 +175,7 @@
 						])}
 						disabled={disableMenus || disableGender}
 						bind:value={gender}
+						bind:userInteractedWithControls
 					/>
 
 					<SelectMenu 
@@ -180,6 +184,7 @@
 						options={ethnicityMap}
 						disabled={disableMenus || disableEthnicity}
 						bind:value={ethnicity}
+						bind:userInteractedWithControls
 					/>
 
 					{#if userHasReachedLastLevel && renderReachedLastLevelLabel}
@@ -197,7 +202,8 @@
 							'Aligned'
 						]}
 						info={'Aligned y axis for comparison across media'}
-						bind:checked={ axisChecked } 
+						bind:checked={ axisChecked }
+						bind:userInteractedWithControls 
 					/>
 				</div>
 			
@@ -235,7 +241,9 @@
 								formatter={formatYear}
 								includeCaption={false}
 								url={ urlChart }
-								showAnnotation={true}
+								showAnnotation={
+									userInteractedWithControls ? false : true
+								}
 							/>
 						</div>
 

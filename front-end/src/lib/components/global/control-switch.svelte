@@ -6,6 +6,8 @@
   export let info : string = ''
   export let checked : boolean = true;
   export let colors : string[] = ['#ccc', '#555']
+  export let userInteractedWithControls : boolean = false;
+
 
   $: showInfo = false;
   $: infoDetail = showInfo ? 'active' : '';
@@ -22,7 +24,13 @@
   </div>
   <div class='control-label {!checked ? 'active' : ''}'>{ labels[0] }</div>
   <label class='switch'>
-    <input type="checkbox" id="medium" name="medium" bind:checked={checked}>
+    <input 
+      type="checkbox" 
+      id={title} 
+      name={title}
+      bind:checked={checked} 
+      on:click={() => userInteractedWithControls = true}
+    >
     <span class="slider" style='--colorFalse: {colors[1]}; --colorTrue: {colors[0]}'></span>
   </label>
   <div class='control-label {checked ? 'active' : ''}'>{ labels[1] }</div>

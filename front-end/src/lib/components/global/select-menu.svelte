@@ -4,6 +4,7 @@
   export let value : string;
   export let options : Map<string, string>
   export let disabled : boolean = false;
+  export let userInteractedWithControls : boolean = false;
 </script>
 
 
@@ -14,6 +15,7 @@
         name="select_{id}}" 
         disabled={disabled}
         bind:value={value}
+        on:change={() => userInteractedWithControls = true}
     >
         {#each Array.from(options) as d, i}
             <option value={d[0]}>{d[1]}</option>
