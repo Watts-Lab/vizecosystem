@@ -11,11 +11,12 @@
 	import AxisX from '$lib/components/graphs/layers/AxisX.svelte';
 	import AxisY from '$lib/components/graphs/layers/AxisY.svelte';
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
-	import Legend from '$lib/components/graphs/layers/MultilineAreaLegend.svelte'
+	import Legend from '$lib/components/graphs/legend/MultilineAreaLegend2.svelte'
+	import LineAreaAnnotation from '$lib/components/graphs/tooltips/LineAreaAnnotation.svelte';
 
 	// import utils
 	import { politicsMap as colorMap } from '$lib/utils/colors';
-
+	
 	// props declaration
 	export let margins : Object = { top: 20, right: 10, bottom: 20, left: 45 }
 	export let caption : string = ''
@@ -62,7 +63,8 @@
 </script>
 
 <div class="chart-container">
-	<Legend />
+	<Legend { seriesNames } { seriesColors } />
+	
 	<div class='chart line-chart {customClass}'>
 		{#if data && data.length}
 			<LayerCake
@@ -104,7 +106,7 @@
 							ticks={4}
 							formatTick={formatTickY}
 						/>
-						<Legend />
+						<LineAreaAnnotation />
 					{/if}
 					<Multiline activeChart={'activeChart'} />
 				</Svg>

@@ -280,8 +280,8 @@
     .controls-wrapper {
         display: grid;
         grid-template-columns: 1fr auto 0.4fr;
-        grid-template-rows: 1fr 1fr;
-		margin-top: 25px;
+        grid-template-rows: 1fr;
+		margin: 25px 0;
         row-gap: 10px;
         column-gap: 5px;
 		grid-column: 1 / span 12;
