@@ -41,22 +41,16 @@
 	export let scaleRange : Function;
 	export let start : number;
 	export let end : number;
+	export let displayAnnotation: boolean = false;
 
 	// variable declaration
 	let seriesNames = customClass === 'popup-overlay'
 	? Array.from(colorMap).map(d => d[0])
 	: Array.from(colorMap).map(d => d[0])
-	// : flatten(Array.from(colorMap)
-	// 	.map(d => d[0])
-	// 	.map(d => {
-	// 		if (d === 'R') return [`${d}_1`, `${d}_0`]
-	// 		return [`${d}_0`, `${d}_1`]
-	// 	})
-	// )
+
 	let seriesColors = customClass === 'popup-overlay'
 	? Array.from(colorMap).map(d => d[1])
 	: Array.from(colorMap).map(d => d[1])
-	// : flatten(Array.from(colorMap).map(d => d[1]).map(d => [d, color(d).brighter(3).formatHex()]))
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
@@ -106,6 +100,8 @@
 							ticks={4}
 							formatTick={formatTickY}
 						/>
+					{/if}
+					{#if displayAnnotation}
 						<LineAreaAnnotation />
 					{/if}
 					<Multiline activeChart={'activeChart'} />

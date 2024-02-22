@@ -5,7 +5,7 @@
 	
 	import { csv } from "d3-fetch";
   	import { autoType } from "d3-dsv";
-	import { group, extent, max } from 'd3-array';
+	import { group, extent } from 'd3-array';
 
 	// import state data
 	import states from '$lib/data/states.json'

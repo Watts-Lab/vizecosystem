@@ -26,7 +26,8 @@
         <foreignObject class="foreign-object" width={$width} height={$height}>
             <div class="annotation-wrapper" style="transform: translate({5}px, {dy}px)">
                 <div class="annotation">
-                    The definition of echo chambers range from 50% (the line <span class='line'></span>) of one's news diet to 75% (the areas <span class='area'></span> below the line)
+                    The definition of echo chambers range from 50% (the lines <span class='line'></span>) 
+                    of one's news diet to 75% (the areas <span class='area'></span> below the lines)
                     <div class='close-button' on:click={hide}></div>
                 </div>
             </div>

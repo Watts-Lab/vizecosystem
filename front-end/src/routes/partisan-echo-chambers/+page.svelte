@@ -13,6 +13,7 @@
 	import LineAreaChart from "$lib/components/graphs/LineAreaChart.svelte";
 	import DoubleRangeSlider from "$lib/components/global/double-range-slider.svelte";
 	import ControlSwitch from "$lib/components/global/control-switch.svelte";
+	import SelectMenu from '$lib/components/global/select-menu.svelte';
 	import ChartPlaceholder from '$lib/components/global/chart-placeholder.svelte';
 
 	// // import utils
@@ -81,8 +82,7 @@
 	$: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
 	$: gender = 'All'
 	$: age_group = 'All'
-
-	// $: console.log(data)
+	$: userInteractedWithControls = false;
 </script>
 
 <div class="section" use:inView={{ once: true }} on:enter={() => loaded = true }>
@@ -101,23 +101,6 @@
 			
 			<div class='controls-wrapper'>
 				<div class='controls'>
-					<!-- <ControlSwitch 
-						id='political-lean' 
-						title={'A lean'}
-						labels={[ 'L', 'R' ]}
-						colors={[ '#011f5b' , '#ff0000' ]}
-						info={copy.controls.medium.description}
-						bind:checked={ leanChecked } 
-					/>
-					
-					<ControlSwitch 
-						id='medium' 
-						title={copy.controls.medium.title}
-						labels={[ 'TV', 'Web' ]}
-						info={copy.controls.medium.description}
-						bind:checked={ tvChecked } 
-					/> -->
-	
 					<ControlSwitch 
 						id='partisanship' 
 						title={copy.controls.partisanship.title}
@@ -128,76 +111,36 @@
 						info={copy.controls.partisanship.description}
 						bind:checked={ scenarioChecked } 
 					/>
+
+					<SelectMenu 
+						id='age-group' 
+						title={'Age group'}
+						options={new Map([
+							['All', 'All'],
+							['18-24', '18-24'],
+							['25-34', '25-34'],
+							['35-44', '35-44'],
+							['45-54', '45-54'],
+							['55+', '55+']	
+						])}
+						disabled={false}
+						bind:value={age_group}
+						bind:userInteractedWithControls
+					/>
 	
-					<div id='age-group' class='control control-menu'>
-						<div class='control-title'>Age group</div>
-						<select id="age-group-menu" name="age-group" bind:value={age_group}>
-							<option value='All'>All</option>
-							<option value='18-24'>18-24</option>
-							<option value='25-34'>25-34</option>
-							<option value='35-44'>35-44</option>
-							<option value='45-54'>45-54</option>
-							<option value='55+'>55+</option>
-						</select>
-					</div>
-	
-					<div id='gender' class='control control-menu'>
-						<div class='control-title'>Gender</div>
-						<select id="gender-menu" name="location" bind:value={gender}>
-							<option value='All' selected>All</option>
-							<option value='Male'>Male</option>
-							<option value='Female'>Female</option>
-						</select>
-					</div>
+					<SelectMenu 
+						id='gender' 
+						title={'Gender'}
+						options={new Map([
+							['All', 'All'],
+							['Male', 'Male'],
+							['Female', 'Female']
+						])}
+						disabled={false}
+						bind:value={gender}
+						bind:userInteractedWithControls
+					/>
 				</div>
-	
-				<!-- <div class='controls'>
-					<ControlSwitch 
-						id='political-lean' 
-						title={'B lean'}
-						labels={[ 'L', 'R' ]}
-						colors={[ '#035aff' , '#990000' ]}
-						info={copy.controls.medium.description}
-						bind:checked={ leanChecked2 } 
-					/>
-					
-					<ControlSwitch 
-						id='medium' 
-						title={copy.controls.medium.title}
-						labels={[ 'TV', 'Web' ]}
-						info={copy.controls.medium.description}
-						bind:checked={ tvChecked2 } 
-					/>
-	
-					<ControlSwitch 
-						id='partisanship' 
-						title={copy.controls.partisanship.title}
-						labels={[ 'Lenient', 'Strict' ]}
-						info={copy.controls.partisanship.description}
-						bind:checked={ scenarioChecked2 } 
-					/>
-	
-					<div id='age-group' class='control control-menu'>
-						<div class='control-title'>Age group</div>
-						<select id="age-group-menu" name="age-group" bind:value={age_group2}>
-							<option value='All'>All</option>
-							<option value='18-24'>18-24</option>
-							<option value='25-34'>25-34</option>
-							<option value='35-44'>35-44</option>
-							<option value='45-54'>45-54</option>
-							<option value='55+'>55+</option>
-						</select>
-					</div>
-	
-					<div id='gender' class='control control-menu'>
-						<div class='control-title'>Gender</div>
-						<select id="gender-menu" name="location" bind:value={gender2}>
-							<option value='All' selected>All</option>
-							<option value='Male'>Male</option>
-							<option value='Female'>Female</option>
-						</select>
-					</div>
-				</div> -->
 				
 				{#if loaded && data}
 					<div id='period' class='control control-range'>
@@ -228,6 +171,7 @@
 						formatTickX={formatMonth}
 						url={ url }
 						caption={d.value.captions}
+						displayAnnotation={ userInteractedWithControls ? false : true }
 					/>
 					{:else} <ChartPlaceholder />
 				{/if}
