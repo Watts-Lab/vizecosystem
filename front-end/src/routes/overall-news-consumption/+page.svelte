@@ -26,6 +26,7 @@
 	import { formatYear } from '$lib/utils/format-dates';
 	import Legend from '$lib/components/graphs/legend/legend.svelte';
 	import { colorMapByMedium } from '$lib/utils/colors';
+	import parseCopy from '$lib/utils/parse-copy';
 	
 	// prop declaration
 	let loaded : boolean = false;
@@ -131,7 +132,7 @@
 	{#each body as d, i}
 		{#if d.type === 'text'}
 			<p class='copy'>
-				{d.value}
+				{@html parseCopy(d.value)}
 			</p>
         {:else if d.type === 'title'} <h1 class='section-title'>{ d.value }</h1>
 		{:else}

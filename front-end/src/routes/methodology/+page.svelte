@@ -2,7 +2,8 @@
 	// import local data
 	import copy from '$lib/data/copy.json';
 	const data: any = copy['methodology'];
-
+	
+	// utils
 	import parseCopy from '$lib/utils/parse-copy';
 </script>
 

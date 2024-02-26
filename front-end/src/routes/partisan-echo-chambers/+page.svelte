@@ -18,8 +18,10 @@
 
 	// // import utils
 	import { formatMonth } from '$lib/utils/format-dates';
+	import parseCopy from '$lib/utils/parse-copy';
 
 	import copy from '$lib/data/copy.json'
+	import { parse } from "svelte/compiler";
     const body: any[] = copy['partisan-echo-chambers']
 
 	// prop declaration
@@ -89,7 +91,7 @@
     {#each body as d, i}
 	    {#if d.type === 'text'}
 			<p class='copy'>
-				{d.value}
+				{@html parseCopy(d.value)}
 			</p>
         {:else if d.type === 'title'} <h1 class='section-title'>{ d.value }</h1>
 		{:else} 

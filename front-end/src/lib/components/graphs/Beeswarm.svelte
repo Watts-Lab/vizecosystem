@@ -33,12 +33,12 @@
 	let colorInterpolator : any;
 	export let politicalChecked : boolean;
 	let dietChecked : boolean = false
-  	let scenarioChecked : boolean = true
+  	let scenarioChecked : boolean = false
 	let tvChecked : boolean = false
 	$: political_lean = politicalChecked ? 'R' : 'L'
 	$: medium = tvChecked ? 'web' : 'tv'
 	$: diet_threshold = dietChecked ? 75 : 50
-  	$: partisanship_scenario = scenarioChecked ? 'lenient' : 'stringent'
+  	$: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
 
 	// tooltip togglers
 	$: tooltip = null;

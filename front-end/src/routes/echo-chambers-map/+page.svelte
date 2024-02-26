@@ -5,6 +5,9 @@
   	import { autoType } from "d3-dsv";
 	import { group, rollup, descending, rank } from 'd3-array';
 	import { scaleDiverging, scaleThreshold, scaleSqrt } from 'd3-scale';
+
+    // utils
+    import parseCopy from '$lib/utils/parse-copy';
 	
     // types
 	import type ChartConfig from '$lib/types/ChartConfig';
@@ -103,7 +106,7 @@
 	{#each body as d, i}
         {#if d.type === 'text'}
             <p class='copy'>
-                {d.value}
+                {@html parseCopy(d.value)}
             </p>
         {:else if d.type === 'title'} <h1 class='section-title'>{ d.value }</h1>
 		{:else}
