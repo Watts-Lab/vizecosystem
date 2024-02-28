@@ -24,9 +24,9 @@
 {#if render}
     <g>
         <foreignObject class="foreign-object" width={$width} height={$height}>
-            <div class="annotation-wrapper" style="transform: translate({$width/4}px, {dy}px)">
+            <div class="annotation-wrapper" style="transform: translate({$width/12}px, {dy}px)">
                 <div class="annotation">
-                    Across all age groups, TV news dominates online news in terms of total time spend
+                    Select from different demographics such as state, age, and race to see news consumption patterns among the US population
                     <div class='close-button' on:click={hide}></div>
                 </div>
             </div>
@@ -36,9 +36,9 @@
         class='annotation-line' 
         d={curveGen(
             path(), 
-            {x: 118, y: 65}, 
-            {x: 110, y: 140}, 
-            {x: 103, y: 140}
+            {x: 150, y: -20}, 
+            {x: 195, y: -110}, 
+            {x: 195, y: -130}
         )}
         transform={`translate(0, 25)`}
     />
@@ -54,7 +54,7 @@
         .annotation {
             @include fs-sm;
             position: absolute;
-            max-width: 145px;
+            max-width: 170px;
             background: white;
             padding: 2px 5px;
             box-shadow: 0 0 5px rgba(black, 0.2);

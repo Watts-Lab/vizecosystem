@@ -269,9 +269,9 @@
         class='link linkTo-{slugify(link.to.node)} linkFrom-{slugify(link.from.node)}'
         stroke-width={link.w}
         d={link.pathString}
-        in:draw="{{ duration: 1000, delay: 100 + (50 * i) }}"
+        in:draw="{{ duration: 500, delay: (25 * i) }}"
         on:introend={() => totalLinks += 1}  
-      ></path>
+        ></path>
       <path
         class='arrow arrowTo-{slugify(link.to.node)} arrowFrom-{slugify(link.from.node)}'
         d={lineGen([link.start, link.midpoint, link.end])}

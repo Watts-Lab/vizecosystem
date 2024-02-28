@@ -41,7 +41,7 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map
             colorMap: new Map([
                 ['news', '#fb9a99'],
                 // ['other', '#a6cee3'],
-                ['other', 'gainsboro'],
+                ['other', '#a6cee3'],
                 ['social_media', '#fdbf6f'],
                 // ['lifestyle', 'navy'],
                 // ['unlabeled_app', 'DarkMagenta'],

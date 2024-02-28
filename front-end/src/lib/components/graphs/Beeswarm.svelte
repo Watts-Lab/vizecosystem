@@ -135,13 +135,13 @@
 	$: renderCta = false
 
 	onMount(() => {
-		setTimeout(() => renderAnnotation = true, 1500)
+		// setTimeout(() => renderAnnotation = true, 1500)
 		setTimeout(() => {
 			if (!userHasInteracted) {
 				renderCta = true;
 				userTakingTooLong = true;
 			}
-		}, 3500)
+		}, 1000)
 	})
 </script>
 

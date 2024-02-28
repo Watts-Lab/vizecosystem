@@ -26,7 +26,7 @@
 				renderCta = true;
 				userTakingTooLong = true;
 			}
-		}, 3500)
+		}, 1000)
   });
 
   $: render = false

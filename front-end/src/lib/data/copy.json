@@ -95,7 +95,7 @@
         },
         {
             "type": "text",
-            "value": "The 2022 article was inspired by ongoing discussions on “echo chambers,” the idea that the media exposes people to overwhelmingly partisan and like-minded news content. To gauge the scale of the echo chamber problem, we asked: how many people have a news diet that is made of majority highly partisan sources? The figure below is somewhat unique because we present results corresponding to multiple definitions of “majority”--50% and 75% of an individual’s total news consumption. You can also adjust the “strictness” of the highly partisan content definition with the lenient/stringent button."
+            "value": "The [2022 article|https://www.science.org/doi/10.1126/sciadv.abn0083] was inspired by ongoing discussions on “echo chambers,” the idea that the media exposes people to overwhelmingly partisan and like-minded news content. To gauge the scale of the echo chamber problem, we asked: how many people have a news diet that is made of majority highly partisan sources? The figure below is somewhat unique because we present results corresponding to multiple definitions of “majority”--50% and 75% of an individual’s total news consumption. You can also adjust the “strictness” of the highly partisan content definition with the lenient/stringent button."
         },
         {
             "type": "text",
@@ -126,7 +126,7 @@
                 "title": "Mapping Partisan Echo Chambers",
                 "captions": "Each state is represented in terms of the total number of residents whose news diets are dominated by right-wing and left-wing partisan sources. The shades of red and blue indicate the percentage of residents. Click on a state for more info.",
                 "caption1": "State-level timeline of echo chamber size as % of total population with TV/desktop computers.",
-                "caption2": "We define audience size as the number of people who spend at least 30 minutes/1 minute with a given tv program/web domain."
+                "caption2": "We computed audience for each program; these are the top ranked ones, listed in alphabetical order."
             }
         }
     ],
@@ -163,7 +163,7 @@
         },
         {
             "type": "text",
-            "value": "We note that partisan content labels are not provided by Nielsen. Rather, we categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. As a disclaimer, aggregation methods are our own, as Nielsen does not provide ideological labels to TV programs nor defines what programs are considered right-wing or left-wing. For more details on how we define news content, see methods section of [the 2020 paper|https://www.science.org/doi/10.1126/sciadv.aay3539#sec-2], and for more details on how we define echo chambers, see the methods section of [the 2022 paper|https://www.science.org/doi/10.1126/sciadv.abn0083#sec-4]."
+            "value": "We note that partisan content labels are not provided by Nielsen. Rather, we categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. As a disclaimer, aggregation methods are our own, as Nielsen does not provide ideological labels to TV programs nor defines what programs are considered right-wing or left-wing. For more details on how we define news content, see methods section of the [2020 paper|https://www.science.org/doi/10.1126/sciadv.aay3539#sec-2], and for more details on how we define echo chambers, see the methods section of the [2022 paper|https://www.science.org/doi/10.1126/sciadv.abn0083#sec-4]."
         },
         {
             "type": "references",

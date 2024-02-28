@@ -175,12 +175,28 @@
       ></path>
       <text 
         class={`state-label ${labelActive ? 'active' : ''}`}
-        fill='black'
         dx={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
         dy={ -(node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
       >
         {node.abbr}
       </text>
+      {#if ['NY', 'ND', 'MD'].includes(node.abbr)}
+        <circle
+          fill='gainsboro'
+          r=7
+          cx={ (node.r_R + 10) * Math.cos( Math.PI / 4 ) }
+          cy={ -(node.r_R + 10) * Math.cos( Math.PI / 4 ) }
+        >
+
+        </circle>
+        <text 
+          class={`state-hover-cta`}
+          dx={ (node.r_R + 7) * Math.cos( Math.PI / 4 ) }
+          dy={ -(node.r_R + 5.5) * Math.cos( Math.PI / 4 ) }
+        >
+          ?
+        </text>
+      {/if}
       {#if renderCta && userTakingTooLong && node.abbr === 'WA'}
         <g class='cta-container'>
           <ClickCta message="Click for more" />
@@ -220,6 +236,11 @@
     transform: translate(0, 4px);
     opacity: 0;
     transition: opacity 0.5s;
+    fill: $true-black;
+  }
+
+  .state-hover-cta {
+    @include fs-xxs;
   }
 
   .state-label.active {
