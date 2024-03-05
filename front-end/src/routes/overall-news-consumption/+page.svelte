@@ -82,6 +82,11 @@
 		['mobile', {
 			order: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]), // ['music', 'news', 'other', 'social_media']
 			colors: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[1]), // ['#17A589',  '#fb9a99', '#a6cee3', '#fdbf6f' ],
+			yDomain: [0, 500]
+		}],
+		['tablet', {
+			order: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]), // ['music', 'news', 'other', 'social_media']
+			colors: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[1]), // ['#17A589',  '#fb9a99', '#a6cee3', '#fdbf6f' ],
 			yDomain: [0, 350]
 		}],
 	])
@@ -236,7 +241,7 @@
 								{rows} 
 								categories={chartConfig.get('tv').order} 
 								colors={chartConfig.get('tv').colors}
-								yDomain={chartConfig.get('tv').yDomain}
+								yDomain={chartConfig.get(syncAxis ? 'mobile': 'tv').yDomain}
 								{xDomain}
 								{xTicks}
 								formatter={formatYear}
@@ -274,7 +279,7 @@
 								{rows} 
 								categories={chartConfig.get('web').order} 
 								colors={chartConfig.get('web').colors}
-								yDomain={chartConfig.get(syncAxis ? 'tv': 'web').yDomain}
+								yDomain={chartConfig.get(syncAxis ? 'mobile': 'web').yDomain}
 								{xDomain}
 								{xTicks}
 								addTickYLabel={false}
@@ -285,7 +290,7 @@
 						</div>
 
 						<div class='chart-inner'>
-							<h4>Mobile</h4>
+							<h4>Mobile (phone)</h4>
 							<Legend 
 								dataMap={
 									dataMap
@@ -310,7 +315,43 @@
 								{rows} 
 								categories={chartConfig.get('mobile').order} 
 								colors={chartConfig.get('mobile').colors}
-								yDomain={chartConfig.get(syncAxis ? 'tv': 'mobile').yDomain}
+								yDomain={chartConfig.get('mobile').yDomain}
+								{xDomain}
+								{xTicks}
+								addTickYLabel={false}
+								formatter={formatYear}
+								includeCaption={false}
+								url={ urlChart }
+							/>
+						</div>
+
+						<div class='chart-inner'>
+							<h4>Mobile (tablet)</h4>
+							<Legend 
+								dataMap={
+									dataMap
+										.get('tablet')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+										.get(xDomain[1])
+								}
+								colorMap={colorMapByMedium.get('tablet').colorMap}
+							/>
+							<StackedAreas 
+								dataMap={
+									dataMap
+										.get('tablet')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+								}
+								{rows} 
+								categories={chartConfig.get('tablet').order} 
+								colors={chartConfig.get('tablet').colors}
+								yDomain={chartConfig.get(syncAxis ? 'mobile': 'tablet').yDomain}
 								{xDomain}
 								{xTicks}
 								addTickYLabel={false}
@@ -320,7 +361,7 @@
 							/>
 						</div>
 					</div>
-					{:else} <ChartPlaceholder height={350}/>
+					{:else} <ChartPlaceholder height={640}/>
 				{/if}
 
 				<Caption caption={ d.value.captions } url={ urlChart } type={'single-cols'} />
@@ -372,7 +413,9 @@
 		.chart-grid {
 			display: grid;
 			column-gap: 15px;
-			grid-template-columns: repeat(3, 1fr);
+			row-gap: 25px;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
 			margin: 15px 0 0 0;
 
 			.chart-inner {

@@ -71,24 +71,21 @@
     {/each}
   </g>
   
-  <style>
-    .tick {
-      font-size: .725em;
-      font-weight: 200;
-    }
-  
-    .tick line {
-      stroke: #aaa;
-    }
-    /* .tick .gridline { */
-      /* stroke-dasharray: 2; */
-    /* } */
-  
-    .tick text {
-      fill: #666;
-    }
-  
-    .tick.tick-0 line {
-      stroke-dasharray: 0;
-    }
-  </style>
+<style lang='scss'>
+  .tick {
+    font-size: .725em;
+    font-weight: 200;
+  }
+
+  .tick line {
+    stroke: $light-grey;
+  }
+
+  .tick text {
+    fill: $dark-grey;
+  }
+
+  .tick.tick-0 line {
+    stroke-dasharray: 0;
+  }
+</style>

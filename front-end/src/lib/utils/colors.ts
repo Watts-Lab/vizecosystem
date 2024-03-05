@@ -48,6 +48,17 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map
                 // ['browser', 'teal'],
             ]),
 		}],
+        ['tablet', {
+            colorMap: new Map([
+                ['news', '#fb9a99'],
+                // ['other', '#a6cee3'],
+                ['other', '#a6cee3'],
+                ['social_media', '#fdbf6f'],
+                // ['lifestyle', 'navy'],
+                // ['unlabeled_app', 'DarkMagenta'],
+                // ['browser', 'teal'],
+            ]),
+		}],
 	])
 
 export default colorMap;

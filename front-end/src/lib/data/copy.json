@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "value": "In the first figure, we tally the average time spent watching news and non-news on three different mediums: TV, Desktop, and Mobile. The “Social Media” category under Desktop is composed of the following platforms: Facebook, Reddit, YouTube, and Twitter/X."
+            "value": "In the first figure, we tally the average time spent watching news and non-news on three different mediums: TV, Desktop, Mobile and Tablet. The “Social Media” category under Desktop and Tablet is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter."
         },
         {
             "type": "text",
@@ -99,7 +99,7 @@
         },
         {
             "type": "text",
-            "value": "Note- only capture internet browsing on desktop computers—not mobile devices, so it is conceivable that people see even less or much more partisan content on their mobile devices."
+            "value": "Note- we only capture internet browsing on desktop computers—not mobile devices, so it is conceivable that people see even less or much more partisan content on their mobile devices."
         },
         {
             "type": "chart",
@@ -137,7 +137,7 @@
         },
         {
             "type": "text",
-            "value": "In this final figure we introduce a key concept: the news consumption archetype. We surface eight archetypes of news consumption by clustering panelists with similarly distributed news diets, including those who watch 30 minutes or less of news in a given month. Each archetype is dominated by a single news category; we tracked changes as individuals migrated between these archetypes (arrows between nodes represent “net flow” between archetypes)."
+            "value": "In this final figure we introduce a key concept: the news consumption archetype. We surface eight archetypes of news consumption by grouping participants with similar news diets, including those who watch 30 minutes or less of news in a given month. Each archetype is dominated by a single news category and we tracked changes as individuals changed their news consumption habits over time (arrows between node represent “net flow” between archetypes)."
         },
         {
             "type": "chart",

@@ -19,12 +19,13 @@
     $: render = true
     $: browserInfo = getBrowserInfo()
     $: dy = (browserInfo === 'Chrome') || (browserInfo === 'Firefox') ? 10 : 25
+    $: dx = (browserInfo === 'Chrome') || (browserInfo === 'Firefox') ? 0 : 40
 </script>
 
 {#if render}
     <g>
         <foreignObject class="foreign-object" width={$width} height={$height}>
-            <div class="annotation-wrapper" style="transform: translate({$width/12}px, {dy}px)">
+            <div class="annotation-wrapper" style="transform: translate({dx + $width/2}px, {dy}px)">
                 <div class="annotation">
                     Select from different demographics such as state, age, and race to see news consumption patterns among the US population
                     <div class='close-button' on:click={hide}></div>
@@ -36,9 +37,9 @@
         class='annotation-line' 
         d={curveGen(
             path(), 
-            {x: 150, y: -20}, 
-            {x: 195, y: -110}, 
-            {x: 195, y: -130}
+            {x: 200, y: 30}, 
+            {x: 180, y: 30}, 
+            {x: 180, y: -100}
         )}
         transform={`translate(0, 25)`}
     />
