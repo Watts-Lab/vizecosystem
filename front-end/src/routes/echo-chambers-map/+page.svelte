@@ -82,23 +82,19 @@
         
     })
 
-    const chartConfig : Map<number,ChartConfig> = new Map([
-        [0, {
-            type: "diverging",
-            rScale: scaleSqrt,
-            rDomain: [1e3, 3e6],
-            rRange: [8, 70],
-            zScale: scaleThreshold,
-            zDomain: [-0.1, -0.05, -0.01, 0.01, 0.05, 0.1],
-            colorInterpolator: scaleDiverging,
-            colorInterpolatorDomain: [-0.75, 0, 0.75],
-            colorInterpolatorScheme: ["#011f5b", "gainsboro", "#990000"],
-            colorPaletteAnchors: [-0.7, -0.35, -0.18, 0, 0.18, 0.35, 0.85]
-        }],
-    ])
+    const chartConfig : ChartConfig = {
+        type: "diverging",
+        rScale: scaleSqrt,
+        rDomain: [1e3, 3e6],
+        rRange: [8, 70],
+        zScale: scaleThreshold,
+        zDomain: [-0.1, -0.05, -0.01, 0.01, 0.05, 0.1],
+        colorInterpolator: scaleDiverging,
+        colorInterpolatorDomain: [-0.75, 0, 0.75],
+        colorInterpolatorScheme: ["#011f5b", "gainsboro", "#990000"],
+        colorPaletteAnchors: [-0.7, -0.35, -0.18, 0, 0.18, 0.35, 0.85]
+    }
 
-    $: chartIdx = "0"
-    $: activeChart = chartConfig.get(+chartIdx)
     $: politicalChecked = true
 </script>
 
@@ -123,7 +119,7 @@
                         { states }
                         { dataMap }
                         { fullDataMap }
-                        { activeChart }
+                        activeChart={ chartConfig }
                         { politicalChecked }
                         caption={ d.value.captions }
                         tooltipCaptions={[1,2].map(d => (

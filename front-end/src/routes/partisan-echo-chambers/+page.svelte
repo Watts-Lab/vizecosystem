@@ -19,9 +19,9 @@
 	// // import utils
 	import { formatMonth } from '$lib/utils/format-dates';
 	import parseCopy from '$lib/utils/parse-copy';
+	import milestones from "$lib/utils/milestones";
 
 	import copy from '$lib/data/copy.json'
-	import { parse } from "svelte/compiler";
     const body: any[] = copy['partisan-echo-chambers']
 
 	// prop declaration
@@ -35,9 +35,7 @@
 	let xKey : string = 'date'
 	let yKey : string = 'value'
 	let zKey : number = 0
-	let tvChecked : boolean = false;
 	let scenarioChecked : boolean = true;
-	let medium : string = tvChecked ? 'web' : 'tv'
 	let partisanship_scenario : string = scenarioChecked ? 'stringent' : 'lenient'
 	const scaleRange : Function = scaleLinear();
 	let start = 0
@@ -173,7 +171,8 @@
 						formatTickX={formatMonth}
 						url={ url }
 						caption={d.value.captions}
-						displayAnnotation={ userInteractedWithControls ? false : true }
+						displayAnnotation={ false }
+						{ milestones }
 					/>
 					{:else} <ChartPlaceholder />
 				{/if}

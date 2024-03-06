@@ -180,23 +180,6 @@
       >
         {node.abbr}
       </text>
-      {#if ['NY', 'ND', 'MD'].includes(node.abbr)}
-        <circle
-          fill='gainsboro'
-          r=7
-          cx={ (node.r_R + 10) * Math.cos( Math.PI / 4 ) }
-          cy={ -(node.r_R + 10) * Math.cos( Math.PI / 4 ) }
-        >
-
-        </circle>
-        <text 
-          class={`state-hover-cta`}
-          dx={ (node.r_R + 7) * Math.cos( Math.PI / 4 ) }
-          dy={ -(node.r_R + 5.5) * Math.cos( Math.PI / 4 ) }
-        >
-          ?
-        </text>
-      {/if}
       {#if renderCta && userTakingTooLong && node.abbr === 'WA'}
         <g class='cta-container'>
           <ClickCta message="Click for more" />

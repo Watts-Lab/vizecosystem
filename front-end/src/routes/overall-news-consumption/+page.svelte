@@ -248,7 +248,7 @@
 								includeCaption={false}
 								url={ urlChart }
 								showAnnotation={
-									userInteractedWithControls ? false : true
+									false
 								}
 							/>
 						</div>

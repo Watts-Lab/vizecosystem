@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "value": "In the first figure, we tally the average time spent watching news and non-news on three different mediums: TV, Desktop, Mobile and Tablet. The “Social Media” category under Desktop and Tablet is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter."
+            "value": "In the first figure, we tally the average time spent watching news and non-news on four different mediums: TV, Desktop, Mobile(phone) and Mobile(tablet). The “Social Media” category under Desktop and Tablet is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter."
         },
         {
             "type": "text",
@@ -106,7 +106,7 @@
             "value": {
                 "type": "map",
                 "title": "Echo Chambers on the TV and Internet",
-                "captions": "The monthly percent of Americans experiencing partisan segregation via TV or Web news. Bounds represent a range of percentages—from 50 to 75—of individual-level news diets that must be partisan for partisan segregation."
+                "captions": "The monthly percentage of Americans experiencing partisan segregation through TV or Web news is shown by the bold line and shaded areas, representing a range—from 50% to 75% of partisan shows how much of an individual-level news diet consists of partisan content."
             }
         }
     ],

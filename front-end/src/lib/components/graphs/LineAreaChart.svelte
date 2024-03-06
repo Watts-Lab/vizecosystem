@@ -13,9 +13,11 @@
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
 	import Legend from '$lib/components/graphs/legend/MultilineAreaLegend2.svelte'
 	import LineAreaAnnotation from '$lib/components/graphs/tooltips/LineAreaAnnotation.svelte';
+	import Milestones from '$lib/components/graphs/tooltips/Milestones.svelte';
 
 	// import utils
 	import { politicsMap as colorMap } from '$lib/utils/colors';
+	import type Milestone from '$lib/types/Milestone';
 	
 	// props declaration
 	export let margins : Object = { top: 20, right: 10, bottom: 20, left: 45 }
@@ -42,6 +44,7 @@
 	export let start : number;
 	export let end : number;
 	export let displayAnnotation: boolean = false;
+	export let milestones: Milestone[] = [];
 
 	// variable declaration
 	let seriesNames = customClass === 'popup-overlay'
@@ -100,6 +103,7 @@
 							ticks={4}
 							formatTick={formatTickY}
 						/>
+						<Milestones { milestones } />
 					{/if}
 					{#if displayAnnotation}
 						<LineAreaAnnotation />
