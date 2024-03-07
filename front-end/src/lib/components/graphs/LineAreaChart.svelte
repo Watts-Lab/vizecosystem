@@ -2,7 +2,6 @@
 	// node_modules
 	import { LayerCake, Svg } from 'layercake';
 	import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale'
-	import { max } from 'd3-array'
 
 	// types
 	import type Row from '$lib/types/TimeSeriesRow';
@@ -58,8 +57,6 @@
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
-
-	$: console.log(data.filter(d => d.value >= 0.2))
 </script>
 
 <div class="chart-container">
@@ -111,7 +108,7 @@
 					{#if displayAnnotation}
 						<LineAreaAnnotation />
 					{/if}
-					<Multiline activeChart={'activeChart'} />
+					<Multiline activeChart={'activeChart'} { minDate } { maxDate} />
 				</Svg>
 			</LayerCake>
 		{/if}
@@ -121,4 +118,8 @@
 	<Caption { caption } { url } type={spanCol === 12 ? 'split-cols' : 'single-cols'} />
 {/if}
 
-<style lang='scss'></style>
+<style lang='scss'>
+	.line-chart {
+		overflow-y: hidden;
+	}
+</style>

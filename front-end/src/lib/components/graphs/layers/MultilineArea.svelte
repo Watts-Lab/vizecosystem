@@ -6,6 +6,8 @@
 
   // prop declaration
   export let activeChart : string;
+  export let minDate : Date;
+  export let maxDate : Date;
   
   // variable declaration
 
@@ -58,7 +60,7 @@
           {#each [0] as d, l (`line-${leanGroup[0]}-${mediumGroup[0]}`)} 
             <path
               class={`path-line path-line-${mediumGroup[0]}`}
-              d={ path(mediumGroup[1].get(50)) }
+              d={ path(mediumGroup[1].get(50).filter(e => +e.date >= minDate && +e.date <= maxDate)) }
               stroke={ $zScale(leanGroup[0]) }
               animate:drawPath={{ delay: 0, duration: 500 }}
             ></path>
@@ -67,7 +69,7 @@
             <path
               class={`path-polygon path-polygon-${mediumGroup[0]}`}
               d={ polygon(
-                parsePolygonData(mediumGroup[1])
+                parsePolygonData(mediumGroup[1]).filter(e => +e.date >= minDate && +e.date <= maxDate)
               )}
               { fill }
               animate:fade={{ delay: 500, duration: 500 }}
