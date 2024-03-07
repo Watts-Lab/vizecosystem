@@ -2,6 +2,7 @@
 	// node_modules
 	import { LayerCake, Svg } from 'layercake';
 	import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale'
+	import { max } from 'd3-array'
 
 	// types
 	import type Row from '$lib/types/TimeSeriesRow';
@@ -57,6 +58,8 @@
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)
+
+	$: console.log(data.filter(d => d.value >= 0.2))
 </script>
 
 <div class="chart-container">

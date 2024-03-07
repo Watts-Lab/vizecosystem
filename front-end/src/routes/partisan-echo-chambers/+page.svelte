@@ -1,6 +1,7 @@
 <script lang="ts">
 	// node_modules
     import { onMount } from "svelte";
+	import { fade } from "svelte/transition";
     import { csv } from "d3-fetch";
     import { autoType } from "d3-dsv";
     import { group, extent } from "d3-array"
@@ -28,14 +29,14 @@
 	let loaded : boolean = false;
 
 	// variable declaration
-	let url : string = 'assets/data/EchoCh-nationwide-by_gender-or-age_group.csv'
+	let url : string = 'assets/data/EchoCh-nationwide-by_gender-age-race.csv'
 	let data : any[]
 	let dataIn : Map<any,any>
 	let groupedData : any[]
 	let xKey : string = 'date'
 	let yKey : string = 'value'
 	let zKey : number = 0
-	let scenarioChecked : boolean = true;
+	let scenarioChecked : boolean = false;
 	let partisanship_scenario : string = scenarioChecked ? 'stringent' : 'lenient'
 	const scaleRange : Function = scaleLinear();
 	let start = 0
@@ -63,9 +64,10 @@
 	$: if (data) {
 		dataIn = group(
 			data, 
-			(d: any) => d.gender,
 			(d: any) => d.partisanship_scenario,
+			(d: any) => d.gender,
 			(d: any) => d.age_group,
+			(d: any) => d.ethnicity,
 			(d: any) => d.political_lean,
 			(d: any) => d.medium,
 			(d: any) => d.diet_threshold,
@@ -74,15 +76,29 @@
 
 	$: if (data && dataIn.size) {
 		groupedData = dataIn
-			.get(gender)
 			.get(partisanship_scenario)
+			.get(gender)
 			.get(age_group)
+			.get(ethnicity)
 	}
 
 	$: partisanship_scenario = scenarioChecked ? 'stringent' : 'lenient'
 	$: gender = 'All'
 	$: age_group = 'All'
+	$: ethnicity = 'All'
 	$: userInteractedWithControls = false;
+
+	$: disableAgeGroup = ethnicity !== 'All' && gender !== 'All'
+	$: disableGender = age_group !== 'All' && ethnicity !== 'All'
+	$: disableEthnicity = age_group !== 'All' && gender !== 'All'
+	$: if ((disableAgeGroup || disableGender || disableEthnicity)) {
+		userHasReachedLastLevel = true;
+		renderReachedLastLevelLabel = true;
+		setTimeout(() => renderReachedLastLevelLabel = false, 5000);
+	}
+
+	$: userHasReachedLastLevel = false
+	$: renderReachedLastLevelLabel = false;
 </script>
 
 <div class="section" use:inView={{ once: true }} on:enter={() => loaded = true }>
@@ -123,7 +139,7 @@
 							['45-54', '45-54'],
 							['55+', '55+']	
 						])}
-						disabled={false}
+						disabled={disableAgeGroup}
 						bind:value={age_group}
 						bind:userInteractedWithControls
 					/>
@@ -136,10 +152,32 @@
 							['Male', 'Male'],
 							['Female', 'Female']
 						])}
-						disabled={false}
+						disabled={disableGender}
 						bind:value={gender}
 						bind:userInteractedWithControls
 					/>
+
+					<SelectMenu 
+						id='ethnicity' 
+						title={'ethnicity'}
+						options={new Map([
+							['All', 'All'],
+							['white+other', 'White/Other'],
+							['black', 'Black'],
+							['hispanic', 'Hispanic'],
+							['asian', 'Asian'],
+						])}
+						disabled={disableEthnicity}
+						bind:value={ethnicity}
+						bind:userInteractedWithControls
+					/>
+
+					{#if userHasReachedLastLevel && renderReachedLastLevelLabel}
+						<p 
+							class='warning'
+							in:fade
+						>No further breakdown available</p>
+					{/if}
 				</div>
 				
 				{#if loaded && data}
@@ -265,6 +303,7 @@
     .controls {
         display: flex;
         grid-column: 1 / span 1;
+		position: relative;
 
         .control-switch, 
         .control-menu,
@@ -302,5 +341,13 @@
                 @include fs-sm;
             }
         }
+
+		.warning {
+			position: absolute;
+			color: $css-lab-dark-red;
+			top: -15px;
+			left: 212px;
+			@include fs-xs;
+		}
     }
 </style>

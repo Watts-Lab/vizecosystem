@@ -18,8 +18,6 @@
         h = myElement.getBBox().height;
     }
 
-    $: console.log(orientation, h)
-
     onMount(() => {
         render = true
     });
@@ -34,7 +32,7 @@
 <style lang='scss'>
     text {
         fill: $true-black;
-        @include fs-xs;
+        @include fs-sm;
         font-weight: 300;
         transform-box: fill-box;
         transform: rotate(-90deg);

@@ -105,7 +105,7 @@
 	function resetState() { location = 'US' }
 
 	$: if (location !== 'US') { resetGender(); resetAge(); resetEthnicity(); }
-	$: if (age_group !== 'All' || gender !== 'All') { resetState() }
+	$: if (age_group !== 'All' || gender !== 'All' || ethnicity !== 'All') { resetState() }
 	$: disableAgeGroup = ethnicity !== 'All' && gender !== 'All'
 	$: disableGender = age_group !== 'All' && ethnicity !== 'All'
 	$: disableEthnicity = age_group !== 'All' && gender !== 'All'
@@ -374,7 +374,6 @@
 	.section {
         grid-template-columns: repeat(12, 1fr);
         column-gap: 15px;
-
     }
 
 	.section-title {
