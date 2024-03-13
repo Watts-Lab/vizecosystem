@@ -10,8 +10,8 @@
 	import AxisX from '$lib/components/graphs/layers/AxisX.svelte';
 	import AreaStacked from '$lib/components/graphs/layers/AreaStacked.svelte';
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
-	import AreaAnnotation from './tooltips/AreaAnnotation.svelte';
-	import ZoomBtn from '../global/zoom-btn.svelte';
+	import AreaAnnotation from '$lib/components/graphs/tooltips/AreaAnnotation.svelte';
+	import ZoomBtn from '$lib/components/global/zoom-btn.svelte';
 
 	// // // props declaration
 	export let margins : Object = { top: 15, right: 10, bottom: 20, left: 45 }
