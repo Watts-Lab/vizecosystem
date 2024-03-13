@@ -106,7 +106,7 @@
             "value": {
                 "type": "map",
                 "title": "Echo Chambers on the TV and Internet",
-                "captions": "The monthly percentage of Americans experiencing partisan segregation through TV or Web news is shown by the bold line and shaded areas, representing a range—from 50% to 75% of partisan shows how much of an individual-level news diet consists of partisan content."
+                "captions": "The monthly percentage of Americans experiencing partisan segregation through TV or Web news is shown by the bold line and shaded areas, representing a range—from 50% (the lines <span class='line'></span>) to 75% (the areas <span class='area'></span> below the lines) of partisan shows how much of an individual-level news diet consists of partisan content."
             }
         }
     ],
@@ -117,7 +117,7 @@
         },
         {
             "type": "text",
-            "value": "In this map, the size of each semi-circle corresponds to the extent of partisan news segregation, or the size of echo chambers, in each state. You can click on a state for additional details, including the most-watched news programs and domains. The blue and red shading of each circle indicates the degree of partisan segregation, independent of a state's population."
+            "value": "In this interactive map, the size of each semi-circle corresponds to the extent of partisan news segregation, or the size of echo chambers, in each state. You can click on a state for additional details, including the most-watched news programs and domains. The blue and red shading of each circle indicates the degree of partisan segregation, independent of a state's population."
         },
         {
             "type": "chart",
