@@ -200,7 +200,7 @@
 						>No further breakdown available</p>
 					{/if}
 
-					<ControlSwitch 
+					<!-- <ControlSwitch 
 						id='axis' 
 						title={'Independent axis'}
 						labels={[ 
@@ -210,7 +210,7 @@
 						info={'Aligned y axis for comparison across media'}
 						bind:checked={ axisChecked }
 						bind:userInteractedWithControls 
-					/>
+					/> -->
 				</div>
 			
 				{#if data}

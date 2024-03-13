@@ -1,9 +1,9 @@
 <script lang="ts">
 	// // node_modules
-	import { LayerCake, Svg, flatten } from 'layercake';
+	import { LayerCake, Svg, Html, flatten } from 'layercake';
 	import { scaleTime, scaleOrdinal } from 'd3-scale'
 	import { stack, stackOrderDescending } from 'd3-shape'
-	import { extent } from 'd3-array'
+	import { extent, max } from 'd3-array'
 
 	// // // components & molecules & atoms
 	import AxisY from '$lib/components/graphs/layers/AxisY.svelte';
@@ -11,6 +11,7 @@
 	import AreaStacked from '$lib/components/graphs/layers/AreaStacked.svelte';
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
 	import AreaAnnotation from './tooltips/AreaAnnotation.svelte';
+	import ZoomBtn from '../global/zoom-btn.svelte';
 
 	// // // props declaration
 	export let margins : Object = { top: 15, right: 10, bottom: 20, left: 45 }
@@ -49,6 +50,9 @@
 	$: stackedData = stacker(wideData)
 	$: flatData = flatten(stackedData)
 
+	$: scaleZoomed = false
+
+	$: maxY = max(flatData, d => d[1])
 </script>
 
 <div class='chart stacked-area-chart'>
@@ -60,7 +64,7 @@
 		xScale={scaleTime()}
 		xDomain={extent(xDomain)}
 		y={[0, 1]}
-		yDomain={yDomain}
+		yDomain={scaleZoomed ? [0, maxY]: yDomain}
 		yNice={true}
 		z={'key'}
 		zScale={scaleOrdinal()}
@@ -81,6 +85,9 @@
 				<AreaAnnotation />
 			{/if}
 		</Svg>
+		<Html pointerEvents={false}>
+			<ZoomBtn bind:zoomed={ scaleZoomed } />
+		</Html>
 	</LayerCake>
 </div>
 {#if includeCaption}
@@ -89,4 +96,5 @@
 
 
 
-<style lang='scss'></style>
+<style lang='scss'>
+</style>
