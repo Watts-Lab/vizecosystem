@@ -5,6 +5,7 @@ const formatPct = (n) => {
 }
 
 const formatThousands = format(',.0s')
+const formatThousands2SI = format(',.2s')
 const formatThousandsComma = format(',.0f')
 
 const formatPositiveNegative = format('+,.2s')
@@ -15,4 +16,4 @@ function formatOrdinal(n) {
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
 
-export { formatPct, formatThousands, formatThousandsComma, formatPositiveNegative, formatOrdinal }
+export { formatPct, formatThousands, formatThousands2SI, formatThousandsComma, formatPositiveNegative, formatOrdinal }

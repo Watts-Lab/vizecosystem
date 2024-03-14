@@ -1,14 +1,22 @@
 <script lang='ts'>
+    // import node_modules
     import { getContext, createEventDispatcher } from 'svelte';
     import { geoAlbersUsa } from 'd3-geo'
     import { forceSimulation, forceCollide, forceManyBody } from 'd3-force';
     import { path } from 'd3-path'
     
-    const { height, width, rScale, zScale, data } = getContext('LayerCake');
-    
+    // import components
     import MapAnnotation from '$lib/components/graphs/tooltips/MapAnnotation.svelte';
     import ClickCta from '$lib/components/graphs/layers/ClickCTA.svelte';
 
+    // import utils
+    import { formatPct, formatThousands2SI } from '$lib/utils/format-numbers'
+    
+    const { height, width, rScale, zScale, data } = getContext('LayerCake');
+
+    const percent = formatPct(1);
+    
+    // variable declaration
     export let collideStrength: number = 1;
     export let manyBodyStrength: number = 1;
     export let medium: string;
@@ -101,8 +109,20 @@
     $: activeState = false;
     $: hoverState = false;
 
-    function handleClick(e, d) {
+    function handleClick(e: Event, d: any) {
       dispatch('click', { target: e.target, node: d })
+    }
+
+    function handleMouseEnter(e: Event, node: any) {
+      activeState = node.abbr; 
+      hoverState = true; 
+      userHasInteracted = true; 
+      userTakingTooLong = false;
+    }
+
+    function handleMouseOut(e: Event) {
+      activeState = false; 
+      hoverState = false;
     }
     
     function arcGen(
@@ -134,59 +154,94 @@
   class='bee-group'
   transform={`translate(-35, 0)`}
 >
-  {#each nodes as node}
-    {@const highlightAnimation = renderCta && userTakingTooLong && node.abbr === 'WA'}
-    {@const fadeOpacity = renderCta && userTakingTooLong && node.abbr !== 'WA'}
-    <g 
-      class={`
-        node-group 
-        node-group-${node.abbr} 
-        ${(activeState === node.abbr) || highlightAnimation  ? 'active' : ''} 
-        ${hoverState || fadeOpacity ? 'hover' : ''}`
-      } 
-      transform={`translate(${node.x}, ${node.y})`}
-      on:click={(e) => handleClick(e, node)}
-      on:mouseenter={(e) => { 
-        activeState = node.abbr; 
-        hoverState = true; 
-        userHasInteracted = true; 
-        userTakingTooLong = false;
-      }}
-      on:mouseleave={(e) => { activeState = false; hoverState = false; }}
-    >
-      <!-- svelte-ignore component-name-lowercase -->
-      <path
-        class='node'
-        fill={ node.fillR }
-        d={ node.rightPathString }
-      ></path>
-      <!-- svelte-ignore component-name-lowercase -->
-      <path
-        class='node'
-        fill={ node.fillL }
-        d={ node.leftPathString }
-      ></path>
-      <!-- svelte-ignore component-name-lowercase -->
-      <path
-        class='node node-stroke'
-        fill={ 'none' }
-        stroke={ 'black' }
-        d={ node.fullPath }
-      ></path>
-      <text 
-        class={`state-label ${labelActive ? 'active' : ''}`}
-        dx={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
-        dy={ -(node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
+  <g class='nodes'>
+    {#each nodes as node}
+      {@const highlightAnimation = renderCta && userTakingTooLong && node.abbr === 'WA'}
+      {@const fadeOpacity = renderCta && userTakingTooLong && node.abbr !== 'WA'}
+      <g 
+        class={`
+          node-group 
+          node-group-${node.abbr} 
+          ${(activeState === node.abbr) || highlightAnimation  ? 'active' : ''} 
+          ${hoverState || fadeOpacity ? 'hover' : ''}`
+        } 
+        transform={`translate(${node.x}, ${node.y})`}
+        on:click={(e) => handleClick(e, node)}
+        on:mouseenter={(e) => handleMouseEnter(e, node)}
+        on:mouseleave={handleMouseOut}
       >
-        {node.abbr}
-      </text>
-      {#if renderCta && userTakingTooLong && node.abbr === 'WA'}
-        <g class='cta-container'>
-          <ClickCta message="Click for more" />
-        </g>
-      {/if}
-    </g>
-  {/each}
+        <!-- svelte-ignore component-name-lowercase -->
+        <path
+          class='node'
+          fill={ node.fillR }
+          d={ node.rightPathString }
+        ></path>
+        <!-- svelte-ignore component-name-lowercase -->
+        <path
+          class='node'
+          fill={ node.fillL }
+          d={ node.leftPathString }
+        ></path>
+        <!-- svelte-ignore component-name-lowercase -->
+        <path
+          class='node node-stroke'
+          fill={ 'none' }
+          stroke={ 'black' }
+          d={ node.fullPath }
+        ></path>
+        <text 
+          class={`state-label ${labelActive ? 'active' : ''}`}
+          dx={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
+          dy={ -(node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
+        >
+          {node.abbr}
+        </text>
+        {#if renderCta && userTakingTooLong && node.abbr === 'WA'}
+          <g class='cta-container'>
+            <ClickCta message="Click for more" />
+          </g>
+        {/if}
+      </g>
+    {/each}
+  </g>
+  <g class='values'>
+    {#each nodes as node}
+      <g transform={`translate(${node.x}, ${node.y})`}>
+        {#if activeState === node.abbr}
+          <text
+            class="state-hover-value state-hover-value-L"
+            x={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) + 8 }
+            y={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
+          >
+            {percent(node.data.left_pct)}
+          </text>
+          <text
+            class="state-hover-value state-hover-value-L"
+            x={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) + 8 }
+            y={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
+            dy={ -13 }
+          >
+            {formatThousands2SI(node.data.left_size)}
+          </text>
+          <text
+            class="state-hover-value state-hover-value-R"
+            x={ -(node.r_R + 3) * Math.cos(3 * Math.PI / 4 ) - 8 }
+            y={ (node.r_R + 3) * Math.cos(3 * Math.PI / 4 ) }
+          >
+            {percent(node.data.right_pct)}
+          </text>
+          <text
+            class="state-hover-value state-hover-value-R"
+            x={ -(node.r_R + 3) * Math.cos(3 * Math.PI / 4 ) - 8 }
+            y={ (node.r_R + 3) * Math.cos(3 * Math.PI / 4 ) }
+            dy={ -13 }
+          >
+            {formatThousands2SI(node.data.right_size)}
+          </text>
+        {/if}
+      </g>
+    {/each}
+  </g>
 </g>
 
 <style lang='scss'>
@@ -243,6 +298,23 @@
 
   .cta-container {
     animation: move 1s ease-in-out infinite alternate;
+  }
+
+  .state-hover-value {
+    @include fs-sm;
+    font-weight: 700;
+    stroke: $white;
+    stroke-width: 2pt;
+    paint-order: stroke;
+  }
+
+  .state-hover-value-L {
+    text-anchor: end;
+    fill: $css-lab-dark-blue
+  }
+
+  .state-hover-value-R {
+    fill: $css-lab-dark-red
   }
 
   @keyframes move {

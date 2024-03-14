@@ -5,6 +5,8 @@
   // prop declaration
   export let data : any[];
   export let medium : string;
+
+  $: prop = medium === 'tv' ? 'program' : 'domain';
 </script>
 
 <div class='table-container'>
@@ -13,11 +15,11 @@
       <div class={`row-header row-header-program`}>{medium === 'tv' ? 'Program' : 'Domain'}</div>
       <!-- <div class={`row-header row-header-audience`}>Audience</div> -->
     </div>
-    {#each data.filter(d => d.value > 0).sort((a,b) => a.program.localeCompare(b.program)) as row, i}
+    {#each data.filter(d => d.value > 0).sort((a,b) => a[prop].localeCompare(b[prop])) as row, i}
       <div class='row-body'>
         {#if medium === 'tv'}
           <div class={`row-value row-value-program`}>{row.program} <p class={`row-value row-value-network`}>{row.network}</p> </div>
-          {:else} <div class={`row-value row-value-program`}>{row.domain}</div>
+          {:else} <div class={`row-value row-value-program`}>{row.domain.toUpperCase()}</div>
         {/if}
           <!-- <div class={`row-value row-value-audience`}>{row.value.toLocaleString()}</div> -->
       </div>
