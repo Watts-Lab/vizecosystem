@@ -5,6 +5,7 @@
 	import Footer from '$lib/components/footer/Footer.svelte';
 	
 	import { dev } from '$app/environment';
+	import { page } from '$app/stores';
 
 	import hash from '$lib/utils/hasher';
 
@@ -21,7 +22,7 @@
 
 <Header />
 
-<main>
+<main class:index={$page.route.id === '/'} class:section={$page.route.id !== '/'}>
 	{#if auth} <slot></slot>
 
 	{:else} <div class='auth'>
@@ -42,10 +43,20 @@
 <style lang='scss'>
     main {
 		max-width: $column-width;
-		margin: 25px auto;
-		
-		@media (min-width: $bp-3) {
-			margin-top: 60px;
+		margin: 25px auto 0 auto;
+	}
+
+	.index {
+		@media (min-width: $bp-4) {
+			margin: 60px auto 0 auto;
+			max-width: $column-width * 1.2;
+		}
+	}
+
+	.section {
+		@media (min-width: $bp-4) {
+			margin: 60px auto 0 auto;
+			max-width: $column-width;
 		}
 	}
 

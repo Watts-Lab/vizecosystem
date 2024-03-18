@@ -191,8 +191,8 @@
         ></path>
         <text 
           class={`state-label ${labelActive ? 'active' : ''}`}
-          dx={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
-          dy={ -(node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
+          x={ (node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
+          y={ -(node.r_L + 3) * Math.cos(3 * Math.PI / 4 ) }
         >
           {node.abbr}
         </text>

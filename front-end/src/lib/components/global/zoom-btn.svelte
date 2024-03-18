@@ -67,5 +67,9 @@
         }
     }
 
-
+    .zoomed:hover {
+        .btn-wrapper {
+            stroke: $off-white;
+        }
+    }
 </style>

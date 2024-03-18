@@ -152,7 +152,7 @@
 
   onMount(() => {
     scaleNodeSize.domain(extent(nodes, d => d.value))
-    scaleLineWidth.domain(extent(links, d => d.value))
+    scaleLineWidth.domain(extent(flatLinks, d => d.value))
     dataIn = nodes.map((d : any) => {
       const i : number = nodesOrderMap.get(d.node)
       let x : number;
@@ -207,7 +207,7 @@
 
   $: {
     scaleNodeSize.domain(extent(nodes, d => d.value))
-    scaleLineWidth.domain(extent(links, d => d.value))
+    scaleLineWidth.domain(extent(flatLinks, d => d.value))
     dataIn = nodes.map((d : any) => {
       const i : number = nodesOrderMap.get(d.node)
       let x : number;

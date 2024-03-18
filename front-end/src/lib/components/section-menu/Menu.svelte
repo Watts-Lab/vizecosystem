@@ -24,7 +24,15 @@
         grid-template-columns: repeat(12, 1fr);
         column-gap: 10px;
         row-gap: 10px;
-        margin: 50px 0;
+        margin: 50px auto;
+
+        @media (min-width: $bp-2) {
+            width: 80%;
+        }
+
+        @media (min-width: $bp-4) {
+            width: 100%;
+        }
     }
 
     .methodology {

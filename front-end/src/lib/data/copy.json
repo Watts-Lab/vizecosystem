@@ -106,7 +106,7 @@
             "value": {
                 "type": "map",
                 "title": "Echo Chambers on the TV and Internet",
-                "captions": "The monthly percentage of Americans experiencing partisan segregation through TV or Web news is shown by the bold line and shaded areas, representing a range—from 50% (the lines <span class='line'></span>) to 75% (the areas <span class='area'></span> below the lines) of partisan shows how much of an individual-level news diet consists of partisan content."
+                "captions": "An individual is considered to be in an echo chamber if the majority of their news consumption is partisan content. Majority is defined as at least 50% (the lines <span class='line'></span>) to 75% (the areas <span class='area'></span> below the lines) of news consumption being partisan."
             }
         }
     ],
@@ -117,16 +117,16 @@
         },
         {
             "type": "text",
-            "value": "In this interactive map, the size of each semi-circle corresponds to the extent of partisan news segregation, or the size of echo chambers, in each state. You can click on a state for additional details, including the most-watched news programs and domains. The blue and red shading of each circle indicates the degree of partisan segregation, independent of a state's population."
+            "value": "In this map, the size of each semi-circle corresponds to the extent of partisan news segregation, or the size of echo chambers, in each state. You can click on a state for additional details, including the most-watched news programs and domains. The blue and red shading of each circle indicates the degree of partisan segregation, independent of a state's population."
         },
         {
             "type": "chart",
             "value": {
                 "type": "line-area",
                 "title": "Mapping Partisan Echo Chambers",
-                "captions": "Each state is represented in terms of the total number of residents whose news diets are dominated by right-wing and left-wing partisan sources. The shades of red and blue indicate the percentage of residents. Click on a state for more info.",
+                "captions": "In this interactive map, the sizes of the semicircles are proportional to the sizes of the left-wing and right-wing echo chambers in each state. Click on individual states to reveal the number of people in echo chambers in each state.",
                 "caption1": "State-level timeline of echo chamber size as % of total population with TV/desktop computers.",
-                "caption2": "We computed audience for each program; these are the top ranked ones, listed in alphabetical order."
+                "caption2": "We computed the audience for each program; these are the top-ranked ones listed alphabetically."
             }
         }
     ],
@@ -144,7 +144,7 @@
             "value": {
                 "type": "flow-chart",
                 "title": "Shifting TV Viewership",
-                "captions": "Television news consumption archetypes are each labeled according to the category of news most prominently consumed within the archetype, along with a large ninth group of people who are exposed to less than 30 min of news in a month, calculated independently in each month over the 6 years of analysis. The figure represents the direction and magnitude of turnover between each pair of archetypes. For example, if—over a given period of time—1M individuals moved from archetype A to archetype B, and over the same period of time 4M individuals did the reverse and moved from archetype B to A, then the net flow over that time period would be 3M from B to A."
+                "captions": "This figure shows how many people (by the millions) have switched from one news diet to another over a period of six years. For example, if 1M (1 million) people switched from diet A to diet B and during the same time period 4M switched from diet B to diet A, there is a net flow of 3M people from B to A."
             }
         }
     ],

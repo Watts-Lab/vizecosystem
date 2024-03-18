@@ -168,7 +168,6 @@
 						caption={d.value.captions}
 						customClass='chart-flow'
 					/>
-					
 					{:else} <ChartPlaceholder />
 				{/if}
 			</div>
