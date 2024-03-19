@@ -46,9 +46,9 @@
 
 	onMount(async () => {
 		const res = await csv(url, autoType)
-		data = res.map(d => ({ ...d, date: new Date(d.year, d.month, 1) }))
+		data = res.map(d => ({ ...d, date: new Date(d.year, d.month - 1, 1) }))
 
-		const [ min, max ] = extent(data, d => +d.date); 
+		const [ min, max ] = extent(data, d => +d.date);
 		scaleRange.range([ min, max ])
 	})
 

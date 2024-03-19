@@ -5,6 +5,7 @@
 	let leftHandle;
 	let body;
 	let slider;
+
 	function draggable(node) {
 		let x;
 		let y;
@@ -96,11 +97,7 @@
 	// 	if (end >= end) {
 	// 		start = end - 0.05;
 	// 	}
-
 	// }
-
-
-
 
 </script>
 

@@ -58,7 +58,7 @@
         const nodesRes = await csv(url_nodes, autoType)
         
         nodes = nodesRes
-            .map(d => ({ ...d, node: d.archetype, date: new Date(d.year, d.month, 1)  }))
+            .map(d => ({ ...d, node: d.archetype, date: new Date(d.year, d.month-1, 1)  }))
 
         nodesMap = group(nodes, d => +d.date)
 
@@ -70,8 +70,8 @@
         links = linksRes
             .map(d => ({ 
                 ...d, 
-                start_date: new Date(d['start year'], d['start month'], 1), 
-                end_date: new Date(d['end year'], d['end month'], 1) 
+                start_date: new Date(d['start year'], d['start month']-1, 1), 
+                end_date: new Date(d['end year'], d['end month']-1, 1) 
             }))
             .reduce((prev : any[], curr : Object) => {
                 const entries = Object.entries(curr)
@@ -91,7 +91,6 @@
                 })
                 return prev
             }, [])
-
             
         linksMap = group(links, d => +d.start_date, d => +d.end_date)
 
@@ -100,8 +99,8 @@
         nodes_size = nodeSizeRes
             .map(d => ({ 
                 ...d, 
-                start_date: new Date(d['start year'], d['start month'], 1), 
-                end_date: new Date(d['end year'], d['end month'], 1) 
+                start_date: new Date(d['start year'], d['start month']-1, 1), 
+                end_date: new Date(d['end year'], d['end month']-1, 1) 
             }))
         nodesSizeMap = group(nodes_size, d => +d.start_date, d => +d.end_date, d => d.archetype)
 
@@ -119,7 +118,7 @@
     $: end_date = scaleDate(end)
 
     $: if (render) {
-        nodesIn = nodesMap.get(end_date) //.get(sizeVar)
+        nodesIn = nodesMap.get(start_date)
         linksIn = linksMap.get(start_date).get(end_date)
         nodeSizeIn = nodesSizeMap.get(start_date).get(end_date)
 	}
