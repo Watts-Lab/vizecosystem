@@ -48,8 +48,8 @@
           refX="1"
           refY="5"
           markerUnits="userSpaceOnUse"
-          markerWidth="10"
-          markerHeight="10"
+          markerWidth="12"
+          markerHeight="12"
           orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
         </marker>

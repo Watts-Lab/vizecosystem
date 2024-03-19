@@ -27,7 +27,7 @@
   export let renderCta: boolean;
 
   const scaleLineWidth = scaleLinear()
-    .range([1,25])
+    .range([1,35])
   const scaleNodeSize = scaleSqrt()
     .range([5,25])
 
@@ -55,14 +55,14 @@
     context.moveTo(pos.from.x, pos.from.y);
  
     if (pos.link.to === 'No or Minimal News') {
-      const ctrX = pos.from.x > $width / 2 ? $width : 0
+      const ctrX = pos.from.x > $width / 2 ? $width*0.9 : $width*0.1;
       context.quadraticCurveTo(ctrX, $height / 1.5, pos.to.x, pos.to.y);
     }
     else if (Math.abs(+pos.link.to - +pos.link.from) === 1) {
       context.lineTo(pos.to.x, pos.to.y);
     }
     else {
-      context.quadraticCurveTo($width / 2, 0.01 + Math.random() * $height, pos.to.x, pos.to.y);
+      context.quadraticCurveTo($width / 2, (0.01 + Math.random()) * $height, pos.to.x, pos.to.y);
     }
     
     return context;
@@ -295,6 +295,8 @@
           class='node {actionable ? 'active' : ''}'
           class:highlight={ctaCheck}
           class:unhighlight={ctaReverseCheck}
+          class:positive={netFlowMap.get(node.archetype)[0].delta > 0}
+          class:negative={netFlowMap.get(node.archetype)[0].delta < 0}
           r={node.r} 
           on:mouseenter={(ev) => handleMouseEnter(ev, node)}
           on:mouseleave={(ev) => handleMouseLeave(ev, node)}
@@ -394,7 +396,7 @@
   .link {
     fill: none;
     stroke: gainsboro;
-    opacity: 0.5;
+    opacity: 0.65;
     pointer-events: none;
   }
 
@@ -409,7 +411,7 @@
   .arrow {
     fill: none;
     stroke: black;
-    stroke-width: 1px;
+    stroke-width: 2px;
     opacity: 0;
   }
 
