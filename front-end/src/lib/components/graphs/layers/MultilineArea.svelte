@@ -48,6 +48,9 @@
       return { ...d, value_2: _50[1][i]['value'] }
     })
   }
+
+  $: highlight = false
+  $: highlightMedium = false
 </script>
 
 <g class='line-group line-group-{activeChart}'>
@@ -55,7 +58,13 @@
     <g class='line-group-lean line-group-lean-{leanGroup[0]}'>
       {#each leanGroup[1] as mediumGroup, j}
         {@const fill = mediumGroup[0] === 'tv' ? `url(#diagonalHatch${leanGroup[0]})` : $zScale(leanGroup[0]) }
-        <g class='line-group-medium line-group-medium-{mediumGroup[0]}'>
+        <g 
+          class='line-group-medium line-group-medium-{mediumGroup[0]} {highlight && highlightMedium !== mediumGroup[0] ? 'fade' : ''}'
+          role="figure" 
+          on:mouseenter={() => { highlight = true; highlightMedium = mediumGroup[0] }}
+          on:mouseleave={() => { highlight = false; }}
+          on:focus={() => highlight = mediumGroup[0]}
+        >
           <!-- These each blocks are "faked" to allow the animate directive -->
           {#each [0] as d, l (`line-${leanGroup[0]}-${mediumGroup[0]}`)} 
             <path
@@ -83,6 +92,10 @@
   
 
 <style>
+  .line-group-medium.fade {
+    opacity: 0.35;
+  }
+
   .path-line {
       fill: none;
       stroke-linejoin: round;
