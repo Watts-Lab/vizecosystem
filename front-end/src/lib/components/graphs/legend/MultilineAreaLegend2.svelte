@@ -9,7 +9,6 @@
 	export let seriesColors: string[];
 
 	$: legend = zip(seriesNames, seriesColors)
-
 </script>
 
 <div class='legend'>

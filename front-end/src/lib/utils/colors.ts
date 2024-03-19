@@ -19,6 +19,11 @@ const mediumMap : Map<string, {}> = new Map([
     ['online', { line:'#f7934c', polygon: '#f7c59f' }],
 ])
 
+const flowMap : Map<string, string> = new Map([
+    ['Inflow', '#011f5b'],
+    ['Outflow', '#990000'],
+])
+
 const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map([
 		['tv', {
             colorMap: new Map([
@@ -62,6 +67,6 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,string> }> = new Map
 	])
 
 export default colorMap;
-export { politicsMap, mediumMap, colorMapByMedium };
+export { politicsMap, mediumMap, colorMapByMedium, flowMap };
   
 

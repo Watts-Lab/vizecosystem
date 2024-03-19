@@ -47,13 +47,8 @@
 	export let milestones: Milestone[] = [];
 
 	// variable declaration
-	let seriesNames = customClass === 'popup-overlay'
-	? Array.from(colorMap).map(d => d[0])
-	: Array.from(colorMap).map(d => d[0])
-
-	let seriesColors = customClass === 'popup-overlay'
-	? Array.from(colorMap).map(d => d[1])
-	: Array.from(colorMap).map(d => d[1])
+	let seriesNames = Array.from(colorMap).map(d => d[0])
+	let seriesColors = Array.from(colorMap).map(d => d[1])
 
 	$: minDate = scaleRange(start)
 	$: maxDate = scaleRange(end)

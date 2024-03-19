@@ -14,10 +14,12 @@
     import DoubleRangeSlider from "$lib/components/global/double-range-slider.svelte";
     import ChartPlaceholder from '$lib/components/global/chart-placeholder.svelte';
     import ClickCta from '$lib/components/graphs/layers/ClickCTA.svelte';
+    import FlowNodesLegend from '$lib/components/graphs/legend/FlowNodesLegend.svelte';
 
 	// // import utils
 	import { formatMonth } from '$lib/utils/format-dates';
 	import parseCopy from '$lib/utils/parse-copy';
+    import { flowMap as colorMap } from '$lib/utils/colors';
 	
 	// import local data
     import copy from '$lib/data/copy.json'
@@ -41,6 +43,10 @@
     let links : any[]
     let linksMap : Map<any, any>
     let linksIn : any[]
+
+    // variable declaration
+	let seriesNames = Array.from(colorMap).map(d => d[0])
+	let seriesColors = Array.from(colorMap).map(d => d[1])
 
     // scales
     const scaleRange : Function = scaleLinear();
@@ -149,6 +155,10 @@
 						</div>
 					{/if}
 				</div>
+
+                {#if loaded && render}
+                    <FlowNodesLegend { seriesNames } { seriesColors } />
+                {/if}
 
                 <div class='block-cta'>
                     <ClickCta 

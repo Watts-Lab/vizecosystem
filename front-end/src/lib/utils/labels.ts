@@ -26,5 +26,10 @@ const politicsMap : Map<string, string> = new Map([
     ['R', 'Right'],
 ])
 
+const flowMap : Map<string, string> = new Map([
+    ['Inflow', 'Inflow'],
+    ['Outflow', 'Outflow'],
+])
+
 export default labelMap;
-export { politicsMap, orderMap };
+export { politicsMap, orderMap, flowMap };
