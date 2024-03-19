@@ -42,6 +42,7 @@
 
         .legend-icon-color {
             background-color: var(--color);
+            opacity: 0.65;
         }
     }
 </style>
