@@ -2,6 +2,8 @@
   import { getContext } from 'svelte';
   import { line, area, curveBasis } from 'd3-shape';
 
+  import { mediumMap } from '$lib/utils/labels';
+
   const { data, xGet, yGet, yScale, zScale } = getContext('LayerCake');
 
   // prop declaration
@@ -65,6 +67,11 @@
           on:mouseleave={() => { highlight = false; }}
           on:focus={() => highlight = mediumGroup[0]}
         >
+        {#if leanGroup[0] === 'L' && highlight && highlightMedium === mediumGroup[0]}
+          {@const tgtPoint = mediumGroup[1].get(50).slice(-10)[0]}
+          <!-- {console.log($xGet(tgtPoint))} -->
+          <text x={$xGet(tgtPoint)} y={$yGet(tgtPoint)} dy={-10}>{mediumMap.get(mediumGroup[0])}</text>
+        {/if}
           <!-- These each blocks are "faked" to allow the animate directive -->
           {#each [0] as d, l (`line-${leanGroup[0]}-${mediumGroup[0]}`)} 
             <path

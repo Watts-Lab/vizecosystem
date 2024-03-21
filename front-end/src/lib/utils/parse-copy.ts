@@ -35,11 +35,16 @@ function parseBold(text: string) {
 	return text;
 }
 
+function parseText(text: string) {
+	return text[0] === '\\' ? text.slice(1, -1) : text;
+}
+
 function parseCopy(text: string) {
 	text = parseLink(text);
 	text = parseItalic(text);
 	text = parseBold(text);
-	return text;
+	
+	return parseText(text);
 }
 
 export default parseCopy;

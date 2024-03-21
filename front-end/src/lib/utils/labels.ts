@@ -14,6 +14,11 @@ const labelMap : Map<string, string> = new Map([
     // ['browser', 'Browser'],
 ])
 
+const mediumMap : Map<string, string> = new Map([
+    ['tv','TV'],
+    ['web', 'Online']
+])
+
 const orderMap : Map<string, number> = new Map([
     ['tv_R', 0],
     ['tv_L', 3],
@@ -32,4 +37,4 @@ const flowMap : Map<string, string> = new Map([
 ])
 
 export default labelMap;
-export { politicsMap, orderMap, flowMap };
+export { politicsMap, orderMap, flowMap, mediumMap };

@@ -73,7 +73,19 @@
         },
         {
             "type": "text",
-            "value": "In the first figure, we tally the average time spent watching news and non-news on four different mediums: TV, Desktop, Mobile(phone) and Mobile(tablet). The “Social Media” category under Desktop and Tablet is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter."
+            "value": "In the first figure, we tally the average time spent watching news and non-news on four different mediums: TV, Desktop, Mobile(phone) and Mobile(tablet)."
+        },
+        {
+            "type": "text",
+            "value": "The _i_Social Media_i_ category under Desktop and Tablet is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter."
+        },
+        {
+            "type": "text",
+            "value": "\\_i_Entertainment:_i_ anything that provides leisure in users’ free time.<br/>E.g. reality shows, game apps"
+        },
+        {
+            "type": "text",
+            "value": "\\_i_Lifestyle:_i_ health, productivity, and learning <br/>E.g. cooking shows, language apps"
         },
         {
             "type": "text",
@@ -106,7 +118,7 @@
             "value": {
                 "type": "map",
                 "title": "Echo Chambers on the TV and Internet",
-                "captions": "An individual is considered to be in an echo chamber if the majority of their news consumption is partisan content. Majority is defined as at least 50% (the lines <span class='line'></span>) to 75% (the areas <span class='area'></span> below the lines) of news consumption being partisan."
+                "captions": "An individual is considered to be in an echo chamber if the majority of their news consumption is partisan content. Majority is defined as at least 50% (the lines <span class='line'></span>) to 75% (the shaded areas <span class='area'></span> below the lines) of news consumption being partisan."
             }
         }
     ],
@@ -137,7 +149,7 @@
         },
         {
             "type": "text",
-            "value": "In this final figure we introduce a key concept: the news consumption archetype. We surface eight archetypes of news consumption by grouping participants with similar news diets, including those who watch 30 minutes or less of news in a given month. Each archetype is dominated by a single news category and we tracked changes as individuals changed their news consumption habits over time (arrows between node represent “net flow” between archetypes)."
+            "value": "In this final figure we introduce a key concept: the news consumption archetype. We surface seven archetypes of news consumption by grouping participants with similar news diets, including those who watch 30 minutes or less of news in a given month. Each archetype is dominated by a single news category and we tracked changes as individuals changed their news consumption habits over time (arrows between node represent “net flow” between archetypes)."
         },
         {
             "type": "chart",
@@ -163,7 +175,11 @@
         },
         {
             "type": "text",
-            "value": "We note that partisan content labels are not provided by Nielsen. Rather, we categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. As a disclaimer, aggregation methods are our own, as Nielsen does not provide ideological labels to TV programs nor defines what programs are considered right-wing or left-wing. For more details on how we define news content, see methods section of the [2020 paper|https://www.science.org/doi/10.1126/sciadv.aay3539#sec-2], and for more details on how we define echo chambers, see the methods section of the [2022 paper|https://www.science.org/doi/10.1126/sciadv.abn0083#sec-4]."
+            "value": "We note that partisan content labels are not provided by Nielsen. Rather, we categorize content at the level of TV programs and web domains into news, and further into right-leaning news, left-leaning news, and hyper-partisan news using categorizations and methods popular in the academic literature. In particular, we place online news domains on a left-right ideological spectrum with a popular method that assigns an ideology score for domains based on the partisanship of the users who share content from the domain on Twitter/X. As a disclaimer, aggregation methods are our own, as Nielsen does not provide ideological labels to TV programs nor defines what programs are considered right-wing or left-wing."
+        },
+        {
+            "type": "text",
+            "value": "For more details on how we define news content, see methods section of the [2020 paper|https://www.science.org/doi/10.1126/sciadv.aay3539#sec-2], and for more details on how we define echo chambers, see the methods section of the [2022 paper|https://www.science.org/doi/10.1126/sciadv.abn0083#sec-4]."
         },
         {
             "type": "references",
