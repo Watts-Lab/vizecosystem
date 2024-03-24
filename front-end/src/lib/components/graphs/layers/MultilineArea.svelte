@@ -2,7 +2,7 @@
   import { getContext } from 'svelte';
   import { line, area, curveBasis } from 'd3-shape';
 
-  import { mediumMap } from '$lib/utils/labels';
+  import { mediumMap, politicsMap } from '$lib/utils/labels';
 
   const { data, xGet, yGet, yScale, zScale } = getContext('LayerCake');
 
@@ -10,6 +10,7 @@
   export let activeChart : string;
   export let minDate : Date;
   export let maxDate : Date;
+  let highlightBand: boolean|string = false
   
   // variable declaration
 
@@ -52,7 +53,7 @@
   }
 
   $: highlight = false
-  $: highlightMedium = false
+  $: highlightBand = false
 </script>
 
 <g class='line-group line-group-{activeChart}'>
@@ -61,17 +62,12 @@
       {#each leanGroup[1] as mediumGroup, j}
         {@const fill = mediumGroup[0] === 'tv' ? `url(#diagonalHatch${leanGroup[0]})` : $zScale(leanGroup[0]) }
         <g 
-          class='line-group-medium line-group-medium-{mediumGroup[0]} {highlight && highlightMedium !== mediumGroup[0] ? 'fade' : ''}'
+          class='line-group-medium line-group-medium-{mediumGroup[0]} {highlight && highlightBand !== `${leanGroup[0]}-${mediumGroup[0]}` ? 'fade' : ''}'
           role="figure" 
-          on:mouseenter={() => { highlight = true; highlightMedium = mediumGroup[0] }}
+          on:mouseenter={() => { highlight = true; highlightBand = `${leanGroup[0]}-${mediumGroup[0]}` }}
           on:mouseleave={() => { highlight = false; }}
           on:focus={() => highlight = mediumGroup[0]}
         >
-        {#if leanGroup[0] === 'L' && highlight && highlightMedium === mediumGroup[0]}
-          {@const tgtPoint = mediumGroup[1].get(50).slice(-10)[0]}
-          <!-- {console.log($xGet(tgtPoint))} -->
-          <text x={$xGet(tgtPoint)} y={$yGet(tgtPoint)} dy={-10}>{mediumMap.get(mediumGroup[0])}</text>
-        {/if}
           <!-- These each blocks are "faked" to allow the animate directive -->
           {#each [0] as d, l (`line-${leanGroup[0]}-${mediumGroup[0]}`)} 
             <path
@@ -91,6 +87,17 @@
               animate:fade={{ delay: 500, duration: 500 }}
             ></path>
           {/each}
+          {#if highlight && highlightBand === `${leanGroup[0]}-${mediumGroup[0]}`}
+            {@const tgtPoint = mediumGroup[1].get(50).slice(-10)[0]}
+            <text
+              class='line-label'
+              x={$xGet(tgtPoint)} 
+              y={$yGet(tgtPoint)} 
+              dy={-10}
+            >
+              {politicsMap.get(leanGroup[0])}, {mediumMap.get(mediumGroup[0])}
+            </text>
+          {/if}
         </g>
       {/each}
     </g>
@@ -98,7 +105,7 @@
 </g>
   
 
-<style>
+<style lang='scss'>
   .line-group-medium.fade {
     opacity: 0.35;
   }
@@ -112,5 +119,13 @@
 
   .path-polygon {
     fill-opacity: 0.35
+  }
+
+  .line-label{
+    @include fs-base;
+    text-anchor: middle;
+    paint-order: stroke;
+    stroke: $off-white;
+    stroke-width: 2pt;
   }
 </style>
