@@ -18,7 +18,7 @@
 	import ChartPlaceholder from '$lib/components/global/chart-placeholder.svelte';
 
 	// // import utils
-	import { formatMonth } from '$lib/utils/format-dates';
+	import { formatMonth, formatYear } from '$lib/utils/format-dates';
 	import parseCopy from '$lib/utils/parse-copy';
 	import milestones from "$lib/utils/milestones";
 
@@ -206,7 +206,7 @@
 						{ zKey }
 						spanCol={12}
 						customClass={'chart-medium'}
-						formatTickX={formatMonth}
+						formatTickX={formatYear}
 						url={ url }
 						caption={d.value.captions}
 						displayAnnotation={ false }

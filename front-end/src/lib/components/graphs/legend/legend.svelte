@@ -8,9 +8,9 @@
 </script>
 
 <div class='legend'>
-    {#each Array.from(dataMap.keys()) as cat}
+    {#each Array.from(dataMap.keys()).sort((a,b) => colorMap.get(a).order - colorMap.get(b).order) as cat}
         <div class='legend-item'>
-            <div class={'legend-color'} style='--color: {colorMap.get(cat)}'></div>
+            <div class={'legend-color'} style='--color: {colorMap.get(cat).color}'></div>
             <div>{labelMap.get(cat)}</div>
         </div>
     {/each}

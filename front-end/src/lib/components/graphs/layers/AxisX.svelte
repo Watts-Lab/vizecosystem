@@ -51,6 +51,7 @@
 
 <g class='axis x-axis' class:snapTicks>
   {#each tickVals as tick, i}
+    {@const [m, y] = formatTick(tick).split(' ')}
     <g class='tick tick-{ i }' transform='translate({$xScale(tick)},{$yRange[0]})'>
       {#if gridlines !== false}
         <line class="gridline" y1='{$height * -1}' y2='0' x1='0' x2='0'></line>
@@ -58,12 +59,23 @@
       {#if tickMarks === true}
         <line class="tick-mark" y1='{0}' y2='{6}' x1='{xTick || isBandwidth ? $xScale.bandwidth() / 2 : 0}' x2='{xTick || isBandwidth ? $xScale.bandwidth() / 2 : 0}'></line>
       {/if}
+      
       <text
         x="{xTick || isBandwidth ? $xScale.bandwidth() / 2 : 0}"
         y='{yTick}'
         dx=''
         dy=''
-        text-anchor='{textAnchor(i)}'>{formatTick(tick)}</text>
+        text-anchor='{textAnchor(i)}'
+      >{m}</text>
+      {#if y}
+        <text
+          x="{xTick || isBandwidth ? $xScale.bandwidth() / 2 : 0}"
+          y='{yTick}'
+          dx=''
+          dy=12
+          text-anchor='{textAnchor(i)}'
+        >{y}</text>
+      {/if}
     </g>
   {/each}
   {#if baseline === true}

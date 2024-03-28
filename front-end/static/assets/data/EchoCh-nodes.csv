@@ -1,11 +1,11 @@
 year,month,variable,archetype,value
 2016,1,sizes,No or Minimal News,53080028.48390
-2016,2,sizes,No or Minimal News,56623523.64285
+2016,2,sizes,No or Minimal News,56621756.53570
 2016,3,sizes,No or Minimal News,56320525.41931
 2016,4,sizes,No or Minimal News,61644817.13330
-2016,5,sizes,No or Minimal News,63423944.19357
+2016,5,sizes,No or Minimal News,63417886.48389
 2016,6,sizes,No or Minimal News,62316236.89995
-2016,7,sizes,No or Minimal News,58957638.80646
+2016,7,sizes,No or Minimal News,58958785.06453
 2016,8,sizes,No or Minimal News,62667665.35477
 2016,9,sizes,No or Minimal News,57403421.43331
 2016,10,sizes,No or Minimal News,53356948.41929
@@ -14,26 +14,26 @@ year,month,variable,archetype,value
 2017,1,sizes,No or Minimal News,55321345.06449
 2017,2,sizes,No or Minimal News,63749094.14288
 2017,3,sizes,No or Minimal News,65591794.83874
-2017,4,sizes,No or Minimal News,67692864.06667
+2017,4,sizes,No or Minimal News,67689873.03334
 2017,5,sizes,No or Minimal News,68371002.67742
 2017,6,sizes,No or Minimal News,70510256.30008
 2017,7,sizes,No or Minimal News,75623847.16127
-2017,8,sizes,No or Minimal News,67563395.22589
+2017,8,sizes,No or Minimal News,67560115.45170
 2017,9,sizes,No or Minimal News,65328140.13334
 2017,10,sizes,No or Minimal News,66012186.02860
 2017,11,sizes,No or Minimal News,67898735.09997
-2017,12,sizes,No or Minimal News,69080853.09670
-2018,1,sizes,No or Minimal News,66512828.16120
+2017,12,sizes,No or Minimal News,69079528.19348
+2018,1,sizes,No or Minimal News,66505411.19346
 2018,2,sizes,No or Minimal News,73360851.71428
 2018,3,sizes,No or Minimal News,72710106.74197
 2018,4,sizes,No or Minimal News,75896653.33327
-2018,5,sizes,No or Minimal News,74238181.96769
+2018,5,sizes,No or Minimal News,74236843.83866
 2018,6,sizes,No or Minimal News,78713698.73341
-2018,7,sizes,No or Minimal News,82105143.32267
+2018,7,sizes,No or Minimal News,82103363.00008
 2018,8,sizes,No or Minimal News,81729659.03231
 2018,9,sizes,No or Minimal News,76494845.66669
-2018,10,sizes,No or Minimal News,77925723.35480
-2018,11,sizes,No or Minimal News,72229069.79999
+2018,10,sizes,No or Minimal News,77922264.93545
+2018,11,sizes,No or Minimal News,72187981.46666
 2018,12,sizes,No or Minimal News,77096264.45161
 2019,1,sizes,No or Minimal News,80164017.83871
 2019,2,sizes,No or Minimal News,82174857.75000
@@ -81,42 +81,57 @@ year,month,variable,archetype,value
 2022,8,sizes,No or Minimal News,124580177.00000
 2022,9,sizes,No or Minimal News,118191632.33333
 2022,10,sizes,No or Minimal News,122307385.77419
-2016,1,sizes,Hard Broadcast News,67456261.22579
-2016,2,sizes,Hard Broadcast News,65856332.07139
-2016,3,sizes,Hard Broadcast News,56501718.87094
-2016,4,sizes,Hard Broadcast News,59167557.76668
-2016,5,sizes,Hard Broadcast News,59087534.19361
-2016,6,sizes,Hard Broadcast News,60673071.40005
-2016,7,sizes,Hard Broadcast News,60418349.96784
-2016,8,sizes,Hard Broadcast News,56924573.93550
-2016,9,sizes,Hard Broadcast News,67589021.19996
-2016,10,sizes,Hard Broadcast News,70298499.54833
-2016,11,sizes,Hard Broadcast News,69351868.49997
-2016,12,sizes,Hard Broadcast News,61999457.22580
-2017,1,sizes,Hard Broadcast News,64949793.77420
-2017,2,sizes,Hard Broadcast News,58352232.46430
-2017,3,sizes,Hard Broadcast News,57131470.09673
-2017,4,sizes,Hard Broadcast News,54440913.73331
-2017,5,sizes,Hard Broadcast News,54865183.22581
-2017,6,sizes,Hard Broadcast News,58728765.93340
-2017,7,sizes,Hard Broadcast News,53524848.99995
-2017,8,sizes,Hard Broadcast News,55352932.77422
-2017,9,sizes,Hard Broadcast News,53795787.33336
-2017,10,sizes,Hard Broadcast News,56865588.88570
-2017,11,sizes,Hard Broadcast News,55112949.86665
-2017,12,sizes,Hard Broadcast News,56895348.09685
-2018,1,sizes,Hard Broadcast News,59471308.54844
-2018,2,sizes,Hard Broadcast News,54481611.14280
-2018,3,sizes,Hard Broadcast News,54703444.70963
-2018,4,sizes,Hard Broadcast News,54235769.96668
-2018,5,sizes,Hard Broadcast News,52322989.87097
-2018,6,sizes,Hard Broadcast News,55178870.86668
-2018,7,sizes,Hard Broadcast News,52712127.64518
-2018,8,sizes,Hard Broadcast News,51783115.48389
-2018,9,sizes,Hard Broadcast News,53377501.73332
-2018,10,sizes,Hard Broadcast News,50735043.29028
-2018,11,sizes,Hard Broadcast News,56140424.40005
-2018,12,sizes,Hard Broadcast News,56609534.19358
+2022,11,sizes,No or Minimal News,118665694.90000
+2022,12,sizes,No or Minimal News,121857373.09677
+2023,1,sizes,No or Minimal News,121970749.51613
+2023,2,sizes,No or Minimal News,127696348.78571
+2023,3,sizes,No or Minimal News,126309870.48387
+2023,4,sizes,No or Minimal News,128614295.63333
+2023,5,sizes,No or Minimal News,133475454.83871
+2023,6,sizes,No or Minimal News,134599742.50000
+2023,7,sizes,No or Minimal News,137755390.35484
+2023,8,sizes,No or Minimal News,133523257.29032
+2023,9,sizes,No or Minimal News,135513149.96667
+2023,10,sizes,No or Minimal News,130396870.25807
+2023,11,sizes,No or Minimal News,134406168.33333
+2023,12,sizes,No or Minimal News,136732698.54839
+2024,1,sizes,No or Minimal News,135962735.29032
+2016,1,sizes,Hard Broadcast News,67446912.70966
+2016,2,sizes,Hard Broadcast News,65894754.96425
+2016,3,sizes,Hard Broadcast News,56518054.83868
+2016,4,sizes,Hard Broadcast News,59182244.60002
+2016,5,sizes,Hard Broadcast News,59102830.41942
+2016,6,sizes,Hard Broadcast News,60696207.53339
+2016,7,sizes,Hard Broadcast News,60512985.38719
+2016,8,sizes,Hard Broadcast News,57130185.00002
+2016,9,sizes,Hard Broadcast News,67854784.83330
+2016,10,sizes,Hard Broadcast News,70505085.19349
+2016,11,sizes,Hard Broadcast News,69532393.83331
+2016,12,sizes,Hard Broadcast News,62123136.06451
+2017,1,sizes,Hard Broadcast News,64988030.06453
+2017,2,sizes,Hard Broadcast News,58423787.14287
+2017,3,sizes,Hard Broadcast News,57271677.99995
+2017,4,sizes,Hard Broadcast News,54547390.56665
+2017,5,sizes,Hard Broadcast News,54953171.00000
+2017,6,sizes,Hard Broadcast News,58845120.76674
+2017,7,sizes,Hard Broadcast News,53605699.48383
+2017,8,sizes,Hard Broadcast News,55458463.70970
+2017,9,sizes,Hard Broadcast News,54160510.16669
+2017,10,sizes,Hard Broadcast News,58153170.99999
+2017,11,sizes,Hard Broadcast News,56513397.53331
+2017,12,sizes,Hard Broadcast News,58388861.19362
+2018,1,sizes,Hard Broadcast News,60917353.25812
+2018,2,sizes,Hard Broadcast News,56198711.14281
+2018,3,sizes,Hard Broadcast News,56047553.25801
+2018,4,sizes,Hard Broadcast News,55727127.46667
+2018,5,sizes,Hard Broadcast News,53714115.16129
+2018,6,sizes,Hard Broadcast News,56459350.96667
+2018,7,sizes,Hard Broadcast News,54039199.80648
+2018,8,sizes,Hard Broadcast News,53049614.83874
+2018,9,sizes,Hard Broadcast News,54704510.49998
+2018,10,sizes,Hard Broadcast News,51992584.22576
+2018,11,sizes,Hard Broadcast News,57444600.66671
+2018,12,sizes,Hard Broadcast News,58065741.61295
 2019,1,sizes,Hard Broadcast News,61145728.48387
 2019,2,sizes,Hard Broadcast News,62597400.60714
 2019,3,sizes,Hard Broadcast News,59632467.70968
@@ -125,13 +140,13 @@ year,month,variable,archetype,value
 2019,6,sizes,Hard Broadcast News,59771842.13333
 2019,7,sizes,Hard Broadcast News,52358378.54839
 2019,8,sizes,Hard Broadcast News,50938719.70968
-2019,9,sizes,Hard Broadcast News,59363402.90000
+2019,9,sizes,Hard Broadcast News,59371819.93333
 2019,10,sizes,Hard Broadcast News,56589809.74194
 2019,11,sizes,Hard Broadcast News,59730616.36667
 2019,12,sizes,Hard Broadcast News,61335001.32258
-2020,1,sizes,Hard Broadcast News,59445316.12903
+2020,1,sizes,Hard Broadcast News,59442529.09677
 2020,2,sizes,Hard Broadcast News,58820941.55172
-2020,3,sizes,Hard Broadcast News,61580933.25806
+2020,3,sizes,Hard Broadcast News,61600787.45161
 2020,4,sizes,Hard Broadcast News,53876926.33333
 2020,5,sizes,Hard Broadcast News,51382213.93548
 2020,6,sizes,Hard Broadcast News,50195978.16667
@@ -139,10 +154,10 @@ year,month,variable,archetype,value
 2020,8,sizes,Hard Broadcast News,47946010.16129
 2020,9,sizes,Hard Broadcast News,54994327.00000
 2020,10,sizes,Hard Broadcast News,57402476.54839
-2020,11,sizes,Hard Broadcast News,52538801.06667
+2020,11,sizes,Hard Broadcast News,52535239.56667
 2020,12,sizes,Hard Broadcast News,47945186.48387
 2021,1,sizes,Hard Broadcast News,52749976.48387
-2021,2,sizes,Hard Broadcast News,44645428.32143
+2021,2,sizes,Hard Broadcast News,44652030.85714
 2021,3,sizes,Hard Broadcast News,47785658.45161
 2021,4,sizes,Hard Broadcast News,48715028.23333
 2021,5,sizes,Hard Broadcast News,47293293.77419
@@ -155,50 +170,65 @@ year,month,variable,archetype,value
 2021,12,sizes,Hard Broadcast News,50725417.35484
 2022,1,sizes,Hard Broadcast News,53127170.54839
 2022,2,sizes,Hard Broadcast News,44462080.03571
-2022,3,sizes,Hard Broadcast News,47457933.83871
+2022,3,sizes,Hard Broadcast News,47447467.58065
 2022,4,sizes,Hard Broadcast News,46752947.90000
 2022,5,sizes,Hard Broadcast News,46795952.19355
-2022,6,sizes,Hard Broadcast News,47094595.93333
+2022,6,sizes,Hard Broadcast News,47096993.46667
 2022,7,sizes,Hard Broadcast News,43504346.35484
 2022,8,sizes,Hard Broadcast News,41724835.22581
-2022,9,sizes,Hard Broadcast News,50278738.23333
+2022,9,sizes,Hard Broadcast News,50282294.96667
 2022,10,sizes,Hard Broadcast News,47372780.12903
-2016,1,sizes,Soft Broadcast News,37330655.19355
-2016,2,sizes,Soft Broadcast News,36216240.07145
-2016,3,sizes,Soft Broadcast News,36971415.51608
-2016,4,sizes,Soft Broadcast News,37555756.63328
-2016,5,sizes,Soft Broadcast News,38393389.61289
-2016,6,sizes,Soft Broadcast News,33793741.73339
-2016,7,sizes,Soft Broadcast News,26374270.19354
-2016,8,sizes,Soft Broadcast News,37040489.51616
-2016,9,sizes,Soft Broadcast News,33855880.00004
-2016,10,sizes,Soft Broadcast News,31655335.48383
-2016,11,sizes,Soft Broadcast News,31286765.83336
-2016,12,sizes,Soft Broadcast News,40162884.25803
-2017,1,sizes,Soft Broadcast News,32794707.77417
-2017,2,sizes,Soft Broadcast News,33749474.00004
-2017,3,sizes,Soft Broadcast News,34705735.09673
-2017,4,sizes,Soft Broadcast News,33651282.53335
-2017,5,sizes,Soft Broadcast News,33859570.29038
-2017,6,sizes,Soft Broadcast News,29266866.93334
-2017,7,sizes,Soft Broadcast News,30732186.80651
-2017,8,sizes,Soft Broadcast News,31472348.35489
-2017,9,sizes,Soft Broadcast News,33780507.56671
-2017,10,sizes,Soft Broadcast News,33481526.68571
-2017,11,sizes,Soft Broadcast News,37031556.83329
-2017,12,sizes,Soft Broadcast News,35826704.45161
-2018,1,sizes,Soft Broadcast News,35807207.06456
-2018,2,sizes,Soft Broadcast News,35460807.35715
-2018,3,sizes,Soft Broadcast News,34835490.80642
-2018,4,sizes,Soft Broadcast News,32484964.26670
-2018,5,sizes,Soft Broadcast News,37258003.74191
-2018,6,sizes,Soft Broadcast News,30288008.73342
-2018,7,sizes,Soft Broadcast News,30092163.45166
-2018,8,sizes,Soft Broadcast News,30835751.06451
-2018,9,sizes,Soft Broadcast News,29362360.49998
-2018,10,sizes,Soft Broadcast News,34833638.93550
-2018,11,sizes,Soft Broadcast News,34023709.00001
-2018,12,sizes,Soft Broadcast News,33297390.38708
+2022,11,sizes,Hard Broadcast News,46698487.30000
+2022,12,sizes,Hard Broadcast News,47072703.00000
+2023,1,sizes,Hard Broadcast News,50006228.87097
+2023,2,sizes,Hard Broadcast News,45738419.10714
+2023,3,sizes,Hard Broadcast News,47363119.67742
+2023,4,sizes,Hard Broadcast News,44811072.73333
+2023,5,sizes,Hard Broadcast News,43345602.41935
+2023,6,sizes,Hard Broadcast News,41808883.06667
+2023,7,sizes,Hard Broadcast News,40532946.12903
+2023,8,sizes,Hard Broadcast News,40534797.70968
+2023,9,sizes,Hard Broadcast News,43659661.33333
+2023,10,sizes,Hard Broadcast News,46889520.00000
+2023,11,sizes,Hard Broadcast News,46213665.96667
+2023,12,sizes,Hard Broadcast News,45079460.74194
+2024,1,sizes,Hard Broadcast News,45304630.25806
+2016,1,sizes,Soft Broadcast News,37353349.35484
+2016,2,sizes,Soft Broadcast News,36214203.42859
+2016,3,sizes,Soft Broadcast News,36963859.70963
+2016,4,sizes,Soft Broadcast News,37548260.66661
+2016,5,sizes,Soft Broadcast News,38383236.80644
+2016,6,sizes,Soft Broadcast News,33804884.26672
+2016,7,sizes,Soft Broadcast News,26368102.16128
+2016,8,sizes,Soft Broadcast News,36991762.83874
+2016,9,sizes,Soft Broadcast News,33823836.76670
+2016,10,sizes,Soft Broadcast News,31650425.06447
+2016,11,sizes,Soft Broadcast News,31277165.70002
+2016,12,sizes,Soft Broadcast News,40158144.25803
+2017,1,sizes,Soft Broadcast News,32810404.38707
+2017,2,sizes,Soft Broadcast News,33745454.64290
+2017,3,sizes,Soft Broadcast News,34680322.64512
+2017,4,sizes,Soft Broadcast News,33641242.16668
+2017,5,sizes,Soft Broadcast News,33846221.67748
+2017,6,sizes,Soft Broadcast News,29259553.13334
+2017,7,sizes,Soft Broadcast News,30731352.06457
+2017,8,sizes,Soft Broadcast News,31457454.77424
+2017,9,sizes,Soft Broadcast News,33692087.50004
+2017,10,sizes,Soft Broadcast News,33287800.45713
+2017,11,sizes,Soft Broadcast News,36780709.59996
+2017,12,sizes,Soft Broadcast News,35510175.48386
+2018,1,sizes,Soft Broadcast News,35555977.90327
+2018,2,sizes,Soft Broadcast News,35188251.92858
+2018,3,sizes,Soft Broadcast News,34620080.74190
+2018,4,sizes,Soft Broadcast News,32243549.73336
+2018,5,sizes,Soft Broadcast News,37054398.83869
+2018,6,sizes,Soft Broadcast News,30002164.26676
+2018,7,sizes,Soft Broadcast News,29853293.67747
+2018,8,sizes,Soft Broadcast News,30625834.22580
+2018,9,sizes,Soft Broadcast News,29078243.96664
+2018,10,sizes,Soft Broadcast News,34607808.93550
+2018,11,sizes,Soft Broadcast News,33789136.63334
+2018,12,sizes,Soft Broadcast News,32961844.61288
 2019,1,sizes,Soft Broadcast News,23999135.61290
 2019,2,sizes,Soft Broadcast News,21542066.35714
 2019,3,sizes,Soft Broadcast News,22790868.38710
@@ -207,13 +237,13 @@ year,month,variable,archetype,value
 2019,6,sizes,Soft Broadcast News,20249266.63333
 2019,7,sizes,Soft Broadcast News,20385386.77419
 2019,8,sizes,Soft Broadcast News,21331584.16129
-2019,9,sizes,Soft Broadcast News,20698452.20000
+2019,9,sizes,Soft Broadcast News,20690035.16667
 2019,10,sizes,Soft Broadcast News,22185955.80645
 2019,11,sizes,Soft Broadcast News,20535174.00000
 2019,12,sizes,Soft Broadcast News,21721293.90323
-2020,1,sizes,Soft Broadcast News,19042304.41935
+2020,1,sizes,Soft Broadcast News,19045091.45161
 2020,2,sizes,Soft Broadcast News,19563057.93103
-2020,3,sizes,Soft Broadcast News,17158750.93548
+2020,3,sizes,Soft Broadcast News,17145700.51613
 2020,4,sizes,Soft Broadcast News,18629368.96667
 2020,5,sizes,Soft Broadcast News,18341822.29032
 2020,6,sizes,Soft Broadcast News,16432645.70000
@@ -223,8 +253,8 @@ year,month,variable,archetype,value
 2020,10,sizes,Soft Broadcast News,13411946.74194
 2020,11,sizes,Soft Broadcast News,13487428.73333
 2020,12,sizes,Soft Broadcast News,18371462.29032
-2021,1,sizes,Soft Broadcast News,12210171.64516
-2021,2,sizes,Soft Broadcast News,13598836.85714
+2021,1,sizes,Soft Broadcast News,12212356.09677
+2021,2,sizes,Soft Broadcast News,13596565.42857
 2021,3,sizes,Soft Broadcast News,15721816.96774
 2021,4,sizes,Soft Broadcast News,15286396.36667
 2021,5,sizes,Soft Broadcast News,16459440.03226
@@ -237,214 +267,259 @@ year,month,variable,archetype,value
 2021,12,sizes,Soft Broadcast News,18531689.00000
 2022,1,sizes,Soft Broadcast News,17969142.51613
 2022,2,sizes,Soft Broadcast News,16887816.03571
-2022,3,sizes,Soft Broadcast News,15381223.61290
+2022,3,sizes,Soft Broadcast News,15391689.87097
 2022,4,sizes,Soft Broadcast News,15561026.36667
 2022,5,sizes,Soft Broadcast News,16002141.74194
 2022,6,sizes,Soft Broadcast News,13671184.30000
 2022,7,sizes,Soft Broadcast News,14016642.87097
 2022,8,sizes,Soft Broadcast News,15081393.74194
-2022,9,sizes,Soft Broadcast News,13488852.46667
+2022,9,sizes,Soft Broadcast News,13485295.73333
 2022,10,sizes,Soft Broadcast News,15632754.70968
-2016,1,sizes,Right Wing Cable,21281850.16127
-2016,2,sizes,Right Wing Cable,18841219.60717
-2016,3,sizes,Right Wing Cable,22348728.06449
-2016,4,sizes,Right Wing Cable,19144985.16668
-2016,5,sizes,Right Wing Cable,19291276.61294
-2016,6,sizes,Right Wing Cable,19995526.03332
-2016,7,sizes,Right Wing Cable,23334798.67745
-2016,8,sizes,Right Wing Cable,20637052.51612
-2016,9,sizes,Right Wing Cable,21822212.90002
-2016,10,sizes,Right Wing Cable,23509077.41936
-2016,11,sizes,Right Wing Cable,29204833.00001
-2016,12,sizes,Right Wing Cable,22973238.70969
-2017,1,sizes,Right Wing Cable,26256471.77415
-2017,2,sizes,Right Wing Cable,24934919.53568
-2017,3,sizes,Right Wing Cable,23274206.77416
-2017,4,sizes,Right Wing Cable,23744427.53330
-2017,5,sizes,Right Wing Cable,22632451.87096
-2017,6,sizes,Right Wing Cable,22856607.73332
-2017,7,sizes,Right Wing Cable,21414309.54834
-2017,8,sizes,Right Wing Cable,23132140.93547
-2017,9,sizes,Right Wing Cable,23747121.80002
-2017,10,sizes,Right Wing Cable,24195049.45716
-2017,11,sizes,Right Wing Cable,22766642.86660
-2017,12,sizes,Right Wing Cable,22288447.58062
-2018,1,sizes,Right Wing Cable,22628450.54836
-2018,2,sizes,Right Wing Cable,22148925.07139
-2018,3,sizes,Right Wing Cable,21461945.70962
-2018,4,sizes,Right Wing Cable,22090174.23340
-2018,5,sizes,Right Wing Cable,21582459.74191
-2018,6,sizes,Right Wing Cable,22408692.26668
-2018,7,sizes,Right Wing Cable,21662441.03226
-2018,8,sizes,Right Wing Cable,20911135.83872
-2018,9,sizes,Right Wing Cable,22895104.53333
-2018,10,sizes,Right Wing Cable,23699820.99997
-2018,11,sizes,Right Wing Cable,23484983.96663
-2018,12,sizes,Right Wing Cable,20972294.87097
-2019,1,sizes,Right Wing Cable,21883611.25806
-2019,2,sizes,Right Wing Cable,22156453.28571
-2019,3,sizes,Right Wing Cable,21516485.80645
-2019,4,sizes,Right Wing Cable,21373669.90000
-2019,5,sizes,Right Wing Cable,20475078.38710
-2019,6,sizes,Right Wing Cable,20348863.96667
-2019,7,sizes,Right Wing Cable,21773782.06452
-2019,8,sizes,Right Wing Cable,21502317.03226
-2019,9,sizes,Right Wing Cable,21242428.50000
-2019,10,sizes,Right Wing Cable,21706989.25806
-2019,11,sizes,Right Wing Cable,21926210.56667
-2019,12,sizes,Right Wing Cable,22551893.12903
-2020,1,sizes,Right Wing Cable,24944727.38710
-2020,2,sizes,Right Wing Cable,24686542.62069
-2020,3,sizes,Right Wing Cable,28780630.83871
-2020,4,sizes,Right Wing Cable,27894281.33333
-2020,5,sizes,Right Wing Cable,25766473.09677
-2020,6,sizes,Right Wing Cable,26090698.33333
-2020,7,sizes,Right Wing Cable,24899997.67742
-2020,8,sizes,Right Wing Cable,26769892.54839
-2020,9,sizes,Right Wing Cable,27650278.93333
-2020,10,sizes,Right Wing Cable,29289476.51613
-2020,11,sizes,Right Wing Cable,33897838.40000
-2020,12,sizes,Right Wing Cable,23344249.83871
-2021,1,sizes,Right Wing Cable,26264784.70968
-2021,2,sizes,Right Wing Cable,22515337.67857
-2021,3,sizes,Right Wing Cable,21560682.22581
-2021,4,sizes,Right Wing Cable,21744794.93333
-2021,5,sizes,Right Wing Cable,21210437.03226
-2021,6,sizes,Right Wing Cable,21009940.10000
-2021,7,sizes,Right Wing Cable,20363976.45161
-2021,8,sizes,Right Wing Cable,23951996.45161
-2021,9,sizes,Right Wing Cable,23233392.66667
-2021,10,sizes,Right Wing Cable,22635335.70968
-2021,11,sizes,Right Wing Cable,24422491.36667
-2021,12,sizes,Right Wing Cable,22679486.80645
-2022,1,sizes,Right Wing Cable,22761918.32258
-2022,2,sizes,Right Wing Cable,25928231.75000
-2022,3,sizes,Right Wing Cable,27213302.90323
-2022,4,sizes,Right Wing Cable,24518873.50000
-2022,5,sizes,Right Wing Cable,23692277.22581
-2022,6,sizes,Right Wing Cable,23533949.13333
-2022,7,sizes,Right Wing Cable,23009039.77419
-2022,8,sizes,Right Wing Cable,23306515.80645
-2022,9,sizes,Right Wing Cable,22799729.10000
-2022,10,sizes,Right Wing Cable,22673045.32258
-2016,1,sizes,Left Wing Cable,17523810.19351
-2016,2,sizes,Left Wing Cable,20403246.46432
-2016,3,sizes,Left Wing Cable,25070144.80642
-2016,4,sizes,Left Wing Cable,20741086.63332
-2016,5,sizes,Left Wing Cable,18861615.32257
-2016,6,sizes,Left Wing Cable,21195945.36666
-2016,7,sizes,Left Wing Cable,29054487.61295
-2016,8,sizes,Left Wing Cable,20269461.80644
-2016,9,sizes,Left Wing Cable,23384887.66669
-2016,10,sizes,Left Wing Cable,26228104.45168
-2016,11,sizes,Left Wing Cable,31738088.23328
-2016,12,sizes,Left Wing Cable,18452340.03229
-2017,1,sizes,Left Wing Cable,24192028.03228
-2017,2,sizes,Left Wing Cable,23119607.99999
-2017,3,sizes,Left Wing Cable,22808866.58066
-2017,4,sizes,Left Wing Cable,23596371.10004
-2017,5,sizes,Left Wing Cable,23982104.90325
-2017,6,sizes,Left Wing Cable,23403852.59995
-2017,7,sizes,Left Wing Cable,23526679.87091
-2017,8,sizes,Left Wing Cable,26574730.03226
-2017,9,sizes,Left Wing Cable,28793582.83336
-2017,10,sizes,Left Wing Cable,24645065.42858
-2017,11,sizes,Left Wing Cable,22858634.30001
-2017,12,sizes,Left Wing Cable,24004581.58066
-2018,1,sizes,Left Wing Cable,22458510.58065
-2018,2,sizes,Left Wing Cable,21873692.96425
-2018,3,sizes,Left Wing Cable,21942522.67739
-2018,4,sizes,Left Wing Cable,22098724.13333
-2018,5,sizes,Left Wing Cable,21574360.93545
-2018,6,sizes,Left Wing Cable,20350884.70005
-2018,7,sizes,Left Wing Cable,21359726.25807
-2018,8,sizes,Left Wing Cable,22459461.48391
-2018,9,sizes,Left Wing Cable,24230403.53332
-2018,10,sizes,Left Wing Cable,22100105.16133
-2018,11,sizes,Left Wing Cable,24846559.43333
-2018,12,sizes,Left Wing Cable,23648159.45160
-2019,1,sizes,Left Wing Cable,23994114.87097
-2019,2,sizes,Left Wing Cable,22100070.07143
-2019,3,sizes,Left Wing Cable,20410023.00000
-2019,4,sizes,Left Wing Cable,19693474.63333
-2019,5,sizes,Left Wing Cable,19035862.09677
-2019,6,sizes,Left Wing Cable,19291782.36667
-2019,7,sizes,Left Wing Cable,22534706.12903
-2019,8,sizes,Left Wing Cable,20636309.96774
-2019,9,sizes,Left Wing Cable,21178805.50000
-2019,10,sizes,Left Wing Cable,23019068.58065
-2019,11,sizes,Left Wing Cable,22628641.33333
-2019,12,sizes,Left Wing Cable,22315206.80645
-2020,1,sizes,Left Wing Cable,24852044.70968
-2020,2,sizes,Left Wing Cable,21602066.24138
-2020,3,sizes,Left Wing Cable,30801303.38710
-2020,4,sizes,Left Wing Cable,28132927.46667
-2020,5,sizes,Left Wing Cable,27785630.16129
-2020,6,sizes,Left Wing Cable,27575695.86667
-2020,7,sizes,Left Wing Cable,24909149.67742
-2020,8,sizes,Left Wing Cable,27025957.83871
-2020,9,sizes,Left Wing Cable,25798900.63333
-2020,10,sizes,Left Wing Cable,28460191.03226
-2020,11,sizes,Left Wing Cable,40700978.43333
-2020,12,sizes,Left Wing Cable,27816403.19355
-2021,1,sizes,Left Wing Cable,38369115.00000
-2021,2,sizes,Left Wing Cable,28112113.96429
-2021,3,sizes,Left Wing Cable,22506860.03226
-2021,4,sizes,Left Wing Cable,22454772.46667
-2021,5,sizes,Left Wing Cable,19601996.45161
-2021,6,sizes,Left Wing Cable,18767968.20000
-2021,7,sizes,Left Wing Cable,18995279.38710
-2021,8,sizes,Left Wing Cable,19856547.32258
-2021,9,sizes,Left Wing Cable,18234197.46667
-2021,10,sizes,Left Wing Cable,15914511.19355
-2021,11,sizes,Left Wing Cable,15809337.66667
-2021,12,sizes,Left Wing Cable,17024092.90323
-2022,1,sizes,Left Wing Cable,15186943.93548
-2022,2,sizes,Left Wing Cable,20099749.96429
-2022,3,sizes,Left Wing Cable,21029422.61290
-2022,4,sizes,Left Wing Cable,16589029.26667
-2022,5,sizes,Left Wing Cable,16204450.48387
-2022,6,sizes,Left Wing Cable,18120844.23333
-2022,7,sizes,Left Wing Cable,17586316.61290
-2022,8,sizes,Left Wing Cable,17260288.41935
-2022,9,sizes,Left Wing Cable,18952107.86667
-2022,10,sizes,Left Wing Cable,16453130.74194
-2016,1,sizes,Spanish News,16002388.54835
-2016,2,sizes,Spanish News,14752996.85712
-2016,3,sizes,Spanish News,14097140.77420
-2016,4,sizes,Spanish News,13984396.06666
-2016,5,sizes,Spanish News,13823124.48388
-2016,6,sizes,Spanish News,13816885.26663
-2016,7,sizes,Spanish News,13441689.45158
-2016,8,sizes,Spanish News,14030276.41936
-2016,9,sizes,Spanish News,14464957.66667
-2016,10,sizes,Spanish News,14434546.64517
-2016,11,sizes,Spanish News,15107499.23331
-2016,12,sizes,Spanish News,14162336.09679
-2017,1,sizes,Spanish News,14952718.54840
-2017,2,sizes,Spanish News,14446392.14286
-2017,3,sizes,Spanish News,14224115.12906
-2017,4,sizes,Spanish News,13768186.43333
-2017,5,sizes,Spanish News,13533020.22583
-2017,6,sizes,Spanish News,13321432.83334
+2022,11,sizes,Soft Broadcast News,17511419.93333
+2022,12,sizes,Soft Broadcast News,18356171.74194
+2023,1,sizes,Soft Broadcast News,16212243.70968
+2023,2,sizes,Soft Broadcast News,16092204.32143
+2023,3,sizes,Soft Broadcast News,15605816.06452
+2023,4,sizes,Soft Broadcast News,15948263.66667
+2023,5,sizes,Soft Broadcast News,15483630.54839
+2023,6,sizes,Soft Broadcast News,15151040.00000
+2023,7,sizes,Soft Broadcast News,15294082.87097
+2023,8,sizes,Soft Broadcast News,15654466.03226
+2023,9,sizes,Soft Broadcast News,15343662.30000
+2023,10,sizes,Soft Broadcast News,14227791.35484
+2023,11,sizes,Soft Broadcast News,16321498.93333
+2023,12,sizes,Soft Broadcast News,16874533.12903
+2024,1,sizes,Soft Broadcast News,16924158.54839
+2016,1,sizes,Partisan Cable (right),21270797.58062
+2016,2,sizes,Partisan Cable (right),18844116.89288
+2016,3,sizes,Partisan Cable (right),22348728.06449
+2016,4,sizes,Partisan Cable (right),19143820.50002
+2016,5,sizes,Partisan Cable (right),19291276.61294
+2016,6,sizes,Partisan Cable (right),19995526.03332
+2016,7,sizes,Partisan Cable (right),23335991.32261
+2016,8,sizes,Partisan Cable (right),20637052.51612
+2016,9,sizes,Partisan Cable (right),21822212.90002
+2016,10,sizes,Partisan Cable (right),23509077.41936
+2016,11,sizes,Partisan Cable (right),29204833.00001
+2016,12,sizes,Partisan Cable (right),22973238.70969
+2017,1,sizes,Partisan Cable (right),26248146.96770
+2017,2,sizes,Partisan Cable (right),24934919.53568
+2017,3,sizes,Partisan Cable (right),23276153.67739
+2017,4,sizes,Partisan Cable (right),23744427.53330
+2017,5,sizes,Partisan Cable (right),22631556.41935
+2017,6,sizes,Partisan Cable (right),22856607.73332
+2017,7,sizes,Partisan Cable (right),21414309.54834
+2017,8,sizes,Partisan Cable (right),23129865.06450
+2017,9,sizes,Partisan Cable (right),23751122.13335
+2017,10,sizes,Partisan Cable (right),24168091.51430
+2017,11,sizes,Partisan Cable (right),22729998.39993
+2017,12,sizes,Partisan Cable (right),22270851.25803
+2018,1,sizes,Partisan Cable (right),22585559.70965
+2018,2,sizes,Partisan Cable (right),22081111.42854
+2018,3,sizes,Partisan Cable (right),21449461.51607
+2018,4,sizes,Partisan Cable (right),22058001.43340
+2018,5,sizes,Partisan Cable (right),21575945.61288
+2018,6,sizes,Partisan Cable (right),22415814.06668
+2018,7,sizes,Partisan Cable (right),21636203.87097
+2018,8,sizes,Partisan Cable (right),20898814.51614
+2018,9,sizes,Partisan Cable (right),22849718.63333
+2018,10,sizes,Partisan Cable (right),23675007.74191
+2018,11,sizes,Partisan Cable (right),23438058.03330
+2018,12,sizes,Partisan Cable (right),20968020.54839
+2019,1,sizes,Partisan Cable (right),21883611.25806
+2019,2,sizes,Partisan Cable (right),22156453.28571
+2019,3,sizes,Partisan Cable (right),21516485.80645
+2019,4,sizes,Partisan Cable (right),21373669.90000
+2019,5,sizes,Partisan Cable (right),20475078.38710
+2019,6,sizes,Partisan Cable (right),20348863.96667
+2019,7,sizes,Partisan Cable (right),21773782.06452
+2019,8,sizes,Partisan Cable (right),21502317.03226
+2019,9,sizes,Partisan Cable (right),21242428.50000
+2019,10,sizes,Partisan Cable (right),21706989.25806
+2019,11,sizes,Partisan Cable (right),21926210.56667
+2019,12,sizes,Partisan Cable (right),22551893.12903
+2020,1,sizes,Partisan Cable (right),24944727.38710
+2020,2,sizes,Partisan Cable (right),24686542.62069
+2020,3,sizes,Partisan Cable (right),28778648.51613
+2020,4,sizes,Partisan Cable (right),27894281.33333
+2020,5,sizes,Partisan Cable (right),25766473.09677
+2020,6,sizes,Partisan Cable (right),26090698.33333
+2020,7,sizes,Partisan Cable (right),24899997.67742
+2020,8,sizes,Partisan Cable (right),26769892.54839
+2020,9,sizes,Partisan Cable (right),27650278.93333
+2020,10,sizes,Partisan Cable (right),29289476.51613
+2020,11,sizes,Partisan Cable (right),33899458.20000
+2020,12,sizes,Partisan Cable (right),23344249.83871
+2021,1,sizes,Partisan Cable (right),26264784.70968
+2021,2,sizes,Partisan Cable (right),22515337.67857
+2021,3,sizes,Partisan Cable (right),21560682.22581
+2021,4,sizes,Partisan Cable (right),21744794.93333
+2021,5,sizes,Partisan Cable (right),21210437.03226
+2021,6,sizes,Partisan Cable (right),21009940.10000
+2021,7,sizes,Partisan Cable (right),20363976.45161
+2021,8,sizes,Partisan Cable (right),23951996.45161
+2021,9,sizes,Partisan Cable (right),23233392.66667
+2021,10,sizes,Partisan Cable (right),22635335.70968
+2021,11,sizes,Partisan Cable (right),24422491.36667
+2021,12,sizes,Partisan Cable (right),22679486.80645
+2022,1,sizes,Partisan Cable (right),22761918.32258
+2022,2,sizes,Partisan Cable (right),25928231.75000
+2022,3,sizes,Partisan Cable (right),27213302.90323
+2022,4,sizes,Partisan Cable (right),24518873.50000
+2022,5,sizes,Partisan Cable (right),23692277.22581
+2022,6,sizes,Partisan Cable (right),23533949.13333
+2022,7,sizes,Partisan Cable (right),23009039.77419
+2022,8,sizes,Partisan Cable (right),23306515.80645
+2022,9,sizes,Partisan Cable (right),22799729.10000
+2022,10,sizes,Partisan Cable (right),22673045.32258
+2022,11,sizes,Partisan Cable (right),24340061.56667
+2022,12,sizes,Partisan Cable (right),21994371.90323
+2023,1,sizes,Partisan Cable (right),21620081.58065
+2023,2,sizes,Partisan Cable (right),21754541.10714
+2023,3,sizes,Partisan Cable (right),21701762.48387
+2023,4,sizes,Partisan Cable (right),21839580.86667
+2023,5,sizes,Partisan Cable (right),20177682.83871
+2023,6,sizes,Partisan Cable (right),19822414.10000
+2023,7,sizes,Partisan Cable (right),19607904.61290
+2023,8,sizes,Partisan Cable (right),21852507.12903
+2023,9,sizes,Partisan Cable (right),19439977.66667
+2023,10,sizes,Partisan Cable (right),22546940.51613
+2023,11,sizes,Partisan Cable (right),20528397.80000
+2023,12,sizes,Partisan Cable (right),18324884.03226
+2024,1,sizes,Partisan Cable (right),19399730.03226
+2016,1,sizes,Partisan Cable (left),17547178.45157
+2016,2,sizes,Partisan Cable (left),20410251.10718
+2016,3,sizes,Partisan Cable (left),25089821.99997
+2016,4,sizes,Partisan Cable (left),20755840.79999
+2016,5,sizes,Partisan Cable (left),18874547.06451
+2016,6,sizes,Partisan Cable (left),21206667.99999
+2016,7,sizes,Partisan Cable (left),29053100.70972
+2016,8,sizes,Partisan Cable (left),20281146.32257
+2016,9,sizes,Partisan Cable (left),23401610.46669
+2016,10,sizes,Partisan Cable (left),26255623.74200
+2016,11,sizes,Partisan Cable (left),31744083.13328
+2016,12,sizes,Partisan Cable (left),18456005.32261
+2017,1,sizes,Partisan Cable (left),24203644.67744
+2017,2,sizes,Partisan Cable (left),23119710.99999
+2017,3,sizes,Partisan Cable (left),22811103.19356
+2017,4,sizes,Partisan Cable (left),23599462.03337
+2017,5,sizes,Partisan Cable (left),23977489.67744
+2017,6,sizes,Partisan Cable (left),23407868.09995
+2017,7,sizes,Partisan Cable (left),23528921.48382
+2017,8,sizes,Partisan Cable (left),26565066.19355
+2017,9,sizes,Partisan Cable (left),28793847.76669
+2017,10,sizes,Partisan Cable (left),24301434.22859
+2017,11,sizes,Partisan Cable (left),22613320.60002
+2017,12,sizes,Partisan Cable (left),23620371.38711
+2018,1,sizes,Partisan Cable (left),22214609.19355
+2018,2,sizes,Partisan Cable (left),21448183.71425
+2018,3,sizes,Partisan Cable (left),21621056.83869
+2018,4,sizes,Partisan Cable (left),21693615.66667
+2018,5,sizes,Partisan Cable (left),21270507.64512
+2018,6,sizes,Partisan Cable (left),20101953.86671
+2018,7,sizes,Partisan Cable (left),21008516.41936
+2018,8,sizes,Partisan Cable (left),22185417.19359
+2018,9,sizes,Partisan Cable (left),23896017.03332
+2018,10,sizes,Partisan Cable (left),21823978.61294
+2018,11,sizes,Partisan Cable (left),24556690.96666
+2018,12,sizes,Partisan Cable (left),23332454.19353
+2019,1,sizes,Partisan Cable (left),23994114.87097
+2019,2,sizes,Partisan Cable (left),22100070.07143
+2019,3,sizes,Partisan Cable (left),20410023.00000
+2019,4,sizes,Partisan Cable (left),19693474.63333
+2019,5,sizes,Partisan Cable (left),19035862.09677
+2019,6,sizes,Partisan Cable (left),19291782.36667
+2019,7,sizes,Partisan Cable (left),22534706.12903
+2019,8,sizes,Partisan Cable (left),20636309.96774
+2019,9,sizes,Partisan Cable (left),21178805.50000
+2019,10,sizes,Partisan Cable (left),23019068.58065
+2019,11,sizes,Partisan Cable (left),22628641.33333
+2019,12,sizes,Partisan Cable (left),22315206.80645
+2020,1,sizes,Partisan Cable (left),24852044.70968
+2020,2,sizes,Partisan Cable (left),21602066.24138
+2020,3,sizes,Partisan Cable (left),30798541.41935
+2020,4,sizes,Partisan Cable (left),28132927.46667
+2020,5,sizes,Partisan Cable (left),27785630.16129
+2020,6,sizes,Partisan Cable (left),27575695.86667
+2020,7,sizes,Partisan Cable (left),24909149.67742
+2020,8,sizes,Partisan Cable (left),27025957.83871
+2020,9,sizes,Partisan Cable (left),25798900.63333
+2020,10,sizes,Partisan Cable (left),28460191.03226
+2020,11,sizes,Partisan Cable (left),40702920.13333
+2020,12,sizes,Partisan Cable (left),27816403.19355
+2021,1,sizes,Partisan Cable (left),38366930.54839
+2021,2,sizes,Partisan Cable (left),28112113.96429
+2021,3,sizes,Partisan Cable (left),22506860.03226
+2021,4,sizes,Partisan Cable (left),22454772.46667
+2021,5,sizes,Partisan Cable (left),19601996.45161
+2021,6,sizes,Partisan Cable (left),18767968.20000
+2021,7,sizes,Partisan Cable (left),18995279.38710
+2021,8,sizes,Partisan Cable (left),19856547.32258
+2021,9,sizes,Partisan Cable (left),18234197.46667
+2021,10,sizes,Partisan Cable (left),15914511.19355
+2021,11,sizes,Partisan Cable (left),15809337.66667
+2021,12,sizes,Partisan Cable (left),17024092.90323
+2022,1,sizes,Partisan Cable (left),15186943.93548
+2022,2,sizes,Partisan Cable (left),20099749.96429
+2022,3,sizes,Partisan Cable (left),21029422.61290
+2022,4,sizes,Partisan Cable (left),16589029.26667
+2022,5,sizes,Partisan Cable (left),16204450.48387
+2022,6,sizes,Partisan Cable (left),18118446.70000
+2022,7,sizes,Partisan Cable (left),17586316.61290
+2022,8,sizes,Partisan Cable (left),17260288.41935
+2022,9,sizes,Partisan Cable (left),18955451.00000
+2022,10,sizes,Partisan Cable (left),16453130.74194
+2022,11,sizes,Partisan Cable (left),18651514.13333
+2022,12,sizes,Partisan Cable (left),17700901.77419
+2023,1,sizes,Partisan Cable (left),16671892.03226
+2023,2,sizes,Partisan Cable (left),15424908.89286
+2023,3,sizes,Partisan Cable (left),15017867.77419
+2023,4,sizes,Partisan Cable (left),15441278.06667
+2023,5,sizes,Partisan Cable (left),15166727.87097
+2023,6,sizes,Partisan Cable (left),16765944.46667
+2023,7,sizes,Partisan Cable (left),14440692.61290
+2023,8,sizes,Partisan Cable (left),17068128.70968
+2023,9,sizes,Partisan Cable (left),15353526.36667
+2023,10,sizes,Partisan Cable (left),17760643.58065
+2023,11,sizes,Partisan Cable (left),15417593.56667
+2023,12,sizes,Partisan Cable (left),15080843.83871
+2024,1,sizes,Partisan Cable (left),14280930.77419
+2016,1,sizes,Spanish News,16001360.41932
+2016,2,sizes,Spanish News,14721863.96426
+2016,3,sizes,Spanish News,14061650.29033
+2016,4,sizes,Spanish News,13964145.16666
+2016,5,sizes,Spanish News,13816692.25807
+2016,6,sizes,Spanish News,13803443.73330
+2016,7,sizes,Spanish News,13435774.45158
+2016,8,sizes,Spanish News,14020049.80646
+2016,9,sizes,Spanish News,14446514.43334
+2016,10,sizes,Spanish News,14418731.67743
+2016,11,sizes,Spanish News,15080669.56664
+2016,12,sizes,Spanish News,14116238.83873
+2017,1,sizes,Spanish News,14940599.96775
+2017,2,sizes,Spanish News,14434820.50000
+2017,3,sizes,Spanish News,14194963.12906
+2017,4,sizes,Spanish News,13755200.63333
+2017,5,sizes,Spanish News,13531169.38712
+2017,6,sizes,Spanish News,13320368.96667
 2017,7,sizes,Spanish News,12955036.38711
 2017,8,sizes,Spanish News,13424765.77421
-2017,9,sizes,Spanish News,15096151.49999
-2017,10,sizes,Spanish News,13634501.82858
-2017,11,sizes,Spanish News,13469150.43332
-2017,12,sizes,Spanish News,13349197.45161
-2018,1,sizes,Spanish News,14182591.93548
-2018,2,sizes,Spanish News,13479627.85716
-2018,3,sizes,Spanish News,13545988.03223
-2018,4,sizes,Spanish News,13393403.86668
-2018,5,sizes,Spanish News,13272081.12905
-2018,6,sizes,Spanish News,13775217.10000
-2018,7,sizes,Spanish News,13237924.38707
-2018,8,sizes,Spanish News,12354072.06453
-2018,9,sizes,Spanish News,13068803.90000
-2018,10,sizes,Spanish News,12772693.90322
-2018,11,sizes,Spanish News,13244672.90004
-2018,12,sizes,Spanish News,12722048.45161
+2017,9,sizes,Spanish News,15097127.89999
+2017,10,sizes,Spanish News,13629422.02858
+2017,11,sizes,Spanish News,13454427.83332
+2017,12,sizes,Spanish News,13346399.19355
+2018,1,sizes,Spanish News,14174746.51613
+2018,2,sizes,Spanish News,13481679.57145
+2018,3,sizes,Spanish News,13538046.99997
+2018,4,sizes,Spanish News,13369872.73335
+2018,5,sizes,Spanish News,13268672.16131
+2018,6,sizes,Spanish News,13771010.46667
+2018,7,sizes,Spanish News,13218965.90320
+2018,8,sizes,Spanish News,12351920.70969
+2018,9,sizes,Spanish News,13051600.16666
+2018,10,sizes,Spanish News,12760865.16129
+2018,11,sizes,Spanish News,13229355.56670
+2018,12,sizes,Spanish News,12681500.22581
 2019,1,sizes,Spanish News,13340568.51613
 2019,2,sizes,Spanish News,13338696.03571
 2019,3,sizes,Spanish News,12785064.80645
@@ -491,42 +566,57 @@ year,month,variable,archetype,value
 2022,8,sizes,Spanish News,9716777.38710
 2022,9,sizes,Spanish News,10502909.40000
 2022,10,sizes,Spanish News,9964590.54839
-2016,1,sizes,Other Cable,20595276.80648
-2016,2,sizes,Other Cable,20703061.39286
-2016,3,sizes,Other Cable,22029216.12900
-2016,4,sizes,Other Cable,21015242.66667
-2016,5,sizes,Other Cable,20382310.41933
-2016,6,sizes,Other Cable,21593448.59997
-2016,7,sizes,Other Cable,21689824.16127
-2016,8,sizes,Other Cable,22188454.29033
-2016,9,sizes,Other Cable,19029219.20002
-2016,10,sizes,Other Cable,18042599.32258
-2016,11,sizes,Other Cable,16077327.96668
-2016,12,sizes,Other Cable,18585603.22583
-2017,1,sizes,Other Cable,19156512.83871
-2017,2,sizes,Other Cable,19303712.14286
-2017,3,sizes,Other Cable,19900214.74193
-2017,4,sizes,Other Cable,20720347.93333
-2017,5,sizes,Other Cable,20396227.32264
-2017,6,sizes,Other Cable,19509554.36661
-2017,7,sizes,Other Cable,19767706.45164
-2017,8,sizes,Other Cable,20424509.51611
-2017,9,sizes,Other Cable,19477557.36669
-2017,10,sizes,Other Cable,21298424.02856
-2017,11,sizes,Other Cable,20988064.70000
-2017,12,sizes,Other Cable,18556373.32259
-2018,1,sizes,Other Cable,19052238.16130
-2018,2,sizes,Other Cable,19310990.25003
-2018,3,sizes,Other Cable,20859916.00001
-2018,4,sizes,Other Cable,19899294.53332
-2018,5,sizes,Other Cable,19879284.80646
-2018,6,sizes,Other Cable,19322857.09999
-2018,7,sizes,Other Cable,18822563.54842
-2018,8,sizes,Other Cable,20143619.93555
-2018,9,sizes,Other Cable,21704885.56667
-2018,10,sizes,Other Cable,19129913.16125
-2018,11,sizes,Other Cable,17182297.93332
-2018,12,sizes,Other Cable,16803886.74193
+2022,11,sizes,Spanish News,10338173.83333
+2022,12,sizes,Spanish News,10028317.32258
+2023,1,sizes,Spanish News,9910622.09677
+2023,2,sizes,Spanish News,9188650.50000
+2023,3,sizes,Spanish News,9267089.51613
+2023,4,sizes,Spanish News,9083420.60000
+2023,5,sizes,Spanish News,8753874.45161
+2023,6,sizes,Spanish News,8382263.10000
+2023,7,sizes,Spanish News,8392996.74194
+2023,8,sizes,Spanish News,8255581.77419
+2023,9,sizes,Spanish News,8337251.10000
+2023,10,sizes,Spanish News,9248707.03226
+2023,11,sizes,Spanish News,9150129.03333
+2023,12,sizes,Spanish News,8981888.96774
+2024,1,sizes,Spanish News,9322949.51613
+2016,1,sizes,Other Cable,20570643.61293
+2016,2,sizes,Other Cable,20689673.21429
+2016,3,sizes,Other Cable,22036249.25803
+2016,4,sizes,Other Cable,21014713.20001
+2016,5,sizes,Other Cable,20376725.19352
+2016,6,sizes,Other Cable,21561888.83330
+2016,7,sizes,Other Cable,21606319.77417
+2016,8,sizes,Other Cable,22030112.00000
+2016,9,sizes,Other Cable,18797219.23335
+2016,10,sizes,Other Cable,17829219.77420
+2016,11,sizes,Other Cable,15927237.53335
+2016,12,sizes,Other Cable,18509096.35486
+2017,1,sizes,Other Cable,19111406.67741
+2017,2,sizes,Other Cable,19247645.46429
+2017,3,sizes,Other Cable,19810387.77419
+2017,4,sizes,Other Cable,20636797.36666
+2017,5,sizes,Other Cable,20328949.67748
+2017,6,sizes,Other Cable,19397561.69994
+2017,7,sizes,Other Cable,19685449.09680
+2017,8,sizes,Other Cable,20349091.64514
+2017,9,sizes,Other Cable,19196012.93336
+2017,10,sizes,Other Cable,20580237.08570
+2017,11,sizes,Other Cable,20135145.03334
+2017,12,sizes,Other Cable,17785318.87098
+2018,1,sizes,Other Cable,18159477.22582
+2018,2,sizes,Other Cable,18357716.85717
+2018,3,sizes,Other Cable,20073108.58066
+2018,4,sizes,Other Cable,19110163.96666
+2018,5,sizes,Other Cable,19006878.93550
+2018,6,sizes,Other Cable,18574237.13333
+2018,7,sizes,Other Cable,18132546.96776
+2018,8,sizes,Other Cable,19375554.38715
+2018,9,sizes,Other Cable,21058969.46668
+2018,10,sizes,Other Cable,18414429.19352
+2018,11,sizes,Other Cable,16505894.09999
+2018,12,sizes,Other Cable,16043752.90322
 2019,1,sizes,Other Cable,16687550.48387
 2019,2,sizes,Other Cable,17316802.10714
 2019,3,sizes,Other Cable,20103078.61290
@@ -541,7 +631,7 @@ year,month,variable,archetype,value
 2019,12,sizes,Other Cable,15777570.38710
 2020,1,sizes,Other Cable,16320235.03226
 2020,2,sizes,Other Cable,17170801.89655
-2020,3,sizes,Other Cable,15362832.29032
+2020,3,sizes,Other Cable,15360772.80645
 2020,4,sizes,Other Cable,15491804.46667
 2020,5,sizes,Other Cable,14875427.32258
 2020,6,sizes,Other Cable,15434237.13333
@@ -552,7 +642,7 @@ year,month,variable,archetype,value
 2020,11,sizes,Other Cable,11608533.26667
 2020,12,sizes,Other Cable,14642126.70968
 2021,1,sizes,Other Cable,12360520.35484
-2021,2,sizes,Other Cable,17088886.14286
+2021,2,sizes,Other Cable,17084555.03571
 2021,3,sizes,Other Cable,18059719.93548
 2021,4,sizes,Other Cable,17992206.83333
 2021,5,sizes,Other Cable,17388514.19355
@@ -571,5 +661,20 @@ year,month,variable,archetype,value
 2022,6,sizes,Other Cable,16321564.16667
 2022,7,sizes,Other Cable,14368394.35484
 2022,8,sizes,Other Cable,15613343.87097
-2022,9,sizes,Other Cable,13237021.33333
+2022,9,sizes,Other Cable,13233678.20000
 2022,10,sizes,Other Cable,13826433.19355
+2022,11,sizes,Other Cable,12130263.13333
+2022,12,sizes,Other Cable,11233231.74194
+2023,1,sizes,Other Cable,11867638.83871
+2023,2,sizes,Other Cable,12477971.00000
+2023,3,sizes,Other Cable,13023656.58065
+2023,4,sizes,Other Cable,12543226.53333
+2023,5,sizes,Other Cable,11885733.19355
+2023,6,sizes,Other Cable,11753658.16667
+2023,7,sizes,Other Cable,12203270.70968
+2023,8,sizes,Other Cable,11392278.06452
+2023,9,sizes,Other Cable,11449158.46667
+2023,10,sizes,Other Cable,11332109.93548
+2023,11,sizes,Other Cable,10429993.13333
+2023,12,sizes,Other Cable,11338507.29032
+2024,1,sizes,Other Cable,11320393.93548

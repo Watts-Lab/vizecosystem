@@ -17,7 +17,6 @@
 
 	// components
 	import ChartPlaceholder from '$lib/components/global/chart-placeholder.svelte';
-	import ControlSwitch from "$lib/components/global/control-switch.svelte";
 	import SelectMenu from '$lib/components/global/select-menu.svelte';
 	import StackedAreas from '$lib/components/graphs/StackedAreas.svelte';
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
@@ -68,25 +67,24 @@
 
 	$: if (data) chartConfig = new Map([
 		['tv', {
-			order: Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[0]),//order: ['non-news', 'news'],
-			colors: Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[1]),// colors: ['#a6cee3',  '#fb9a99', '#e31a1c', '#fdbf6f'],//colors: ['#a6cee3', '#fb9a99'],
-			// yDomain: [0, max(data.filter((d: any) => d.state === location), (d: any) => d.value)]
+			order: Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[0]),
+			colors: Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[1].color),
 			yDomain: [0, 300]
 		}
 		],
 		['web', {
-			order: Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]),// order: ['non_news', 'hard_news', 'fake_news', 'social_media'],
-			colors: Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[1]),// colors: ['#a6cee3',  '#fb9a99', '#e31a1c', '#fdbf6f'],
+			order: Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]),
+			colors: Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[1].color),
 			yDomain: [0, 100]
 		}],
 		['mobile', {
-			order: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]), // ['music', 'news', 'other', 'social_media']
-			colors: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[1]), // ['#17A589',  '#fb9a99', '#a6cee3', '#fdbf6f' ],
-			yDomain: [0, 500]
+			order: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]),
+			colors: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[1].color),
+			yDomain: [0, 300]
 		}],
 		['tablet', {
-			order: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]), // ['music', 'news', 'other', 'social_media']
-			colors: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[1]), // ['#17A589',  '#fb9a99', '#a6cee3', '#fdbf6f' ],
+			order: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]),
+			colors: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[1].color),
 			yDomain: [0, 350]
 		}],
 	])
@@ -199,18 +197,6 @@
 							in:fade
 						>No further breakdown available</p>
 					{/if}
-
-					<!-- <ControlSwitch 
-						id='axis' 
-						title={'Independent axis'}
-						labels={[ 
-							'Independent',
-							'Aligned'
-						]}
-						info={'Aligned y axis for comparison across media'}
-						bind:checked={ axisChecked }
-						bind:userInteractedWithControls 
-					/> -->
 				</div>
 			
 				{#if data}
