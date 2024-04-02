@@ -276,4 +276,6 @@ def parse(file):
   # # # # and we put those 4 together
   d = concat([d_tv, d_web, d_mob, d_tab], ignore_index=True)
 
-  return d.rename({'activityyear': 'year', 'activitymonth': 'month'}, axis=1)
+  return d\
+    .rename({'activityyear': 'year', 'activitymonth': 'month'}, axis=1)\
+    .astype({'year': 'int32', 'month': 'int32'})
