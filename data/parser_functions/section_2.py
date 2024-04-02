@@ -15,8 +15,9 @@ def parse_web(df):
   # keep only needed columns
   cols = [
     'activityyear', 'activitymonth', 'medium', 
-    'gender', 'age_group'
+    'gender', 'age_group', 'ethnicity',
   ]
+  subsets = ['diet_threshold', 'political_lean', 'partisanship_scenario']
   values = [
     'frac of weights (50) (R) (lenient)',
     'frac of weights (75) (R) (lenient)',
@@ -43,21 +44,27 @@ def parse_web(df):
   # join extracted data back into b_data (using indexes)
   data = merge(
     data,
-    extract_subset.loc[:,['diet_threshold', 'political_lean', 'partisanship_scenario']],
+    extract_subset.loc[:,subsets],
     left_index=True,
     right_index=True
   )
 
+  data['ethnicity'] = data['ethnicity'].replace({ 'white': 'white+other', 'other': 'white+other' })
+
+  data = data.groupby(by=cols+subsets).agg({
+    'value': 'sum'
+  }).reset_index()
+
   # assign subset columns
   data['medium'] = 'web'
 
-  return data.drop('subset', axis = 1)
+  return data
 
 def parse_tv(df):
   # keep only needed columns
   cols = [
     'activityyear', 'activitymonth', 'medium', 
-    'gender', 'age_group',
+    'gender', 'age_group', 'ethnicity',
     'political_lean', 'partisanship_scenario'
   ]
   values = ['frac of weights (50)', 'frac of weights (75)']
@@ -76,7 +83,6 @@ def parse_tv(df):
 
   return data
 
-
 def concat_web(a, b):
   # # load data
   b_data = load(b)
@@ -90,13 +96,28 @@ def concat_web(a, b):
   if file_name == 'all_adults':
     b_data['age_group'] = 'All'
     b_data['gender'] = 'All'
+    b_data['ethnicity'] = 'All'
   elif file_name == 'by_age':
     b_data['gender'] = 'All'
+    b_data['ethnicity'] = 'All'
   elif file_name == 'by_gender':
     b_data['age_group'] = 'All'
+    b_data['ethnicity'] = 'All'
     b_data['gender'] = b_data['gender_id'].replace({ 1: 'Male', 2: 'Female' })
-  else:
+  elif file_name == 'by_race':
+    b_data['age_group'] = 'All'
+    b_data['ethnicity'] = b_data['race']
+    b_data['gender'] = 'All'
+  elif file_name == 'by_age_x_gender':
+    b_data['ethnicity'] = 'All'
     b_data['gender'] = b_data['gender_id'].replace({ 1: 'Male', 2: 'Female' })
+  elif file_name == 'by_age_x_race':
+    b_data['gender'] = 'All'
+    b_data['ethnicity'] = b_data['race']
+  elif file_name == 'by_gender_x_race':
+    b_data['age_group'] = 'All'
+    b_data['gender'] = b_data['gender_id'].replace({ 1: 'Male', 2: 'Female' })
+    b_data['ethnicity'] = b_data['race']
   
   if 'gender_id' in b_data.columns: 
     b_data = b_data.drop('gender_id', axis = 1)
@@ -122,16 +143,32 @@ def concat_tv(a, b):
   b_data['political_lean'] = political_lean
   b_data['partisanship_scenario'] = partisanship_scenario
   b_data['medium'] = 'tv'
+  
 
   if file_type == 'all_adults':
     b_data['age_group'] = 'All'
     b_data['gender'] = 'All'
+    b_data['ethnicity'] = 'All'
   elif file_type == 'age':
     b_data['gender'] = 'All'
+    b_data['ethnicity'] = 'All'
   elif file_type == 'gender':
-     b_data['age_group'] = 'All'
-     b_data['gender'] = b_data['gender'].replace({ 1: 'Male', 2: 'Female' })
-  else:
+    b_data['age_group'] = 'All'
+    b_data['gender'] = b_data['gender'].replace({ 1: 'Male', 2: 'Female' })
+    b_data['ethnicity'] = 'All'
+  elif file_type == 'race':
+    b_data['gender'] = 'All'
+    b_data['age_group'] = 'All'
+    b_data['ethnicity'] = b_data['race']
+  elif file_type == 'age_x_race':
+    b_data['gender'] = 'All'
+    b_data['ethnicity'] = b_data['race']
+  elif file_type == 'gender_x_race':
+    b_data['age_group'] = 'All'
+    b_data['gender'] = b_data['gender'].replace({ 1: 'Male', 2: 'Female' })
+    b_data['ethnicity'] = b_data['race']
+  elif file_type == 'age_x_gender':
+    b_data['ethnicity'] = 'All'
     b_data['gender'] = b_data['gender'].replace({ 1: 'Male', 2: 'Female' })
 
   # # append data & return list
@@ -155,7 +192,7 @@ def parse(file):
   # in raw-data. We'll need to manually add those rows to
   # the data set.
   d_tv = concat(
-    reduce(concat_tv, file['url'][0:12], []),
+    reduce(concat_tv, file['url'][0:21], []),
     ignore_index = True
   )
 
@@ -165,7 +202,7 @@ def parse(file):
   # # # which is different as it comes all 
   # # # #in one single file
   d_web = concat(
-    reduce(concat_web, file['url'][12:], []),
+    reduce(concat_web, file['url'][21:], []),
     ignore_index = True
   )
 

@@ -1,10 +1,10 @@
-# modules
+# # modules
 from os import getenv
   
-# local modules
+# # local modules
 from parsers import Parser
 
-# global vars
+# # global vars
 AWS_ACCESS_KEY_ID = getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = getenv('AWS_SECRET_ACCESS_KEY')
 bucket = getenv('bucket')
@@ -40,6 +40,15 @@ datasets = [
       'raw_data/PHN_by_gender_by_age_group_mobile_consumption_f1.csv',
       'raw_data/PHN_by_age_group_by_race_mobile_consumption_f1.csv',
       'raw_data/PHN_by_state_mobile_consumption_f1.csv',
+      # # # tables
+      'raw_data/TAB_all_adults_mobile_consumption_f1.csv',
+      'raw_data/TAB_by_age_group_mobile_consumption_f1.csv',
+      'raw_data/TAB_by_gender_mobile_consumption_f1.csv',
+      'raw_data/TAB_by_race_mobile_consumption_f1.csv',
+      'raw_data/TAB_by_gender_by_race_mobile_consumption_f1.csv',
+      'raw_data/TAB_by_gender_by_age_group_mobile_consumption_f1.csv',
+      'raw_data/TAB_by_age_group_by_race_mobile_consumption_f1.csv',
+      'raw_data/TAB_by_state_mobile_consumption_f1.csv',
     ],
     'out_name': 'EchoCh-national_consumption_tv_and_web.csv',
     'format': '%.3f'
@@ -94,24 +103,40 @@ datasets = [
   },
   {
     'url': [
+      # # # TV L Lenient
       'raw_data/TVLeftEchoChLenient_all_adults.csv',
       'raw_data/TVLeftEchoChLenient_by_age_x_gender.csv',
+      'raw_data/TVLeftEchoChLenient_by_age_x_race.csv',
       'raw_data/TVLeftEchoChLenient_by_age.csv',
+      'raw_data/TVLeftEchoChLenient_by_gender_x_race.csv',
       'raw_data/TVLeftEchoChLenient_by_gender.csv',
+      'raw_data/TVLeftEchoChLenient_by_race.csv',
+      # # # TV L Stringent
       'raw_data/TVLeftEchoChStringent_all_adults.csv',
       'raw_data/TVLeftEchoChStringent_by_age_x_gender.csv',
+      'raw_data/TVLeftEchoChStringent_by_age_x_race.csv',
       'raw_data/TVLeftEchoChStringent_by_age.csv',
+      'raw_data/TVLeftEchoChStringent_by_gender_x_race.csv',
       'raw_data/TVLeftEchoChStringent_by_gender.csv',
+      'raw_data/TVLeftEchoChStringent_by_race.csv',
+      # # # TV R
       'raw_data/TVRightEchoChLenient_all_adults.csv',
       'raw_data/TVRightEchoChLenient_by_age_x_gender.csv',
+      'raw_data/TVRightEchoChLenient_by_age_x_race.csv',
       'raw_data/TVRightEchoChLenient_by_age.csv',
+      'raw_data/TVRightEchoChLenient_by_gender_x_race.csv',
       'raw_data/TVRightEchoChLenient_by_gender.csv',
+      'raw_data/TVRightEchoChLenient_by_race.csv',
+      # # # Web
       'raw_data/web_ec_sizes_all_adults.csv',
       'raw_data/web_ec_sizes_by_age_x_gender.csv',
+      'raw_data/web_ec_sizes_by_age_x_race.csv',
       'raw_data/web_ec_sizes_by_age.csv',
+      'raw_data/web_ec_sizes_by_gender_x_race.csv',
       'raw_data/web_ec_sizes_by_gender.csv',
-      ], 
-    'out_name': 'EchoCh-nationwide-by_gender-or-age_group.csv',
+      'raw_data/web_ec_sizes_by_race.csv',
+    ], 
+    'out_name': 'EchoCh-nationwide-by_gender-age-race.csv',
     'format': '%.3f'
   },
   {
@@ -133,22 +158,21 @@ datasets = [
     'format': '%.0f'
   },
 ]
-# credentials
+# # credentials
 creds = {
   "key": AWS_ACCESS_KEY_ID,
   "secret": AWS_SECRET_ACCESS_KEY
 }
-# instantiate parser
+# # instantiate parser
 file_parser = Parser(creds)
 
 # # iterate over files that need parsing 
 for file in datasets:
   out_data = file_parser.parse(file)
 
-  # # # save data to different location
+  # # save data to different location
   out_data.to_csv(
-    # f's3://{bucket}/processed/{file["out_name"]}',
-    f'../processed_data/{file["out_name"]}',
+    f's3://{bucket}/processed/{file["out_name"]}',
     index=False,
     float_format=file["format"]
   )
