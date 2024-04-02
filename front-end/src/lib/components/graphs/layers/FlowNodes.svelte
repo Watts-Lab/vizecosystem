@@ -330,7 +330,7 @@
           on:mouseenter={(ev) => handleMouseEnter(ev, node)}
           on:mouseleave={(ev) => handleMouseLeave(ev, node)}
         ></circle>
-        <text class='node-label' dy={node.r + 18}>
+        <text class='node-label' dy={node.r + 14}>
           {nodesLabels.has(node.archetype) ? nodesLabels.get(node.archetype) : node.archetype}
         </text>
         {#if showTooltip}

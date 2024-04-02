@@ -8,7 +8,7 @@
 	import Caption from '$lib/components/graphs/layers/Caption.svelte';
 
   // props declaration
-	export let margins : Object = { top: 50, right: 0, bottom: 50, left: 0 }
+	export let margins : Object = { top: 20, right: 0, bottom: 20, left: 0 }
 	export let caption : string = '';
 	export let nodes : any[];
   export let links : any[];
@@ -33,7 +33,6 @@
   $: userHasInteracted = false
 	$: userTakingTooLong = false
 	$: renderCta = false
-
 </script>
 
 <div class="chart flow-chart {customClass}">
