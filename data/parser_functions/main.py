@@ -116,8 +116,6 @@ def parse_web(d):
     var_name='category'
   )
 
-  print(d.category.value_counts())
-
   d['category'] = d['category']\
     .str.extract(r'avg (.*)[_|\s]mins \/ person \/ day')
 
@@ -264,7 +262,7 @@ def parse(file):
     reduce(concat_files, file['url'][16:24], []),
     ignore_index = True
   )
-  d_mob = d_mob[~(d_mob['weighted_social_media'] == 0 & d_mob['weighted_entertainment'] == 0)]
+  d_mob = d_mob[~((d_mob['weighted_social_media'] == 0) & (d_mob['weighted_entertainment'] == 0))]
   d_mob = parse_mob(d_mob)
 
   # # # mobile (tablet)
@@ -272,7 +270,7 @@ def parse(file):
     reduce(concat_files, file['url'][24:], []),
     ignore_index = True
   )
-  d_tab = d_tab[~(d_tab['weighted_social_media'] == 0 & d_tab['weighted_entertainment'] == 0)]
+  d_tab = d_tab[~((d_tab['weighted_social_media'] == 0) & (d_tab['weighted_entertainment'] == 0))]
   d_tab = parse_tab(d_tab)
 
   # # # # and we put those 4 together
