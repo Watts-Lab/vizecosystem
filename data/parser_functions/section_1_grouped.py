@@ -7,10 +7,10 @@ from os import getenv
 from pandas import read_csv, concat, merge, melt, to_datetime, Grouper, DataFrame, DateOffset
 from pandas.tseries.offsets import DateOffset
 
-bucket = getenv('bucket')
+BUCKET = getenv('BUCKET')
 
 def load(file):
-  return read_csv(f's3://{bucket}/{file}')
+  return read_csv(f's3://{BUCKET}/{file}')
 
 def parse_web_frac(d):
   # # keep only needed columns

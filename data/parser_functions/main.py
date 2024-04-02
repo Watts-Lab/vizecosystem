@@ -5,10 +5,10 @@ from os import getenv
 # venv modules
 from pandas import read_csv, melt, concat
 
-bucket = getenv('bucket')
+BUCKET = getenv('BUCKET')
 
 def load(file):
-  return read_csv(f's3://{bucket}/{file}')
+  return read_csv(f's3://{BUCKET}/{file}')
 
 def concat_files(a, b):
   # load data

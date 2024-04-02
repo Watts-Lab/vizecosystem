@@ -7,7 +7,7 @@ from parsers import Parser
 # # global vars
 AWS_ACCESS_KEY_ID = getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = getenv('AWS_SECRET_ACCESS_KEY')
-bucket = getenv('bucket')
+BUCKET = getenv('BUCKET')
 
 # # datasets
 datasets = [
@@ -172,7 +172,7 @@ for file in datasets:
 
   # # save data to different location
   out_data.to_csv(
-    f's3://{bucket}/processed/{file["out_name"]}',
+    f's3://{BUCKET}/processed/{file["out_name"]}',
     index=False,
     float_format=file["format"]
   )
