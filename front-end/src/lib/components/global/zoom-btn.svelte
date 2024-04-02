@@ -36,7 +36,7 @@
         pointer-events: all;
         cursor: pointer;
 		position: absolute;
-		top: -48px;
+		top: -30px;
 		right: -10px;
 		z-index: 100;
         border: 1px solid $dark-grey;
