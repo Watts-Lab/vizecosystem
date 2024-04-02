@@ -1,11 +1,8 @@
 name: Prepare data
 on:
-  # push:
-  #   branches:
-  #     - main
   workflow_dispatch:
-#   schedule:
-#     - cron: '0 1 15 * *' # 1:00 on every 15th (UTC time)
+  schedule:
+    - cron: '0 1 15 * *' # 1:00 on every 15th (UTC time)
 
 jobs:
   prepare-data:
@@ -42,7 +39,7 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          bucket: ${{ secrets.bucket }}
+          bucket: ${{ secrets.BUCKET }}
 
       - name: Delete the virtual environment
         run: |

@@ -1,13 +1,37 @@
 name: Deploy to GitHub Pages
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Run Tests"]
+    branches: [master]
+    types: 
+      - completed
 
 permissions:
   contents: write
   
 jobs:
+  pull_data:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: front-end
+
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy static site to S3 bucket
+        run: |
+          aws s3 sync "s3://${{ secrets.BUCKET }}/processed/" "static/assets/data/"
+
   build_site:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,7 +47,7 @@ jobs:
       - name: Load copy data
         run: npm run google
 
-      - name: Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Build 🔧
         env:  
           BASE_PATH: '/${{ github.event.repository.name }}'  
         run: npm run build
@@ -53,4 +77,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v2
-
