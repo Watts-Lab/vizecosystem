@@ -27,6 +27,10 @@
         margin: 50px auto;
 
         @media (min-width: $bp-2) {
+            width: 100%;
+        }
+
+        @media (min-width: $bp-3) {
             width: 80%;
         }
 
