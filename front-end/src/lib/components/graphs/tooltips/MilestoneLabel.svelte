@@ -24,9 +24,13 @@
 </script>
 
 {#if render}
-    <g transform="translate({orientation === 'left' ? -h : 0} {w + 10})">
-        <text id='label-{idx}' {x} bind:this={myElement}>{label}</text>
-    </g>
+    <g transform="translate({orientation === 'left' ? h - 5 : h * 2} {w - 12}) rotate(-90 {x} {h})">
+        <text 
+            id='label-{idx}' 
+            {x}
+            bind:this={myElement}
+            >{label}</text>
+        </g>
 {/if}
 
 <style lang='scss'>
@@ -35,7 +39,6 @@
         @include fs-sm;
         font-weight: 300;
         transform-box: fill-box;
-        transform: rotate(-90deg);
         stroke: $white;
         stroke-width: 3px;
         paint-order: stroke;
