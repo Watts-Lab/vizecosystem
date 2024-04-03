@@ -29,6 +29,9 @@
   
     /** @type {String} [textAnchor='start'] The CSS `text-anchor` passed to the label. This is automatically set to "end" if the scale has a bandwidth method, like in ordinal scales. */
     export let textAnchor = 'start';
+
+    /** @type {Boolean} [showLabels=true] whether to show the labels or hide them */
+    export let showLabels = true;
   
     $: isBandwidth = typeof $yScale.bandwidth === 'function';
   
@@ -60,13 +63,15 @@
             y2={yTick + (isBandwidth ? ($yScale.bandwidth() / 2) : 0)}
           ></line>
         {/if}
-        <text
-          x='{xTick}'
-          y='{yTick + (isBandwidth ? $yScale.bandwidth() / 2 : 0)}'
-          dx='{isBandwidth ? -9 : dxTick}'
-          dy='{isBandwidth ? 4 : dyTick}'
-          style="text-anchor:{isBandwidth ? 'end' : textAnchor};"
-        >{formatTick(tick, i, tickVals.length)}</text>
+        {#if showLabels}
+          <text
+            x='{xTick}'
+            y='{yTick + (isBandwidth ? $yScale.bandwidth() / 2 : 0)}'
+            dx='{isBandwidth ? -9 : dxTick}'
+            dy='{isBandwidth ? 4 : dyTick}'
+            style="text-anchor:{isBandwidth ? 'end' : textAnchor};"
+          >{formatTick(tick, i, tickVals.length)}</text>
+        {/if}
       </g>
     {/each}
   </g>

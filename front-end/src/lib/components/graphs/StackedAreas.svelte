@@ -79,8 +79,16 @@
 				ticks={xTicks}
 				formatTick={formatter}
 			/>
-			<AxisY formatTick={ formatTickY } ticks={ 4 } />
+			<AxisY 
+				formatTick={ formatTickY } ticks={ 4 } 
+				gridlines={ true }
+				showLabels={ false }
+			/>
 			<AreaStacked />
+			<AxisY 
+				formatTick={ formatTickY } ticks={ 4 } 
+				gridlines={ false }
+			/>
 			{#if showAnnotation}
 				<AreaAnnotation />
 			{/if}
