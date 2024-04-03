@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Run Tests"]
+    workflows: ["Prepare data"]
     branches: [master]
     types: 
       - completed
@@ -19,6 +19,9 @@ jobs:
         working-directory: front-end
 
     steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -26,11 +29,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy static site to S3 bucket
+      - name: Copy files to local directory
         run: |
           aws s3 sync "s3://${{ secrets.BUCKET }}/processed/" "static/assets/data/"
 
   build_site:
+    needs: pull_data
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     defaults:
