@@ -16,6 +16,7 @@
   import ClickCta from '$lib/components/graphs/layers/ClickCTA.svelte';
 
   const { width, height } = getContext('LayerCake');
+  $: H = $height || 510
 
   // props declaration
   export let nodes: any[];
@@ -56,13 +57,13 @@
  
     if (pos.link.to === 'No or Minimal News') {
       const ctrX = pos.from.x > $width / 2 ? $width*0.9 : $width*0.1;
-      context.quadraticCurveTo(ctrX, $height / 1.5, pos.to.x, pos.to.y);
+      context.quadraticCurveTo(ctrX, H / 1.5, pos.to.x, pos.to.y);
     }
     else if (Math.abs(+pos.link.to - +pos.link.from) === 1) {
       context.lineTo(pos.to.x, pos.to.y);
     }
     else {
-      context.quadraticCurveTo($width / 2, (0.01 + Math.random()) * $height, pos.to.x, pos.to.y);
+      context.quadraticCurveTo($width / 2, (0.01 + Math.random()) * H, pos.to.x, pos.to.y);
     }
     
     return context;
@@ -165,7 +166,7 @@
       }
       else {
         x = $width / 2
-        y = $height - r
+        y = H - r
       }
 
       return { ...d, x, y, r }
@@ -220,7 +221,7 @@
       }
       else {
         x = $width / 2
-        y = $height - r
+        y = H - r
       }
 
       return { ...d, x, y, r }
@@ -258,9 +259,7 @@
   }  
 </script>
 
-
 <!-- LINKS -->
-<!-- transform='translate(0, {3 * $height / 8})' -->
 <g class='link-group' id='link-group'>
   {#each linksIn as link, i}
     {#if render}
@@ -282,7 +281,6 @@
 </g>
 
 <!-- NODES -->
-<!-- transform='translate(0, {3 * $height / 8})' -->
 {#if render}
   <g 
     class='node-group'
