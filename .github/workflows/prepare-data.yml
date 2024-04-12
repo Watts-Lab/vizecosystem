@@ -2,7 +2,7 @@ name: Prepare data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 15 * *' # 1:00 on every 15th (UTC time)
+    - cron: '0 6 1 * *' # 6:00am (UTC time) on every 1st of month 
 
 jobs:
   prepare-data:
