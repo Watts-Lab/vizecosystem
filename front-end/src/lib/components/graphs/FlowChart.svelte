@@ -20,13 +20,13 @@
 	export let customClass : string = ''
 
   onMount(() => {
-    render = true
+		render = true
     setTimeout(() => {
 			if (!userHasInteracted) {
 				renderCta = true;
 				userTakingTooLong = true;
 			}
-		}, 1000)
+		}, 1200)
   });
 
   $: render = false

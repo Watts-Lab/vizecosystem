@@ -109,8 +109,11 @@
                 end_date: new Date(d['end year'], d['end month']-1, 1) 
             }))
         nodesSizeMap = group(nodes_size, d => +d.start_date, d => +d.end_date, d => d.archetype)
-
-        render = true;
+        
+        setTimeout(() => {
+            render = true;
+        }, 500)
+        
         start_date = scaleDate(0)
         end_date = scaleDate(1)
 	})
