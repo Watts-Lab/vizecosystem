@@ -163,12 +163,6 @@
                     <FlowNodesLegend { seriesNames } { seriesColors } />
                 {/if}
 
-                <div class='block-cta'>
-                    <ClickCta 
-                        message={'Hover over circles to see net flow for archetype'} 
-                    />
-                </div>
-			
 				{#if loaded && render}
 					<FlowChart
 						nodes={ nodesIn }
