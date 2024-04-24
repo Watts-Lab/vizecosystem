@@ -32,7 +32,7 @@
 
     /** @type {Boolean} [showLabels=true] whether to show the labels or hide them */
     export let showLabels = true;
-  
+    
     $: isBandwidth = typeof $yScale.bandwidth === 'function';
   
     $: tickVals = Array.isArray(ticks) ? ticks :

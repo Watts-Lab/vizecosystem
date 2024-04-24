@@ -28,7 +28,7 @@
 	export let xTicks : Date[]
 	export let addTickYLabel : boolean = true;
 	export let formatTickY : Function = (d : number, i : number, a: number) => (
-		i === a - 1 && addTickYLabel
+		i === a - 1 && addTickYLabel && !scaleZoomed
 		? `${d} minutes per person per day`
 		: d
 	);
