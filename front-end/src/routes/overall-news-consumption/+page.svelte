@@ -80,7 +80,7 @@
 		['mobile', {
 			order: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[1].color),
-			yDomain: [0, 300]
+			yDomain: [0, 450]
 		}],
 		['tablet', {
 			order: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]),
