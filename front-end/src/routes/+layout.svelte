@@ -4,41 +4,16 @@
 	// @ts-ignore
 	import Footer from '$lib/components/footer/Footer.svelte';
 	
-	import { dev } from '$app/environment';
 	import { page } from '$app/stores';
-
-	import hash from '$lib/utils/hasher';
-
-	$: auth = dev || false;
-	$: val = null;
-
-	function authenticate(e: Event) {
-		e.preventDefault();
-		if (hash(val) === '7cc1c93bdeaf85793bfe1bfbd33356e252c28bfe') {
-			auth = true;
-		}
-	}
 </script>
 
 <Header />
 
 <main class:index={$page.route.id === '/'} class:section={$page.route.id !== '/'}>
-	{#if auth} <slot></slot>
-
-	{:else} <div class='auth'>
-		<form on:submit={authenticate} >
-			<input 
-			type='password' 
-			placeholder='password'	
-			on:input={e => val = e.target.value} 
-			/>
-		</form>
-	</div>
-	{/if}
+	<slot></slot>
 </main>
 
 <Footer />
-
 
 <style lang='scss'>
     main {
