@@ -11,7 +11,7 @@ const nodesOrderMap : Map<string,number> = new Map(
 
 const nodesLabels : Map<string,number> = new Map(
   [
-    ['Partisan Cable (left)', 'Partisan Cable (left'],
+    ['Partisan Cable (left)', 'Partisan Cable (left)'],
     ['Partisan Cable (right)', 'Partisan Cable (right)'],
   ]
 )
