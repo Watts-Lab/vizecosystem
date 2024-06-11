@@ -3,6 +3,7 @@
 	import type Author from '../../types/Authors';
 
 	export let authors : Author[];
+	$: length = authors.length;
 
 	function handleMouseOver(e) {
 		e.target.classList.add('active')
@@ -12,6 +13,8 @@
 	}
 </script>
 
+<div class='line'></div>
+<div class='title'>Credits</div>
 <div class='authors'>
 	{#each authors as author, i}
 		<div 
@@ -21,30 +24,26 @@
 			on:mouseout={handleMouseOut}
 			on:blur={handleMouseOut}
 		>
-			<p class='author-name'>{author.name}</p>
-			<div class='detail'>
-				<div class='detail-list'>
-					{#each author.detail as aff}
-						<p class='detail-list-value'>{aff}</p>
-					{/each}
-				</div>
-			</div>
+			<p class='author-name'>{i === length-1 ? 'and ' : ''}{author.name}{i !== length-1 ? ',' : ''}</p>
 		</div>
 	{/each}
 </div>
 
 <style lang='scss'>
 	.authors {
+		// @include grid-mobile;
+		// @include centerH;
 		grid-column: 1 / span last-line;
-		grid-row: 2 / span 1;
+		grid-row: 3 / span 1;
 		display: flex;
 		flex-wrap: wrap;
 		column-gap: 5px;
-		row-gap: 2.5px;
+		row-gap: 2px;
 
 		@media (min-width: $bp-3) {
-			grid-row: 2 / span 1;
-			grid-column: 3 / span 8;
+			// @include grid-main;
+			grid-row: 3 / span 1;
+			grid-column: 3 / span 5;
 		}
 
 		.author-container {
@@ -102,25 +101,22 @@
 				line-height: 0.5;
 			}
 		}
+	}
 
-		
-		.author-container.active {
-			.author-name {
-				text-decoration: underline;
-			}
-			
-			.detail {
-				.detail-list {
-					display: block;
-					box-shadow: transparentize($black, 0.5) 1px 1px 2.5px;
-				}
-			}
-		}
-
-		.author-container:last-of-type {
-			.author-name:after {
-				content: '';
-			}
-		}
+	.line {
+		grid-row: 1 / span 1;
+		grid-column: 3 / span 8;
+		width: 25%;
+		height: 1px;
+		background-color: $black;
+		margin: 10px 0;
+	}
+	.title {
+		grid-row: 2 / span 1;
+		grid-column: 3 / span 8;
+		@include fs-root;
+		font-weight: 700;
+		margin-bottom: 5px;
+		// text-transform: uppercase;
 	}
 </style>

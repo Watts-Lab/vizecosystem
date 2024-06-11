@@ -1,49 +1,20 @@
 [
     {
-        "name": "Jenny Allen",
-        "detail": [
-            "MIT Sloan School of Management, 100 Main St., Cambridge, MA 02142"
-        ]
+        "name": "Baird Howland"
     },
     {
-        "name": "Homa Hosseinmardi",
-        "detail": [
-            "Department of Computer and Information Science, University of Pennsylvania, Philadelphia, PA 19104",
-            "homahm@seas.upenn.edu"
-        ]
+        "name": "Duncan J. Watts"
     },
     {
-        "name": "Baird Howland",
-        "detail": [
-            "The Annenberg School for Communication, University of Pennsylvania, Philadelphia, PA 19104"
-        ]
+        "name": "David M. Rothschild"
     },
     {
-        "name": "Markus Mobius",
-        "detail": [
-            "Microsoft Research New England, Cambridge, MA 02142"
-        ]
+        "name": "Yuxuan Zhang"
     },
     {
-        "name": "Dan Muise",
-        "detail": [
-            "Department of Communication, Stanford University, Stanford, CA 94305",
-            "muise.dan@gmail.comm"
-        ]
+        "name": "Felippe Rodrigues"
     },
     {
-        "name": "David M. Rothschild",
-        "detail": [
-            "Microsoft Research New York, New York, NY 10012"
-        ]
-    },
-    {
-        "name": "Duncan J. Watts",
-        "detail": [
-            "Department of Computer and Information Science, University of Pennsylvania, Philadelphia, PA 19104",
-            "The Annenberg School of Communication, University of Pennsylvania, Philadelphia, PA 19104",
-            "Operations, Information, and Decisions Department, University of Pennsylvania, Philadelphia, PA 19104",
-            "djwatts@seas.upenn.edu"
-        ]
+        "name": "Delphine Gardiner"
     }
 ]
