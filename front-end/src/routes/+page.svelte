@@ -19,7 +19,7 @@
 				.filter(d => d.type !== 'tiles') 
 		}
 	></Description>
-	<Authors authors={ authors }></Authors>
+	<!-- <Authors authors={ authors }></Authors> -->
 </div>
 
 <Menu tiles={data.intro.filter(d => d.type === 'tiles')} />
