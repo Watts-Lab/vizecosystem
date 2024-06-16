@@ -19,11 +19,13 @@
 				.filter(d => d.type !== 'tiles') 
 		}
 	></Description>
-	<!-- <Authors authors={ authors }></Authors> -->
 </div>
 
 <Menu tiles={data.intro.filter(d => d.type === 'tiles')} />
 
+<div class='header-wrapper main-column authors-wrapper'>
+	<Authors authors={ authors }></Authors>
+</div>
 
 <style lang='scss'>
     .header-wrapper {
@@ -34,6 +36,9 @@
 		@media (min-width: $bp-3) {
 			@include grid-main;
 		}
+	}
+	.authors-wrapper {
+		row-gap: 0;
 	}
 
 	.title-container {

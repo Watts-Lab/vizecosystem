@@ -1,49 +1,50 @@
 [
     {
-        "name": "Jenny Allen",
-        "detail": [
-            "MIT Sloan School of Management, 100 Main St., Cambridge, MA 02142"
-        ]
-    },
-    {
-        "name": "Homa Hosseinmardi",
-        "detail": [
-            "Department of Computer and Information Science, University of Pennsylvania, Philadelphia, PA 19104",
-            "homahm@seas.upenn.edu"
-        ]
-    },
-    {
         "name": "Baird Howland",
-        "detail": [
-            "The Annenberg School for Communication, University of Pennsylvania, Philadelphia, PA 19104"
-        ]
-    },
-    {
-        "name": "Markus Mobius",
-        "detail": [
-            "Microsoft Research New England, Cambridge, MA 02142"
-        ]
-    },
-    {
-        "name": "Dan Muise",
-        "detail": [
-            "Department of Communication, Stanford University, Stanford, CA 94305",
-            "muise.dan@gmail.comm"
-        ]
-    },
-    {
-        "name": "David M. Rothschild",
-        "detail": [
-            "Microsoft Research New York, New York, NY 10012"
-        ]
+        "desc": "Ph.D. student in Communications",
+        "url": "https://www.asc.upenn.edu/people/graduate-student/baird-howland",
+        "photo": "baird-howland.jpg"
     },
     {
         "name": "Duncan J. Watts",
-        "detail": [
-            "Department of Computer and Information Science, University of Pennsylvania, Philadelphia, PA 19104",
-            "The Annenberg School of Communication, University of Pennsylvania, Philadelphia, PA 19104",
-            "Operations, Information, and Decisions Department, University of Pennsylvania, Philadelphia, PA 19104",
-            "djwatts@seas.upenn.edu"
-        ]
+        "desc": "CSSLab Director",
+        "url": "https://css.seas.upenn.edu/people/duncan-watts/",
+        "photo": "duncan-j-watts.png"
+    },
+    {
+        "name": "David M. Rothschild",
+        "desc": "Economist Microsoft Research",
+        "url": "https://researchdmr.com/",
+        "photo": "david-m-rothschild.jpg"
+    },
+    {
+        "name": "Yuxuan Zhang",
+        "desc": "Data Scientist",
+        "url": "https://css.seas.upenn.edu/yuxuan-zhang/",
+        "photo": "yuxuan-zhang.jpg"
+    },
+    {
+        "name": "Felippe Rodrigues",
+        "desc": "Front-end Developer",
+        "url": "https://fsorodrigues.dev",
+        "photo": "felippe-rodrigues.jpg"
+    },
+    {
+        "name": "Delphine Gardiner",
+        "desc": "Senior Communications Specialist",
+        "url": "https://css.seas.upenn.edu/delphine-gardiner/",
+        "photo": "delphine-gardiner.jpg"
+    },
+    {
+        "name": "Emma Arsekin",
+        "desc": "Fmr. Senior Communications Specialist",
+        "url": "https://css.seas.upenn.edu/",
+        "photo": "emma-arsekin.jpg"
+    },
+    {
+        "name": "Miguel Rivera-Lanas",
+        "desc": "Fmr. Data Scientist",
+        "url": "https://css.seas.upenn.edu/",
+        "photo": "miguel-rivera-lanas.jpg"
     }
 ]
