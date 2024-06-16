@@ -1,20 +1,50 @@
 [
     {
-        "name": "Baird Howland"
+        "name": "Baird Howland",
+        "desc": "Ph.D. student in Communications",
+        "url": "https://www.asc.upenn.edu/people/graduate-student/baird-howland",
+        "photo": "baird-howland.jpg"
     },
     {
-        "name": "Duncan J. Watts"
+        "name": "Duncan J. Watts",
+        "desc": "CSSLab Director",
+        "url": "https://css.seas.upenn.edu/people/duncan-watts/",
+        "photo": "duncan-j-watts.png"
     },
     {
-        "name": "David M. Rothschild"
+        "name": "David M. Rothschild",
+        "desc": "Economist Microsoft Research",
+        "url": "https://researchdmr.com/",
+        "photo": "david-m-rothschild.jpg"
     },
     {
-        "name": "Yuxuan Zhang"
+        "name": "Yuxuan Zhang",
+        "desc": "Data Scientist",
+        "url": "https://css.seas.upenn.edu/yuxuan-zhang/",
+        "photo": "yuxuan-zhang.jpg"
     },
     {
-        "name": "Felippe Rodrigues"
+        "name": "Felippe Rodrigues",
+        "desc": "Front-end Developer",
+        "url": "https://fsorodrigues.dev",
+        "photo": "felippe-rodrigues.jpg"
     },
     {
-        "name": "Delphine Gardiner"
+        "name": "Delphine Gardiner",
+        "desc": "Senior Communications Specialist",
+        "url": "https://css.seas.upenn.edu/delphine-gardiner/",
+        "photo": "delphine-gardiner.jpg"
+    },
+    {
+        "name": "Emma Arsekin",
+        "desc": "Fmr. Senior Communications Specialist",
+        "url": "https://css.seas.upenn.edu/",
+        "photo": "emma-arsekin.jpg"
+    },
+    {
+        "name": "Miguel Rivera-Lanas",
+        "desc": "Fmr. Data Scientist",
+        "url": "https://css.seas.upenn.edu/",
+        "photo": "miguel-rivera-lanas.jpg"
     }
 ]
