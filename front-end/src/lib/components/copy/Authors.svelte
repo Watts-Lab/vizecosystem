@@ -2,39 +2,25 @@
 	// types
 	import type Author from '../../types/Authors';
 
-	export let authors : Author[];
-	$: length = authors.length;
-
-	function handleMouseOver(e) {
-		e.target.classList.add('active')
-	}
-	function handleMouseOut(e) {
-		e.target.classList.remove('active')
-	}
+	export let authors: Author[];
 </script>
 
-<div class='line'></div>
-<div class='title'>The Team</div>
-<div class='authors'>
-	{#each authors as author, i}
+<div class="line"></div>
+<div class="title">The Team</div>
+<div class="authors">
+	{#each authors as author}
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div 
-			class='author-container'
-			on:mouseover={handleMouseOver}
-			on:focus={handleMouseOver}
-			on:mouseout={handleMouseOut}
-			on:blur={handleMouseOut}
-		>
-			<div class='author-photo' style="--photo-url: url('/assets/images/{author.photo}')"></div>
-			<a class='author-bio' href={author.url}>
-				<p class='author-name'>{author.name}</p>
-				<p class='author-desc'>{author.desc}</p>
+		<div class="author-container">
+			<div class="author-photo" style="--photo-url: url('/assets/images/{author.photo}')"></div>
+			<a class="author-bio" href={author.url}>
+				<p class="author-name">{author.name}</p>
+				<p class="author-desc">{author.desc}</p>
 			</a>
 		</div>
 	{/each}
 </div>
 
-<style lang='scss'>
+<style lang="scss">
 	.authors {
 		// @include grid-mobile;
 		// @include centerH;
@@ -84,7 +70,7 @@
 			.author-bio:hover {
 				opacity: 0.9;
 			}
-			
+
 			.author-bio:visited {
 				color: $black;
 			}
@@ -132,7 +118,7 @@
 					background-color: $white;
 
 					.detail-list-value {
-						margin-bottom: 2.5px
+						margin-bottom: 2.5px;
 					}
 				}
 
@@ -140,9 +126,9 @@
 					display: block;
 				}
 			}
-			
+
 			.detail:before {
-				content: "\25BE";
+				content: '\25BE';
 				@include fs-lg;
 				line-height: 0.5;
 			}
@@ -155,12 +141,11 @@
 		height: 1px;
 		background-color: $black;
 		margin: 10px 0;
-		
+
 		@media (min-width: $bp-3) {
 			grid-row: 1 / span 1;
 			grid-column: 3 / span 8;
 		}
-
 	}
 
 	.title {

@@ -18,21 +18,48 @@ def parse_web(df):
     'gender', 'age_group', 'ethnicity',
   ]
   subsets = ['diet_threshold', 'political_lean', 'partisanship_scenario']
-  values = [
+  val_keys = [
+    'weighted_count_r_ec_50',
+    'weighted_count_fr_ec_50',
+    'weighted_count_r_ec_75',
+    'weighted_count_fr_ec_75',
+    'weighted_count_l_ec_50',
+    'weighted_count_fl_ec_50',
+    'weighted_count_l_ec_75',
+    'weighted_count_fl_ec_75',
+  ]
+  new_keys = [
     'frac of weights (50) (R) (lenient)',
-    'frac of weights (75) (R) (lenient)',
     'frac of weights (50) (R) (stringent)',
+    'frac of weights (75) (R) (lenient)',
     'frac of weights (75) (R) (stringent)',
     'frac of weights (50) (L) (lenient)',
-    'frac of weights (75) (L) (lenient)',
     'frac of weights (50) (L) (stringent)',
-    'frac of weights (75) (L) (stringent)'
+    'frac of weights (75) (L) (lenient)',
+    'frac of weights (75) (L) (stringent)',
   ]
-  # # unpivot data
+  denom = 'weighted_count_denom'
+
+  df = df.loc[:,cols+val_keys+[denom]]\
+    .replace({ 'white': 'white+other', 'other': 'white+other' })\
+    .groupby(by=cols)\
+    .sum()\
+    .reset_index()
+
+  totals = df.loc[:,val_keys]
+  denoms = df.loc[:,denom]
+  values = totals.div(denoms.values, axis=0)
+   
+  df = concat([df.loc[:,cols], values], axis=1)\
+    .rename(
+      {val_keys[k]: new_keys[k] for k in [i for i, x in enumerate(val_keys)]}, 
+      axis=1 
+    )
+  # unpivot data
   data = melt(
     df,
     id_vars=cols,
-    value_vars=values,
+    value_vars=new_keys,
     var_name='subset'
   )
 
@@ -40,8 +67,9 @@ def parse_web(df):
   extract_subset = data['subset'].str.extractall(
     r'.*\s\((?P<diet_threshold>.*)\)\s\((?P<political_lean>.*)\)\s\((?P<partisanship_scenario>.*)\)'
   )\
-    .reset_index()
-  # join extracted data back into b_data (using indexes)
+    .reset_index(drop=True)
+  
+  # join extracted data back into data (using indexes)
   data = merge(
     data,
     extract_subset.loc[:,subsets],
@@ -49,16 +77,7 @@ def parse_web(df):
     right_index=True
   )
 
-  data['ethnicity'] = data['ethnicity'].replace({ 'white': 'white+other', 'other': 'white+other' })
-
-  data = data.groupby(by=cols+subsets).agg({
-    'value': 'sum'
-  }).reset_index()
-
-  # assign subset columns
-  data['medium'] = 'web'
-
-  return data
+  return data[cols+subsets+['value']]
 
 def parse_tv(df):
   # keep only needed columns
@@ -185,12 +204,12 @@ def concat_tv(a, b):
   return a
 
 def parse(file):
-  # loads & parses data
-  # let's start with the TV dataset
-  # we need to account for the fact that the R Stringent
-  # file is the same as R Lenient file, but it is not saved
-  # in raw-data. We'll need to manually add those rows to
-  # the data set.
+  # # loads & parses data
+  # # let's start with the TV dataset
+  # # we need to account for the fact that the R Stringent
+  # # file is the same as R Lenient file, but it is not saved
+  # # in raw-data. We'll need to manually add those rows to
+  # # the data set.
   d_tv = concat(
     reduce(concat_tv, file['url'][0:21], []),
     ignore_index = True
@@ -198,9 +217,9 @@ def parse(file):
 
   d_tv = parse_tv(d_tv)
 
-  # # # then we parse the web dataset,
-  # # # which is different as it comes all 
-  # # # #in one single file
+  # # then we parse the web dataset,
+  # # which is different as it comes all 
+  # # #in one single file
   d_web = concat(
     reduce(concat_web, file['url'][21:], []),
     ignore_index = True
@@ -208,13 +227,15 @@ def parse(file):
 
   d_web = parse_web(d_web)
 
-  # # # # now concat web and tv together
+  # # # now concat web and tv together
   data = concat(
     [d_tv, d_web],
+    # [d_web],
     ignore_index = True
   )
 
-  # # rename time columns
+  # rename time columns
   data = data.rename({'activityyear': 'year', 'activitymonth': 'month'}, axis=1)
 
+  # return data
   return data
