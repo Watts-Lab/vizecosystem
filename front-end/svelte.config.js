@@ -8,11 +8,11 @@ const config = {
 	preprocess: vitePreprocess(),
 	// remove unused css warning
 	onwarn: (warning, handler) => {
-        if (warning.code === 'css-unused-selector') {
-            return;
-        }
-        handler(warning);
-    },
+		if (warning.code === 'css-unused-selector') {
+			return;
+		}
+		handler(warning);
+	},
 	kit: {
 		adapter: adapter({
 			// default options are shown. On some platforms
