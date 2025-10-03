@@ -55,14 +55,14 @@
 	$: maxY = max(flatData, d => d[1])
 </script>
 
-<div class='chart stacked-area-chart'>
+<div class='chart stacked-area-chart overflow-hidden position-relative'>
 	<LayerCake
 		padding={margins}
 		{flatData}
 		data={stackedData}
 		x={d => d.data.date}
 		xScale={scaleTime()}
-		xDomain={extent(xDomain)}
+		xDomain={scaleZoomed ? extent(smallXDomain) : extent(xDomain)}
 		y={[0, 1]}
 		yDomain={scaleZoomed ? [0, maxY]: yDomain}
 		yNice={true}
@@ -93,10 +93,10 @@
 				<AreaAnnotation />
 			{/if}
 		</Svg>
-		<Html pointerEvents={false}>
-			<ZoomBtn bind:zoomed={ scaleZoomed } />
-		</Html>
 	</LayerCake>
+  <!-- <Html pointerEvents={false}> -->
+    <ZoomBtn bind:zoomed={ scaleZoomed } />
+  <!-- </Html> -->
 </div>
 {#if includeCaption}
 	<Caption { caption } { url } type={'single-cols'} />
@@ -105,4 +105,12 @@
 
 
 <style lang='scss'>
+ .overflow-hidden {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .position-relative {
+    position: relative;
+  }
 </style>

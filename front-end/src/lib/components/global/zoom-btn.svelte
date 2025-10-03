@@ -33,16 +33,16 @@
 
 <style lang='scss'>
     .feather {
-        pointer-events: all;
-        cursor: pointer;
-		position: absolute;
-		top: -30px;
-		right: -10px;
-		z-index: 100;
-        border: 1px solid $dark-grey;
-        border-radius: 2px;
-        background-color: $off-white;
-        fill: none;
+      pointer-events: all;
+      cursor: pointer;
+      position: absolute;
+      top: -20px;
+      right: 0px;
+      z-index: 100;
+      border: 1px solid $dark-grey;
+      border-radius: 2px;
+      background-color: $off-white;
+      fill: none;
 
         .btn-wrapper {
             stroke: $dark-grey;
