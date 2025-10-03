@@ -40,7 +40,7 @@ datasets = [
       'raw_data/PHN_by_gender_by_age_group_mobile_consumption_f1.csv',
       'raw_data/PHN_by_age_group_by_race_mobile_consumption_f1.csv',
       'raw_data/PHN_by_state_mobile_consumption_f1.csv',
-      # # # tables
+      # # # tablet
       'raw_data/TAB_all_adults_mobile_consumption_f1.csv',
       'raw_data/TAB_by_age_group_mobile_consumption_f1.csv',
       'raw_data/TAB_by_gender_mobile_consumption_f1.csv',
@@ -49,6 +49,15 @@ datasets = [
       'raw_data/TAB_by_gender_by_age_group_mobile_consumption_f1.csv',
       'raw_data/TAB_by_age_group_by_race_mobile_consumption_f1.csv',
       'raw_data/TAB_by_state_mobile_consumption_f1.csv',
+      # # # streaming 
+      'raw_data/all_adults_streaming_consumption_f1.csv',
+      'raw_data/by_gender_streaming_consumption_f1.csv',
+      'raw_data/by_age_streaming_consumption_f1.csv',
+      'raw_data/by_age_x_gender_streaming_consumption_f1.csv',
+      'raw_data/by_race_streaming_consumption_f1.csv',
+      'raw_data/by_gender_x_race_streaming_consumption_f1.csv',
+      'raw_data/by_age_x_race_streaming_consumption_f1.csv',
+      'raw_data/by_state_streaming_consumption_f1.csv',
     ],
     'out_name': 'EchoCh-national_consumption_tv_and_web.csv',
     'format': '%.3f'

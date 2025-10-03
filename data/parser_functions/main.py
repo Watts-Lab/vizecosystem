@@ -1,7 +1,6 @@
 # built-in modules
 from functools import reduce
 from os import getenv
-
 # venv modules
 from pandas import read_csv, melt, concat
 
@@ -122,6 +121,58 @@ def parse_web(d):
   d.loc[:,'medium'] = 'web'
 
   return d
+
+def parse_stream(d):
+  # # clean NaNs
+  d['age_group'] = d['age_group'].fillna('All')
+  d['gender'] = d['gender'].fillna('All')
+  d['race'] = d['race'].fillna('All')
+  d['state'] = d['state'].fillna('US')
+
+  # # replace values 1/2 values for gender
+  d['gender'] = d['gender'].replace({ 1: 'Male', 2: 'Female' })
+
+  # # parse new date column format into the expected style  
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+  
+
+  cols = [
+    'activityyear',
+    'activitymonth',
+    'state',
+    'gender',
+    'age_group',
+    'race'
+  ]
+
+  values = [
+    'avg weighted_news / person / day',
+    'avg weighted_sports / person / day',
+    'avg weighted_reality_variety / person / day',
+    'avg weighted_documentary / person / day',
+    'avg weighted_entertainment_non_comedy / person / day',
+    'avg weighted_entertainment_comedy / person / day',
+    'avg weighted_other / person / day',
+  ]
+
+  d = d[cols + values].groupby(cols, as_index=False).sum()
+
+  d = melt(
+    d,
+    id_vars=cols,
+    value_vars=values,
+    var_name='category'
+  )
+
+  d['category'] = d['category']\
+    .str.extract(r'avg weighted_(.*) \/ person \/ day')
+
+  d.loc[:,'medium'] = 'streaming'
+
+  return d
+
+
 
 def parse_mob(d):
   # # clean NaNs
@@ -267,14 +318,21 @@ def parse(file):
 
   # # # mobile (tablet)
   d_tab = concat(
-    reduce(concat_files, file['url'][24:], []),
+    reduce(concat_files, file['url'][24:32], []),
     ignore_index = True
   )
   d_tab = d_tab[~((d_tab['weighted_social_media'] == 0) & (d_tab['weighted_entertainment'] == 0))]
   d_tab = parse_tab(d_tab)
 
-  # # # # and we put those 4 together
-  d = concat([d_tv, d_web, d_mob, d_tab], ignore_index=True)
+  # # # # stream 
+  d_stream = lower_case(concat(
+    reduce(concat_files, file['url'][32:], []),
+    ignore_index = True
+  ))
+  d_stream = parse_stream(d_stream)
+
+  # # # and we put those 5 together
+  d = concat([d_tv, d_web, d_mob, d_tab, d_stream], ignore_index=True)
 
   return d\
     .rename({'activityyear': 'year', 'activitymonth': 'month'}, axis=1)\
