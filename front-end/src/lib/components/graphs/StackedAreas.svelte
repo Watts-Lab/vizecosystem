@@ -14,7 +14,7 @@
 	import ZoomBtn from '$lib/components/global/zoom-btn.svelte';
 
 	// // // props declaration
-	export let margins : Object = { top: 15, right: 10, bottom: 20, left: 45 }
+	export let margins : Object = { top: 15, right: 15, bottom: 20, left: 45 }
 	export let caption : string = '';
 	export let includeCaption : boolean = true;
 	export let url : string = '';
@@ -25,6 +25,7 @@
 	export let formatter : Function
 	export let yDomain : number[]
 	export let xDomain : Date[]
+	export let smallXDomain : Date[]
 	export let xTicks : Date[]
 	export let addTickYLabel : boolean = true;
 	export let formatTickY : Function = (d : number, i : number, a: number) => (
@@ -50,9 +51,13 @@
 	$: stackedData = stacker(wideData)
 	$: flatData = flatten(stackedData)
 
-	$: scaleZoomed = false
+	$: scaleZoomed = true 
 
 	$: maxY = max(flatData, d => d[1])
+
+  $: if (caption === 'streaming') {
+    if (smallXDomain[1] > xTicks.slice(-1)[0]) { xTicks.push(smallXDomain[1]) }
+  }
 </script>
 
 <div class='chart stacked-area-chart overflow-hidden position-relative'>

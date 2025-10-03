@@ -64,6 +64,17 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,{color: string, orde
       ['other', {color: 'gainsboro', order: 5}],
     ]),
   }],
+  ['streaming', {
+    colorMap: new Map([
+      ['news', {color: '#011f5b', order: 1}],
+      ['reality_variety', {color: '#ffa07a', order: 2}],
+      ['documentary', {color: 'steelblue', order: 3}],
+      ['entertainment_non_comedy', {color: '#cab2d6', order: 4}],
+      ['entertainment_comedy', {color: '#f5276c', order: 5}],
+      ['sports', {color: 'lightgreen', order: 6}],
+      ['other', {color: 'gainsboro', order: 7}],
+    ]),
+  }],
 ])
 
 export default colorMap;

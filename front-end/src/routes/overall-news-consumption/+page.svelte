@@ -2,15 +2,14 @@
 	// node_modules
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	
-	import { csv } from "d3-fetch";
-  	import { autoType } from "d3-dsv";
-	import { group, extent } from 'd3-array';
+  import { csv } from "d3-fetch";
+  import { autoType } from "d3-dsv";
+  import { group, rollup, extent } from 'd3-array';
 
 	// import state data
-	import states from '$lib/data/states.json'
-	import copy from '$lib/data/copy.json'
-    const body: any[] = copy['overall-news-consumption']
+  import states from '$lib/data/states.json'
+  import copy from '$lib/data/copy.json'
+  const body: any[] = copy['overall-news-consumption']
 
 	// actions
 	import inView from "$lib/actions/inView";
@@ -36,9 +35,9 @@
 	let rows : number[]
 	let xTicks : Date[]
 	let xDomain : Date[]
-	let yDomain : Number[]
 	let axisChecked : boolean = true
-	let chartConfig : Map<string, { yDomain: number[] }>
+	let chartConfig : Map<string, { yDomain: number[], order: string[], colors: string[] }>
+	let extendMapper: Map<string, Date[]>
 	const urlChart : string  = 'assets/data/EchoCh-national_consumption_tv_and_web.csv'
 	
 	onMount(async () => {
@@ -48,7 +47,7 @@
 			.map((d: any) => ({ ...d, date: new Date(d.year, d.month, 1) }))
 			.sort((a: any, b: any) => +a.date - +b.date)
 
-    	// parse data for 
+    // parse data for 
 		dataMap = group(
 			data,
 			(d: any) => d.medium,
@@ -60,6 +59,8 @@
 			(d: any) => d.category
 		)
 
+    extendMapper = rollup(data, (v: any) => Array.from(new Set(v.map((y: any) => y.year))), (d: any) => d.medium)
+
 		rows = Array.from(new Set(data.map((d: any) => +d.date)))
 		xTicks = Array.from(new Set(data.map(d => d.year))).map(d => new Date(d, 0, 1))
 		xDomain = extent(data, (d: any) => d.date)
@@ -69,36 +70,51 @@
 		['tv', {
 			order: Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[1].color),
-			yDomain: [0, 300]
+			yDomain: [0, 300],
+      xDomain,
+      xTicks,
 		}
 		],
 		['web', {
 			order: Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[1].color),
-			yDomain: [0, 100]
+			yDomain: [0, 100],
+      xDomain,
+      xTicks,
 		}],
 		['mobile', {
 			order: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[1].color),
-			yDomain: [0, 450]
+			yDomain: [0, 450],
+      xDomain: extent(data.filter((e: any) => e.medium === 'mobile'), (d: any) => d.date),
+      xTicks: extendMapper.get('mobile'),
 		}],
 		['tablet', {
 			order: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[1].color),
-			yDomain: [0, 350]
+			yDomain: [0, 350],
+      xDomain: extent(data.filter((e: any) => e.medium === 'tablet'), (d: any) => d.date),
+      xTicks: extendMapper.get('tablet'),
+		}],
+		['streaming', {
+			order: Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[0]),
+			colors: Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[1].color),
+			yDomain: [0, 100],
+      xDomain: extent(data.filter((e: any) => e.medium === 'streaming'), (d: any) => d.date),
+      xTicks: extendMapper.get('streaming'),
 		}],
 	])
 
 	$: syncAxis = axisChecked === true
 	$: gender = 'All'
-    $: age_group = 'All'
+  $: age_group = 'All'
 	$: ethnicity = 'All'
 	$: location = 'US'
 	$: disableMenus = location !== 'US'
 	$: userInteractedWithControls = false;
 
 	function resetAge() { age_group = 'All' }
-    function resetGender() { gender = 'All' }
+  function resetGender() { gender = 'All' }
 	function resetEthnicity() { ethnicity = 'All' }
 	function resetState() { location = 'US' }
 
@@ -132,7 +148,7 @@
 </script>
 
 <div class="section" use:inView={{ once: true }} on:enter={() => loaded = true }>
-	{#each body as d, i}
+	{#each body as d}
 		{#if d.type === 'text'}
 			<p class='copy'>
 				{@html parseCopy(d.value)}
@@ -203,6 +219,7 @@
 					<div class='chart-grid'>
 						<div class='chart-inner'>
 							<h4>TV</h4>
+
 							<Legend 
 								dataMap={
 									dataMap
@@ -216,6 +233,7 @@
 								colorMap={colorMapByMedium.get('tv').colorMap}
 							/>
 							<StackedAreas 
+                caption='tv'
 								dataMap={
 									dataMap
 										.get('tv')
@@ -229,6 +247,7 @@
 								colors={chartConfig.get('tv').colors}
 								yDomain={chartConfig.get(syncAxis ? 'mobile': 'tv').yDomain}
 								{xDomain}
+								smallXDomain={chartConfig.get('tv').xDomain}
 								{xTicks}
 								formatter={formatYear}
 								includeCaption={false}
@@ -254,6 +273,7 @@
 								colorMap={colorMapByMedium.get('web').colorMap}
 							/>
 							<StackedAreas 
+                caption='web'
 								dataMap={
 									dataMap
 										.get('web')
@@ -267,6 +287,7 @@
 								colors={chartConfig.get('web').colors}
 								yDomain={chartConfig.get(syncAxis ? 'mobile': 'web').yDomain}
 								{xDomain}
+								smallXDomain={chartConfig.get('web').xDomain}
 								{xTicks}
 								addTickYLabel={false}
 								formatter={formatYear}
@@ -290,6 +311,7 @@
 								colorMap={colorMapByMedium.get('mobile').colorMap}
 							/>
 							<StackedAreas 
+                caption='mobile'
 								dataMap={
 									dataMap
 										.get('mobile')
@@ -303,6 +325,7 @@
 								colors={chartConfig.get('mobile').colors}
 								yDomain={chartConfig.get('mobile').yDomain}
 								{xDomain}
+								smallXDomain={chartConfig.get('mobile').xDomain}
 								{xTicks}
 								addTickYLabel={false}
 								formatter={formatYear}
@@ -326,6 +349,7 @@
 								colorMap={colorMapByMedium.get('tablet').colorMap}
 							/>
 							<StackedAreas 
+                caption='tablet'
 								dataMap={
 									dataMap
 										.get('tablet')
@@ -339,6 +363,45 @@
 								colors={chartConfig.get('tablet').colors}
 								yDomain={chartConfig.get(syncAxis ? 'mobile': 'tablet').yDomain}
 								{xDomain}
+								smallXDomain={chartConfig.get('tablet').xDomain}
+								{xTicks}
+								addTickYLabel={false}
+								formatter={formatYear}
+								includeCaption={false}
+								url={ urlChart }
+							/>
+						</div>
+
+						<div class='chart-inner'>
+							<h4>Streaming</h4>
+							<Legend 
+								dataMap={
+									dataMap
+										.get('streaming')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+										.get(xDomain[1])
+								}
+								colorMap={colorMapByMedium.get('streaming').colorMap}
+							/>
+							<StackedAreas 
+                caption='streaming'
+								dataMap={
+									dataMap
+										.get('streaming')
+										.get(gender)
+										.get(age_group)
+										.get(ethnicity)
+										.get(location)
+								}
+								{rows} 
+								categories={chartConfig.get('streaming').order} 
+								colors={chartConfig.get('streaming').colors}
+								yDomain={chartConfig.get(syncAxis ? 'mobile': 'streaming').yDomain}
+								{xDomain}
+								smallXDomain={chartConfig.get('streaming').xDomain}
 								{xTicks}
 								addTickYLabel={false}
 								formatter={formatYear}

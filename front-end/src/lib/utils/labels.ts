@@ -6,6 +6,8 @@ const labelMap : Map<string, string> = new Map([
     ['fake_news', 'Fake News'],
     ['social_media', 'Social Media'],
     ['entertainment', 'Entertainment'],
+    ['entertainment_non_comedy', 'Entertainment'],
+    ['entertainment_comedy', 'Comedy'],
     ['utility+lifestyle', 'Utility+Life'],
     ['communication', 'Communication'],
     ['other', 'Other'],
