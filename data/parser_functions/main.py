@@ -51,6 +51,9 @@ def parse_tv(d):
     'avg other mins / person / day'
   ]
 
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   d = melt(
     d,
     id_vars=cols,
@@ -106,6 +109,9 @@ def parse_web(d):
 
   calculated_categories_cols = list(calculated_categories.keys())
 
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   d = d[cols + values + calculated_categories_cols].groupby(cols, as_index=False).sum()
 
   d = melt(
@@ -135,7 +141,6 @@ def parse_stream(d):
   # # parse new date column format into the expected style  
   d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
   d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
-  
 
   cols = [
     'activityyear',
@@ -217,6 +222,9 @@ def parse_mob(d):
 
   calculated_categories_cols = list(calculated_categories.keys())
 
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   d = d[cols + values + calculated_categories_cols].groupby(cols, as_index=False).sum()
 
   d = melt(
@@ -276,6 +284,9 @@ def parse_tab(d):
 
   calculated_categories_cols = list(calculated_categories.keys())
 
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   d = d[cols + values + calculated_categories_cols].groupby(cols, as_index=False).sum()
 
   d = melt(
@@ -295,12 +306,14 @@ def parse_tab(d):
 def parse(file):
   # # # loads & parses data
   # # # let's start with the TV dataset
+  print("processing tv", file['url'][:8])
   d_tv = lower_case(concat(
     reduce(concat_files, file['url'][:8], []), ignore_index = True
   ))
   d_tv = parse_tv(d_tv)
 
   # # # now we do the same for the web data
+  print("processing web", file['url'][8:16])
   d_web = concat(
     reduce(concat_files, file['url'][8:16], []),
     ignore_index = True
@@ -309,6 +322,7 @@ def parse(file):
 
 
   # # # mobile (phone)
+  print("processing mobile PHN", file['url'][16:24])
   d_mob = concat(
     reduce(concat_files, file['url'][16:24], []),
     ignore_index = True
@@ -317,6 +331,7 @@ def parse(file):
   d_mob = parse_mob(d_mob)
 
   # # # mobile (tablet)
+  print("processing mobile TAB", file['url'][24:32])
   d_tab = concat(
     reduce(concat_files, file['url'][24:32], []),
     ignore_index = True
@@ -324,7 +339,8 @@ def parse(file):
   d_tab = d_tab[~((d_tab['weighted_social_media'] == 0) & (d_tab['weighted_entertainment'] == 0))]
   d_tab = parse_tab(d_tab)
 
-  # # # # stream 
+  # # # # stream
+  print("processing streaming", file['url'][32:])
   d_stream = lower_case(concat(
     reduce(concat_files, file['url'][32:], []),
     ignore_index = True

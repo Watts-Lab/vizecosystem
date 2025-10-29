@@ -29,6 +29,11 @@ def parse_web(b):
     'frac of weights (50) (L) (stringent)',
     'frac of weights (75) (L) (stringent)'
   ]
+
+
+  b_data['activityyear'] = b_data['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  b_data['activitymonth'] = b_data['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   # # unpivot data
   b_data = melt(
     b_data,
@@ -64,6 +69,9 @@ def parse_tv(df):
     'political_lean', 'partisanship_scenario'
   ]
   values = ['frac of weights (50)', 'frac of weights (75)']
+
+  df['activityyear'] = df['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  df['activitymonth'] = df['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
 
   # unpivot data
   data = melt(

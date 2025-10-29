@@ -23,6 +23,10 @@ def parse_web_frac(d):
     'frac of weights (50) (L) (lenient)',
     'frac of weights (50) (L) (stringent)',
   ]
+
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   # # unpivot data
   frac_data = melt(
     d,
@@ -66,6 +70,10 @@ def parse_web_size(d):
     'weighted_count_fl_ec_50',
     # 'weighted_count_fl_ec_75'
   ]
+
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   # # unpivot data
   size_data = melt(
     d,
@@ -128,6 +136,9 @@ def parse_tv_frac(d):
     # 'frac of weights (75)'
   ]
 
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   # unpivot data
   data = melt(
     d,
@@ -151,6 +162,9 @@ def parse_tv_size(d):
     'weighted_count_50', 
     # 'weighted_count_75'
   ]
+
+  d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
 
   # unpivot data
   data = melt(
@@ -251,9 +265,11 @@ def parse(file):
   # # then we parse the web dataset,
   # # which is different as it comes all 
   # # in one single file
+  print("processing web", file['url'][3]) 
   d_web = parse_web(file['url'][3])
 
   # # # now we parse the TV data into what it needs to be to match the web data
+  print("processing tv", file['url'][0:3]) 
   d_tv = parse_tv(d_tv)
 
   # # # for each subset, we need to perform a bunch of transformations

@@ -40,6 +40,9 @@ def parse_web(df):
   ]
   denom = 'weighted_count_denom'
 
+  df['activityyear'] = df['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  df['activitymonth'] = df['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   df = df.loc[:,cols+val_keys+[denom]]\
     .replace({ 'white': 'white+other', 'other': 'white+other' })\
     .groupby(by=cols)\
@@ -87,6 +90,9 @@ def parse_tv(df):
     'political_lean', 'partisanship_scenario'
   ]
   values = ['frac of weights (50)', 'frac of weights (75)']
+
+  df['activityyear'] = df['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  df['activitymonth'] = df['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
 
   # unpivot data
   data = melt(
