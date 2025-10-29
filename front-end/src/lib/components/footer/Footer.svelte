@@ -13,7 +13,7 @@
                                     loading="lazy" 
                                     width="480" 
                                     height="123" 
-                                    src="https://css.seas.upenn.edu/wp-content/uploads/2022/04/newfooter-1-seas.png"
+                                    src="https://css.seas.upenn.edu/wp-content/uploads/2025/02/IMG_4317.png"
                                     alt="Penn Engineering" 
                                     title="Penn Engineering" 
                                     srcset="https://css.seas.upenn.edu/wp-content/uploads/2022/04/newfooter-1-seas.png 480w, https://css.seas.upenn.edu/wp-content/uploads/2022/04/newfooter-1-seas-300x77.png 300w" 
