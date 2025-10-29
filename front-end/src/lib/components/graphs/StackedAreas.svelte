@@ -54,10 +54,6 @@
 	$: scaleZoomed = true 
 
 	$: maxY = max(flatData, d => d[1])
-
-  $: if (caption === 'streaming') {
-    if (smallXDomain[1] > xTicks.slice(-1)[0]) { xTicks.push(smallXDomain[1]) }
-  }
 </script>
 
 <div class='chart stacked-area-chart overflow-hidden position-relative'>

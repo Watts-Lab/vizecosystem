@@ -37,7 +37,7 @@
 	let xDomain : Date[]
 	let axisChecked : boolean = true
 	let chartConfig : Map<string, { yDomain: number[], order: string[], colors: string[] }>
-	let extendMapper: Map<string, Date[]>
+	let extentMapper: Map<string, Date[]>
 	const urlChart : string  = 'assets/data/EchoCh-national_consumption_tv_and_web.csv'
 	
 	onMount(async () => {
@@ -59,7 +59,8 @@
 			(d: any) => d.category
 		)
 
-    extendMapper = rollup(data, (v: any) => Array.from(new Set(v.map((y: any) => y.year))), (d: any) => d.medium)
+    extentMapper = rollup(data, (v: any) => Array.from(new Set(v.map((y: any) => y.year))), (d: any) => d.medium)
+    console.log(extentMapper)
 
 		rows = Array.from(new Set(data.map((d: any) => +d.date)))
 		xTicks = Array.from(new Set(data.map(d => d.year))).map(d => new Date(d, 0, 1))
@@ -87,21 +88,21 @@
 			colors: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[1].color),
 			yDomain: [0, 450],
       xDomain: extent(data.filter((e: any) => e.medium === 'mobile'), (d: any) => d.date),
-      xTicks: extendMapper.get('mobile'),
+      xTicks: extentMapper.get('mobile'),
 		}],
 		['tablet', {
 			order: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[1].color),
 			yDomain: [0, 350],
       xDomain: extent(data.filter((e: any) => e.medium === 'tablet'), (d: any) => d.date),
-      xTicks: extendMapper.get('tablet'),
+      xTicks: extentMapper.get('tablet'),
 		}],
 		['streaming', {
 			order: Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[1].color),
 			yDomain: [0, 100],
       xDomain: extent(data.filter((e: any) => e.medium === 'streaming'), (d: any) => d.date),
-      xTicks: extendMapper.get('streaming'),
+      xTicks: extentMapper.get('streaming'),
 		}],
 	])
 
