@@ -60,7 +60,6 @@
 		)
 
     extentMapper = rollup(data, (v: any) => Array.from(new Set(v.map((y: any) => y.year))), (d: any) => d.medium)
-    console.log(extentMapper)
 
 		rows = Array.from(new Set(data.map((d: any) => +d.date)))
 		xTicks = Array.from(new Set(data.map(d => d.year))).map(d => new Date(d, 0, 1))
@@ -105,6 +104,32 @@
       xTicks: extentMapper.get('streaming'),
 		}],
 	])
+
+  let chartFilters: Map<string, Set<string>>
+  $: chartFilters = new Map([
+    ['tv', new Set()],
+    ['web', new Set()],
+    ['mobile', new Set()],
+    ['tablet', new Set()],
+    ['streaming', new Set()],
+  ])
+
+  function toggleChartFilter(medium: string) {
+    return (category: string) => {
+      const newChartFilter = new Map(chartFilters)
+      const set = new Set(newChartFilter.get(medium))
+
+      if (set.has(category)) {
+        set.delete(category)
+      }
+      else {
+        set.add(category)
+      }
+
+      newChartFilter.set(medium, set)
+      chartFilters = newChartFilter
+    }
+  }
 
 	$: syncAxis = axisChecked === true
 	$: gender = 'All'
@@ -232,6 +257,8 @@
 										.get(xDomain[0])
 								}
 								colorMap={colorMapByMedium.get('tv').colorMap}
+                toggleFilter={toggleChartFilter('tv')}
+                enabledSet={chartFilters.get('tv')}
 							/>
 							<StackedAreas 
                 caption='tv'
@@ -256,6 +283,7 @@
 								showAnnotation={
 									false
 								}
+                chartFilters={chartFilters.get('tv')}
 							/>
 						</div>
 
@@ -272,6 +300,8 @@
 										.get(xDomain[0])
 								}
 								colorMap={colorMapByMedium.get('web').colorMap}
+                toggleFilter={toggleChartFilter('web')}
+                enabledSet={chartFilters.get('web')}
 							/>
 							<StackedAreas 
                 caption='web'
@@ -294,6 +324,7 @@
 								formatter={formatYear}
 								includeCaption={false}
 								url={ urlChart }
+                chartFilters={chartFilters.get('web')}
 							/>
 						</div>
 
@@ -310,6 +341,8 @@
 										.get(xDomain[1])
 								}
 								colorMap={colorMapByMedium.get('mobile').colorMap}
+                toggleFilter={toggleChartFilter('mobile')}
+                enabledSet={chartFilters.get('mobile')}
 							/>
 							<StackedAreas 
                 caption='mobile'
@@ -332,6 +365,7 @@
 								formatter={formatYear}
 								includeCaption={false}
 								url={ urlChart }
+                chartFilters={chartFilters.get('mobile')}
 							/>
 						</div>
 
@@ -348,6 +382,8 @@
 										.get(xDomain[1])
 								}
 								colorMap={colorMapByMedium.get('tablet').colorMap}
+                toggleFilter={toggleChartFilter('tablet')}
+                enabledSet={chartFilters.get('tablet')}
 							/>
 							<StackedAreas 
                 caption='tablet'
@@ -370,6 +406,7 @@
 								formatter={formatYear}
 								includeCaption={false}
 								url={ urlChart }
+                chartFilters={chartFilters.get('tablet')}
 							/>
 						</div>
 
@@ -386,6 +423,8 @@
 										.get(xDomain[1])
 								}
 								colorMap={colorMapByMedium.get('streaming').colorMap}
+                toggleFilter={toggleChartFilter('streaming')}
+                enabledSet={chartFilters.get('streaming')}
 							/>
 							<StackedAreas 
                 caption='streaming'
@@ -408,6 +447,7 @@
 								formatter={formatYear}
 								includeCaption={false}
 								url={ urlChart }
+                chartFilters={chartFilters.get('streaming')}
 							/>
 						</div>
 					</div>

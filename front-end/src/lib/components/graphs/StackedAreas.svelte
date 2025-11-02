@@ -1,6 +1,6 @@
 <script lang="ts">
 	// // node_modules
-	import { LayerCake, Svg, Html, flatten } from 'layercake';
+	import { LayerCake, Svg, flatten } from 'layercake';
 	import { scaleTime, scaleOrdinal } from 'd3-scale'
 	import { stack, stackOrderDescending } from 'd3-shape'
 	import { extent, max } from 'd3-array'
@@ -34,6 +34,7 @@
 		: d
 	);
 	export let showAnnotation: boolean = false
+	export let chartFilters: Set<string>
 
 	$: wideData = rows.map(r => {
 		const obj = {}
@@ -46,14 +47,19 @@
 		}
 	}).filter(d => d !== undefined)
 
-	$: columns = Object.keys(wideData[0]).filter(d => d !== 'date')
+	$: columns = Object.keys(wideData[0]).filter(d => d !== 'date').filter(d => {
+    return !chartFilters.has(d)
+  })
 	$: stacker = stack().keys(columns).order(stackOrderDescending)
-	$: stackedData = stacker(wideData)
+	$: stackedData = stacker(wideData).filter(d => {
+      return !chartFilters.has(d.key)
+    })
 	$: flatData = flatten(stackedData)
 
 	$: scaleZoomed = true 
 
 	$: maxY = max(flatData, d => d[1])
+
 </script>
 
 <div class='chart stacked-area-chart overflow-hidden position-relative'>
