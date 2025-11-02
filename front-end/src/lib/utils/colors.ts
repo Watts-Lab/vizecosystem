@@ -70,7 +70,7 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,{color: string, orde
       ['reality_variety', {color: '#ffa07a', order: 2}],
       ['documentary', {color: 'steelblue', order: 3}],
       ['entertainment_non_comedy', {color: '#cab2d6', order: 4}],
-      ['entertainment_comedy', {color: '#f5276c', order: 5}],
+      ['entertainment_comedy', {color: '#f8709e', order: 5}],
       ['sports', {color: 'lightgreen', order: 6}],
       ['other', {color: 'gainsboro', order: 7}],
     ]),
