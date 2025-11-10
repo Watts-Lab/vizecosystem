@@ -80,6 +80,9 @@ def parse_web(d):
   d = d.drop('gender_id', axis = 1)
   d['race'] = d['race'].replace({ 'white': 'white+other', 'other': 'white+other' })
 
+  # # replace hard_news with news for uniformity
+  d['avg news_mins / person / day'] = d['avg hard_news_mins / person / day']
+
   cols = [
     'activityyear',
     'activitymonth',
@@ -90,7 +93,7 @@ def parse_web(d):
   ]
 
   values = [
-    'avg hard_news_mins / person / day',
+    'avg news_mins / person / day',
     'avg fake_news_mins / person / day',
     'avg social_media_mins / person / day',
     'avg entertainment_mins / person / day',
@@ -151,12 +154,15 @@ def parse_stream(d):
     'race'
   ]
 
+  # # replace entertainment_non_comedy with entertainment for uniformity
+  d['avg weighted_entertainment / person / day'] = d['avg weighted_entertainment_non_comedy / person / day']
+
   values = [
     'avg weighted_news / person / day',
     'avg weighted_sports / person / day',
     'avg weighted_reality_variety / person / day',
     'avg weighted_documentary / person / day',
-    'avg weighted_entertainment_non_comedy / person / day',
+    'avg weighted_entertainment / person / day',
     'avg weighted_entertainment_comedy / person / day',
     'avg weighted_other / person / day',
   ]
