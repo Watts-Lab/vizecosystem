@@ -1,7 +1,6 @@
 <script lang="ts">
 	// node_modules
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
   import { csv } from "d3-fetch";
   import { autoType } from "d3-dsv";
   import { group, rollup, extent } from 'd3-array';
@@ -11,18 +10,13 @@
   import copy from '$lib/data/copy.json'
   const body: any[] = copy['overall-news-consumption']
 
+  // components
+  import Grid from "$lib/components/layouts/overall-news-consumption-grid.svelte";
+
 	// actions
 	import inView from "$lib/actions/inView";
 
-	// components
-	import ChartPlaceholder from '$lib/components/global/chart-placeholder.svelte';
-	import SelectMenu from '$lib/components/global/select-menu.svelte';
-	import StackedAreas from '$lib/components/graphs/StackedAreas.svelte';
-	import Caption from '$lib/components/graphs/layers/Caption.svelte';
-
-	// // import utils
-	import { formatYear } from '$lib/utils/format-dates';
-	import Legend from '$lib/components/graphs/legend/legend.svelte';
+	// import utils
 	import { colorMapByMedium } from '$lib/utils/colors';
 	import parseCopy from '$lib/utils/parse-copy';
 	
@@ -107,11 +101,11 @@
 
   let chartFilters: Map<string, Set<string>>
   $: chartFilters = new Map([
-    ['tv', new Set()],
-    ['web', new Set()],
-    ['mobile', new Set()],
-    ['tablet', new Set()],
-    ['streaming', new Set()],
+    ['tv', new Set(Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[0]))],
+    ['web', new Set(Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]))],
+    ['mobile', new Set(Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]))],
+    ['tablet', new Set(Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]))],
+    ['streaming', new Set(Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[0]))],
   ])
 
   function toggleChartFilter(medium: string) {
@@ -130,6 +124,27 @@
       chartFilters = newChartFilter
     }
   }
+  
+  function togglePreset(category: string) {
+    const newChartFilter = new Map(chartFilters)
+    const set = new Set([category])
+
+    for (const [key, _] of newChartFilter) {
+      newChartFilter.set(key, set);
+    }
+
+    chartFilters = newChartFilter
+  }
+
+  function resetFilters() {
+    chartFilters = new Map([
+      ['tv', new Set(Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[0]))],
+      ['web', new Set(Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]))],
+      ['mobile', new Set(Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]))],
+      ['tablet', new Set(Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]))],
+      ['streaming', new Set(Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[0]))],
+    ])
+  }   
 
 	$: syncAxis = axisChecked === true
 	$: gender = 'All'
@@ -179,283 +194,36 @@
 			<p class='copy'>
 				{@html parseCopy(d.value)}
 			</p>
-        {:else if d.type === 'title'} <h1 class='section-title'>{ d.value }</h1>
-		{:else}
-			<div class='chart-container'>
-				<h3 class='chart-title'>
-					{d.value.title}
-				</h3>
-			
-				<div class='controls'>
-					<SelectMenu 
-						id='location' 
-						title={'Location'}
-						options={stateMap}
-						bind:value={location}
-						bind:userInteractedWithControls
-					/>
-								
-					<SelectMenu 
-						id='age-group' 
-						title={'Age group'}
-						options={new Map([
-							['All', 'All'],
-							['18-24', '18-24'],
-							['25-34', '25-34'],
-							['35-44', '35-44'],
-							['45-54', '45-54'],
-							['55+', '55+']	
-						])}
-						disabled={disableMenus || disableAgeGroup}
-						bind:value={age_group}
-						bind:userInteractedWithControls
-					/>
-
-					<SelectMenu 
-						id='gender' 
-						title={'Gender'}
-						options={new Map([
-							['All', 'All'],
-							['Male', 'Male'],
-							['Female', 'Female']
-						])}
-						disabled={disableMenus || disableGender}
-						bind:value={gender}
-						bind:userInteractedWithControls
-					/>
-
-					<SelectMenu 
-						id='ethnicity' 
-						title={'Ethnicity'}
-						options={ethnicityMap}
-						disabled={disableMenus || disableEthnicity}
-						bind:value={ethnicity}
-						bind:userInteractedWithControls
-					/>
-
-					{#if userHasReachedLastLevel && renderReachedLastLevelLabel}
-						<p 
-							class='warning'
-							in:fade
-						>No further breakdown available</p>
-					{/if}
-				</div>
-			
-				{#if data}
-					<div class='chart-grid'>
-						<div class='chart-inner'>
-							<h4>TV</h4>
-
-							<Legend 
-								dataMap={
-									dataMap
-										.get('tv')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-										.get(xDomain[0])
-								}
-								colorMap={colorMapByMedium.get('tv').colorMap}
-                toggleFilter={toggleChartFilter('tv')}
-                enabledSet={chartFilters.get('tv')}
-							/>
-							<StackedAreas 
-                caption='tv'
-								dataMap={
-									dataMap
-										.get('tv')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-								}
-								{rows} 
-								categories={chartConfig.get('tv').order} 
-								colors={chartConfig.get('tv').colors}
-								yDomain={chartConfig.get(syncAxis ? 'mobile': 'tv').yDomain}
-								{xDomain}
-								smallXDomain={chartConfig.get('tv').xDomain}
-								{xTicks}
-								formatter={formatYear}
-								includeCaption={false}
-								url={ urlChart }
-								showAnnotation={
-									false
-								}
-                chartFilters={chartFilters.get('tv')}
-							/>
-						</div>
-
-						<div class='chart-inner'>
-							<h4>Desktop</h4>
-							<Legend 
-								dataMap={
-									dataMap
-										.get('web')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-										.get(xDomain[0])
-								}
-								colorMap={colorMapByMedium.get('web').colorMap}
-                toggleFilter={toggleChartFilter('web')}
-                enabledSet={chartFilters.get('web')}
-							/>
-							<StackedAreas 
-                caption='web'
-								dataMap={
-									dataMap
-										.get('web')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-								}
-								{rows} 
-								categories={chartConfig.get('web').order} 
-								colors={chartConfig.get('web').colors}
-								yDomain={chartConfig.get(syncAxis ? 'mobile': 'web').yDomain}
-								{xDomain}
-								smallXDomain={chartConfig.get('web').xDomain}
-								{xTicks}
-								addTickYLabel={false}
-								formatter={formatYear}
-								includeCaption={false}
-								url={ urlChart }
-                chartFilters={chartFilters.get('web')}
-							/>
-						</div>
-
-						<div class='chart-inner'>
-							<h4>Mobile (phone)</h4>
-							<Legend 
-								dataMap={
-									dataMap
-										.get('mobile')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-										.get(xDomain[1])
-								}
-								colorMap={colorMapByMedium.get('mobile').colorMap}
-                toggleFilter={toggleChartFilter('mobile')}
-                enabledSet={chartFilters.get('mobile')}
-							/>
-							<StackedAreas 
-                caption='mobile'
-								dataMap={
-									dataMap
-										.get('mobile')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-								}
-								{rows} 
-								categories={chartConfig.get('mobile').order} 
-								colors={chartConfig.get('mobile').colors}
-								yDomain={chartConfig.get('mobile').yDomain}
-								{xDomain}
-								smallXDomain={chartConfig.get('mobile').xDomain}
-								{xTicks}
-								addTickYLabel={false}
-								formatter={formatYear}
-								includeCaption={false}
-								url={ urlChart }
-                chartFilters={chartFilters.get('mobile')}
-							/>
-						</div>
-
-						<div class='chart-inner'>
-							<h4>Mobile (tablet)</h4>
-							<Legend 
-								dataMap={
-									dataMap
-										.get('tablet')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-										.get(xDomain[1])
-								}
-								colorMap={colorMapByMedium.get('tablet').colorMap}
-                toggleFilter={toggleChartFilter('tablet')}
-                enabledSet={chartFilters.get('tablet')}
-							/>
-							<StackedAreas 
-                caption='tablet'
-								dataMap={
-									dataMap
-										.get('tablet')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-								}
-								{rows} 
-								categories={chartConfig.get('tablet').order} 
-								colors={chartConfig.get('tablet').colors}
-								yDomain={chartConfig.get(syncAxis ? 'mobile': 'tablet').yDomain}
-								{xDomain}
-								smallXDomain={chartConfig.get('tablet').xDomain}
-								{xTicks}
-								addTickYLabel={false}
-								formatter={formatYear}
-								includeCaption={false}
-								url={ urlChart }
-                chartFilters={chartFilters.get('tablet')}
-							/>
-						</div>
-
-						<div class='chart-inner'>
-							<h4>Streaming</h4>
-							<Legend 
-								dataMap={
-									dataMap
-										.get('streaming')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-										.get(xDomain[1])
-								}
-								colorMap={colorMapByMedium.get('streaming').colorMap}
-                toggleFilter={toggleChartFilter('streaming')}
-                enabledSet={chartFilters.get('streaming')}
-							/>
-							<StackedAreas 
-                caption='streaming'
-								dataMap={
-									dataMap
-										.get('streaming')
-										.get(gender)
-										.get(age_group)
-										.get(ethnicity)
-										.get(location)
-								}
-								{rows} 
-								categories={chartConfig.get('streaming').order} 
-								colors={chartConfig.get('streaming').colors}
-								yDomain={chartConfig.get(syncAxis ? 'mobile': 'streaming').yDomain}
-								{xDomain}
-								smallXDomain={chartConfig.get('streaming').xDomain}
-								{xTicks}
-								addTickYLabel={false}
-								formatter={formatYear}
-								includeCaption={false}
-								url={ urlChart }
-                chartFilters={chartFilters.get('streaming')}
-							/>
-						</div>
-					</div>
-					{:else} <ChartPlaceholder height={640}/>
-				{/if}
-
-				<Caption caption={ d.value.captions } url={ urlChart } type={'single-cols'} />
-			</div>
+    {:else if d.type === 'title'} <h1 class='section-title'>{ d.value }</h1>
+		{:else} 
+      <Grid 
+        {data}
+        {disableAgeGroup}
+        {disableGender}
+        {disableEthnicity}
+        {userInteractedWithControls}
+        {gender}
+        {age_group}
+        {ethnicity}
+        {location}
+        {disableMenus}
+        {syncAxis}
+        {userHasReachedLastLevel}
+        {stateMap}
+        {ethnicityMap}
+        {rows}
+        {d}
+        {dataMap}
+        {chartFilters}
+        {urlChart}
+        {renderReachedLastLevelLabel}
+        {xDomain}
+        {xTicks}
+        {toggleChartFilter}
+        {togglePreset}
+        {resetFilters}
+        {chartConfig}
+      />
 		{/if}
 	{/each}
 </div>
@@ -491,75 +259,4 @@
 		}
 	}
 
-	.chart-container {
-		grid-column: span 12;
-        margin: 25px 0;
-
-		h3 {
-			margin-bottom: 1em;
-		}
-
-		.chart-grid {
-			display: grid;
-			column-gap: 15px;
-			row-gap: 25px;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(2, 1fr);
-			margin: 15px 0 0 0;
-
-			.chart-inner {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-		}
-	}
-
-	.controls {
-        display: flex;
-		position: relative;
-
-        .control-switch, 
-        .control-range {
-            display: flex;
-            flex-wrap: wrap;
-        
-            .control-title {
-                width: 100%;
-                @include fs-xxs;
-                font-weight: 300;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-
-                .info {
-                background-color: $off-white;
-                display: inline-block;
-                width: 12px;
-                border-radius: 100%;
-                text-align: center;
-                @include fs-xs;
-                }
-            }
-
-            .control-label {
-                @include fs-sm;
-            }
-            .control-label.active {
-                text-decoration: underline;
-            }
-
-            select {
-                margin: 0;
-                @include fs-sm;
-            }
-        }
-
-		.warning {
-			position: absolute;
-			color: $css-lab-dark-red;
-			top: -15px;
-			left: 195px;
-			@include fs-xs;
-		}
-	}
 </style>

@@ -2,7 +2,6 @@ const labelMap : Map<string, string> = new Map([
     ['non-news', 'Non-news'], 
     ['non_news', 'Non-news'],
     ['news', 'News'],
-    ['hard_news', 'News'], 
     ['fake_news', 'Fake News'],
     ['social_media', 'Social Media'],
     ['entertainment', 'Entertainment'],

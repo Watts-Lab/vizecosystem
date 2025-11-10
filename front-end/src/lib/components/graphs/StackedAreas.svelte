@@ -48,76 +48,103 @@
 	}).filter(d => d !== undefined)
 
 	$: columns = Object.keys(wideData[0]).filter(d => d !== 'date').filter(d => {
-    return !chartFilters.has(d)
+    return chartFilters.has(d)
   })
 	$: stacker = stack().keys(columns).order(stackOrderDescending)
 	$: stackedData = stacker(wideData).filter(d => {
-      return !chartFilters.has(d.key)
+      return chartFilters.has(d.key) 
     })
 	$: flatData = flatten(stackedData)
 
 	$: scaleZoomed = true 
 
 	$: maxY = max(flatData, d => d[1])
-
 </script>
 
 <div class='chart stacked-area-chart overflow-hidden position-relative'>
-	<LayerCake
-		padding={margins}
-		{flatData}
-		data={stackedData}
-		x={d => d.data.date}
-		xScale={scaleTime()}
-		xDomain={scaleZoomed ? extent(smallXDomain) : extent(xDomain)}
-		y={[0, 1]}
-		yDomain={scaleZoomed ? [0, maxY]: yDomain}
-		yNice={true}
-		z={'key'}
-		zScale={scaleOrdinal()}
-		zDomain={categories}
-		zRange={colors}
-	>
-		<Svg>
-			<AxisX
-				gridlines={false}
-				snapTicks={false}
-				tickMarks={true}
-				ticks={xTicks}
-				formatTick={formatter}
-			/>
-			<AxisY 
-				formatTick={ formatTickY } ticks={ 4 } 
-				gridlines={ true }
-				showLabels={ false }
-			/>
-			<AreaStacked />
-			<AxisY 
-				formatTick={ formatTickY } ticks={ 4 } 
-				gridlines={ false }
-			/>
-			{#if showAnnotation}
-				<AreaAnnotation />
-			{/if}
-		</Svg>
-	</LayerCake>
-  <!-- <Html pointerEvents={false}> -->
-    <ZoomBtn bind:zoomed={ scaleZoomed } />
-  <!-- </Html> -->
+  {#if stackedData && stackedData.length > 0}
+      <LayerCake
+        padding={margins}
+        {flatData}
+        data={stackedData}
+        x={d => d.data.date}
+        xScale={scaleTime()}
+        xDomain={scaleZoomed ? extent(smallXDomain) : extent(xDomain)}
+        y={[0, 1]}
+        yDomain={scaleZoomed ? [0, maxY]: yDomain}
+        yNice={true}
+        z={'key'}
+        zScale={scaleOrdinal()}
+        zDomain={categories}
+        zRange={colors}
+      >
+        <Svg>
+          <AxisX
+            gridlines={false}
+            snapTicks={false}
+            tickMarks={true}
+            ticks={xTicks}
+            formatTick={formatter}
+          />
+          <AxisY 
+            formatTick={ formatTickY } ticks={ 4 } 
+            gridlines={ true }
+            showLabels={ false }
+          />
+          <AreaStacked />
+          <AxisY 
+            formatTick={ formatTickY } ticks={ 4 } 
+            gridlines={ false }
+          />
+          {#if showAnnotation}
+            <AreaAnnotation />
+          {/if}
+        </Svg>
+      </LayerCake>
+      <!-- <Html pointerEvents={false}> -->
+      <ZoomBtn bind:zoomed={ scaleZoomed } />
+      <!-- </Html> -->
+  {:else} <div class='warning diagonal-stripes'>
+      <div class='label'>No data available</div>
+    </div>
+  {/if}
 </div>
 {#if includeCaption}
-	<Caption { caption } { url } type={'single-cols'} />
+  <Caption { caption } { url } type={'single-cols'} />
 {/if}
 
 
-
 <style lang='scss'>
- .overflow-hidden {
+  .overflow-hidden {
     overflow-x: clip;
     overflow-y: visible;
   }
 
   .position-relative {
     position: relative;
+  }
+
+  .diagonal-stripes {
+    background: repeating-linear-gradient(
+      45deg,
+      #d3d3d3,
+      #d3d3d3 1px,
+      #ffffff 1px,
+      #ffffff 10px
+      );
+  }
+
+  .warning {
+    display: flex;
+    height: 100%;
+    font-size: 0.8em;
+    justify-content: center;
+
+    .label {
+      align-self: center;
+      padding: 20px;
+      background: white;
+      border: 1pt #d3d3d3 solid;
+    }
   }
 </style>

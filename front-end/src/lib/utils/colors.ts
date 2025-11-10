@@ -38,7 +38,7 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,{color: string, orde
   ],
   ['web', {
     colorMap: new Map([
-      ['hard_news', {color: '#011f5b', order: 1}],
+      ['news', {color: '#011f5b', order: 1}],
       ['fake_news', {color: '#990000', order: 2}],
       ['social_media', {color: '#fdbf6f', order: 3}],
       ['lifestyle', {color: 'lightblue', order: 4}],
@@ -69,7 +69,7 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,{color: string, orde
       ['news', {color: '#011f5b', order: 1}],
       ['reality_variety', {color: '#ffa07a', order: 2}],
       ['documentary', {color: 'steelblue', order: 3}],
-      ['entertainment_non_comedy', {color: '#cab2d6', order: 4}],
+      ['entertainment', {color: '#cab2d6', order: 4}],
       ['entertainment_comedy', {color: '#f8709e', order: 5}],
       ['sports', {color: 'lightgreen', order: 6}],
       ['other', {color: 'gainsboro', order: 7}],

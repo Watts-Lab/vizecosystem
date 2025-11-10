@@ -8,15 +8,8 @@
     export let enabledSet: Set<string>
     export let toggleFilter: Function 
     
-    // $: enabledMap = new Map(
-    //   Array.from(dataMap.keys()).map(d => [d, true])
-    // )
-    // $: console.log(enabledMap)
 
     function click(cat: string) {
-      // enabledMap = new Map(enabledMap)
-      // enabledMap.set(cat, !enabledMap.get(cat))
-
       toggleFilter(cat)
     }
 
@@ -27,13 +20,14 @@
       }
     }
 
+    console.log(dataMap)
 </script>
 
 <div class='legend'>
     {#each Array.from(dataMap.keys()).sort((a,b) => colorMap.get(a).order - colorMap.get(b).order) as cat}
         <div 
           class='legend-item'
-          class:disabled={enabledSet.has(cat)}
+          class:disabled={!enabledSet.has(cat)}
           tabindex="0"
           role='button'
           on:click={() => click(cat)}
