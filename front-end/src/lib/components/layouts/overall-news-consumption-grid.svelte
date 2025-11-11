@@ -169,6 +169,47 @@
       </div>
 
       <div class='chart-inner'>
+        <h4>TV Streaming</h4>
+        <Legend 
+          dataMap={
+            dataMap
+              .get('streaming')
+              .get(gender)
+              .get(age_group)
+              .get(ethnicity)
+              .get(location)
+              .get(xDomain[1])
+          }
+          colorMap={colorMapByMedium.get('streaming').colorMap}
+          toggleFilter={toggleChartFilter('streaming')}
+          enabledSet={chartFilters.get('streaming')}
+        />
+        <StackedAreas 
+          caption='streaming'
+          dataMap={
+            dataMap
+              .get('streaming')
+              .get(gender)
+              .get(age_group)
+              .get(ethnicity)
+              .get(location)
+          }
+          {rows} 
+          categories={chartConfig.get('streaming').order} 
+          colors={chartConfig.get('streaming').colors}
+          yDomain={chartConfig.get(syncAxis ? 'mobile': 'streaming').yDomain}
+          {xDomain}
+          smallXDomain={chartConfig.get('streaming').xDomain}
+          {xTicks}
+          addTickYLabel={false}
+          formatter={formatYear}
+          includeCaption={false}
+          url={ urlChart }
+          chartFilters={chartFilters.get('streaming')}
+        />
+      </div>
+
+      <div class='chart-inner'>
         <h4>Desktop</h4>
         <Legend 
           dataMap={
@@ -288,47 +329,6 @@
           includeCaption={false}
           url={ urlChart }
           chartFilters={chartFilters.get('tablet')}
-        />
-      </div>
-
-      <div class='chart-inner'>
-        <h4>Streaming</h4>
-        <Legend 
-          dataMap={
-            dataMap
-              .get('streaming')
-              .get(gender)
-              .get(age_group)
-              .get(ethnicity)
-              .get(location)
-              .get(xDomain[1])
-          }
-          colorMap={colorMapByMedium.get('streaming').colorMap}
-          toggleFilter={toggleChartFilter('streaming')}
-          enabledSet={chartFilters.get('streaming')}
-        />
-        <StackedAreas 
-          caption='streaming'
-          dataMap={
-            dataMap
-              .get('streaming')
-              .get(gender)
-              .get(age_group)
-              .get(ethnicity)
-              .get(location)
-          }
-          {rows} 
-          categories={chartConfig.get('streaming').order} 
-          colors={chartConfig.get('streaming').colors}
-          yDomain={chartConfig.get(syncAxis ? 'mobile': 'streaming').yDomain}
-          {xDomain}
-          smallXDomain={chartConfig.get('streaming').xDomain}
-          {xTicks}
-          addTickYLabel={false}
-          formatter={formatYear}
-          includeCaption={false}
-          url={ urlChart }
-          chartFilters={chartFilters.get('streaming')}
         />
       </div>
 
