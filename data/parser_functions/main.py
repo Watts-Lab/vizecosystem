@@ -328,9 +328,8 @@ def parse(file):
   )
   d_web = parse_web(d_web)
 
-
   # # # mobile (phone)
-  print("processing mobile PHN", file['url'][16:24])
+  print("processing mobile PHN+TAB", file['url'][16:24])
   d_mob = concat(
     reduce(concat_files, file['url'][16:24], []),
     ignore_index = True
@@ -338,25 +337,16 @@ def parse(file):
   d_mob = d_mob[~((d_mob['weighted_social_media'] == 0) & (d_mob['weighted_entertainment'] == 0))]
   d_mob = parse_mob(d_mob)
 
-  # # # mobile (tablet)
-  print("processing mobile TAB", file['url'][24:32])
-  d_tab = concat(
-    reduce(concat_files, file['url'][24:32], []),
-    ignore_index = True
-  )
-  d_tab = d_tab[~((d_tab['weighted_social_media'] == 0) & (d_tab['weighted_entertainment'] == 0))]
-  d_tab = parse_tab(d_tab)
-
   # # # # stream
-  print("processing streaming", file['url'][32:])
+  print("processing streaming", file['url'][24:])
   d_stream = lower_case(concat(
-    reduce(concat_files, file['url'][32:], []),
+    reduce(concat_files, file['url'][24:], []),
     ignore_index = True
   ))
   d_stream = parse_stream(d_stream)
 
-  # # # and we put those 5 together
-  d = concat([d_tv, d_web, d_mob, d_tab, d_stream], ignore_index=True)
+  # # # and we put those 4 together
+  d = concat([d_tv, d_web, d_mob, d_stream], ignore_index=True)
 
   return d\
     .rename({'activityyear': 'year', 'activitymonth': 'month'}, axis=1)\
