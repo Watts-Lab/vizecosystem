@@ -44,7 +44,8 @@ def parse_tv(d):
 
   values = [
     'avg news mins / person / day',
-    'avg entertainment mins / person / day',
+    'avg entertainment_comedy mins / person / day',
+    'avg entertainment_non_comedy mins / person / day',
     'avg documentary mins / person / day',
     'avg reality_variety mins / person / day',
     'avg sports mins / person / day',
@@ -93,9 +94,10 @@ def parse_web(d):
   ]
 
   values = [
-    'avg news_mins / person / day',
-    'avg fake_news_mins / person / day',
+    'avg hard_news_mins / person / day',
     'avg social_media_mins / person / day',
+    'avg retail_mins / person / day',
+    'avg lifestyle_mins / person / day',
     'avg entertainment_mins / person / day',
     'avg other_mins / person / day'
   ]
