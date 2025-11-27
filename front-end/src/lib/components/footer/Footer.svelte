@@ -16,7 +16,7 @@
                                     src="https://css.seas.upenn.edu/wp-content/uploads/2025/02/IMG_4317.png"
                                     alt="Penn Engineering" 
                                     title="Penn Engineering" 
-                                    srcset="https://css.seas.upenn.edu/wp-content/uploads/2022/04/newfooter-1-seas.png 480w, https://css.seas.upenn.edu/wp-content/uploads/2022/04/newfooter-1-seas-300x77.png 300w" 
+                                    srcset="https://css.seas.upenn.edu/wp-content/uploads/2025/02/IMG_4317.png 1761w, https://css.seas.upenn.edu/wp-content/uploads/2025/02/IMG_4317-1280x342.png 1280w, https://css.seas.upenn.edu/wp-content/uploads/2025/02/IMG_4317-980x262.png 980w, https://css.seas.upenn.edu/wp-content/uploads/2025/02/IMG_4317-480x128.png 480w" 
                                     sizes="(max-width: 480px) 100vw, 480px" 
                                     class="wp-image-3438" />
                             </span>
