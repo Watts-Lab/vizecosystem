@@ -28,20 +28,32 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,{color: string, orde
   ['tv', {
     colorMap: new Map([
       ['news', {color: '#011f5b', order: 1}],
-      ['entertainment', {color: '#cab2d6', order: 2}],
-      ['documentary', {color: 'steelblue', order: 3}],
-      ['reality_variety', {color: '#ffa07a', order: 4}],
-      ['sports', {color: 'lightgreen', order: 5}],
-      ['other', {color: 'gainsboro', order: 6}],
+      ['entertainment_non_comedy', {color: '#cab2d6', order: 2}],
+      ['entertainment_comedy', {color: '#f8709e', order: 3}],
+      ['documentary', {color: 'steelblue', order: 4}],
+      ['reality_variety', {color: '#ffa07a', order: 5}],
+      ['sports', {color: 'lightgreen', order: 6}],
+      ['other', {color: 'gainsboro', order: 7}],
     ]),
-  }
-  ],
-  ['web', {
+  }],
+  ['streaming', {
     colorMap: new Map([
       ['news', {color: '#011f5b', order: 1}],
+      ['reality_variety', {color: '#ffa07a', order: 5}],
+      ['documentary', {color: 'steelblue', order: 4}],
+      ['entertainment', {color: '#cab2d6', order: 2}],
+      ['entertainment_comedy', {color: '#f8709e', order: 3}],
+      ['sports', {color: 'lightgreen', order: 6}],
+      ['other', {color: 'gainsboro', order: 7}],
+    ]),
+  }],
+  ['web', {
+    colorMap: new Map([
+      ['hard_news', {color: '#011f5b', order: 1}],
       ['fake_news', {color: '#990000', order: 2}],
       ['social_media', {color: '#fdbf6f', order: 3}],
       ['lifestyle', {color: 'lightblue', order: 4}],
+      ['retail', {color: '#ffa07a', order: 4}],
       ['entertainment', {color: '#cab2d6', order: 5}],
       ['other', {color: 'gainsboro', order: 6}],  
     ]),
@@ -62,17 +74,6 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,{color: string, orde
       ['lifestyle', {color: 'lightblue', order: 3}],
       ['entertainment', {color: '#cab2d6', order: 4}],
       ['other', {color: 'gainsboro', order: 5}],
-    ]),
-  }],
-  ['streaming', {
-    colorMap: new Map([
-      ['news', {color: '#011f5b', order: 1}],
-      ['reality_variety', {color: '#ffa07a', order: 2}],
-      ['documentary', {color: 'steelblue', order: 3}],
-      ['entertainment', {color: '#cab2d6', order: 4}],
-      ['entertainment_comedy', {color: '#f8709e', order: 5}],
-      ['sports', {color: 'lightgreen', order: 6}],
-      ['other', {color: 'gainsboro', order: 7}],
     ]),
   }],
 ])

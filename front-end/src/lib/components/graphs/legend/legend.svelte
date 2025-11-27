@@ -19,8 +19,6 @@
         click(data.cat)
       }
     }
-
-    console.log(dataMap)
 </script>
 
 <div class='legend'>

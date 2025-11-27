@@ -251,7 +251,7 @@
       </div>
 
       <div class='chart-inner'>
-        <h4>Mobile (phone)</h4>
+        <h4>Mobile</h4>
         <Legend 
           dataMap={
             dataMap
@@ -288,47 +288,6 @@
           includeCaption={false}
           url={ urlChart }
           chartFilters={chartFilters.get('mobile')}
-        />
-      </div>
-
-      <div class='chart-inner'>
-        <h4>Mobile (tablet)</h4>
-        <Legend 
-          dataMap={
-            dataMap
-              .get('tablet')
-              .get(gender)
-              .get(age_group)
-              .get(ethnicity)
-              .get(location)
-              .get(xDomain[1])
-          }
-          colorMap={colorMapByMedium.get('tablet').colorMap}
-          toggleFilter={toggleChartFilter('tablet')}
-          enabledSet={chartFilters.get('tablet')}
-        />
-        <StackedAreas 
-          caption='tablet'
-          dataMap={
-            dataMap
-              .get('tablet')
-              .get(gender)
-              .get(age_group)
-              .get(ethnicity)
-              .get(location)
-          }
-          {rows} 
-          categories={chartConfig.get('tablet').order} 
-          colors={chartConfig.get('tablet').colors}
-          yDomain={chartConfig.get(syncAxis ? 'mobile': 'tablet').yDomain}
-          {xDomain}
-          smallXDomain={chartConfig.get('tablet').xDomain}
-          {xTicks}
-          addTickYLabel={false}
-          formatter={formatYear}
-          includeCaption={false}
-          url={ urlChart }
-          chartFilters={chartFilters.get('tablet')}
         />
       </div>
 
