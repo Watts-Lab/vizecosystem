@@ -79,14 +79,14 @@
 		['mobile', {
 			order: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[1].color),
-			yDomain: [0, 450],
+			yDomain: [0, 300],
       xDomain: extent(data.filter((e: any) => e.medium === 'mobile'), (d: any) => d.date),
       xTicks: extentMapper.get('mobile'),
 		}],
 		['tablet', {
 			order: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[1].color),
-			yDomain: [0, 350],
+			yDomain: [0, 300],
       xDomain: extent(data.filter((e: any) => e.medium === 'tablet'), (d: any) => d.date),
       xTicks: extentMapper.get('tablet'),
 		}],
