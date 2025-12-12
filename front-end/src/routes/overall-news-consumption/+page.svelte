@@ -11,7 +11,8 @@
   const body: any[] = copy['overall-news-consumption']
 
   // components
-  import Grid from "$lib/components/layouts/overall-news-consumption-grid.svelte";
+  import GridTVStreaming from "$lib/components/layouts/overall-news-consumption-grid-tv-streaming.svelte"
+  import GridSocialMediaDesktop from "$lib/components/layouts/overall-news-consumption-grid-social-media-desktop.svelte";
 
 	// actions
 	import inView from "$lib/actions/inView";
@@ -195,8 +196,35 @@
 				{@html parseCopy(d.value)}
 			</p>
     {:else if d.type === 'title'} <h1 class='section-title'>{ d.value }</h1>
-		{:else} 
-      <Grid 
+    {:else if d.type === 'chart' && d.value.id === 'tv-streaming'} <GridTVStreaming 
+        {data}
+        {disableAgeGroup}
+        {disableGender}
+        {disableEthnicity}
+        {userInteractedWithControls}
+        {gender}
+        {age_group}
+        {ethnicity}
+        {location}
+        {disableMenus}
+        {syncAxis}
+        {userHasReachedLastLevel}
+        {stateMap}
+        {ethnicityMap}
+        {rows}
+        {d}
+        {dataMap}
+        {chartFilters}
+        {urlChart}
+        {renderReachedLastLevelLabel}
+        {xDomain}
+        {xTicks}
+        {toggleChartFilter}
+        {togglePreset}
+        {resetFilters}
+        {chartConfig}
+      />
+    {:else if d.type === 'chart' && d.value.id === 'social-desktop'} <GridSocialMediaDesktop
         {data}
         {disableAgeGroup}
         {disableGender}

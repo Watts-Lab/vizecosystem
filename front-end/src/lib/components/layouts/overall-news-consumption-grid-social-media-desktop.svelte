@@ -126,90 +126,6 @@
   {#if data} 
     <div class='chart-grid'>
       <div class='chart-inner'>
-        <h4>TV</h4>
-        <Legend 
-          dataMap={
-            dataMap
-              .get('tv')
-              .get(gender)
-              .get(age_group)
-              .get(ethnicity)
-              .get(location)
-              .get(xDomain[0])
-          }
-          colorMap={colorMapByMedium.get('tv').colorMap}
-          toggleFilter={toggleChartFilter('tv')}
-          enabledSet={chartFilters.get('tv')}
-        />
-        <StackedAreas 
-          caption='tv'
-          dataMap={
-            dataMap
-              .get('tv')
-              .get(gender)
-              .get(age_group)
-              .get(ethnicity)
-              .get(location)
-          }
-          {rows} 
-          categories={chartConfig.get('tv').order} 
-          colors={chartConfig.get('tv').colors}
-          yDomain={chartConfig.get(syncAxis ? 'mobile': 'tv').yDomain}
-          {xDomain}
-          smallXDomain={chartConfig.get('tv').xDomain}
-          {xTicks}
-          formatter={formatYear}
-          includeCaption={false}
-          url={ urlChart }
-          showAnnotation={
-            false
-          }
-          chartFilters={chartFilters.get('tv')}
-        />
-      </div>
-
-      <div class='chart-inner'>
-        <h4>TV Streaming</h4>
-        <Legend 
-          dataMap={
-            dataMap
-              .get('streaming')
-              .get(gender)
-              .get(age_group)
-              .get(ethnicity)
-              .get(location)
-              .get(xDomain[1])
-          }
-          colorMap={colorMapByMedium.get('streaming').colorMap}
-          toggleFilter={toggleChartFilter('streaming')}
-          enabledSet={chartFilters.get('streaming')}
-        />
-        <StackedAreas 
-          caption='streaming'
-          dataMap={
-            dataMap
-              .get('streaming')
-              .get(gender)
-              .get(age_group)
-              .get(ethnicity)
-              .get(location)
-          }
-          {rows} 
-          categories={chartConfig.get('streaming').order} 
-          colors={chartConfig.get('streaming').colors}
-          yDomain={chartConfig.get(syncAxis ? 'mobile': 'streaming').yDomain}
-          {xDomain}
-          smallXDomain={chartConfig.get('streaming').xDomain}
-          {xTicks}
-          addTickYLabel={false}
-          formatter={formatYear}
-          includeCaption={false}
-          url={ urlChart }
-          chartFilters={chartFilters.get('streaming')}
-        />
-      </div>
-
-      <div class='chart-inner'>
         <h4>Desktop</h4>
         <Legend 
           dataMap={
@@ -292,7 +208,7 @@
       </div>
 
     </div>
-    {:else} <ChartPlaceholder height={640}/>
+    {:else} <ChartPlaceholder height={300}/>
   {/if}
   <Caption caption={ d.value.captions } url={ urlChart } type={'single-cols'} />
 </div>
@@ -311,7 +227,7 @@
 			column-gap: 15px;
 			row-gap: 25px;
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(2, 1fr);
+			grid-template-rows: repeat(1, 1fr);
 			margin: 15px 0 0 0;
 
 			.chart-inner {

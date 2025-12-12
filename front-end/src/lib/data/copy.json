@@ -73,31 +73,53 @@
         },
         {
             "type": "text",
-            "value": "In the first figure, we tally the average time spent watching news and non-news on four different mediums: TV, Desktop, Mobile(phone) and Mobile(tablet)."
-        },
-        {
-            "type": "text",
-            "value": "The _i_Social Media_i_ category under Desktop and Tablet is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter."
-        },
-        {
-            "type": "text",
-            "value": "\\_i_Entertainment:_i_ anything that provides leisure in users’ free time.<br/>E.g. reality shows, game apps"
-        },
-        {
-            "type": "text",
-            "value": "\\_i_Lifestyle:_i_ health, productivity, and learning <br/>E.g. cooking shows, language apps"
-        },
-        {
-            "type": "text",
-            "value": "When we talk about traditional news audiences in the US, we are primarily referring to people who get their news through TV."
+            "value": "Below, we tally the average time spent watching news and other non-news on four different mediums: traditional TV, TV Streaming, Desktop Computer, and Mobile (both phone and tablet)."
         },
         {
             "type": "chart",
             "value": {
+                "id": "tv-streaming",
                 "type": "line-area",
-                "title": "TV vs Online Consumption",
+                "title": "TV vs Streaming Consumption",
                 "captions": "Minutes per person per day spent with news and other categories of content on TV, desktop, and mobile browsing. *Local TV News is not included."
             }
+        },
+        {
+            "type": "text",
+            "value": "_i_Entertainment_i_ on TV/Streaming includes scripted programs focused on drama, action, suspense, sci-fi, children’s stories, or feature films. Examples include dramas, mysteries, adventure series, westerns, and movies. Does not include comedies, documentaries, or reality shows, instead referring to content that relies on fictional and dramatized storytelling."
+        },
+        {
+            "type": "text",
+            "value": "_i_Comedy_i_ programs created mainly to make viewers laugh through humorous stories or performances. This includes sitcoms, sketch comedy, late-night comedy, and animated comedies."
+        },
+        {
+            "type": "text",
+            "value": "_i_Documentary_i_ programs include fact-based, non-fiction programming about real events, issues, or people, usually presented in an in-depth, narrative format. Examples include historical documentaries, nature films, biographies, and investigative specials. Differs from _i_News_i_ because News content is tied to real-time reporting of current events, public affairs, and political developments. Examples of News include daily newscasts, breaking-news segments, and political analysis shows."
+        },
+        {
+            "type": "chart",
+            "value": {
+                "id": "social-desktop",
+                "type": "line-area",
+                "title": "TV vs Streaming Consumption",
+                "captions": "Minutes per person per day spent with news and other categories of content on TV, desktop, and mobile browsing. *Local TV News is not included."
+            }
+        },
+        {
+            "type": "text",
+            "value": "The _i_Social Media_i_ category is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter, TikTok, LinkedIn, Pinterest, Tumblr, Threads, Bluesky, Nextdoor, Line.me, and a few other smaller platforms."
+        },
+        {
+            "type": "text",
+            "value": "_i_Lifestyle_i_ refers to websites and apps that help users manage various aspects of everyday personal life. This content offers practical guidance, tools, or inspiration for daily living and is distinct from news, professional tools, or entertainment. Examples include cooking sites, dating apps, home-décor platforms, shopping and deal-finding sites, fitness and wellness apps, lifestyle magazines, how-to hubs, and personal-finance utilities."
+        },
+        {
+            "type": "text",
+            "value": "_i_Entertainment_i_ Digital platforms—such as streaming services, music and audio apps, and leisure websites—whose primary function is to provide amusement or recreational media. In addition to music and podcasts, this includes, gaming, sports viewing, pop culture and celebrity news, and other forms of entertainment. Distinct from the social media category, the online category content focuses on  professionally produced or game-based content rather than facilitating interpersonal social networking or user-generated social feeds."
+        },
+        {
+            "type": "text",
+            "value": "_i_News_i_ refers to apps and websites explicitly devoted to producing news reports. Does not information about politics and current events that is circulated within social media apps."
         }
     ],
     "partisan-echo-chambers": [
@@ -138,7 +160,7 @@
                 "title": "Mapping Partisan Echo Chambers",
                 "captions": "In this interactive map, the sizes of the semicircles are proportional to the sizes of the left-wing and right-wing echo chambers in each state. Click on individual states to reveal the number of people in echo chambers in each state.",
                 "caption1": "State-level timeline of echo chamber size as % of total population with TV/desktop computers.",
-                "caption2": "We computed the audience for each program; these are the top-ranked ones listed alphabetically."
+                "caption2": "These are the most watched programs in this state, listed alphabetically."
             }
         }
     ],
@@ -156,7 +178,7 @@
             "value": {
                 "type": "flow-chart",
                 "title": "Shifting TV Viewership",
-                "captions": "This figure shows how many people (by the millions) have switched from one news diet to another over a period of six years. For example, if 1M (1 million) people switched from diet A to diet B and during the same time period 4M switched from diet B to diet A, there is a net flow of 3M people from B to A."
+                "captions": "This figure shows how many people (by the millions) have switched from one news diet to another. For example, if 1M (1 million) people switched from diet A to diet B and during the same time period 4M switched from diet B to diet A, there is a net flow of 3M people from B to A."
             }
         }
     ],

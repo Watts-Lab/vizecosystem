@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"google": "node tasks/google-docs.js",
+		"google": "bun run tasks/google-docs.js",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
