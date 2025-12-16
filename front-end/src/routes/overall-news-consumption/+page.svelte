@@ -84,13 +84,6 @@
       xDomain: extent(data.filter((e: any) => e.medium === 'mobile'), (d: any) => d.date),
       xTicks: extentMapper.get('mobile'),
 		}],
-		['tablet', {
-			order: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]),
-			colors: Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[1].color),
-			yDomain: [0, 300],
-      xDomain: extent(data.filter((e: any) => e.medium === 'tablet'), (d: any) => d.date),
-      xTicks: extentMapper.get('tablet'),
-		}],
 		['streaming', {
 			order: Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[0]),
 			colors: Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[1].color),
@@ -100,18 +93,21 @@
 		}],
 	])
 
-  let chartFilters: Map<string, Set<string>>
-  $: chartFilters = new Map([
+  let chartFiltersTvStreaming: Map<string, Set<string>>
+  $: chartFiltersTvStreaming = new Map([
     ['tv', new Set(Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[0]))],
-    ['web', new Set(Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]))],
-    ['mobile', new Set(Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]))],
-    ['tablet', new Set(Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]))],
     ['streaming', new Set(Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[0]))],
   ])
 
-  function toggleChartFilter(medium: string) {
+  let chartFiltersDesktopMobile: Map<string, Set<string>>
+  $: chartFiltersDesktopMobile = new Map([
+    ['web', new Set(Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]))],
+    ['mobile', new Set(Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]))],
+  ])
+
+  function toggleChartFilterTvStreaming(medium: string) {
     return (category: string) => {
-      const newChartFilter = new Map(chartFilters)
+      const newChartFilter = new Map(chartFiltersTvStreaming)
       const set = new Set(newChartFilter.get(medium))
 
       if (set.has(category)) {
@@ -122,28 +118,60 @@
       }
 
       newChartFilter.set(medium, set)
-      chartFilters = newChartFilter
+      chartFiltersTvStreaming = newChartFilter
+    }
+  }
+
+  function toggleChartFilterDesktopMobile(medium: string) {
+    return (category: string) => {
+      const newChartFilter = new Map(chartFiltersDesktopMobile)
+      const set = new Set(newChartFilter.get(medium))
+
+      if (set.has(category)) {
+        set.delete(category)
+      }
+      else {
+        set.add(category)
+      }
+
+      newChartFilter.set(medium, set)
+      chartFiltersDesktopMobile = newChartFilter
     }
   }
   
-  function togglePreset(category: string) {
-    const newChartFilter = new Map(chartFilters)
+  function togglePresetTvStreaming(category: string) {
+    const newChartFilter = new Map(chartFiltersTvStreaming)
     const set = new Set([category])
 
     for (const [key, _] of newChartFilter) {
       newChartFilter.set(key, set);
     }
 
-    chartFilters = newChartFilter
+    chartFiltersTvStreaming = newChartFilter
   }
 
-  function resetFilters() {
-    chartFilters = new Map([
+  function togglePresetDesktopMobile(category: string) {
+    const newChartFilter = new Map(chartFiltersDesktopMobile)
+    const set = new Set([category])
+
+    for (const [key, _] of newChartFilter) {
+      newChartFilter.set(key, set);
+    }
+
+    chartFiltersDesktopMobile = newChartFilter
+  }
+
+  function resetFiltersTvStreaming() {
+    chartFiltersTvStreaming = new Map([
       ['tv', new Set(Array.from(colorMapByMedium.get('tv')!.colorMap).map(d => d[0]))],
+      ['streaming', new Set(Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[0]))],
+    ])
+  }   
+
+  function resetFiltersDesktopMobile() {
+    chartFiltersDesktopMobile = new Map([
       ['web', new Set(Array.from(colorMapByMedium.get('web')!.colorMap).map(d => d[0]))],
       ['mobile', new Set(Array.from(colorMapByMedium.get('mobile')!.colorMap).map(d => d[0]))],
-      ['tablet', new Set(Array.from(colorMapByMedium.get('tablet')!.colorMap).map(d => d[0]))],
-      ['streaming', new Set(Array.from(colorMapByMedium.get('streaming')!.colorMap).map(d => d[0]))],
     ])
   }   
 
@@ -214,14 +242,14 @@
         {rows}
         {d}
         {dataMap}
-        {chartFilters}
+        chartFilters={chartFiltersTvStreaming}
         {urlChart}
         {renderReachedLastLevelLabel}
         {xDomain}
         {xTicks}
-        {toggleChartFilter}
-        {togglePreset}
-        {resetFilters}
+        toggleChartFilter={toggleChartFilterTvStreaming}
+        togglePreset={togglePresetTvStreaming}
+        resetFilters={resetFiltersTvStreaming}
         {chartConfig}
       />
     {:else if d.type === 'chart' && d.value.id === 'social-desktop'} <GridSocialMediaDesktop
@@ -242,14 +270,14 @@
         {rows}
         {d}
         {dataMap}
-        {chartFilters}
+        chartFilters={chartFiltersDesktopMobile}
         {urlChart}
         {renderReachedLastLevelLabel}
         {xDomain}
         {xTicks}
-        {toggleChartFilter}
-        {togglePreset}
-        {resetFilters}
+        toggleChartFilter={toggleChartFilterDesktopMobile}
+        togglePreset={togglePresetDesktopMobile}
+        resetFilters={resetFiltersDesktopMobile}
         {chartConfig}
       />
 		{/if}
