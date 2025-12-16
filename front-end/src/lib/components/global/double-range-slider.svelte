@@ -81,24 +81,6 @@
 		start = pStart;
 		end = pEnd;
 	}
-
-	// function handleMinimumDifference() {
-	// 	if (start > 0.95) {
-	// 		start = 0.95;
-	// 		console.log('maximum start reached')
-	// 	} 
-	// 	if (end < 0.05) {
-	// 		end = 0.05;
-	// 		console.log('minimum end reached')
-	// 	}
-	// 	if (start >= end - 0.05) {
-	// 		end += 0.05;
-	// 	}
-	// 	if (end >= end) {
-	// 		start = end - 0.05;
-	// 	}
-	// }
-
 </script>
 
 <div class="double-range-container">

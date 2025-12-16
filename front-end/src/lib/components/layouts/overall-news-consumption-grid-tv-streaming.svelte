@@ -43,7 +43,6 @@
     ['all', 'All'], 
     ['news', 'News'], 
     ['entertainment', 'Entertainment'],
-    ['social_media', 'Social Media']
   ])
 
   $: if (preset && preset !== 'all') {
