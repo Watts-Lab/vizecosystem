@@ -65,6 +65,8 @@ def parse_tv(d):
   d['category'] = d['category']\
     .str.extract(r'avg (.*)[_|\s]mins \/ person \/ day')
 
+  d.loc[d['category'] == 'entertainment_non_comedy', 'category'] = 'entertainment'
+
   d.loc[:,'medium'] = 'tv'
 
   return d
