@@ -53,7 +53,6 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,{color: string, orde
       ['fake_news', {color: '#990000', order: 2}],
       ['social_media', {color: '#fdbf6f', order: 3}],
       ['lifestyle', {color: 'lightblue', order: 4}],
-      ['retail', {color: '#ffa07a', order: 4}],
       ['entertainment', {color: '#cab2d6', order: 5}],
       ['other', {color: 'gainsboro', order: 6}],  
     ]),
