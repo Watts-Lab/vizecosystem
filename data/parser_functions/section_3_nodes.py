@@ -20,6 +20,11 @@ def concat_sets(a, b):
   # assign subset columns
   b_data['variable'] = file_name
 
+  if 'srcyearmonth' in b_data.columns:
+    b_data['year'] = b_data['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+    b_data['month'] = b_data['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+    b_data = b_data.drop('srcyearmonth', axis = 1)
+
   a.append(b_data)
 
   return a

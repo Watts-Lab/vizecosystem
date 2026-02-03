@@ -98,33 +98,20 @@ def parse_web(d):
   values = [
     'avg hard_news_mins / person / day',
     'avg social_media_mins / person / day',
-    'avg retail_mins / person / day',
     'avg lifestyle_mins / person / day',
     'avg entertainment_mins / person / day',
     'avg other_mins / person / day'
   ]
 
-  calculated_categories = {
-    'avg lifestyle_mins / person / day': [   
-      'avg retail_mins / person / day',
-      'avg lifestyle_mins / person / day',   
-    ]
-  }
-
-  for category, sub_categories in calculated_categories.items():
-    d.loc[:, category] = d.loc[:, sub_categories].apply(sum, axis = 1)
-
-  calculated_categories_cols = list(calculated_categories.keys())
-
   d['activityyear'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
   d['activitymonth'] = d['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
 
-  d = d[cols + values + calculated_categories_cols].groupby(cols, as_index=False).sum()
+  d = d[cols + values].groupby(cols, as_index=False).sum()
 
   d = melt(
     d,
     id_vars=cols,
-    value_vars=values + calculated_categories_cols,
+    value_vars=values,
     var_name='category'
   )
 

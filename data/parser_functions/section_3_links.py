@@ -12,6 +12,11 @@ def load(file):
 def parse(file):
   data = load(file["url"])
 
+  data['start year'] = data['start srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  data['start month'] = data['start srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+  data['end year'] = data['end srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
+  data['end month'] = data['end srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
+
   return data\
     .pivot(
       index=['start year', 'start month', 'end year', 'end month', 'from node'],
