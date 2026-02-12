@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { LayerCake, Svg, Html } from 'layercake';
 	import { piecewise, interpolateRgb } from 'd3-interpolate';
+  import { rollup } from 'd3-array'
 
 	// types
 	import type ChartConfig from '$lib/types/ChartConfig';
@@ -79,6 +80,8 @@
 		popup = null;
 	}
 
+  $: dateLabels = rollup(data, v => Array.from(new Set(v.map(e => e.period_label)))[0], d => d.period)
+
 	const dates = [
 		'Since 2016',
 		'Last 3 months', 
@@ -143,6 +146,7 @@
 			}
 		}, 1000)
 	})
+
 </script>
 
 <div class='chart-info-wrapper main-column'>
@@ -174,7 +178,7 @@
 			<select id="period-menu" name="period" bind:value={period}>
 				{#each dates as date, i}
 					<option value={date}>
-						{date}
+						{date} ({dateLabels.get(date)})
 					</option>
 				{/each}
 			</select>

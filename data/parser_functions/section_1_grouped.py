@@ -232,11 +232,14 @@ def group_data(df, *args):
   # filter depending on which subset is needed
   if (name == 'Last month'):
     df_filter = df.loc[df['timestamp'] == max_date]
+    display_name = f'{max_date.strftime("%b %Y")}'
   elif ('Since' in name):
     df_filter = df
+    display_name = f'{min_date.strftime("%b %Y")} to {max_date.strftime("%b %Y")}'
   else:
     df_filter = df.loc[df['timestamp'] > min_date]
-  
+    display_name = f'{(min_date + DateOffset(months=1)).strftime("%b %Y")} to {max_date.strftime("%b %Y")}'
+
   # group and take the mean
   # create new column with the period information
   return df_filter.groupby([
@@ -249,7 +252,7 @@ def group_data(df, *args):
   )\
     .mean()\
     .reset_index()\
-    .assign(period=name)
+    .assign(period=name, period_label=display_name)
 
 def parse(file):
   # # loads & parses data
@@ -306,7 +309,7 @@ def parse(file):
     )\
     .pivot(
       # # pivot political lean data
-      index=['period', 'state', 'medium', 'partisanship_scenario', 'diet_threshold'],
+      index=['period', 'period_label', 'state', 'medium', 'partisanship_scenario', 'diet_threshold'],
       columns='political_lean',
       values=['value', 'size']
     )
