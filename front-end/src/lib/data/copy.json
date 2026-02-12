@@ -81,28 +81,32 @@
                 "id": "tv-streaming",
                 "type": "line-area",
                 "title": "TV vs Streaming Consumption",
-                "captions": "Minutes per person per day spent with news and other categories of content on TV, desktop, and mobile browsing. *Local TV News is not included."
+                "captions": "Minutes per person per day spent with traditional TV* (left) and streaming services viewed through “smart” TVs (right). *Local TV News is not included."
             }
         },
         {
             "type": "text",
-            "value": "_i_Entertainment_i_ on TV/Streaming includes scripted programs focused on drama, action, suspense, sci-fi, children’s stories, or feature films. Examples include dramas, mysteries, adventure series, westerns, and movies. Does not include comedies, documentaries, or reality shows, instead referring to content that relies on fictional and dramatized storytelling."
+            "value": "_i_Entertainment_i_ on TV/Streaming includes scripted, fictional programs focused on fictional drama, action, suspense, sci-fi, children’s stories, or feature films. Does not include comedies, documentaries, sports, or reality shows."
         },
         {
             "type": "text",
-            "value": "_i_Comedy_i_ programs created mainly to make viewers laugh through humorous stories or performances. This includes sitcoms, sketch comedy, late-night comedy, and animated comedies."
+            "value": "_i_Comedy_i_ programs created mainly to make viewers laugh through humorous stories or performances. This includes sitcoms, sketch comedy, late-night comedy, and animated comedies. Does not include reality TV and game shows."
         },
         {
             "type": "text",
-            "value": "_i_Documentary_i_ programs include fact-based, non-fiction programming about real events, issues, or people, usually presented in an in-depth, narrative format. Examples include historical documentaries, nature films, biographies, and investigative specials. Differs from _i_News_i_ because News content is tied to real-time reporting of current events, public affairs, and political developments. Examples of News include daily newscasts, breaking-news segments, and political analysis shows."
+            "value": "_i_Documentary_i_ programs include fact-based, non-fiction programming about real events, issues, or people, usually presented in an in-depth, narrative format. Examples include historical documentaries, nature films, biographies, and investigative specials."
+        },
+        {
+            "type": "text",
+            "value": "_i_News_i_ content include shows that have real-time reporting and discussion of current events, public affairs, and political developments."
         },
         {
             "type": "chart",
             "value": {
                 "id": "social-desktop",
                 "type": "line-area",
-                "title": "TV vs Streaming Consumption",
-                "captions": "Minutes per person per day spent with news and other categories of content on TV, desktop, and mobile browsing. *Local TV News is not included."
+                "title": "Desktop vs Mobile Consumption",
+                "captions": "Minutes per person per day spent browsing the internet on desktop (left) and mobile apps & browsing (right). Mobile consumption reflects both smart phone and tablet usage."
             }
         },
         {
@@ -111,15 +115,15 @@
         },
         {
             "type": "text",
-            "value": "_i_Lifestyle_i_ refers to websites and apps that help users manage various aspects of everyday personal life. This content offers practical guidance, tools, or inspiration for daily living and is distinct from news, professional tools, or entertainment. Examples include cooking sites, dating apps, home-décor platforms, shopping and deal-finding sites, fitness and wellness apps, lifestyle magazines, how-to hubs, and personal-finance utilities."
+            "value": "_i_Lifestyle_i_ refers to websites and apps that help users manage various aspects of everyday personal life. Includes cooking sites, dating apps, home-décor platforms, shopping and deal-finding sites, fitness and wellness apps, lifestyle magazines, how-to hubs, and personal-finance utilities."
         },
         {
             "type": "text",
-            "value": "_i_Entertainment_i_ Digital platforms—such as streaming services, music and audio apps, and leisure websites—whose primary function is to provide amusement or recreational media. In addition to music and podcasts, this includes, gaming, sports viewing, pop culture and celebrity news, and other forms of entertainment. Distinct from the social media category, the online category content focuses on  professionally produced or game-based content rather than facilitating interpersonal social networking or user-generated social feeds."
+            "value": "_i_Entertainment_i_ Digital platforms—such as streaming services, music and audio apps, and leisure websites—whose primary function is to provide amusement or recreational media. In addition to music and podcasts, this includes, gaming, sports viewing, pop culture and celebrity news, and other forms of entertainment."
         },
         {
             "type": "text",
-            "value": "_i_News_i_ refers to apps and websites explicitly devoted to producing news reports. Does not information about politics and current events that is circulated within social media apps."
+            "value": "_i_News_i_ refers to apps and websites explicitly devoted to producing news reports. Does not include information about politics and current events that is circulated within social media apps."
         }
     ],
     "partisan-echo-chambers": [
