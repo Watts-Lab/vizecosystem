@@ -49,12 +49,11 @@ const colorMapByMedium : Map<string, { colorMap: Map<string,{color: string, orde
   }],
   ['web', {
     colorMap: new Map([
-      ['hard_news', {color: '#011f5b', order: 1}],
-      ['fake_news', {color: '#990000', order: 2}],
-      ['social_media', {color: '#fdbf6f', order: 3}],
-      ['lifestyle', {color: 'lightblue', order: 4}],
-      ['entertainment', {color: '#cab2d6', order: 5}],
-      ['other', {color: 'gainsboro', order: 6}],  
+      ['news', {color: '#011f5b', order: 1}],
+      ['social_media', {color: '#fdbf6f', order: 2}],
+      ['lifestyle', {color: 'lightblue', order: 3}],
+      ['entertainment', {color: '#cab2d6', order: 4}],
+      ['other', {color: 'gainsboro', order: 5}],  
     ]),
   }],
   ['mobile', {

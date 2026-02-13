@@ -96,7 +96,7 @@ def parse_web(d):
   ]
 
   values = [
-    'avg hard_news_mins / person / day',
+    'avg news_mins / person / day',
     'avg social_media_mins / person / day',
     'avg lifestyle_mins / person / day',
     'avg entertainment_mins / person / day',
