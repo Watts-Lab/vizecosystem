@@ -30,7 +30,7 @@
 	export let zKey : number;
 	export let yDomain : number[] = [0, null];
 	export let formatTickX : Function;
-	export let xTicks : number|Array<number>|Function = 6;
+	export let xTicks : number|Array<number>|Function = 8;
 	export let formatTickY : Function = (d : number, i : number, a: number) => (
 		i === a - 1
 		? `${d.toLocaleString('en-NZ', { style: 'percent' })} of population`

@@ -20,7 +20,7 @@
   import Table from '$lib/components/graphs/Table.svelte';
 
   // // import utils
-  import { formatMonth } from '../../../utils/format-dates';
+  import { formatYear } from '../../../utils/format-dates';
   import { formatPct, formatThousandsComma, formatOrdinal } from '$lib/utils/format-numbers';
   const formatPct0 = formatPct(1)
 
@@ -164,7 +164,7 @@
         { zKey }
         spanCol={12}
         customClass={ 'popup-overlay' }
-        formatTickX={formatMonth}
+        formatTickX={formatYear}
         url={''}
         includeCaption={false}
       /> 
