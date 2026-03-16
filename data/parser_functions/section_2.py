@@ -94,9 +94,25 @@ def parse_tv(df):
   df['activityyear'] = df['srcyearmonth'].apply(lambda x: int(x.split('-')[0]))
   df['activitymonth'] = df['srcyearmonth'].apply(lambda x: int(x.split('-')[1]))
 
+  input = df.loc[:, cols + values]
+
+  # replace 2017-10 values with average of 2017-09 and 2017-11
+  group_cols = [c for c in cols if c not in ['activityyear', 'activitymonth']]
+  sep = input[(input['activityyear'] == 2017) & (input['activitymonth'] == 9)].set_index(group_cols)
+  nov = input[(input['activityyear'] == 2017) & (input['activitymonth'] == 11)].set_index(group_cols)
+  avg = (sep[values] + nov[values]) / 2
+  avg = avg.reset_index()
+  avg['activityyear'] = 2017
+  avg['activitymonth'] = 10
+
+  oct_mask = (input['activityyear'] == 2017) & (input['activitymonth'] == 10)
+  input = input[~oct_mask]
+  input = concat([input, avg], ignore_index=True)\
+    .sort_values(by=['activityyear', 'activitymonth'], ascending=True)
+
   # unpivot data
   data = melt(
-    df,
+    input,
     id_vars=cols,
     value_vars=values,
     var_name='diet_threshold'
@@ -225,7 +241,7 @@ def parse(file):
 
   # # then we parse the web dataset,
   # # which is different as it comes all 
-  # # #in one single file
+  # # in one single file
   d_web = concat(
     reduce(concat_web, file['url'][21:], []),
     ignore_index = True
@@ -236,7 +252,6 @@ def parse(file):
   # # # now concat web and tv together
   data = concat(
     [d_tv, d_web],
-    # [d_web],
     ignore_index = True
   )
 
