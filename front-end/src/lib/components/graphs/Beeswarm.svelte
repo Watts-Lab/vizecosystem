@@ -446,6 +446,8 @@
 
 		#period {
 			grid-area: four;
+      position: relative;
+      z-index: 100;
 		}
 		
 		.control-menu {

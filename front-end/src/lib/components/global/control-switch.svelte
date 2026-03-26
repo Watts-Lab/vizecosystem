@@ -92,9 +92,9 @@
     display: none;
     top: 15.5px;
     left: 0;
-    right: 12.5%;
+    width: 200px;
     @include fs-sm;
-    z-index: 100;
+    z-index: 1000;
   }
 
   .info-detail.active {
