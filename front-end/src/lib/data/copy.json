@@ -11,7 +11,7 @@
             "title": "Partisanship",
             "label-left": "Lenient",
             "label-right": "Strict",
-            "description": "On the web, we use a popular, Twitter-based method to give each news domain a partisanship score. Lenient means that websites more to the left of TheGuardian.com, and to the right of FoxNews.com are counted as highly partisan. Stringent means that Slate.com and Breitbart.com—more less centrist news sources—define “highly partisan”. On TV, all programs from Fox News, Fox Business, and NewsMax are counted as right-wing partisan. Lenient means that both CNN and MSNBC are counted as left-wing partisan, while stringent means that only MSNBC is counted."
+            "description": "What does \"partisan\" mean here? There's no single correct answer. Reasonable people disagree about which news sources count as partisan, and that choice can substantially change how many people appear to be in partisan echo chambers. This toggle lets you switch between two definitions and see how much the choice matters. Lenient sets a lower bar, so more outlets count as partisan. Stringent sets a higher bar, so only the most partisan outlets count.<br/>_b_Web:_b_ Each news domain gets a partisanship score based on the political leanings of the Twitter users who share it (Robertson et al., 2018). Under lenient, sites as far left as TheGuardian.com or as far right as FoxNews.com (or further) count as partisan. Under stringent, the cutoffs move further out, to Slate.com on the left and Breitbart.com on the right.<br/>_b_TV:_b_ Fox News, Fox Business, and Newsmax count as right-leaning partisan under both settings. Under lenient, CNN and MSNBC both count as left-leaning partisan. Under stringent, only MSNBC does."
         },
         "node-size": {
             "title": "Node size",
@@ -111,7 +111,7 @@
         },
         {
             "type": "text",
-            "value": "The _i_Social Media_i_ category is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter, TikTok, LinkedIn, Pinterest, Tumblr, Threads, Bluesky, Nextdoor, Line.me, and a few other smaller platforms."
+            "value": "The _i_Social Media_i_ category is composed of the following platforms: Facebook, Reddit, YouTube, and X/Twitter, TikTok, LinkedIn, Pinterest, Tumblr, Threads, Bluesky, Nextdoor, [Line.me|http://Line.me], and a few other smaller platforms."
         },
         {
             "type": "text",
@@ -144,7 +144,7 @@
             "value": {
                 "type": "map",
                 "title": "Echo Chambers on the TV and Internet",
-                "captions": "An individual is considered to be in an echo chamber if the majority of their news consumption is partisan content. Majority is defined as at least 50% (the lines <span class='line'></span>) to 75% (the shaded areas <span class='area'></span> below the lines) of news consumption being partisan."
+                "captions": "An individual is considered to be in an echo chamber if the majority of their news consumption is partisan content. Majority is defined as at least 50% (the lines <span class='line'></span>) to 75% (the shaded areas <span class='area'></span> below the lines) of news consumption being partisan. For more details on the Web partisan classification, see [(Robertson et al., 2018)|https://dl.acm.org/doi/10.1145/3274417]"
             }
         }
     ],
@@ -193,11 +193,11 @@
         },
         {
             "type": "text",
-            "value": "The analyses here are mostly reproductions of figures from two articles: Allen et al (2020) and Muise et al (2022). The underlying datasets are derived from large panels (50-100k) of individuals who agreed to have their desktop internet browsing and TV viewing behavior passively tracked by the Nielsen company."
+            "value": "The analyses here are mostly reproductions of figures from two articles: Allen et al (2020) and Muise et al (2022). The underlying datasets are derived from large panels (50-100k) of individuals who agreed to have their desktop internet browsing and TV viewing behavior passively tracked by Nielsen."
         },
         {
             "type": "text",
-            "value": "Nielsen is a U.S.-based data analytics company that uses representative panels to estimate media consumption trends on traditional TV, TV Streaming, Desktop Computer, and Mobile Platforms (both phone and tablet). Every month, these panels are adjusted, where new panelists are added, and current panelists can choose to no longer participate. These panelists are usually involved in the panel for at least a year but no more than two years."
+            "value": "Nielsen is a U.S.-based audience measurement, data and analytics company that uses representative panels to estimate media consumption trends on traditional TV, TV Streaming, Desktop Computer, and Mobile Platforms (both phone and tablet). Every month, these panels are adjusted, where new panelists are added, and current panelists can choose to no longer participate. These panelists are usually involved in the panel for at least a year but no more than two years."
         },
         {
             "type": "text",

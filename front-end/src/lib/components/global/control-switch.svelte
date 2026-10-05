@@ -1,4 +1,6 @@
 <script lang='ts'>
+	import parseCopy from "$lib/utils/parse-copy";
+
   // property declaration
   export let id : string = '';
   export let title : string = 'Title'
@@ -34,7 +36,7 @@
     <span class="slider" style='--colorFalse: {colors[1]}; --colorTrue: {colors[0]}'></span>
   </label>
   <div class='control-label {checked ? 'active' : ''}'>{ labels[1] }</div>
-  <div class='info-detail {infoDetail}'>{ info }</div>
+  <div class='info-detail {infoDetail}'>{ @html parseCopy(info) }</div>
 </div>
 
 <style lang="scss">
@@ -92,7 +94,7 @@
     display: none;
     top: 15.5px;
     left: 0;
-    width: 200px;
+    width: 250px;
     @include fs-sm;
     z-index: 1000;
   }

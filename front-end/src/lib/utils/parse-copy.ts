@@ -39,7 +39,7 @@ function parseText(text: string) {
 	return text[0] === '\\' ? text.slice(1, -1) : text;
 }
 
-function parseCopy(text: string) {
+function parseCopy(text: string|undefined) {
 	text = parseLink(text);
 	text = parseItalic(text);
 	text = parseBold(text);

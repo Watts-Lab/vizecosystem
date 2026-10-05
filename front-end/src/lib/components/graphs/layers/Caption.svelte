@@ -1,11 +1,12 @@
 <script lang='ts'>
+    import parseCopy from "$lib/utils/parse-copy";
     export let caption : string
     export let url : string
     export let type : string
 </script>
 
 <div class="caption caption-{type}">
-    <p class='caption-text'>{@html caption}</p>
+    <p class='caption-text'>{@html parseCopy(caption)}</p>
     <a class="download-button" href={url} download>
         Download data 
             <svg 
